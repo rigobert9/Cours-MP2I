@@ -9,7 +9,7 @@ Une phrase mathématique est une phrase contenant :
 - des constantes;
 - des variables;
 - des ensembles;
-- des fonctions (opérations, "macros" et fonctions transcendantes) (informatiquement, une fonction renvoyant un objet, souvent de même nature);
+- des fonctions (opérations, "macros" et fonctions transcendantes) (informatiquement, une fonction renvoyant un objet, souvent de même nature/type);
 - des relations (qui sont l'opération qui donne la vérité d'une assertion) (informatiquement, une fonction renvoyant une valeur de vérité);
 - des connecteurs logiques (opérations booléennes, implication, équivalence);
 - des quantificateurs (universels ou quantitatifs), comme \( \exists \) et \( \forall \)
