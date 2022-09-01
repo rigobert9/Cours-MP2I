@@ -55,19 +55,20 @@ Exemple : \( \text{NON (NON P)} \equiv P \) car leurs tables de vérité sont
 De plus, \( \text{P OU NON(P)} \equiv V \) (toujours vrai) (tautologie), et \( \text{P ET NON(P)} \equiv F \) (toujours faux) (contradiction ou antilogie)
 
 #### Lois de Morgan :
-\( \text{NON(P ET Q)} \equiv \text{(NON P) OU (NON Q)} \)
-\( \text{NON(P OU Q)} \equiv \text{(NON P) ET (NON Q)} \)
+- \( \text{NON(P ET Q)} \equiv \text{(NON P) OU (NON Q)} \)
+- \( \text{NON(P OU Q)} \equiv \text{(NON P) ET (NON Q)} \)
+
 Vérifiable par tables de vérité.
 Exemple : Contraire de \( 2 \leq x \lt 3 \equiv 2 \leq \text{ET} x \lt 3 \), ce qui mène avec les lois de Morgan à chercher 
 
 #### Propriétés triviales (vérifiables par tables de vérité) :
-\( P \text{ET} P \equiv P \equiv P \text{OU} P \)
-\( P \text{ET} Q \equiv Q \text {ET} P \) (commutativité)
-\( P \text{OU} Q \equiv Q \text {OU} P \) (commutativité)
-\( (P \text{ET} Q) \text{ET} R \equiv P \text{ET} (Q \text{ET} R) \) (associativité)
-\( (P \text{OU} Q) \text{OU} R \equiv P \text{OU} (Q \text{OU} R) \) (associativité)
-\( P \text{ET} (Q \text{OU} R) \equiv (P \text{ET} Q) \text{OU} (P \text{ET} R) \) (distributivité)
-\( P \text{OU} (Q \text{ET} R) \equiv (P \text{OU} Q) \text{ET} (P \text{OU} R) \) (distributivité)
+- \( P \text{ET} P \equiv P \equiv P \text{OU} P \)
+- \( P \text{ET} Q \equiv Q \text {ET} P \) (commutativité)
+- \( P \text{OU} Q \equiv Q \text {OU} P \) (commutativité)
+- \( (P \text{ET} Q) \text{ET} R \equiv P \text{ET} (Q \text{ET} R) \) (associativité)
+- \( (P \text{OU} Q) \text{OU} R \equiv P \text{OU} (Q \text{OU} R) \) (associativité)
+- \( P \text{ET} (Q \text{OU} R) \equiv (P \text{ET} Q) \text{OU} (P \text{ET} R) \) (distributivité)
+- \( P \text{OU} (Q \text{ET} R) \equiv (P \text{OU} Q) \text{ET} (P \text{OU} R) \) (distributivité)
 
 Puisque ET et OU sont associatifs, on peut enlever les parenthèses dans les groupes
 
@@ -128,8 +129,9 @@ Si P(x) est un prédicat et si la variable x est prise à valeurs dans un ensemb
 - \( \forall x \in E , P(x) \) (assertion universelle)
 - \( \exists x \in E , P(x) \) (assertion existentielle)
 
-\( \forall x \in E , P(x) \) est vraie lorsque pour chaque élément x de E, l'assertion P(x) est vérifiée
-\( \exists x \in E , P(x) \) est vraie lorsqu'il existe (au moins) un élément x de E tel que P(x) est vérifiée
+- \( \forall x \in E , P(x) \) est vraie lorsque pour chaque élément x de E, l'assertion P(x) est vérifiée
+- \( \exists x \in E , P(x) \) est vraie lorsqu'il existe (au moins) un élément x de E tel que P(x) est vérifiée
+
 Attention : les quantificateurs ont un ordre et dépendent des variables précédemment définies
 
 Négations :
