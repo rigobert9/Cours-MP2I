@@ -39,13 +39,13 @@ Soient a et b deux réels tels que ab = 0, par disjonction de cas:
 Tables de vérité :
 
 Connecteur | 0 0 | 0 1 | 1 0 | 1 1
----|---|---|---|---
-ET | 0 | 0 | 0 | 1
-OU | 0 | 1 | 1 | 1
+---        | --- | --- | --- | ---
+ET         | 0   | 0   | 0   | 1
+OU         | 0   | 1   | 1   | 1
 
-Connecteur | 0 | 1
----|---|---
-NON | 1 | 0
+Connecteur | 0   | 1
+---        | --- | ---
+NON        | 1   | 0
 
 > Deux assertions sont équivalentes si elles ont la même table de vérité, on note alors \( P \equiv Q \)
 
@@ -75,12 +75,12 @@ Puisque ET et OU sont associatifs, on peut enlever les parenthèses dans les gro
 \( P \Rightarrow Q \) signifie "si P alors Q", ou encore "P donc Q"
 L'implication est définie par la table de vérité :
 
-P | Q | \( P \Rightarrow  Q \)
----|---|---
-V | V | V
-V | F | F
-F | V | V (bien que le raisonnement soit inutile)
-F | F | V (bien que le raisonnement soit inutile)
+P   | Q   | \( P \Rightarrow  Q \)
+--- | --- | ---
+V   | V   | V
+V   | F   | F
+F   | V   | V (bien que le raisonnement soit inutile)
+F   | F   | V (bien que le raisonnement soit inutile)
 
 Remarque : Ainsi, le contraire de \( P \Rightarrow Q \) est \( P \text{ET} (\text{NON} Q) \), et on a \( P \Rightarrow Q) \equiv (\text{NON} P) \text{OU} Q\)
 
@@ -98,12 +98,12 @@ Attention : Pas de lien ente la proposition et sa réciproque, si la relation n'
 
 Exercice : Table de vérité de \( (\text{NON} P) \Rightarrow (P \Rightarrow Q) \)
 
-P | Q | NON P | \( P \Rightarrow Q \) | \( (\text{NON} P) \Rightarrow (P \Rightarrow Q) \)
----|---|---|---|---
-V | V | F | V | V
-V | F | F | F | V
-F | V | V | V | V
-F | F | V | V | V
+P   | Q   | NON P | \( P \Rightarrow Q \) | \( (\text{NON} P) \Rightarrow (P \Rightarrow Q) \)
+--- | --- | ---   | ---                   | ---
+V   | V   | F     | V                     | V
+V   | F   | F     | F                     | V
+F   | V   | V     | V                     | V
+F   | F   | V     | V                     | V
 
 Traduction : d'une hypothèse fausse, on peut déduire n'importe quelle assertion.
 Ainsi, en pratique, les formes \( P \Rightarrow Q \) s'utilisent dans les raisonnements tels que  \( [ P \text{ET} (P \Rightarrow Q) ] \Rightarrow Q \) (on déduit, parce qu'on a une règle et une proposition qui la respecte, l'application de la règle)
@@ -112,12 +112,12 @@ Ainsi, en pratique, les formes \( P \Rightarrow Q \) s'utilisent dans les raison
 L'assertion \( P \Leftrightarrow Q \) est définie par \( (P \Rightarrow Q) \text{ET} (Q \Rightarrow P) \) (il s'agit d'une double implication, dans les deux sens)
 La table de vérité est donc :
 
-P | Q | \( P \Rightarrow Q \) | \( Q \Rightarrow P \) | \( P \Leftrightarrow Q \)
----|---|---|---|---
-V | V | V | V | V
-V | F | F | V | F
-F | V | V | F | F
-F | F | F | F | V
+P   | Q   | \( P \Rightarrow Q \) | \( Q \Rightarrow P \) | \( P \Leftrightarrow Q \)
+--- | --- | ---                   | ---                   | ---
+V   | V   | V                     | V                     | V
+V   | F   | F                     | V                     | F
+F   | V   | V                     | F                     | F
+F   | F   | F                     | F                     | V
 
 \( P \Leftrightarrow Q \) est vraie si et seulement si les assertions P et Q prennent la même valeur de vérité
 
@@ -136,7 +136,7 @@ Négations :
 \( \text{NON} (\forall x \in E , P(x)) \equiv \exists x \in E , \text{NON} P(x) \)
 \( \text{NON} (\exists x \in E , P(x)) \equiv \forall x \in E , \text{NON} P(x) \)
 
-Remarque : si E est l'ensemble vide (\( \emptyset \) )
+Remarque : si E est l'ensemble vide (\( \emptyset \))
 \( \forall x \in E , P(x) \) est toujours vraie
 \( \exists x \in E , P(x) \) est toujours faux
 
