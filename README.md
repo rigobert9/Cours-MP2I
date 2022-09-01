@@ -43,6 +43,7 @@ plugins :
   index)
 - Vimtex (pour rendre le LaTeX)
 - UltiSnips (pour une utilisation extensive de macros)
+- Vim-markdown qui me permet de rendre le LaTeX inline
 
 L'utilisation de ces outils permet de justifier la plupart des choix pris dans
 ces notes, n'hésitez néanmoins pas à ouvrir une issue si des détails posent
