@@ -112,7 +112,7 @@ Exemple : Vitesse dans une chute verticale (formule )
    \( v = k h^\alpha m^\beta g^\gamma \), de dimension
    \( v = k L^\alpha M^\beta L^\gamma T^{-2\gamma} \)
 4. On obtient le système \( { 1 = \alpha + \gamma ; 0 = \beta ; -1 = -2y \), qui
-   se résout par \( { \gamma = \frac{-1}{2} ; \beta = 0 ; \alpha = \frac{1}{2} \)
+   se résout par \( \begin{cases} \gamma = \frac{-1}{2} \\ \beta = 0 \\ \alpha = \frac{1}{2} \end{cases} \)
 5. Ainsi, \( v = k \sqrt{gh} \) avec \( k = \sqrt{2} \)
 
 
@@ -123,5 +123,5 @@ Exemple : Période d'un pendule simple (formule \( 2\pi \sqrt{\frac{l}{g}} \))
 3. On suppose que v va s'écrire
    \( T_0 = k l^\alpha m^\beta g^\gamma \), de dimension
    \( T_0 = k L^\alpha M^\beta L^\gamma T^{-2\gamma} \)
-4. On obtient le système \( { \alpha = 0 ; \beta + \gamma = 0 ; \delta = -2\gamma \)
+4. On obtient le système \( \begin{cases} \alpha = 0 \\ \beta + \gamma = 0 \\ \delta = -2\gamma \end{cases}\)
 5. Ainsi, \( T_0 = 2\pi \sqrt{\frac{l}{g}} \)
