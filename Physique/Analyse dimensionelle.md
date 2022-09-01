@@ -19,7 +19,7 @@ Dimension | Symbole | Unité
 Temps | T | Seconde (s)
 Longueur | L | Metre (m)
 Masse | M | Kilogramme (kg)
-Température | $\rho$ | Kelvin (K)
+Température | \( \rho \) | Kelvin (K)
 Quantité de matière | N | Mole (mol)
 Intensité électrique | I | Ampère (A)
 Intensité lumineuse | J | Candela (cd)
@@ -32,10 +32,10 @@ Intensité lumineuse | J | Candela (cd)
 
 > On apelle l'étude d'une relation physique en termes de dimensions "analyse
 > dimensionelle"
-Exemple : $e = mc^2$ donne $[E] = [m][c]^2$, qui donne la dimension
-$M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
-Puissance, $E = P \delta T$ -> $M L^2 T^{-2} = [P] T$ a une unité de ...
-Résistance, $P = RI^2$ a une unité de $kg \cdot m^2 s^{-1} A ^ {-2}$
+Exemple : \( e = mc^2 \) donne \( [E] = [m][c]^2 \), qui donne la dimension
+\( M L^2 T^{-2} \), soit les unités \( kg \cdot m^2 s^{-2} \)
+Puissance, \( E = P \delta T \) -> \( M L^2 T^{-2} = [P] T \) a une unité de ...
+Résistance, \( P = RI^2 \) a une unité de \( kg \cdot m^2 s^{-1} A ^ {-2} \)
 
 ### Opérations mathématiques sur les grandeurs dimensionées
 #### Somme et différence
@@ -48,11 +48,11 @@ Résistance, $P = RI^2$ a une unité de $kg \cdot m^2 s^{-1} A ^ {-2}$
 > quotient est le quotient des dimensions
 
 #### Dérivation
-> $[\frac{dY}{dX}] = \frac Y X$
-Exemple : Force, $F = ma$ est de dimension $[\frac dv dt] = \frac LT^{-1} T$
+> \( [\frac{dY}{dX}] = \frac Y X \)
+Exemple : Force, \( F = ma \) est de dimension \( [\frac dv dt] = \frac LT^{-1} T \)
 
 #### Intégration
-> Pour deux grandeurs Y et X, $[\int Y(x)dx] = [Y][x]$
+> Pour deux grandeurs Y et X, \( [\int Y(x)dx] = [Y][x] \)
 
 #### Fonctions transcendantes
 > En physique, une "fonction transcendante" englobe les exponentielles et
@@ -60,4 +60,4 @@ Exemple : Force, $F = ma$ est de dimension $[\frac dv dt] = \frac LT^{-1} T$
 
 > L'argument d'une fonction transcendante est sans dimension; Une fonction
 > transcendante est sans dimension
-Exemple : Décharge d'un condensateur : $U = E e^{\frac t \tau}$,  $[\tau] = T$
+Exemple : Décharge d'un condensateur : \( U = E e^{\frac t \tau} \),  $[\tau] = T$
