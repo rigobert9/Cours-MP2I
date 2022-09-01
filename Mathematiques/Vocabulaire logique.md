@@ -109,6 +109,9 @@ F   | F   | V     | V                     | V
 Traduction : d'une hypothèse fausse, on peut déduire n'importe quelle assertion.
 Ainsi, en pratique, les formes \( P \Rightarrow Q \) s'utilisent dans les raisonnements tels que  \( [ P \text{ET} (P \Rightarrow Q) ] \Rightarrow Q \) (on déduit, parce qu'on a une règle et une proposition qui la respecte, l'application de la règle)
 
+#### Opérateur de Sheffer
+Aussi appelé nand, il est représenté par \( \uparrow \), et correspond à \( \text{NON} ( A \text{ET} B ) \)
+
 #### Équivalence
 L'assertion \( P \Leftrightarrow Q \) est définie par \( (P \Rightarrow Q) \text{ET} (Q \Rightarrow P) \) (il s'agit d'une double implication, dans les deux sens)
 La table de vérité est donc :
