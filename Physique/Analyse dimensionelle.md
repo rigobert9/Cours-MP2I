@@ -35,7 +35,7 @@ Intensité lumineuse  | J       | Candela (cd)
 
 Exemple : $e = mc^2$ donne $[E] = [m][c]^2$, qui donne la dimension
 $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
-- Puissance, $E = P \delta T$ -> $M L^2 T^{-2} = [P] T$ a une unité de ...
+- Puissance, $E = P \delta T$ -> $M L^2 T^{-2} = [P] T$, donc $[P] = M L^2 T^{-3}$
 - Résistance, $P = RI^2$ a une unité de $kg \cdot m^2 s^{-1} A ^ {-2}$
 
 ### Opérations mathématiques sur les grandeurs dimensionées
