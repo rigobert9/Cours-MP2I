@@ -162,6 +162,6 @@ généralement pas de solutions
 Si la valeur X recherchée dépend en outre de d'une grandeur sans dimension x,
 cette dernière est invisible à l'analyse dimensionnelle.
 
-Exemple : Dans le cas ou une grandeur dépend d'une fonction sans dimension
+Exemple : Dans le cas où une grandeur dépend d'une fonction sans dimension
 (comme dans le cas du balancement d'un pendule, celui-ci dépend de l'amplitude
 angulaire $f(\theta)$ ).
