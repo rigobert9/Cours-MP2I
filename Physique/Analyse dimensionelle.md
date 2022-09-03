@@ -27,7 +27,7 @@ Intensité lumineuse  | J       | Candela (cd)
 > La dimension de toute grandeur physique est un produit de ces 7 dimensions
 > fondamentales avec éventuellement des coefficients en puissance.
 
-> L'écriture de la dimension d'une gradeur physique en fonction des 7 grandeurs
+> L'écriture de la dimension d'une grandeur physique se fait en fonction des 7 grandeurs
 > de base du système international
 
 > On apelle l'étude d'une relation physique en termes de dimensions "analyse
