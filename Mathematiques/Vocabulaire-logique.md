@@ -22,7 +22,7 @@ Une autre est $\forall z \in \mathbb{C} , \exists z' \in \mathbb{C} , (z')^2 = z
 
 ### Déclaration
 Les variables introduites dans une assertion doivent être quantifiées
-> Principe de tiers exclus : pour toute assertion P, on a que l'assertion P est vraie ou que l'assertion (non P) est fausse (!P, not(P)) 
+> Principe de tiers exclus : pour toute assertion P, on a que l'assertion P est vraie ou que l'assertion (non P) est vraie (!P, not(P)).
 > Ainsi, toute assertion est vraie ou fausse.
 
 Exemple : $\forall (a, b) \in \mathbb(R)^2, ab = 0 \Rightarrow (a = 0, b = 0)$
@@ -50,20 +50,21 @@ Connecteur | 0   | 1
 NON        | 1   | 0
 
 > Deux assertions sont équivalentes si elles ont la même table de vérité, on
-note alors $P \equiv Q$
+> note alors $P \equiv Q$
 
 Un exemple d'équivalence est deux programmes, écrits éventuellement différement mais qui fournissent toujours le même résultat pour la même entrée
 
-Exemple : $\text{NON (NON P)} \equiv P$ car leurs tables de vérité sont
+Exemple : $\text{NON (NON P)} \equiv P$ car leurs tables de vérité sont identiques.
 De plus, $\text{P OU NON(P)} \equiv V$ (toujours vrai) (tautologie), et
 $\text{P ET NON(P)} \equiv F$ (toujours faux) (contradiction ou antilogie)
 
 #### Lois de Morgan :
-- $\text{NON(P ET Q)} \equiv \text{(NON P) OU (NON Q)}$
-- $\text{NON(P OU Q)} \equiv \text{(NON P) ET (NON Q)}$
+- $\text{NON}\,(P\,\text{ET}\,Q) \equiv (\text{NON}\,P) \,\text{OU}\, (\text{NON}\, Q)$
+- $\text{NON}\,(P\,\text{OU}\,Q) \equiv (\text{NON}\,P) \,\text{ET}\, (\text{NON}\, Q)$
 
 Vérifiable par tables de vérité.
-Exemple : Contraire de $2 \leq x \lt 3 \equiv 2 \leq \text{ET} x \lt 3$, ce qui mène avec les lois de Morgan à chercher 
+Exemple : Contraire de $2 \leq x \lt 3 \equiv 2 \leq \text{ET} x \lt 3$, ce qui mène avec
+les lois de Morgan à $(\text{NON}2 \leq x) \text{OU} (\text{NON}x \lt 3) \equiv (2 \gt x) \text{OU} (x \gt 3)$
 
 #### Propriétés triviales (vérifiables par tables de vérité) :
 - $P \text{ET} P \equiv P \equiv P \text{OU} P$
@@ -95,7 +96,7 @@ et on a $(P \Rightarrow Q) \equiv (\text{NON} P) \text{OU} Q$
 > La réciproque de $P \Rightarrow Q$ est $Q \Rightarrow P$
 > La contraposée de $P \Rightarrow Q$ est $\text{NON} Q \Rightarrow \text{NON} P$
 
-Proposition : toute implication est équivalent à sa contaposée, soit
+Proposition : toute implication est équivalente à sa contaposée, soit
 $\text{NON} Q \Rightarrow \text{NON} P$
 $\text{NON} Q \Rightarrow \text{NON} P  \equiv \text{NON} (\text{NON} Q)$
 $\text{OU} (\text{NON} P)$
@@ -151,7 +152,7 @@ Négations :
 $\text{NON} (\forall x \in E , P(x)) \equiv \exists x \in E , \text{NON} P(x)$
 $\text{NON} (\exists x \in E , P(x)) \equiv \forall x \in E , \text{NON} P(x)$
 
-Remarque : si E est l'ensemble vide ($\emptyset$)
+Remarque : si E est l'ensemble vide ( $\emptyset$ )
 $\forall x \in E , P(x)$ est toujours vraie
 $\exists x \in E , P(x)$ est toujours faux
 
