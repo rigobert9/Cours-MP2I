@@ -26,7 +26,17 @@ lisibles à l'aide de divers outils.
 ### Lecteurs
 Nom | Mise en page du MarkDown | Rendering des formules LaTeX
 ---|---|---
-Vim (voir setup plus bas) | Partiellement (coloration) | Partiellement (caractères simples et inline)
+Vim (voir plus bas) | Partiellement (coloration) | Partiellement (caractères simples et inline)
+
+Pour lire ces notes avec une partie des symboles simplifiés, il suffit
+d'installer neovim avec le plugin
+[vim-markdown](https://github.com/preservim/vim-markdown) (voir guide
+d'installation sur leur page), puis d'ajouter la ligne
+```viml
+let g:vim_markdown_math = 1
+```
+dans le fichier ~/.config/nvim/init.vim (ou tout autre fichier de configuration
+selon votre environnement).
 
 N'hésitez pas à me signaler d'autres modes de visionnage des notes, plus
 accessibles, notamment des lecteurs web simples.
