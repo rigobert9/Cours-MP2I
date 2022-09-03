@@ -32,10 +32,11 @@ Intensité lumineuse  | J       | Candela (cd)
 
 > On apelle l'étude d'une relation physique en termes de dimensions "analyse
 > dimensionelle"
+
 Exemple : $e = mc^2$ donne $[E] = [m][c]^2$, qui donne la dimension
 $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
-Puissance, $E = P \delta T$ -> $M L^2 T^{-2} = [P] T$ a une unité de ...
-Résistance, $P = RI^2$ a une unité de $kg \cdot m^2 s^{-1} A ^ {-2}$
+- Puissance, $E = P \delta T$ -> $M L^2 T^{-2} = [P] T$ a une unité de ...
+- Résistance, $P = RI^2$ a une unité de $kg \cdot m^2 s^{-1} A ^ {-2}$
 
 ### Opérations mathématiques sur les grandeurs dimensionées
 #### Somme et différence
