@@ -14,15 +14,15 @@
 ## Unités du système international (SI)
 7 dimensions de base, associées à 7 unités de base
 
-Dimension            | Symbole    | Unité
----                  | ---        | ---
-Temps                | T          | Seconde (s)
-Longueur             | L          | Metre (m)
-Masse                | M          | Kilogramme (kg)
-Température          | $\rho$ | Kelvin (K)
-Quantité de matière  | N          | Mole (mol)
-Intensité électrique | I          | Ampère (A)
-Intensité lumineuse  | J          | Candela (cd)
+Dimension            | Symbole | Unité
+---                  | ---     | ---
+Temps                | T       | Seconde (s)
+Longueur             | L       | Metre (m)
+Masse                | M       | Kilogramme (kg)
+Température          | $\rho$  | Kelvin (K)
+Quantité de matière  | N       | Mole (mol)
+Intensité électrique | I       | Ampère (A)
+Intensité lumineuse  | J       | Candela (cd)
 
 > La dimension de toute grandeur physique est un produit de ces 7 dimensions
 > fondamentales avec éventuellement des coefficients en puissance.
