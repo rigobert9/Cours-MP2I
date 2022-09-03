@@ -105,7 +105,7 @@ Méthode :
    gamma et delta, puis le résoudre
 5. Conclure et déterminer k
 
-Exemple : Vitesse dans une chute verticale (formule )
+Exemple : Vitesse dans une chute verticale (formule $v = \sqrt{2gh}$ )
 1. On cherche la vitesse v du corps (c'est une vitesse), de dimension $L T^{-1}$
 2. g (attraction gravitationelle) (dimensions d'une accélération, donc $L \cdot T^{-2} )$
    et la hauteur de laquelle on lâche l'objet (dimension L), ainsi que sa masse (dimension M)
@@ -128,9 +128,9 @@ Exemple : Période d'un pendule simple (formule $2\pi \sqrt{\frac{l}{g}}$)
 4. On obtient le système $\left\{\begin{matrix} \alpha = 0 \\ \beta + \gamma = 0 \\ \delta = -2\gamma \end{matrix}\right.$
 5. Ainsi, $T_0 = 2\pi \sqrt{\frac{l}{g}}$
 
-Exemple : vitesse d'un satellite
+Exemple : vitesse d'un satellite (formule $v = \sqrt{\frac{G M_s}{R}}$ )
 1. On cherche la vitesse v, de dimension $L \cdot T^{-1}$
-2. On considère les grandeurs suivantes : masse du satellite $M_s$ (dimension M),
+2. On considère les grandeurs suivantes : masse de la planète $M_s$ (dimension M),
    rayon de l'orbite R (dimension L), et la constante de gravitation universelle
    G (de dimension $M^{-1} L^{3} T^{-2}$) (voir formule d'attraction
    gravitationnelle, dont le résultat en N est de dimension $M L T^{-2}$)
@@ -141,7 +141,7 @@ Exemple : vitesse d'un satellite
    $\left\{\begin{matrix}  \alpha = \frac{1}{2} \\ \beta = \frac{-1}{2} \\ \gamma = \frac{1}{2} \end{matrix}\right.$
 5. On a donc $v = k \sqrt{\frac{G M_s}{R}}$, avec k = 1
 
-Exemple : Rayon cyclotron
+Exemple : Rayon cyclotron (formule : $R = \frac{m_e v_0}{e B_0}$ )
 1. On cherche le rayon R de rotation de l'électron, de dimension L
 2. On considère la charge de l'électron e (en coulons, soit une dimension de
    IT), la masse $m_e$ de l'électron (dimension M), la vitesse de l'électron
