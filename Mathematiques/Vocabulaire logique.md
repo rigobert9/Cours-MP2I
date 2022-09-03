@@ -151,7 +151,7 @@ Négations :
 $\text{NON} (\forall x \in E , P(x)) \equiv \exists x \in E , \text{NON} P(x)$
 $\text{NON} (\exists x \in E , P(x)) \equiv \forall x \in E , \text{NON} P(x)$
 
-Remarque : si E est l'ensemble vide ($\emptyset$)
+Remarque : si E est l'ensemble vide ( $\emptyset$ )
 $\forall x \in E , P(x)$ est toujours vraie
 $\exists x \in E , P(x)$ est toujours faux
 
