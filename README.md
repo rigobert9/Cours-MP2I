@@ -1,7 +1,7 @@
 # Cours-MP2I
-Cours en MP2I au lycée Janson de Sailly. Ces notes sont publiquement
-disponibles, mais aussi participatives; n'hésitez pas à apporter des
-corrections, des additions ou vos propres cours à ce dépôt.
+Cours en MP2I. Ces notes sont publiquement disponibles, mais aussi
+participatives; n'hésitez pas à apporter des corrections, des additions ou vos
+propres cours à ce dépôt.
 
 WIP : Deck Anki, qui sera maintenu avec des cartes tirées de ces notes, et
 éventuellement automatiquement (selon l'avancée d'un plugin python en parallèle)
