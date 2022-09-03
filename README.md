@@ -24,9 +24,10 @@ Ces notes sont parfaitement lisibles à elles seules, mais sont bien plus
 lisibles à l'aide de divers outils.
 
 ### Lecteurs
-Nom | Mise en page du MarkDown | Rendering des formules LaTeX
----|---|---
-Vim (voir plus bas) | Partiellement (coloration) | Partiellement (caractères simples et inline)
+Nom | Disponibilité | Mise en page du MarkDown | Rendering des formules LaTeX
+---|---|---|---
+Vim (voir plus bas) | Local | Partiellement (coloration) | Partiellement (caractères simples et inline)
+GitHub (lire les fichiers ici) | Online | Oui | Oui
 
 Pour lire ces notes avec une partie des symboles simplifiés, il suffit
 d'installer neovim avec le plugin
@@ -42,6 +43,10 @@ N'hésitez pas à me signaler d'autres modes de visionnage des notes, plus
 accessibles, notamment des lecteurs web simples.
 
 ### Compilateurs
+Nom | Disponibilité | Mise en page du MarkDown | Rendering des formules LaTeX
+---|---|---|---
+https://www.markdowntopdf.com/ | Online | Oui | Non
+
 Cette partie de mon workflow est toujours en cours de préparation, n'hésitez
 néanmoins pas à conseiller des outils permettant de convertir le MarkDown comme
 le LaTeX vers des formats PDF.
