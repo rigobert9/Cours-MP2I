@@ -111,8 +111,10 @@ Exemple : Vitesse dans une chute verticale (formule )
 3. On suppose que v va s'écrire
    $v = k h^\alpha m^\beta g^\gamma$, de dimension
    $v = k L^\alpha M^\beta L^\gamma T^{-2\gamma}$
-4. On obtient le système ${ 1 = \alpha + \gamma ; 0 = \beta ; -1 = -2y$, qui
-   se résout par $\begin{cases} \gamma = \frac{-1}{2} \\ \beta = 0 \\ \alpha = \frac{1}{2} \end{cases}$
+4. On obtient le système 
+   $\left\{\begin{matrix} 1 = \alpha + \gamma \\ 0 = \beta \\ -1 = -2y \end{matrix}\right.$
+   , qui se résout par 
+   $\left\{\begin{matrix} \alpha = \frac{1}{2} \\ \gamma = \frac{-1}{2} \\ \beta = 0 \end{matrix}\right.$
 5. Ainsi, $v = k \sqrt{gh}$ avec $k = \sqrt{2}$
 
 Exemple : Période d'un pendule simple (formule $2\pi \sqrt{\frac{l}{g}}$)
@@ -122,7 +124,7 @@ Exemple : Période d'un pendule simple (formule $2\pi \sqrt{\frac{l}{g}}$)
 3. On suppose que v va s'écrire
    $T_0 = k l^\alpha m^\beta g^\gamma$, de dimension
    $T_0 = k L^\alpha M^\beta L^\gamma T^{-2\gamma}$
-4. On obtient le système $\begin{cases} \alpha = 0 \\ \beta + \gamma = 0 \\ \delta = -2\gamma \end{cases$
+4. On obtient le système $\left\{\begin{matrix} \alpha = 0 \\ \beta + \gamma = 0 \\ \delta = -2\gamma \end{matrix}\right.$
 5. Ainsi, $T_0 = 2\pi \sqrt{\frac{l}{g}}$
 
 Exemple : vitesse d'un satellite
@@ -134,8 +136,8 @@ Exemple : vitesse d'un satellite
 3. On suppose qu'on a ainsi $v = k M_s^\alpha R^\beta G^\gamma$, de dimension
    $L T^{-1} = k M^\alpha L^\beta M^{-\gamma} L^{3\gamma} T^{-2\gamma}$
 4. On obtient le système suivant :
-   $\begin{cases}  0 = \alpha - \gamma \\ 1 = \beta + 3\gamma \\ -1 = -2\gamma \end{cases}$
-   $\begin{cases}  \alpha = \frac{1}{2} \\ \beta = \frac{-1}{2} \\ \gamma = \frac{1}{2} \end{cases}$
+   $\left\{\begin{matrix}  0 = \alpha - \gamma \\ 1 = \beta + 3\gamma \\ -1 = -2\gamma \end{matrix}\right.$
+   $\left\{\begin{matrix}  \alpha = \frac{1}{2} \\ \beta = \frac{-1}{2} \\ \gamma = \frac{1}{2} \end{matrix}\right.$
 5. On a donc $v = k \sqrt{\frac{G M_s}{R}}$, avec k = 1
 
 Exemple : Rayon cyclotron
@@ -147,7 +149,7 @@ Exemple : Rayon cyclotron
 3. On suppose qu'on peut écrire $R = k e^{\alpha} m_e^\beta v_0^\gamma B_0^\delta$, de dimension
    $L = k I^\alpha T^\alpha M^\beta L^\gamma T^{-\gamma} M^\delta T^{-2\delta} I^{-\delta}$
 4. On obtient le système suivant :
-   $\begin{cases} 0 = \beta + \gamma \\ 1 = \gamma \\ 0 = \alpha - \gamma -2\delta \\ 0 = \alpha - \delta \end{cases}$
+   $\left\{\begin{matrix} 0 = \beta + \gamma \\ 1 = \gamma \\ 0 = \alpha - \gamma -2\delta \\ 0 = \alpha - \delta \end{matrix}\right.$
 5. $R = k \frac{m_e v_0}{e B_0}$ avec k = 1
 
 ### Limitations

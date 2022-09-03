@@ -30,13 +30,13 @@ Vim (voir plus bas) | Local | Partiellement (coloration) | Partiellement (caract
 GitHub (lire les fichiers ici) | Online | Oui | Oui
 
 Pour lire ces notes avec une partie des symboles simplifiés, il suffit
-d'installer neovim avec le plugin
+d'installer vim avec le plugin
 [vim-markdown](https://github.com/preservim/vim-markdown) (voir guide
 d'installation sur leur page), puis d'ajouter la ligne
 ```viml
 let g:vim_markdown_math = 1
 ```
-dans le fichier ~/.config/nvim/init.vim (ou tout autre fichier de configuration
+dans le fichier ~/.vimrc (ou tout autre fichier de configuration
 selon votre environnement).
 
 N'hésitez pas à me signaler d'autres modes de visionnage des notes, plus
