@@ -59,8 +59,8 @@ De plus, $\text{P OU NON(P)} \equiv V$ (toujours vrai) (tautologie), et
 $\text{P ET NON(P)} \equiv F$ (toujours faux) (contradiction ou antilogie)
 
 #### Lois de Morgan :
-- $\text{NON}\,(P\,\text{ET}\,Q) \equiv (\text{NON}\,P) \,\text{OU}\, (\text{NON}\, Q)$
-- $\text{NON}\,(P\,\text{OU}\,Q) \equiv (\text{NON}\,P) \,\text{ET}\, (\text{NON}\, Q)$
+- $\text{NON} \, (P\,\text{ET}\,Q) \equiv (\text{NON}\,P) \,\text{OU}\, (\text{NON}\, Q)$
+- $\text{NON} \, (P\,\text{OU}\,Q) \equiv (\text{NON}\,P) \,\text{ET}\, (\text{NON}\, Q)$
 
 Vérifiable par tables de vérité.
 Exemple : Contraire de $2 \leq x \lt 3 \equiv 2 \leq \text{ET} x \lt 3$, ce qui mène avec
