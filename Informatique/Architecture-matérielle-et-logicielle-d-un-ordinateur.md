@@ -67,7 +67,7 @@ mathématiquement impossibles, bien que des programmes puissent tourner dans
 cette contradiction.
 
 En 1941, la première machine de Turing électromécanique est construite, et la
-première entièrement éléctronique, l'ENIAC, est construite en 1943, et devient
+première entièrement électronique, l'ENIAC, est construite en 1943, et devient
 programmable en 1945.
 
 ## Architecture d'un ordinateur
@@ -99,3 +99,50 @@ registres peut envoyer son résultat dans l'un des deux, voire dans un troisièm
 sur certaines architectures). Certains ont des rôles particuliers, comme le
 registre d'instruction (IR) qui contient l'instruction, ou le compteur de programme
 (PC) qui contient l'adresse en mémoire de la prochaine instruction (%rip en x86-64).
+
+## Systèmes d'exploitation
+Il existe deux familles de systèmes d'exploitation actuels : les UNIX-like et
+Windows (pourtant lointainement basé sur UNIX). Les systèmes UNIX
+(principalement GNU/Linux ou MUSL/Linux dans les systèmes embarqués) sont
+majoritaires dans tous les domaines sauf dans les ordinateurs personnels, où
+Windows est toujours en situation de quasi-monopole par ses pratiques
+commerciales et propriétaires très agressives depuis 20 ans.
+
+Un système d'exploitation prend en charge de nombreuses tâches :
+- Il met en place l'illusion d'être multitâche
+- Identifie les utilisateurs
+- Contrôle l'accès aux ressources de l'ordinateur
+- Sert de garde-fou en cas de tentative de mauvaise utilisation des ressources
+- Gère le lancement des différentes applications utilisées
+- Gère les accès des programmes aux périphériques d'entrée-sortie
+- En particulier, met en place le système de fichiers (filesystem)
+
+Le noyau de l'OS choisit quelle application est exécutée à tout instant. Lorsque
+plusieurs programme sont chargés en même temps, le noyau exécute plusieurs
+instructions pour chaque processus dans l'ordre donné par l'ordonnanceur (en
+faisant des tours, avec éventuellement plus de paramètres de calcul). Chaque
+exécution d'un portion de processus dure en général quelques dizaines de
+millisecondes.
+
+Les permissions d'accès aux programmes et aux fichiers sont définies pour chacun
+d'eux, et selon les droits des utilisateurs qui s'authentifie, il est possible
+ou non d'effectuer certaines actions (notamment la lecture, l'écriture, et
+l'exécution, parfois plus riches grâce à des modules comme SELinux). Ces droits
+sont souvent définis par utilisateurs et selon des groupes dont ils font partie.
+
+Le système de fichiers est en général hiérarchisé à la manière d'un arbre,
+fait de conteneurs (dossiers ou directories) qui en contiennent d'autres ou des
+fichiers. Celle-ci est organisée de façon à ranger certains fichiers à des
+endroits particuliers (comme les programmes exécutables, par exemple). Un
+processus peut travailler à une certaine position dans l'arborescence, et ainsi
+agir sur l'arborescence relativement (avec les dossiers et fichier plus haut et
+plus bas dans l'arborescence).
+
+## Langages de programmation
+En pratique, pour exprimer un programme à un ordinateur depuis un algorithme (ou
+pas) se fait par des langages de programmation, des syntaxes sous forme de texte
+compréhensible par un humain. Ces langages sont ensuite compilés vers du langage
+machine, ou interprétés par un interpréteur.
+Dans le premier cas, on obtient un fichier exécutable qui peut être lu par une
+architecture et un OS donné. Dans le second, les fichiers de code peuvent être
+exécutés par toutes les machines possédant un interpréteur.
