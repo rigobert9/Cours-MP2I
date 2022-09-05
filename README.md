@@ -1,7 +1,8 @@
 # Cours-MP2I
-Cours en MP2I. Ces notes sont publiquement disponibles, mais aussi
+Notes personnelles de Cours en MP2I. Ces notes sont publiquement disponibles, mais aussi
 participatives; n'hésitez pas à apporter des corrections, des additions ou vos
-propres cours à ce dépôt.
+propres cours à ce dépôt. Ces notes sont prises personnellement par des élèves,
+et ne sont pas le reflet des cours donnés par les professeurs.
 
 WIP : Deck Anki, qui sera maintenu avec des cartes tirées de ces notes, et
 éventuellement automatiquement (selon l'avancée d'un plugin python en parallèle)
