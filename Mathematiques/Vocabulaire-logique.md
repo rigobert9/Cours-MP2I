@@ -120,6 +120,7 @@ raisonnements tels que  $[ P \text{ET} (P \Rightarrow Q) ] \Rightarrow Q$ (on d�
 
 #### Opérateur de Sheffer
 Aussi appelé nand, il est représenté par $\uparrow$, et correspond à $\text{NON} ( A \text{ET} B )$
+Cet opérateur peut former un système complet.
 
 #### Équivalence
 L'assertion $P \Leftrightarrow Q$ est définie par $(P \Rightarrow Q) \text{ET} (Q \Rightarrow P)$
@@ -157,3 +158,91 @@ $\forall x \in E , P(x)$ est toujours vraie
 $\exists x \in E , P(x)$ est toujours faux
 
 Paradoxe : Soit E un ensemble non vide, que dire de la proposition $\exists x \in E , P(x) \Rightarrow (\forall y \in E , P(y))$
+
+Raccourci syntaxique : on note "il existe un unique élément de E tel que" sous
+la forme $\exists !x \in E$
+
+On note aussi "tel que" sous la forme $\mid$, / ou , . Souvent, les problêmes
+utilisant cette nomenclature nécessitent de formaliser un ensemble qui respecte
+la condition (si ce n'est pas le cas, il s'agit d'une sorte d'implication).
+
+## Raisonnements usuels
+### Raisonnement direct
+Pour montrer un théorème do la forme $H \implies C$ (H : "hypothèse", C :
+"conclusion"), on suppose que H est vraie et on procède par des déductions
+successives : $H \implies P_1 ;\: P_1 \implies P_2 ; \ldots ;\: P_k \implies C$,
+donc C est vraie.
+
+Pour appliquer une règle, on applique la formule du *modus ponens*, qui revient
+à $(A \,\text{ET}\, (A \implies B)) \implies B$ 
+
+### Raisonnement par disjonction de cas
+Pour montrer un énoncé P, on effectue une disjonction de cas selon qu'un autre
+énoncé Q est réalisé ou non. Avec les 2 cas :
+- Si $Q$ est vraie, alors ... , donc $P$
+- Si $\,\text{NON}\,Q$ est vraie, alors ... , donc $P$
+De façon logique, on a la règle : (avec P qui dépend forcément de Q)
+$[(Q \implies P) \,\text{ET}\, (\,\text{NON}\,Q \implies P)] \implies P$ 
+
+La disjonction de cas s'utilise dans de nombreux cas avec des possibilités limitées et
+exhaustifs.
+
+### Raisonnement par l'absurde
+Pour montrer un énoncé $P$, on suppose $\,\text{NON}(P)$ et on en déduit une
+contradiction (toujours fausse), ce qui se résume par :
+$[\text{NON}(P) \implies \text{Faux}] \equiv P$
+
+Exemple : On veut montrer $\forall n \in  \mathbb{N}^{\ast}, n^2 + 1 \ne p^2$ (cet
+énoncé se trouve souvent sous la forme "il n'existe pas", et peut se traduire
+par un quantificateur universel avec une opération négative).
+On suppose que $\exists  n \in  \mathbb{N}^{\ast}, n^2 = p^2$ (ce qui nous intéresse
+avec cette méthode n'est pas tant l'existence de x que de l'utiliser dans
+d'autres opération pour aboutir à une contradiction). Ainsi, on a $1 = p^2 - n^2
+= (p - n)(p + n)$, or $p > n$ (car $p^2 = n^2 + 1 > n^2$ et $n, p \ge 1$).
+Ainsi, $p-m \in \mathbb{N} \,\text{ET}\, p + m \in \mathbb{N}$, donc $p - m = p + m = 1$, alors
+ $n = 0$, ce qui est contraire à l'hypothèse.
+En conclusion,  $\text{NON}(\exists p \in \mathbb{N}, n^2 + 1 = p^2)$ est vraie par
+tiers exclu.
+
+### Raisonnment par contraposée
+Pour montrer $P \implies Q$, on peut montrer sa contraposée $(\text{NON}\, Q) \implies (\text{NON}\, P)$ 
+
+Exemple : Soit $a \in \mathbb{R}$. Montrer $(a = 0) \Leftrightarrow \forall \varepsilon > 0, |a| \le \varepsilon$
+On raisonne par double implication : Si $|a| = 0$, soit $\varepsilon > 0$, alors
+$|a| = 0 \le  \varepsilon$.
+On a bien $(a = 0) \implies (\forall \varepsilon > 0, |a| \le  \varepsilon)$
+Raisonnons par contraposée. On cherche à montrer :
+$(a \neq 0) \implies (\exists \varepsilon > 0, |a| > \varepsilon)$
+Supposons $a \neq  0$, et posons $\varepsilon = \frac{|a|}{2}$, on a bien
+$\varepsilon > 0$ et $\varepsilon = \frac{|a|}{2} < |a|$. On peut conclure que
+$\forall \varepsilon > 0, |a| \le \varepsilon$.
+
+### Raisonnement par équivalence
+Montrer $P \Leftrightarrow Q$. Généralement, en fait une double implication ( $P \implies Q \,\text{ET}\, Q \implies P$ )
+
+Exemple : Résolution d'équation ou d'inéquation, on écrit
+$f(x) = 0 \Leftrightarrow \ldots \Leftrightarrow x = 1 \,\text{OU}\, x = -3$ 
+
+### Raisonnement par Analyse-Synthèse : "Trouver toutes les solutions du problème"
+On va d'abord supposer qu'une solution existe et trouver une expression plus
+explicite, c'est-a-dire des **conditions nécessaires** (phase d'analyse du
+problème) (on trouve que $P \implies Q$).
+Ensuite, on part de ces conditions pour vérifier qu'elles sont suffisantes, et
+on utilise les conditions trouvées pour essayer d'atteindre la condition
+originale (phase de synthèse du problême) (On montre que $Q \implies P$, donc
+que $P \Leftrightarrow Q$).
+
+Notation : Les fonctions de $\mathbb{R}$ dans $\mathbb{R}$ se notent $F(\mathbb{R}, \mathbb{R}) ou \mathbb{R}^{\mathbb{R}}$
+
+Exemple : Montrer que la fonction exponentielle s'écrit de manière unique comme
+la somme d'une fonction paire et d'un fonction impaire (g est le cosinus
+hyperbolique et h le sinus hyperbolique).
+On veut montrer que $\exists !(g,h) \in F(\mathbb{R},\mathbb{R})^2$ tel que
+$\forall x \in \mathbb{R}, \left{\begin{matrix} g(-x) = g(x) \\ h(-x) = -h(x) \\ \exp(x) = g(x) + h(x) \end{matrix}\right.$
+Analyse : Supposons g paire, h impaire telles que exp = g + h.
+Ainsi, $\forall k inn \mathbb{R}, e^x = g(x) + f(x)$.
+Alors, $\forall x \in \mathbb{R}, e^{-x} = g(x) - h(x)$, donc $e^x + e^{-x} =2g(x)$
+et $e^x - e^{-x} = 2h(x)$.
+On peut conclure que $\forall x \in  \mathbb{R}, \left{\begin{matrix} g(x) = \frac{1}{2} (e^x + e^{-x}) \\ h(x) = \frac{1}{2} (e^x - e^{-x}) \end{matrix}\right.$
+On prouve ainsi l'unicité de ces deux fonctions.
+...
