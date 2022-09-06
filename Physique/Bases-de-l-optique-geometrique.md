@@ -66,7 +66,7 @@ La formule est donc notée $n_{\text{milieu}} = \frac{c}{c_{\text{milieu}}}$
 Valeurs courantes:
 - $n_{\text{air}} = 1.00$ (commence à changer à partir de la quatrième décimale)
 - $n_{\text{eau}} = 1.33$
-- $n_{\text{verre}} = 1.5 \text{à} 1.8$ 
+- $n_{\text{verre}} = 1.5 \text{à} 1.8$
 
 #### Milieu dispersif
 La fréquence $\nu$ d'un onde électromagnétique est indépendante du milieu
@@ -87,18 +87,18 @@ or $n_{\text{milieu}} = \frac{c}{c_{\text{milieu}}}$, donc $\lambda_{\text{milie
 
 Sa longueur d'onde $\lambda_{\text{milieu}}$ dans un milieu d'indice optique $n_{\text{indice milieu}}$ 
 
-Propriété : $\lambda_{milieu} = \frac{\lambda_{onde}}{n_{milieu}}$ 
+Propriété : $\lambda_{milieu} = \frac{\lambda_{onde}}{n_{milieu}}$
 
 ## Modèle de l'optique géométrique
 ### Notion de rayon lumineux
 > Un rayon lumineux matérialise la propagation de la lumière. On le représente
-> par un trait muni d'un flèche qui indique le sens de propagation de la lumière
+> par un trait muni d'une flèche qui indique le sens de propagation de la lumière
 
 ### Cadre de l'optique géométrique
 On suppose que les milieux traversés sont :
 - Transparents
 - Homogènes
-- Isotrope (même propriétés dans toutes les directions)
+- Isotropes (même propriétés dans toutes les directions)
 
 #### Propagation en ligne droite
 On ne tient pas compte du caractère ondulatoire de la lumière.
