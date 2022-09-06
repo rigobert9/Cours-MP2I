@@ -281,7 +281,7 @@ Soient $m,n,p \in \mathbb{N}$ :
 - $b + p = n + p \implies m = n$
 - $p \neq 0 \,\text{ET}\,mp = np \implies m = n$
 - $mn = 0 \implies (m = 0) \,\text{OU}\,(n = 0)$
-- $mn = 1 \implies m = n$
+- $mn = 1 \implies m = n = 1$
 
 Relation d'ordre sur $\mathbb{N}$ : $\mathbb{N}$ est muni d'un ordre total $\leq$ qui vérifie les
 propriétés :
