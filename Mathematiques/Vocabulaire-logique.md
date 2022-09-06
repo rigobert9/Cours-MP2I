@@ -279,7 +279,7 @@ multiplication ($\times$) (opérations qui ne peuvent pas sortir de l'ensemble)
 
 Soient $m,n,p \in \mathbb{N}$ :
 - $b + p = n + p \implies m = n$
-- $p \neq 2 \,\text{ET}\,mp = np \implies m = n$
+- $p \neq 0 \,\text{ET}\,mp = np \implies m = n$
 - $mn = 0 \implies (m = 0) \,\text{OU}\,(n = 0)$
 - $mn = 1 \implies m = n$
 
