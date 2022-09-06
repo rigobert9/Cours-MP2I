@@ -234,18 +234,24 @@ que $P \Leftrightarrow Q$).
 
 Notation : Les fonctions de $\mathbb{R}$ dans $\mathbb{R}$ se notent $F(\mathbb{R}, \mathbb{R}) ou \mathbb{R}^{\mathbb{R}}$
 
-###### Exemple : Montrer que la fonction exponentielle s'écrit de manière unique comme
+###### Exemple
+Montrer que la fonction exponentielle s'écrit de manière unique comme
 la somme d'une fonction paire et d'un fonction impaire (g est le cosinus
 hyperbolique et h le sinus hyperbolique).
 On veut montrer que $\exists !(g,h) \in F(\mathbb{R},\mathbb{R})^2$ tel que
 $\forall x \in \mathbb{R}, \left{\begin{matrix} g(-x) = g(x) \\ h(-x) = -h(x) \\ \exp(x) = g(x) + h(x) \end{matrix}\right.$
+
 Analyse : Supposons g paire, h impaire telles que exp = g + h.
 Ainsi, $\forall k inn \mathbb{R}, e^x = g(x) + f(x)$.
 Alors, $\forall x \in \mathbb{R}, e^{-x} = g(x) - h(x)$, donc $e^x + e^{-x} =2g(x)$
 et $e^x - e^{-x} = 2h(x)$.
 On peut conclure que $\forall x \in  \mathbb{R}, \left{\begin{matrix} g(x) = \frac{1}{2} (e^x + e^{-x}) \\ h(x) = \frac{1}{2} (e^x - e^{-x}) \end{matrix}\right.$
-On prouve ainsi l'unicité de ces deux fonctions.
-...
+On prouve ainsi l'unicité de ces deux fonctions (sous réserve d'existence).
+
+Synthèse : On vérifie que h est impaire, g est paire, et h + g = exp
+$g(-x) = \frac{e^{-x} + e^{x}}{2} = g(x)$ (donc bien paire)
+$h(-x) = \frac{e^{-x} - e^{x}}{2} = -h(x)$ (donc bien impaire)
+$g(x) + h(x) = \frac{1}{2}(2e^x) = e^x$
 
 ###### Exemple : Trouver tous les couples $(n, z) \in \mathbb{Z} \times \mathbb{C}$
 tels que $z^n = (z-1)^n = 1$
