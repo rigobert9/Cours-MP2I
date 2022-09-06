@@ -165,3 +165,25 @@ cette dernière est invisible à l'analyse dimensionnelle.
 Exemple : Dans le cas où une grandeur dépend d'une fonction sans dimension
 (comme dans le cas du balancement d'un pendule, celui-ci dépend de l'amplitude
 angulaire $f(\theta)$ ).
+
+## Formules de base pour l'analyse dimensionnelle
+### Mécanique
+Vitesse : $v = \frac{d}{t}$
+Accélération : $a = \frac{v}{t}$
+Deuxième loi de Newton : $F = ma$
+Poids : $P = mg$
+### Électricité
+Force électrostatique : $F = qE$
+Champ électrique : $E = \frac{U}{d}$
+Loi d'ohm : $U = RI$
+Intensité :  $I = \frac{dq}{dt} = \frac{Q}{t}$
+Puissance : $P = UI = RI^2$
+Champ électrique :  $E = P \bigtriangleup t$
+Condensation : $q = C U_c$ (C la capacité, une énergie, et $U_c$ la tension du
+condensateur)
+Tension de la bobine : $U_l = L \frac{d_i}{d_t}$
+### Ondes
+Fréquence : $f = \frac{1}{t}$
+Longueur d'onde : $\lambda = cT = \frac{c}{f}$
+### Autres
+Énergie : $E = m c^2$
