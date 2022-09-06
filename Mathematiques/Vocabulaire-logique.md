@@ -349,7 +349,7 @@ Cf invariant de boucle
 
 #### Récurrence double
 - initialisation : $P(0) et P(1)$ vraies
-- hérédité : $\forall n \in \mathbb{N}, (P(n) et P(n+1)) \implies P(n+2)$
+- hérédité : $\forall n \in \mathbb{N}, (P(n) \land P(n+1)) \implies P(n+2)$
 - conclusion : $\forall n \in  \mathbb{N}, P(n)$
 
 #### Récurrence forte
