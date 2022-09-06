@@ -353,7 +353,7 @@ Cf invariant de boucle
 - conclusion : $\forall n \in  \mathbb{N}, P(n)$
 
 #### Récurrence forte
-- initialisation : $P(0) vraie$
+- initialisation : $P(0)$ vraie
 - hérédité : $\forall n\in \mathbb{N}, [P(0) \land P(1) \land \ldots \land P(n)] \implies P(n+1)$
 - conclusion : $\forall n \in \mathbb{N}, P(n)$
 
