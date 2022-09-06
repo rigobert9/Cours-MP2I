@@ -14,7 +14,7 @@ Une phrase mathématique est une phrase contenant :
 - des connecteurs logiques (opérations booléennes, implication, équivalence);
 - des quantificateurs (universels ou quantitatifs), comme $\exists$ et $\forall$
 
-Exemple : "Pour tout réel x, x est un carré", soit $\forall x \in \mathbb{R} , \exists y \in \mathbb{R} , x = y^2$
+###### Exemple : "Pour tout réel x, x est un carré", soit $\forall x \in \mathbb{R} , \exists y \in \mathbb{R} , x = y^2$
 Cette assertion est d'ailleurs fausse (du moins pour y réel), et comme le quantificateur est universel, il suffit de produire un contre-exemple (x = -1)
 Une assertion vraie serait $\forall x \in \mathbb{R}^{+} , \exists y \in \mathbb{R} , x = y^2$
 Une autre est $\forall z \in \mathbb{C} , \exists z' \in \mathbb{C} , (z')^2 = z$
@@ -25,7 +25,7 @@ Les variables introduites dans une assertion doivent être quantifiées
 > Principe de tiers exclus : pour toute assertion P, on a que l'assertion P est vraie ou que l'assertion (non P) est vraie (!P, not(P)).
 > Ainsi, toute assertion est vraie ou fausse.
 
-Exemple : $\forall (a, b) \in \mathbb(R)^2, ab = 0 \Rightarrow (a = 0, b = 0)$
+###### Exemple : $\forall (a, b) \in \mathbb(R)^2, ab = 0 \Rightarrow (a = 0, b = 0)$
 Soient a et b deux réels tels que ab = 0, par disjonction de cas:
 - si a = 0, alors (a = 0 ou b = 0) est vraie
 - sinon, $a \ne 0$. Or ab = 0, donc b = 0, donc (a = 0, b = 0) est vraie.
@@ -54,7 +54,7 @@ NON        | 1   | 0
 
 Un exemple d'équivalence est deux programmes, écrits éventuellement différement mais qui fournissent toujours le même résultat pour la même entrée
 
-Exemple : $\text{NON (NON P)} \equiv P$ car leurs tables de vérité sont identiques.
+###### Exemple : $\text{NON (NON P)} \equiv P$ car leurs tables de vérité sont identiques.
 De plus, $\text{P OU NON(P)} \equiv V$ (toujours vrai) (tautologie), et
 $\text{P ET NON(P)} \equiv F$ (toujours faux) (contradiction ou antilogie)
 
@@ -63,7 +63,7 @@ $\text{P ET NON(P)} \equiv F$ (toujours faux) (contradiction ou antilogie)
 - $\text{NON} \, (P\,\text{OU}\,Q) \equiv (\text{NON}\,P) \,\text{ET}\, (\text{NON}\, Q)$
 
 Vérifiable par tables de vérité.
-Exemple : Contraire de $2 \leq x \lt 3 \equiv 2 \leq \text{ET} x \lt 3$, ce qui mène avec
+###### Exemple : Contraire de $2 \leq x \lt 3 \equiv 2 \leq \text{ET} x \lt 3$, ce qui mène avec
 les lois de Morgan à $(\text{NON}2 \leq x) \text{OU} (\text{NON}x \lt 3) \equiv (2 \gt x) \text{OU} (x \gt 3)$
 
 #### Propriétés triviales (vérifiables par tables de vérité) :
@@ -192,7 +192,7 @@ Pour montrer un énoncé $P$, on suppose $\,\text{NON}(P)$ et on en déduit une
 contradiction (toujours fausse), ce qui se résume par :
 $[\text{NON}(P) \implies \text{Faux}] \equiv P$
 
-Exemple : On veut montrer $\forall n \in  \mathbb{N}^{\ast}, n^2 + 1 \ne p^2$ (cet
+###### Exemple : On veut montrer $\forall n \in  \mathbb{N}^{\ast}, n^2 + 1 \ne p^2$ (cet
 énoncé se trouve souvent sous la forme "il n'existe pas", et peut se traduire
 par un quantificateur universel avec une opération négative).
 On suppose que $\exists  n \in  \mathbb{N}^{\ast}, n^2 = p^2$ (ce qui nous intéresse
@@ -207,7 +207,7 @@ tiers exclu.
 ### Raisonnment par contraposée
 Pour montrer $P \implies Q$, on peut montrer sa contraposée $(\text{NON}\, Q) \implies (\text{NON}\, P)$ 
 
-Exemple : Soit $a \in \mathbb{R}$. Montrer $(a = 0) \Leftrightarrow \forall \varepsilon > 0, |a| \le \varepsilon$
+###### Exemple : Soit $a \in \mathbb{R}$. Montrer $(a = 0) \Leftrightarrow \forall \varepsilon > 0, |a| \le \varepsilon$
 On raisonne par double implication : Si $|a| = 0$, soit $\varepsilon > 0$, alors
 $|a| = 0 \le  \varepsilon$.
 On a bien $(a = 0) \implies (\forall \varepsilon > 0, |a| \le  \varepsilon)$
@@ -220,21 +220,21 @@ $\forall \varepsilon > 0, |a| \le \varepsilon$.
 ### Raisonnement par équivalence
 Montrer $P \Leftrightarrow Q$. Généralement, en fait une double implication ( $P \implies Q \,\text{ET}\, Q \implies P$ )
 
-Exemple : Résolution d'équation ou d'inéquation, on écrit
+###### Exemple : Résolution d'équation ou d'inéquation, on écrit
 $f(x) = 0 \Leftrightarrow \ldots \Leftrightarrow x = 1 \,\text{OU}\, x = -3$ 
 
 ### Raisonnement par Analyse-Synthèse : "Trouver toutes les solutions du problème"
 On va d'abord supposer qu'une solution existe et trouver une expression plus
-explicite, c'est-a-dire des **conditions nécessaires** (phase d'analyse du
+explicite, c'est-à-dire des **conditions nécessaires** (phase d'analyse du
 problème) (on trouve que $P \implies Q$).
 Ensuite, on part de ces conditions pour vérifier qu'elles sont suffisantes, et
 on utilise les conditions trouvées pour essayer d'atteindre la condition
-originale (phase de synthèse du problême) (On montre que $Q \implies P$, donc
+originale (phase de synthèse du problème) (On montre que $Q \implies P$, donc
 que $P \Leftrightarrow Q$).
 
 Notation : Les fonctions de $\mathbb{R}$ dans $\mathbb{R}$ se notent $F(\mathbb{R}, \mathbb{R}) ou \mathbb{R}^{\mathbb{R}}$
 
-Exemple : Montrer que la fonction exponentielle s'écrit de manière unique comme
+###### Exemple : Montrer que la fonction exponentielle s'écrit de manière unique comme
 la somme d'une fonction paire et d'un fonction impaire (g est le cosinus
 hyperbolique et h le sinus hyperbolique).
 On veut montrer que $\exists !(g,h) \in F(\mathbb{R},\mathbb{R})^2$ tel que
@@ -246,3 +246,113 @@ et $e^x - e^{-x} = 2h(x)$.
 On peut conclure que $\forall x \in  \mathbb{R}, \left{\begin{matrix} g(x) = \frac{1}{2} (e^x + e^{-x}) \\ h(x) = \frac{1}{2} (e^x - e^{-x}) \end{matrix}\right.$
 On prouve ainsi l'unicité de ces deux fonctions.
 ...
+
+###### Exemple : Trouver tous les couples $(n, z) \in \mathbb{Z} \times \mathbb{C}$
+tels que $z^n = (z-1)^n = 1$
+On a donc un système $\left{\begin{matrix} z^n = 1 \\ (z-1)^n = 1 \end{matrix}\right.$
+Par analyse, soit $\exists (n, z) \in \mathbb{Z} \times \mathbb{C} \mid z^n = (z-1)^n = 1$, on recherche des particularités de n et z.
+On sait tout d'abord que n = 0 fonctionne.
+On recherche des modules et arguments de z qui permettent de faire fonctionner
+cette relation. Avec $n \in  \mathbb{Z}, n \neq 0$, $|z^n| = |1|$, donc  $|z|^n = 1$
+Comme $|z| \in \mathbb{R}^{\ast}_{+}$ (on peut donc lui appliquer des
+logarithmes). Ainsi, $\ln(|z|^n) = \ln(1)$, donc $n \ln(|z|) = 0$, donc $|z| = 1$,
+soit z est sur le cercle de centre 0 et de rayon 1.
+De même, $(z-1)^n = 1$, donc $|z-1| = 1$, donc z est sur le cercle de centre 1
+et de rayon 1.
+z est à l'intersection des deux cercles, donc $\Re(z) = \frac{1}{2}$ et
+$\Im(z) = \pm \frac{\sqrt{3}}{2}$, donc $arg(z) = \pm \frac{\pi}{3}$ (modulo
+$2\pi$), donc $z = e^{\pm i \frac{\pi}{3}} = \frac{1}{2} \pm i \frac{\sqrt{3}}{2}$ 
+On continue l'analyse en cherchant n. $(e^{i \frac{\pi}{3}})^n = e^{i \frac{n\pi}{3}}$, or on veut
+$z^n = 1$. Il faut que  $e^{i\frac{n\pi}{3}} = 1$, donc $\frac{n\pi}{3} \equiv0[2\pi]$, donc $n \equiv 0[6]$.
+$\frac{n\pi}{3} = 2\pi k$ avec $k \in \mathbb{Z}$, donc n = 6k.
+De même, $(e^{i\frac{i\pi}{3}} -1)^{6k} =  (e^{i\frac{i\pi}{3}} -1)^{6k}$
+
+Si $z^n = (z-1)^n = 1$, en conjugant, on trouve que $\overline{z}$ est aussi
+solution.
+On vérifie l'équivalence par synthèse, et on conclut :
+$(n,z) \in  {0} \times \mathbb{C} \cup {6k, e^{\pm i \frac{\pi}{3}}, k \in \mathbb{Z}^{\ast}}$
+
+## Les entiers naturels et la récurrence
+### L'ensemble $\mathbb{N}$
+On suppose construit $\mathbb{N}$ avec ses opérations addition (+) et
+multiplication ($\times$) (opérations qui ne peuvent pas sortir de l'ensemble)
+
+Soient $m,n,p \in \mathbb{N}$ :
+- $b + p = n + p \implies m = n$
+- $p \neq 2 \,\text{ET}\,mp = np \implies m = n$
+- $mn = 0 \implies (m = 0) \,\text{OU}\,(n = 0)$
+- $mn = 1 \implies m = n$
+
+Relation d'ordre sur $\mathbb{N}$ : $\mathbb{N}$ est muni d'un ordre total $\leq$ qui vérifie les
+propriétés :
+1. Toute partie non vide de $\mathbb{N}$ admet un plus petit élément
+2. Toute partie non vide majorée de $\mathbb{N}$ admet un plus grand élément
+3. $\mathbb{N}$ ne possède pas de plus grand élément
+
+Remarque : $\mathbb{N}$ étant une partie non vide de $\mathbb{N}$, elle admet un
+plus petit élément, noté 0
+
+- Soit $n \in \mathbb{N}$, prenons $A = {p \in \mathbb{N} \mid p > n}$. A est
+  une partie non vide de $\mathbb{N}$, donc elle admet un plus petit élément,
+  qui est ici n+1
+
+##### Exemple : Il n'existe pas de suite infinie d'entiers naturels strictement décroissante.
+Par l'absurde, donnons une suite $(u_n)_{n \in \mathbb{N}}$, avec $\forall n \in \mathbb{N}, u_n \in \mathbb{N}n \,\text{ET}\, u_{n+1) < u_n}$.
+Prenons $A = {u_{n}, n \in \mathbb{N}}$ (l'ensemble des termes de la suite). A
+étant une partie non vide de $\mathbb{N}$, elle admet un plus petit élément :
+$\exists p \in \mathbb{N}, u_p \in A \,\text{ET}\,u_p = min A$, donc
+$\forall n \in \mathbb{N}, u_p \leq u_{n}$. Or u étant décroissante, $u_{p+1} < u_p$
+et avec $n = p+1, u_p \leq u_{p+1}$, ce qui est absurde
+
+### Récurrence
+Pour montrer un énoncé de la forme $[\forall n \in \mathbb{N}, P(n)]$
+__Thèse__ (récurrence) : Soit P un prédicat défini sur $\mathbb{N}$.
+Si $P(0)\,\text{(Initialisation)}\,\text{ET}\,[\forall n \in \mathbb{N}, P(n) \implies P(n+1)]\,\text{(Hérédité)}$
+alors $[\forall n \in  \mathbb{N}, P(n)]$.
+
+__Preuve__ : On suppose (I) et (H) (les propositions ci-dessus). Par l'absurde,
+supposons $\exists n_0 \in \mathbb{N}, \,\text{NON}\,P(n_0)$.
+Soit $A = $
+
+Ainsi, P(p) est fausse, or P(0) est vraie (I), donc $p \geq 1$, donc $p - 1 \in \mathbb{N}$.
+Comme $p = min A$, alors $p-1 \not\in A$ alors $P(p-1)$ est vraie.
+Enfin par (H), $[P(p-1) \implies P(p)]$ est vraie, on en conclut que P(p) est
+vraie, ce qui est absurde.
+
+###### Exemple
+$\forall n \in \mathbb{N}, \sum\limits_{k=0}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$
+Raisonnons par récurrence par n.
+Initialisation : Au rang 0, $\sum\limits_{k = 2}^{0}k^2 = 0$ et $0 \times \ldots = 0$
+Hérédité : Soit $n \in  \mathbb{N}$ tel que $\sum\limits_{k = 0}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$.
+$\sum\limits_{k=0}^{n+1}k^2 = (\sum\limits_{k=0}^{n}k^2) + (n+1)^2$
+$= \frac{n(n+1)(2n+1)}{6} + (n+1)^2$
+$= \frac{n+1}{6} [n(2n+1) + 6(n+1)]$
+$= \frac{n+1}{6} [2n^2 + 7n + 6]$
+$= \frac{n+1}{6} (n+2)(2n+3)$, ce qui prouve $P(n+1)$
+On en conclut qu'on a prouvé ce résultat par récurrence pour tout n.
+
+### Variantes du raisonnement par récurrence
+#### Récurrence à partir d'un rang $n_0$
+- initialisation : $P(n_0) vraie$
+- hérédité : $\forall n \geq n_0, P(n) \implies P(n+1)$
+- conclusion : $\forall n \geq n_0, P(n)$
+
+#### Récurrence finie
+On se fixe N, et on veut prouver $\forall n \in  [O,N]_{\mathbb{N}}, P(n)$
+- initialisation : $P(n_O)$ vraie
+- hérédité : $\forall n \in [O, N-1]_{\mathbb{N}}, P(n) \implies P(n+1)$
+- conclusion : $\forall n \in [O, N+1]_{\mathbb{N}}, P(n)$
+
+Cf invariant de boucle
+
+#### Récurrence double
+- initialisation : $P(0) et P(1)$ vraies
+- hérédité : $\forall n \in \mathbb{N}, (P(n) et P(n+1)) \implies P(n+2)$
+- conclusion : $\forall n \in  \mathbb{N}, P(n)$
+
+#### Récurrence forte
+- initialisation : $P(0) vraie$
+- hérédité : $\forall n\in \mathbb{N}, [P(0) \land P(1) \land \ldots \land P(n)] \implies P(n+1)$
+- conclusion : $\forall n \in \mathbb{N}, P(n)$
+
+L'hérédité peut aussi se noter $\forall n\in \mathbb{N}, [\forall k \in [0, N]_{\mathbb{N}}, P(k)] \implies P(n+1)$

@@ -76,7 +76,7 @@ qu'elle traverse (mais la vitesse peut changer).
 > de l'onde électromagnétique le traversant. Dans ce cas, $n_{\text{milieu}}$ dépend
 > aussi de $\nu$.
 
-Exemple : le verre est un milieu dispersif, c'est pourquoi chaque couleur de la
+###### Exemple : le verre est un milieu dispersif, c'est pourquoi chaque couleur de la
 lumière a une vitesse différente selon sa fréquence. On peut lier cette relation
 par la loi de Cauchy, $n_{lambda} = A + \frac{B}{\lambda^2}$ (A et B déterminés
 expérimentalement).
