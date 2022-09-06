@@ -312,7 +312,9 @@ alors $[\forall n \in  \mathbb{N}, P(n)]$.
 
 __Preuve__ : On suppose (I) et (H) (les propositions ci-dessus). Par l'absurde,
 supposons $\exists n_0 \in \mathbb{N}, \,\text{NON}\,P(n_0)$.
-Soit $A = $
+Soit $A = {n \in \mathbb{N} \mid \neg P(n)}$, A doit admettre un plus petit
+élément, puisque A doit être non vide. Il admet alors un élément p, tel que
+$p \geq n_0$
 
 Ainsi, P(p) est fausse, or P(0) est vraie (I), donc $p \geq 1$, donc $p - 1 \in \mathbb{N}$.
 Comme $p = min A$, alors $p-1 \not\in A$ alors $P(p-1)$ est vraie.
