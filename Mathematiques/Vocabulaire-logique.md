@@ -364,3 +364,74 @@ Cf invariant de boucle
 - conclusion : $\forall n \in \mathbb{N}, P(n)$
 
 L'hérédité peut aussi se noter $\forall n\in \mathbb{N}, [\forall k \in [0, N]_{\mathbb{N}}, P(k)] \implies P(n+1)$
+
+###### Exemple : Récurrence sur une suite (récurrence double)
+Soit $F(n)_{n \in \mathbb{N}}"$ la suite de Fibonacci, définie par
+$\left{\begin{matrix} F_0 = 0, F_1 = 1 \\ \forall n \in \mathbb{N}, F_{n+2} = F_{n+1} + F_n \end{matrix}\right.$.
+On pose $\phi = \frac{1+\sqrt{5}}{2}$ et $\psi = \frac{1-\sqrt{5}}{2}$.
+On cherche à montrer que $\forall n \in \mathbb{N}, F(n) = \frac{\phi^n - \psi^n}{\sqrt{5}}$.
+On note $P(n) : F(n) = \frac{\phi^n - \psi^n}{\sqrt{5}}$. Par récurrence double :
+- Initialisation : $\frac{\phi^0 - \psi^0}{\sqrt{5}} = 0 = F_0$ et
+  $\frac{\phi - \psi}{\sqrt{5}} = \frac{\sqrt{5}}{\sqrt{5}} = 1 = F_1$.
+  Remarque : $\phi + \psi = 1$ et $\psi \times \phi =
+  \frac{(1-\sqrt{5})(1+\sqrt{5})}{4} = -1$. Le polynôme $(x-\phi)(x-\psi)$ a
+  pour racines $\phi$ et $\psi$, or $(x-\phi)(x-\psi) = x^2 - (\phi + \psi)x + \psi\phi = x^2 - x - 1$.
+  Ainsi, $\phi$ et $\psi$ sont les racines du polynôme $x^2 - x - 1$, et on a
+  donc $\phi^2 - \phi - 1 = 0$ et $\psi^2 - \psi - 1$.
+- Hérédité : Soit $n \in \mathbb{N}$ tel que $P(n)$ et $P(n+1)$, alors
+  $F_{n+2} = F_{n+1} + F_n = \frac{\phi^{n+1} - \psi^{n+1}}{\sqrt{5}} + \frac{\phi^{n}-\psi^n}{\sqrt{5}}$
+  $= \frac{1}{\sqrt{5}} [\phi^n \times (\phi + 1) - \psi^n \times (\psi + 1)]$,
+  or $\phi + 1 = \phi^2$ et $\psi + 1 = \psi^2$, donc
+  $= \frac{1}{\sqrt{5}}(\phi^{n+2} - \psi^{n+2})$ d'où $P(n+2)$ (conclusion).
+
+###### Exemple : somme de tous les termes précédents (récurrence forte)
+Soit $(u_{n \in \mathbb{N}})$ définie par $\left{\begin{matrix} u_0 = 1 \\ \forall n \in \mathbb{N}, u_{n+1} = \sum\limits_{k=0}^n u_k \end{matrix}\right.$,
+on cherche à donner $u_n$ en fonction de n.
+On conjecture le résultat $u_n = 2^{n-1}$ avec $n \geq 1$ à partir du calcul,
+bien que cette formule ne fonctionne pas pour 0, qui est un cas particulier.
+On montre par récurrence forte :
+- Initialisation : $u_1 = 2^0 = 1$
+- Hérédité : Soit $n \in \mathbb{N}^{\ast}$ tel que $P(1) \land P(2) \land \ldots \land P(n)$,
+  $\forall k \in [1,n]_{\mathbb{N}}, u_k = 2^{k-1}$.
+  Alors, $u_{n+1} = \sum\limits_{k=1}^{n} u_k = u_0 + \sum\limits_{k = 1}^{n} 2^{k-1}$
+  $= 1 + (2^0 + 2^1 + \ldots + 2^{n-1}) = 1 = \frac{1 - 2^n}{1-2} = 1 + 2^n - 1$
+  $= 2^n$, d'oû $P(n+1)$ est vraie.
+- Conclusion : la proposition originale est bien vraie.
+
+Méthode 2 : $\forall n \in \mathbb{N}, u_{n+1} = \sum\limits_{k = 0}^{n} u_k$
+$= (\sum\limits_{k = 0}^{n-1} u_k) + u_{n} = 2u_{n}$.
+Ici, $\left{\begin{matrix} U_1 = 1 \\ \forall n \geq 1, u_{n+1} = 2u_{n} \end{matrix}\right.$,
+qui est une suite géométrique de raison 2, soit
+$\forall n \geq 1, u_{n} = 2^{n-1} \times u_1 = 2^{n-1}$, ce qui nous permet de
+conclure de la mêbe façon que la première méthode.
+
+###### Exemple : récurrence avec une variable
+On cherche à montrer que $\forall x > -1, \forall n \in \mathbb{N}, (1+x)^n \geq 1 + nx$.
+On montre par récurrence simple $P(n) : \forall x > -1, (1+x)^n \geq 1 + nx$
+- Initialisation : Pour $x > -1$, $(1+x)^0 = 1 \geq 1$, donc $P_0$ est vraie
+- Hérédité : Soit $n \in \mathbb{N}$ tel que $P(n)$, pour $x > -1, (1+x)^n \geq 1 + nx$,
+  or $1 + x > 0$, donc $(1 + x) \times (1 + x)^n \geq (1 + x) \times (1+nx)$,
+  donc $(1 + x)^{n+1} \geq 1 + x + nx + nx^2$, et sachant que $nx^2 \geq 0$,
+  on a $(1 + x)^{n+1} \geq 1 + (n+1)x$, donc $P(n+1)$ est vérifiée.
+- Conclusion : par récurrence simple, $\forall n \in \mathbb{N} P(n)$
+
+###### Exemple : littéraire
+On cherche à montrer que dans une trousse, tous les crayons sont de la même
+couleur. Soit $P(n) : \text{"Dans toute trousse à n crayons, tous les crayons sont de la même couleur"}$
+On montre par récurrence :
+- Initialisation : $n=1$, Dans une trousse à 1 crayon tous sont de la même
+  couleur, donc $P_1$
+- Hérédité : Soit $n \geq 1$ tel que $P(n)$ est vraie, on cherche à montrer $P(n+1)$.
+  Soit une trousse à (n+1) crayons $C_1, C_2, \ldots, C_{n+1}$. On prend $(C_1, \ldots C_n)$.
+  C'est une trousse à n crayons, danc par $P_n$, ils sont de la même couleur. En
+  prenant $(C_2, \ldots, C_{n+1})$, c'est aussi ine trousse à n crayons, donc
+  ils sont tous de la même couleur (par $P(n)$).
+  Or $C_n$ est dans les deux trousses, donc tous sont de la même couleur, donc
+  $P(n+1)$ est vraie.
+
+On ne peut néanmoins pas conclure, car l'hérédité ne peut pas être appliquée
+avant $n \geq 2$, puisque sinon il n'y a pas de crayon commun entre les deux
+parties.
+
+On observe ainsi que si l'on ne peut pas établir de lien entre l'initialisation
+et l'hérédité, le raisonnement ne peut conclure.
