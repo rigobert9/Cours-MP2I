@@ -78,11 +78,38 @@ entrée et en sortie, parfois à travers des périphériques; et une mémoire qu
 contient les données récupérées et utilisées.
 Les deux unités, contrôle et logique, forment aujourd'hui le processeur.
 
+### Mémoire
 La mémoire est organisée en adresses, qui correspondent à des cases de la
 mémoire physique, organisée en pratique en bytes (8 bits) et en pratique
 aujourd'hui en mot (maintenant de 64 bits). La mémoire n'effectue pas de
 calculs, n'a pas de sens a priori (l'information entrée n'a pas de sens à même
-la mémoire). Les adresses de mémoire sont à accès direct, à partir de leur
+la mémoire).
+
+Ainsi, à partir du code C suivant, on peut constater l'interprétation en divers
+types de base d'un octet de la forme 10010011 nous donne :
+```C
+#include <stdio.h>
+int main() {
+  char foo = 0b10010011; // Correspond à un octet
+  printf("Caractere : %1$c, Entier signe : %1$hhi, Entier positif : %1$hhu, Hexadecimal : %1$hhx, Float : %2$f\n", foo, (float) foo);
+}
+```
+Qui renvoie sur une machine x86-64 "Caractere : �, Entier signe : -109, Entier positif : 147, Hexadecimal : 93, Float : -109.000000".
+Ce même essai sur un mot mémoire entier : (sans pouvoir essayer de récupérer la
+valeur à cette adresse, impossible avec une adresse arbitraire, bien que ça
+puisse marcher en récupérant le pointeur d'une variable déclarée)
+```C
+#include <stdio.h>
+#include <stdint.h>
+int main() {
+  register uint64_t foo = 0b10010011100100111001001110010011; // Correspond à un mot de 64 bits
+  printf("Caractere : %1$c, Entier signe : %1$i, Entier positif : %1$u, Hexadecimal : %1$x, Float : %1$f, Mot à l'adresse : %2$u\n", foo, *((uint64_t *)foo));
+}
+```
+Qui renvoie "Caractere :, Entier signe : 8, Entier positif : 8, Hexadecimal : 8, Float : 0.000000".
+
+
+Les adresses de mémoire sont à accès direct, à partir de leur
 adresse. La RAM est une mémoire d'accès rapide, mais volatile et limité (mais
 moins rapide que la mémoire cache qui la copie directement dans le processeur
 avec quelques entrées, qu'il faut souvent prendre en compte aujourd'hui).
@@ -92,6 +119,7 @@ d'exploitation : il alloue au processus des blocs de mémoire, l'alloue et la
 libère, et parfois envoie dans la mémoire de masse des blocs de RAM en cas de
 manque de place (swapping).
 
+### Registres
 Les processeurs possèdent des dizaines ou centaines de registres, qui peuvent
 stocker des mots mémoire et effectuer des opérations arithmétiques et logiques
 de base, souvent en s'échangeant les informations (une opération sur deux
