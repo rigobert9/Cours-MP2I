@@ -47,7 +47,7 @@ $\sum\limits_{i = n}^{p}a_i = \sum\limits_{i = n}^{m}a_i + \sum\limits_{i = m+1}
 $\prod\limits_{i = n}^{p}a_i = (\prod\limits_{i = n}^{m}a_i) \times (\prod\limits_{i = m+1}^{p}a_i)$
 
 ### Changement d'indice
-Soient $p \leq n$ et $m \in \mathbb{N}$, $\sum\limits_{k = p}^{n}a_{k+m} = \sum\limits_{j = pm}^{n+m}a_j$.
+Soient $p \leq n$ et $m \in \mathbb{N}$, $\sum\limits_{k = p}^{n}a_{k+m} = \sum\limits_{j = p+m}^{n+m}a_j$.
 On a opéré un changement d'indice $j = k + m$.
 Pour les bornes, si $k = p$, sont $j = p+m$, et si $k = n$, sont $j = n + m$
 
