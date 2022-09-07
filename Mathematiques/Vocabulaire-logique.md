@@ -303,7 +303,7 @@ plus petit élément, noté 0
   qui est ici n+1
 
 ##### Exemple : Il n'existe pas de suite infinie d'entiers naturels strictement décroissante.
-Par l'absurde, donnons une suite $(u_{n})_{n \in \mathbb{N}}$, avec $\forall n \in \mathbb{N}, u_n \in \mathbb{N} \,\text{ET}\, u_{n+1} < u_n$.
+Par l'absurde, donnons une suite $u_{n \in \mathbb{N}}$, avec $\forall n \in \mathbb{N}, u_n \in \mathbb{N} \,\text{ET}\, u_{n+1} < u_n$.
 Prenons $A = {u_{n}, n \in \mathbb{N}}$ (l'ensemble des termes de la suite). A
 étant une partie non vide de $\mathbb{N}$, elle admet un plus petit élément :
 $\exists p \in \mathbb{N}, u_p \in A \,\text{ET}\,u_p = min A$, donc
