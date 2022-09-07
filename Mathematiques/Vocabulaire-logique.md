@@ -281,7 +281,7 @@ $(n,z) \in  {0} \times \mathbb{C} \cup {6k, e^{\pm i \frac{\pi}{3}}, k \in \math
 ## Les entiers naturels et la récurrence
 ### L'ensemble $\mathbb{N}$
 On suppose construit $\mathbb{N}$ avec ses opérations addition (+) et
-multiplication ($\times$) (opérations qui ne peuvent pas sortir de l'ensemble)
+multiplication ( $\times$ ) (opérations qui ne peuvent pas sortir de l'ensemble)
 
 Soient $m,n,p \in \mathbb{N}$ :
 - $b + p = n + p \implies m = n$
