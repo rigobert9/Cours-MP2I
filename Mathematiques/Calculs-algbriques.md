@@ -10,12 +10,12 @@ Soit I un ensemble fini d'indices, et $(a_{i \in I})$ une famille de nombres de
 d'ensembles $(\mathbb{R}, \mathbb{C})$. La somme des termes de la famille est
 $\sum\limits_{i \in I} a_i$ et le produit des termes est noté $\prod\limits_{i \in N} a_i$
 
-En pratique, si $I = [p, n]_{\mathbb{N}}$ avec $(p,n) \in \mathbb{N}^2, p \leq n$, on note
-$\sum\limits_{i \in [p, n]_{\mathbb{N}}} a_i = \sum\limits_{p \leq i \leq n} a_i = \sum\limits_{i = p}^{n} a_i$
+En pratique, si $I = [p,n]\_{\mathbb{N}}$ avec $(p,n) \in \mathbb{N}^2, p \leq n$, on note
+$\sum\limits_{i \in [p,n]\_{\mathbb{N}}} a_i = \sum\limits_{p \leq i \leq n} a_i = \sum\limits_{i = p}^{n} a_i$
 et idem pour le produit. Il faut noter qu'ici la somme contient alors $(n-p+1)$
 termes.
 
-Remarque : $[0, N]_{\mathbb{N}}$ contient N+1 entiers.
+Remarque : $[0,N]_{\mathbb{N}}$ contient N+1 entiers.
 
 L'indice i est un indice muet, destiné à être remplacé par des valeurs de
 l'ensemble des valeurs dans l'opération (comme les variables initialisées dans
@@ -127,7 +127,7 @@ $= \ln(n+1) - \ln(1) = \ln(n+1)$
 Remarque : $\prod\limits_{k = 1}^{n}\frac{k+1}{k} = \frac{n+1}{1} = n+1$.
 En prenant le ln, $\ln(n+1) = \ln(\prod\limits_{k = 1}^{n}\frac{k+1}{k}) = \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k}) = S_n$
 
-Remarque : Soit $a_1, a_2, \ldots a_n \in \mathbb{R}^{\ast}_{+}$,
+Remarque : Soit $a_1, a_2, \ldots a_n \in \mathbb{R}^{\ast}\_{+}$,
 $\ln(\prod\limits_{k = 1}^{n}ak) = \sum\limits_{k = 1}^{n}\ln(a_k)$ et
 $\exp(\sum\limits_{k = 1}^{n}b_k) = \prod\limits_{k = 1}^{n}\exp(b_k)$.
 Ces formules permettent de simplifier de nombreuses expressions avec des
