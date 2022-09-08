@@ -118,3 +118,128 @@ Si un point A éclaire un point B, alors une source de lumière placée en B
 - Pas de description de la polarisation (fait que le champ électrique tourne
   dans l'espace)
 - Pas de description des mirages (effets de milieux non homogènes)
+
+## Loi de Snell-Descartes
+### Énoncé des lois
+> On appelle dioctre la surface de séparation entre deux milieux d'indice
+> différent.
+
+Par exemple, la surface de l'eau dans un environnement entre l'eau (d'indice
+1,33) et l'air (d'indice 1) est un dioctre. Le dioctre n'est pas toujours une
+ligne droite, puisqu'il consiste en une courbe pour une bulle de savon ou une
+goutte d'eau.
+
+> La normale à un dioctre en un point est la droite passant par ce point et
+> perpendiculaire au plan local du dioctre.
+
+__Énoncé des lois :__ Soit un dioctre entre un milieu d'indice $n_1$ et un autre
+milieu d'indice $n_2$. Un rayon incident arrivant sur le dioctre est réfléchi
+par le dioctre, et réfracté de l'autre côté du dioctre.
+- Tous les rayons sont situés dans le même plan, contenant la normale au dioctre
+  et le rayon incident : c'est le **plan d'incidence**.
+- Le rayon réfléchi possède un angle opposé au rayon incident, donnant l'angle
+  $r = -i_1$.
+- L'angle du rayon réfracté vérifie $n_1 \sin i_1 = n_2 \sin i_2$.
+
+### Première application
+Avec une surface entre l'air (n = 1) et le verre (n = 1,5), et un rayon $i_1 = 40°$.
+On peut trouver $i_2$ à l'aide de la troisième loi de Snell-Descartes : $n_\text{air} \sin i_1 = n_\text{verre} i_2$,
+soit $\sin i_2 = \frac{n_\text{air}}{n_\text{verre}} \sin i_1 \Leftrightarrow i_2 = \arcsin(\frac{n_\text{air}}{n_\text{verre}}\sin i_1)$.
+L'application numérique nous donne ainsi $i_2 \approx 25°$
+
+### Angles limite
+#### Angle de réfraction limite
+$n_2 > n_1$, et $i_2 < i_1$. Avec L'angle maximal du rayon incident 90°, on a
+avec la 3ème loi de Snell-Descartes $i_2 = \arcsin \frac{n_1}{n_2}$.
+
+> Pour deux milieux d'indices $n_1$ et $n_2$, on dit que le milieu 1 est plus
+> réfringent que le milieu 2 si $n_1 > n_2$.
+
+> Pour une réfraction vers un milieu plus réfringent, l'angle de réfraction
+> limite correspond à un angle d'incidence maximal et vérifie $i_2\text{lim} = \arcsin \frac{n_1}{n_2}$.
+
+#### Phénomène de réflexion totale
+Lorsque l'indice $n_2 < n_1$, $i_2 > i_1$. Lorsque $i_1 > i_1\text{lim}$,
+les rayons réfléchis et réfracté sont
+
+> L'angle d'incidence limite $i_1\text{lim}$ est l'angle d'incidence au delà
+> duquel le rayon incident est totalement réfléchi. On parle de réflexion
+> totale.
+
+Ce phénomène se retrouve dans la brillance des diamants ou dans le
+fonctionnement de la fibre optique.
+
+### Principe de Fermat
+> Pour relier deux points a et b, la lumière (le rayon lumineux) suit un chemin
+> dont le temps de parcours est localement extrémal (maximal ou minimal).
+
+Ce principe est un principe de moindre effort de la propagation des rayons
+lumineux.
+
+#### Propagation en ligne droite dans les milieux homogènes
+Dans un milieu homogène, la lumière se déplace toujours à la même vitesse (car
+l'indice optique est le même partout) et le chemin le plus rapide entre deux
+points est le chemin le plus court (en termes de distance), soit une ligne
+droite.
+
+#### Principe de retour inverse de la lumière
+Si un chemin est extrémal dans un sens de parcours, il l'est également dans
+l'autre.
+
+#### Lois de Descartes
+Voir prochain TD
+
+## Application : La fibre optique à saut d'indice
+### Principe
+Une fibre optique à saut d'indice est constituée d'un tube central, appelé cœur
+transparent, d'indice optique $n_\text{cœur}$, entouré d'un gaine d'indice
+optique $n_\text{gaine}$.
+
+Il y a réflexion totale avec $n_\text{cœur} > n_\text{gaine}$.
+On cherche à obtenir une condition sur $\Theta$ pour qu'il y ait réflexion
+totale en I.
+Pour avoir réflexion totale en I, il faut que $i > i_\text{lim}$, donc que
+$\sin i_\text{lim} = \frac{n_\text{gaine}}{n_\text{cœur}}$.
+On a $\Theta ' + i + \frac{\Pi}{2} = \Pi \Leftrightarrow i = \frac{\Pi}{2} - \Theta '$.
+La condition $i > i_\text{lim}$ s'écrit $\frac{\Pi}{2} - \Theta' > i_\text{lim}$
+$\Leftrightarrow \Theta' < \frac{\Pi}{2}i_\text{lim}$. $\sin(\Theta)$ est
+croissant sur $[0; \frac{\Pi}{2}]$. De plus, on a
+$\sin\Theta' < \cos i_\text{lim}$.
+On 0, d'après la loi de Descartes, $n_\text{air} \sin \Theta = n_\text{cœur} \sin\Theta'$.
+Or, $n_\text{air} = 1.00$ donc $\sin\Theta = n_\text{cœur} \sin\Theta'$.
+Or $\sin\Theta' < \cos i_\text{lim}$.
+Donc $\sin\Theta < n_\text{cœur} \cos i_\text{lim}$.
+Or $\sin i_\text{lim} = \frac{n_\text{gaine}}{n_\text{cœur}}$ et
+$\cos^2 i_\text{lim} + \sin^2 i_\text{lim} = 1$
+$\Leftrightarrow \cos^2 i_\text{lim} = 1 - \sin^2 i_\text{lim}$,
+Donc $\cos^2 i_\text{lim} = 1 - (\frac{n_\text{gaine}}{n_\text{cœur}})^2$
+$\Leftrightarrow \cos i_\text{lim} = \sqrt{1 - (\frac{n_\text{gaine}}{n_\text{cœur}})^2}$
+Donc $\sin \Theta < n_\text{cœur} \sqrt{1 - (\frac{n_\text{gaine}}{n_\text{cœur}})^2}$
+$\Leftrightarrow \sin \Theta < \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$
+
+Propriété : $\sin\Theta < \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$.
+On appelle cette valeur Ouverture Numérique, telle que
+$O.N. = \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$
+
+### Dispersion intermodale
+*Rayon le plus rapide* : $\Theta = 0$, le temps de parcours est alors
+$T_1 = \frac{L}{c_\text{cœur}}$, aussi noté $T_1 = \frac{L n_\text{cœur}}{c}$
+
+*Rayon le plus lent* : $\Theta = \Theta_\text{max}$, la longueur du parcours est
+alors $L_2 = \frac{L}{\sin(i_\text{lim})}$, et $T_2 = \frac{L_2 n_\text{cœur}}{c} = \frac{L n_\text{cœur}}{c}$
+$= \frac{L n_\text{cœur}}{c \sin i_\text{lim}}$. Or, $\sin i_\text{lim} = \frac{n_\text{gaine}}{n_\text{cœur}}$,
+donc $T_2 = \frac{L n_\text{cœur}^2}{c n_\text{gaine}}$.
+
+*Différences des temps de parcours* : $\Delta T = T_2 - T_1$
+$= \frac{L}{c} \frac{n_\text{cœur}^2}{n_\text{gaine}} - \frac{L}{c}n_\text{cœur}$
+$= \frac{L}{c} \frac{n_\text{cœur} (n_\text{cœur} -n_\text{gaine})}{n_\text{gaine}}$.
+
+On peut ainsi avoir les valeurs suivantes :
+- $L = 10.0 km$
+- $n_\text{cœur} = 1.62$
+- $n_\text{gaine} = 1.52$
+- $\Delta N = 0.560$
+- $\Delta T = 3.53 microsecondes$
+
+Le signal de la fibre optique peut ainsi se distordre et se décaler dans le
+temps, posant de nombreux défis techniques.
