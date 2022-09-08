@@ -42,7 +42,7 @@ finies de nombres. Soit $n \in \mathbb{N}^\ast, \lambda \in \mathbb{R} \text{(ou
 5. $\sum\limits_{i \in I}(a_i + \lambda) = \sum\limits_{i \in I}a_i + \lambda \times N$ (avec N cardinal de I)
 6. $\prod\limits_{i \in I}(a_i^n) = (\prod\limits_{i \in I}a_i)^n$
 
-Relation de Chasles : Si $n \leq m \< p$,
+Relation de Chasles : Si $n \leq m < p$,
 $\sum\limits_{i = n}^{p}a_i = \sum\limits_{i = n}^{m}a_i + \sum\limits_{i = m+1}^{p}$ (la somme de deux parties qui composent l'ensemble entier), et
 $\prod\limits_{i = n}^{p}a_i = (\prod\limits_{i = n}^{m}a_i) \times (\prod\limits_{i = m+1}^{p}a_i)$
 
