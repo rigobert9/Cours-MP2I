@@ -121,7 +121,7 @@ Si un point A éclaire un point B, alors une source de lumière placée en B
 
 ## Loi de Snell-Descartes
 ### Énoncé des lois
-> On appelle dioptre la surface de séparation entre deux milieux d'indice
+> On appelle dioptre la surface de séparation entre deux milieux d'indices
 > différent.
 
 Par exemple, la surface de l'eau dans un environnement entre l'eau (d'indice
@@ -149,18 +149,18 @@ L'application numérique nous donne ainsi $i_2 \approx 25°$
 
 ### Angles limite
 #### Angle de réfraction limite
-$n_1 < n_2$, et $i_1 > i_2$. Avec L'angle maximal du rayon incident 90°, on a
+$n_1 < n_2$, et $i_1 > i_2$. Avec l'angle maximal du rayon incident 90°, on a
 avec la 3ème loi de Snell-Descartes $i_2 = \arcsin \frac{n_1}{n_2}$.
 
 > Pour deux milieux d'indices $n_1$ et $n_2$, on dit que le milieu 1 est plus
 > réfringent que le milieu 2 si $n_1 > n_2$.
 
 > Pour une réfraction vers un milieu plus réfringent, l'angle de réfraction
-> limite correspond à un angle d'incidence maximal et vérifie $i_2\text{lim} = \arcsin \frac{n_1}{n_2}$.
+> limite correspond à un angle d'incidence maximal et vérifie $i_{2\text{lim}} = \arcsin \frac{n_1}{n_2}$.
 
 #### Phénomène de réflexion totale
-Lorsque l'indice $n_1 > n_2$, $i_1 < i_2$. Lorsque $i_1 > i_1\text{lim}$,
-les rayons réfléchis et réfracté sont
+Lorsque l'indice $n_1 > n_2$, $i_1 < i_2$. Lorsque $i_1 > i_{1\text{lim}}$,
+les rayons réfléchis et réfractés sont confondus et tous deux réfléchis.
 
 > L'angle d'incidence limite $i_1\text{lim}$ est l'angle d'incidence au delà
 > duquel le rayon incident est totalement réfléchi. On parle de réflexion
