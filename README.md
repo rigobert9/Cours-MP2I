@@ -33,6 +33,8 @@ Nom | Disponibilité | Mise en page du MarkDown | Rendering des formules LaTeX
 ---|---|---|---
 Vim (voir plus bas) | Local | Partiellement (coloration) | Partiellement (caractères simples et inline)
 GitHub (lire les fichiers ici) | Online | Oui | Oui (incomplètement pour les systèmes)
+[Zettlr](https://www.zettlr.com/) | Local | Oui | Oui
+[Marktext](https://github.com/marktext/marktext) | Local | Oui | Oui
 
 Pour lire ces notes avec une partie des symboles simplifiés, il suffit
 d'installer vim avec le plugin
@@ -44,8 +46,7 @@ let g:vim_markdown_math = 1
 dans le fichier ~/.vimrc (ou tout autre fichier de configuration
 selon votre environnement).
 
-N'hésitez pas à me signaler d'autres modes de visionnage des notes, plus
-accessibles, notamment des lecteurs web simples.
+Ces deux derniers lecteurs sont des environnements incroyables si vous souhaitez prendre des notes de la même façon, et pour les organiser. Ils permettent aussi de compiler sans problème les documents.
 
 ### Compilateurs
 Nom | Disponibilité | Mise en page du MarkDown | Rendering des formules LaTeX
