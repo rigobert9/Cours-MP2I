@@ -149,7 +149,7 @@ L'application numérique nous donne ainsi $i_2 \approx 25°$
 
 ### Angles limite
 #### Angle de réfraction limite
-$n_2 > n_1$, et $i_2 < i_1$. Avec L'angle maximal du rayon incident 90°, on a
+$n_1 < n_2$, et $i_1 > i_2$. Avec L'angle maximal du rayon incident 90°, on a
 avec la 3ème loi de Snell-Descartes $i_2 = \arcsin \frac{n_1}{n_2}$.
 
 > Pour deux milieux d'indices $n_1$ et $n_2$, on dit que le milieu 1 est plus
@@ -159,7 +159,7 @@ avec la 3ème loi de Snell-Descartes $i_2 = \arcsin \frac{n_1}{n_2}$.
 > limite correspond à un angle d'incidence maximal et vérifie $i_2\text{lim} = \arcsin \frac{n_1}{n_2}$.
 
 #### Phénomène de réflexion totale
-Lorsque l'indice $n_2 < n_1$, $i_2 > i_1$. Lorsque $i_1 > i_1\text{lim}$,
+Lorsque l'indice $n_1 > n_2$, $i_1 < i_2$. Lorsque $i_1 > i_1\text{lim}$,
 les rayons réfléchis et réfracté sont
 
 > L'angle d'incidence limite $i_1\text{lim}$ est l'angle d'incidence au delà
