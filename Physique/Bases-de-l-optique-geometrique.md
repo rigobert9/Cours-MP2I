@@ -121,21 +121,21 @@ Si un point A éclaire un point B, alors une source de lumière placée en B
 
 ## Loi de Snell-Descartes
 ### Énoncé des lois
-> On appelle dioctre la surface de séparation entre deux milieux d'indice
+> On appelle dioptre la surface de séparation entre deux milieux d'indice
 > différent.
 
 Par exemple, la surface de l'eau dans un environnement entre l'eau (d'indice
-1,33) et l'air (d'indice 1) est un dioctre. Le dioctre n'est pas toujours une
+1,33) et l'air (d'indice 1) est un dioptre. Le dioptre n'est pas toujours une
 ligne droite, puisqu'il consiste en une courbe pour une bulle de savon ou une
 goutte d'eau.
 
-> La normale à un dioctre en un point est la droite passant par ce point et
-> perpendiculaire au plan local du dioctre.
+> La normale à un dioptre en un point est la droite passant par ce point et
+> perpendiculaire au plan local du dioptre.
 
-__Énoncé des lois :__ Soit un dioctre entre un milieu d'indice $n_1$ et un autre
-milieu d'indice $n_2$. Un rayon incident arrivant sur le dioctre est réfléchi
-par le dioctre, et réfracté de l'autre côté du dioctre.
-- Tous les rayons sont situés dans le même plan, contenant la normale au dioctre
+__Énoncé des lois :__ Soit un dioptre entre un milieu d'indice $n_1$ et un autre
+milieu d'indice $n_2$. Un rayon incident arrivant sur le dioptre est réfléchi
+par le dioptre, et réfracté de l'autre côté du dioptre.
+- Tous les rayons sont situés dans le même plan, contenant la normale au dioptre
   et le rayon incident : c'est le **plan d'incidence**.
 - Le rayon réfléchi possède un angle opposé au rayon incident, donnant l'angle
   $r = -i_1$.
