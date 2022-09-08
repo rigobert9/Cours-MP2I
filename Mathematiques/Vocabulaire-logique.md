@@ -15,19 +15,19 @@ Une phrase mathématique est une phrase contenant :
 - des quantificateurs (universels ou quantitatifs), comme $\exists$ et $\forall$
 
 ###### Exemple : "Pour tout réel x, x est un carré", soit $\forall x \in \mathbb{R} , \exists y \in \mathbb{R} , x = y^2$
-Cette assertion est d'ailleurs fausse (du moins pour y réel), et comme le quantificateur est universel, il suffit de produire un contre-exemple (x = -1)
-Une assertion vraie serait $\forall x \in \mathbb{R}^{+} , \exists y \in \mathbb{R} , x = y^2$
-Une autre est $\forall z \in \mathbb{C} , \exists z' \in \mathbb{C} , (z')^2 = z$
-(l'écriture exponentielle des complexes n'est possible que pour les complexes non nuls)
+Cette assertion est d'ailleurs fausse (du moins pour y réel), et comme le quantificateur est universel, il suffit de produire un contre-exemple (x = -1).
+Une assertion vraie serait $\forall x \in \mathbb{R}^{+} , \exists y \in \mathbb{R} , x = y^2$.
+Une autre est $\forall z \in \mathbb{C} , \exists z' \in \mathbb{C} , (z')^2 = z$.
+(l'écriture exponentielle des complexes n'est possible que pour les complexes non nuls).
 
 ### Déclaration
-Les variables introduites dans une assertion doivent être quantifiées
+Les variables introduites dans une assertion doivent être quantifiées.
 > Principe de tiers exclus : pour toute assertion P, on a que l'assertion P est vraie ou que l'assertion (non P) est vraie (!P, not(P)).
 > Ainsi, toute assertion est vraie ou fausse.
 
 ###### Exemple : $\forall (a, b) \in \mathbb(R)^2, ab = 0 \Rightarrow (a = 0, b = 0)$
 Soient a et b deux réels tels que ab = 0, par disjonction de cas:
-- si a = 0, alors (a = 0 ou b = 0) est vraie
+- si a = 0, alors (a = 0 ou b = 0) est vraie;
 - sinon, $a \ne 0$. Or ab = 0, donc b = 0, donc (a = 0, b = 0) est vraie.
 
 ### Connecteurs logiques
@@ -50,13 +50,13 @@ Connecteur | 0   | 1
 NON        | 1   | 0
 
 > Deux assertions sont équivalentes si elles ont la même table de vérité, on
-> note alors $P \equiv Q$
+> note alors $P \equiv Q$.
 
-Un exemple d'équivalence est deux programmes, écrits éventuellement différement mais qui fournissent toujours le même résultat pour la même entrée
+Un exemple d'équivalence est deux programmes, écrits éventuellement différemment mais qui fournissent toujours le même résultat pour la même entrée.
 
 ###### Exemple : $\text{NON (NON P)} \equiv P$ car leurs tables de vérité sont identiques.
 De plus, $\text{P OU NON(P)} \equiv V$ (toujours vrai) (tautologie), et
-$\text{P ET NON(P)} \equiv F$ (toujours faux) (contradiction ou antilogie)
+$\text{P ET NON(P)} \equiv F$ (toujours faux) (contradiction ou antilogie).
 
 #### Lois de Morgan :
 - $\text{NON} \, (P\,\text{ET}\,Q) \equiv (\text{NON}\,P) \,\text{OU}\, (\text{NON}\, Q)$
@@ -76,10 +76,10 @@ les lois de Morgan à $(\text{NON}2 \leq x) \text{OU} (\text{NON}x < 3) \equiv (
 - $P \text{ET} (Q \text{OU} R) \equiv (P \text{ET} Q) \text{OU} (P \text{ET} R)$ (distributivité)
 - $P \text{OU} (Q \text{ET} R) \equiv (P \text{OU} Q) \text{ET} (P \text{OU} R)$(distributivité)
 
-Puisque ET et OU sont associatifs, on peut enlever les parenthèses dans les groupes
+Puisque ET et OU sont associatifs, on peut enlever les parenthèses dans les groupes.
 
 #### Implication
-$P \Rightarrow Q$ signifie "si P alors Q", ou encore "P donc Q"
+$P \Rightarrow Q$ signifie "si P alors Q", ou encore "P donc Q".
 L'implication est définie par la table de vérité :
 
 P   | Q   | $P \Rightarrow  Q$
@@ -90,12 +90,12 @@ F   | V   | V (bien que le raisonnement soit inutile)
 F   | F   | V (bien que le raisonnement soit inutile)
 
 Remarque : Ainsi, le contraire de $P \Rightarrow Q$ est $P \text{ET} (\text{NON} Q)$,
-et on a $(P \Rightarrow Q) \equiv (\text{NON} P) \text{OU} Q$
+et on a $(P \Rightarrow Q) \equiv (\text{NON} P) \text{OU} Q$.
 
-> Lorsque $P \Rightarrow Q$ est vérifiée, on dit que P est une condition suffisante pour Q et que Q est une condition nécessaire pour P
+> Lorsque $P \Rightarrow Q$ est vérifiée, on dit que P est une condition suffisante pour Q et que Q est une condition nécessaire pour P.
 
-> La réciproque de $P \Rightarrow Q$ est $Q \Rightarrow P$
-> La contraposée de $P \Rightarrow Q$ est $\text{NON} Q \Rightarrow \text{NON} P$
+> La réciproque de $P \Rightarrow Q$ est $Q \Rightarrow P$.
+> La contraposée de $P \Rightarrow Q$ est $\text{NON} Q \Rightarrow \text{NON} P$.
 
 Proposition : toute implication est équivalente à sa contaposée, soit
 $\text{NON} Q \Rightarrow \text{NON} P$
@@ -106,7 +106,7 @@ $\equiv P \Rightarrow Q$
 
 Attention : Pas de lien ente la proposition et sa réciproque, si la relation n'est que dans un sens elle est d'ailleurs souvent fausse
 
-Exercice : Table de vérité de $(\text{NON} P) \Rightarrow (P \Rightarrow Q)$
+###### Exercice : Table de vérité de $(\text{NON} P) \Rightarrow (P \Rightarrow Q)$
 
 P   | Q   | NON P | $P \Rightarrow Q$ | $(\text{NON} P) \Rightarrow (P \Rightarrow Q)$
 --- | --- | ---   | ---                   | ---
@@ -117,15 +117,15 @@ F   | F   | V     | V                     | V
 
 Traduction : d'une hypothèse fausse, on peut déduire n'importe quelle assertion.
 Ainsi, en pratique, les formes $P \Rightarrow Q$ s'utilisent dans les
-raisonnements tels que  $[ P \text{ET} (P \Rightarrow Q) ] \Rightarrow Q$ (on déduit, parce qu'on a une règle et une proposition qui la respecte, l'application de la règle)
+raisonnements tels que  $[ P \text{ET} (P \Rightarrow Q) ] \Rightarrow Q$ (on déduit, parce qu'on a une règle et une proposition qui la respecte, l'application de la règle).
 
 #### Opérateur de Sheffer
-Aussi appelé nand, il est représenté par $\uparrow$, et correspond à $\text{NON} ( A \text{ET} B )$
+Aussi appelé nand, il est représenté par $\uparrow$, et correspond à $\text{NON} ( A \text{ET} B )$.
 Cet opérateur peut former un système complet.
 
 #### Équivalence
 L'assertion $P \Leftrightarrow Q$ est définie par $(P \Rightarrow Q) \text{ET} (Q \Rightarrow P)$
-(il s'agit d'une double implication, dans les deux sens)
+(il s'agit d'une double implication, dans les deux sens).
 La table de vérité est donc :
 
 P   | Q   | $P \Rightarrow Q$ | $Q \Rightarrow P$ | $P \Leftrightarrow Q$
@@ -139,7 +139,7 @@ $P \Leftrightarrow Q$ est vraie si et seulement si les assertions P et Q prennen
 
 ### Quantificateurs
 > Une phrase mathématique contenant une variable x est appelée prédicat, et est
-> notée $P(x)$ (voir predicats en LisP, fonction prenant un objet et renvoyant un booléen)
+> notée $P(x)$ (voir predicats en LisP, fonction prenant un objet et renvoyant un booléen).
 
 Si P(x) est un prédicat et si la variable x est prise à valeurs dans un ensemble E, les deux phrases suivante sont des assertions :
 - $\forall x \in E , P(x)$ (assertion universelle)
@@ -151,17 +151,17 @@ Si P(x) est un prédicat et si la variable x est prise à valeurs dans un ensemb
 Attention : les quantificateurs ont un ordre et dépendent des variables précédemment définies
 
 Négations :
-$\text{NON} (\forall x \in E , P(x)) \equiv \exists x \in E , \text{NON} P(x)$
-$\text{NON} (\exists x \in E , P(x)) \equiv \forall x \in E , \text{NON} P(x)$
+- $\text{NON} (\forall x \in E , P(x)) \equiv \exists x \in E , \text{NON} P(x)$
+- $\text{NON} (\exists x \in E , P(x)) \equiv \forall x \in E , \text{NON} P(x)$
 
-Remarque : si E est l'ensemble vide ( $\emptyset$ )
-$\forall x \in E , P(x)$ est toujours vraie
-$\exists x \in E , P(x)$ est toujours faux
+Remarque : si E est l'ensemble vide ( $\emptyset$ ) :
+- $\forall x \in E , P(x)$ est toujours vraie
+- $\exists x \in E , P(x)$ est toujours faux
 
-Paradoxe : Soit E un ensemble non vide, que dire de la proposition $\exists x \in E , P(x) \Rightarrow (\forall y \in E , P(y))$
+Paradoxe : Soit E un ensemble non vide, que dire de la proposition $\exists x \in E , P(x) \Rightarrow (\forall y \in E , P(y))$.
 
 Raccourci syntaxique : on note "il existe un unique élément de E tel que" sous
-la forme $\exists !x \in E$
+la forme $\exists !x \in E$.
 
 On note aussi "tel que" sous la forme $\mid$, / ou , . Souvent, les problêmes
 utilisant cette nomenclature nécessitent de formaliser un ensemble qui respecte
@@ -183,7 +183,7 @@ Pour montrer un énoncé P, on effectue une disjonction de cas selon qu'un autre
 - Si $Q$ est vraie, alors ... , donc $P$
 - Si $\,\text{NON}\,Q$ est vraie, alors ... , donc $P$
 De façon logique, on a la règle : (avec P qui dépend forcément de Q)
-$[(Q \implies P) \,\text{ET}\, (\,\text{NON}\,Q \implies P)] \implies P$ 
+$[(Q \implies P) \,\text{ET}\, (\,\text{NON}\,Q \implies P)] \implies P$.
 
 La disjonction de cas s'utilise dans de nombreux cas avec des possibilités limitées et
 exhaustifs.
@@ -206,7 +206,7 @@ En conclusion,  $\text{NON}(\exists p \in \mathbb{N}, n^2 + 1 = p^2)$ est vraie 
 tiers exclu.
 
 ### Raisonnment par contraposée
-Pour montrer $P \implies Q$, on peut montrer sa contraposée $(\text{NON}\, Q) \implies (\text{NON}\, P)$ 
+Pour montrer $P \implies Q$, on peut montrer sa contraposée $(\text{NON}\, Q) \implies (\text{NON}\, P)$.
 
 ###### Exemple : Soit $a \in \mathbb{R}$. Montrer $(a = 0) \Leftrightarrow \forall \varepsilon > 0, |a| \le \varepsilon$
 On raisonne par double implication : Si $|a| = 0$, soit $\varepsilon > 0$, alors
@@ -219,10 +219,10 @@ $\varepsilon > 0$ et $\varepsilon = \frac{|a|}{2} < |a|$. On peut conclure que
 $\forall \varepsilon > 0, |a| \le \varepsilon$.
 
 ### Raisonnement par équivalence
-Montrer $P \Leftrightarrow Q$. Généralement, en fait une double implication ( $P \implies Q \,\text{ET}\, Q \implies P$ )
+Montrer $P \Leftrightarrow Q$. Généralement, en fait une double implication ( $P \implies Q \,\text{ET}\, Q \implies P$ ).
 
 ###### Exemple : Résolution d'équation ou d'inéquation, on écrit
-$f(x) = 0 \Leftrightarrow \ldots \Leftrightarrow x = 1 \,\text{OU}\, x = -3$ 
+$f(x) = 0 \Leftrightarrow \ldots \Leftrightarrow x = 1 \,\text{OU}\, x = -3$.
 
 ### Raisonnement par Analyse-Synthèse : "Trouver toutes les solutions du problème"
 On va d'abord supposer qu'une solution existe et trouver une expression plus
@@ -250,12 +250,11 @@ On peut conclure que $\forall x \in  \mathbb{R}, \left\{\begin{matrix} g(x) = \f
 On prouve ainsi l'unicité de ces deux fonctions (sous réserve d'existence).
 
 Synthèse : On vérifie que h est impaire, g est paire, et h + g = exp
-$g(-x) = \frac{e^{-x} + e^{x}}{2} = g(x)$ (donc bien paire)
-$h(-x) = \frac{e^{-x} - e^{x}}{2} = -h(x)$ (donc bien impaire)
-$g(x) + h(x) = \frac{1}{2}(2e^x) = e^x$
+- $g(-x) = \frac{e^{-x} + e^{x}}{2} = g(x)$ (donc bien paire)
+- $h(-x) = \frac{e^{-x} - e^{x}}{2} = -h(x)$ (donc bien impaire)
+- $g(x) + h(x) = \frac{1}{2}(2e^x) = e^x$
 
-###### Exemple : Trouver tous les couples $(n, z) \in \mathbb{Z} \times \mathbb{C}$
-tels que $z^n = (z-1)^n = 1$
+###### Exemple : Trouver tous les couples $(n, z) \in \mathbb{Z} \times \mathbb{C}$ tels que $z^n = (z-1)^n = 1$
 On a donc un système $\left\{\begin{matrix} z^n = 1 \\ (z-1)^n = 1 \end{matrix}\right.$
 Par analyse, soit $\exists (n, z) \in \mathbb{Z} \times \mathbb{C} \mid z^n = (z-1)^n = 1$, on recherche des particularités de n et z.
 On sait tout d'abord que n = 0 fonctionne.
@@ -309,7 +308,7 @@ Prenons $A = {u_{n}, n \in \mathbb{N}}$ (l'ensemble des termes de la suite). A
 étant une partie non vide de $\mathbb{N}$, elle admet un plus petit élément :
 $\exists p \in \mathbb{N}, u_p \in A \,\text{ET}\,u_p = min A$, donc
 $\forall n \in \mathbb{N}, u_p \leq u_{n}$. Or u étant décroissante, $u_{p+1} < u_p$
-et avec $n = p+1, u_p \leq u_{p+1}$, ce qui est absurde
+et avec $n = p+1, u_p \leq u_{p+1}$, ce qui est absurde.
 
 ### Récurrence
 Pour montrer un énoncé de la forme $[\forall n \in \mathbb{N}, P(n)]$
