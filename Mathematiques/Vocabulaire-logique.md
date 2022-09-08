@@ -240,13 +240,13 @@ Montrer que la fonction exponentielle s'écrit de manière unique comme
 la somme d'une fonction paire et d'un fonction impaire (g est le cosinus
 hyperbolique et h le sinus hyperbolique).
 On veut montrer que $\exists !(g,h) \in F(\mathbb{R},\mathbb{R})^2$ tel que
-$\forall x \in \mathbb{R}, \left{\begin{matrix} g(-x) = g(x) \\ h(-x) = -h(x) \\ \exp(x) = g(x) + h(x) \end{matrix}\right.$
+$\forall x \in \mathbb{R}, \left\{\begin{matrix} g(-x) = g(x) \\ h(-x) = -h(x) \\ \exp(x) = g(x) + h(x) \end{matrix}\right.$
 
 Analyse : Supposons g paire, h impaire telles que exp = g + h.
 Ainsi, $\forall k inn \mathbb{R}, e^x = g(x) + f(x)$.
 Alors, $\forall x \in \mathbb{R}, e^{-x} = g(x) - h(x)$, donc $e^x + e^{-x} =2g(x)$
 et $e^x - e^{-x} = 2h(x)$.
-On peut conclure que $\forall x \in  \mathbb{R}, \left{\begin{matrix} g(x) = \frac{1}{2} (e^x + e^{-x}) \\ h(x) = \frac{1}{2} (e^x - e^{-x}) \end{matrix}\right.$
+On peut conclure que $\forall x \in  \mathbb{R}, \left\{\begin{matrix} g(x) = \frac{1}{2} (e^x + e^{-x}) \\ h(x) = \frac{1}{2} (e^x - e^{-x}) \end{matrix}\right.$
 On prouve ainsi l'unicité de ces deux fonctions (sous réserve d'existence).
 
 Synthèse : On vérifie que h est impaire, g est paire, et h + g = exp
@@ -256,7 +256,7 @@ $g(x) + h(x) = \frac{1}{2}(2e^x) = e^x$
 
 ###### Exemple : Trouver tous les couples $(n, z) \in \mathbb{Z} \times \mathbb{C}$
 tels que $z^n = (z-1)^n = 1$
-On a donc un système $\left{\begin{matrix} z^n = 1 \\ (z-1)^n = 1 \end{matrix}\right.$
+On a donc un système $\left\{\begin{matrix} z^n = 1 \\ (z-1)^n = 1 \end{matrix}\right.$
 Par analyse, soit $\exists (n, z) \in \mathbb{Z} \times \mathbb{C} \mid z^n = (z-1)^n = 1$, on recherche des particularités de n et z.
 On sait tout d'abord que n = 0 fonctionne.
 On recherche des modules et arguments de z qui permettent de faire fonctionner
@@ -368,7 +368,7 @@ L'hérédité peut aussi se noter $\forall n\in \mathbb{N}, [\forall k \in [0, N
 
 ###### Exemple : Récurrence sur une suite (récurrence double)
 Soit $F(n)_{n \in \mathbb{N}}"$ la suite de Fibonacci, définie par
-$\left{\begin{matrix} F_0 = 0, F_1 = 1 \\ \forall n \in \mathbb{N}, F_{n+2} = F_{n+1} + F_n \end{matrix}\right.$.
+$\left\{\begin{matrix} F_0 = 0, F_1 = 1 \\ \forall n \in \mathbb{N}, F_{n+2} = F_{n+1} + F_n \end{matrix}\right.$.
 On pose $\phi = \frac{1+\sqrt{5}}{2}$ et $\psi = \frac{1-\sqrt{5}}{2}$.
 On cherche à montrer que $\forall n \in \mathbb{N}, F(n) = \frac{\phi^n - \psi^n}{\sqrt{5}}$.
 On note $P(n) : F(n) = \frac{\phi^n - \psi^n}{\sqrt{5}}$. Par récurrence double :
@@ -386,7 +386,7 @@ On note $P(n) : F(n) = \frac{\phi^n - \psi^n}{\sqrt{5}}$. Par récurrence double
   $= \frac{1}{\sqrt{5}}(\phi^{n+2} - \psi^{n+2})$ d'où $P(n+2)$ (conclusion).
 
 ###### Exemple : somme de tous les termes précédents (récurrence forte)
-Soit $(u_{n \in \mathbb{N}})$ définie par $\left{\begin{matrix} u_0 = 1 \\ \forall n \in \mathbb{N}, u_{n+1} = \sum\limits_{k=0}^n u_k \end{matrix}\right.$,
+Soit $(u_{n \in \mathbb{N}})$ définie par $\left\{\begin{matrix} u_0 = 1 \\ \forall n \in \mathbb{N}, u_{n+1} = \sum\limits_{k=0}^n u_k \end{matrix}\right.$,
 on cherche à donner $u_n$ en fonction de n.
 On conjecture le résultat $u_n = 2^{n-1}$ avec $n \geq 1$ à partir du calcul,
 bien que cette formule ne fonctionne pas pour 0, qui est un cas particulier.
@@ -401,7 +401,7 @@ On montre par récurrence forte :
 
 Méthode 2 : $\forall n \in \mathbb{N}, u_{n+1} = \sum\limits_{k = 0}^{n} u_k$
 $= (\sum\limits_{k = 0}^{n-1} u_k) + u_{n} = 2u_{n}$.
-Ici, $\left{\begin{matrix} U_1 = 1 \\ \forall n \geq 1, u_{n+1} = 2u_{n} \end{matrix}\right.$,
+Ici, $\left\{\begin{matrix} U_1 = 1 \\ \forall n \geq 1, u_{n+1} = 2u_{n} \end{matrix}\right.$,
 qui est une suite géométrique de raison 2, soit
 $\forall n \geq 1, u_{n} = 2^{n-1} \times u_1 = 2^{n-1}$, ce qui nous permet de
 conclure de la mêbe façon que la première méthode.
