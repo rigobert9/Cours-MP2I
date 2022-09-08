@@ -143,3 +143,68 @@ et $q \in \mathbb{C}$, $\sum\limits_{k = p}^{n}q^k = q^p \times \sum\limits_{k =
 (stratégie de factorisation par le premier terme)
 $= q^p \times \frac{1-q^{n-p+1}}{1-q}$ (quand $q \neq 1$) ou
 $= n-p-1$ (quand $q = 1$)
+
+###### Exemples
+$\sum\limits_{k = 1}^{n}k \times (n-k-1) = \sum\limits_{k = 1}^{n}(nk - k^2 + k)$
+$= \sum\limits_{k = 1}^{n}(n+1)k - \sum\limits_{k = 1}^{n}k^2$
+$= (n+1) \sum\limits_{k = 1}^{n}k - \sum\limits_{k = 1}^{n}k^2$
+$= (n+1) \frac{n(n+1)}{2} - \frac{n(n+1)(2n+1)}{6}$
+$= \frac{n(n+1)}{6} [3(n+1) - 2(n+1)] = \frac{n(n+1)(n+2)}{6}$
+
+$\sum\limits_{k = p}^{n}q^k = \sum\limits_{k = p}^{n}q^{k-p+p} = q^p \sum\limits_{k = p}^{n}q^{k-p}$
+$= q^p \sum\limits_{j = 0}^{n-p}q^j = q^p \times \frac{1-q^{n-p+1}}{1-q}$ si
+$q\neq 1$ et $n-p+1$ si $q=1$
+
+Soit $x \in \mathbb{R}, x \neq \pm 1, \sum\limits_{k = 2}^{n-1}\frac{3^{k+1}x^{2k}}{5^{3k-2}}$.
+On simplifie l'exposant du bas : $5^{3k+2} = 5^{3k} \times 5^{-2} = (5^{3})^k \times 5^{-2}$,
+et ceux du haut : $3^{k+1} = 3^k \times 3$ et $x^{2k} = (x^2)^k$.
+On a donc l'expression $\frac{3}{5^{-2}} (\frac{3x^2}{5^3})^k = 3 \times 5^2 \times (\frac{3x^2}{5^3})^k$,
+ce qui est de forme $\lambda \times q^k$. Ainsi,
+$S_n = 3 \times 5^2 \times \sum\limits_{k = 2}^{n-1}q^k$, soit si $q = 1$,
+$75(n-2)$ et sinon $3 \times 5^2 \times q^2 \times \frac{1-q^{n-2}}{1-q}$
+
+## Sommes doubles
+Soit $(a_{i,j})_{i \in [1,n]\_{\mathbb{N}}, j \in [1,p]\_{\mathbb{N}}}$ une
+famille de nombres. La somme de tous les éléments de cette famille est :
+$\sum\limits_{(i,j) \in I}a_{i,j}$, avec $I = [1,n]\_{\mathbb{N}} \times [1, p]\_{\mathbb{N}}$.
+
+On somme ainsi tout un tableau contenant tous les éléments de cette famille.
+
+On a $\sum\limits_{(i,j) \in I}a_{i,j} = \sum\limits_{i = 1}^{n}(\sum\limits_{j = 1}^{p}a_{i,j})$
+ou bien en inversant les lignes et les colonnes, $\sum\limits_{j = 1}^{p}(\sum\limits_{i = 1}^{n}a_{i,j})$.
+
+On pourra noter, lorsque $1 \leq i \leq n$ et $1 \leq j \leq n$,
+$\sum\limits_{1 \leq i,j \leq n}a_{i,j}$
+
+### Cas particulier : Produit de deux sommes
+$(\sum\limits_{i \in I}a_k) \times (\sum\limits_{j \in J}b_k)$
+$= \sum\limits_{(i,j) \in I \times J}a_i \times b_j$
+
+Attention à bien utiliser des indices muets différents pour chaque somme afin
+d'éviter d'écrire des sommes dépendantes les unes des autres.
+
+### Cas particulier : somme triangulaire
+Soit $(a_{i,j})_{1 \leq i\leq n, 1 \leq j \leq p}$. On veut calculer la somme
+triangulaire supérieure (c'est à dire avec la contrainte $i \leq j$). On note
+$\sum\limits_{1 \leq i \leq j \leq n} a_{i,j}$ ou
+$\sum\limits_{i = 1}^{n} \sum\limits_{j = i}^{n} a_{i,j}$ ou
+$\sum\limits_{j = 1}^{n} \sum\limits_{i = 1}^{j} a_{i,j}$, etc...
+
+De même, si on impose $i < j$, formant une somme triangulaire strict-supérieure,
+on a les sommes :
+$\sum\limits_{1 \leq i < j \leq n} a_{i,j}$ ou
+$\sum\limits_{i = 1}^{n} \sum\limits_{j = i+1}^{n} a_{i,j}$ ou
+$\sum\limits_{j = 1}^{n} \sum\limits_{i = 1}^{j-1} a_{i,j}$ (j commencera
+d'ailleurs à 2), etc...
+
+###### Exemple : double somme de minimums
+$S_n = \sum\limits_{1 \leq i,j \leq n} min(i,j)$
+$= \sum\limits_{i = 1}^{n} \sum\limits_{j = 1}^{n} min(i,j)$
+$= \sum\limits_{i = 1}^{n} (\sum\limits_{j = 1}^{i} min(i,j) + \sum\limits_{j = i+1}^{n} min(i,j))$
+$= \sum\limits_{i = 1}^{n} (\sum\limits_{j = 1}^{i} j + \sum\limits_{j = i+1}^{n} i$
+$= \sum\limits_{i = 1}^{n} (\frac{i(i+1)}{2} + i \times (n-i))$
+$= \sum\limits_{i = 1}^{n} (i^2 \times \frac{-1}{2} + i \times (\frac{1}{2} + n))$
+$= (\frac{-1}{2}) \sum\limits_{i = 1}^{n}i^2 + (n + \frac{1}{2}) \times \sum\limits_{i = 1}^{n} i$
+$= (\frac{-1}{2}) \frac{n(n+1)(2n+1)}{6} + (\frac{2n+1}{2}) \times \frac{n(n+1)}{2}$
+$= \frac{n(n+1)(2n+1)}{12} (-1 + 3)$
+$= \frac{n(n+1)(2n+1)}{6}$

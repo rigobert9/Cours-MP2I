@@ -63,6 +63,7 @@ $\text{P ET NON(P)} \equiv F$ (toujours faux) (contradiction ou antilogie)
 - $\text{NON} \, (P\,\text{OU}\,Q) \equiv (\text{NON}\,P) \,\text{ET}\, (\text{NON}\, Q)$
 
 Vérifiable par tables de vérité.
+
 ###### Exemple : Contraire de $2 \leq x < 3 \equiv 2 \leq \text{ET} x < 3$, ce qui mène avec
 les lois de Morgan à $(\text{NON}2 \leq x) \text{OU} (\text{NON}x < 3) \equiv (2 > x) \text{OU} (x > 3)$
 
