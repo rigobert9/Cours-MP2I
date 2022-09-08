@@ -22,13 +22,17 @@ compiler en PDF (comme précisé ci-dessous).
 
 ## Utilisation
 Ces notes sont parfaitement lisibles à elles seules, mais sont bien plus
-lisibles à l'aide de divers outils.
+lisibles à l'aide de divers outils. De plus, les notes sont disponibles
+directement sur ce dépôt, compilées à l'aide de la commande :
+```bash
+pandoc --toc -s -f gfm+tex_math_dollars --mathjax fichier.md --output=fichier.pdf
+```
 
 ### Lecteurs
 Nom | Disponibilité | Mise en page du MarkDown | Rendering des formules LaTeX
 ---|---|---|---
 Vim (voir plus bas) | Local | Partiellement (coloration) | Partiellement (caractères simples et inline)
-GitHub (lire les fichiers ici) | Online | Oui | Oui
+GitHub (lire les fichiers ici) | Online | Oui | Oui (incomplètement pour les systèmes)
 
 Pour lire ces notes avec une partie des symboles simplifiés, il suffit
 d'installer vim avec le plugin
@@ -47,10 +51,13 @@ accessibles, notamment des lecteurs web simples.
 Nom | Disponibilité | Mise en page du MarkDown | Rendering des formules LaTeX
 ---|---|---|---
 https://www.markdowntopdf.com/ | Online | Oui | Non
+pandoc | local | Oui | Oui
 
-Cette partie de mon workflow est toujours en cours de préparation, n'hésitez
-néanmoins pas à conseiller des outils permettant de convertir le MarkDown comme
-le LaTeX vers des formats PDF.
+Pandoc permet aussi de visionner ces notes dans un navigateur internet à l'aide
+de la commande suivante.
+```bash
+pandoc --toc -s -f gfm+tex_math_dollars --mathjax fichier.md --output=fichier.html
+```
 
 ## Mon setup
 Mon workflow repose principalement sur l'utilisation de vim avec de nombreux
