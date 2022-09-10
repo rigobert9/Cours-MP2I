@@ -142,7 +142,7 @@ Formule des suites géométriques : Soit $(p,n) \in \mathbb{N}^2$ avec $p \leq n
 et $q \in \mathbb{C}$, $\sum\limits_{k = p}^{n}q^k = q^p \times \sum\limits_{k = 0}^{n-p}q^k$
 (stratégie de factorisation par le premier terme)
 $= q^p \times \frac{1-q^{n-p+1}}{1-q}$ (quand $q \neq 1$) ou
-$= n-p-1$ (quand $q = 1$)
+$= n-p+1$ (quand $q = 1$)
 
 ###### Exemples
 $\sum\limits_{k = 1}^{n}k \times (n-k-1) = \sum\limits_{k = 1}^{n}(nk - k^2 + k)$
