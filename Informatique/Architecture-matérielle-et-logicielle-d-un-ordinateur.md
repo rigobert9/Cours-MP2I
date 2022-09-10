@@ -97,7 +97,8 @@ int main() {
 Qui renvoie sur une machine x86-64 "Caractere : �, Entier signe : -109, Entier positif : 147, Hexadecimal : 93, Float : -109.000000".
 Ce même essai sur un mot mémoire entier : (sans pouvoir essayer de récupérer la
 valeur à cette adresse, impossible avec une adresse arbitraire, bien que ça
-puisse marcher en récupérant le pointeur d'une variable déclarée)
+puisse marcher en récupérant le pointeur d'une variable déclarée, le code ici
+crash si on n'enlève pas le mot à l'adresse)
 ```C
 #include <stdio.h>
 #include <stdint.h>
