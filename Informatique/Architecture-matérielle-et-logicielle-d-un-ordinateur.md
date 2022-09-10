@@ -107,6 +107,7 @@ int main() {
   printf("Caractere : %1$c, Entier signe : %1$i, Entier positif : %1$u, Hexadecimal : %1$x, Float : %1$f, Mot à l'adresse : %2$u\n", foo, *((uint64_t *)foo));
 }
 ```
+
 Qui renvoie "Caractere :, Entier signe : 8, Entier positif : 8, Hexadecimal : 8, Float : 0.000000".
 
 

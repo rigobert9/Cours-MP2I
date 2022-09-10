@@ -19,9 +19,10 @@ en mètres).
 Le champ des ondes électromagnétiques visibles est situé entre 400 et 800
 nanomètres de longueur d'onde. On a le spectre suivant.
 
-Bornes     | Rayons gamma | Rayons X | Ultraviolets | Visible  | Infrarouges | Micro-ondes | Autres | Ondes radio
-Plus petit | -            | 10 pico  | 10 nano      | 380 nano | 780 nano    | 1 mm        | 30 cm  | 1 m
-Plus grand | 10 pico      | 10 nano  | 380 nano     | 780 nano | 1 mm        | 30 cm       | 1 m    | -
+Bornes     | Gamma   | Rayons X | Ultraviolets | Visible | Infrarouges | Micro-ondes | Autres | Radio
+---        | ---     | ---      | ---          | ---     | ---         | ---         | ---    | ---
+Plus petit | -       | 10 pico  | 10 nm        | 380 nm  | 780 nm      | 1 mm        | 30 cm  | 1 m
+Plus grand | 10 pico | 10 nm    | 380 nm       | 780 nm  | 1 mm        | 30 cm       | 1 m    | -
 
 > La lumière est une onde électromagnétique, qui correspond dans le vide
 > approximativement au spectre de longueur d'onde 400 nanomètres (violet) et 800
