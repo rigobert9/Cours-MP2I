@@ -68,13 +68,13 @@ Vérifiable par tables de vérité.
 les lois de Morgan à $(\text{NON}2 \leq x) \text{OU} (\text{NON}x < 3) \equiv (2 > x) \text{OU} (x > 3)$
 
 #### Propriétés triviales (vérifiables par tables de vérité) :
-- $P \text{ET} P \equiv P \equiv P \text{OU} P$
-- $P \text{ET} Q \equiv Q \text {ET} P$ (commutativité)
-- $P \text{OU} Q \equiv Q \text {OU} P$ (commutativité)
-- $(P \text{ET} Q) \text{ET} R \equiv P \text{ET} (Q \text{ET} R)$ (associativité)
-- $(P \text{OU} Q) \text{OU} R \equiv P \text{OU} (Q \text{OU} R)$ (associativité)
-- $P \text{ET} (Q \text{OU} R) \equiv (P \text{ET} Q) \text{OU} (P \text{ET} R)$ (distributivité)
-- $P \text{OU} (Q \text{ET} R) \equiv (P \text{OU} Q) \text{ET} (P \text{OU} R)$(distributivité)
+- $P \,\text{ET}\, P \equiv P \equiv P \,\text{OU}\, P$
+- $P \,\text{ET}\, Q \equiv Q \,\text{ET}\, P$ (commutativité)
+- $P \,\text{OU}\, Q \equiv Q \,\text{OU}\, P$ (commutativité)
+- $(P \,\text{ET}\, Q) \,\text{ET}\, R \equiv P \,\text{ET}\, (Q \,\text{ET}\, R)$ (associativité)
+- $(P \,\text{OU}\, Q) \,\text{OU}\, R \equiv P \,\text{OU}\, (Q \,\text{OU}\, R)$ (associativité)
+- $P \,\text{ET}\, (Q \,\text{OU}\, R) \equiv (P \,\text{ET}\, Q) \,\text{OU}\, (P \,\text{ET}\, R)$ (distributivité)
+- $P \,\text{OU}\, (Q \,\text{ET}\, R) \equiv (P \,\text{OU}\, Q) \,\text{ET}\, (P \,\text{OU}\, R)$(distributivité)
 
 Puisque ET et OU sont associatifs, on peut enlever les parenthèses dans les groupes.
 
@@ -89,26 +89,26 @@ V   | F   | F
 F   | V   | V (bien que le raisonnement soit inutile)
 F   | F   | V (bien que le raisonnement soit inutile)
 
-Remarque : Ainsi, le contraire de $P \Rightarrow Q$ est $P \text{ET} (\text{NON} Q)$,
-et on a $(P \Rightarrow Q) \equiv (\text{NON} P) \text{OU} Q$.
+Remarque : Ainsi, le contraire de $P \Rightarrow Q$ est $P \,\text{ET}\, (\text{NON}\, Q)$,
+et on a $(P \Rightarrow Q) \equiv (\text{NON}\, P) \,\text{OU}\, Q$.
 
 > Lorsque $P \Rightarrow Q$ est vérifiée, on dit que P est une condition suffisante pour Q et que Q est une condition nécessaire pour P.
 
 > La réciproque de $P \Rightarrow Q$ est $Q \Rightarrow P$.
 > La contraposée de $P \Rightarrow Q$ est $\text{NON} Q \Rightarrow \text{NON} P$.
 
-Proposition : toute implication est équivalente à sa contaposée, soit
-$\text{NON} Q \Rightarrow \text{NON} P$
-$\text{NON} Q \Rightarrow \text{NON} P  \equiv \text{NON} (\text{NON} Q)$
-$\text{OU} (\text{NON} P)$
-$\equiv Q \text{OU} \text{NON} P$
+Proposition : toute implication est équivalente à sa contraposée, soit
+$\text{NON}\, Q \Rightarrow \text{NON}\, P$
+$\text{NON}\, Q \Rightarrow \text{NON}\, P  \equiv \text{NON}\, (\text{NON}\, Q)$
+$\text{OU}\, (\text{NON}\, P)$
+$\equiv Q \,\text{OU}\, \text{NON}\, P$
 $\equiv P \Rightarrow Q$
 
 Attention : Pas de lien ente la proposition et sa réciproque, si la relation n'est que dans un sens elle est d'ailleurs souvent fausse
 
-###### Exercice : Table de vérité de $(\text{NON} P) \Rightarrow (P \Rightarrow Q)$
+###### Exercice : Table de vérité de $(\text{NON}\, P) \Rightarrow (P \Rightarrow Q)$
 
-P   | Q   | NON P | $P \Rightarrow Q$ | $(\text{NON} P) \Rightarrow (P \Rightarrow Q)$
+P   | Q   | NON P | $P \Rightarrow Q$ | $(\text{NON}\, P) \Rightarrow (P \Rightarrow Q)$
 --- | --- | ---   | ---                   | ---
 V   | V   | F     | V                     | V
 V   | F   | F     | F                     | V
@@ -117,10 +117,10 @@ F   | F   | V     | V                     | V
 
 Traduction : d'une hypothèse fausse, on peut déduire n'importe quelle assertion.
 Ainsi, en pratique, les formes $P \Rightarrow Q$ s'utilisent dans les
-raisonnements tels que  $[ P \text{ET} (P \Rightarrow Q) ] \Rightarrow Q$ (on déduit, parce qu'on a une règle et une proposition qui la respecte, l'application de la règle).
+raisonnements tels que  $[ P \,\text{ET}\, (P \Rightarrow Q) ] \Rightarrow Q$ (on déduit, parce qu'on a une règle et une proposition qui la respecte, l'application de la règle).
 
 #### Opérateur de Sheffer
-Aussi appelé nand, il est représenté par $\uparrow$, et correspond à $\text{NON} ( A \text{ET} B )$.
+Aussi appelé nand, il est représenté par $\uparrow$, et correspond à $\text{NON}\, ( A \,\text{ET}\, B )$.
 Cet opérateur peut former un système complet.
 
 #### Équivalence
@@ -151,8 +151,8 @@ Si P(x) est un prédicat et si la variable x est prise à valeurs dans un ensemb
 Attention : les quantificateurs ont un ordre et dépendent des variables précédemment définies
 
 Négations :
-- $\text{NON} (\forall x \in E , P(x)) \equiv \exists x \in E , \text{NON} P(x)$
-- $\text{NON} (\exists x \in E , P(x)) \equiv \forall x \in E , \text{NON} P(x)$
+- $\text{NON} (\forall x \in E , P(x)) \equiv \exists x \in E , \text{NON}\, P(x)$
+- $\text{NON} (\exists x \in E , P(x)) \equiv \forall x \in E , \text{NON}\, P(x)$
 
 Remarque : si E est l'ensemble vide ( $\emptyset$ ) :
 - $\forall x \in E , P(x)$ est toujours vraie
