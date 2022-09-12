@@ -55,17 +55,17 @@ Il est de façon générale, il s'agit d'un pratique dangereuse de d'effectuer d
 changements d'indice autres que tels que le nouvel indice j est égal à
 $k + \text{constante}$ ou $-k + \text{constante}$.
 
-###### Exemple de réduction par changement d'indice (formule de la somme d'une suite géométrique)
+##### Exemple de réduction par changement d'indice (formule de la somme d'une suite géométrique)
 $(1 - q) \times \sum\limits_{k = 0}^{n}q^k = \sum\limits_{k = 0}^{n}(1 - q)q^k$\
 $= \sum\limits_{k = 0}^{n}(q^k - q^{k+1}) = (\sum\limits_{k = 0}^{n}q^k) - (\sum\limits_{k = 0}^{n}q^{k+1})$\
 $= \sum\limits_{k = 0}^{n}q^k - \sum\limits_{k = 1}^{n + 1}q^k$.\
 $= q^0 + \sum\limits_{k = 1}^{n}q^k - \sum\limits_{k = 1}^{n}q^k - q^{n+1}$.\
 $= 1 - q^{n+1}$\
 
-###### Exemple
+##### Exemple
 Soit $p \leq n$ et $m \geq n$, $\sum\limits_{k = p}^{m}a_{m-k} = \sum\limits_{j = m-p}^{m-p}a_j$
 
-###### Exemple : Somme usuelle des entiers (formule de la somme d'une suite arithmétique)
+##### Exemple : Somme usuelle des entiers (formule de la somme d'une suite arithmétique)
 Somme usuelle des entiers $\sum\limits_{k = 0}^{n}k = S_n$.
 On peut voir que $2S_n = 0 + 1 + \ldots + n\: + n + n-1 + \ldots + 0$, ce qui
 donne $2S_n = n \times (n+1)$.
@@ -95,7 +95,7 @@ $= U_{n+1} + U_p$\
 On peut facilement appliquer ce raisonnement à la formule de la somme d'une
 suite géométrique de l'exemple plus haut, avec $U_k = q^k$.
 
-###### Exemple de télescopage
+##### Exemple de télescopage
 Soit $(a,b) \in \mathbb{C}^2$ et $n \in \mathbb{N}$, on cherche à calculer
 $S_n = (a-b)\sum\limits_{k = 0}^{n}a^k b^{n-k}$
 $= \sum\limits_{k = 0}^{n}(a^{k+1} b^{n-k} - a^k b^{n-k+1})$
@@ -118,7 +118,7 @@ $\prod\limits_{i = p}^{n}(\frac{U_{i+1}}{U_i}) = \frac{U_{n+1}}{U_p}$.
 On peut le prouver plus rigoureusement par un changement d'indice, de la même
 manière que pour les sommes télescopiques.
 
-###### Exemple : somme de logarithmes
+##### Exemple : somme de logarithmes
 $S_n = \sum\limits_{k = 1}^{n}\ln(1 + \frac{1}{k})$\
 $= \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k})$\
 $= \sum\limits_{k = 1}^{n}[\ln(k+1) - \ln(k)]$\
@@ -144,12 +144,12 @@ et $q \in \mathbb{C}$, $\sum\limits_{k = p}^{n}q^k = q^p \times \sum\limits_{k =
 $= q^p \times \frac{1-q^{n-p+1}}{1-q}$ (quand $q \neq 1$) ou
 $= n-p+1$ (quand $q = 1$)
 
-###### Exemples
+##### Exemples
 $\sum\limits_{k = 1}^{n}k \times (n-k-1) = \sum\limits_{k = 1}^{n}(nk - k^2 + k)$\
 $= \sum\limits_{k = 1}^{n}(n+1)k - \sum\limits_{k = 1}^{n}k^2$\
 $= (n+1) \sum\limits_{k = 1}^{n}k - \sum\limits_{k = 1}^{n}k^2$\
 $= (n+1) \frac{n(n+1)}{2} - \frac{n(n+1)(2n+1)}{6}$\
-$= \frac{n(n+1)}{6} [3(n+1) - 2(n+1)] = \frac{n(n+1)(n+2)}{6}$\
+$= \frac{n(n+1)}{6} [3(n+1) - 2(n+1)] = \frac{n(n+1)(n+2)}{6}$
 
 $\sum\limits_{k = p}^{n}q^k = \sum\limits_{k = p}^{n}q^{k-p+p} = q^p \sum\limits_{k = p}^{n}q^{k-p}$
 $= q^p \sum\limits_{j = 0}^{n-p}q^j = q^p \times \frac{1-q^{n-p+1}}{1-q}$ si
@@ -197,7 +197,7 @@ $\sum\limits_{i = 1}^{n} \sum\limits_{j = i+1}^{n} a_{i,j}$ ou
 $\sum\limits_{j = 1}^{n} \sum\limits_{i = 1}^{j-1} a_{i,j}$ (j commencera
 d'ailleurs à 2), etc...
 
-###### Exemple : double somme de minimums
+##### Exemple : double somme de minimums
 $S_n = \sum\limits_{1 \leq i,j \leq n} min(i,j)$\
 $= \sum\limits_{i = 1}^{n} \sum\limits_{j = 1}^{n} min(i,j)$\
 $= \sum\limits_{i = 1}^{n} (\sum\limits_{j = 1}^{i} min(i,j) + \sum\limits_{j = i+1}^{n} min(i,j))$\
@@ -208,7 +208,7 @@ $= (\frac{-1}{2}) \sum\limits_{i = 1}^{n}i^2 + (n + \frac{1}{2}) \times \sum\lim
 $= (\frac{-1}{2}) \frac{n(n+1)(2n+1)}{6} + (\frac{2n+1}{2}) \times \frac{n(n+1)}{2}$\
 $= \frac{n(n+1)(2n+1)}{12} (-1 + 3)$\
 $= \frac{n(n+1)(2n+1)}{6}$\
-\
+
 ## Coefficients binomiaux et sommes
 > Rappel : $\left\{\begin{matrix} \forall n \in \mathbb{N}^{\ast}, n! = \prod\limits_{k = 1}^{n}k \\  0! = 1 \end{matrix}\right.$
 > (la propriété de la factorielle de 0 n'est qu'un effet de la propriété des
@@ -219,11 +219,11 @@ $= \frac{n(n+1)(2n+1)}{6}$\
 Selon cette propriété, on a $\forall n,p \in \mathbb{N}^{\ast}$,
 $n \times (n+1) \times \ldots \times (n+p) = \frac{(n+p)!}{(n-1)!}$
 
-###### Exemples
+##### Exemples
 Pour $n \in \mathbb{N}^{\ast}$, on a :
 - $2 \times 4 \times 6 \times \ldots \times (2n) = \prod\limits_{k = 1}^{n}(2k)$
   (produit des nombres pairs)
-  $= 2^n \times (\prod\limits_{k = 1}^{n}k = 2^n \times n!)$
+  $= 2^n \times (\prod\limits_{k = 1}^{n}k) = 2^n \times n!$
 - Produit des nombres impairs : $1 \times 3 \times 5 \times \ldots \times (2n-1)$
   $= \prod\limits_{k = 1}^{n}(2k-1)$, ce qui est équivalent au produit des k
   consécutifs, sans les nombres pairs, soit $\frac{\prod\limits_{k = 1}^{2n}k}{\prod\limits_{k = 1}^{n}2k}$
@@ -311,7 +311,7 @@ Remarque : en pratique, pour $n, k \geq 1$, $\binom{n}{k} = \frac{n}{k} \times \
 Cette méthode est plus pratique en calcul, mais la formule de Pascal reste plus
 simple algorithmiquement.
 
-###### Exercice : Tous les coefficients binomiaux sont entiers
+##### Exercice : Tous les coefficients binomiaux sont entiers
 On cherche à montrer $\forall (n,k) \in \mathbb{N}^2$. Par récurrence, on a la
 propriété $P(n) : \forall k \in \mathbb{N}, \binom{n}{k} \in \mathbb{N}$.
 - Initialisation : Avec $n = 0$, $\binom{0}{0} = 1 \in \mathbb{N}$ et si $k > 0$,
@@ -329,7 +329,7 @@ $(a+b)^n = \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k}$.
 Cette formule se retrouve dans des cas plus simples, comme l'identité
 remarquable $(x + y)^2 = x^2 + 2xy + y^2$.
 
-###### Exemples : compositions de cas spéciaux autour du binôme de Newton
+##### Exemples : compositions de cas spéciaux autour du binôme de Newton
 $\sum\limits_{k = 0}^{n}\binom{n}{k} = \sum\limits_{k = 0}^{n}\binom{n}{k}1^k 1^{n-k}$
 (donc la somme des coefficients binomiaux est un cas particulier du binôme de
 Newton), ce qui donne $(1 + 1)^n = 2^n$
@@ -346,4 +346,4 @@ $P(n): [(a+b)^n = \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k}]$.
   $= \sum\limits_{k = 0}^{n}\binom{n}{k}a^{k+1} b^{n-k} + \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k+1}$\
   $= \sum\limits_{k = 1}^{n+1}\binom{n}{k-1}a^k b^{n-k+1} + \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k+1}$\
   $= \binom{n}{n}a^{n+1} b^0 + \sum\limits_{k = 1}^{n}[\binom{n}{k-1} + \binom{n}{k}]a^k b^{n-k+1} + \binom{n}{0}a^0 b^{n+1}$\
-  $= a^{n+1} + \sum\limits_{k = 1}^{n}\binom{n+1}{k}a^k b^{n+1-k} + b^{n+1}$\
+  $= a^{n+1} + \sum\limits_{k = 1}^{n}\binom{n+1}{k}a^k b^{n+1-k} + b^{n+1}$

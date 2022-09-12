@@ -33,7 +33,7 @@ Intensité lumineuse  | J       | Candela (cd)
 > On apelle l'étude d'une relation physique en termes de dimensions "analyse
 > dimensionelle"
 
-###### Exemple : $e = mc^2$ donne $[E] = [m][c]^2$, qui donne la dimension
+##### Exemple : $e = mc^2$ donne $[E] = [m][c]^2$, qui donne la dimension
 $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
 - Puissance, $E = P \delta T$ -> $M L^2 T^{-2} = [P] T$, donc $[P] = M L^2 T^{-3}$
 - Résistance, $P = RI^2$ a une unité de $kg \cdot m^2 s^{-1} A ^ {-2}$
@@ -50,7 +50,7 @@ $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
 
 #### Dérivation
 > $[ \frac{dY}{dX} ] = \frac Y X$
-###### Exemple : Force, $F = ma$ est de dimension $[\frac dv dt] = \frac LT^{-1} T$
+##### Exemple : Force, $F = ma$ est de dimension $[\frac dv dt] = \frac LT^{-1} T$
 
 #### Intégration
 > Pour deux grandeurs Y et X, $[\int Y(x)dx] = [Y][x]$
@@ -61,7 +61,7 @@ $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
 
 > L'argument d'une fonction transcendante est sans dimension; Une fonction
 > transcendante est sans dimension
-###### Exemple : Décharge d'un condensateur : $U = E e^{\frac t \tau}$,  $\tau] = $
+##### Exemple : Décharge d'un condensateur : $U = E e^{\frac t \tau}$,  $\tau] = $
 
 ## Présentation d'un résultat numérique
 ### Calcul numérique et calcul littéral
@@ -82,7 +82,7 @@ les grandeurs qui apparaissent sont représentées par leur symbole (une lettre)
 > L'ordre de grandeur d'un résultat numérique correspond à la puissance de 10 la plus
 > proche de la valeur numérique dans une unité donnée.
 
-###### Exemple : Pour C (vitesse de la lumière) $\approx 2.99792458 \times 10^8$,
+##### Exemple : Pour C (vitesse de la lumière) $\approx 2.99792458 \times 10^8$,
 l'ordre de grandeur est 10^8.
 
 ## Analyse dimensionelle comme outil de prédiction
@@ -105,7 +105,7 @@ Méthode :
    gamma et delta, puis le résoudre
 5. Conclure et déterminer k
 
-###### Exemple : Vitesse dans une chute verticale (formule $v = \sqrt{2gh}$ )
+##### Exemple : Vitesse dans une chute verticale (formule $v = \sqrt{2gh}$ )
 1. On cherche la vitesse v du corps (c'est une vitesse), de dimension $L T^{-1}$
 2. g (attraction gravitationelle) (dimensions d'une accélération, donc $L \cdot T^{-2} )$
    et la hauteur de laquelle on lâche l'objet (dimension L), ainsi que sa masse (dimension M)
@@ -118,7 +118,7 @@ Méthode :
    $\left\{\begin{matrix} \alpha = \frac{1}{2} \\ \gamma = \frac{-1}{2} \\ \beta = 0 \end{matrix}\right.$
 5. Ainsi, $v = k \sqrt{gh}$ avec $k = \sqrt{2}$
 
-###### Exemple : Période d'un pendule simple (formule $2\pi \sqrt{\frac{l}{g}}$)
+##### Exemple : Période d'un pendule simple (formule $2\pi \sqrt{\frac{l}{g}}$)
 1. On cherche la période $T_0$, de dimension $T$
 2. g (attraction gravitationelle) (dimensions d'une accélération, donc $L \cdot T^{-2} )$
    et la longueur du fil (dimension L), ainsi que sa masse (dimension M)
@@ -128,7 +128,7 @@ Méthode :
 4. On obtient le système $\left\{\begin{matrix} \alpha = 0 \\ \beta + \gamma = 0 \\ \delta = -2\gamma \end{matrix}\right.$
 5. Ainsi, $T_0 = 2\pi \sqrt{\frac{l}{g}}$
 
-###### Exemple : vitesse d'un satellite (formule $v = \sqrt{\frac{G M_s}{R}}$ )
+##### Exemple : vitesse d'un satellite (formule $v = \sqrt{\frac{G M_s}{R}}$ )
 1. On cherche la vitesse v, de dimension $L \cdot T^{-1}$
 2. On considère les grandeurs suivantes : masse de la planète $M_s$ (dimension M),
    rayon de l'orbite R (dimension L), et la constante de gravitation universelle
@@ -141,7 +141,7 @@ Méthode :
    $\left\{\begin{matrix}  \alpha = \frac{1}{2} \\ \beta = \frac{-1}{2} \\ \gamma = \frac{1}{2} \end{matrix}\right.$
 5. On a donc $v = k \sqrt{\frac{G M_s}{R}}$, avec k = 1
 
-###### Exemple : Rayon cyclotron (formule : $R = \frac{m_e v_0}{e B_0}$ )
+##### Exemple : Rayon cyclotron (formule : $R = \frac{m_e v_0}{e B_0}$ )
 1. On cherche le rayon R de rotation de l'électron, de dimension L
 2. On considère la charge de l'électron e (en coulons, soit une dimension de
    IT), la masse $m_e$ de l'électron (dimension M), la vitesse de l'électron
@@ -162,7 +162,7 @@ généralement pas de solutions
 Si la valeur X recherchée dépend en outre de d'une grandeur sans dimension x,
 cette dernière est invisible à l'analyse dimensionnelle.
 
-###### Exemple : Dans le cas où une grandeur dépend d'une fonction sans dimension
+##### Exemple : Dans le cas où une grandeur dépend d'une fonction sans dimension
 (comme dans le cas du balancement d'un pendule, celui-ci dépend de l'amplitude
 angulaire $f(\theta)$ ).
 
