@@ -56,11 +56,11 @@ changements d'indice autres que tels que le nouvel indice j est égal à
 $k + \text{constante}$ ou $-k + \text{constante}$.
 
 ###### Exemple de réduction par changement d'indice (formule de la somme d'une suite géométrique)
-$(1 - q) \times \sum\limits_{k = 0}^{n}q^k = \sum\limits_{k = 0}^{n}(1 - q)q^k$
-$= \sum\limits_{k = 0}^{n}(q^k - q^{k+1}) = (\sum\limits_{k = 0}^{n}q^k) - (\sum\limits_{k = 0}^{n}q^{k+1})$
-$= \sum\limits_{k = 0}^{n}q^k - \sum\limits_{k = 1}^{n + 1}q^k$.
-$= q^0 + \sum\limits_{k = 1}^{n}q^k - \sum\limits_{k = 1}^{n}q^k - q^{n+1}$.
-$= 1 - q^{n+1}$
+$(1 - q) \times \sum\limits_{k = 0}^{n}q^k = \sum\limits_{k = 0}^{n}(1 - q)q^k$\
+$= \sum\limits_{k = 0}^{n}(q^k - q^{k+1}) = (\sum\limits_{k = 0}^{n}q^k) - (\sum\limits_{k = 0}^{n}q^{k+1})$\
+$= \sum\limits_{k = 0}^{n}q^k - \sum\limits_{k = 1}^{n + 1}q^k$.\
+$= q^0 + \sum\limits_{k = 1}^{n}q^k - \sum\limits_{k = 1}^{n}q^k - q^{n+1}$.\
+$= 1 - q^{n+1}$\
 
 ###### Exemple
 Soit $p \leq n$ et $m \geq n$, $\sum\limits_{k = p}^{m}a_{m-k} = \sum\limits_{j = m-p}^{m-p}a_j$
@@ -71,10 +71,10 @@ On peut voir que $2S_n = 0 + 1 + \ldots + n\: + n + n-1 + \ldots + 0$, ce qui
 donne $2S_n = n \times (n+1)$.
 
 De façon plus rigoureuse, on peut ainsi noter :
-$2S_n = \sum\limits_{k = 0}^{n}k + \sum\limits_{k = 0}^{n}k$
-$= \sum\limits_{k = 0}^{n}k + \sum\limits_{j = 0}^{n}(n-j)$
-$= \sum\limits_{k = 0}^{n}(k + (n-k))$
-$= \sum\limits_{k = 0}^{n}n = (n+1) \times n$ (car n+1 est le nombre de termes).
+$2S_n = \sum\limits_{k = 0}^{n}k + \sum\limits_{k = 0}^{n}k$\
+$= \sum\limits_{k = 0}^{n}k + \sum\limits_{j = 0}^{n}(n-j)$\
+$= \sum\limits_{k = 0}^{n}(k + (n-k))$\
+$= \sum\limits_{k = 0}^{n}n = (n+1) \times n$ (car n+1 est le nombre de termes).\
 
 ###  Sommes télescopiques
 On veut calculer $\sum\limits_{k = p}^{n}a_k$ où le terme $a_k$ peut s'écrire
@@ -87,10 +87,10 @@ $\sum\limits_{k = p}^{n}(U_{k+1} - U_k) = U_{n+1} - U_p$.
 
 On peut le prouver plus rigoureusement par un changement d'indice, de la même
 manière que pour la somme usuelle des entiers :
-$\sum\limits_{k = p}^{n}(U_{k+1} - U_k) = \sum\limits_{k = p}^{n}u_{k+1} - \sum\limits_{k = p}^{n}u_k$
-$= \sum\limits_{j = p+1}^{n+1}U_j - \sum\limits_{k = p}^{n}U_k$
-$= U_{n+1} + \sum\limits_{k = p+1}^{n}u_k - U_p - \sum\limits_{k = p+1}^{n}U_k$
-$= U_{n+1} + U_p$
+$\sum\limits_{k = p}^{n}(U_{k+1} - U_k) = \sum\limits_{k = p}^{n}u_{k+1} - \sum\limits_{k = p}^{n}u_k$\
+$= \sum\limits_{j = p+1}^{n+1}U_j - \sum\limits_{k = p}^{n}U_k$\
+$= U_{n+1} + \sum\limits_{k = p+1}^{n}u_k - U_p - \sum\limits_{k = p+1}^{n}U_k$\
+$= U_{n+1} + U_p$\
 
 On peut facilement appliquer ce raisonnement à la formule de la somme d'une
 suite géométrique de l'exemple plus haut, avec $U_k = q^k$.
@@ -119,10 +119,10 @@ On peut le prouver plus rigoureusement par un changement d'indice, de la même
 manière que pour les sommes télescopiques.
 
 ###### Exemple : somme de logarithmes
-$S_n = \sum\limits_{k = 1}^{n}\ln(1 + \frac{1}{k})$
-$= \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k})$
-$= \sum\limits_{k = 1}^{n}[\ln(k+1) - \ln(k)]$
-$= \ln(n+1) - \ln(1) = \ln(n+1)$
+$S_n = \sum\limits_{k = 1}^{n}\ln(1 + \frac{1}{k})$\
+$= \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k})$\
+$= \sum\limits_{k = 1}^{n}[\ln(k+1) - \ln(k)]$\
+$= \ln(n+1) - \ln(1) = \ln(n+1)$\
 
 Remarque : $\prod\limits_{k = 1}^{n}\frac{k+1}{k} = \frac{n+1}{1} = n+1$.
 En prenant le ln, $\ln(n+1) = \ln(\prod\limits_{k = 1}^{n}\frac{k+1}{k}) = \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k}) = S_n$
@@ -145,11 +145,11 @@ $= q^p \times \frac{1-q^{n-p+1}}{1-q}$ (quand $q \neq 1$) ou
 $= n-p+1$ (quand $q = 1$)
 
 ###### Exemples
-$\sum\limits_{k = 1}^{n}k \times (n-k-1) = \sum\limits_{k = 1}^{n}(nk - k^2 + k)$
-$= \sum\limits_{k = 1}^{n}(n+1)k - \sum\limits_{k = 1}^{n}k^2$
-$= (n+1) \sum\limits_{k = 1}^{n}k - \sum\limits_{k = 1}^{n}k^2$
-$= (n+1) \frac{n(n+1)}{2} - \frac{n(n+1)(2n+1)}{6}$
-$= \frac{n(n+1)}{6} [3(n+1) - 2(n+1)] = \frac{n(n+1)(n+2)}{6}$
+$\sum\limits_{k = 1}^{n}k \times (n-k-1) = \sum\limits_{k = 1}^{n}(nk - k^2 + k)$\
+$= \sum\limits_{k = 1}^{n}(n+1)k - \sum\limits_{k = 1}^{n}k^2$\
+$= (n+1) \sum\limits_{k = 1}^{n}k - \sum\limits_{k = 1}^{n}k^2$\
+$= (n+1) \frac{n(n+1)}{2} - \frac{n(n+1)(2n+1)}{6}$\
+$= \frac{n(n+1)}{6} [3(n+1) - 2(n+1)] = \frac{n(n+1)(n+2)}{6}$\
 
 $\sum\limits_{k = p}^{n}q^k = \sum\limits_{k = p}^{n}q^{k-p+p} = q^p \sum\limits_{k = p}^{n}q^{k-p}$
 $= q^p \sum\limits_{j = 0}^{n-p}q^j = q^p \times \frac{1-q^{n-p+1}}{1-q}$ si
@@ -198,13 +198,152 @@ $\sum\limits_{j = 1}^{n} \sum\limits_{i = 1}^{j-1} a_{i,j}$ (j commencera
 d'ailleurs à 2), etc...
 
 ###### Exemple : double somme de minimums
-$S_n = \sum\limits_{1 \leq i,j \leq n} min(i,j)$
-$= \sum\limits_{i = 1}^{n} \sum\limits_{j = 1}^{n} min(i,j)$
-$= \sum\limits_{i = 1}^{n} (\sum\limits_{j = 1}^{i} min(i,j) + \sum\limits_{j = i+1}^{n} min(i,j))$
-$= \sum\limits_{i = 1}^{n} (\sum\limits_{j = 1}^{i} j + \sum\limits_{j = i+1}^{n} i$
-$= \sum\limits_{i = 1}^{n} (\frac{i(i+1)}{2} + i \times (n-i))$
-$= \sum\limits_{i = 1}^{n} (i^2 \times \frac{-1}{2} + i \times (\frac{1}{2} + n))$
-$= (\frac{-1}{2}) \sum\limits_{i = 1}^{n}i^2 + (n + \frac{1}{2}) \times \sum\limits_{i = 1}^{n} i$
-$= (\frac{-1}{2}) \frac{n(n+1)(2n+1)}{6} + (\frac{2n+1}{2}) \times \frac{n(n+1)}{2}$
-$= \frac{n(n+1)(2n+1)}{12} (-1 + 3)$
-$= \frac{n(n+1)(2n+1)}{6}$
+$S_n = \sum\limits_{1 \leq i,j \leq n} min(i,j)$\
+$= \sum\limits_{i = 1}^{n} \sum\limits_{j = 1}^{n} min(i,j)$\
+$= \sum\limits_{i = 1}^{n} (\sum\limits_{j = 1}^{i} min(i,j) + \sum\limits_{j = i+1}^{n} min(i,j))$\
+$= \sum\limits_{i = 1}^{n} (\sum\limits_{j = 1}^{i} j + \sum\limits_{j = i+1}^{n} i$\
+$= \sum\limits_{i = 1}^{n} (\frac{i(i+1)}{2} + i \times (n-i))$\
+$= \sum\limits_{i = 1}^{n} (i^2 \times \frac{-1}{2} + i \times (\frac{1}{2} + n))$\
+$= (\frac{-1}{2}) \sum\limits_{i = 1}^{n}i^2 + (n + \frac{1}{2}) \times \sum\limits_{i = 1}^{n} i$\
+$= (\frac{-1}{2}) \frac{n(n+1)(2n+1)}{6} + (\frac{2n+1}{2}) \times \frac{n(n+1)}{2}$\
+$= \frac{n(n+1)(2n+1)}{12} (-1 + 3)$\
+$= \frac{n(n+1)(2n+1)}{6}$\
+\
+## Coefficients binomiaux et sommes
+> Rappel : $\left\{\begin{matrix} \forall n \in \mathbb{N}^{\ast}, n! = \prod\limits_{k = 1}^{n}k \\  0! = 1 \end{matrix}\right.$
+> (la propriété de la factorielle de 0 n'est qu'un effet de la propriété des
+> produits sur un ensemble vide).
+
+> Propriété par relation de Chasles : $\forall n \in  \mathbb{N}^{\ast}, n! = n \times (n-1)!$
+
+Selon cette propriété, on a $\forall n,p \in \mathbb{N}^{\ast}$,
+$n \times (n+1) \times \ldots \times (n+p) = \frac{(n+p)!}{(n-1)!}$
+
+###### Exemples
+Pour $n \in \mathbb{N}^{\ast}$, on a :
+- $2 \times 4 \times 6 \times \ldots \times (2n) = \prod\limits_{k = 1}^{n}(2k)$
+  (produit des nombres pairs)
+  $= 2^n \times (\prod\limits_{k = 1}^{n}k = 2^n \times n!)$
+- Produit des nombres impairs : $1 \times 3 \times 5 \times \ldots \times (2n-1)$
+  $= \prod\limits_{k = 1}^{n}(2k-1)$, ce qui est équivalent au produit des k
+  consécutifs, sans les nombres pairs, soit $\frac{\prod\limits_{k = 1}^{2n}k}{\prod\limits_{k = 1}^{n}2k}$
+  $= \frac{(2n)!}{\prod\limits_{k = 1}^{n}2n} = \frac{(2n)!}{2^n \times n!}$
+
+### Coefficients binomiaux
+Soient n et k des entiers, on note $\binom{n}{k}$ (le coefficient binomial "k
+parmi n") le nombre de parties à k éléments d'un ensemble à n éléments.
+
+Remarques :
+- Pour tout k > n, $\binom{n}{k} = 0$
+- Si n = 0, $\binom{0}{k} = 1$
+- Pour tout $n \in \mathbb{N}$, $\binom{n}{n} = 1$
+- $\forall k \in [0,n]\_{\mathbb{N}}, \binom{n}{k} = \binom{n}{n-k}$ (Symétrie)
+  (il s'agit, au lieu d'un choix de k parmi n, d'un choix de ne pas prendre k
+  parmi n).
+
+__Définition :__ Pour $k \in [0,n]\_{\mathbb{N}}, \binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+On peut dire que la division par $k!$ permet d'enlever les doublons qui sont
+tirés parmi tous les tirages (car il s'agit du nombre de permutations possibles
+d'un k-uplet), tandis que $\frac{n!}{(n-k)!}$ correspond à tous les tirages
+possibles de k éléments parmi n (qui sont autant de k-uplets).
+
+On pourra aussi remarquer que $\binom{n}{k}$ compte aussi le nombre de chemins à
+k succès lors de n épreuves de Bernoulli.
+
+### Formule de Pascal : Coefficients binomiaux par récurrence
+Pour $n,k \in \mathbb{N}^{\ast}, \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$
+
+#### Preuves de la formule de Pascal
+__Preuve :__ $\binom{n-1}{k-1} = \frac{(n-1)!}{(k-1)!(n-k)!}$ et
+$\binom{n-1}{k} = \frac{(n-1)!}{k!(n-1-k)!}$. En sommant, on a
+$\binom{n-1}{k-1} + \binom{n-1}{k} = \frac{k(n-1)! + (n-k)(n-1)}{k!(n-k)!}$ (en
+ayant multiplié $\binom{n-1}{k}$ par $\frac{n-k}{n-k}$), ce qui donne
+$\frac{n(n-1)!}{k!(n-k)!} = \binom{n}{k}$.
+
+On peut plus simplement visualiser cette somme par les chemins d'un arbre de
+succès d'un épreuve de Bernoulli, avec k succès parmi n expériences : la branche
+du premier succès contient encore $k-1$ succès lors de $n-1$ expériences, et
+celle du premier échec contient encore $k$ succès parmi $n-1$ expériences.
+
+Enfin, on peut montrer cette formule par l'observation des ensembles : pour
+construire une partie à k éléments d'un ensemble à n éléments, on peut
+disjoindre les cas où on inclut l'un des éléments x, et celui on l'on n'inclut
+pas x. Ces deux cas sont ainsi les choix de k parmi n-1 éléments, et le choix de
+k-1 éléments (on en a déjà sélectionné 1) parmi n-1 éléments. Le problème
+original regroupe ces deux cas.
+
+#### Triangle de Pascal
+La formule précédente permet de calculer tous les coefficients, ligne par ligne,
+où n numérote les lignes. On a ainsi un tableau de la forme :
+
+n/k | 0   | 1   | 2   | 3   | 4   | 5   | 6   | ...
+--- | --- | --- | --- | --- | --- | --- | --- | ---
+0   | 1   | 0   | 0   | 0   | 0   | 0   | 0   | ...
+1   | 1   | 1   | 0   | 0   | 0   | 0   | 0   | ...
+2   | 1   | 2   | 1   | 0   | 0   | 0   | 0   | ...
+3   | 1   | 3   | 3   | 1   | 0   | 0   | 0   | ...
+4   | 1   | 4   | 6   | 4   | 1   | 0   | 0   | ...
+5   | 1   | 5   | 10  | 10  | 5   | 1   | 0   | ...
+6   | 1   | 6   | 15  | 20  | 15  | 6   | 1   | ...
+... | ... | ... | ... | ... | ... | ... | ... | ...
+
+On y retrouve toutes les propriétés précédentes, et nous permet de calculer
+rapidement avec des opérations peu coûteuses les coefficients binomiaux.
+
+#### Formule "du Chef" (à défaut de ne pas avoir de nom)
+$k \times \binom{n}{k} = n \times \binom{n-1}{k-1}$, pour $k, n \in \mathbb{N}^{\ast}$.
+
+__Preuve :__ Avec $k \geq 1, n \geq 1$, $k\binom{n}{k}$
+$= k \times \frac{n!}{k!(n-k)!} = \frac{n!}{(k-1)!(n-k)!}$. Or,
+$n \times \binom{n-1}{k-1} = \frac{n \times (n-1)!}{(k-1)! \times ((n-1)-(k-1))!}$.
+
+On peut aussi visualiser le problème comme le choix d'un ensemble de k personnes
+(une équipe) dont un chef parmi un ensemble de n personnes. Il y a deux
+stratégies possibles :
+1. Choisir le chef (n possibilités), qui choisit le reste de l'équipe (k-1
+   personnes) parmi n-1 personnes, soit $n \times \binom{n-1}{k-1}$
+   possibilités.
+2. Choisir k personnes parmi n, puis on choisit le chef parmi celle-ci. On a
+   donc $k(\binom{n}{k})$ possibilités.
+
+Remarque : en pratique, pour $n, k \geq 1$, $\binom{n}{k} = \frac{n}{k} \times \binom{n-1}{k-1}$
+
+Cette méthode est plus pratique en calcul, mais la formule de Pascal reste plus
+simple algorithmiquement.
+
+###### Exercice : Tous les coefficients binomiaux sont entiers
+On cherche à montrer $\forall (n,k) \in \mathbb{N}^2$. Par récurrence, on a la
+propriété $P(n) : \forall k \in \mathbb{N}, \binom{n}{k} \in \mathbb{N}$.
+- Initialisation : Avec $n = 0$, $\binom{0}{0} = 1 \in \mathbb{N}$ et si $k > 0$,
+  $\binom{0}{k} = 0 \in \mathbb{N}$, donc $P_0$ vraie.
+- Hérédité : Soit $n \in \mathbb{N}^{\ast}$ tel que $P(n-1)$. Si $k = 0$,
+  $\binom{n}{0} = 1 \in \mathbb{N}$. Si $k \geq 1, \binom{n}{k}$
+  $= \binom{n-1}{k-1} + \binom{n-1}{k}$ (formule de Pascal).
+  Par $P(n-1)$, $\binom{n-1}{k-1} \in \mathbb{N}$ et $\binom{n-1}{k} \in \mathbb{N}$,
+  donc $\binom{n}{k} \in \mathbb{N}$, d'où $P(n)$ est vraie.
+
+### Binôme de Newton
+Pour tout $(a,b) \in \mathbb{C}^2$ et $n \in \mathbb{N}$,
+$(a+b)^n = \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k}$.
+
+Cette formule se retrouve dans des cas plus simples, comme l'identité
+remarquable $(x + y)^2 = x^2 + 2xy + y^2$.
+
+###### Exemples : compositions de cas spéciaux autour du binôme de Newton
+$\sum\limits_{k = 0}^{n}\binom{n}{k} = \sum\limits_{k = 0}^{n}\binom{n}{k}1^k 1^{n-k}$
+(donc la somme des coefficients binomiaux est un cas particulier du binôme de
+Newton), ce qui donne $(1 + 1)^n = 2^n$
+
+Somme alternée des coefficients binomiaux : $\sum\limits_{k = 0}^{n}\binom{n}{k}(-1)^k \times 1^{n-k}$
+$= (-1 + 1)^n = 0^n$.
+
+#### Preuve du binôme de Newton
+Par récurrence sur n, soit $(a,b) \in \mathbb{C}^2$,
+$P(n): [(a+b)^n = \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k}]$.
+- Initialisation : $(a+b)^0 = 1$ et $\sum\limits_{k = 0}^{0}\binom{0}{k}a^k b^{0-k} = \binom{0}{0}a^0 b^0 = 1 \times 1 = 1$.
+- Hérédité : Soit $n \geq 0$ tel que $P(n)$ est vraie, $(a+b)^{n+1} = (a+b) \times (a+b)^n$\
+  $= (a+b) \times \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k}$\
+  $= \sum\limits_{k = 0}^{n}\binom{n}{k}a^{k+1} b^{n-k} + \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k+1}$\
+  $= \sum\limits_{k = 1}^{n+1}\binom{n}{k-1}a^k b^{n-k+1} + \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k+1}$\
+  $= \binom{n}{n}a^{n+1} b^0 + \sum\limits_{k = 1}^{n}[\binom{n}{k-1} + \binom{n}{k}]a^k b^{n-k+1} + \binom{n}{0}a^0 b^{n+1}$\
+  $= a^{n+1} + \sum\limits_{k = 1}^{n}\binom{n+1}{k}a^k b^{n+1-k} + b^{n+1}$\

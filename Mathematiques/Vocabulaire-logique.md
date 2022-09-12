@@ -99,10 +99,10 @@ et on a $(P \Rightarrow Q) \equiv (\text{NON}\, P) \,\text{OU}\, Q$.
 
 Proposition : toute implication est équivalente à sa contraposée, soit
 $\text{NON}\, Q \Rightarrow \text{NON}\, P$
-$\text{NON}\, Q \Rightarrow \text{NON}\, P  \equiv \text{NON}\, (\text{NON}\, Q)$
-$\text{OU}\, (\text{NON}\, P)$
-$\equiv Q \,\text{OU}\, \text{NON}\, P$
-$\equiv P \Rightarrow Q$
+
+$\text{NON}\, Q \Rightarrow \text{NON}\, P  \equiv \text{NON}\, (\text{NON}\, Q) \,\text{OU}\, (\text{NON}\, P)$\
+$\equiv Q \,\text{OU}\, \text{NON}\, P$\
+$\equiv P \Rightarrow Q$\
 
 Attention : Pas de lien ente la proposition et sa réciproque, si la relation n'est que dans un sens elle est d'ailleurs souvent fausse
 
@@ -332,11 +332,11 @@ $\forall n \in \mathbb{N}, \sum\limits_{k=0}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$
 Raisonnons par récurrence par n.
 Initialisation : Au rang 0, $\sum\limits_{k = 2}^{0}k^2 = 0$ et $0 \times \ldots = 0$
 Hérédité : Soit $n \in  \mathbb{N}$ tel que $\sum\limits_{k = 0}^{n} k^2 = \frac{n(n+1)(2n+1)}{6}$.
-$\sum\limits_{k=0}^{n+1}k^2 = (\sum\limits_{k=0}^{n}k^2) + (n+1)^2$
-$= \frac{n(n+1)(2n+1)}{6} + (n+1)^2$
-$= \frac{n+1}{6} [n(2n+1) + 6(n+1)]$
-$= \frac{n+1}{6} [2n^2 + 7n + 6]$
-$= \frac{n+1}{6} (n+2)(2n+3)$, ce qui prouve $P(n+1)$
+$\sum\limits_{k=0}^{n+1}k^2 = (\sum\limits_{k=0}^{n}k^2) + (n+1)^2$\
+$= \frac{n(n+1)(2n+1)}{6} + (n+1)^2$\
+$= \frac{n+1}{6} [n(2n+1) + 6(n+1)]$\
+$= \frac{n+1}{6} [2n^2 + 7n + 6]$\
+$= \frac{n+1}{6} (n+2)(2n+3)$, ce qui prouve $P(n+1)$\
 On en conclut qu'on a prouvé ce résultat par récurrence pour tout n.
 
 ### Variantes du raisonnement par récurrence
