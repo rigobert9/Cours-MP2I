@@ -135,7 +135,7 @@ puissances ou des logarithmes/exponentielles.
 
 ### Sommes usuelles
 - $\forall n \in \mathbb{N}, \sum\limits_{k = 1}^{n}k = \frac{n(n+1)}{2}$
-- $\forall n \in \mathbb{N}, \sum\limits_{k = 1}^{n}k^6 = \frac{n(n+1)(2n+1)}{6}$
+- $\forall n \in \mathbb{N}, \sum\limits_{k = 1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6}$
 - $\forall n \in \mathbb{N}, \sum\limits_{k = 1}^{n}k^3 = (\frac{n(n+1)}{2})^2$
 
 Formule des suites géométriques : Soit $(p,n) \in \mathbb{N}^2$ avec $p \leq n$
