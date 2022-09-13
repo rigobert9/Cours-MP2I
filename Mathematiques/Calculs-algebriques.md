@@ -347,3 +347,13 @@ $P(n): [(a+b)^n = \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k}]$.
   $= \sum\limits_{k = 1}^{n+1}\binom{n}{k-1}a^k b^{n-k+1} + \sum\limits_{k = 0}^{n}\binom{n}{k}a^k b^{n-k+1}$\
   $= \binom{n}{n}a^{n+1} b^0 + \sum\limits_{k = 1}^{n}[\binom{n}{k-1} + \binom{n}{k}]a^k b^{n-k+1} + \binom{n}{0}a^0 b^{n+1}$\
   $= a^{n+1} + \sum\limits_{k = 1}^{n}\binom{n+1}{k}a^k b^{n+1-k} + b^{n+1}$
+
+##### Technique supplémentaire : Sommation par paquets
+$\sum\limits_{i \in E}a_i$ avec $E = I \cup J$ et $I \cap J = \emptyset$ (I et J
+deux ensembles disjoints).
+On a alors $\sum\limits_{i \in E}a_i = \sum\limits_{i \in I}a_i + \sum\limits_{j \in J} a_j$
+
+Cette technique peut se retrouver par exemple dans la séparation de l'ensemble
+entre les pairs et les impairs, ou différentes congruences. Il faut néanmoins
+bien faire attention aux bornes données aux différentes sommes.
+$&=  \\$
