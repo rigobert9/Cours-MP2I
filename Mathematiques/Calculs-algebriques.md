@@ -356,4 +356,3 @@ On a alors $\sum\limits_{i \in E}a_i = \sum\limits_{i \in I}a_i + \sum\limits_{j
 Cette technique peut se retrouver par exemple dans la séparation de l'ensemble
 entre les pairs et les impairs, ou différentes congruences. Il faut néanmoins
 bien faire attention aux bornes données aux différentes sommes.
-$&=  \\$
