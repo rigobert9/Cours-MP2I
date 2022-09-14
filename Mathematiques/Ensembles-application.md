@@ -87,21 +87,21 @@ En probabilité, une telle partition d'un univers est souvent utilisée et est
 identique.
 
 ### Ensemble des parties
-> Soit E un ensemble, on note $\mathcal{P}(E)$ l'ensemble de tous les sous-ensembles de E.
-> Ainsi,pour tout ensemble A, $A \in \mathcal{P}(E) \Leftrightarrow A \subset E$
+> Soit E un ensemble, on note $\mathfrak{P}(E)$ l'ensemble de tous les sous-ensembles de E.
+> Ainsi,pour tout ensemble A, $A \in \mathfrak{P}(E) \Leftrightarrow A \subset E$
 
 On pout remarquer que si E est fini et possède $n \in \mathbb{N}$ éléments,
-alors $\mathcal{P}(E)$ est fini et possède $2^n$.
-En effet, pour $k \in [0,n]\_{\mathbb{N}}$, on note $\mathcal{P}_k(E)$ l'ensemble des
-parties à k éléments de E (ce qui donne $\mathcal{P}_0(E) = \{\emptyset\}$ et $\mathcal{P}_n{E} = \{E\}$).
-On a alors $\mathcal{P}(E) = \bigcup\limits_{k = 0}^n \mathcal{P}_k(E)$, et on a donc
-$\text{card}(\mathcal{P}(E)) = \sum\limits_{k = 0}^{n}\text{card}(\mathcal{P}_(E))$\
+alors $\mathfrak{P}(E)$ est fini et possède $2^n$.
+En effet, pour $k \in [0,n]_{\mathbb{N}}$, on note $\mathfrak{P}_k(E)$ l'ensemble des
+parties à k éléments de E (ce qui donne $\mathfrak{P}_0(E) = \{\emptyset\}$ et $\mathcal{P}_n{E} = \{E\}$).
+On a alors $\mathfrak{P}(E) = \bigcup\limits_{k = 0}^n \mathcal{P}_k(E)$, et on a donc
+$\text{card}(\mathfrak{P}(E)) = \sum\limits_{k = 0}^{n}\text{card}(\mathcal{P}_(E))$\
 $= \sum\limits_{k = 0}^{n}\binom{n}{k}$\
 $= 2^n$
 
 ##### Exemple :
-$E = \{a, b, c\}, \mathcal{P}(E) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}$
-$\mathcal{P}(E)$ contient ici 8 éléments.
+$E = \{a, b, c\}, \mathfrak{P}(E) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}$
+$\mathfrak{P}(E)$ contient ici 8 éléments.
 
 ### Produit cartésien
 > Soient E, F deux ensembles, on appelle couple l'objet $(x,y)$ où $\left\{\begin{matrix} x \in E \\ y \in F \end{matrix}\right.$.
@@ -137,17 +137,17 @@ On dit que $y = f(x)$ est l'image de x par f.
 Quand E, F sont des sous-ensembles de $\mathbb{R}$, on confond application et
 fonction, ainsi que leur notations. Il faut néanmoins bien les séparer.
 
-> Soit $f: E \to F$, le graphe $?f$ de f est défini par $?f = \{(x,f(x)) \in E \times F, x \in E\}$.
-> $?f$ est une partie de $E \times F$.
+> Soit $f: E \to F$, le graphe $\Gamma_f$ de f est défini par $\Gamma_f = \{(x,f(x)) \in E \times F, x \in E\}$.
+> $\Gamma_f$ est une partie de $E \times F$.
 
-Pour $(x,y) \in ?f$, on a :
+Pour $(x,y) \in \Gamma_f$, on a :
 - $y = f(x)$
 - y est l'image de x
 - x est un antécédent de y
 
-On note alors $\mathfrak{F}(E,F)$ ou $F^E$ l'ensemble des applications de E dans F.
+On note alors $\mathcal{F}(E,F)$ ou $F^E$ l'ensemble des applications de E dans F.
 
-**Égalité** : Soient $f,g \in \mathfrak{F}(E,F), f = g \Leftrightarrow \forall x \in E, f(x) = g(x)$
+**Égalité** : Soient $f,g \in \mathcal{F}(E,F), f = g \Leftrightarrow \forall x \in E, f(x) = g(x)$
 
 > L'identité de E est la fonction $\begin{aligned} id_E: E &\to E \\ x &\mapsto id_E(x) = x .\end{aligned}$
 
@@ -157,15 +157,15 @@ Les applications ne se font que d'un seul ensemble à un seul autre ensemble.
 
 ##### Exemple
 Soit E un ensemble et A une partie de E, on définit
-$\begin{aligned} \varphi: \mathcal{P}(E) &\to \mathcal{P}(E) \\ X &\mapsto \varphi(X) = X \cap A .\end{aligned}$.
-On peut montrer que $\forall X \in \mathcal{P}(E), \varphi(X) \in \mathcal{P}(A)$. En effet,
-$\varphi(X) = X \cap A \subset A$ donc $\varphi(X) \in \mathcal{P}(a)$.
+$\begin{aligned} \varphi: \mathfrak{P}(E) &\to \mathcal{P}(E) \\ X &\mapsto \varphi(X) = X \cap A .\end{aligned}$.
+On peut montrer que $\forall X \in \mathfrak{P}(E), \varphi(X) \in \mathcal{P}(A)$. En effet,
+$\varphi(X) = X \cap A \subset A$ donc $\varphi(X) \in \mathfrak{P}(a)$.
 
 ##### Exemple : Fonction indicatrice d'un ensemble
 Soit E un ensemble et A une partie de E. On pose
-$\begin{aligned} \mathbb{1}_A: E &\to \{0,1\} \\ x &\mapsto \mathbb{1}_A(x) = \left\{\begin{matrix} 1 si x \in A \\ 0 sinon \end{matrix}\right. .\end{aligned}$.
-On a $\forall x \in E, x \in A \Leftrightarrow \mathbb{1}_A(x) = 1$.
-La fonction indicatrice $\mathbb{1}_A$ permet de savoir si un élément de E fait
+$\begin{aligned} {1}_A: E &\to \{0,1\} \\ x &\mapsto {1}_A(x) = \left\{\begin{matrix} 1 \,\text{si}\, x \in A \\ 0 \,\text{sinon}\, \end{matrix}\right. .\end{aligned}$.
+On a $\forall x \in E, x \in A \Leftrightarrow {1}_A(x) = 1$.
+La fonction indicatrice ${1}_A$ permet de savoir si un élément de E fait
 partie de A (c'est une fonction qui vérifie l'appartenance à un ensemble, comme
 des fonction CamL, Python ou les prédicats de LisP vérifient l'appartenance à un
 type ou le respect d'une condition).
@@ -178,7 +178,7 @@ L'ensemble des suites réelles est donc noté $\mathbb{R}^\mathbb{N}$.
 #### Prolongements et restrictions
 > Prolongement/restriction : Soient $f: E \to F$, et A une partie de E,
 > l'application $\begin{aligned} \tilde{f}: A &\to F \\ x &\mapsto f(x) .\end{aligned}$
-> est la restriction de f à A. On la note aussi $f?_A$ ("f restreinte à A").
+> est la restriction de f à A. On la note aussi $f\restriction_A$ ("f restreinte à A").
 
 Soit $f: A \to F$ et avec $A \subset E$, on dit que $g: E \to F$ est un
 prolongement de $f$ si $\forall x \in A, f(x) = g(x)$
@@ -187,7 +187,7 @@ prolongement de $f$ si $\forall x \in A, f(x) = g(x)$
 $\begin{aligned}  f: \mathbb{R} &\to \mathbb{R}\_{+} \\ x &\mapsto f(x) = |x| .\end{aligned}$ 
 et
 $\begin{aligned}  g: \mathbb{C} &\to \mathbb{R}\_{+} \\ x &\mapsto f(x) = |x| .\end{aligned}$.
-f est une restriction de g en $\mathbb{R}$, $f = g?\mathbb{R}$
+f est une restriction de g en $\mathbb{R}$, $f = g\restriction_\mathbb{R}$
 
 ##### Exemple : prolongement continu
 $\begin{aligned} f: \mathbb{R}^{\ast}\_{+} &\to \mathbb{R} \\ x &\mapsto f(x) = x\ln(x) .\end{aligned}$, avec f continue sur $\mathbb{R}^{\ast}\_{+}$.
