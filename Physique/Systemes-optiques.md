@@ -119,7 +119,7 @@ $\overline{AB} = -AB > 0$ sinon.
 Pour $AB$ vertical, si B est plus haut au-dessus de l'axe optique $\overline{AB} = AB > 0$ et
 $\overline{AB} = -AB > 0$ sinon.
 
-Pour tous points $A$ et $B$, $\overline{AB = -\overline{BA}}$.
+Pour tous points $A$ et $B$, $\overline{AB} = -\overline{BA}$.
 Pour tous points $A, B, C$, $\overline{AB} = \overline{AC} + \overline{CB}$ (sur
 le même axe horizontal ou vertical).
 
@@ -144,10 +144,130 @@ Avec le théorème de Thalès, $\gamma = \frac{\overline{A'B'}}{\overline{AB}} =
 
 ### Relation de conjugaison
 #### Relation de conjugaison de Newton, dite "aux foyers"
-$\overline{FA}\overline{F'A'} = -f'^2$
+$\overline{FA}\,\overline{F'A'} = -f'^2$
 
 Ainsi, le grandissement peut s'exprimer sous la forme
 $\gamma = \frac{-\overline{F'A'}}{f'} = \frac{f'}{\overline{FA}}$.
 
 #### Relation de conjugaison de Descartes, dite "aux centres"
 $\frac{1}{\overline{OA'}} - \frac{1}{\overline{OA}} = \frac{1}{f'}$
+
+### Application : la loupe
+Avec une loupe $f' = 5 cm$, $\overline{AB} = 1cm$ et $\overline{OA} = -3cm$.
+L'image $\overline{A'B'}$ est agrandie, virtuelle, et de même sens que l'objet.
+On a ainsi les mesures supplémentaires :
+$\overline{A'B'} = 2.5cm$, $\overline{OA'} = 7.5cm$, $\overline{F'A'} = -12.5cm$, $\gamma = 2.5$.
+
+On peut alors montrer $\overline{F'A'}$ à partir de la relation de conjugaison
+de Newton, ainsi que $\gamma = 2.5$.
+
+On peut non seulement calculer $\overline{OA'}$ par Thalès, mais aussi par la
+relation de conjugaison de Descartes, qui nous donne :
+$\frac{1}{\overline{OA'}} - \frac{1}{\overline{OA}} = \frac{1}{f'}$
+$\Leftrightarrow \frac{1}{\overline{OA'}} = \frac{1}{\overline{OA}} + \frac{1}{f'}$
+$\Leftrightarrow \frac{1}{\overline{OA'}} = \frac{\overline{OA} + f'}{\overline{OA} \times f'}$
+$\Leftrightarrow \overline{OA'} = \frac{\overline{OA} \times f'}{\overline{OA} + f'}$
+$\Leftrightarrow \overline{OA'} = \frac{-15}{2}$
+
+### Condition expérimentale pour obtenir une image réelle à partir d'un objet réel
+On doit, en prenant en compte la grandeur $D = \overline{AA'} > 0$ fixe,
+déterminer $x = \overline{OA'} < 0$.
+
+Voir TP : Méthode de Bessel.
+
+D'après la relation de Descartes,
+$\frac{1}{\overline{OA'}} - \frac{1}{\overline{OA}} = \frac{1}{f'}$.
+Or, $\overline{OA'} = \overline{OA} + \overline{AA'} = x + D$,
+donc $\frac{1}{x+D} - \frac{1}{x} = \frac{1}{f'}$.
+Ainsi, on a $x = \frac{1}{x+ D} - \frac{1}{x} - \frac{1}{f'} = 0$.
+On multiplie tout par $x(x+D)f'$, et on obtient le polynôme
+$xf'- f'(x + D) - x(x + D) = 0$
+$\Leftrightarrow x^2 + Dx + f'D = 0$. En obtenant le discriminant, on a
+$\Delta = D^2 - 4Df' = D(D-4f') \geq 0$, donc $D \geq 4f'$
+
+Pour former l'image réelle d'un objet réel, avec une lentille convergente de
+focale $f'$, il faut que l'objet et l'écran soit séparés d'une distance $D \geq 4f'$
+
+## Association de lentilles
+### Association de deux lentilles convergentes
+> $A_1, B_1$ est l'image intermédiaire de l'objet dans le système optique
+
+##### Exemple
+$f'_1 = f'_2 = 2cm$, $\overline{O_1 O_2} = 5cm$, $\overline{AB} = 1cm$, $\overline{O_1 A} = -4cm$.
+
+### La lunette astronomique
+La lunette astronomique est un système afocal.
+
+> Un système optique est dit afocal si un objet à l'infini y donne une image à
+> l'infini.
+
+Le grossisement vérifie dans ce système $G \frac{\alpha'}{\alpha}$, avec $\alpha$ le diamètre
+apparente de l'œil, et $\alpha'$ le diamètre apparent à travers la lunette.
+
+## Modélisation de l'œil
+### Description sommaire
+Modélisation : Le cristallin est représenté par une lentille convergente, la
+rétine par un écran et l'iris avec la pupille par un diaphragme.
+
+Attention : au cours de la vision, la distance entre la lentille et l'œil ne
+change pas, la focale du cristallin varie par le système de diaphragme de l'iris
+sans modifier la distance à la rétine qui est fixée par l'anatomie à environ 1.7
+cm.
+
+### Caractéristiques optiques
+#### Champ visuel
+> Le champ visuel d'un capteur optique décrit la portion d'espace visible pour
+> le capteur. Il est défini comme l'angle entre les rayons extrêmes accessibles
+> au capteur.
+
+#### Pouvoir séparateur ou acuité visuelle
+> Le pouvoir séparateur d'un capteur optique décrit sa capacité à pouvoir
+> distinguer deux points très proches. Il est défini comme l'angle minimal que
+> doivent former deux rayons pour pouvoir être interprétés comme provenant de
+> deux points différents.
+
+On exprime l'acuité visuelle comme $\alpha = 1 \text{minute d'arc} = (\frac{1}{60})° = 0.017° \approx 3 \times 10^{-4} \text{rad}$.
+
+#### Limite de vision nette
+> Le punctum proximum (PP) est le point le plus proche de l'œil qui est visible
+> nettement.
+
+> Le punctum remotum (PR) est le point le plus lointain de l'œil qui est visible
+> nettement.
+
+Un œil qui n'accommode pas voit au punctum remotum, qui se situe pour un œil
+normal à l'infini.
+
+Le punctum proximum d'un œil normal se trouve entre 20 et 25 cm.
+
+### Défauts de la vision
+#### Myopie
+Le cristallin d'un myope est trop convergent, si bien que le punctum proximum
+d'un myope se trouve plus près de l'œil que pour un œil normal. De plus, le
+punctum remotum n'est pas à l'infini.
+
+Les myopes se font corriger avec des lunettes, qui sont des lentilles
+divergentes de dioptrie en général entre -1 et -2.
+
+#### Hypermétropie
+L'hypermétropie est l'opposé de la myopie.
+Le cristallin d'un hypermétrope n'est pas assez convergent, si bien que le punctum proximum
+d'un hypermétrope se trouve plus loin de l'œil que pour un œil normal.
+
+Les hypermétropes se font corriger avec des lunettes, qui sont des lentilles
+convergentes de dioptrie en général entre 1 et 2.
+
+Un œil "normal" est appelé "emmetrope".
+
+#### Astigmatie
+Le cristallin d'un astigmate n'est plus parfaitement sphérique, mais a plutôt
+une forme ovale (ballon de rugby). Le système n'est alors plus stigmatique et
+les images qu'il forme sont entachées d'aberrations géométriques.
+
+> "Vous avez des ballons de rugby dans les yeux."
+
+#### Presbytie
+La presbytie est un trouble de la vision qui rend difficile la vision de près.
+Cela a pour conséquence d'éloigner le punctum proximum. Ce problème arrive
+souvent en vieillissant, vers 40-45 ans, et est provoquée par le relâchement des
+muscles de l'iris.
