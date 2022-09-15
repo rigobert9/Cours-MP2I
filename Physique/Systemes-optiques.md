@@ -39,7 +39,7 @@ travaillera avec des sources ponctuelles pour éviter de nombreux phénomènes.
 > sur le système optique parallèle entre eux.
 
 > Les rayons provenant d'un objet situé à l'infini __hors de__ l'axe optique
-> arrivent sur l'axe optique parallèles entre eux sur l'axe optique, et formant
+> arrivent sur l'axe optique parallèles entre eux sur l'axe optique.
 
 ### Stigmatisme approché
 Dans la pratique, il existe très peu de systèmes optiques rigoureusement
@@ -201,7 +201,7 @@ La lunette astronomique est un système afocal.
 > Un système optique est dit afocal si un objet à l'infini y donne une image à
 > l'infini.
 
-Le grossisement vérifie dans ce système $G \frac{\alpha'}{\alpha}$, avec $\alpha$ le diamètre
+Le grossisement vérifie dans ce système $G = \frac{\alpha'}{\alpha}$, avec $\alpha$ le diamètre
 apparente de l'œil, et $\alpha'$ le diamètre apparent à travers la lunette.
 
 ## Modélisation de l'œil
