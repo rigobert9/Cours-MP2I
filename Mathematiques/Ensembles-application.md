@@ -91,17 +91,17 @@ identique.
 > Ainsi,pour tout ensemble A, $A \in \mathfrak{P}(E) \Leftrightarrow A \subset E$
 
 On pout remarquer que si E est fini et possède $n \in \mathbb{N}$ éléments,
-alors $\mathfrak{P}(E)$ est fini et possède $2^n$.
-En effet, pour $k \in [0,n]_{\mathbb{N}}$, on note $\mathfrak{P}_k(E)$ l'ensemble des
-parties à k éléments de E (ce qui donne $\mathfrak{P}_0(E) = \{\emptyset\}$ et $\mathcal{P}_n{E} = \{E\}$).
-On a alors $\mathfrak{P}(E) = \bigcup\limits_{k = 0}^n \mathcal{P}_k(E)$, et on a donc
-$\text{card}(\mathfrak{P}(E)) = \sum\limits_{k = 0}^{n}\text{card}(\mathcal{P}_(E))$\
+alors $\mathcal{P}(E)$ est fini et possède $2^n$.
+En effet, pour $k \in [0,n]_{\mathbb{N}}$, on note $\mathcal{P}_k(E)$ l'ensemble des
+parties à k éléments de E (ce qui donne $\mathcal{P}_0(E) = \{\emptyset\}$ et $\mathcal{P}_n{E} = \{E\}$).
+On a alors $\mathcal{P}(E) = \bigcup\limits_{k = 0}^n \mathcal{P}_k(E)$, et on a donc
+$\text{card}(\mathcal{P}(E)) = \sum\limits_{k = 0}^{n}\text{card}(\mathcal{P}_(E))$\
 $= \sum\limits_{k = 0}^{n}\binom{n}{k}$\
 $= 2^n$
 
 ##### Exemple :
-$E = \{a, b, c\}, \mathfrak{P}(E) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}$
-$\mathfrak{P}(E)$ contient ici 8 éléments.
+$E = \{a, b, c\}, \mathcal{P}(E) = \{\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\}, \{a,b,c\}\}$
+$\mathcal{P}(E)$ contient ici 8 éléments.
 
 ### Produit cartésien
 > Soient E, F deux ensembles, on appelle couple l'objet $(x,y)$ où $\left\{\begin{matrix} x \in E \\ y \in F \end{matrix}\right.$.
@@ -240,3 +240,119 @@ l'injectivité.
 
 ##### Exemple : fonctions bijectives
 $\sin : [\frac{\pi}{2};\frac{\pi}{2}] \to [-1;1]$ est bijective.
+
+##### Exemple
+Soit $\begin{aligned} f: \mathbb{R} &\to \mathbb{R} \\ x &\mapsto f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} .\end{aligned}$.
+On cherche à montrer que $f$ réalise une bijection de $\mathbb{R}$ dans un
+intervalle I à préciser.
+Soit $y \in \mathbb{R}$, on résout $y = f(x)$. $y = \frac{e^x - e^{-x}}{e^x + e^{-x}}$\
+$\Leftrightarrow (e^x + e^{-x})y = e^x - e^{-x}$\
+$\Leftrightarrow \left\{\begin{matrix} X = e^x \\ (X + \frac{1}{X})y = X - \frac{1}{X} \end{matrix}\right.$\
+$\Leftrightarrow \left\{\begin{matrix} X = e^x \\ (X^2 + 1)y = X^2 - 1 \end{matrix}\right.$\
+$\Leftrightarrow \left\{\begin{matrix} X = e^x \\ X^2(y-1) = -y - 1 \end{matrix}\right.$
+(On peut voir ici qu'il n'y a pas de solution en $y = 1$, donc on continue avec
+$y \neq 1$. Dans tous les cas, $f$ n'est pas bijective dans $\mathbb{R}$.)\
+$\Leftrightarrow \left\{\begin{matrix} X = e^x \\ X^2 = \frac{1 + y}{1 - y} \end{matrix}\right.$\
+$\Leftrightarrow \left\{\begin{matrix} y \neq 1 \\ e^{2x} = \frac{1 + y}{1 - y} \end{matrix}\right.$
+(on ne trouve ici qu'un seule solution)\
+$\Leftrightarrow \left\{\begin{matrix} y \neq 1 \\ \frac{1 + y}{1 - y} > 0 \\ x = \frac{1}{2}\ln(\frac{1+y}{1-y}) \end{matrix}\right.$
+
+On doit donc chercher quand $\frac{1+y}{1-y} > 0$, et on a à l'aide d'un tableau
+de signes $\frac{1+y}{1-y} > 0 \Leftrightarrow y \in ]-1;1[$. Ainsi, on a
+$\forall y \in ]-1;1[, \exists! x \in \mathbb{R}, y = f(x)$, et $f$ est
+bijective de $\mathbb{R}$ dans $]-1;1[$.
+
+On peut voir cette même bijection dans un simple tableau de signes de f, dans
+lequel on pourrait voir que f est continue sur $\mathbb{R}$ et que ses bornes
+sont en $]-1;1[$.
+
+## Composition
+Avec trois ensembles $E,F,G$, une application $f: E \to F$ et une application
+$g: F \to G$, on a alors une application composée $g \circ f: E \to G$.
+
+> Soit $f \in \mathcal{F}(E,F)$ et $g \in \mathfrak{F}(F,G)$, la composée de f par
+> g, notée $g \circ f$, est l'application $\begin{aligned} g \circ f: E &\to G \\ x &\mapsto g \circ g \circ f(x) = g(f(x)) .\end{aligned}$
+
+On a $\forall x \in E (g \circ f)(x) = g(f(x))$.
+
+- $\circ$ est non commutative dans la plupart des cas : $f \circ g \neq g \circ f$
+- $\circ$ est associative : soient $f \in \mathfrak{F}(E,F), g \in \mathfrak{F}(F,G),$
+  $h \in \mathfrak{F}(G,H), (h \circ g) \circ f = h \circ (g \circ f)$
+
+##### Preuve de l'associativité de $\circ$
+$\forall x \in E, ((h \circ g) \circ f)(x) = (h \circ g)(f(x))$\
+$= h(g(f(x))) = h((g \circ f)(x)) = (h \circ (g \circ f))(x)$
+
+### Composition répétée
+Ainsi, on pourra écrire sans ambiguité $h \circ g \circ f$.
+De plus, quand $f \in \mathfrak{F}(E,E)$, on peut définir $f \circ f$, et donc
+$f \circ f \circ \ldots \circ f \,\text{(n fois)}= f^n$ (avec $n \in \mathbb{N}^{\ast}$).
+
+Les fonctions qui ont le même ensemble de départ et d'arrivée ont le préfixe
+"endo-".
+
+Avec $f \in \mathfrak{F}(E,F)$, on a $f \circ id_E = f$ et $id_F \circ f = f$
+(attentions aux ensembles/types de départ et d'arrivée).
+Dans le cas particulier où $f \in \mathfrak{F}(E,E), id_E \circ f = f \circ id_E = f$.
+On posera donc $\left\{\begin{matrix} f^0 = id_E \\ f^{n+1} = f^n \circ f, n \in \mathbb{N} \end{matrix}\right.$
+
+### Liens entre injectivité, surjectivité et composition
+Soient $f \in \mathfrak{F}(E,F)$ et $g \in \mathfrak{F}(F,G)$ :
+1. Si f et g sont injectives, alors $g \circ f$ est injective
+2. Si f et g sont surjectives, alors $g \circ f$ est surjective
+3. Si f et g sont bijectives, alors $g \circ f$ est bijective
+
+##### Preuve
+1. Supposons $f,g$ injectives. On cherche à montrer que $g \circ f$ est
+   injective. Avec $a,b \in E$ tels que $(g \circ f)(a) = (g \circ f)(b)$.
+   $\Leftrightarrow g(f(a)) = g(f(b))$. Par injectivité de $g$, $f(a) = f(b)$,
+   puis par injectivité de f, $a = b$.
+2. On suppose $f,g$ surjectives. On cherche à montrer que $g \circ f$ est
+   surjective. Soit $z \in G$, comme $g$ est surjective, z admet un antécédent
+   dans $F$ par $g$, donc $\exists y \in F, z = g(y)$. Comme f est surjective, y
+   admet un antécédent dans E par f, $\exists x \in E, y = f(x)$. Ainsi
+   $z = g(y) = g(f(x)) = (g \circ f)(x)$, donc $x$ est un antécédent de $z$ par
+   $g \circ f$, et on a montré que $\forall z \in G, \exists x \in E, z = (g \circ f)(x)$.
+3. On suppose $f,g$ bijectives. Commes elles sont toutes deux surjectives et
+   injectives, on applique les deux preuves ci-dessus.
+
+#### Ces propriétés ne sont pas réciproques
+Néanmoins, on a les propriétés suivantes, avec $f \in \mathfrak{F}(E,F)$ et
+$g \in \mathfrak{F}(E,F)$ :
+1. Si $g \circ f$ est injective, alors $f$ est injective
+2. Si $g \circ f$ est surjective, alors $f$ est surjective
+
+##### Preuve
+1. On cherche à montrer que $f$ est injective. Soit $(a,b) \in E^2$ tel que
+  $f(a) = f(b)$, alors $g(f(a)) = g(f(b))$, donc $(g \circ f)(a) = (g \circ f)(b)$.
+  Par injectivité de $g \circ f$, $a = b$, donc $f$ est injective.
+2. on cherche à montrer que $g$ est surjective. Soit $z \in G$, par subjectivité
+   de $g \circ f$, $\exists x \in E, (g \circ f)(x) = z$ donc $g(f(x)) = z$ et
+   $f(x) \in F$ est ainsi un antécédent de $z$ par $g$. On peut poser $y = f(x) \in F$
+   et on a bien montré $\forall z \in G, \exists y \in F, g(y) = z$. Ainsi, $g$
+   est surjective.
+
+##### Exemple : ensemble des polynômes
+Soit $E$ l'ensemble des polynômes réels (fonctions polynomiales de $\mathbb{R}$
+dans $\mathbb{R}$).
+Soit $\begin{aligned} f: E &\to E \\ P &\mapsto f(P) = P' .\end{aligned}$ et
+$\begin{aligned} g: E &\to E \\ P &\mapsto g(P) = \int\limits_{0}^{x} P(t)dt .\end{aligned}$.
+
+- $f$ n'est pas injective car $f(2X + 3) = (2X + 3)' = 2$ et $f(2X+1) = (2X+1)' = 2$.
+- Pour ce qui est de la surjectivité, soit $Q$ un polynôme, on cherche s'il
+  existe un antécédent $P$ par $f$, soit $P$ tel que $f(P) = Q$.
+  On prend $P$ une primitive de $Q$ (qui est bien un polynôme). Explicitement,
+  avec $Q = \sum\limits_{k = 0}^{n}a_k K^k$, donc on a
+  $P = \sum\limits_{k = 0}^{n}\frac{a_k}{k+1}X^{k+1}$. On a donc bien $P' = Q$,
+  donc $f$ est surjective.
+
+- Si $P_1,P_2$ deux polynômes tels que $g(P_1) = g(P_2)$, on a alors
+  $\left\{\begin{matrix} (g(h))' = P_1 \,\text{car}\, g(P_1) \,\text{est une primitive de}\, P_1 \\ (g(P_2))' = P_2 \end{matrix}\right.$,
+  d'où $P_1 = P_2$ donc $g$ est injective.
+- g n'est pas surjective car 1 n'a pas d'antécédent par $g$, car 1 ne s'annule
+  pas en 0. Or toutes les images $g(P)$ sont des polynômes qui s'annulent en 0.
+
+On peut voir que $f \circ g = id_E$, car soit $P$ un polynôme, $g(P)$ est la
+primitive de $P$ s'annulant en 0 et $f(g(P)) = (g(P))' = P$.
+
+On peut aussi voir que $g \circ f \neq id_E$.
