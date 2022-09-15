@@ -87,8 +87,8 @@ En probabilité, une telle partition d'un univers est souvent utilisée et est
 identique.
 
 ### Ensemble des parties
-> Soit E un ensemble, on note $\mathfrak{P}(E)$ l'ensemble de tous les sous-ensembles de E.
-> Ainsi,pour tout ensemble A, $A \in \mathfrak{P}(E) \Leftrightarrow A \subset E$
+> Soit E un ensemble, on note $\mathcal{P}(E)$ l'ensemble de tous les sous-ensembles de E.
+> Ainsi,pour tout ensemble A, $A \in \mathcal{P}(E) \Leftrightarrow A \subset E$
 
 On pout remarquer que si E est fini et possède $n \in \mathbb{N}$ éléments,
 alors $\mathcal{P}(E)$ est fini et possède $2^n$.
@@ -157,9 +157,9 @@ Les applications ne se font que d'un seul ensemble à un seul autre ensemble.
 
 ##### Exemple
 Soit E un ensemble et A une partie de E, on définit
-$\begin{aligned} \varphi: \mathfrak{P}(E) &\to \mathcal{P}(E) \\ X &\mapsto \varphi(X) = X \cap A .\end{aligned}$.
-On peut montrer que $\forall X \in \mathfrak{P}(E), \varphi(X) \in \mathcal{P}(A)$. En effet,
-$\varphi(X) = X \cap A \subset A$ donc $\varphi(X) \in \mathfrak{P}(a)$.
+$\begin{aligned} \varphi: \mathcal{P}(E) &\to \mathcal{P}(E) \\ X &\mapsto \varphi(X) = X \cap A .\end{aligned}$.
+On peut montrer que $\forall X \in \mathcal{P}(E), \varphi(X) \in \mathcal{P}(A)$. En effet,
+$\varphi(X) = X \cap A \subset A$ donc $\varphi(X) \in \mathcal{P}(a)$.
 
 ##### Exemple : Fonction indicatrice d'un ensemble
 Soit E un ensemble et A une partie de E. On pose
@@ -203,7 +203,7 @@ $\tilde{f}$
 La contraposée est aussi vraie : $\forall (x,y) \in E^2, x\neq y \Rightarrow f(x) \neq f(y)$.
 
 Attention, il est important lorsqu'on utilise des fonctions de bien les définir
-comme des applications, car la propriété d'injectivité peut être différent selon
+comme des applications, car la propriété d'injectivité peut être différente selon
 les ensembles de départ et d'arrivée de l'application.
 
 On peut formuler cette propriété : Si et seulement f est injective,
@@ -263,15 +263,15 @@ $\forall y \in ]-1;1[, \exists! x \in \mathbb{R}, y = f(x)$, et $f$ est
 bijective de $\mathbb{R}$ dans $]-1;1[$.
 
 On peut voir cette même bijection dans un simple tableau de signes de f, dans
-lequel on pourrait voir que f est continue sur $\mathbb{R}$ et que ses bornes
-sont en $]-1;1[$.
+lequel on pourrait voir que f est continue et monotone sur $\mathbb{R}$ et que
+ses bornes sont en $]-1;1[$.
 
 ## Composition
 Avec trois ensembles $E,F,G$, une application $f: E \to F$ et une application
 $g: F \to G$, on a alors une application composée $g \circ f: E \to G$.
 
-> Soit $f \in \mathcal{F}(E,F)$ et $g \in \mathfrak{F}(F,G)$, la composée de f par
-> g, notée $g \circ f$, est l'application $\begin{aligned} g \circ f: E &\to G \\ x &\mapsto g \circ g \circ f(x) = g(f(x)) .\end{aligned}$
+> Soit $f \in \mathfrak{F}(E,F)$ et $g \in \mathfrak{F}(F,G)$, la composée de f par
+> g, notée $g \circ f$, est l'application $\begin{aligned} g \circ f: E &\to G \\ x &\mapsto g \circ f(x) = g(f(x)) .\end{aligned}$
 
 On a $\forall x \in E (g \circ f)(x) = g(f(x))$.
 
@@ -320,7 +320,7 @@ Soient $f \in \mathfrak{F}(E,F)$ et $g \in \mathfrak{F}(F,G)$ :
 Néanmoins, on a les propriétés suivantes, avec $f \in \mathfrak{F}(E,F)$ et
 $g \in \mathfrak{F}(E,F)$ :
 1. Si $g \circ f$ est injective, alors $f$ est injective
-2. Si $g \circ f$ est surjective, alors $f$ est surjective
+2. Si $g \circ f$ est surjective, alors $g$ est surjective
 
 ##### Preuve
 1. On cherche à montrer que $f$ est injective. Soit $(a,b) \in E^2$ tel que

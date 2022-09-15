@@ -4,9 +4,6 @@ participatives; n'hésitez pas à apporter des corrections, des additions ou vos
 propres cours à ce dépôt. Ces notes sont prises personnellement par des élèves,
 et ne sont pas le reflet des cours donnés par les professeurs.
 
-WIP : Deck Anki, qui sera maintenu avec des cartes tirées de ces notes, et
-éventuellement automatiquement (selon l'avancée d'un plugin python en parallèle)
-
 ## Format
 Ces notes sont formatées au format MarkDown, un format de texte lisible pour les
 fichiers textes purs, mais qui compte aussi de nombreux lecteurs qui mettent en
