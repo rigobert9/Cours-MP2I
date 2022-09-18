@@ -206,7 +206,7 @@ La condition $i > i_\text{lim}$ s'écrit $\frac{\Pi}{2} - \Theta' > i_\text{lim}
 $\Leftrightarrow \Theta' < \frac{\Pi}{2}i_\text{lim}$. $\sin(\Theta)$ est
 croissant sur $[0; \frac{\Pi}{2}]$. De plus, on a
 $\sin\Theta' < \cos i_\text{lim}$.
-On 0, d'après la loi de Descartes, $n_\text{air} \sin \Theta = n_\text{cœur} \sin\Theta'$.
+On à, d'après la loi de Descartes, $n_\text{air} \sin \Theta = n_\text{cœur} \sin\Theta'$.
 Or, $n_\text{air} = 1.00$ donc $\sin\Theta = n_\text{cœur} \sin\Theta'$.
 Or $\sin\Theta' < \cos i_\text{lim}$.
 Donc $\sin\Theta < n_\text{cœur} \cos i_\text{lim}$.
@@ -227,7 +227,7 @@ $O.N. = \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$
 $T_1 = \frac{L}{c_\text{cœur}}$, aussi noté $T_1 = \frac{L n_\text{cœur}}{c}$
 
 *Rayon le plus lent* : $\Theta = \Theta_\text{max}$, la longueur du parcours est
-alors $L_2 = \frac{L}{\sin(i_\text{lim})}$, et $T_2 = \frac{L_2 n_\text{cœur}}{c} = \frac{L n_\text{cœur}}{c}$
+alors $L_2 = \frac{L}{\sin(i_\text{lim})}$, et $T_2 = \frac{L_2 n_\text{cœur}}{c}$
 $= \frac{L n_\text{cœur}}{c \sin i_\text{lim}}$. Or, $\sin i_\text{lim} = \frac{n_\text{gaine}}{n_\text{cœur}}$,
 donc $T_2 = \frac{L n_\text{cœur}^2}{c n_\text{gaine}}$.
 

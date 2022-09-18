@@ -33,7 +33,8 @@ Intensité lumineuse  | J       | Candela (cd)
 > On apelle l'étude d'une relation physique en termes de dimensions "analyse
 > dimensionelle"
 
-##### Exemple : $e = mc^2$ donne $[E] = [m][c]^2$, qui donne la dimension
+##### Exemple
+$e = mc^2$ donne $[E] = [m][c]^2$, qui donne la dimension
 $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
 - Puissance, $E = P \delta T$ -> $M L^2 T^{-2} = [P] T$, donc $[P] = M L^2 T^{-3}$
 - Résistance, $P = RI^2$ a une unité de $kg \cdot m^2 s^{-1} A ^ {-2}$
@@ -50,7 +51,8 @@ $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
 
 #### Dérivation
 > $[ \frac{dY}{dX} ] = \frac Y X$
-##### Exemple : Force, $F = ma$ est de dimension $[\frac dv dt] = \frac LT^{-1} T$
+##### Exemple
+Force, $F = ma$ est de dimension $[\frac dv dt] = \frac LT^{-1} T$
 
 #### Intégration
 > Pour deux grandeurs Y et X, $[\int Y(x)dx] = [Y][x]$
@@ -61,7 +63,8 @@ $M L^2 T^{-2}$, soit les unités $kg \cdot m^2 s^{-2}$
 
 > L'argument d'une fonction transcendante est sans dimension; Une fonction
 > transcendante est sans dimension
-##### Exemple : Décharge d'un condensateur : $U = E e^{\frac t \tau}$,  $\tau] = $
+##### Exemple
+Décharge d'un condensateur : $U = E e^{\frac t \tau}$
 
 ## Présentation d'un résultat numérique
 ### Calcul numérique et calcul littéral
@@ -82,7 +85,8 @@ les grandeurs qui apparaissent sont représentées par leur symbole (une lettre)
 > L'ordre de grandeur d'un résultat numérique correspond à la puissance de 10 la plus
 > proche de la valeur numérique dans une unité donnée.
 
-##### Exemple : Pour C (vitesse de la lumière) $\approx 2.99792458 \times 10^8$,
+##### Exemple
+Pour C (vitesse de la lumière) $\approx 2.99792458 \times 10^8$,
 l'ordre de grandeur est 10^8.
 
 ## Analyse dimensionelle comme outil de prédiction
@@ -162,28 +166,32 @@ généralement pas de solutions
 Si la valeur X recherchée dépend en outre de d'une grandeur sans dimension x,
 cette dernière est invisible à l'analyse dimensionnelle.
 
-##### Exemple : Dans le cas où une grandeur dépend d'une fonction sans dimension
+##### Exemple
+Dans le cas où une grandeur dépend d'une fonction sans dimension
 (comme dans le cas du balancement d'un pendule, celui-ci dépend de l'amplitude
 angulaire $f(\theta)$ ).
 
 ## Formules de base pour l'analyse dimensionnelle
 ### Mécanique
-Vitesse : $v = \frac{d}{t}$
-Accélération : $a = \frac{v}{t}$
-Deuxième loi de Newton : $F = ma$
-Poids : $P = mg$
+- Vitesse : $v = \frac{d}{t}$
+- Accélération : $a = \frac{v}{t}$
+- Deuxième loi de Newton : $F = ma$
+- Poids : $P = mg$
+
 ### Électricité
-Force électrostatique : $F = qE$
-Champ électrique : $E = \frac{U}{d}$
-Loi d'ohm : $U = RI$
-Intensité :  $I = \frac{dq}{dt} = \frac{Q}{t}$
-Puissance : $P = UI = RI^2$
-Champ électrique :  $E = P \bigtriangleup t$
-Condensation : $q = C U_c$ (C la capacité, une énergie, et $U_c$ la tension du
-condensateur)
-Tension de la bobine : $U_l = L \frac{d_i}{d_t}$
+- Force électrostatique : $F = qE$
+- Champ électrique : $E = \frac{U}{d}$
+- Loi d'ohm : $U = RI$
+- Intensité :  $I = \frac{dq}{dt} = \frac{Q}{t}$
+- Puissance : $P = UI = RI^2$
+- Champ électrique :  $E = P \bigtriangleup t$
+- Condensation : $q = C U_c$ (C la capacité, une énergie, et $U_c$ la tension du
+- condensateur)
+- Tension de la bobine : $U_l = L \frac{d_i}{d_t}$
+
 ### Ondes
-Fréquence : $f = \frac{1}{t}$
-Longueur d'onde : $\lambda = cT = \frac{c}{f}$
+- Fréquence : $f = \frac{1}{t}$
+- Longueur d'onde : $\lambda = cT = \frac{c}{f}$
+
 ### Autres
-Énergie : $E = m c^2$
+- Énergie : $E = m c^2$
