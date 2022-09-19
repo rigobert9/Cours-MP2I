@@ -41,17 +41,17 @@ Le mathématicien Hilbert demande si tout problème est résolvable informatique
 
 Définition d'un algorithme selon Donald Knuth : En prérequis
 - Entrées : des quantités, prises dans un ensemble spécifié qui sont données
-	avant qu'un algorithme commence
+  avant qu'un algorithme commence
 - Sorties : des quantités ayant une relation spécifiée avec les entrées
 - Finitude : un algorithme doit toujours se terminer après un nombre fini
-	d'étapes (souvent un problème dans la théorie contre la pratique, par exemple
-	dans la production d'un nombre au hasard entre 1 et 7)
+  d'étapes (souvent un problème dans la théorie contre la pratique, par exemple
+  dans la production d'un nombre au hasard entre 1 et 7)
 - Définition précise : chaque étape d'un algorithme doit être définie
-	précisément et sans ambiguîté (limite entre les mathématiques et
-	l'informatique : )
+  précisément et sans ambiguîté (limite entre les mathématiques et
+  l'informatique : )
 - Rendement : toutes les opérations que l'algorithme doit accomplir doivent être
-	suffisamment basiques pour pouvoir être en principe réalisées dans une durée
-	finie par un humain utilisant un papier et un crayon
+  suffisamment basiques pour pouvoir être en principe réalisées dans une durée
+  finie par un humain utilisant un papier et un crayon
 
 Le modèle de la machine de Turing est l'un des modèles de l'ordinateur, un
 algorithme travaillant sur un ruban infini, qui permet d'écrire un programme,

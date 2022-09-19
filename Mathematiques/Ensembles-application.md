@@ -313,7 +313,7 @@ Soient $f \in \mathfrak{F}(E,F)$ et $g \in \mathfrak{F}(F,G)$ :
    admet un antécédent dans E par f, $\exists x \in E, y = f(x)$. Ainsi
    $z = g(y) = g(f(x)) = (g \circ f)(x)$, donc $x$ est un antécédent de $z$ par
    $g \circ f$, et on a montré que $\forall z \in G, \exists x \in E, z = (g \circ f)(x)$.
-3. On suppose $f,g$ bijectives. Commes elles sont toutes deux surjectives et
+3. On suppose $f,g$ bijectives. Comme elles sont toutes deux surjectives et
    injectives, on applique les deux preuves ci-dessus.
 
 #### Ces propriétés ne sont pas réciproques
@@ -356,3 +356,158 @@ On peut voir que $f \circ g = id_E$, car soit $P$ un polynôme, $g(P)$ est la
 primitive de $P$ s'annulant en 0 et $f(g(P)) = (g(P))' = P$.
 
 On peut aussi voir que $g \circ f \neq id_E$.
+
+### Application réciproques
+> Soit $f : E \to F$ bijective, l'application de F dans E qui à tout élément de
+> F lui associe l'unique antécédent par $f$ (dans E) est appelée la réciproque de $f$ et est
+> notée $f^{-1}$.
+
+On a le s fonctions suivantes : $\begin{aligned} f: E &\to F \\ x &\mapsto f(x) = y .\end{aligned}$,
+$\begin{aligned} f^{-1}: F &\to E \\ y  &\mapsto f^{-1}(y) = x .\end{aligned}$.
+
+On a $\forall x \in E,\forall y \in F, y = f(x) \Leftrightarrow f^{-1}(y) = x$.
+
+##### Exemples : quelques réciproques d'applications
+- $\begin{aligned} f: \mathbb{R}\_{+} &\to \mathbb{R}\_{+} \\ x &\mapsto (x) = x^2 .\end{aligned}$ est bijective
+  et de réciproque $\begin{aligned} f^{-1}: \mathbb{R}\_{+} &\to R. \\ x &\mapsto f^{-1}(x) = \sqrt{x} .\end{aligned}$.
+  On résume par $\forall x \in \mathbb{R}\_{+}, \forall y \in \mathbb{R}\_{+}, y = x^2 \Leftrightarrow \sqrt{y} = x$.
+- $\begin{aligned} \exp: \mathbb{R} &\to \mathbb{R}^{\ast}\_{+} \\ x &\mapsto \exp(x) .\end{aligned}$ est bijective
+  et de réciproque $\begin{aligned} \ln: \mathbb{R}^{\ast}\_{+} &\to \mathbb{R} \\ \exp(x) &\mapsto \ln(\exp(x)) = x .\end{aligned}$.
+- $\begin{aligned} f: \mathbb{N} &\to \mathbb{N}^{\ast} \\ n &\mapsto f(n) = n+1 .\end{aligned}$ est bijective
+  et de réciproque $\begin{aligned} f^{-1}: \mathbb{N}^{\ast} &\to \mathbb{N} \\ n &\mapsto f^{}(n) = n-1 .\end{aligned}$.
+
+#### Méthode
+Pour montrer que f est bijective ET calculer $f^{-1}$, alors on cherche à
+résoudre $y = f(x)$.
+
+##### Exemple
+$\begin{aligned} f: \mathbb{R} &\to ]-1,1[ \\ x &\mapsto f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} .\end{aligned}$.
+$f$ est bijective (voir les exercices précédents) et on a montré que
+$\forall x \in \mathbb{R}, \forall y \in ]-1,1[, y = f(x) \Leftrightarrow x = \frac{1}{2} \ln(\frac{1+y}{1-y})$.
+Ainsi, $\begin{aligned} f^{-1}: ]-1,1[ &\to \mathbb{R} \\ x &\mapsto f^{-1}(x) = \frac{1}{2} \ln(\frac{1+x}{1-x}) .\end{aligned}$
+
+##### Exemple
+$f: x \mapsto xe^{-x}$. Montrer que f est bijective sur des ensembles à
+préciser. Commençons par les variations de f. f est dérivable sur $\mathbb{R}^{\ast}$ et,
+$\forall x \in \mathbb{R}, f'(x) = e^{-x} - xe^{-x} = (1-x)e^{-x}$.
+On a f croissante sur $]-\infty, 1[$ et $]1, +\infty[$. On étudie deux parties
+de la fonction :
+- $\begin{aligned} f_1: ]-\infty,1[ &\to ]-\infty,e^{-1}[ \\ x &\mapsto f_1(x) = xe^{-x} .\end{aligned}$
+
+#### Propriétés de la réciproque
+> Si $f: E \mapsto F$ est bijective et $f^{-1} : F \mapsto E$ est sa réciproque,
+> on a la réciproque bijective et les compositions :
+> - $f \circ f^{-1} = id_F$
+> - $f^{-1} \circ f = id_E$
+
+On peut aussi voir que $id_E$ est une bijection et $id_E^{-1} = id_E$.
+
+$\forall x \in E, f^{-1}(f(x)) = x$ et $\forall y \in F, f(f^{-1}(y)) = y$.
+
+> Soit $f: E \mapsto F$ telle qu'il existe $g: F \mapsto E$ qui vérifie $f \circ g = id_F$
+> et $g \circ f = id_E$ alors f et g sont bijectives et réciproques l'une de
+> l'autre : $g = f^{-1}$.
+
+Les deux hypothèses doivent impérativement être vraies pour conclure, et ne sont
+pas nécessairement réciproques !
+
+##### Preuve de la propriété
+$id_F$ est bijective, donc injective et surjective. Ainsi, $f \circ g$ est
+surjective, donc $f$ est surjective. De plus, $g \circ f$ est injective, alors
+$f$ est injective.
+Ainsi, $f$ est injective et surjective, donc $f$ est bijective.
+Pour sa réciproque, on a $f \circ g = id_F$ donc $f^{-1} \circ (f \circ g) = f^{-1} \circ id_F$
+donc $g = f^{-1}$. g est ainsi la bijection réciproque de f.
+
+##### Exemple caduc
+Avec $\begin{aligned} f: \mathbb{R}_{+} &\to \mathbb{R} \\ x &\mapsto f(x) = \sqrt{x} .\end{aligned}$
+et $\begin{aligned} g: \mathbb{R} &\to \mathbb{R}_{+} \\ x &\mapsto g(x) = x^2 .\end{aligned}$
+$\forall x \in \mathbb{R}_{+}, (\sqrt{x})^2 = x, g(f(x))$ donc $g \circ f id_{\mathbb{R}_{+}}$,
+mais $\forall x \in \mathbb{R}, f \circ g(x) = f(g(x)) = \sqrt{x^2} = |x|$, donc
+$f \circ g \neq id_{\mathbb{R}}$.
+Ainsi, on peut pas dire que les fonctions sont bijectives (f est injective mais
+pas surjective, et f est surjective mais pas injective).
+
+#### Corollaires
+> Si f est bijective, alos $(f^{-1})^{-1} = f$
+
+> Soient $f: E \mapsto F$ et $g: F \mapsto G$ bijectives, alors $g \circ f$ est
+> bijective et sa réciproque est $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
+
+##### Preuves
+On a $\left\{\begin{matrix} f \circ f^{-1} = id_E \\ f^{-1} \circ f = id_E \end{matrix}\right.$,
+donc la réciproque de $f^{-1}$ est bien $f$.
+
+On sait que la composée de bijections est bijective, donc $g \circ f$ est
+bijective.
+On note sa réciproque $(g \circ f)^{-1}$, $(g \circ f)^{-1} \circ (g \circ f)$.
+En composant à droite par $f^{-1}$ (avec $f$ bijective), on avec
+$(g \circ f)^{-1} \circ g = f^{-1}$.
+On compose par $g^{-1}$ à droite (avec g bijective), $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
+
+#### Cas particulier : les involutions
+Soit $g: E \mapsto E$, f est une __involution__ si $f \circ f = id_E$.
+
+> Si f est une involution, alors $f$ est bijective et $f^{-1} = f$ (égale à sa
+> réciproque)
+
+À partir de la bijectivité de $id_E$, on déduit simplement que $f$ est injective
+et surjective, et donc bijective.
+
+##### Exemples d'involutions
+- $\begin{aligned} f: \mathbb{R}^{\ast} &\to \mathbb{R}^{\ast} \\ x &\mapsto f(x) = \frac{1}{x} .\end{aligned}$ est
+  une involution car $\forall x \in \mathbb{R}^{\ast} \frac{1}{\frac{1}{x}} = x$
+- $\begin{aligned} f: \mathbb{C} &\to \mathbb{C} \\ z &\mapsto f(z) = \overline{z} .\end{aligned}$
+- Soit E un ensemble,
+  $\begin{aligned} f: \mathcal{P}(E) &\to \mathcal{P}(E) \\ A &\mapsto f(A) = \overline{A} .\end{aligned}$
+
+### Ensemble image directe et ensemble image réciproque
+#### Ensemble image directe
+> Soit $f: E \mapsto F$ une application et $A \subset E$. On définit l'ensemble
+> image directe $A$ par $f$ par :
+> $f(A) = \{f(x) \mid x \in A\} = \{y \in F \mid \exists x \in A, y = f(x)\}$.
+> C'est l'ensemble des images par f des éléments de A.
+
+##### Cas particuliers
+Soit $f: E \mapsto F$ et $x,y \in E$
+- $f(\emptyset) = \emptyset$
+- $f(\{x\}) = \{f(x)\}$
+- $f(\{x,y\}) = \{f(x), f(y)\} = \left\{\begin{matrix} \{(f(x)\} \Leftrightarrow f(x) = f(y) \\ \{f(x),f(y)\} \,\text{sinon} \end{matrix}\right.$
+
+#### Ensemble image
+Pour $f: E \mapsto F$, on appelle $f(E)$, noté aussi $Im(f)$ (l'ensemble de toutes
+les images). $f(E) = Im(f) = \{f(x), x \in E\}$
+
+On a toujours $f(E) \subset F$.
+
+$f: E \mapsto F$ est surjective si et seulement si $f(E) = F$. Ainsi, $F \subset f(E)$ traduit la surjectivité.
+$\forall x \in F, y \in f(E) \equiv \forall x \in F, \exists x \in E, y = f(x)$.
+
+##### Méthode : Calculer l'ensemble image $f(E)$ tel que $f$ surjective
+Notamment pour les fonctions de la variable réelle (on lit l'ensemble image sur
+le tableau de variation).
+On peut d'ailleurs voir que si $f: E \mapsto F$, alors la restriction $\tilde{f}: E \mapsto f(E)$ est surjective car
+$Im(\tilde{f}) = \tilde{f}(E) = f(E)$.
+
+#### Propriétés
+Soit $f: E \mapsto F$, et $A, B \subset E$ :
+1. $A \subset B \Rightarrow f(A) \subset f(B)$
+2. $f(A \cup B) = f(A) \cup f(B)$
+3. $f(A \cap B) \subset f(A) \cap f(B)$
+
+##### Preuves
+1. Avec $A \subset B$, soit $i \in f(A), \exists x \in A, y = f(x)$. Par $A \subset B$,
+  $x \in B$ et $y = f(x)$ donc $y \in f(B)$. On a ainsi $f(A) \subset f(B)$.
+2. Soit $x \in E$. Par équivalence, on a :
+  $x \in f(A \cup B) \Leftrightarrow \exists a \in (A \cup B), x = f(a)$\
+  $\Leftrightarrow (\exists a \in A, x = f(a)) \lor (\exists a \in B,x = f(a))$\
+  $\Leftrightarrow x  \in f(A)  \lor x \in f(B)$\
+  $\Leftrightarrow x \in f(A) \cup f(B)$\
+  d'où l'égalité des ensembles.
+3. Si $x \in f(A \cup B)$, alors $\exists a \in A, x = f(a)$ et
+  $a \in B, x = f(a)$ donc $x \in f(A)$ et $x \in f(B)$,
+  donc $x \in f(A) \cap f(B)$
+
+On remarque que si $x \in f(A) \cap f(B)$, alors $\exists a \in A, x = f(a)$ et
+$\exists b \in B, x = f(b)$, donc $x = f(a) = f(b)$.On en peut pas conclure à
+$x = f(c)$ où $c \in A \cap B$.
