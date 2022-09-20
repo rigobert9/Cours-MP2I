@@ -472,7 +472,7 @@ et surjective, et donc bijective.
 Soit $f: E \mapsto F$ et $x,y \in E$
 - $f(\emptyset) = \emptyset$
 - $f(\{x\}) = \{f(x)\}$
-- $f(\{x,y\}) = \{f(x), f(y)\} = \left\{\begin{matrix} \{(f(x)\} \Leftrightarrow f(x) = f(y) \\ \{f(x),f(y)\} \,\text{sinon} \end{matrix}\right.$
+- $f(\{x,y\}) = \{f(x), f(y)\} = \left\{\begin{matrix} \{f(x)\} \Leftrightarrow f(x) = f(y) \\ \{f(x),f(y)\} \,\text{sinon} \end{matrix}\right.$
 
 #### Ensemble image
 Pour $f: E \mapsto F$, on appelle $f(E)$, noté aussi $Im(f)$ (l'ensemble de toutes
@@ -511,3 +511,59 @@ Soit $f: E \mapsto F$, et $A, B \subset E$ :
 On remarque que si $x \in f(A) \cap f(B)$, alors $\exists a \in A, x = f(a)$ et
 $\exists b \in B, x = f(b)$, donc $x = f(a) = f(b)$.On en peut pas conclure à
 $x = f(c)$ où $c \in A \cap B$.
+
+### Fonction indicatrice
+> Soit $E$ un ensemble et $A$ une partie de $E$, on définit $\begin{aligned} 1_A: E &\to \{0,1\} \\ x &\mapsto 1_A(x) = \left\{\begin{matrix} 1\,\text{si}\,x \in A \\ 0\,\text{si}\, x \not\in A \end{matrix}\right. .\end{aligned}$.
+
+Ainsi, $\forall x \in E, 1_A (x) = 1 \Leftrightarrow x \in A$.
+
+Soient $A, B \in \mathcal{P}(E), A = B \Leftrightarrow 1_A = 1_B$.
+
+##### Preuve
+$A = B \Leftrightarrow (\forall x \in E, x \in A  \Leftrightarrow x \in B)$\
+$\Leftrightarrow (\forall x \in E, 1_A (x) = 1 \Leftrightarrow 1_B (x) = 1)$\
+$\Leftrightarrow 1_A = 1_B$
+
+#### Indicatrices d'opérations sur les ensembles
+Soient $A, B \in \mathcal{P}(E)$, on a (avec $\Delta$ la différence symétrique):
+- $1_{A \cap B} = 1_A \times 1_B$
+- $1_{\overline{A}} = 1 - 1_A$
+- $1_{A \cup B} = 1_A + 1_B - 1_A 1_B$
+- $1_{A \Delta B} = (1_A + 1_B)[2]$
+
+En termes logiques, en admettant $1_A = 1$ comme "vrai" et $1_A = 0$ comme faux :
+- $1_{A \cap B} = 1_A \land 1_B$
+- $1_{\overline{A}} = \neg 1_A$
+- $1_{A \cup B} = 1_A \lor 1_B$
+- $1_{A \Delta B} = 1_A \,\text{xor}\, 1_B$
+
+#### Raisonnement logique sur les ensembles
+Soit $\begin{aligned} \varphi: \mathcal{P}(E) &\to \{0,1\}^E \\ A &\mapsto \varphi(A) = 1_A .\end{aligned}$,
+$\varphi$ est bijective.
+
+On a sa réciproque $\begin{aligned} \varphi^{-1}: \{0, 1\}^E &\to \mathcal{E} \\ f &\mapsto \varphi^{-1}(f) = \{x \in E \mid f(x) = 1\} .\end{aligned}$.
+
+##### Preuve
+On cherche à montrer $\varphi$ bijective. Soient $A,B \in \mathcal{P}(E) \mid \varphi(A) = \varphi(B)$,
+$1_A = 1_B \Leftrightarrow A = B$. $\varphi$ est donc injective.
+Soit $f: E \to \{0,1\}$ quelconque, on pose $A = \{x \in E \mid f(x) = 1\}$.
+On a ainsi $\forall x \in E, 1_A(x) = 1 \Leftrightarrow x \in A \Leftrightarrow f(x) = 1$
+donc $1_A = f * \varphi(A)$, et $\varphi$ est donc surjective.
+
+### Image réciproque d'un ensemble
+> Soit $f: E \to F$ et $y \in F$ un élément. L'ensemble de tous les antécédents de
+> y est $\{x \in E \mid f(x) = y\}$, qu'on note $f^{-1}(\{y\})$.
+
+Attention, cela ne signifie pas pour autant que $f^{-1}$ existe ou que $f$ est
+bijective.
+
+On peut ainsi écrire $x \in f^{-1}(\{y\}) \Leftrightarrow f(x) \in \{y\} \Leftrightarrow f(x) = y$.
+
+> Soit $f: E \to F$ et $B \subset F$, on définit l'image réciproque de $B$ par $F$
+> par l'ensemble des antécédents des éléments de $B$. On le note
+> $f^{-1}(B) = \{x \in E \mid f(x) \in B\}$.
+
+On a $x \in f^{-1}(B) \Leftrightarrow f(x) \in B$.
+
+Ici $B$ est un ensemble : $f^{-1}(B)$ est une partie de $E$, mais cela ne donne
+pas l'existence de l'application $f^{-1}$.

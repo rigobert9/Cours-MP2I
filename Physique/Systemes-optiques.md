@@ -202,7 +202,7 @@ La lunette astronomique est un système afocal.
 > l'infini.
 
 Le grossisement vérifie dans ce système $G = \frac{\alpha'}{\alpha}$, avec $\alpha$ le diamètre
-apparente de l'œil, et $\alpha'$ le diamètre apparent à travers la lunette.
+apparent à l'œil, et $\alpha'$ le diamètre apparent à travers la lunette.
 
 ## Modélisation de l'œil
 ### Description sommaire
@@ -257,7 +257,7 @@ d'un hypermétrope se trouve plus loin de l'œil que pour un œil normal.
 Les hypermétropes se font corriger avec des lunettes, qui sont des lentilles
 convergentes de dioptrie en général entre 1 et 2.
 
-Un œil "normal" est appelé "emmetrope".
+Un œil "normal" est appelé "emmétrope".
 
 #### Astigmatie
 Le cristallin d'un astigmate n'est plus parfaitement sphérique, mais a plutôt
