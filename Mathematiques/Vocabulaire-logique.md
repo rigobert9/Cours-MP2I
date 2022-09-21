@@ -395,7 +395,7 @@ On montre par récurrence forte :
   $\forall k \in [1,n]_{\mathbb{N}}, u_k = 2^{k-1}$.
   Alors, $u_{n+1} = \sum\limits_{k=1}^{n} u_k = u_0 + \sum\limits_{k = 1}^{n} 2^{k-1}$
   $= 1 + (2^0 + 2^1 + \ldots + 2^{n-1}) = 1 = \frac{1 - 2^n}{1-2} = 1 + 2^n - 1$
-  $= 2^n$, d'oû $P(n+1)$ est vraie.
+  $= 2^n$, d'où $P(n+1)$ est vraie.
 - Conclusion : la proposition originale est bien vraie.
 
 Méthode 2 : $\forall n \in \mathbb{N}, u_{n+1} = \sum\limits_{k = 0}^{n} u_k$
@@ -403,7 +403,7 @@ $= (\sum\limits_{k = 0}^{n-1} u_k) + u_{n} = 2u_{n}$.
 Ici, $\left\{\begin{matrix} U_1 = 1 \\ \forall n \geq 1, u_{n+1} = 2u_{n} \end{matrix}\right.$,
 qui est une suite géométrique de raison 2, soit
 $\forall n \geq 1, u_{n} = 2^{n-1} \times u_1 = 2^{n-1}$, ce qui nous permet de
-conclure de la mêbe façon que la première méthode.
+conclure de la même façon que la première méthode.
 
 ##### Exemple : récurrence avec une variable
 On cherche à montrer que $\forall x > -1, \forall n \in \mathbb{N}, (1+x)^n \geq 1 + nx$.
@@ -423,8 +423,8 @@ On montre par récurrence :
   couleur, donc $P_1$
 - Hérédité : Soit $n \geq 1$ tel que $P(n)$ est vraie, on cherche à montrer $P(n+1)$.
   Soit une trousse à (n+1) crayons $C_1, C_2, \ldots, C_{n+1}$. On prend $(C_1, \ldots C_n)$.
-  C'est une trousse à n crayons, danc par $P_n$, ils sont de la même couleur. En
-  prenant $(C_2, \ldots, C_{n+1})$, c'est aussi ine trousse à n crayons, donc
+  C'est une trousse à n crayons, donc par $P_n$, ils sont de la même couleur. En
+  prenant $(C_2, \ldots, C_{n+1})$, c'est aussi une trousse à $n$ crayons, donc
   ils sont tous de la même couleur (par $P(n)$).
   Or $C_n$ est dans les deux trousses, donc tous sont de la même couleur, donc
   $P(n+1)$ est vraie.
