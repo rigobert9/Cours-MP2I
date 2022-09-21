@@ -184,13 +184,13 @@ Soit $f: A \to F$ et avec $A \subset E$, on dit que $g: E \to F$ est un
 prolongement de $f$ si $\forall x \in A, f(x) = g(x)$
 
 ##### Exemple : la valeur absolue est une restriction du module
-$\begin{aligned}  f: \mathbb{R} &\to \mathbb{R}\_{+} \\ x &\mapsto f(x) = |x| .\end{aligned}$ 
+$\begin{aligned}  f: \mathbb{R} &\to \mathbb{R}_{+} \\ x &\mapsto f(x) = |x| .\end{aligned}$ 
 et
-$\begin{aligned}  g: \mathbb{C} &\to \mathbb{R}\_{+} \\ x &\mapsto f(x) = |x| .\end{aligned}$.
+$\begin{aligned}  g: \mathbb{C} &\to \mathbb{R}_{+} \\ x &\mapsto f(x) = |x| .\end{aligned}$.
 f est une restriction de g en $\mathbb{R}$, $f = g\restriction_\mathbb{R}$
 
 ##### Exemple : prolongement continu
-$\begin{aligned} f: \mathbb{R}^{\ast}\_{+} &\to \mathbb{R} \\ x &\mapsto f(x) = x\ln(x) .\end{aligned}$, avec f continue sur $\mathbb{R}^{\ast}\_{+}$.
+$\begin{aligned} f: \mathbb{R}^{\ast}_{+} &\to \mathbb{R} \\ x &\mapsto f(x) = x\ln(x) .\end{aligned}$, avec f continue sur $\mathbb{R}^{\ast}_{+}$.
 $\lim_{x \to 0^{+}} x\ln(x) = 0$ par croissances comparées. On pose
 $\tilde{f}$
 ...
@@ -368,11 +368,11 @@ $\begin{aligned} f^{-1}: F &\to E \\ y  &\mapsto f^{-1}(y) = x .\end{aligned}$.
 On a $\forall x \in E,\forall y \in F, y = f(x) \Leftrightarrow f^{-1}(y) = x$.
 
 ##### Exemples : quelques réciproques d'applications
-- $\begin{aligned} f: \mathbb{R}\_{+} &\to \mathbb{R}\_{+} \\ x &\mapsto (x) = x^2 .\end{aligned}$ est bijective
-  et de réciproque $\begin{aligned} f^{-1}: \mathbb{R}\_{+} &\to R. \\ x &\mapsto f^{-1}(x) = \sqrt{x} .\end{aligned}$.
-  On résume par $\forall x \in \mathbb{R}\_{+}, \forall y \in \mathbb{R}\_{+}, y = x^2 \Leftrightarrow \sqrt{y} = x$.
-- $\begin{aligned} \exp: \mathbb{R} &\to \mathbb{R}^{\ast}\_{+} \\ x &\mapsto \exp(x) .\end{aligned}$ est bijective
-  et de réciproque $\begin{aligned} \ln: \mathbb{R}^{\ast}\_{+} &\to \mathbb{R} \\ \exp(x) &\mapsto \ln(\exp(x)) = x .\end{aligned}$.
+- $\begin{aligned} f: \mathbb{R}_{+} &\to \mathbb{R}_{+} \\ x &\mapsto (x) = x^2 .\end{aligned}$ est bijective
+  et de réciproque $\begin{aligned} f^{-1}: \mathbb{R}_{+} &\to R. \\ x &\mapsto f^{-1}(x) = \sqrt{x} .\end{aligned}$.
+  On résume par $\forall x \in \mathbb{R}_{+}, \forall y \in \mathbb{R}_{+}, y = x^2 \Leftrightarrow \sqrt{y} = x$.
+- $\begin{aligned} \exp: \mathbb{R} &\to \mathbb{R}^{\ast}_{+} \\ x &\mapsto \exp(x) .\end{aligned}$ est bijective
+  et de réciproque $\begin{aligned} \ln: \mathbb{R}^{\ast}_{+} &\to \mathbb{R} \\ \exp(x) &\mapsto \ln(\exp(x)) = x .\end{aligned}$.
 - $\begin{aligned} f: \mathbb{N} &\to \mathbb{N}^{\ast} \\ n &\mapsto f(n) = n+1 .\end{aligned}$ est bijective
   et de réciproque $\begin{aligned} f^{-1}: \mathbb{N}^{\ast} &\to \mathbb{N} \\ n &\mapsto f^{}(n) = n-1 .\end{aligned}$.
 
@@ -429,9 +429,9 @@ Ainsi, on peut pas dire que les fonctions sont bijectives (f est injective mais
 pas surjective, et f est surjective mais pas injective).
 
 #### Corollaires
-> Si f est bijective, alos $(f^{-1})^{-1} = f$
+> Si f est bijective, alors $(f^{-1})^{-1} = f$
 
-> Soient $f: E \mapsto F$ et $g: F \mapsto G$ bijectives, alors $g \circ f$ est
+> Soient $f: E \to F$ et $g: F \to G$ bijectives, alors $g \circ f$ est
 > bijective et sa réciproque est $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$
 
 ##### Preuves
@@ -446,7 +446,7 @@ $(g \circ f)^{-1} \circ g = f^{-1}$.
 On compose par $g^{-1}$ à droite (avec g bijective), $(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
 
 #### Cas particulier : les involutions
-Soit $g: E \mapsto E$, f est une __involution__ si $f \circ f = id_E$.
+Soit $f: E \mapsto E$, f est une __involution__ si $f \circ f = id_E$.
 
 > Si f est une involution, alors $f$ est bijective et $f^{-1} = f$ (égale à sa
 > réciproque)
@@ -567,3 +567,32 @@ On a $x \in f^{-1}(B) \Leftrightarrow f(x) \in B$.
 
 Ici $B$ est un ensemble : $f^{-1}(B)$ est une partie de $E$, mais cela ne donne
 pas l'existence de l'application $f^{-1}$.
+
+Soit $f: E \to F$ et $X,Y \subset F$, on a les propriétés suivantes :
+1. Si $X \subset Y$, alors $f^{-1}(X) \subset f^{-1}(Y)$
+2. $f^{-1}(X \cup Y) = f^{-1}(X) \cup f^{-1}(Y)$
+3. $f^{-1}(X \cap Y) = f^{-1}(X) \cap f^{-1}(Y)$
+4. $f^{-1}(\overline{X}) = \overline{f^{-1}(X)}$
+5. Si $A \subset E$ et $X \subset F$ :
+  - $f(f^{-1}(X)) \subset X$
+  - $a \subset f^{-1}(f(A))$
+
+Attention, ces propriétés ne sont généralement pas réciproques.
+
+##### Preuve
+1. Soit $x \in f^{-1}(X)$, alors $f(x) \in X$, donc $f(x) \in Y$,
+  donc $x \in f^{-1}(Y)$.
+2. *Laissé comme exercice*
+3. $x \in f^{-1}(X \cap Y) \Leftrightarrow f(x) \in X \cap Y$\
+  $\Leftrightarrow f(x) \in X \land f(x) \in Y$\
+  $\Leftrightarrow x \in f^{-1}(X) \land x \in f^{-1}(Y)$\
+  $\Leftrightarrow x \in f^{-1}(X) \cap f^{-1}(Y)$
+4. $x \in f^{-1}(\overline{X}) \Leftrightarrow f(x) \in \overline{X}$\
+  $\Leftrightarrow \neg (f(x) \in X)$\
+  $\Leftrightarrow \neg (x \in f^{-1}(X))$\
+  $\Leftrightarrow x \in \overline{f^{-1}(X)}$
+5. 
+  - Soit $y \in f(f^{-1}(X))$, alors $\exists a \in f^{-1}(X)$,
+    donc $f(a) \in X$, tel que $y = f(a)$, donc $y \in X$.
+    On a donc $f(f^{-1}(X)) \subset X$.
+  - Si $x \in A$, alors $f(x) \in f(A)$, donc $x \in f^{-1}(f(A))$.
