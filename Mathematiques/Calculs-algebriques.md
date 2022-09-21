@@ -60,7 +60,7 @@ $(1 - q) \times \sum\limits_{k = 0}^{n}q^k = \sum\limits_{k = 0}^{n}(1 - q)q^k$\
 $= \sum\limits_{k = 0}^{n}(q^k - q^{k+1}) = (\sum\limits_{k = 0}^{n}q^k) - (\sum\limits_{k = 0}^{n}q^{k+1})$\
 $= \sum\limits_{k = 0}^{n}q^k - \sum\limits_{k = 1}^{n + 1}q^k$.\
 $= q^0 + \sum\limits_{k = 1}^{n}q^k - \sum\limits_{k = 1}^{n}q^k - q^{n+1}$.\
-$= 1 - q^{n+1}$\
+$= 1 - q^{n+1}$
 
 ##### Exemple
 Soit $p \leq n$ et $m \geq n$, $\sum\limits_{k = p}^{m}a_{m-k} = \sum\limits_{j = m-p}^{m-p}a_j$
@@ -74,7 +74,7 @@ De façon plus rigoureuse, on peut ainsi noter :
 $2S_n = \sum\limits_{k = 0}^{n}k + \sum\limits_{k = 0}^{n}k$\
 $= \sum\limits_{k = 0}^{n}k + \sum\limits_{j = 0}^{n}(n-j)$\
 $= \sum\limits_{k = 0}^{n}(k + (n-k))$\
-$= \sum\limits_{k = 0}^{n}n = (n+1) \times n$ (car n+1 est le nombre de termes).\
+$= \sum\limits_{k = 0}^{n}n = (n+1) \times n$ (car n+1 est le nombre de termes).
 
 ###  Sommes télescopiques
 On veut calculer $\sum\limits_{k = p}^{n}a_k$ où le terme $a_k$ peut s'écrire
@@ -90,7 +90,7 @@ manière que pour la somme usuelle des entiers :
 $\sum\limits_{k = p}^{n}(U_{k+1} - U_k) = \sum\limits_{k = p}^{n}u_{k+1} - \sum\limits_{k = p}^{n}u_k$\
 $= \sum\limits_{j = p+1}^{n+1}U_j - \sum\limits_{k = p}^{n}U_k$\
 $= U_{n+1} + \sum\limits_{k = p+1}^{n}u_k - U_p - \sum\limits_{k = p+1}^{n}U_k$\
-$= U_{n+1} + U_p$\
+$= U_{n+1} + U_p$
 
 On peut facilement appliquer ce raisonnement à la formule de la somme d'une
 suite géométrique de l'exemple plus haut, avec $U_k = q^k$.
@@ -122,7 +122,7 @@ manière que pour les sommes télescopiques.
 $S_n = \sum\limits_{k = 1}^{n}\ln(1 + \frac{1}{k})$\
 $= \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k})$\
 $= \sum\limits_{k = 1}^{n}[\ln(k+1) - \ln(k)]$\
-$= \ln(n+1) - \ln(1) = \ln(n+1)$\
+$= \ln(n+1) - \ln(1) = \ln(n+1)$
 
 Remarque : $\prod\limits_{k = 1}^{n}\frac{k+1}{k} = \frac{n+1}{1} = n+1$.
 En prenant le ln, $\ln(n+1) = \ln(\prod\limits_{k = 1}^{n}\frac{k+1}{k}) = \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k}) = S_n$
