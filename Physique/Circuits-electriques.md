@@ -70,3 +70,70 @@ Démarreur automobile         | $100 A$
 Moteur de TGV                | $1 kA$
 Foudre                       | $10^5 A$
 Seuil létal                  | $40 mA$ pendant 3 s ou $300 mA$ pendant 0,1 s
+
+### Loi des nœuds
+> La loi des nœuds traduit la conservation de la charge en régime stationnaire
+> et exprime le fait que la charge ne peut pas s'accumuler au niveau d'un nœud
+
+En chaque nœud d'un circuit, $\sum\limits_{k} \varepsilon_k i_k = 0$, où $\varepsilon_k = +1$
+quand le courant est entrant et $\varepsilon_k = -1$ quand le courant est sortant.
+
+##### Exemple
+Soit un nœud N à quatre chemins $i_{1 \ldots 4}$, avec $i_{1 \ldots 3}$ entrants
+et $i_4$ sortant, on a $i_1 + i_2 + i_3 - i_4 = 0 \Leftrightarrow i_1 + i_2 + i_3 = i_4$.
+
+## Tension électrique
+### Le potentiel électrique
+#### Expérience de Wimshurst
+(voir vidéo, expérience avec deux boules qui accumulent de l'électricité
+statique, mais avec une différence de potentiel, et produisent une étincelle en
+étant rapprochées l'une de l'autre)
+
+#### Le potentiel électrique
+> Toute distribution de charge induit un champ scalaire, c'est à dire une
+> fonction définie en tout point de l'espace qu'on appelle potentiel électrique
+
+On note cette fonction $\begin{aligned} V: \mathbb{R}^3 &\to \mathbb{R} \\ (x, y, z) &\mapsto V((x, y, z)) .\end{aligned}$.
+Le potentiel s'exprime en Volts.
+
+### La tension électrique
+> La tension correspond à une différence en potentiel : $U_{AB} = V_A - V_B$.
+
+La tension $U_{AB}$, représentée par une flèche allant de B vers A est la
+différence de potentiel entre les points A et B. On la mesure ainsi souvent aux
+bornes des dipôles.
+
+##### Exemples de valeurs
+Composants ou appareils | Tension
+---                     | ---
+Secteur                 | $230 V$
+Pile                    | Quelques Volts
+Circuits électroniques  | Quelque mV
+Signaux nerveux         | $75 mV$
+Alimentation TGV        | $25 kV$
+Éclair                  | $10^8 V$
+Ligne à haute tension   | $150~1000 kV$
+
+> Un dipôle électrocinétique (à faible puissance) est une partie d'un circuit qui
+> peut être reliée au reste du circuit par deux fils (cela peut donc être un
+> ensemble de dipôles). On définit son comportement par sa caractéristique
+> $i = f(u)$ (une fonction souvent bijective), dans une convention donnée.
+
+Deux conventions existent, la convention récepteur et la convention générateur.
+La convention récepteur est la plus utilisée.
+- En convention récepteur, si le courant algébrique est orienté dans le sens AB, alors $u = V_A - V_B$
+- En convention générateur, si le courant algébrique est orienté dans le sens AB, alors $u = V_B - V_A$
+
+### Loi des mailles
+> Une maille est un parcours fermé, sur un circuit électrique partant d'un nœud
+> partant d'un nœud pour revenir à ce même nœud. On associe à cette maille un sens
+> de parcours arbitraire.
+
+En prenant une maille et en choisissant arbitrairement un sens de parcours, on
+visite toutes les branches de la maille et on associe un coefficient $\varepsilon_k = +1$
+lorsqu'elle est dans le sens de parcours et un $\varepsilon_k = -1$ lorsque la
+tension rencontrée est orientée dans l'autre sens. La loi des mailles donne
+alors la relation suivante : $\sum\limits_{k} \varepsilon_k u_k = 0$.
+
+> On note les valeur u, i et q en minuscule lorsqu'elles sont variables avec le
+> temps, et U, I et Q en majuscule lorsqu'elles sont constantes.
