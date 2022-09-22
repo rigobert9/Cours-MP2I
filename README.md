@@ -32,6 +32,7 @@ Vim (voir plus bas) | Local | Partiellement (coloration) | Partiellement (caract
 GitHub (lire les fichiers ici) | Online | Oui | Oui (incomplètement pour les systèmes)
 [Zettlr](https://www.zettlr.com/) | Local | Oui | Oui
 [Marktext](https://github.com/marktext/marktext) | Local | Oui | Oui
+[Apostrophe](https://world.pages.gitlab.gnome.org/apostrophe/) | Local | Oui | Oui
 
 Pour lire ces notes avec une partie des symboles simplifiés, il suffit
 d'installer vim avec le plugin
