@@ -246,8 +246,98 @@ $= \{\cos^2 \Theta + \sin^2 \Theta = 1, \Theta \in \mathbb{R}\}$
 On note, avec les propriétés du cercle trigonométrique,
 $\forall (\Theta, \phi) \in \mathbb{R}, e^{i \Theta} \times e^{i \varphi} = e^{i( \Theta + \varphi )}$.
 On peut le prouver par le calcul en repassant par la forme trigonométrique.
+De plus, on peut ainsi prouver les formules d'addition sur les cosinus et sinus
+à l'aide de cette formule, ainsi que les formules de duplication.
 
 On a de plus (vérifiables par la forme trigonométrique) $e^{-i \Theta} = \overline{e^{i \Theta}} = \frac{1}{e^{i \Theta}}$.
 
 On vérifie alors, lorsque $e^{i \Theta} = e^{i \varphi} \Leftrightarrow \left\{\begin{matrix} \cos \Theta = \cos \varphi \\ \sin \Theta = \sin \varphi \end{matrix}\right.$,
 que $\Theta \equiv \varphi [2 \pi]$.
+
+À partir des formules d'addition et de leurs inverses ($\cos(a-b)$), on peut facilement obtenir des formules de
+linéarisation, soit $\left\{\begin{matrix} \cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b) \\ \sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b) \end{matrix}\right.$ :
+- $\cos(a)\cos(b) = \frac{1}{2} (\cos(a+b) + \cos(a-b))$
+- $\sin(a)\sin(b) = \frac{1}{2} (\cos(a-b) + \cos(a+b))$
+- $\sin(a)\cos(b) = \frac{1}{2} (\sin(a + b) + \sin(a-b))$
+
+#### Technique de l'arc-moitié
+$\left\{\begin{matrix} \cos p + \cos q = \Re(e^{ip} + e^{iq}) \\ \sin p + \sin q = \Im(e^{ip} + e^{iq}) \end{matrix}\right.$\
+On force l'apparition de l'angle $\frac{p + q}{2}$ :
+$e^{ip} + e^{iq} = e^{i(\frac{p + q}{2})} \times [e^{i\frac{p-q}{2}} + e^{i \frac{q-p}{2}}]$.
+On voit alors apparaître $e^{i \Theta} + e^{-i \Theta}$ (qui sont un nombre et
+son conjugué), soit $e^{i \Theta} + e^{-i \Theta} = 2 \Re(e^{i \Theta}) = 2 \cos \Theta$.
+On peut ainsi dégager $e^{ip} + e^{iq} = e^{i (\frac{p+q}{2})} \times 2 \cos (\frac{p-q}{2})$
+$= [\cos(\frac{p+q}{2}) + i \sin(\frac{p+q}{2})] \times 2 \cos (\frac{p-q}{2})$
+
+On obtient ainsi $\Re(e^{ip} + e^{iq}) = 2 \cos (\frac{p+q}{2}) \cos(\frac{p-q}{2}) = \cos p + \cos q$,
+et $\Im(e^{ip} + e^{iq}) = 2 \cos(\frac{p-q}{2}) \times \sin(\frac{p+q}{2}) = \sin p + \sin q$.
+
+On a ainsi les formules d'Euler : $\forall \Theta \in \mathbb{R}, \left\{\begin{matrix} \cos \Theta = \frac{e^{i \Theta} + e^{-i \Theta}}{2} \\ \sin \Theta = \frac{e^{i \Theta} + e^{-i \Theta}}{2i} \end{matrix}\right.$
+
+On procède de même pour $e^{ip}- e^{iq}$.
+$e^{ip} - e^{iq} = e^{i \frac{p+q}{2}} \times [e^{i \frac{p-q}{2}} - e^{i \frac{q-p}{2}}]$ (qui est équivalent à $z - \overline{z} = 2 \Im(z)$),
+$e^{i \frac{p+q}{2} \times 2 i \sin(\frac{p-q}{2})}$,
+donc $\Re(e^{ip} - e^{iq}) = \cos p - \cos q = -2 \sin(\frac{p+q}{2}) \sin(\frac{p-q}{2})$
+et $\Im(e^{ip} - e^{iq}) = \sin p - \sin q = 2\cos(\frac{p+q}{2}) \sin(\frac{p-q}{2})$
+
+Cette méthode est ainsi utilisable dans la plupart des cas ou on retrouve $e^{ip} \pm e^{iq}$.
+
+#### Formule de Moivre
+> $\forall \Theta \in \mathbb{R}, \forall n \in \mathbb{Z}, (\cos \Theta + i \sin \Theta)^n = \cos(n \Theta) + i \sin(n \Theta)$
+
+Preuve : $(e^{i \Theta})^n = e^{i (n \Theta)}$
+
+##### Application
+Exprimer $\cos(5 x)$ et $\sin(5 x)$ en fonction uniquement de $\cos x$ et $\sin x$.
+
+Idée : $\cos(5x) + i \sin(5x) = e^{i 5x} = (e^{ix})^5 = (\cos x + i \sin x)^5$\
+Binôme de Newton : $[\cos^5(x) - 10\cos^3 x \sin^2 x + 5 \cos x \sin^4 x] + i[5\cos^4 x \sin x - 10 \cos^2 x \sin^3 x + \sin^5 x]$\
+Donc $\cos(5x) = \cos^5(x) - 10 \cos^3(x) [1-\cos^2 x] + 5\cos x [1 - \cos^2 x]^2 = 16 \cos^5 x - 20 \cos^3 x + 5 \cos x = P(\cos x)$,
+avec $P(X) = 16 X^5 - 20 X^3 + 5X$, un polynôme en $\cos x$ (cf Tchebychev).
+
+##### Propriété
+Exprimer $\cos(nx)$ comme un polynôme en $\cos x$ ($P_n | \forall x \in \mathbb{R}, \cos(nx) = P_n(\cos x)$).
+$\cos(nx) = \Re(e^{inx}) = \Re((\cos x + i \sin x)^n) = \Re(\sum\limits_{k = 0}^{n}\binom{n}{k} (i \sin x)^k \cos(x)^{n-k})$.
+On sait que $(i \sin x)^k \in \mathbb{R}$ si et seulement si k est pair, donc on
+sépare les indices de la somme et on ne conserve que les pairs. Ainsi,
+$\cos(nx) = \sum\limits_{0 \leq k \leq m}\binom{n}{k} (i \sin x)^k (\cos x)^{n-k}$ pour tout k pair.
+On pose $k = 2p$ où $0 \leq 2p \leq n$, $p \in \mathbb{N}$ donc $0 \leq p \leq \left\lfloor \frac{n}{2} \right\rfloor$,
+soit
+$\cos(nx) = \sum\limits_{p = 0}^{\left\lfloor \frac{n}{2} \right\rfloor} \binom{n}{2p} (i \sin x)^{2p} (\cos x)^{n-2p}$.
+Cela donne donc $\cos(nx) = P_n(\cos x)$, avec $P_n(X) = \sum\limits_{k = 0}^{\left\lfloor \frac{n}{2} \right\rfloor} \binom{n}{2k} (-1)^k (1 - X^2)^x X^{n-2k}$ (n-ième polynôme de Tchebychev).
+
+#### Chemin inverse
+On cherche par exemple à calculer $\int\limits_{0}^{\pi} (\sin (t))^2 dt$. On
+décide d'abord d'appliquer une stratégie de linéarisation :
+$\cos(2t) = 1 - 2 \sin^2(t)$, donc $\sin^2(t) = \frac{1 - \cos 2t}{2}$,
+donc $\int\limits_{0}^{\pi} \frac{1 - \cos 2t}{2} dt = \frac{\pi}{2} \int\limits_{0}^{\pi} \frac{\cos(2t)}{2} dt$.
+
+Les primitives sont néanmoins difficiles à retrouver dans certains cas.
+
+__Stratégie universelle de linéarisation :__ On remplace
+$\cos(t)^m \times \sin(t)^n$ par des sommes de termes en $\cos(kt)$ et $\sin(kt)$.
+Cette stratégie est utile pour les calculs de primitives ou de dérivées
+multiples.
+On a ainsi la formule d'arrivée $\sum\limits_{k = 0}^{y} (a_k \sin(kt) + b_t \cos(kt))$
+
+On peut aussi passer par les formules d'Euler. En effet, on a $\cos(t)^m \times \sin(t)^n = [\frac{e^{it} + e^{-it}}{2}]^m \times [\frac{e^{it} + e^{-it}}{2i}]^n$.
+En développant tout massivement par binôme et distribution, il restera des
+termes de la forme $e^{ikt}$ et $e^{-ikt}$ et les formules d'Euler
+reconstruisent les $\cos(kt)$ et $\sin(kt)$.
+
+##### Exemple d'application avec Euler
+$(\sin t)^4 = (\frac{e^{it} - e^{-it}}{2i})^4$ (Euler) $= \frac{1}{(2i)^4} (e^{4it} - 4 e^{2it} + 6 e^{i 0 t} - 4 e^{-2it} + e^{-4it})$ (Binôme)
+$= \frac{1}{8} (2 \cos(4t) - 4 \times 2 \cos(2t) + 6)$
+
+#### Application en Physique
+On cherche souvent en physique à retrouver une formule sous la forme $C \cos(t + \varphi)$,
+avec C une amplitude et $\varphi$ un déphasage, à partir d'une forme $a \cos(t) + b \sin(t)$
+
+> Transformation de Fresnel : Soit $(a,b) \in \mathbb{R}^2 \setminus \{(0,0)\}$,\
+> $\exists A \in \mathbb{R}_{+}, \exists \Theta \in \mathbb{R}, \forall t \in \mathbb{R}, a \cos(t) + b \sin(t) = A \cos(t - \Theta)$
+
+L'idée est ici de $(\frac{a}{\sqrt{a^2 + b^2}})^2 + (\frac{b}{\sqrt{a^2 + b^2}}) = 1$ (car $\frac{a^2 + b^2}{a^2 + b^2} = 1$ ).
+On pose alors $A = \sqrt{a^2 + b^2}$ (l'amplitude). $a \cos t + b \sin t = A \times [\frac{a}{A} \cos t + \frac{b}{A} \sin t]$,
+or $(\frac{a}{A})^2 + (\frac{b}{A})^2 = 1$, donc le couple $(\frac{a}{A}, \frac{b}{A})$ est sur le cercle trigo.
+On en déduit que $\exists \Theta \in \mathbb{R}^{\ast}, \left\{\begin{matrix} \cos \Theta = \frac{a}{A} \\ \sin \Theta \frac{b}{A} \end{matrix}\right.$.
+Ainsi $a \cos t + b \sin t = A[\cos \Theta \cos t + \sin \Theta \sin t] = A \cos(t-\Theta)$.
