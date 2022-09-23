@@ -82,3 +82,84 @@ problèmes de mémoire.
 On va donc faire l'arbre des appels et compter en fonction des arguments :
 - le nombre total d'appels (la taille de l'arbre)
 - le nombre d'appels imbriqués (sa profondeur)
+
+À même type d'appels, on peut compter le nombre d'appels récursifs afin de
+commencer à approcher la notion de complexité algorithmique.
+
+Une fonction récursive (sauf récursion terminale, voir plus tard), utilise un
+nombre de frames dans la mémoire égal à la profondeur de son arbre d'appel.
+Il faut donc prendre garde lorsque cette fonction n'a pas par ailleurs de raison
+d'utiliser beaucoup de mémoire.
+
+Il faut prendre garde de ne pas faire d'appels récursifs inutiles car ceux-ci
+peuvent faire exploser le nombre total d'appels et le temps d'exécution de la
+fonction.
+
+## Dérécursification
+Quitte à implémenter de façon itérative la pile (comme un tableau alloué
+dynamiquement) et à simuler les appels récursifs tant que la pile n'est pas
+vide, on peut décrire un équivalent itératif de toute fonction récursive.
+Le résultat de ce processus est en général illisible.
+
+Parfois, il est possible de dérécursiver de façon plus élégante en étudiant
+l'arbre des appels. Par exemple, on peut écrire l'exponentiation rapide comme
+une boucle for ou while. Encore plus efficacement, on peut constater que cette
+fonction ne multiplie par a à la profondeur i que le bit de poids $2^i$ de b est 1.
+En effet, le résultat de profondeur i est élevé i fois au carré. Ce a devient
+ainsi $a^{2^{2 \ldots^2}} = a^{2i}$.
+
+On peut donc directement écrire b en binaire et multiplier un accumulateur par
+$a^{2i}$ quand le i-ème bit est un 1.
+
+```c
+#include <stdio.h>
+#include <stdint.h>
+
+long int exp_rapide(int a, uint32_t b) {
+  long int resultat = 1;
+  int8_t bit_b = b%2;
+  long int puissance = a;
+  for (int i = 0; i < 32; i++) {
+    if (bit_b == 1) {
+      resultat *= puissance;
+    }
+    b = b / 2;
+    bit_b = b%2;
+    puissance = puissance * puissance;
+  }
+  return resultat;
+}
+```
+
+## Récursivité croisée
+> Plusieurs fonctions qui forment un ensemble sont dites mutuellement récursives
+> si il existe un cycle $f1 \to f2 \to \ldots \to fn \to f1$ de fonction de cet
+> ensemble telle que chaque fonction appelle la suivante dans le cycle dans sa
+> définition.
+
+##### Exemple
+```c
+bool impair(int);
+bool pair(int n) { return n == 0 || impair(n-1); }
+bool impair(int n) { return n !=0 && pair(n-1); }
+```
+
+En C, il faut déclarer les fonctions avant de les utiliser dans une autre
+définition de fonction. On peut déclarer une fonction sans la définir.
+On peut déclarer une fonction sans la définir, ce qui est nécessaire pour des
+fonctions mutuellement récursives.
+
+##### Exemple : décision du vainqueur aux échecs depuis une position
+On est au tour du joueur rouge. On souhaite vérifier si le joueur rouge va
+gagner.
+Pour cela, on peut appeler une fonction potentielle "rouge_joue_et_gagne" qui
+renvoie si pour tout coup légal de rouge, tous les coups de bleu l'amènent à
+perdre, et sinon renvoie faux lorsqu'il n'y a pas de coup légal.
+Pour cela, on utilise donc une fonction "bleu_joue_et_perd" qui essaie tous les
+coups de légaux de bleu, et vérifie si rouge gagne à ce coup.
+
+Ces deux fonctions vont donc s'entre-appeler, afin de déterminer le vainqueur.
+
+On peut toujours (bien que ça ne clarifie pas nécessairement le code) écrire n
+fonctions mutuellement récursives comme une seule fonction récursive avec switch
+... case.
