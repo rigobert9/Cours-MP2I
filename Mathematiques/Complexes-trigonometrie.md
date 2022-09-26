@@ -338,6 +338,145 @@ avec C une amplitude et $\varphi$ un déphasage, à partir d'une forme $a \cos(t
 
 L'idée est ici de $(\frac{a}{\sqrt{a^2 + b^2}})^2 + (\frac{b}{\sqrt{a^2 + b^2}}) = 1$ (car $\frac{a^2 + b^2}{a^2 + b^2} = 1$ ).
 On pose alors $A = \sqrt{a^2 + b^2}$ (l'amplitude). $a \cos t + b \sin t = A \times [\frac{a}{A} \cos t + \frac{b}{A} \sin t]$,
-or $(\frac{a}{A})^2 + (\frac{b}{A})^2 = 1$, donc le couple $(\frac{a}{A}, \frac{b}{A})$ est sur le cercle trigo.
-On en déduit que $\exists \Theta \in \mathbb{R}^{\ast}, \left\{\begin{matrix} \cos \Theta = \frac{a}{A} \\ \sin \Theta \frac{b}{A} \end{matrix}\right.$.
+or $(\frac{a}{A})^2 + (\frac{b}{A})^2 = 1$, donc le couple $(\frac{a}{A}, \frac{b}{A})$ est sur le cercle trigonométrique.
+On en déduit que $\exists \Theta \in \mathbb{R}^{\ast}, \left\{\begin{matrix} \cos \Theta = \frac{a}{A} \\ \sin \Theta = \frac{b}{A} \end{matrix}\right.$.
 Ainsi $a \cos t + b \sin t = A[\cos \Theta \cos t + \sin \Theta \sin t] = A \cos(t-\Theta)$.
+
+##### Exemple : $\forall x \in \mathbb{R}, |\cos(x) + \sin(x)| \leq \sqrt{2}$
+On applique la transformation de Fresnel, et on obtient ainsi
+$\cos(x) + \sin(x) = \sqrt{2}(\frac{\sqrt{2}}{2} \cos(x) + \frac{\sqrt{2}}{2} \sin(x))$
+$= \sqrt{2}(\cos(\frac{\pi}{4}) \cos(x) + \sin(\frac{\pi}{4}) \sin(x))$
+$= \sqrt{2} \cos(x - \frac{\pi}{4})$.
+Or $-1 \leq \cos(x) \leq 1$, donc $|\cos(x)| \leq 1$, d'où le résultat.
+
+On peut aussi résoudre cet exemple en remplaçant les premières étapes par une
+écriture développée du module (qui est ici une valeur absolue), ce qui mène à
+une réduction de $\cos^2 + \sin^2$.
+
+### Fonction tangente
+> Pour tout $x \in \mathbb{R} \setminus \{\frac{\pi}{2} + k\pi , k \in \mathbb{Z}\}$ (les réels où cosinus est non nul),
+> on définit $\tan(x) = \frac{\sin x}{\cos x}$.
+
+Géométriquement, il s'agit de la taille du côté opposé à l'angle dans le cercle
+trigonométrique du triangle rectangle formé par le segment de l'origine au point
+0 et par l'angle. Puisque le segment de l'origine au point 0 est de taille 1, on
+a bien $\frac{\sin x}{\cos x} = \frac{\tan x}{1}$.
+
+On remarque que l'ensemble de définition de la tangent peut aussi s'écrire comme
+la réunion d'intervalles $\bigcup\limits_{k \in \mathbb{Z}} ]\frac{-\pi}{2} + k\pi , \frac{\pi}{2} + k\pi[$
+
+On a le tableau de valeurs remarquables :
+
+x        | 0   | $\frac{\pi}{6}$      | $\frac{\pi}{4}$ | $\frac{\pi}{3}$ | $\frac{\pi}{2}$
+---      | --- | ---                  | ---             | ---             | ---
+$\tan x$ | 0   | $\frac{1}{\sqrt{3}}$ | 1               | $\sqrt{3}$      | X
+
+#### Variations
+$\tan$ est dérivable sur tout intervalle $I_k = ]\frac{-\pi}{2} + k\pi , \frac{\pi}{2} + k\pi [$,
+et $\tan' = (\frac{\sin}{\cos})' = \frac{\sin' \cos - \sin \cos'}{\cos^2} = \frac{\cos^2 + \sin^2}{\cos^2}$
+$ = \frac{1}{\cos^2} = 1 + \tan^2$.
+
+> $\tan' = \frac{1}{\cos^2} = 1 + \tan^2$
+
+Ainsi tan est strictement croissante sur chaque intervalle $I_k$.
+
+#### Symétrie/Périodicité
+$\tan(-x) = \frac{\sin(-x)}{\cos(-x)} = \frac{-\sin x}{\cos x} = -\tan x$
+
+De plus, pour tout x appartenant au domaine de définition de tan, -x en fait
+aussi partie, car $x \not\equiv \frac{\pi}{2}[\pi] \Rightarrow -x \not\equiv \frac{-\pi}{2}[\pi] \Leftrightarrow x \not\equiv \frac{\pi}{2}[\pi]$.
+
+> La fonction tan est donc impaire
+
+On a $\pi$ -périodique, car $\tan(x + \pi) = \frac{\sin(x + \pi)}{\cos(x + \pi)} = \frac{-\sin(x)}{-\cos(x)} = \tan x$
+et $x + \pi$ appartenant au domaine de définition de tan pour tout $x$ y
+appartenant, car  $x \not\equiv \frac{\pi}{2}[\pi] \Rightarrow x + \pi \not\equiv \frac{-\pi}{2}[\pi]$
+
+> La fonction tan est $\pi$ -périodique
+
+#### Représentation graphique
+Pour représenter la fonction tan, on l'étudie sur $[0, \frac{\pi}{2}[$, puis on
+obtient $]\frac{-\pi}{2}, 0]$ par imparité et le reste par $\pi$ -périodicité.
+
+Puisque $\tan'(0) = 1$ et $\tan(0) = 0$, on a une droite tangente à la courbe en
+0 d'équation $y = i$, et on a la limite de tan vers $\frac{\pi}{2}$ qui tend
+vers $+\infty$. On a donc la forme de la fonction tangente :
+
+> Insérer image
+
+On remarque aussi que l'application $\tan$ sur l'un de ses intervalles de
+définition vers $\mathbb{R}$ est bijective, car l'ensemble image de $\tan$ est $\mathbb{R}$
+(surjectivité) et tan est strictement monotone (injectivité).
+
+Ainsi, tout réel est une tangente :
+$\forall y \in \mathbb{R}, \exists! x \in ]\frac{-\pi}{2}, \frac{\pi}{2}[, \tan(x) = y$
+
+### Formulaire
+Pour $\Theta \not\equiv \frac{\pi}{2}[\pi]$
+- $\tan(-\Theta) = -\tan(\Theta)$
+- $\tan(\Theta + \pi) = \tan(\Theta)$
+- $\tan(\Theta - \pi) = \tan(\Theta)$
+
+Pour $\Theta \not\equiv 0[\frac{\pi}{2}]$
+- $\tan(\Theta + \frac{\pi}{2}) = \frac{-1}{\tan \Theta}$
+- $\tan(\frac{\pi}{2} - \Theta) = \frac{-1}{\tan \Theta}$
+
+Pour $a, b, a+b \not\in \frac{\pi}{2} + \pi \mathbb{Z}$ :
+- $\tan(a+b) = \frac{\sin a \cos b + \cos a \sin b}{\cos a \cos b - \sin a \sin b}$
+  $= \frac{\cos a \cos b [\frac{\sin a}{\cos a} + \frac{\sin a}{\cos b}]}{\cos a \cos b [1 - \frac{\sin a \sin b}{\cos a \cos b}]}$, soit
+  $\tan(a+b) = \frac{\tan(a) + \tan(b)}{1 - \tan(a) \times \tan(b)}$.
+- $\tan(a-b) = \frac{\tan(a) - \tan(b)}{1 + \tan(a) \tan(b)}$
+
+De même, avec $b = a$ :
+- $\tan(2a) = \frac{2 \tan(a)}{1 - \tan^2(a)}$
+
+On remarque que, soit $\left\{\begin{matrix} u \not\equiv \pi[2\pi] \\ u \not\equiv \frac{\pi}{2}[\pi] \end{matrix}\right.$,
+$\tan(u) = \tan(2 \times \frac{u}{2}) = \frac{2 \tan(\frac{u}{2})}{1 - \tan^2(\frac{u}{2})}$, soit
+$\tan(u) = \frac{2t}{1 - t^2}$ en posant $t = \tan(\frac{u}{2})$.
+À l'aide de la dérivée de tan, on sait que $1 + \tan^2 = \frac{1}{\cos^2}$, et
+on exprime ainsi $\cos(u) = 2 \cos^2(\frac{u}{2}) - 1 = 2(\frac{1}{1 + \tan^2(\frac{u}{2})}) - 1$
+$= \frac{1 - \tan^2(\frac{u}{2})}{1 + \tan^2(\frac{u}{2})} = \frac{1 - t^2}{1 + t^2}$.
+Enfin, puisque $\sin(u) = \tan(u) \times \cos(u) = \frac{2t}{1 + t^2}$.
+On a donc pu exprimer le sinus, le cosinus et la tangente de $u$ uniquement en
+fonction de $t = \tan(\frac{u}{2})$ (la tangente de l'angle-moitié).
+
+##### Calculer $\tan(\frac{\pi}{8})$
+On pose $t = \tan(\frac{\pi}{8})$. On a alors $\tan(\frac{\pi}{4}) = \frac{2t}{1 - t^2}$,
+donc $2t = 1 - t^2$ (car $\tan(\frac{\pi}{4}) = 1$), donc on a le polynôme
+$t^2 + 2t - 1 = 0$, qui a les racines $-1 \pm \sqrt{2}$. Or, $\frac{\pi}{8} \in [0, \frac{\pi}{2}[$,
+donc $\tan(\frac{\pi}{8}) > 0$, donc $\tan(\frac{\pi}{8}) = \sqrt{2} - 1$
+
+### Équations trigonométriques
+- $\sin x = \sin y \Leftrightarrow (x \equiv y[2\pi] \lor x \equiv \pi - y [2\pi])$
+- $\cos x = \cos y \Leftrightarrow (x \equiv y[2\pi] \lor x \equiv -y [2\pi])$
+- $\sin x = \sin y \Leftrightarrow x \equiv y[\pi]$
+
+On effectuera souvent ces opérations pour vérifier des solutions ou les
+énumérer.
+
+Attention, les calculs sur les congruences dans les réelles ne permettent plus
+un grand nombre de propriétés qu'on trouve dans les entiers.
+On peut néanmoins appliquer $\left\{\begin{matrix} a \equiv b[c] \\ a' \equiv b'[c] \end{matrix}\right. , a + a' \equiv b + b'[c]$.
+On a aussi, avec $\lambda \in \mathbb{R}^{\ast}, a \equiv b [c] \Leftrightarrow \lambda a \equiv \lambda b [\lambda c]$.
+
+## Formes trigonométriques et exponentielles d'un complexe
+Soit $z \in \mathbb{C}$, on pose $r = |z|$.
+- Soit $r = 0 \Leftrightarrow z = 0$
+- Soit $r \neq 0$, alors le complexe $\frac{z}{r}$ est de module 1
+  ( $| \frac{z}{r} | = \frac{|z|}{|r|} = \frac{r}{r} = 1$ ).
+  Il existe donc $\Theta \in \mathbb{R}$ tel que $z = r e^{i \Theta}$
+
+> $\forall z \in \mathbb{C}^{\ast}, \exists! r \in \mathbb{R}^{\ast}_{+}, \exists \Theta \in \mathbb{R}, z = r e^{i \Theta}$
+
+On a $r = |z|$ le module de $z$. $\Theta$ est un argument de $z$, noté $arg(z)$,
+et on a $arg(z) \equiv \Theta[2\pi]$.
+
+On a le $\Theta \in ]-\pi , \pi]$, on parle d'argument principal de $z$.
+
+On peut en déduire la représentation polaire du point d'affixe $z$ sur le plan,
+à partir du vecteur depuis l'origine de norme $|z|$ et d'angle avec l'axe des
+abscisses $arg(z)$.
+
+Ainsi, pour $z \in \mathbb{C}^{\ast}$, $z = \Re(z) + i \Im(z)$
+$= |z| \times e^{i arg(z)} = |z| \times (\cos(arg(z)) + i \sin(arg(z)))$,
+donc $\Re(z) = |z| \times \cos(arg(z))$ et $\Im(z) = |z| \times \sin(arg(z))$.
