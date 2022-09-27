@@ -137,3 +137,116 @@ alors la relation suivante : $\sum\limits_{k} \varepsilon_k u_k = 0$.
 
 > On note les valeur u, i et q en minuscule lorsqu'elles sont variables avec le
 > temps, et U, I et Q en majuscule lorsqu'elles sont constantes.
+
+## Puissance électrique
+> La puissance électrique reçue (l'énergie reçue par unité de temps) par un dipôle
+> à l'instant $t$, soumis à une tension $u_t$ et traversé par un courant
+> d'intensité $i_t$, vaut, en convention récepteur, $P(t) = u(t) i(t)$, avec $P(t)$
+> en Watt, $u(t)$ en Volt et $i(t)$ en Ampère.
+
+- Si $P(t) > 0$, le dipôle absorbe de l'énergie électrique. On dit que le dipôle
+  a un caractère récepteur.
+- Si $P(t) > 0$, le dipôle fournit de l'énergie électrique. On dit que le
+  dipôle a un caractère générateur.
+
+## Dipôle ohmique
+### Loi d'Ohm et effet Joule
+> Soit un dipôle ohmique traversé par un courant $i(t)$, et aux bornes duquel on
+> mesure une tension $u(t)$, on a la relation avec la résistance $R$ en Ohm ($\Omega$) :
+> $u(t) = R i(t)$.
+
+La courbe représentative caractéristique de la tension selon l'intensité (ou
+l'inverse) est une droite (une fonction affine).
+
+> On a $P(t) = u(t) i(t) = R i(t)^2$.
+
+Effet Joule : $E = P \cdot \Delta t = R i^2 \Delta t$
+
+### Association de résistances
+#### Résistances en série
+Pour deux résistances en série qui ont à leur bornes des tensions $R_1$ et
+$R_2$, et qui sont traversés par un courant d'intensité $i$, on a, d'après la
+loi d'Ohm, $u_1 = R_1 i$ et $u_2 = R_2 i$. Par additivité des tensions, on a la
+tension des deux dipôles ensemble $U = u_1 + u_2$, et donc la résistance de
+cette série $R_\text{eq} = \frac{u}{i} = (R_1 + R_2)$.
+
+> Pour $n$ dipôles en série de résistance $R_k$, on a la résistance de la série
+> $R_\text{éq} = \sum\limits_{k = 1}^{n} R_k$.
+
+#### Résistances en parallèle
+Pour deux dipôles en dérivation qui ont à leur bornes des tensions $u_1$ et
+$u_2$, qui ont une résistance $R_1$ et $R_2$ et qui sont traversés par un
+courant d'intensité $i$, on a, d'après la loi d'Ohm, $u_1 = R_1 i_1$, $u_2 = R_2i_2$ et $u = R_\text{éq} i$.
+D'après la loi des nœuds, $i = i_1 + i_2$, or $i_1 = \frac{u_1}{R_1}$ et
+$i_2 = \frac{U_2}{R_2}$, donc $i = \frac{u_1}{R_1} + \frac{u_2}{R_2}$.
+D'après la loi des mailles, $u = u_1 = u_2$, donc $i = (\frac{1}{R_1} + \frac{1}{R_2}) u$,
+or $u = R_\text{éq} i$, donc $i = \frac{u}{R_\text{éq}}$, donc $\frac{1}{R_\text{éq}} = \frac{1}{R_1} + \frac{1}{R_2}$.
+
+> Pour n résistances en parallèle, $\frac{1}{R_\text{éq}} = \sum\limits_{k = 1}^{n} \frac{1}{R_k}$.
+
+## Pont diviseur de tension et de courant
+### Pont diviseur de tension
+Voir schéma.
+D'après la loi d'Ohm, on a $\left\{\begin{matrix} u_1 = R_1 i \\ u_2 = R_2 i \\ u = (R_1 + R_2) i \end{matrix}\right.$,
+donc $i = \frac{u_1}{R_1} = \frac{u_2}{R_2} = \frac{u}{R_1 + R_2}$,
+donc $u_2 = \frac{R_1}{R_1 + R_2} u$ et $u_1 = \frac{R_2}{R_1 + R_2} u$.
+
+
+### Pont diviseur de courant
+Voir schéma.
+D'après la loi d'Ohm, on a $\left\{\begin{matrix} u_1 = R_1 i \\ u_2 = R_2 i \\ u = \frac{R_1 R_2}{R_1 + R_2} i \end{matrix}\right.$,
+d'après la loi des nœuds et des mailles, $\left\{\begin{matrix} i = i_1 + i_2 \\ u = u_1 = u_2 \end{matrix}\right.$,
+soit $\frac{R_1 R_2}{R_1 + R_2} i = R_1 i_1 = R_2 i_2$,
+donc $i_1 = \frac{R_2}{R_1 + R_2} i$ et $i_2 = \frac{R_1}{R_1 + R_2} i$.
+
+### Conductance
+Pour donner une autre forme aux relations utilisées, on utilise la conductance
+$G = \frac{1}{R}$, l'inverse de la résistance. On a ainsi
+$i_1 = \frac{G_1}{G_1 + G_2} i$ et $i_2 = \frac{G_2}{G_1 + G_2}$.
+
+En chimie, son unité est le Siemens.
+
+## Modélisation d'un générateur
+### Source de tension
+#### Source idéale de tension
+> Une source idéale de tension de tension $u$, avec un $e$ sa force électromotrice
+> respecte pour toute intensité du courant qui le traverse $i$, $u = e$.
+
+#### Source réelle de tension
+> Pour tenir compte des pertes par effet Joule d'une source de tension, on
+> modélise la source par une source idéale en série avec une résistance $r$
+> appellée résistance interne. On a donc $u = e - ri$
+
+### Source de courant
+#### Source idéale de courant
+> Une source idéale de courant d'intensité $i$, avec un $i_0$ une intensité,
+> respecte pour toute tension qui le traverse $u$, $i = i_0$.
+
+#### Source réelle de courant
+> Pour tenir compte des pertes par effet Joule d'une source de courant, on
+> modélise la source par une source idéale en série avec une résistance $r$
+> appellée résistance interne. On a donc $i = i_0 - \frac{u}{r} = i_0 - gu$.
+
+## Appareils de mesure
+### Voltmètre
+> Un Voltmètre est un appareil mesurant la tension qui se branche en dérivation
+> autour d'un dipôle ou du segment mesuré.
+
+Le voltmètre est représenté par un cercle avec un V, et a sa borne "COM" vers le
+- et A vers le +.
+
+> Un voltmètre idéal est un dipôle de résistance infinie. 
+
+La résistance d'entrée d'un voltmètre doit être grande devant les résistance du
+circuit sur lequel il est branché, par un ordre de grandeur d'environ $10 M\Omega$.
+
+### Ampèremètre
+> Un ampèremètre est un appareil mesurant l'intensité, branché en série.
+
+Le voltmètre est représenté par un cercle avec un A, et a sa borne "COM" vers le
+- et A vers le +.
+
+> Un ampèremètre idéal est un dipôle de résistance nulle.
+
+La résistance interne d'un ampèremètre doit être petite devant les résistances
+du circuit sur lequel il est branché, de l'ordre de grandeur du Ohm.
