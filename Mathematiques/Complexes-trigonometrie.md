@@ -480,3 +480,66 @@ abscisses $arg(z)$.
 Ainsi, pour $z \in \mathbb{C}^{\ast}$, $z = \Re(z) + i \Im(z)$
 $= |z| \times e^{i arg(z)} = |z| \times (\cos(arg(z)) + i \sin(arg(z)))$,
 donc $\Re(z) = |z| \times \cos(arg(z))$ et $\Im(z) = |z| \times \sin(arg(z))$.
+
+On peut trouver l'égalité entre des nombres complexes avec cette forme :
+$z_1 = z_2 \Leftrightarrow \left\{\begin{matrix} |z_1| = |z_2| \\ arg(z_1) = arg(z_2) \end{matrix}\right.$
+
+On a les propriétés suivantes sur l'argument, soit $z \in \mathbb{C}^{\ast}$ :
+- $z \in \mathbb{R} \Leftrightarrow arg(z) \equiv 0[\pi]$
+- $z \in i\mathbb{R} \Leftrightarrow arg(z) \equiv \frac{\pi}{2}[\pi]$
+- $z \in \mathbb{R}_{+} \Leftrightarrow arg(z) \equiv 0[2\pi]$
+
+Remarque : $e^{i k \pi} = (-1)^k$ et $e^{2i \pi k} = 1$ (avec $k \in \mathbb{Z}$)
+
+- $arg(z) \equiv -arg(z) [2\pi]$
+- $arg(-z) \equiv (\pi + arg(z)) [\pi]$
+- $arg(z_1 z_2) \equiv arg(z_1) + arg(z_2) [2\pi]$
+- $arg(\frac{1}{z}) \equiv -arg(z) [2\pi]$
+- Soit $n \in \mathbb{Z}$, $arg(z^n) \equiv n arg(z) [2\pi]$
+
+##### Preuve de la dernière propriété
+- Si $n \in \mathbb{N}$, on effectue une récurrence en utilisant $arg(z_1 z_2) \equiv arg(z_1) + arg(z_2) [2\pi]$
+- Si $n \in \mathbb{Z}$ avec $n < 0$ : $z^n = \frac{1}{z^{-n}}$ (sachant que
+  $-n \in \mathbb{N}$), $arg(z^n) \equiv -arg(z^{-n})[2\pi] \equiv -(-n)arg(z)[2\pi]$
+  $\equiv n arg(z)[2\pi]$.
+
+## Exponentielle complexe
+> Soit $z \in \mathbb{C}$ un complexe quelconque de forme algébrique $z = a + ib$,
+> avec $(a,b) \in \mathbb{R}^2$. On pose $e^z = e^a \times e^{ib}$
+> $= e^a \cos(b) + i e^a \sin(b)$.
+
+On remarque donc que $e^z = e^{\Re(z)} \cos(\Im(z)) + i e^{\Re(z)} \sin(\Im((z)))$.
+
+Ainsi, $\exp: \mathbb{C} \to \mathbb{C}$ est un prolongement de $\exp: \mathbb{R} \to \mathbb{R}$
+et de $\exp: i\mathbb{R} \to \mathbb{C}$.
+
+On a $\forall (z_1,z_2) \in \mathbb{C}^2, e^{z_1 + z_2} = e^{z_1} \times e^{z_2}$.
+
+##### Preuve
+Si $z_1 = a_1 + i b_1$ et $z_2 = a_2 + i b_2$, avec $a_1, b_1, a_2, b_2 \in \mathbb{R}$,
+on a $e^{z_1} \times e^{z_2} = e^{a_1} e^{i b_1} e^{a_2} e^{i b_2}$
+$= e^{a_1 + a_2} e^{i (b_1 + b_2)} = e^{(a_1 + a_2) + i (b_1 + b_2)}$
+$= e^{z_1 + z_2}$.
+
+### Module et argument de l'exponentielle
+Soit $z \in \mathbb{C}$, $\Re(e^z) = e^{\Re(z)} \times \cos(\Im(z))$ et
+$\Im(e^z) = e^{\Re(z)} \times \sin(\Im((z)))$. On a donc
+$|e^z| = e^{\Re(z)}$ et $arg(e^z) \equiv \Im(z)[2\pi]$.
+
+Remarque : $|e^z| = e^{\Re(z)} \in \mathbb{R}^{\ast}_{+}$ pour tout $z \in \mathbb{C}$,
+donc $|e^z| \neq 0$, donc $e^z \neq 0$. On a pas d'antécédent par $\exp$.
+Ainsi, $\exp: \mathbb{C}  \to \mathbb{C}^{\ast}$. Cette application n'est pas
+injective car $e^0 = 1 = e^{2i \pi}$.
+$\exp(z + 2i \pi) = e^z \times e^{2i \pi} = e^z \times 1 = e^z$ donc $\exp$
+est $2 i \pi$ -périodique.
+On a donc $\exp: \mathbb{C} \to \mathbb{C}^{\ast}$ surjective.
+
+##### Preuve de la surjectivité
+Soit $z = x + iy$ où $(x,y) \in \mathbb{R}^2$, on a
+$e^z = e^x e^{iy}$. On pose $a = re^{i \Theta}$ où
+$\left\{\begin{matrix} r = |a| > 0 \\ \Theta = arg(a) \end{matrix}\right.$.
+
+$e^z = a \Leftrightarrow e^x e^{iy} = r e^{i\Theta}$\
+$\Leftrightarrow \left\{\begin{matrix} e^x = r \\ y \equiv \Theta [2\pi] \end{matrix}\right.$\
+$\Leftrightarrow \left\{\begin{matrix} x = \ln(r) \\ \exists k \in \mathbb{Z}, y = \Theta + 2 \pi k \end{matrix}\right.$\
+Les solutions sont $z = \ln(r) + i\Theta + 2\pi ik, k \in \mathbb{Z}$.
