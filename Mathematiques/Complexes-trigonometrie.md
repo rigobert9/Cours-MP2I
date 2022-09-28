@@ -543,3 +543,147 @@ $e^z = a \Leftrightarrow e^x e^{iy} = r e^{i\Theta}$\
 $\Leftrightarrow \left\{\begin{matrix} e^x = r \\ y \equiv \Theta [2\pi] \end{matrix}\right.$\
 $\Leftrightarrow \left\{\begin{matrix} x = \ln(r) \\ \exists k \in \mathbb{Z}, y = \Theta + 2 \pi k \end{matrix}\right.$\
 Les solutions sont $z = \ln(r) + i\Theta + 2\pi ik, k \in \mathbb{Z}$.
+
+## Équations dans $\mathbb{C}$
+### Racines carrées d'un complexe
+> $\begin{aligned} \mathbb{C}^{\ast} &\to \mathbb{C}^{\ast} \\ z &\mapsto (z) = z^2 .\end{aligned}$ est surjective et non injective.
+> De plus, tout complexe non nul a exactement deux antécédents par cette
+> application.
+
+0 est l'unique antécédent de 0 ($z^2 = 0 \Leftrightarrow z = 0$).
+
+##### Exemple
+Soit $a \in \mathbb{C}^{\ast}$, on veut résoudre $z^2 = a$. On note $a = r e^{i\Theta}$ où
+$\left\{\begin{matrix} r = |a| \in \mathbb{R}^{\ast}_{+} \\ \Theta \equiv arg(a)[2\pi] \end{matrix}\right.$.
+$z \neq 0$ donc on peut chercher $z$ sous forme trigonométrique :
+$z = R e^{i\varphi}$, avec $\left\{\begin{matrix} R > 0 \\ \varphi \in \mathbb{R} \end{matrix}\right.$.
+
+$z^2 = a \Leftrightarrow R^2 e^{i 2\varphi} = r e^{i\Theta}$\
+$\Leftrightarrow \left\{\begin{matrix} R^2 = r \\ 2\varphi \equiv \Theta[2\pi] \end{matrix}\right.$\
+$\Leftrightarrow \left\{\begin{matrix} R = \sqrt{z} \\ \varphi \equiv \frac{\Theta}{2} [\pi] \end{matrix}\right.$\
+On en conclut que $z = \sqrt{r} e^{i \frac{\Theta}{2}}$ ou $z = \sqrt{r} e^{i(\frac{\Theta}{2} + \pi)}$
+
+#### Non-bijectivité de la racine carrée
+> Les deux racines carrées de $a = r e^{i \Theta}$ sont
+> $\pm \sqrt{r} e^{i \frac{\Theta}{2}}$.
+
+La racine carrée étant non bijective, il existe plusieurs résultats et il
+n'existe pas de fonction réciproque à la fonction carrée (pas de notation $\sqrt{  }$)
+
+Remarque : si $a \in \mathbb{R}^{-}$ (réel négatif), l'équation $z^2 = a$ a pour
+solutions $\pm i \sqrt{|a|}$, car $(\pm i \sqrt{|a|})^2 = i^2 \sqrt{|a|}^2$
+$= - |a| = - (-a) = a$.
+
+##### Deuxième exemple
+Si a est donné sous forme algébrique, alors on a $a = \alpha + i \beta$, avec
+$(\alpha,\beta) \in \mathbb{R}^2$. On cherche $z = x + iy$ tel que $z^2 = a$.
+Or $z^2 = (x + iy) = x^2 - y^2 + i 2xy$.
+Ainsi $z^2 = a \Leftrightarrow \left\{\begin{matrix} x^2 - y^2 = \alpha \\ 2xy = \beta \end{matrix}\right.$.
+De plus, $x^2 + y^2 = |z|^2 = |z^2| = a = \sqrt{\alpha^2 + \beta^2}$.
+
+On résout donc $\left\{\begin{matrix} x^2 - y^2 = \alpha \\ x^2 + y^2 = \sqrt{\alpha^2 + \beta^2} \\ 2xy = \beta \end{matrix}\right.$.
+La première plus la deuxième ligne donnent $x^2$, et la première moins la
+deuxième ligne donnent $y^2$. On en détermine les signes de x et de y, puis on
+peut résoudre le système.
+
+### Trinôme du second degré à coefficients complexes
+Soient $(a,b,c) \in \mathbb{C}^3$ avec $a \neq 0$, on pose une équation
+$(E) : az^2 + bz + c = 0$. Le déterminant $\Delta = b^2 - 4ac \in \mathbb{C}$
+permet de déterminer plusieurs cas :
+- Si $\Delta = 0$, $(E)$ a une unique solution $z = \frac{-b}{2a}$
+- Sinon $\Delta$ possède exactement deux racines carrées opposées $\pm \delta$
+  (avec $\Delta = (\pm \delta)^2$). $(E)$ possède deux solutions distinctes
+  $z_1 = \frac{-b - \delta}{2a}$ et $z_2 = \frac{-b + \delta}{2a}$.
+
+##### Preuve
+$az^2 + bzr + c = a(z^2 + \frac{b}{a} z + \frac{c}{a})$\
+$= a ((z + \frac{b}{2a}) + \frac{c}{a} - \frac{b^2}{4a^2})$\
+$= a ((z + \frac{b}{2a}) - \frac{b^2 - 4ac}{4a^2})$\
+$= a ((z + \frac{b}{2a}) - \frac{\Delta}{(2a)^2})$
+
+On sépare ainsi le cas ou $\Delta = 0$, pour lequel $(z + \frac{b}{2a})^2 = 0$
+$\Leftrightarrow z = \frac{-b}{2a}$, et le cas ou $\Delta$ est non nul, et ou on
+pose $\delta^2 = \Delta$. On a alors :
+
+$a((z + \frac{b}{2a})^2 - (\frac{\delta}{2a})^2)$\
+$a((z + \frac{b}{2a} + \frac{\delta}{2a}) - (z + \frac{b}{2a} - \frac{\Delta}{2a}))$\
+On a donc nos deux solutions $z_1$ et $z_2$ comme développées plus haut.
+
+#### Relations coefficients-racines
+> Soit $a \neq 0$ et $a,b,c \in \mathbb{C}$, on note $z_1$ et $z_2$ les racines du
+> trinôme $az^2 + bz + c$ :
+> - $z_1 + z_2 = \frac{-b}{a}$
+> - $z_1 \times z_2 = \frac{c}{a}$
+
+Dans le cas particulier des trinômes à coefficients réels, soit $(a,b,c) \in \mathbb{R}^3$
+avec $a \neq 0$, on a $\Delta \in \mathbb{R}$. On distingue les cas :
+- Si $\Delta > 0$, alors $\Delta = (\sqrt{\Delta})^2$ et on a deux racines
+  réelles distinctes $\frac{-b \pm \sqrt{\Delta}}{2a}$.
+- Si $\Delta = 0$, on a une unique racine double $\frac{-b}{2a}$
+- Si $\Delta < 0$, $\Delta = -(-\Delta) = (i \sqrt{-\Delta})^2$, donnant deux
+  racines conjuguées $\frac{-b \pm i\sqrt{-\Delta}}{2a}$
+
+### Racines n-ièmes de l'unité
+> Soit $n \in \mathbb{N}^{\ast}$, les solutions de l'équation (dans $\mathbb{C}$)
+> $z^n = 1$ sont appellées racines n-ièmes de l'unité. On note
+> $\mathbb{U}_n$ l'ensemble des solutions
+> $\mathbb{U}_n = \{z \in \mathbb{C} \mid z^n = 1\}$.
+
+On peut remarquer que $\mathbb{U}_n \subset \mathbb{U}$, car si $z^n = 1$, alors
+$|z^n| = 1$, donc $|z|^n = 1$, soit $|z| = 1$ car $n \neq 0$ (démontrable
+éventuellement par le logarithme).
+
+Si $z_1, z_2 \in \mathbb{U}_n$ alors $z_1 \times z_2 \in \mathbb{U}_n$ et
+$\frac{1}{z_1} = \overline{z_1} \in \mathbb{U}_n$. On peut dire que
+$\mathbb{U}_n$ est stable par produit, passage à l'inverse et conjugaison.
+
+Puisqu'on sait que $\mathbb{U}_n \subset \mathbb{U}$, on cherche les racines
+sous forme $e^{i\Theta}$.
+$e^{i\Theta} \in \mathbb{U}_n \Leftrightarrow (e^{i\Theta})^n = 1$
+$\Leftrightarrow e^{i n \Theta} = 1$, soit
+$n \Theta \equiv 0[2\pi] \Leftrightarrow \Theta \equiv 0[\frac{2\pi}{n}]$
+$\Leftrightarrow \exists k \in \mathbb{Z}, \Theta = \frac{2\pi}{n}k$.
+Ainsi, $\mathbb{U}_n = \{e^{i \frac{2\pi}{n}k}, k \in \mathbb{Z}\}$.
+
+Ces coefficients k tels que les angles soient dans $[0, 2\pi[$ sont tels que
+$k \in [0, n-1]_{\mathbb{N}}$, et il existe ainsi n solutions distinctes.
+
+Avec $\omega = e^{\frac{2 i \pi}{n}}$, on a ainsi $\mathbb{U}_n = \{1, \omega, \omega^2, \ldots, \omega^{n-1}\}$.
+
+Ces valeurs, une fois posées sur le cercle trigonométrique, sont des points
+équidistants sur le pourtour du cercle.
+
+##### Preuve de la stabilité
+- si $z_1^n = 1$ et $z_2^n = 1$ alors $(z_1 z_2)^n = z_1^n z_2^n = 1 \times 1 = 1$,
+  donc $z_1 z_2 \in \mathbb{U}_n$.
+- $(\frac{1}{z_1})^n = \frac{1}{z_1^n} = \frac{1}{1} = 1$, donc
+  $\frac{1}{z_1} \in \mathbb{U}_n$
+- comme $|z_1| = 1$, $\overline{z_1} = \frac{1}{z_1}$ (puisque $1 = |z_1|^2 = z_1 \overline{z_1}$).
+
+#### Propriétés du nombre j
+- $j = e^{\frac{2 i \pi}{2}} = \frac{-1}{2} + i \frac{\sqrt{3}}{2}$
+- $j^3 = 1$ et $\overline{j} = \frac{1}{j} = j^2 = \frac{-1}{2} -i \frac{\sqrt{3}}{2}$
+- $1 + j + j^2 = 0$
+
+Soit $\omega \in \mathbb{U}_n$ avec $\omega \neq 1$. Alors $1 + \omega + \ldots + \omega^{n-1} = 0$,
+car $\sum\limits_{k = 0}^{n-1} \omega^k = \frac{1 - \omega^n}{1 - \omega} = 0$.
+
+Cette somme peut être utilisée afin de trouver une valeur de cosinus.
+
+##### Preuve
+$S_n = \sum\limits_{k = 0}^{n-1} \Re(e^{i \frac{2 k \pi}{n}}) = \Re(\sum\limits_{k = 0}^{n-1} e^{\frac{2 i k \pi}{n}})$,
+or $\sum\limits_{k = 0}^{n - 1} (e^{\frac{2 i k \pi}{n}})^k = \frac{1 - (e^{\frac{2 i \pi}{n}})^n}{1 - e^{\frac{2 i \pi}{n}}}$
+$= \frac{1 - e^{2 i \pi}}{1 - e^{\frac{2 i \pi}{n}}} = 0$.
+
+#### Racine n-ième d'un complexe non nul
+On cherche à résoudre $z^n = a$, avec $a \neq 0$. On écrit $a = r e^{i \Theta}$
+avec $\left\{\begin{matrix} r = |a| \in \mathbb{R}^{\ast}_{+} \\ \Theta = arg[2\pi] \end{matrix}\right.$.
+On devine une solution $(\sqrt[n]{r} e^{i \frac{\Theta}{n}})^n = r e^{i \Theta} = a$
+où $\sqrt[n]{r} = r^{\frac{1}{n}}$ existe car $\begin{aligned} \mathbb{R}_{+} &\to \mathbb{R}_{+} \\ x &\mapsto x^n .\end{aligned}$ .
+On note $z_0 = \sqrt[n]{r} e^{i \frac{\Theta}{n}}$ la solution particulière
+trouvée. $z^n = a \Leftrightarrow z^n = z_0^n \Leftrightarrow (\frac{z}{z_0})^n = 1$\
+$\Leftrightarrow \frac{z}{z_o} \in \mathbb{U}_n$\
+$\Leftrightarrow \exists k \in [0, n-1]_{\mathbb{N}}, \frac{z}{z_0} = e^{\frac{2 i k \pi}{n}}$\
+$\Leftrightarrow \exists k \in [0, n-1]_{\mathbb{N}}, z = z_0 e^{\frac{2 i k \pi}{n}}$\
+On a donc que l'équation $z^n = a$ possède n solutions distinctes :
+$\{\sqrt[n]{r} e^{i \frac{\Theta}{n}} \times \omega, \omega \in \mathbb{U}_n\}$.
