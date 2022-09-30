@@ -10,8 +10,8 @@ Soit I un ensemble fini d'indices, et $(a_{i \in I})$ une famille de nombres de
 d'ensembles $(\mathbb{R}, \mathbb{C})$. La somme des termes de la famille est
 $\sum\limits_{i \in I} a_i$ et le produit des termes est noté $\prod\limits_{i \in N} a_i$
 
-En pratique, si $I = [p,n]\_{\mathbb{N}}$ avec $(p,n) \in \mathbb{N}^2, p \leq n$, on note
-$\sum\limits_{i \in [p,n]\_{\mathbb{N}}} a_i = \sum\limits_{p \leq i \leq n} a_i = \sum\limits_{i = p}^{n} a_i$
+En pratique, si $I = [p,n]_{\mathbb{N}}$ avec $(p,n) \in \mathbb{N}^2, p \leq n$, on note
+$\sum\limits_{i \in [p,n]_{\mathbb{N}}} a_i = \sum\limits_{p \leq i \leq n} a_i = \sum\limits_{i = p}^{n} a_i$
 et idem pour le produit. Il faut noter qu'ici la somme contient alors $(n-p+1)$
 termes.
 
@@ -38,7 +38,7 @@ finies de nombres. Soit $n \in \mathbb{N}^\ast, \lambda \in \mathbb{R} \text{(ou
 1. $\sum\limits_{i \in I}(a_i + b_i) = (\sum\limits_{i \in I}a_i) + (\sum\limits_{i \in I} b_i)$
 2. $\prod\limits_{i \in I}(a_i \times b_i) = (\prod\limits_{i \in I}a_i) \times (\prod\limits_{i \in I}b_i)$
 3. $\sum\limits_{i \in I}(\lambda \times a_i) = \lambda \times (\sum\limits_{i \in I}a_i)$
-4. $\prod\limits_{i \in I}(\lambda \times a_i) = \binom{N}{\lambda} \times \prod\limits_{i \in I}a_i$ (avec N le cardinal, le nombre d'éléments, de I)
+4. $\prod\limits_{i \in I}(\lambda \times a_i) = N^{\lambda} \times \prod\limits_{i \in I}a_i$ (avec N le cardinal, le nombre d'éléments, de I)
 5. $\sum\limits_{i \in I}(a_i + \lambda) = \sum\limits_{i \in I}a_i + \lambda \times N$ (avec N cardinal de I)
 6. $\prod\limits_{i \in I}(a_i^n) = (\prod\limits_{i \in I}a_i)^n$
 
@@ -127,7 +127,7 @@ $= \ln(n+1) - \ln(1) = \ln(n+1)$
 Remarque : $\prod\limits_{k = 1}^{n}\frac{k+1}{k} = \frac{n+1}{1} = n+1$.
 En prenant le ln, $\ln(n+1) = \ln(\prod\limits_{k = 1}^{n}\frac{k+1}{k}) = \sum\limits_{k = 1}^{n}\ln(\frac{k+1}{k}) = S_n$
 
-Remarque : Soit $a_1, a_2, \ldots a_n \in \mathbb{R}^{\ast}\_{+}$,
+Remarque : Soit $a_1, a_2, \ldots a_n \in \mathbb{R}^{\ast}_{+}$,
 $\ln(\prod\limits_{k = 1}^{n}ak) = \sum\limits_{k = 1}^{n}\ln(a_k)$ et
 $\exp(\sum\limits_{k = 1}^{n}b_k) = \prod\limits_{k = 1}^{n}\exp(b_k)$.
 Ces formules permettent de simplifier de nombreuses expressions avec des
@@ -164,9 +164,9 @@ $S_n = 3 \times 5^2 \times \sum\limits_{k = 2}^{n-1}q^k$, soit si $q = 1$,
 $75(n-2)$ et sinon $3 \times 5^2 \times q^2 \times \frac{1-q^{n-2}}{1-q}$
 
 ## Sommes doubles
-Soit $(a_{i,j})_{i \in [1,n]\_{\mathbb{N}}, j \in [1,p]\_{\mathbb{N}}}$ une
+Soit $(a_{i,j})_{i \in [1,n]_{\mathbb{N}}, j \in [1,p]_{\mathbb{N}}}$ une
 famille de nombres. La somme de tous les éléments de cette famille est :
-$\sum\limits_{(i,j) \in I}a_{i,j}$, avec $I = [1,n]\_{\mathbb{N}} \times [1, p]\_{\mathbb{N}}$.
+$\sum\limits_{(i,j) \in I}a_{i,j}$, avec $I = [1,n]_{\mathbb{N}} \times [1, p]_{\mathbb{N}}$.
 
 On somme ainsi tout un tableau contenant tous les éléments de cette famille.
 
@@ -237,11 +237,11 @@ Remarques :
 - Pour tout k > n, $\binom{n}{k} = 0$
 - Si n = 0, $\binom{0}{k} = 1$
 - Pour tout $n \in \mathbb{N}$, $\binom{n}{n} = 1$
-- $\forall k \in [0,n]\_{\mathbb{N}}, \binom{n}{k} = \binom{n}{n-k}$ (Symétrie)
+- $\forall k \in [0,n]_{\mathbb{N}}, \binom{n}{k} = \binom{n}{n-k}$ (Symétrie)
   (il s'agit, au lieu d'un choix de k parmi n, d'un choix de ne pas prendre k
   parmi n).
 
-__Définition :__ Pour $k \in [0,n]\_{\mathbb{N}}, \binom{n}{k} = \frac{n!}{k!(n-k)!}$.
+__Définition :__ Pour $k \in [0,n]_{\mathbb{N}}, \binom{n}{k} = \frac{n!}{k!(n-k)!}$.
 On peut dire que la division par $k!$ permet d'enlever les doublons qui sont
 tirés parmi tous les tirages (car il s'agit du nombre de permutations possibles
 d'un k-uplet), tandis que $\frac{n!}{(n-k)!}$ correspond à tous les tirages
