@@ -16,7 +16,8 @@ Ces représentations sont standardisées par l'ISO :
 - Sur 64 : 11 bits d'exposant et 52 de mantisse
 - Sur 128 bits : 15 bits d'exposant et 112 de mantisse
 
-## Flottants non normalisés Avec ce système, on ne peut pas représenter 0 (car
+## Flottants non normalisés 
+Avec ce système, on ne peut pas représenter 0 (car
 la mantisse commence par 1). De plus, il n'est possible de le représenter par
 uniquement des zéros dans l'exposant, puisque cela représente quelque chose. En
 pratique, on choisit de ne pas pouvoir représenter $2^{-D} \times \,\text{mantisse}$
