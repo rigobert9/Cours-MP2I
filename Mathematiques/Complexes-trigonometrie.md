@@ -374,9 +374,9 @@ $\tan x$ | 0   | $\frac{1}{\sqrt{3}}$ | 1               | $\sqrt{3}$      | X
 #### Variations
 $\tan$ est dérivable sur tout intervalle $I_k = ]\frac{-\pi}{2} + k\pi , \frac{\pi}{2} + k\pi [$,
 et $\tan' = (\frac{\sin}{\cos})' = \frac{\sin' \cos - \sin \cos'}{\cos^2} = \frac{\cos^2 + \sin^2}{\cos^2}$
-$ = \frac{1}{\cos^2} = 1 + \tan^2$.
+$= \frac{1}{ \cos^2} = 1 + \tan^2$.
 
-> $\tan' = \frac{1}{\cos^2} = 1 + \tan^2$
+> $\tan' = \frac{1}{ \cos^2} = 1 + \tan^2$
 
 Ainsi tan est strictement croissante sur chaque intervalle $I_k$.
 
@@ -688,12 +688,11 @@ $\Leftrightarrow \exists k \in [0, n-1]_{\mathbb{N}}, z = z_0 e^{\frac{2 i k \pi
 On a donc que l'équation $z^n = a$ possède n solutions distinctes :
 $\{\sqrt[n]{r} e^{i \frac{\Theta}{n}} \times \omega, \omega \in \mathbb{U}_n\}$.
 
-
 ## Application des complexes à la trigonométrie
-###Rapport aux complexes
+### Rapport aux complexes
 > Soit un plan P avec un repère orthonormé par les vecteurs $\overrightarrow{\rm i}$ et $\overrightarrow{\rm j}$,
 > avec deux vecteurs unitaires $\overrightarrow{\rm u}$ et $\overrightarrow{\rm v}$
-> (soit $\lVert \overrightarrow{\rm u} \rVert = \lVert \overrightarrow{\rm v} \rVert = 1$).
+> (soit $\lVert \overrightarrow{\rm u} \rVert = \lVert \overrightarrow{\rm v} \rVert = 1$ ).
 > Un angle orienté entre les vecteurs $\overrightarrow{\rm u}$
 > et $\overrightarrow{\rm v}$ est donné par $\Theta \in ]-\pi, \pi]$ tel que
 > $\overrightarrow{\rm v} = (\cos \Theta)\overrightarrow{\rm u} + (\sin \Theta)\overrightarrow{\rm u}$
@@ -701,16 +700,16 @@ $\{\sqrt[n]{r} e^{i \frac{\Theta}{n}} \times \omega, \omega \in \mathbb{U}_n\}$.
 On relie ce concept avec les complexes, pour un $z \in \mathbb{C}^{\ast}$, de
 forme trigonométrique $z = r e^{i \Theta}$ où $\left\{\begin{matrix} r = |z| \\ \Theta \equiv arg(z)[2\pi] \end{matrix}\right.$.
 $\Theta$ est l'angle orienté entre les vecteurs $\overrightarrow{\rm i}$ et
-$\overrightarrow{\rm OM}$, on note $\Theta = \hat{\overrightarrow{\rm i}, \overrightarrow{\rm OM}}$.
+$\overrightarrow{\rm OM}$, on note $\Theta = \widehat{\overrightarrow{\rm i}, \overrightarrow{\rm OM}}$.
 
 Soient A,B,C trois points du plan d'affixe $a, b, c \in \mathbb{C}$. Pour
-mesurer l'angle $\hat{BAC}$, on mesure l'angle orienté $\hat{(\overrightarrow{\rm AB}, \overrightarrow{\rm AC})}$.
-On obtient $\varphi_1 = \hat{\overrightarrow{\rm i}, \overrightarrow{\rm AC}} = arg(c-a)$
-et $\varphi_2 = \hat{\overrightarrow{\rm i}, \overrightarrow{\rm AC}} = arg(b-a)$
-et donc $\hat{\overrightarrow{\rm AB}, \overrightarrow{\rm AC}} = \varphi_1 - \varphi_2 = arg(\frac{c-a}{b-a})$.
+mesurer l'angle $\widehat{BAC}$, on mesure l'angle orienté $\widehat{(\overrightarrow{\rm AB}, \overrightarrow{\rm AC})}$.
+On obtient $\varphi_1 = \widehat{\overrightarrow{\rm i}, \overrightarrow{\rm AC}} = arg(c-a)$
+et $\varphi_2 = \widehat{\overrightarrow{\rm i}, \overrightarrow{\rm AC}} = arg(b-a)$
+et donc $\widehat{\overrightarrow{\rm AB}, \overrightarrow{\rm AC}} = \varphi_1 - \varphi_2 = arg(\frac{c-a}{b-a})$.
 
 On peut ainsi dire que $arg(\frac{c-a}{b-a}) \,\text{mod}\, 2\pi$ correspond à une mesure
-de l'angle orienté $\hat{BAC}$ ou $\hat{(\overrightarrow{\rm AB}, \overrightarrow{\rm AC})}$.
+de l'angle orienté $\widehat{BAC}$ ou $\widehat{(\overrightarrow{\rm AB}, \overrightarrow{\rm AC})}$.
 
 On remarque aussi qu'on a $|\frac{c-a}{b-a}| = \frac{|c-a|}{|b-a|} = \frac{\lVert \overrightarrow{\rm AC} \rVert}{\lVert \overrightarrow{\rm AB} \rVert} = \frac{AC}{AB}$.
 
@@ -724,8 +723,8 @@ On remarque aussi qu'on a $|\frac{c-a}{b-a}| = \frac{|c-a|}{|b-a|} = \frac{\lVer
 > $\frac{c-a}{b-a} \in i\mathbb{R}$.
 
 ### Transformations usuelles du plan P
-#### Translation de vecteur $\overrightarrow{\rm u}$
-On a l'application $\begin{aligned} T_{\overrightarrow{\rm u}}: P &\to P \\ M &\mapsto T_{\overrightarrow{\rm u}}(M) = M' \,\text{tel que }\, \overrightarrow{\rm MM'} = \overrightarrow{\rm u} .\end{aligned}$.
+#### Translation de vecteur u
+On a l'application $\begin{aligned} T_{\overrightarrow{\rm u}}: P &\to P \\ M &\mapsto T_{\overrightarrow{\rm u}}(M) = M' \,\text{tel que}\, \overrightarrow{\rm MM'} = \overrightarrow{\rm u} .\end{aligned}$.
 
 En complexes, on note $a \in \mathbb{C}$ l'affixe du vecteur $\overrightarrow{\rm u}$,
 et on note $\begin{aligned} t_a: \mathbb{C} &\to \mathbb{C} \\ z &\mapsto t_a(z) = z + a .\end{aligned}$.
@@ -736,7 +735,7 @@ donc $z' - z = a$ d'où $z' = z + a$.
 On peut aussi remarque que $t_a$ est bijective, car $t_a \circ t_{-a} = t_{-a} \circ t_a = id_{\mathbb{C}}$.
 
 #### Homothétie de centre $\Omega$ et de rapport $\lambda \in \mathbb{R}^{\ast}$
-On a l'application géométrique $\begin{aligned} H_{\Omega, \lambda}: P &\to P \\ M &\mapsto H_{\Omega, \lambda}(M) = M' \,\text{tel que }\, \overrightarrow{\rm \Omega M'} = \lambda \overrightarrow{\rm \Omega M} .\end{aligned}$.
+On a l'application géométrique $\begin{aligned} H_{\Omega, \lambda}: P &\to P \\ M &\mapsto H_{\Omega, \lambda}(M) = M' \,\text{tel que}\, \overrightarrow{\rm \Omega M'} = \lambda \overrightarrow{\rm \Omega M} .\end{aligned}$.
 
 On note avec les complexes, en notant $\Omega(\omega), M(z), M'(z')$,
 en remontant la relation $\overrightarrow{\rm \Omega M'} = \lambda \overrightarrow{\rm \Omega M}$
@@ -748,9 +747,9 @@ pour l'homothétie de centre $\omega$ et de rapport $\lambda$.
 Cette application est bijective pour $\lambda = \mathbb{R}^{\ast}$ car
 $h_{\omega, \lambda} \circ h_{\omega, \frac{1}{\lambda}} = h_{\omega, \frac{1}{\lambda}} \circ h_{\omega, \lambda} = id_{\mathbb{C}}$.
 
-#### Rotation de centre $\Omega$ te d'angle $\Theta$
+#### Rotation de centre $\Omega$ et d'angle $\Theta$
 On note géométriquement l'application
-$\begin{aligned} R_{\Omega, \Theta}: P &\to P \\ M &\mapsto R_{\Omega, \Theta}(M) = M' \,\text{tel que }\, \left\{\begin{matrix} \hat{\overrightarrow{\rm \Omega M}, \overrightarrow{\rm \Omega M'}} = \Theta \\ \Omega M = \Omega M' \end{matrix}\right. .\end{aligned}$.
+$\begin{aligned} R_{\Omega, \Theta}: P &\to P \\ M &\mapsto R_{\Omega, \Theta}(M) = M' \,\text{tel que}\, \left\{\begin{matrix} \widehat{\overrightarrow{\rm \Omega M}, \overrightarrow{\rm \Omega M'}} = \Theta \\ \Omega M = \Omega M' \end{matrix}\right. .\end{aligned}$.
 
 Avec les complexes, soit $\Omega(\omega)$, on a $\frac{z' - \omega}{z - \omega} = 1 \times e^{i \Theta}$
 $\Leftrightarrow z' - \omega = (z - \omega) e^{i \Theta}$, soit
