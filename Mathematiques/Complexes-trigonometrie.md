@@ -140,7 +140,7 @@ on a $z \times \overline{z} = |z|^2 \Rightarrow z \times \frac{\overline{z}}{|z|
 Ainsi, tout complexe $z$ non nul possède un inverse dans $\mathbb{C}$,
 et $\frac{1}{z} = \frac{\overline{z}}{|z|^2}$.
 
-On remarque aussi l'égalité $z z' = |z|^2$.
+On remarque aussi l'égalité $z \overline{z} = |z|^2$.
 
 On a alors les propriétés suivantes $\forall (z, z') \in \mathbb{C}^2$ :
 - $|z \times z'| = |z| \times |z'|$
@@ -272,7 +272,7 @@ $= [\cos(\frac{p+q}{2}) + i \sin(\frac{p+q}{2})] \times 2 \cos (\frac{p-q}{2})$
 On obtient ainsi $\Re(e^{ip} + e^{iq}) = 2 \cos (\frac{p+q}{2}) \cos(\frac{p-q}{2}) = \cos p + \cos q$,
 et $\Im(e^{ip} + e^{iq}) = 2 \cos(\frac{p-q}{2}) \times \sin(\frac{p+q}{2}) = \sin p + \sin q$.
 
-On a ainsi les formules d'Euler : $\forall \Theta \in \mathbb{R}, \left\{\begin{matrix} \cos \Theta = \frac{e^{i \Theta} + e^{-i \Theta}}{2} \\ \sin \Theta = \frac{e^{i \Theta} + e^{-i \Theta}}{2i} \end{matrix}\right.$
+On a ainsi les formules d'Euler : $\forall \Theta \in \mathbb{R}, \left\{\begin{matrix} \cos \Theta = \frac{e^{i \Theta} + e^{-i \Theta}}{2} \\ \sin \Theta = \frac{e^{i \Theta} - e^{-i \Theta}}{2i} \end{matrix}\right.$
 
 On procède de même pour $e^{ip}- e^{iq}$.
 $e^{ip} - e^{iq} = e^{i \frac{p+q}{2}} \times [e^{i \frac{p-q}{2}} - e^{i \frac{q-p}{2}}]$ (qui est équivalent à $z - \overline{z} = 2 \Im(z)$),
@@ -687,3 +687,124 @@ $\Leftrightarrow \exists k \in [0, n-1]_{\mathbb{N}}, \frac{z}{z_0} = e^{\frac{2
 $\Leftrightarrow \exists k \in [0, n-1]_{\mathbb{N}}, z = z_0 e^{\frac{2 i k \pi}{n}}$\
 On a donc que l'équation $z^n = a$ possède n solutions distinctes :
 $\{\sqrt[n]{r} e^{i \frac{\Theta}{n}} \times \omega, \omega \in \mathbb{U}_n\}$.
+
+
+## Application des complexes à la trigonométrie
+###Rapport aux complexes
+> Soit un plan P avec un repère orthonormé par les vecteurs $\overrightarrow{\rm i}$ et $\overrightarrow{\rm j}$,
+> avec deux vecteurs unitaires $\overrightarrow{\rm u}$ et $\overrightarrow{\rm v}$
+> (soit $\lVert \overrightarrow{\rm u} \rVert = \lVert \overrightarrow{\rm v} \rVert = 1$).
+> Un angle orienté entre les vecteurs $\overrightarrow{\rm u}$
+> et $\overrightarrow{\rm v}$ est donné par $\Theta \in ]-\pi, \pi]$ tel que
+> $\overrightarrow{\rm v} = (\cos \Theta)\overrightarrow{\rm u} + (\sin \Theta)\overrightarrow{\rm u}$
+
+On relie ce concept avec les complexes, pour un $z \in \mathbb{C}^{\ast}$, de
+forme trigonométrique $z = r e^{i \Theta}$ où $\left\{\begin{matrix} r = |z| \\ \Theta \equiv arg(z)[2\pi] \end{matrix}\right.$.
+$\Theta$ est l'angle orienté entre les vecteurs $\overrightarrow{\rm i}$ et
+$\overrightarrow{\rm OM}$, on note $\Theta = \hat{\overrightarrow{\rm i}, \overrightarrow{\rm OM}}$.
+
+Soient A,B,C trois points du plan d'affixe $a, b, c \in \mathbb{C}$. Pour
+mesurer l'angle $\hat{BAC}$, on mesure l'angle orienté $\hat{(\overrightarrow{\rm AB}, \overrightarrow{\rm AC})}$.
+On obtient $\varphi_1 = \hat{\overrightarrow{\rm i}, \overrightarrow{\rm AC}} = arg(c-a)$
+et $\varphi_2 = \hat{\overrightarrow{\rm i}, \overrightarrow{\rm AC}} = arg(b-a)$
+et donc $\hat{\overrightarrow{\rm AB}, \overrightarrow{\rm AC}} = \varphi_1 - \varphi_2 = arg(\frac{c-a}{b-a})$.
+
+On peut ainsi dire que $arg(\frac{c-a}{b-a}) \,\text{mod}\, 2\pi$ correspond à une mesure
+de l'angle orienté $\hat{BAC}$ ou $\hat{(\overrightarrow{\rm AB}, \overrightarrow{\rm AC})}$.
+
+On remarque aussi qu'on a $|\frac{c-a}{b-a}| = \frac{|c-a|}{|b-a|} = \frac{\lVert \overrightarrow{\rm AC} \rVert}{\lVert \overrightarrow{\rm AB} \rVert} = \frac{AC}{AB}$.
+
+> Les point $A(a), B(b), C(c)$ sont alignés (avec les trois points distincts) si
+> et seulement si $arg(\frac{c-a}{b-a}) \equiv 0[\pi]$, donc si et seulement si
+> $\frac{c-a}{b-a} \in \mathbb{R}$.
+
+> Les vecteurs $\overrightarrow{\rm AB}$ et $\overrightarrow{\rm AC}$ sont
+> orthogonaux si et seulement si $ABC$ est rectangle en A, donc si et seulement si
+> $arg(\frac{c-a}{b-a}) \equiv \frac{\pi}{2} [\pi]$, donc si et seulement si
+> $\frac{c-a}{b-a} \in i\mathbb{R}$.
+
+### Transformations usuelles du plan P
+#### Translation de vecteur $\overrightarrow{\rm u}$
+On a l'application $\begin{aligned} T_{\overrightarrow{\rm u}}: P &\to P \\ M &\mapsto T_{\overrightarrow{\rm u}}(M) = M' \,\text{tel que }\, \overrightarrow{\rm MM'} = \overrightarrow{\rm u} .\end{aligned}$.
+
+En complexes, on note $a \in \mathbb{C}$ l'affixe du vecteur $\overrightarrow{\rm u}$,
+et on note $\begin{aligned} t_a: \mathbb{C} &\to \mathbb{C} \\ z &\mapsto t_a(z) = z + a .\end{aligned}$.
+
+En effet, si $M(z)$ et $M'(z')$, on veut $\overrightarrow{\rm MM'} = \overrightarrow{\rm u}$,
+donc $z' - z = a$ d'où $z' = z + a$.
+
+On peut aussi remarque que $t_a$ est bijective, car $t_a \circ t_{-a} = t_{-a} \circ t_a = id_{\mathbb{C}}$.
+
+#### Homothétie de centre $\Omega$ et de rapport $\lambda \in \mathbb{R}^{\ast}$
+On a l'application géométrique $\begin{aligned} H_{\Omega, \lambda}: P &\to P \\ M &\mapsto H_{\Omega, \lambda}(M) = M' \,\text{tel que }\, \overrightarrow{\rm \Omega M'} = \lambda \overrightarrow{\rm \Omega M} .\end{aligned}$.
+
+On note avec les complexes, en notant $\Omega(\omega), M(z), M'(z')$,
+en remontant la relation $\overrightarrow{\rm \Omega M'} = \lambda \overrightarrow{\rm \Omega M}$
+$\Leftrightarrow z' - \omega = \lambda(z - \omega)$
+$\Leftrightarrow z' = \omega + \lambda(z - \omega)$,
+l'application $\begin{aligned} h_{\omega, \lambda}: \mathbb{C} &\to \mathbb{C} \\ z &\mapsto h_{\omega, \lambda}(z) = \omega + \lambda(z-\omega) .\end{aligned}$
+pour l'homothétie de centre $\omega$ et de rapport $\lambda$.
+
+Cette application est bijective pour $\lambda = \mathbb{R}^{\ast}$ car
+$h_{\omega, \lambda} \circ h_{\omega, \frac{1}{\lambda}} = h_{\omega, \frac{1}{\lambda}} \circ h_{\omega, \lambda} = id_{\mathbb{C}}$.
+
+#### Rotation de centre $\Omega$ te d'angle $\Theta$
+On note géométriquement l'application
+$\begin{aligned} R_{\Omega, \Theta}: P &\to P \\ M &\mapsto R_{\Omega, \Theta}(M) = M' \,\text{tel que }\, \left\{\begin{matrix} \hat{\overrightarrow{\rm \Omega M}, \overrightarrow{\rm \Omega M'}} = \Theta \\ \Omega M = \Omega M' \end{matrix}\right. .\end{aligned}$.
+
+Avec les complexes, soit $\Omega(\omega)$, on a $\frac{z' - \omega}{z - \omega} = 1 \times e^{i \Theta}$
+$\Leftrightarrow z' - \omega = (z - \omega) e^{i \Theta}$, soit
+$r_{\omega, \Theta}(z) = \omega + e^{i \Theta}(z - \omega)$ l'application
+d'angle $\Theta$ et de centre $\omega$.
+
+Cette application est bijective car $r_{\omega, \Theta} \circ r_{\omega, -\Theta}$
+$= r_{\omega, -\Theta} \circ r_{\omega, \Theta} = id_{\mathbb{C}}$.
+
+#### Similitudes directes
+On peut remarquer que toutes les applications précédentes sont de la forme
+$z \mapsto \alpha z + \beta$, avec $(\alpha, \beta) \in \mathbb{C}^2$.
+
+> Toute transformation affine du plan complexe est appelée similitude directe
+
+Toute similitude directe préserve les angles orientés et les rapports de
+longueurs (donc le parallélisme, l'orthogonalité et l'alignement).
+
+On vérifie cette propriété en prenant 4 points $A(a), B(b), C(c), D(d)$ et
+l'application $f : z \mapsto \alpha z + \beta$. On obtient ainsi bien
+$\frac{f(d) - f(c)}{f(b) - f(a)} = \frac{(\alpha d + \beta) - (\alpha c + \beta)}{(\alpha b + \beta) - (\alpha a + \beta)}$
+$= \frac{\alpha (d - c)}{\alpha (b -a)} = \frac{d - c}{b - a}$.
+
+> Soit $\begin{aligned} f: \mathbb{C} &\to \mathbb{C} \\ z &\mapsto f(z) = \alpha z + \beta .\end{aligned}$ avec
+> $\left\{\begin{matrix} \alpha \in \mathbb{C}^{\ast} \\ \beta \in \mathbb{C} \end{matrix}\right.$ :
+> - si $\alpha = 1$, f est la translation de valeur d'affixe $\beta$
+> - si $a \neq 1$, on a $\left\{\begin{matrix} \alpha = \lambda e^{i \Theta} \\ \lambda = |\alpha| \\ \Theta \equiv arg(x)[2\pi] \end{matrix}\right.$
+>   et alors f possède un point fixe, noté $\omega$, en appelé le centre de la
+>   similitude. De plus, $f = h \circ r = r \circ h$ est la composée commutative
+>   de l'homothétie h de centre $\omega$ et de rapport $\lambda$ et de la rotation
+>   r de centre $\omega$ et d'angle $\Theta$.
+
+Pour trouver les points fixes de f, on résout $f(z) = z$
+$\Leftrightarrow \alpha z  + \beta = z \Leftrightarrow (\alpha - 1) z = -\beta$
+$\Leftrightarrow z = \frac{\beta}{1 - \alpha}$.
+On a donc bien un point fixe que l'on note $\omega = \frac{\beta}{1 - \alpha}$,
+qui sera le contre de la similitude.
+
+Si $f(z) = \alpha z + \beta$, où $\alpha \neq 1$ et $\alpha \neq 0$,
+f est la similitude :
+- de centre $\omega = \frac{\beta}{1 - \alpha}$
+- d'angle $\Theta = arg(\alpha)$
+- de rapport $\lambda = |\alpha|$
+
+Ainsi, toute similitude directe est bijective et sa réciproque est aussi une
+similitude directe. Par simple équation, on a $f^{-1} : z \mapsto \frac{1}{\alpha} z - \frac{\beta}{\alpha}$.
+On peut de même dire que si $\alpha \neq 0$ :
+- l'angle pour $f^{-1}$ est l'opposé de celui de $f$
+- le rapport pour $f^{-1}$ est l'inverse de celui de $f$
+- le centre $\omega$ n'a pas bougé
+
+La symétrie centrale de centre $\omega$ est la rotation d'angle $\pi$ de
+centre $\omega$ et l'homothétie du rapport $(-1)$ de centre $\omega$,
+soit l'application $\Delta_{\omega} : z \mapsto 2\omega - z$.
+
+À l'inverse, les symétries axiales du plan *ne préservent pas l'orientation de
+angles* et ne sont donc pas des similitudes directes.
