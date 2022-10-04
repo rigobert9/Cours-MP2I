@@ -69,7 +69,7 @@ Soit N bobines en série, $L_\text{éq} = \sum\limits_{k = 1}^{N} L_k$
 
 ## Circuits RC
 ### Équation différentielle
-On pose un circuit à une maille, ou sont branchés en série un condensateur
+On pose un circuit à une maille, où sont branchés en série un condensateur
 de tension $u_c$, une résistance de résistance $R$ et de tension $u_r$ et un
 générateur de tension $E$ et d'intensité $i$.
 
