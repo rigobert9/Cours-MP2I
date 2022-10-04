@@ -91,7 +91,7 @@ d'équivalences de cette relation sont les composantes connexes du graphe.
 - $\subset$ est une relation d'ordre sur $\mathcal{P}(E)$
 
 Si $E$ est muni d'une relation d'une relation d'ordre $\mathcal{R}$, on dit que
-$(E, \mathcal{R})$ est un ensemble ordonné. On notera souvent $\prec$ une
+$(E, \mathcal{R})$ est un ensemble ordonné. On notera souvent $\preceq$ une
 relation d'ordre quelconque.
 
 ##### Exemple : Divisibilité sur $\mathbb{N}$, notée $\mid$
