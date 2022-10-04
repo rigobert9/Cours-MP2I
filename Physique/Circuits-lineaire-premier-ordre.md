@@ -120,7 +120,7 @@ La solution est $u_c(t) = A e^{- \frac{t}{\tau}}$ où A = constante.
 On a les conditions initiales à $t = 0$, $u_c(t = 0) = E$, donc on a finalement
 $u_c(t) = E e^{- \frac{t}{\tau}}$.
 
-De plus, le courant le traversant (négatif car le condensateur de décharge) est
+De plus, le courant le traversant (négatif car le condensateur se décharge) est
 $i(t) = c \frac{d u_c}{dt} = c \frac{d}{dt} [E e^{- \frac{t}{\tau}}]$\
 $= E c \frac{d}{dt} [e^{- \frac{t}{\tau}}]$\
 $= E c \times (\frac{-1}{\tau}) \times e^{- \frac{t}{\tau}}$\
