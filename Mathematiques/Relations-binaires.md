@@ -11,7 +11,7 @@
 - Dans $\mathcal{P}(E)$, l'inclusion $\subset$ est une relation binaire
 
 Soit $\mathcal{R}$ une relation binaire sur $E$, on dit que
-- $\mathcal{R}$ est réfléxive si $\forall x \in E, x \mathcal{R} x$
+- $\mathcal{R}$ est réflexive si $\forall x \in E, x \mathcal{R} x$
 - $\mathcal{R}$ est symétrique si $\forall (x,y) \in E^2, x \mathcal{R} y \Rightarrow y \mathcal{R} x$
 - $\mathcal{R}$ est antisymétrique si $\forall (x,y) \in E^2, [x \mathcal{R} y \land y \mathcal{R} x] \Rightarrow x = y$
 - $\mathcal{R}$ est transitive si $\forall (x,y,z) \in E^3, x \mathcal{R} y \land y \mathcal{R} z \Rightarrow x \mathcal{R} z$
@@ -46,7 +46,7 @@ et $\dot{1} = \{n \in \mathbb{Z} \mid n \equiv 1[z]\} = \{n \in \mathbb{Z} \mid 
 
 ##### Généralisation : Congruence dans $\mathbb{Z}$ modulo n
 Les classes d'équivalences sont $\dot{k}$ pour $0 \leq k \leq n-1$, avec
-chaque $\dot{k} = \{\p \in \mathbb{Z} \mid p \equiv k[n]\} = \{k + nj, j \in \mathbb{Z}\} = k + n\mathbb{Z}$.
+chaque $\dot{k} = \{p \in \mathbb{Z} \mid p \equiv k[n]\} = \{k + nj, j \in \mathbb{Z}\} = k + n\mathbb{Z}$.
 L'ensemble des classes d'équivalence $\{\dot{0}, \dot{1}, \ldots, \dot{n-1}\}$
 est noté $\mathbb{Z} / n\mathbb{Z}$.
 On a de plus une partition de $\mathbb{Z}$ par ces ensembles.
@@ -291,8 +291,8 @@ $[\sqrt{2}, +\infty[ \cap \mathbb{Q}$ (qui ne possède pas de plus petit
 
 ##### Exemple
 Soit la suite $u_{n} = \frac{1}{n + 1}$, pour $n \in \mathbb{N}$.
-On définit $sup(u) = {sup}\limits_{n \in \mathbb{N}} u_{n} = sup(\{u_{n}, n \in \mathbb{N}\})$
-et $inf(u) = {inf}\limits_{n \in \mathbb{N}} u_{n} = inf(\{u_{n}, n \in \mathbb{N}\})$.
+On définit $sup(u) = {sup}_{n \in \mathbb{N}} u_{n} = sup(\{u_{n}, n \in \mathbb{N}\})$
+et $inf(u) = {inf}_{n \in \mathbb{N}} u_{n} = inf(\{u_{n}, n \in \mathbb{N}\})$.
 $sup(u)$ et $inf(u)$ sont bien définis car $A = \{\frac{1}{n + 1}, n \in \mathbb{N}\}$
 est une partie non vide de $\mathbb{R}$ bornée ( $A \subset [0,1]$ ).
 Ainsi, par propriété des bornes supérieures et inférieures, ces bornes existent.
@@ -332,4 +332,119 @@ $x \in \mathbb{R}$ | $-\infty$ | $x + y$            | $+\infty$
 $-\infty$          | Undefined | $+\infty$          | $+\infty$
 
 Ces formes indéterminées doivent être évitées dans les équations pour obtenir un
-résultat.
+résultat. On dit donc que $\overline{\mathbb{R}}$ est muni d'une addition partielle (car
+indéfinie entre $-\infty$ et $+\infty$).
+
+$\times$ | $-\infty$ | $x \in \mathbb{R}^{\ast}_{-}$ | $0$ | $x \in \mathbb{R}^{\ast}_{+}$ | $+\infty$
+---|---|---|---|---|---
+$-\infty$ | $+\infty$ | $+\infty$ | Undefined | $-\infty$ | $-\infty$
+$y \in \mathbb{R}^{\ast}_{-}$ | $+\infty$ | $xy$ | 0 | $xy$ | $-\infty$
+$0$ | Undefined | $0$ | $0$ | $0$ | Undefined
+$y \in \mathbb{R}^{\ast}_{+}$ | $-\infty$ | $xy$ | 0 | $xy$ | $+\infty$
+$+\infty$ | $-\infty$ | $-\infty$ | Undefined | $+\infty$ | $+\infty$
+
+On rencontre une forme indéterminée avec $0 \times \pm\infty$. On dit que $\overline{\mathbb{R}}$ est muni
+d'une multiplication partielle.
+
+Toute partie non vide de $\mathbb{R}$ possède toujours un $inf$ et un $sup$ dans
+$\overline{\mathbb{R}}$.
+Plus en détail, soit $A \subset \mathbb{R}$ non vide :
+- Si $A$ est majorée, alors $sup(A) \in \mathbb{R}$
+- Si $A$ n'est pas majorée, alors $sup(A) = + \infty$
+- Si $A$ est minorée, alors $inf(A) \in \mathbb{R}$
+- Si $A$ n'est pas minorée, alors $inf(A) = - \infty$
+
+De plus, on étend ces remarques :
+- Si $u \in \mathbb{R}^{\mathbb{N}}$ une suite réelle, on note
+  $\left\{\begin{matrix} sup(u) = sup(\{u_{n}, n \in \mathbb{N}\}) \in \overline{\mathbb{R}} \\ inf(u) = inf(\{u_{n}, n \in \mathbb{N}\}) \in \overline{\mathbb{R}} \end{matrix}\right.$
+- Si $f: X \to \mathbb{R}$ une application à valeurs réelles, on note
+  $\left\{\begin{matrix} sup(f) = sup(f(X)) = sup\{(f(x), x \in X\}) \\ inf(f) = inf(f(X)) = inf(\{f(x), x \in X\}) \end{matrix}\right.$.
+  Tous sont dans $\overline{\mathbb{R}}$.
+
+##### Exemple
+Soient $f: E \to \mathbb{R}$ et $g: e \to \mathbb{R}$ telles que $f \leq g$
+( $\forall x \in E, f(x) \leq g(x)$ ). Montrer que
+$\left\{\begin{matrix} sup f \leq sup g \\ inf f \leq inf g \end{matrix}\right.$
+où ces quantités sont dans $\overline{\mathbb{R}}$.
+
+Par définition de $sup g$, c'est un majorant de $\{g(x), x \in E\}$.
+Donc $\forall x \in E, g(x) \leq sup g$, soit $\forall x \in E, f(x) \leq g(x) \leq sup g$.
+Ici, $sup g$ est un majorant de $\{f(x), x \in E\} = A$, or $sup f$
+est le plus petit majorant de A, donc $sup f \leq sup g$
+
+##### Exercice
+Soient $A,B$ deux parties non vides de $\mathbb{R}$ telles que $\forall a \in A, \forall b \in B, a \leq b$.
+Montrer que $sup A \in \mathbb{R}$; que $inf B \in \mathbb{R}$; et que $sup A \leq inf B$.
+Prenons $b_0 \in B$, on a bien $\forall a \in A, a \leq b_0$, donc $A$ est
+majorée ($b_0$ en est un majorant).
+Par propriété de la borne supérieure, $sup A$ existe dans $\mathbb{R}$.
+De plus, $sup A$ étant le plus petit majorant de $A$, on a $sup A \leq b_0$.
+On en conclut donc que $\forall b \in B, sup(A) \leq b$. Ainsi, $sup(A)$ est nu
+minorant de $B$, donc $sup(A) \leq inf(B)$, or $sup(A) \in \mathbb{R}$, donc
+$inf(B) \neq -\infty$.
+
+Attention, les inégalités restent larges après application du $sup$ ou $inf$;
+soit $A = ]0,1[$ et $B = ]1,2[$, $\forall a \in A, \forall b \in B, a < 1 < b$
+et $sup A = 1 = inf B$.
+
+##### Exercice
+Soit $A \subset \mathbb{R}$ non vide et $x \in \mathbb{R}$, on définit la
+distance du réel x à l'ensemble A par
+$d(x, A) = inf(\{|x-a|, a \in A\})$.
+Montrer que $\forall (x,y) \in \mathbb{R}^2, |d(x,A) - d(y,A)| \leq |x-y|$.
+
+Pour $a \in A$, on a $|x-a| = |x - y + y - a| \leq |x - y| + |y - a|$ (par
+inégalité triangulaire). Or, $d(x,A) \leq |x-a|$ et $d(y, A) \leq |y-a|$,
+donc $d(x,A) \leq |x-a| \leq |x-y| + |y-a|$.
+De plus, $|y-a| \geq d(x,A) - |x-y|$ (ce qui est donc son minorant, fixe, de
+l'ensemble $\{|y-a|, a \in A\}$), donc (puisque $inf$ est le plus grand des
+minorants) $d(y,A) \geq d(x,A) - |x-y|$, c'est-à-dire $d(x,A) - d(y,A) \leq |x-y|$.
+En échangeant les rôles de $x$ et de $y$, on a aussi
+$d(y,A) - d(x,A) \leq |y-x| = |x-y|$. On en conclut que
+$|d(x,A) - d(y,A)| \leq |x-y|$.
+
+### Partie entière
+> L'ensemble $\mathbb{R}$ est archimédien : $\forall (x,y) \in \mathbb{R}^2$ tels que
+> $0 < x < y$, $\exists n \in \mathbb{N}, nx \geq y$.
+
+##### Preuve
+Soit $0 < x < y$. On procède par l'absurde, et on suppose que
+$\forall n \in \mathbb{N}, nx < y$. On a alors $A = \{nx, n \in \mathbb{N}\}$
+une partie non vide et majorée de $A$ (majorée par $y$).
+On note ainsi $a = sup(A)$ (qui existe par propriétés de $\mathbb{R}$),
+et donc $\forall n \in \mathbb{N},nx \leq a$. Avec $n + 1$,
+on a $(n + 1)x \leq a$, donc $xn \leq a - x$, ce qui est une contradiction
+de la minimalité de $a$.
+
+De plus, on peut noter que si $nx \leq a$, alors on a $n \leq \frac{a}{x}$, donc
+$\mathbb{N}$ est borné, ce qui est une contradiction.
+
+#### Propriété
+> Pour tout réel $x \in \mathbb{R}$, il existe un unique entier $n \in \mathbb{Z}$
+> tel que $n \leq x < n + 1$.
+> Cet entier $n$ est alors appelé partie entière de $x$, et on note
+> $\left\lfloor x \right\rfloor = n$.
+
+##### Exemple
+- $\forall x \in \mathbb{Z}, \left\lfloor x \right\rfloor = x$
+- $\left\lfloor \pi \right\rfloor = 3$ et $\left\lfloor -\pi \right\rfloor = 4$
+  car $-4 \leq -\pi < -3$.
+
+##### Preuve
+- Unicité : Si $n_1,n_2 \in \mathbb{Z} | \left\{\begin{matrix} n_1 \leq x < n_1 + 1 \\ n_2 \leq x < n_2 + 1 \end{matrix}\right.$,
+  on a $\left\{\begin{matrix} x - 1 < n_1 \leq x \\ x - 1 < n_2 \leq x \end{matrix}\right.$
+  donc $\left\{\begin{matrix} x - 1 < n_1 \leq x \\ -x \leq -n_2 < -x + 1 \end{matrix}\right.$.
+  En sommant, on obtient $-1 < n_1 - n_2 < 1$, et donc $n_1 - n_2 \in (\mathbb{Z} \cap ]-1,1[) = \{0\}$,
+  donc $n_1 - n_2 = 0 \Leftrightarrow n_1 = n_2$.
+- Existence : On pose $A = \{k \in \mathbb{Z} \mid k \leq x\}$. $A$ est une
+  partie de $\mathbb{Z}$, non vide et majorée (par x), donc elle admet un plus
+  grand élément $n = max(A)$. $n \in A$, donc $n \leq x$. De plus, $n + 1 \not\in A$
+  (car $n = max(A)$, des éléments plus grands que lui dans $\mathbb{Z}$ sont
+  donc hors de $A$) et donc $n + 1 > x$ (donc n convient).
+
+On peut prouver que $A \neq \emptyset$, car sinon $\forall k \in \mathbb{Z}, k > x$
+donc $\mathbb{Z}$ serait minoré, ce qui est absurde.
+De plus, $A$ est majorée car :
+- si $x \leq 1$, $A$ est majorée par 12
+- si $x > 1$, comme $\mathbb{R}$ est archimédienne, $\exists k \in \mathbb{N},
+  k \times 1 \geq x$
