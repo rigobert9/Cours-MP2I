@@ -55,3 +55,33 @@ bien agir directement sur la structure via sa référence avec une pointeur).
 À cause de la lourde utilisation des pointeurs vers les structures, on utilise
 l'opérateur "spaceship", avec `pointer->field` l'équivalent de l'indigeste
 `(*pointer).field`.
+
+## Exemples de structures séquentielles
+### Tableau
+La structure la plus simple, car l'architecture de la mémoire est déjà l'implémentation d'un tableau.
+Les opérations disponibles doivent être :
+- La création d'un tableau de taille donnée
+- Le destruction d'un tableau
+- L'accès à un élément à un certain indice i, avec $0 \leq i < n$
+- Accéder à la taille du tableau (optionnel)
+
+### Tableau dynamique
+Tableau contenu dans une structure avec des informations supplémentaires. Elles allouent
+de l'espace supplémentaire quand nécessaire.
+
+### Listes chaînées
+Il s'agit d'une structure chaînée, composée de nœuds contenant chacun une valeur et
+un (ou plusieurs) pointeurs vers d'autres nœuds qui le suivent. On la navigue ainsi avec une opération
+qui permet de passer à l'élément suivant. On y implémente les opérations :
+- Créer une liste vide / Détruire une liste
+- Vérifier si une liste chaînée et non vide
+- Accéder à la valeur de tête d'une liste
+- Accéder à la liste chaînée qui commence par le maillon suivant
+- Ajouter une valeur dans un maillon en tête de liste (où supprimer un maillon de tête)
+
+Et aussi les opérations plus coûteuses :
+- Accéder à la longueur d'une liste
+- Concaténer deux listes
+- Accéder à la valeur d'un rang i
+- Insérer une valeur au rang i
+- Supprimer la maillon au rang i
