@@ -448,3 +448,140 @@ De plus, $A$ est majorée car :
 - si $x \leq 1$, $A$ est majorée par 12
 - si $x > 1$, comme $\mathbb{R}$ est archimédienne, $\exists k \in \mathbb{N},
   k \times 1 \geq x$
+
+#### Propriétés de la partie entière
+1. $\begin{aligned} \left\lfloor  \right\rfloor: \mathbb{R} &\to \mathbb{R} \\ x &\mapsto \left\lfloor x \right\rfloor .\end{aligned}$ est croissante (bien que pas strictement).
+  La fonction est discontinue en chaque point entier ( $\mathbb{Z}$ ),
+  puisque pour tout $n \in \mathbb{Z}$, pour tout $x \in [n,n + 1[$,
+  $\left\lfloor x \right\rfloor = n$. Comme la fonction est discontinue, elle
+  n'est pas dérivable sur tout son domaine de définition (bien qu'on puisse la
+  dériver sur ses intervalles continus, où la dérivé est nulle).
+2. $\forall x \in Rr, \forall p \in \mathbb{Z} \left\lfloor x + p \right\rfloor = \left\lfloor x \right\rfloor + p$
+
+##### Preuves
+1. On a la continuité de la partie entière à droite en tout point puisque
+  $\lim\limits_{x \to n < x} \left\lfloor x \right\rfloor = n = \left\lfloor n \right\rfloor$,
+  car $\forall x \in ]n,n + 1[, \left\lfloor x \right\rfloor = n$.
+  On obtient la discontinuité de la partie entière à gauche en tout point entier
+  car $\lim\limits_{x \to n > x} = n - 1 \neq \left\lfloor n \right\rfloor$,
+  car $\forall x \in ]n-1, n[, \left\lfloor x \right\rfloor = n- 1$.\
+  \
+  On peut montrer que $x \mapsto \left\lfloor x \right\rfloor$ est croissante sur
+  $\mathbb{R}$. Soit $(x,y) \in \mathbb{R}^2 \mid x \leq y$, alors
+  $\left\lfloor x \right\rfloor \leq x < \left\lfloor x \right\rfloor + 1$,
+  et $\left\lfloor y \right\rfloor \leq y < \left\lfloor y \right\rfloor + 1$, et
+  on a donc $\left\lfloor x \right\rfloor \leq x \leq y$, donc $\left\lfloor x \right\rfloor \leq y < \left\lfloor y \right\rfloor + 1$.
+  Donc $\left\lfloor x \right\rfloor < \left\lfloor y \right\rfloor + 1$
+  (donc ce sont deux entiers distincts), et donc
+  $\left\lfloor x \right\rfloor + 1 \leq \left\lfloor y \right\rfloor + 1$, soit
+  $\left\lfloor x \right\rfloor \leq \left\lfloor y \right\rfloor$.
+2. On sait que $\left\lfloor x \right\rfloor \leq x < \left\lfloor x \right\rfloor + 1$,
+  donc $\left\lfloor x \right\rfloor + p \leq x + p < \left\lfloor x \right\rfloor + p + 1$.
+  On note $N$ la valeur de gauche et $N + 1$ celle de droite,
+  et on a par définition $N, N + 1 \in \mathbb{Z}$.
+  Donc par définition de la partie entière,
+  $\left\lfloor x + p \right\rfloor = N = \left\lfloor x \right\rfloor + p$.
+
+#### Partie décimale
+> On note la partie décimale d'un réel $x$ par $\{x\} = x - \left\lfloor x \right\rfloor$,
+> et on a pour tout $x \in \mathbb{R}, \{x\} \in [0,1[$.
+
+On a de plus $\forall p \in \mathbb{Z}, \{x + p\} = (x + p) - \left\lfloor x + p \right\rfloor$
+$= x + p - \left\lfloor x \right\rfloor - p = x - \left\lfloor x \right\rfloor = \{x\}$.
+
+##### Exercice : Nombre de chiffres pour écrire dans une base
+Soit $n \in \mathbb{N}^{\ast}$, combien de chiffres sont requis pour écrire n ?
+On note $\varphi(n)$ le nombre de chiffres dans $\{0,\ldots,9\}$ pour écrire n.
+
+On suppose que $\varphi(n) = k$, c'est-à-dire n possède k chiffres.
+On a alors $10\ldots\text{(k -1)}0 \leq n \leq 9\ldots\text{(k)}9 < 10\ldots\text{(k)}0$.
+On a donc $10^{k-1} \leq n < 10^k$, soit $k-1 \leq \log_{10}(n) < k$, donc $k-1 = \left\lfloor \log_{10}(n) \right\rfloor$.
+Ainsi, $\varphi(n) = 1 + \left\lfloor \log_{10}(n) \right\rfloor$.
+
+De façon plus générale, en base b, on a $b^{k-1} \leq n < b^k$, soit
+$k-1 \leq \log_b < k$, et donc $\varphi_b(n) = \left\lfloor \log_b(n) \right\rfloor + 1$.
+
+#### Valeur approchée
+> Soit $a \in \mathbb{R}$ et $\varepsilon \in \mathbb{R}^{\ast}_{+}$, on appelle
+> valeur approchée du réel a à $\varepsilon$ près tout réel x qui vérifie :
+> $|x-a| \leq \varepsilon$.
+
+Pour approximer des réels par des décimaux, donc soit $n \in \mathbb{N}, x \in \mathbb{R}$,
+on pose $d_n = \frac{\left\lfloor 10^n \times x \right\rfloor}{10^n} \in \mathbb{D}$,
+où $\mathbb{D} = \{\frac{m}{10^k} \mid m \in \mathbb{Z}, k \in \mathbb{N}\}$.
+
+Par définition de $\left\lfloor  \right\rfloor$, $\left\lfloor 10^n x \right\rfloor \leq 10^n \times x < \left\lfloor 10^n x \right\rfloor + 1$,
+donc $d_n \leq x < d_n + \frac{1}{10^n}$ (encadrement de x par une valeur
+approchée de x par défaut à $10^{-n}$ près et par une valeur approchée de x par
+excès à $10^{-n}$ près).
+
+On remarque que $(d_n)_{n \in \mathbb{N}}$ est une suite de décimaux et
+$\forall n \in \mathbb{N}, x - \frac{1}{10^n} < d_n \leq x$. Par théorème des
+gendarmes, $(d_n)_{n \in \mathbb{N}}$ converge et $\lim\limits_{n \to \infty} d_n = x$.
+
+### Densité des parties denses dans l'ensemble des réels
+> Soit $A \subset \mathbb{R}$, on dit que la partie A est dense dans $\mathbb{R}$
+> si l'une des deux assertions équivalentes suivantes est vérifiée.
+> - Entre deux réels quelconques, on peut toujours trouver un élément dans A.
+> - $\forall x \in \mathbb{R}, \forall \varepsilon > 0, \exists a \in A, |x-a| \leq \varepsilon$
+
+Ces deux assertions sont bien équivalentes :
+- En effet ( $\Rightarrow$ ), en fixant $x \in \mathbb{R}$ et $\varepsilon > 0$,
+  avec les deux réel $(x - \varepsilon)$ et $(x + \varepsilon)$, la première
+  assertion donne l'existence de $a \in A \mid x - \varepsilon \leq a \leq x + \varepsilon$,
+  donc $|a - x| \leq \varepsilon$.
+- De plus ( $\Leftarrow$ ), soient $x < y$ deux réels, on a la moitié de leur
+  distance $d = \frac{y - x}{2}$. On applique la seconde assertion avec
+  $\frac{x + y}{2} \in \mathbb{R}$ et $\frac{y - x}{2} > 0$.
+  $\exists a \in A, |\frac{x + y}{2} - a| \leq \frac{y - x}{2}$, donc
+  $\frac{x + y}{2} - (\frac{y - x}{2}) \leq a \leq \frac{x + y}{2} + (\frac{y - x}{2})$,
+  donc $x \leq a \leq y$.
+
+Ainsi, si A est dense dans $\mathbb{R}$, alors tout réel est la limite d'une
+suite convergente de $A^{\mathbb{N}}$. En effet, si $A$ est dense dans $\mathbb{R}$,
+on fixe $x \in \mathbb{R}$. Par la seconde assertion de la définition de la
+densité, $\forall \varepsilon > 0, \exists a \in A, |x-a| \leq \varepsilon$.
+Pour chaque entier $n \in \mathbb{N}^{\ast}$, on applique cette propriété avec
+$\varepsilon_n = \frac{1}{n} > 0$, ce qui donne
+$\exists a_n \in A, |x-a| \leq \frac{1}{n}$. On en conclut que
+$\forall n \in \mathbb{N}^{\ast}, a_n \in A, |x - a_n| \leq \frac{1}{n}$. Par
+encadrement, $\lim\limits_{n \to + \infty} (x - a_n) = 0$, la suite
+$(a_n)_{n} \in A^{\mathbb{N}}$ converge vers x.
+
+À partir de ces propriétés :
+- $\mathbb{D}$ est dense dans $\mathbb{R}$
+- $\mathbb{Q}$ est dense $\mathbb{R}$
+- $\mathbb{R} \setminus \mathbb{Q}$ est dense dans $\mathbb{R}$
+
+##### Preuves
+- Pour tout $x \in \mathbb{R}$ et $\varepsilon > 0$, on pose
+  $d_n = \frac{\left\lfloor 10^n x \right\rfloor}{10^n} \in \mathbb{D}$ tel
+  que $|d_n - x| \leq 10^{-n}$. Il faut alors choisir n tel que
+  $10^{-n} < \varepsilon$ :
+  - Si $\varepsilon \geq 1$, on prend $n = 0$
+  - Sinon $\varepsilon \in ]0,1[, 10^{-n} < \varepsilon \Leftrightarrow -n < \log_{10}(\varepsilon)$
+    $\Leftrightarrow n > -\log_{10}(\varepsilon)$.
+  Prenons par exemple $n_0 = \left\lfloor -\log_{10}(\varepsilon) \right\rfloor + 1$,
+  on a donc $|d_{n_0} - x| \leq 10^{-n_0} < \varepsilon$, donc
+  $\mathbb{D}$ est dense dans $\mathbb{R}$.
+- $\mathbb{D} \subset \mathbb{Q}$, donc $\mathbb{Q}$ est aussi dense dans
+  $\mathbb{R}$
+- Soient $x < y$ deux réels quelconques. On applique la densité de $\mathbb{Q}$
+  dans $\mathbb{R}$ avec les réels $x-\sqrt{2}$ et $y-\sqrt{2}$. Ainsi,
+  $\exists a \in \mathbb{Q} \mid x-\sqrt{2} \leq a \leq y-\sqrt{2}$,
+  et donc $x \leq a + \sqrt{2} \leq y$. Or $a + \sqrt{2} \in \mathbb{R} \setminus \mathbb{Q}$,
+  et est donc bien un irrationnel (car $\sqrt{2} = a + \sqrt{2} - 2$,
+  preuve par l'absurde par la stabilité par l'addition des rationnels).
+
+#### Infinité dénombrable des parties denses
+Entre deux réels distincts $x < y$, il y a
+- une infinité de rationnels
+- une infinité d'irrationnels
+
+Si $x < a_1 < y$, alors $x < a_2 < a_1$ ou même $x < a_{n + 1} < a_n$.
+On a l'ensemble $\mathbb{Q} = \{\frac{p}{q}, p \in \mathbb{Z}, q \in \mathbb{N}^{\ast}\}$.
+Or il existe une bijection de $\mathbb{N} \to \mathbb{Z}$
+(la fonction $\begin{aligned} \mathbb{N} &\to \mathbb{Z} \\ n &\mapsto \left\{\begin{matrix} n / 2 \text{ si n pair} \\ -(\frac{n + 1}{2}) \text{ si n impair} \end{matrix}\right. .\end{aligned}$),
+et puisque $\mathbb{N}$ a une bijection dans $\mathbb{N} \times \mathbb{N}$, on
+a bien une bijection de $\mathbb{N} \to \mathbb{Q}$, donc les éléments de
+$\mathbb{Q}$ sont dénombrables.
