@@ -85,3 +85,17 @@ Et aussi les opérations plus coûteuses :
 - Accéder à la valeur d'un rang i
 - Insérer une valeur au rang i
 - Supprimer la maillon au rang i
+
+Telle que la SDA a été décrite, on pourrait implémenter une liste chaînée dans
+un tableau dynamique.
+On stockerait alors la suite avec la tête vers la fin du tableau. On peut
+facilement accéder à la tête du tableau (`tab[n-1]`), retirer la tête, modifier
+les éléments de tout rang très rapidement. Néanmoins, cette approche rend
+extrêmement coûteux d'insérer ou de retirer un élément, puisqu'il faut alors
+décaler tous les autres éléments. De plus, l'augmentation de la taille d'un
+tableau dynamique est assez coûteuse.
+En comparaison, l'insertion dans une liste chaînée normale équivaut seulement à
+la création d'un maillon et à un changement de pointeur.
+
+Ainsi, on ne peut pas définir une SDA sans s'intéresser au coût (en temps ou en
+mémoire) des opérations définies sur la structure.
