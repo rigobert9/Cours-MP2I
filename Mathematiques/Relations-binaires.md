@@ -585,3 +585,117 @@ Or il existe une bijection de $\mathbb{N} \to \mathbb{Z}$
 et puisque $\mathbb{N}$ a une bijection dans $\mathbb{N} \times \mathbb{N}$, on
 a bien une bijection de $\mathbb{N} \to \mathbb{Q}$, donc les éléments de
 $\mathbb{Q}$ sont dénombrables.
+
+### Intervalles des réels
+> Soient $a,b \in \mathbb{R} \mid a \leq b$. Un intervalle de $\mathbb{R}$ est
+> l'une des parties de $\mathbb{R}$ suivantes :
+> - $[a,b] = \{x \in \mathbb{R} \mid a \leq x \leq b\}$
+> - $[a,b[ = \{x \in \mathbb{R} \mid a \leq x < b\}$
+> - $]a,b] = \{x \in \mathbb{R} \mid a < x \leq b\}$
+> - $]a,b[ = \{x \in \mathbb{R} \mid a < x < b\}$
+> - $[a, +\infty[ = \{x \in \mathbb{R} \mid a \leq x\}$
+> - $]a, +\infty[ = \{x \in \mathbb{R} \mid a < x\}$
+> - $]-\infty,b] = \{x \in \mathbb{R} \mid x \leq b\}$
+> - $]-\infty,b] = \{x \in \mathbb{R} \mid x < b\}$
+> - $]-\infty, +\infty[ = \mathbb{R}$
+
+On peut considérer $\emptyset = ]a,a[$, et $\{a\} = [a,a]$.
+
+- Les extrémités d'un intervalle de $\mathbb{R}$ sont dans $\overline{\mathbb{R}}$
+- L'intérieur d'un intervalle est l'intervalle ouvert ayant les mêmes extrémités
+- Un intervalle I de $\mathbb{R}$ dont l'intérieur est non vide est de la forme
+  $[/] a, b [/]$, avec $a < b$ et $a,b \in \overline{\mathbb{R}}$ (tous les
+  intervalles sauf $\emptyset$ et $\{a\}$). Il y a ainsi une infinité d'éléments
+  dans $I$.
+
+> Les intervalles de $\mathbb{R}$ sont les parties convexes de $\mathbb{R}$. $I$
+> est considéré comme convexe si et seulement si $\forall (x,y) \in I^2 \mid x < y, [x,y] \subset I$
+
+> *Un intervalle est un ensemble pas troué.*
+
+Réciproque : Si $I \subset \mathbb{R}$ est une partie convexe :
+- si $I = \emptyset$, il s'agit bien d'un intervalle
+- sinon $I$ est une partie non vide de $\mathbb{R}$, donc $inf(I)$ et $sup(I)$
+  existent dans $\overline{\mathbb{R}}$. On pose $a$ et $b$ qui sont les bornes
+  dans $\overline{\mathbb{R}}$ de I, par définition de $a$ et de $b$,
+  $\forall x \in I, a \leq x \leq b$, donc $I \subset [a,b]$. De plus, pour tout
+  $t \in ]a,b[$, t n'est pas la borne inférieure de I et y est supérieure,
+  et donc il existe $x \in I \mid a \leq x < t$. De même avec la borne
+  supérieure, on obtient l'existence d'un $y \in I \mid t < y \leq b$.
+  Or, I étant convexe, $[x,y] \subset I$, et puisque $x < t < y$ on a bien
+  $t \in I$. L'intérieur de $I$, $]a,b[$ est donc un intervalle.
+
+##### Preuve
+Si $I$ est un intervalle (l'un des 9 cas cités plus haut), alors I est bien
+convexe.
+Par exemple, pour $I = [a,b[$. Si $x,y \in I$ avec $x < y$, donc $a \leq x < y <b$,
+donc $\forall x \in [x,y], x \in [a,b[$.
+On peut procéder de même pour toutes les autres formes.
+
+##### Utile en physique : paramétrisation du segment $[a,b]$
+Soit des points a et b sur la droite des réels, avec a en $t = 0$ et b en
+$t = 1$, on a $a + t \cdot (b-a)$.
+
+### Inégalités classiques
+#### Inégalité de Cauchy-Schwarz
+> Soit $(x_1,\ldots,x_n) \in \mathbb{R}^n$ et $(y_1,\ldots,y_2) \in \mathbb{R}^n$,
+> on a $|\sum\limits_{i = 1}^{n} x_i y_i| \leq \sqrt{(\sum\limits_{i = 1}^{n} x_i^2) \times (\sum\limits_{i = 1}^{n} y_i^2)}$
+> et $(\sum\limits_{i = 1}^{n} x_i y_i)^2 \leq (\sum\limits_{i = 1}^{n} x_i^2) \times (\sum\limits_{i = 1}^{n} y_i^2)$.
+
+"La valeur absolue de la somme du produit un à un de $x_i$ et $y_i$ est
+inférieure ou égale à la racine carrée du produit de la somme des $x_i$ et de la somme des $y_i$" et
+"La somme du produit un à un de $x_i$ et $y_i$, au carré, est
+inférieure ou égale au produit de la somme des $x_i$ et de la somme des $y_i$".
+
+> De plus, on a égalité si et seulement si les vecteurs $\overrightarrow{\rm x} = (x_1,\ldots,x_n)$
+> et $\overrightarrow{\rm y} = (y_1,\ldots,y_n)$ sont colinéaires, donc si et
+> seulement si $(x_1,\ldots,x_n) = (0,\ldots,0)$ ou $\exists \lambda \in \mathbb{R}, \forall i \in [1, n]_{\mathbb{N}}, y_i = \lambda x_i$.
+
+Ainsi, dans le plan ($n = 2$, on prend $x$ et $y$ dans $\mathbb{R}^2$), soit
+$\overrightarrow{\rm u} = (x,y) \in \mathbb{R}^2$ et $\overrightarrow{\rm v} = (x',y') \in \mathbb{R}^2$,
+on a bien $|x x' + y y'| \leq \sqrt{x^2 + y^2} \times \sqrt{x'^2 + y'^2}$ et
+$|\overrightarrow{\rm u} \cdot \overrightarrow{\rm v}| \leq \lVert \overrightarrow{\rm u} \rVert \times \lVert \overrightarrow{\rm v} \rVert$.
+
+De même, dans l'espace ($n = 3$), soit $\overrightarrow{\rm u} = (x,y,z)$ et
+$\overrightarrow{\rm v} = (x',y',z') \in \mathbb{R}^3$, on a bien
+$|\overrightarrow{\rm u} \cdot \overrightarrow{\rm v}| = |x x' + y y' + z z'|$
+$\leq \sqrt{x^2 + y^2 + z^2} \times \sqrt{x'^2 + y'^2 + z'^2}$, etc.
+
+On peut ainsi reformuler Cauchy-Schwarz comme $|< \overrightarrow{\rm u}, \overrightarrow{\rm v} >| \leq$
+$\lVert \overrightarrow{\rm u} \rVert \times \lVert \overrightarrow{\rm v} \rVert$ ("La valeur absolue
+du produit scalaire est inférieur au produit des normes").
+
+##### Preuve
+On introduit $\begin{aligned} P: \mathbb{R} &\to \mathbb{R} \\ t &\mapsto P(t) = \sum\limits_{i = 1}^{n} (t x_i + y_i)^2 .\end{aligned}$. Ainsi, pour tout $t \in \mathbb{R}, P(t) \geq 0$.
+De plus, $P(t) = \sum\limits_{i = 1}^{n} (t^2 x_i^2 + 2t x_i y_i + y_i^2)$\
+$= (\sum\limits_{i = 1}^{n} x_i^2) t^2 + (2 \sum\limits_{i = 1}^{n} x_i y_i) t + \sum\limits_{i = 1}^{n} y_i^2$.
+- Si $\sum\limits_{i = 1}^{n} x_i^2 = 0$, alors $\forall i \in [1,n]_{\mathbb{N}}, x_i = 0$ (égalité de Cauchy-Schwarz)
+- Si $\sum\limits_{i = 1}^{n} x_i^2  \neq 0$ (donc qu'il y a un $x_i$ non nul),
+  $P$ est un trinôme du second degré en t et positif sur $\mathbb{R}$, donc son
+  discriminant est négatif ou nul. Puisque $\Delta \leq 0$, on a
+  $4(\sum\limits_{i = 1}^{n} x_i y_i)^2 - 4 (\sum\limits_{i = 1}^{n} x_i^2) \times (\sum\limits_{i = 1}^{n} y_i^2) \leq 0$\
+  $\Leftrightarrow (\sum\limits_{i = 1}^{n} x_i y_i)^2 \leq (\sum\limits_{i = 1}^{n} x_i^2) \times (\sum\limits_{i = 1}^{n} y_i^2)$ (inégalité de Cauchy-Schwarz)\
+  $\Leftrightarrow |\sum\limits_{i = 1}^{n} x_i y_i| \leq \sqrt{\sum\limits_{i = 1}^{n} x_i^2} \times \sqrt{\sum\limits_{i = 1}^{n} y_i^2}$ (autre inégalité de Cauchy-Schwarz, par croissance de $\sqrt{  }$)\
+
+On a de même pour le cas d'égalité pour $(\sum\limits_{i = 1}^{n} x_i^2) \neq 0$, qu'on a
+si et seulement si $\Delta = 0$,\
+$\Leftrightarrow$ P s'annule en une unique racine double $t_0 \in \mathbb{R}$,\
+$\Leftrightarrow$ $\exists! t_0 \in \mathbb{R}, P(t_0) = 0$\
+$\Leftrightarrow$ $\exists! t_0 \in \mathbb{R}, \sum\limits_{i = 1}^{n} (t_0 x_i + y_i)^2 = 0$\
+$\Leftrightarrow$ $\exists! t_0 \in \mathbb{R}, \forall i \in [1,n]_{\mathbb{N}} t_0 x_i + y_i = 0$\
+$\Leftrightarrow$ $\exists! \lambda \in \mathbb{R}, $ 
+
+#### Inégalité triangulaire
+Dans $\mathbb{R}^2$ ou $\mathbb{R}^3$, avec $\overrightarrow{\rm u}, \overrightarrow{\rm v}$ deux vecteurs,
+$\lVert \overrightarrow{\rm u} + \overrightarrow{\rm v} \rVert \leq \lVert \overrightarrow{\rm u} \rVert + \lVert \overrightarrow{\rm v} \rVert$.
+
+> Soient $\overrightarrow{\rm u} = (x_1,\ldots,x_2)$ et $\overrightarrow{\rm v} = (y_1,\ldots,y_2) \in \mathbb{R}^n$,
+> $\lVert \overrightarrow{\rm u} + \overrightarrow{\rm v} \rVert \leq \lVert \overrightarrow{\rm u} \rVert + \lVert \overrightarrow{\rm v} \rVert$, avec égalité si et seulement si $\overrightarrow{\rm u}$ et $\overrightarrow{\rm v}$ sont colinéaires et de même sens.
+
+On a donc $\sqrt{\sum\limits_{i = 1}^{n} (x_i + y_i)^2} \leq \sqrt{\sum\limits_{i = 1}^{n} x_i^2} + \sqrt{\sum\limits_{i = 1}^{n} y_i^2}$, et il y a égalité si et seulement si un des vecteurs est nul ou
+$\exists \lambda \in \mathbb{R}_{+}, \forall i \in [1,n]_{\mathbb{N}}, y_i = \lambda x_i$.
+
+##### Preuve
+$\sum\limits_{i = 1}^{n} (x_i + y_i)^2 = \sum\limits_{i = 1}^{n} x_i^2 + 2 \sum\limits_{i = 1}^{n} x_i y_i + \sum\limits_{i = 1}^{n} y_i^2$
+or $\sum\limits_{i = 1}^{n} x_i y_i \leq |\sum\limits_{i = 1}^{n} x_i y_i| \leq \sqrt{\sum\limits_{i = 1}^{n} x_i^2} \times \sqrt{\sum\limits_{i = 1}^{n} y_i^2}$ (par Cauchy-Schwarz),
+donc $\sum\limits_{i = 1}^{n} (x_i + y_i)^2 \leq (\sqrt{\sum\limits_{i = 1}^{n} x_i^2} \times \sqrt{\sum\limits_{i = 1}^{n} y_i^2})^2$.
