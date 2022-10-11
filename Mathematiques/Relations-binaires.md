@@ -683,7 +683,7 @@ $\Leftrightarrow$ P s'annule en une unique racine double $t_0 \in \mathbb{R}$,\
 $\Leftrightarrow$ $\exists! t_0 \in \mathbb{R}, P(t_0) = 0$\
 $\Leftrightarrow$ $\exists! t_0 \in \mathbb{R}, \sum\limits_{i = 1}^{n} (t_0 x_i + y_i)^2 = 0$\
 $\Leftrightarrow$ $\exists! t_0 \in \mathbb{R}, \forall i \in [1,n]_{\mathbb{N}} t_0 x_i + y_i = 0$\
-$\Leftrightarrow$ $\exists! \lambda \in \mathbb{R}, $ 
+$\Leftrightarrow$ $\exists! \lambda \in \mathbb{R}, \forall i, y_i = \lambda x_i$
 
 #### Inégalité triangulaire
 Dans $\mathbb{R}^2$ ou $\mathbb{R}^3$, avec $\overrightarrow{\rm u}, \overrightarrow{\rm v}$ deux vecteurs,
