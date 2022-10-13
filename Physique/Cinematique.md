@@ -105,7 +105,7 @@ et on a donc le vecteur $\overrightarrow{\rm OM}$ sous la forme d'une équation
 horaire $\overrightarrow{\rm OM} \left|\begin{matrix} x(t) \\ y(t) \\ z(t) \end{matrix}\right.$.
 
 ##### Exemple
-$\overrightarrow{\rm OM} \left\{\begin{matrix} x(t) = R \cos(\omega t) \\ y(t) = R \sin(\omega t) \end{matrix}\right.$ (où $\omega$ est une constante).
+$\overrightarrow{\rm OM} \left\{\begin{matrix} x(t) = R \cos(\omega t) \\ y(t) = R \sin(\omega t) \end{matrix}\right .$ (où $\omega$ est une constante).
 On a $\lVert \overrightarrow{\rm OM} \rVert^2 = x^2 + y^2 = R^2$ (l'équation
 d'un cercle de rayon R).
 
@@ -130,8 +130,8 @@ et d'un angle $\Theta$ avec $\overrightarrow{\rm u_z}$.
 ### Abscisse curviligne
 On représente par une mesure algébrique de la distance la position, sur une
 courbe. Il s'agit donc de l'équation paramétrique du point, qu'on a sous la
-forme $s(t) = \frown{M_0 M}(t)$. La valeur trouvée est donc la distance d'arc
-$\hat{M_0 M}(t)$.
+forme $s(t) = \stackrel{\frown}{M_0 M}(t)$. La valeur trouvée est donc la distance d'arc
+$\stackrel{\frown}{M_0 M}(t)$.
 
 ## Vitesse d'un point
 ### Définition
@@ -145,12 +145,12 @@ $= \frac{d x}{dt} \overrightarrow{\rm e_x} +  x \frac{d \overrightarrow{\rm e_x}
 Puisque les vecteurs $\frac{d \overrightarrow{\rm v_x}}{dt}$, $\frac{d \overrightarrow{\rm v_y}}{dt}$, $\frac{d \overrightarrow{\rm v_z}}{dt}$ sont constants, leur dérivée est nulle.
 
 Ainsi, on obtient $\overrightarrow{\rm v} = \frac{d x}{dt} \overrightarrow{\rm u_x} + \frac{d y}{dt} \overrightarrow{\rm u_y} + \frac{d z}{dt} \overrightarrow{\rm u_z}$.
-On pose $\dot{x} = \frac{d x}{dt}$, $\dot{y} = \frac{d y}{dt}$ et $\dot{z} = \frac{d z}{dt}$, et ainsi l'équation paramétrique $\overrightarrow{\rm v} \left|\begin{matrix} \dot{x}(t) \\ \dot{y}(t) \\ \dot{z}(t) =  \end{matrix}\right.$.
+On pose $\dot{x} = \frac{d x}{dt}$, $\dot{y} = \frac{d y}{dt}$ et $\dot{z} = \frac{d z}{dt}$, et ainsi l'équation paramétrique $\overrightarrow{\rm v} \left|\begin{matrix} \dot{x}(t) \\ \dot{y}(t) \end{matrix}\right.$.
 
 ##### Exemple
-$\overrightarrow{\rm OM} \left|\begin{matrix} x(t) = R \cos(\omega t) \\ y(t) = \sin(\omega t) \end{matrix}\right. $ (avec $\omega$ une constante)
+$\overrightarrow{\rm OM} \left|\begin{matrix} x(t) = R \cos(\omega t) \\ y(t) = \sin(\omega t) \end{matrix}\right.$ (avec $\omega$ une constante)
 
-$\overrightarrow{\rm v} \left|\begin{matrix} \dot{x}(t) = -R \omega \sin(\omega t) \\ \dot{y}(t) = R \omega \cos(\omega t) \end{matrix}\right. $
+$\overrightarrow{\rm v} \left|\begin{matrix} \dot{x}(t) = -R \omega \sin(\omega t) \\ \dot{y}(t) = R \omega \cos(\omega t) \end{matrix}\right.$
 
 $\lVert \overrightarrow{\rm v} \rVert = R \omega$ (une constante).
 
