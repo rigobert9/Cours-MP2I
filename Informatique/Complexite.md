@@ -33,6 +33,8 @@ Soient $f,g$ deux fonction $\mathbb{N}^{\ast} \to \mathbb{N}^{\ast}$ :
   on note $f(n) ~_{n \to +\infty} g(n)$. On a ainsi
   $f(n) ~_{n \to +\infty} g(n) \Rightarrow f(n) = \Theta(g(h))$
 
+Si on a $f(n) = \Theta(g(n)) \Leftrightarrow f(n) = O(g(n)) \land f(n) = \Omega(g(n))$
+
 ##### Preuve
 Si $\frac{f(n)}{g(n)} \to_{n \to  +\infty} 0$, alors
 $\exists N \in \mathbb{N} \mid \forall n \geq N, \frac{f(n)}{g(n)} \leq 1$.

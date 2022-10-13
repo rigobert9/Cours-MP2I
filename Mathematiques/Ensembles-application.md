@@ -239,7 +239,7 @@ On a ainsi l'existence demandée par la surjectivité et l'unicité demandée pa
 l'injectivité.
 
 ##### Exemple : fonctions bijectives
-$\sin : [\frac{\pi}{2};\frac{\pi}{2}] \to [-1;1]$ est bijective.
+$\sin : [\frac{-\pi}{2};\frac{\pi}{2}] \to [-1;1]$ est bijective.
 
 ##### Exemple
 Soit $\begin{aligned} f: \mathbb{R} &\to \mathbb{R} \\ x &\mapsto f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} .\end{aligned}$.

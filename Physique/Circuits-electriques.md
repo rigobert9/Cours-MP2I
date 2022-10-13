@@ -189,7 +189,7 @@ or $u = R_\text{éq} i$, donc $i = \frac{u}{R_\text{éq}}$, donc $\frac{1}{R_\te
 Voir schéma.
 D'après la loi d'Ohm, on a $\left\{\begin{matrix} u_1 = R_1 i \\ u_2 = R_2 i \\ u = (R_1 + R_2) i \end{matrix}\right.$,
 donc $i = \frac{u_1}{R_1} = \frac{u_2}{R_2} = \frac{u}{R_1 + R_2}$,
-donc $u_2 = \frac{R_1}{R_1 + R_2} u$ et $u_1 = \frac{R_2}{R_1 + R_2} u$.
+donc $u_1 = \frac{R_1}{R_1 + R_2} u$ et $u_2 = \frac{R_2}{R_1 + R_2} u$.
 
 
 ### Pont diviseur de courant
@@ -215,7 +215,7 @@ En chimie, son unité est le Siemens.
 #### Source réelle de tension
 > Pour tenir compte des pertes par effet Joule d'une source de tension, on
 > modélise la source par une source idéale en série avec une résistance $r$
-> appellée résistance interne. On a donc $u = e - ri$
+> appelée résistance interne. On a donc $u = e - ri$
 
 ### Source de courant
 #### Source idéale de courant
@@ -225,15 +225,14 @@ En chimie, son unité est le Siemens.
 #### Source réelle de courant
 > Pour tenir compte des pertes par effet Joule d'une source de courant, on
 > modélise la source par une source idéale en série avec une résistance $r$
-> appellée résistance interne. On a donc $i = i_0 - \frac{u}{r} = i_0 - gu$.
+> appelée résistance interne. On a donc $i = i_0 - \frac{u}{r} = i_0 - gu$.
 
 ## Appareils de mesure
 ### Voltmètre
 > Un Voltmètre est un appareil mesurant la tension qui se branche en dérivation
 > autour d'un dipôle ou du segment mesuré.
 
-Le voltmètre est représenté par un cercle avec un V, et a sa borne "COM" vers le
-- et A vers le +.
+Le voltmètre est représenté par un cercle avec un V, et a sa borne "COM" vers le - et A vers le +.
 
 > Un voltmètre idéal est un dipôle de résistance infinie. 
 
@@ -243,8 +242,7 @@ circuit sur lequel il est branché, par un ordre de grandeur d'environ $10 M\Ome
 ### Ampèremètre
 > Un ampèremètre est un appareil mesurant l'intensité, branché en série.
 
-Le voltmètre est représenté par un cercle avec un A, et a sa borne "COM" vers le
-- et A vers le +.
+Le voltmètre est représenté par un cercle avec un A, et a sa borne "COM" vers le - et A vers le +.
 
 > Un ampèremètre idéal est un dipôle de résistance nulle.
 
