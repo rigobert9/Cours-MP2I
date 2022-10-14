@@ -62,3 +62,43 @@ Si la fonction n'est pas récursive :
 Si la fonction est récursive, on obtient une définition par récurrence d'une
 majoration de la complexité dans le pire cas. Il faut ensuite en tirer une
 majorité en fonction de n.
+
+##### Preuve de la complexité de l'exponentiation rapide
+On montre par récurrence sur $n \geq 1$ que $C(n) \leq 6 \left\lfloor \log n \right\rfloor + 8$ :
+- Initialisation : On a $C(1) = 8$ dans l'implémentation donnée (facile à
+  déterminer par simple comptage).
+- Hérédité : Soit $n \geq 2$, on suppose $\forall k \in [1, n-1]_{\mathbb{N}}, C(k) \leq 6 \left\lfloor \log k \right\rfloor + 8$.
+  Soit $i = \left\lfloor \log n \right\rfloor$ le plus grand entier tel que $2^i \leq n$, on
+  a donc $2^{i-1} \leq \frac{n}{2} < 2^i$. Comme $2^{i-1}$ est entier,
+  $2^{i-1} \leq \left\lfloor \frac{n}{2} \right\rfloor < 2^i$.
+  Ainsi, $i-1 = \left\lfloor \log \frac{n}{2} \right\rfloor$, donc
+  $C(\left\lfloor \frac{n}{2} \right\rfloor) \leq 6 \left\lfloor \log \frac{n}{2} \right\rfloor + 8$
+  par hypothèse de récurrence et donc
+  $C(\left\lfloor \frac{n}{2} \right\rfloor) \leq 6 (\left\lfloor \log n \right\rfloor + 1) + 8$.
+  Or $C(n) \leq C(\left\lfloor \frac{n}{2} \right\rfloor) + 6$,
+  donc $C(n) \leq 6 \left\lfloor \log n \right\rfloor + 8$.
+
+On remarque d'ailleurs que $\left\lfloor \frac{n}{2} \right\rfloor < n$ et
+$n \geq 2$, donc $\frac{n}{2} \geq 1$, donc
+$\left\lfloor \frac{n}{2} \right\rfloor \geq 1$.
+
+Ainsi, $C(n) = O(\log n)$.
+
+#### Propriétés
+Soient $f, g, h, k \in \mathbb{N}^{\ast} \to \mathbb{R}^{\ast}_{+}$.
+- Si $f(n) = O(g(n))$ et $h(n) = O(k(n))$ alors $f(n)h(n) = O(g(n)k(n))$
+- Si $f(n) = O(g(n))$ et $g(n) = O(k(n))$ et $h(n) = O(k(n))$ alors $f(n) + h(n) = O(k(n))$
+- Si $f(n) = O(g(n))$ et $g(n) = O(k(n))$ alors $f(n) = O(k(n))$
+- Si $f(n) = \Omega(g(n))$ et $h(n) = \Omega(k(n))$ alors $f(n)h(n) = \Omega(g(n)k(n))$
+- Si $f(n) = \Omega(g(n))$, alors $f(n) + h(n) = \Omega(g(n))$
+- Si $f(n) = \Omega(g(n))$ et $g(n) = \Omega(k(n))$ alors $f(n) = \Omega(k(n))$
+
+On en déduit les propriétés sur $\Theta$ en utilisant
+que $f(n) = \Theta(g(n)) \Leftrightarrow \left\{\begin{matrix} f(n) = O(g(n)) \\ f(n) = \Omega(g(n)) \end{matrix}\right.$.
+
+##### Preuve
+Troisième assertion : $\exists C_1 > 0, \forall n \in \mathbb{N}^{\ast}, f(n) \leq C_1 g(n)$ et
+$\exists C_2 > 0, \forall n \in \mathbb{N}^{\ast}, g(n) \leq C_2 h(n)$. Soit
+$C = C_1 C_2 > 0, n  \in \mathbb{N}^{\ast}$, alors
+$f(n) \leq C_1 g(n) \leq C_1 (C_2 h(n)) \leq C h(n)$, donc
+$f(n) = O(h(n))$.
