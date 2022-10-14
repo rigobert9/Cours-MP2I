@@ -52,8 +52,8 @@ est noté $\mathbb{Z} / n\mathbb{Z}$.
 On a de plus une partition de $\mathbb{Z}$ par ces ensembles.
 
 ##### Et encore une fois : Congruence dans $\mathbb{R}$ modulo $2\pi$
-Les différentes classes d'équivalences sont $\dot{\Theta} = \{\Theta + 2\pi k, k \in \mathbb{Z}\}$
-$= \Theta + 2\pi \mathbb{Z}$ avec $\Theta \in ]-\pi, \pi]$.
+Les différentes classes d'équivalences sont $\dot{\theta} = \{\theta + 2\pi k, k \in \mathbb{Z}\}$
+$= \theta + 2\pi \mathbb{Z}$ avec $\theta \in ]-\pi, \pi]$.
 
 ##### Exemple avec un graphe
 Avec la relation "avoir un chemin vers" dans un graphe, les classes

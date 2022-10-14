@@ -197,36 +197,36 @@ transparent, d'indice optique $n_\text{cœur}$, entouré d'un gaine d'indice
 optique $n_\text{gaine}$.
 
 Il y a réflexion totale avec $n_\text{cœur} > n_\text{gaine}$.
-On cherche à obtenir une condition sur $\Theta$ pour qu'il y ait réflexion
+On cherche à obtenir une condition sur $\theta$ pour qu'il y ait réflexion
 totale en I.
 Pour avoir réflexion totale en I, il faut que $i > i_\text{lim}$, donc que
 $\sin i_\text{lim} = \frac{n_\text{gaine}}{n_\text{cœur}}$.
-On a $\Theta ' + i + \frac{\Pi}{2} = \Pi \Leftrightarrow i = \frac{\Pi}{2} - \Theta '$.
-La condition $i > i_\text{lim}$ s'écrit $\frac{\Pi}{2} - \Theta' > i_\text{lim}$
-$\Leftrightarrow \Theta' < \frac{\Pi}{2}i_\text{lim}$. $\sin(\Theta)$ est
+On a $\theta ' + i + \frac{\Pi}{2} = \Pi \Leftrightarrow i = \frac{\Pi}{2} - \theta '$.
+La condition $i > i_\text{lim}$ s'écrit $\frac{\Pi}{2} - \theta' > i_\text{lim}$
+$\Leftrightarrow \theta' < \frac{\Pi}{2}i_\text{lim}$. $\sin(\theta)$ est
 croissant sur $[0; \frac{\Pi}{2}]$. De plus, on a
-$\sin\Theta' < \cos i_\text{lim}$.
-On à, d'après la loi de Descartes, $n_\text{air} \sin \Theta = n_\text{cœur} \sin\Theta'$.
-Or, $n_\text{air} = 1.00$ donc $\sin\Theta = n_\text{cœur} \sin\Theta'$.
-Or $\sin\Theta' < \cos i_\text{lim}$.
-Donc $\sin\Theta < n_\text{cœur} \cos i_\text{lim}$.
+$\sin\theta' < \cos i_\text{lim}$.
+On à, d'après la loi de Descartes, $n_\text{air} \sin \theta = n_\text{cœur} \sin\theta'$.
+Or, $n_\text{air} = 1.00$ donc $\sin\theta = n_\text{cœur} \sin\theta'$.
+Or $\sin\theta' < \cos i_\text{lim}$.
+Donc $\sin\theta < n_\text{cœur} \cos i_\text{lim}$.
 Or $\sin i_\text{lim} = \frac{n_\text{gaine}}{n_\text{cœur}}$ et
 $\cos^2 i_\text{lim} + \sin^2 i_\text{lim} = 1$
 $\Leftrightarrow \cos^2 i_\text{lim} = 1 - \sin^2 i_\text{lim}$,
 Donc $\cos^2 i_\text{lim} = 1 - (\frac{n_\text{gaine}}{n_\text{cœur}})^2$
 $\Leftrightarrow \cos i_\text{lim} = \sqrt{1 - (\frac{n_\text{gaine}}{n_\text{cœur}})^2}$
-Donc $\sin \Theta < n_\text{cœur} \sqrt{1 - (\frac{n_\text{gaine}}{n_\text{cœur}})^2}$
-$\Leftrightarrow \sin \Theta < \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$
+Donc $\sin \theta < n_\text{cœur} \sqrt{1 - (\frac{n_\text{gaine}}{n_\text{cœur}})^2}$
+$\Leftrightarrow \sin \theta < \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$
 
-Propriété : $\sin\Theta < \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$.
+Propriété : $\sin\theta < \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$.
 On appelle cette valeur Ouverture Numérique, telle que
 $O.N. = \sqrt{n_\text{cœur}^2 - n_\text{gaine}^2}$
 
 ### Dispersion intermodale
-*Rayon le plus rapide* : $\Theta = 0$, le temps de parcours est alors
+*Rayon le plus rapide* : $\theta = 0$, le temps de parcours est alors
 $T_1 = \frac{L}{c_\text{cœur}}$, aussi noté $T_1 = \frac{L n_\text{cœur}}{c}$
 
-*Rayon le plus lent* : $\Theta = \Theta_\text{max}$, la longueur du parcours est
+*Rayon le plus lent* : $\theta = \theta_\text{max}$, la longueur du parcours est
 alors $L_2 = \frac{L}{\sin(i_\text{lim})}$, et $T_2 = \frac{L_2 n_\text{cœur}}{c}$
 $= \frac{L n_\text{cœur}}{c \sin i_\text{lim}}$. Or, $\sin i_\text{lim} = \frac{n_\text{gaine}}{n_\text{cœur}}$,
 donc $T_2 = \frac{L n_\text{cœur}^2}{c n_\text{gaine}}$.

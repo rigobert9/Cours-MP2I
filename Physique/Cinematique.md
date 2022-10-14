@@ -111,13 +111,13 @@ d'un cercle de rayon R).
 
 ### Vecteur position en coordonnées polaires
 On peut aussi noter le vecteur position sous la forme $\overrightarrow{\rm r} = \lVert \overrightarrow{\rm r} \rVert \overrightarrow{\rm u_r}$,
-avec $\overrightarrow{\rm u_r}$ un vecteur unitaire orienté à un angle $\Theta$
+avec $\overrightarrow{\rm u_r}$ un vecteur unitaire orienté à un angle $\theta$
 par rapport à $\overrightarrow{\rm u_x}$ en deux dimensions.
 
 ### Vecteur position en coordonnées cylindriques
 De la même façon que pour les coordonnées polaires, on définit le vecteur
 position comme $\overrightarrow{\rm OM} = r \overrightarrow{\rm u_r} + z \overrightarrow{\rm u_z}$,
-avec $\overrightarrow{\rm u_r}$ un vecteur unitaire orienté d'un angle $\Theta$
+avec $\overrightarrow{\rm u_r}$ un vecteur unitaire orienté d'un angle $\theta$
 avec l'axe $\overrightarrow{\rm u_x}$, et $u_z$ l'un des vecteurs unitaire de la
 base (en général celui de la hauteur).
 
@@ -125,7 +125,7 @@ base (en général celui de la hauteur).
 On définit cette position comme les coordonnées polaires deux fois, donc avec
 $\overrightarrow{\rm OM} = r \overrightarrow{\rm u_r}$, avec $\overrightarrow{\rm u_r}$
 un vecteur unitaire orienté d'un angle $\varphi$ avec $\overrightarrow{\rm u_x}$
-et d'un angle $\Theta$ avec $\overrightarrow{\rm u_z}$.
+et d'un angle $\theta$ avec $\overrightarrow{\rm u_z}$.
 
 ### Abscisse curviligne
 On représente par une mesure algébrique de la distance la position, sur une
@@ -136,7 +136,7 @@ $\stackrel{\frown}{M_0 M}(t)$.
 ## Vitesse d'un point
 ### Définition
 On appelle vecteur vitesse instantané du point $M$ par rapport au référentiel $R$
-le vecteur $\overrightarrow{\rm v} = \lim\limits_{\Delta t \to + \infty} \frac{\overrightarrow{\rm OM}(t + \Delta t) - \overrightarrow{\rm OM}(t)}{\frac{d \overrightarrow{\rm OM}}{dt}}$
+le vecteur $\overrightarrow{\rm v} = \lim\limits_{\Delta t \to 0} \frac{\overrightarrow{\rm OM}(t + \Delta t) - \overrightarrow{\rm OM}(t)}{\frac{d \overrightarrow{\rm OM}}{dt}}$
 (il s'agit d'un taux de variation, donc de la dérivée de la position).
 
 ### Expression du vecteur vitesse en coordonnées cartésiennes
@@ -157,15 +157,45 @@ $\lVert \overrightarrow{\rm v} \rVert = R \omega$ (une constante).
 ### Vecteur vitesse en coordonnées polaires
 $\overrightarrow{\rm r} = r \overrightarrow{\rm  u_t}$, et on a ainsi
 $\overrightarrow{\rm v} = \frac{dr}{dt} \overrightarrow{\rm u_r} + r \frac{d}{dt} [\overrightarrow{\rm u_r}]$,
-or $\frac{d [\overrightarrow{\rm u_r}]}{dt} = \frac{d \Theta}{dt} \times \frac{d}{d \Theta} [\overrightarrow{\rm u_r}]$.
+or $\frac{d [\overrightarrow{\rm u_r}]}{dt} = \frac{d \theta}{dt} \times \frac{d}{d \theta} [\overrightarrow{\rm u_r}]$.
 
 On verra par le TD les étapes intermédiaires, et on a
-$\frac{d}{d \Theta} [\overrightarrow{\rm u_r}] = \frac{d}{d \Theta} = \dot{\Theta} \overrightarrow{\rm u_\Theta}$
-et $\frac{d}{d \Theta} [\overrightarrow{\rm u_\Theta}] = -\dot{\Theta} \overrightarrow{\rm u_r}$.
-On obtient finalement $\overrightarrow{\rm v} = \frac{d r}{dt} \overrightarrow{\rm u_r} + r \frac{d \Theta}{dt} \overrightarrow{\rm u_\Theta} = \dot{r} \overrightarrow{\rm  u_r} + r \dot{\Theta} \overrightarrow{\rm u_\Theta}$.
+$\frac{d}{d \theta} [\overrightarrow{\rm u_r}] = \frac{d}{d \theta} = \dot{\theta} \overrightarrow{\rm u_\theta}$
+et $\frac{d}{d \theta} [\overrightarrow{\rm u_\theta}] = -\dot{\theta} \overrightarrow{\rm u_r}$.
+On obtient finalement $\overrightarrow{\rm v} = \frac{d r}{dt} \overrightarrow{\rm u_r} + r \frac{d \theta}{dt} \overrightarrow{\rm u_\theta} = \dot{r} \overrightarrow{\rm  u_r} + r \dot{\theta} \overrightarrow{\rm u_\theta}$.
 
 On peut ainsi poser les équations horaires
-$\overrightarrow{\rm v} \left|\begin{matrix} v_r(t) = \dot{r} \\ v_\Theta(t) = r \dot{\Theta} \end{matrix}\right. $
+$\overrightarrow{\rm v} \left|\begin{matrix} v_r(t) = \dot{r} \\ v_\theta(t) = r \dot{\theta} \end{matrix}\right. $
 
 ### Vecteur vitesse dans la base de Frenet
 En définissant une tangent et sa normale à la courbe $\overrightarrow{\rm v} = \frac{d s}{dt} \overrightarrow{\rm t}$.
+
+### Vecteur vitesse en coordonnées cylindriques
+$\overrightarrow{\rm v} \left|\begin{matrix} v_r = \dot{r} \\ v_\theta = r \dot{\theta} \\ v_z = \dot{z} \end{matrix}\right.$
+
+### Vecteur vitesse en coordonnées sphériques
+$\overrightarrow{\rm v} \left|\begin{matrix} v_r = \dot{r} \\ v_\theta = r \dot{\theta} \\ v_\varphi = r \sin(\theta) \dot{\varphi} \end{matrix}\right.$
+
+## Accélération d'un point
+> On appelle vecteur accélération instantané du point $n$ par rapport au
+> référentiel R le vecteur
+> $\overrightarrow{\rm a} = \lim\limits_{\Delta t \to 0} \frac{\overrightarrow{\rm v}(t + \Delta t) - \overrightarrow{\rm v}(t)}{\Delta t} = \frac{d \overrightarrow{\rm v}}{dt} = \frac{d^2 \overrightarrow{\rm r}}{dt^2}$.
+
+### Vecteur accélération en coordonnées cartésiennes
+$\overrightarrow{\rm a} \left|\begin{matrix} \ddot{x}(t) \\ \ddot{y}(t) \\ \ddot{z}(t) \end{matrix}\right.$
+
+### Vecteur accélération en coordonnées polaires
+$\overrightarrow{\rm v} = \dot{r} \overrightarrow{\rm u_r} + r \dot{\theta} \overrightarrow{\rm u_\theta}$\
+$\overrightarrow{\rm a} = \ddot{r} \overrightarrow{\rm u_r} + \dot{r} \frac{d [\overrightarrow{\rm u_r}]}{dt} + \dot{r} \dot{\theta} \overrightarrow{\rm u_\theta} + \dot{r} \ddot{\theta} \overrightarrow{\rm u_\theta} + r \dot{\theta} \frac{d [\overrightarrow{\rm u_\theta}]}{dt}$\
+Or, $\frac{d [\overrightarrow{\rm u_r}]}{dt} = \dot{\theta} \overrightarrow{\rm u_\theta}$ et $\frac{d [u_\theta]}{dt} = - \dot{\theta} \overrightarrow{\rm u_r}$\
+$\overrightarrow{\rm a} = (\ddot{a} -  r \dot{\theta}^2) \overrightarrow{\rm u_r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) \overrightarrow{\rm u_\theta}$\
+$\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \ddot{\theta} \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} \end{matrix}\right.$
+
+### Vecteur accélération dans la base de Frenet
+$\overrightarrow{\rm a} = \frac{d v}{dt} \overrightarrow{\rm t} + \frac{v^2}{R} \overrightarrow{\rm n}$
+
+### Vecteur accélération en coordonnées cylindriques
+$\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \ddot{\theta} \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} \\ a_z = \ddot{z} \end{matrix}\right.$
+
+### Vecteur accélération en coordonnées sphériques
+$\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \ddot{\theta} - r \sin^2 \theta \ddot{\varphi} \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} - r \sin \theta \cos \theta \dot{\varphi}^2 \\ a_\varphi = 2 r \cos \theta \dot{\theta} \dot{\varphi} + 2 \dot{r} \sin \theta \dot{\varphi} + r \sin \theta \ddot{\varphi} \end{matrix}\right.$

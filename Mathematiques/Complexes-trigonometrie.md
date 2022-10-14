@@ -17,8 +17,8 @@ $= \{2\pi x, x \in \mathbb{Z}\} = 2 \pi \mathbb{Z}$
 Le cercle trigonométrique
 $\mathcal{C}(0,1) = \{(x,y) \in \mathbb{R}^2 \mid x^2 + y^2 = 1\}$
 de centre $(0,0)$ et de rayon 1 a
-$\forall (x,y) \in \mathcal{C}(0,1), \exists \Theta \in \mathbb{R}, \left\{\begin{matrix} x = \cos \Theta \\ y = \sin \Theta \end{matrix}\right.$.
-Ainsi, $\forall \Theta \in \mathbb{R}, \cos^2 \Theta + \sin^2 \Theta = 1$.
+$\forall (x,y) \in \mathcal{C}(0,1), \exists \theta \in \mathbb{R}, \left\{\begin{matrix} x = \cos \theta \\ y = \sin \theta \end{matrix}\right.$.
+Ainsi, $\forall \theta \in \mathbb{R}, \cos^2 \theta + \sin^2 \theta = 1$.
 
 #### Cosinus
 En tant que fonctions, $\cos$ et $\sin$ sont $(2\pi)$-périodiques. On a ainsi
@@ -213,13 +213,13 @@ L'écriture algébrique d'un complexe, la forme $z = a + ib$, est utilisée pour
 les sommes, le placement sur le plan directement, et la multiplication par des
 réels.
 
-L'écriture trigonométrique d'un complexe est la forme $z = |z| \cos \Theta + |z| i \sin \Theta$,
-avec un angle $\Theta \in \mathbb{R}$.
+L'écriture trigonométrique d'un complexe est la forme $z = |z| \cos \theta + |z| i \sin \theta$,
+avec un angle $\theta \in \mathbb{R}$.
 
-La notation exponentielle, la forme $z = e^{i \Theta}$, est utilisée pour les
+La notation exponentielle, la forme $z = e^{i \theta}$, est utilisée pour les
 produits et les quotients, ainsi que pour les puissances grâce aux propriétés
 représentées par l'exponentielle. Elle est équivalente à la forme
-trigonométrique $z = \cos \Theta + i \sin \Theta$ lorsque ses facteurs sont de
+trigonométrique $z = \cos \theta + i \sin \theta$ lorsque ses facteurs sont de
 1, et on multiplie par le module pour obtenir tout autre nombre complexe.
 
 ## Complexes de module 1 et trigonométrie
@@ -241,18 +241,18 @@ $z \overline{z} = |z|^2 = 1$.
 
 On sait que $\mathbb{U} = \{z \in \mathbb{C}, |z| = 1\}$\
 $= \{x + iy \in \mathbb{C}, x^2 + y^2 = 1\}$\
-$= \{\cos^2 \Theta + \sin^2 \Theta = 1, \Theta \in \mathbb{R}\}$
+$= \{\cos^2 \theta + \sin^2 \theta = 1, \theta \in \mathbb{R}\}$
 
 On note, avec les propriétés du cercle trigonométrique,
-$\forall (\Theta, \phi) \in \mathbb{R}, e^{i \Theta} \times e^{i \varphi} = e^{i( \Theta + \varphi )}$.
+$\forall (\theta, \phi) \in \mathbb{R}, e^{i \theta} \times e^{i \varphi} = e^{i( \theta + \varphi )}$.
 On peut le prouver par le calcul en repassant par la forme trigonométrique.
 De plus, on peut ainsi prouver les formules d'addition sur les cosinus et sinus
 à l'aide de cette formule, ainsi que les formules de duplication.
 
-On a de plus (vérifiables par la forme trigonométrique) $e^{-i \Theta} = \overline{e^{i \Theta}} = \frac{1}{e^{i \Theta}}$.
+On a de plus (vérifiables par la forme trigonométrique) $e^{-i \theta} = \overline{e^{i \theta}} = \frac{1}{e^{i \theta}}$.
 
-On vérifie alors, lorsque $e^{i \Theta} = e^{i \varphi} \Leftrightarrow \left\{\begin{matrix} \cos \Theta = \cos \varphi \\ \sin \Theta = \sin \varphi \end{matrix}\right.$,
-que $\Theta \equiv \varphi [2 \pi]$.
+On vérifie alors, lorsque $e^{i \theta} = e^{i \varphi} \Leftrightarrow \left\{\begin{matrix} \cos \theta = \cos \varphi \\ \sin \theta = \sin \varphi \end{matrix}\right.$,
+que $\theta \equiv \varphi [2 \pi]$.
 
 À partir des formules d'addition et de leurs inverses ($\cos(a-b)$), on peut facilement obtenir des formules de
 linéarisation, soit $\left\{\begin{matrix} \cos(a+b) = \cos(a)\cos(b) - \sin(a)\sin(b) \\ \sin(a+b) = \sin(a)\cos(b) + \cos(a)\sin(b) \end{matrix}\right.$ :
@@ -264,15 +264,15 @@ linéarisation, soit $\left\{\begin{matrix} \cos(a+b) = \cos(a)\cos(b) - \sin(a)
 $\left\{\begin{matrix} \cos p + \cos q = \Re(e^{ip} + e^{iq}) \\ \sin p + \sin q = \Im(e^{ip} + e^{iq}) \end{matrix}\right.$\
 On force l'apparition de l'angle $\frac{p + q}{2}$ :
 $e^{ip} + e^{iq} = e^{i(\frac{p + q}{2})} \times [e^{i\frac{p-q}{2}} + e^{i \frac{q-p}{2}}]$.
-On voit alors apparaître $e^{i \Theta} + e^{-i \Theta}$ (qui sont un nombre et
-son conjugué), soit $e^{i \Theta} + e^{-i \Theta} = 2 \Re(e^{i \Theta}) = 2 \cos \Theta$.
+On voit alors apparaître $e^{i \theta} + e^{-i \theta}$ (qui sont un nombre et
+son conjugué), soit $e^{i \theta} + e^{-i \theta} = 2 \Re(e^{i \theta}) = 2 \cos \theta$.
 On peut ainsi dégager $e^{ip} + e^{iq} = e^{i (\frac{p+q}{2})} \times 2 \cos (\frac{p-q}{2})$
 $= [\cos(\frac{p+q}{2}) + i \sin(\frac{p+q}{2})] \times 2 \cos (\frac{p-q}{2})$
 
 On obtient ainsi $\Re(e^{ip} + e^{iq}) = 2 \cos (\frac{p+q}{2}) \cos(\frac{p-q}{2}) = \cos p + \cos q$,
 et $\Im(e^{ip} + e^{iq}) = 2 \cos(\frac{p-q}{2}) \times \sin(\frac{p+q}{2}) = \sin p + \sin q$.
 
-On a ainsi les formules d'Euler : $\forall \Theta \in \mathbb{R}, \left\{\begin{matrix} \cos \Theta = \frac{e^{i \Theta} + e^{-i \Theta}}{2} \\ \sin \Theta = \frac{e^{i \Theta} - e^{-i \Theta}}{2i} \end{matrix}\right.$
+On a ainsi les formules d'Euler : $\forall \theta \in \mathbb{R}, \left\{\begin{matrix} \cos \theta = \frac{e^{i \theta} + e^{-i \theta}}{2} \\ \sin \theta = \frac{e^{i \theta} - e^{-i \theta}}{2i} \end{matrix}\right.$
 
 On procède de même pour $e^{ip}- e^{iq}$.
 $e^{ip} - e^{iq} = e^{i \frac{p+q}{2}} \times [e^{i \frac{p-q}{2}} - e^{i \frac{q-p}{2}}]$ (qui est équivalent à $z - \overline{z} = 2 \Im(z)$),
@@ -283,9 +283,9 @@ et $\Im(e^{ip} - e^{iq}) = \sin p - \sin q = 2\cos(\frac{p+q}{2}) \sin(\frac{p-q
 Cette méthode est ainsi utilisable dans la plupart des cas ou on retrouve $e^{ip} \pm e^{iq}$.
 
 #### Formule de Moivre
-> $\forall \Theta \in \mathbb{R}, \forall n \in \mathbb{Z}, (\cos \Theta + i \sin \Theta)^n = \cos(n \Theta) + i \sin(n \Theta)$
+> $\forall \theta \in \mathbb{R}, \forall n \in \mathbb{Z}, (\cos \theta + i \sin \theta)^n = \cos(n \theta) + i \sin(n \theta)$
 
-Preuve : $(e^{i \Theta})^n = e^{i (n \Theta)}$
+Preuve : $(e^{i \theta})^n = e^{i (n \theta)}$
 
 ##### Application
 Exprimer $\cos(5 x)$ et $\sin(5 x)$ en fonction uniquement de $\cos x$ et $\sin x$.
@@ -334,13 +334,13 @@ On cherche souvent en physique à retrouver une formule sous la forme $C \cos(t 
 avec C une amplitude et $\varphi$ un déphasage, à partir d'une forme $a \cos(t) + b \sin(t)$
 
 > Transformation de Fresnel : Soit $(a,b) \in \mathbb{R}^2 \setminus \{(0,0)\}$,\
-> $\exists A \in \mathbb{R}_{+}, \exists \Theta \in \mathbb{R}, \forall t \in \mathbb{R}, a \cos(t) + b \sin(t) = A \cos(t - \Theta)$
+> $\exists A \in \mathbb{R}_{+}, \exists \theta \in \mathbb{R}, \forall t \in \mathbb{R}, a \cos(t) + b \sin(t) = A \cos(t - \theta)$
 
 L'idée est ici de $(\frac{a}{\sqrt{a^2 + b^2}})^2 + (\frac{b}{\sqrt{a^2 + b^2}}) = 1$ (car $\frac{a^2 + b^2}{a^2 + b^2} = 1$ ).
 On pose alors $A = \sqrt{a^2 + b^2}$ (l'amplitude). $a \cos t + b \sin t = A \times [\frac{a}{A} \cos t + \frac{b}{A} \sin t]$,
 or $(\frac{a}{A})^2 + (\frac{b}{A})^2 = 1$, donc le couple $(\frac{a}{A}, \frac{b}{A})$ est sur le cercle trigonométrique.
-On en déduit que $\exists \Theta \in \mathbb{R}^{\ast}, \left\{\begin{matrix} \cos \Theta = \frac{a}{A} \\ \sin \Theta = \frac{b}{A} \end{matrix}\right.$.
-Ainsi $a \cos t + b \sin t = A[\cos \Theta \cos t + \sin \Theta \sin t] = A \cos(t-\Theta)$.
+On en déduit que $\exists \theta \in \mathbb{R}^{\ast}, \left\{\begin{matrix} \cos \theta = \frac{a}{A} \\ \sin \theta = \frac{b}{A} \end{matrix}\right.$.
+Ainsi $a \cos t + b \sin t = A[\cos \theta \cos t + \sin \theta \sin t] = A \cos(t-\theta)$.
 
 ##### Exemple : $\forall x \in \mathbb{R}, |\cos(x) + \sin(x)| \leq \sqrt{2}$
 On applique la transformation de Fresnel, et on obtient ainsi
@@ -412,14 +412,14 @@ Ainsi, tout réel est une tangente :
 $\forall y \in \mathbb{R}, \exists! x \in ]\frac{-\pi}{2}, \frac{\pi}{2}[, \tan(x) = y$
 
 ### Formulaire
-Pour $\Theta \not\equiv \frac{\pi}{2}[\pi]$
-- $\tan(-\Theta) = -\tan(\Theta)$
-- $\tan(\Theta + \pi) = \tan(\Theta)$
-- $\tan(\Theta - \pi) = \tan(\Theta)$
+Pour $\theta \not\equiv \frac{\pi}{2}[\pi]$
+- $\tan(-\theta) = -\tan(\theta)$
+- $\tan(\theta + \pi) = \tan(\theta)$
+- $\tan(\theta - \pi) = \tan(\theta)$
 
-Pour $\Theta \not\equiv 0[\frac{\pi}{2}]$
-- $\tan(\Theta + \frac{\pi}{2}) = \frac{-1}{\tan \Theta}$
-- $\tan(\frac{\pi}{2} - \Theta) = \frac{-1}{\tan \Theta}$
+Pour $\theta \not\equiv 0[\frac{\pi}{2}]$
+- $\tan(\theta + \frac{\pi}{2}) = \frac{-1}{\tan \theta}$
+- $\tan(\frac{\pi}{2} - \theta) = \frac{-1}{\tan \theta}$
 
 Pour $a, b, a+b \not\in \frac{\pi}{2} + \pi \mathbb{Z}$ :
 - $\tan(a+b) = \frac{\sin a \cos b + \cos a \sin b}{\cos a \cos b - \sin a \sin b}$
@@ -464,14 +464,14 @@ Soit $z \in \mathbb{C}$, on pose $r = |z|$.
 - Soit $r = 0 \Leftrightarrow z = 0$
 - Soit $r \neq 0$, alors le complexe $\frac{z}{r}$ est de module 1
   ( $| \frac{z}{r} | = \frac{|z|}{|r|} = \frac{r}{r} = 1$ ).
-  Il existe donc $\Theta \in \mathbb{R}$ tel que $z = r e^{i \Theta}$
+  Il existe donc $\theta \in \mathbb{R}$ tel que $z = r e^{i \theta}$
 
-> $\forall z \in \mathbb{C}^{\ast}, \exists! r \in \mathbb{R}^{\ast}_{+}, \exists \Theta \in \mathbb{R}, z = r e^{i \Theta}$
+> $\forall z \in \mathbb{C}^{\ast}, \exists! r \in \mathbb{R}^{\ast}_{+}, \exists \theta \in \mathbb{R}, z = r e^{i \theta}$
 
-On a $r = |z|$ le module de $z$. $\Theta$ est un argument de $z$, noté $arg(z)$,
-et on a $arg(z) \equiv \Theta[2\pi]$.
+On a $r = |z|$ le module de $z$. $\theta$ est un argument de $z$, noté $arg(z)$,
+et on a $arg(z) \equiv \theta[2\pi]$.
 
-On a le $\Theta \in ]-\pi , \pi]$, on parle d'argument principal de $z$.
+On a le $\theta \in ]-\pi , \pi]$, on parle d'argument principal de $z$.
 
 On peut en déduire la représentation polaire du point d'affixe $z$ sur le plan,
 à partir du vecteur depuis l'origine de norme $|z|$ et d'angle avec l'axe des
@@ -536,13 +536,13 @@ On a donc $\exp: \mathbb{C} \to \mathbb{C}^{\ast}$ surjective.
 
 ##### Preuve de la surjectivité
 Soit $z = x + iy$ où $(x,y) \in \mathbb{R}^2$, on a
-$e^z = e^x e^{iy}$. On pose $a = re^{i \Theta}$ où
-$\left\{\begin{matrix} r = |a| > 0 \\ \Theta = arg(a) \end{matrix}\right.$.
+$e^z = e^x e^{iy}$. On pose $a = re^{i \theta}$ où
+$\left\{\begin{matrix} r = |a| > 0 \\ \theta = arg(a) \end{matrix}\right.$.
 
-$e^z = a \Leftrightarrow e^x e^{iy} = r e^{i\Theta}$\
-$\Leftrightarrow \left\{\begin{matrix} e^x = r \\ y \equiv \Theta [2\pi] \end{matrix}\right.$\
-$\Leftrightarrow \left\{\begin{matrix} x = \ln(r) \\ \exists k \in \mathbb{Z}, y = \Theta + 2 \pi k \end{matrix}\right.$\
-Les solutions sont $z = \ln(r) + i\Theta + 2\pi ik, k \in \mathbb{Z}$.
+$e^z = a \Leftrightarrow e^x e^{iy} = r e^{i\theta}$\
+$\Leftrightarrow \left\{\begin{matrix} e^x = r \\ y \equiv \theta [2\pi] \end{matrix}\right.$\
+$\Leftrightarrow \left\{\begin{matrix} x = \ln(r) \\ \exists k \in \mathbb{Z}, y = \theta + 2 \pi k \end{matrix}\right.$\
+Les solutions sont $z = \ln(r) + i\theta + 2\pi ik, k \in \mathbb{Z}$.
 
 ## Équations dans $\mathbb{C}$
 ### Racines carrées d'un complexe
@@ -553,19 +553,19 @@ Les solutions sont $z = \ln(r) + i\Theta + 2\pi ik, k \in \mathbb{Z}$.
 0 est l'unique antécédent de 0 ($z^2 = 0 \Leftrightarrow z = 0$).
 
 ##### Exemple
-Soit $a \in \mathbb{C}^{\ast}$, on veut résoudre $z^2 = a$. On note $a = r e^{i\Theta}$ où
-$\left\{\begin{matrix} r = |a| \in \mathbb{R}^{\ast}_{+} \\ \Theta \equiv arg(a)[2\pi] \end{matrix}\right.$.
+Soit $a \in \mathbb{C}^{\ast}$, on veut résoudre $z^2 = a$. On note $a = r e^{i\theta}$ où
+$\left\{\begin{matrix} r = |a| \in \mathbb{R}^{\ast}_{+} \\ \theta \equiv arg(a)[2\pi] \end{matrix}\right.$.
 $z \neq 0$ donc on peut chercher $z$ sous forme trigonométrique :
 $z = R e^{i\varphi}$, avec $\left\{\begin{matrix} R > 0 \\ \varphi \in \mathbb{R} \end{matrix}\right.$.
 
-$z^2 = a \Leftrightarrow R^2 e^{i 2\varphi} = r e^{i\Theta}$\
-$\Leftrightarrow \left\{\begin{matrix} R^2 = r \\ 2\varphi \equiv \Theta[2\pi] \end{matrix}\right.$\
-$\Leftrightarrow \left\{\begin{matrix} R = \sqrt{z} \\ \varphi \equiv \frac{\Theta}{2} [\pi] \end{matrix}\right.$\
-On en conclut que $z = \sqrt{r} e^{i \frac{\Theta}{2}}$ ou $z = \sqrt{r} e^{i(\frac{\Theta}{2} + \pi)}$
+$z^2 = a \Leftrightarrow R^2 e^{i 2\varphi} = r e^{i\theta}$\
+$\Leftrightarrow \left\{\begin{matrix} R^2 = r \\ 2\varphi \equiv \theta[2\pi] \end{matrix}\right.$\
+$\Leftrightarrow \left\{\begin{matrix} R = \sqrt{z} \\ \varphi \equiv \frac{\theta}{2} [\pi] \end{matrix}\right.$\
+On en conclut que $z = \sqrt{r} e^{i \frac{\theta}{2}}$ ou $z = \sqrt{r} e^{i(\frac{\theta}{2} + \pi)}$
 
 #### Non-bijectivité de la racine carrée
-> Les deux racines carrées de $a = r e^{i \Theta}$ sont
-> $\pm \sqrt{r} e^{i \frac{\Theta}{2}}$.
+> Les deux racines carrées de $a = r e^{i \theta}$ sont
+> $\pm \sqrt{r} e^{i \frac{\theta}{2}}$.
 
 La racine carrée étant non bijective, il existe plusieurs résultats et il
 n'existe pas de fonction réciproque à la fonction carrée (pas de notation $\sqrt{  }$)
@@ -638,11 +638,11 @@ $\frac{1}{z_1} = \overline{z_1} \in \mathbb{U}_n$. On peut dire que
 $\mathbb{U}_n$ est stable par produit, passage à l'inverse et conjugaison.
 
 Puisqu'on sait que $\mathbb{U}_n \subset \mathbb{U}$, on cherche les racines
-sous forme $e^{i\Theta}$.
-$e^{i\Theta} \in \mathbb{U}_n \Leftrightarrow (e^{i\Theta})^n = 1$
-$\Leftrightarrow e^{i n \Theta} = 1$, soit
-$n \Theta \equiv 0[2\pi] \Leftrightarrow \Theta \equiv 0[\frac{2\pi}{n}]$
-$\Leftrightarrow \exists k \in \mathbb{Z}, \Theta = \frac{2\pi}{n}k$.
+sous forme $e^{i\theta}$.
+$e^{i\theta} \in \mathbb{U}_n \Leftrightarrow (e^{i\theta})^n = 1$
+$\Leftrightarrow e^{i n \theta} = 1$, soit
+$n \theta \equiv 0[2\pi] \Leftrightarrow \theta \equiv 0[\frac{2\pi}{n}]$
+$\Leftrightarrow \exists k \in \mathbb{Z}, \theta = \frac{2\pi}{n}k$.
 Ainsi, $\mathbb{U}_n = \{e^{i \frac{2\pi}{n}k}, k \in \mathbb{Z}\}$.
 
 Ces coefficients k tels que les angles soient dans $[0, 2\pi[$ sont tels que
@@ -676,17 +676,17 @@ or $\sum\limits_{k = 0}^{n - 1} (e^{\frac{2 i k \pi}{n}})^k = \frac{1 - (e^{\fra
 $= \frac{1 - e^{2 i \pi}}{1 - e^{\frac{2 i \pi}{n}}} = 0$.
 
 #### Racine n-ième d'un complexe non nul
-On cherche à résoudre $z^n = a$, avec $a \neq 0$. On écrit $a = r e^{i \Theta}$
-avec $\left\{\begin{matrix} r = |a| \in \mathbb{R}^{\ast}_{+} \\ \Theta = arg[2\pi] \end{matrix}\right.$.
-On devine une solution $(\sqrt[n]{r} e^{i \frac{\Theta}{n}})^n = r e^{i \Theta} = a$
+On cherche à résoudre $z^n = a$, avec $a \neq 0$. On écrit $a = r e^{i \theta}$
+avec $\left\{\begin{matrix} r = |a| \in \mathbb{R}^{\ast}_{+} \\ \theta = arg[2\pi] \end{matrix}\right.$.
+On devine une solution $(\sqrt[n]{r} e^{i \frac{\theta}{n}})^n = r e^{i \theta} = a$
 où $\sqrt[n]{r} = r^{\frac{1}{n}}$ existe car $\begin{aligned} \mathbb{R}_{+} &\to \mathbb{R}_{+} \\ x &\mapsto x^n .\end{aligned}$ .
-On note $z_0 = \sqrt[n]{r} e^{i \frac{\Theta}{n}}$ la solution particulière
+On note $z_0 = \sqrt[n]{r} e^{i \frac{\theta}{n}}$ la solution particulière
 trouvée. $z^n = a \Leftrightarrow z^n = z_0^n \Leftrightarrow (\frac{z}{z_0})^n = 1$\
 $\Leftrightarrow \frac{z}{z_o} \in \mathbb{U}_n$\
 $\Leftrightarrow \exists k \in [0, n-1]_{\mathbb{N}}, \frac{z}{z_0} = e^{\frac{2 i k \pi}{n}}$\
 $\Leftrightarrow \exists k \in [0, n-1]_{\mathbb{N}}, z = z_0 e^{\frac{2 i k \pi}{n}}$\
 On a donc que l'équation $z^n = a$ possède n solutions distinctes :
-$\{\sqrt[n]{r} e^{i \frac{\Theta}{n}} \times \omega, \omega \in \mathbb{U}_n\}$.
+$\{\sqrt[n]{r} e^{i \frac{\theta}{n}} \times \omega, \omega \in \mathbb{U}_n\}$.
 
 ## Application des complexes à la trigonométrie
 ### Rapport aux complexes
@@ -694,13 +694,13 @@ $\{\sqrt[n]{r} e^{i \frac{\Theta}{n}} \times \omega, \omega \in \mathbb{U}_n\}$.
 > avec deux vecteurs unitaires $\overrightarrow{\rm u}$ et $\overrightarrow{\rm v}$
 > (soit $\lVert \overrightarrow{\rm u} \rVert = \lVert \overrightarrow{\rm v} \rVert = 1$ ).
 > Un angle orienté entre les vecteurs $\overrightarrow{\rm u}$
-> et $\overrightarrow{\rm v}$ est donné par $\Theta \in ]-\pi, \pi]$ tel que
-> $\overrightarrow{\rm v} = (\cos \Theta)\overrightarrow{\rm u} + (\sin \Theta)\overrightarrow{\rm u}$
+> et $\overrightarrow{\rm v}$ est donné par $\theta \in ]-\pi, \pi]$ tel que
+> $\overrightarrow{\rm v} = (\cos \theta)\overrightarrow{\rm u} + (\sin \theta)\overrightarrow{\rm u}$
 
 On relie ce concept avec les complexes, pour un $z \in \mathbb{C}^{\ast}$, de
-forme trigonométrique $z = r e^{i \Theta}$ où $\left\{\begin{matrix} r = |z| \\ \Theta \equiv arg(z)[2\pi] \end{matrix}\right.$.
-$\Theta$ est l'angle orienté entre les vecteurs $\overrightarrow{\rm i}$ et
-$\overrightarrow{\rm OM}$, on note $\Theta = \widehat{\overrightarrow{\rm i}, \overrightarrow{\rm OM}}$.
+forme trigonométrique $z = r e^{i \theta}$ où $\left\{\begin{matrix} r = |z| \\ \theta \equiv arg(z)[2\pi] \end{matrix}\right.$.
+$\theta$ est l'angle orienté entre les vecteurs $\overrightarrow{\rm i}$ et
+$\overrightarrow{\rm OM}$, on note $\theta = \widehat{\overrightarrow{\rm i}, \overrightarrow{\rm OM}}$.
 
 Soient A,B,C trois points du plan d'affixe $a, b, c \in \mathbb{C}$. Pour
 mesurer l'angle $\widehat{BAC}$, on mesure l'angle orienté $\widehat{(\overrightarrow{\rm AB}, \overrightarrow{\rm AC})}$.
@@ -747,17 +747,17 @@ pour l'homothétie de centre $\omega$ et de rapport $\lambda$.
 Cette application est bijective pour $\lambda = \mathbb{R}^{\ast}$ car
 $h_{\omega, \lambda} \circ h_{\omega, \frac{1}{\lambda}} = h_{\omega, \frac{1}{\lambda}} \circ h_{\omega, \lambda} = id_{\mathbb{C}}$.
 
-#### Rotation de centre $\Omega$ et d'angle $\Theta$
+#### Rotation de centre $\Omega$ et d'angle $\theta$
 On note géométriquement l'application
-$\begin{aligned} R_{\Omega, \Theta}: P &\to P \\ M &\mapsto R_{\Omega, \Theta}(M) = M' \,\text{tel que}\, \left\{\begin{matrix} \widehat{\overrightarrow{\rm \Omega M}, \overrightarrow{\rm \Omega M'}} = \Theta \\ \Omega M = \Omega M' \end{matrix}\right. .\end{aligned}$.
+$\begin{aligned} R_{\Omega, \theta}: P &\to P \\ M &\mapsto R_{\Omega, \theta}(M) = M' \,\text{tel que}\, \left\{\begin{matrix} \widehat{\overrightarrow{\rm \Omega M}, \overrightarrow{\rm \Omega M'}} = \theta \\ \Omega M = \Omega M' \end{matrix}\right. .\end{aligned}$.
 
-Avec les complexes, soit $\Omega(\omega)$, on a $\frac{z' - \omega}{z - \omega} = 1 \times e^{i \Theta}$
-$\Leftrightarrow z' - \omega = (z - \omega) e^{i \Theta}$, soit
-$r_{\omega, \Theta}(z) = \omega + e^{i \Theta}(z - \omega)$ l'application
-d'angle $\Theta$ et de centre $\omega$.
+Avec les complexes, soit $\Omega(\omega)$, on a $\frac{z' - \omega}{z - \omega} = 1 \times e^{i \theta}$
+$\Leftrightarrow z' - \omega = (z - \omega) e^{i \theta}$, soit
+$r_{\omega, \theta}(z) = \omega + e^{i \theta}(z - \omega)$ l'application
+d'angle $\theta$ et de centre $\omega$.
 
-Cette application est bijective car $r_{\omega, \Theta} \circ r_{\omega, -\Theta}$
-$= r_{\omega, -\Theta} \circ r_{\omega, \Theta} = id_{\mathbb{C}}$.
+Cette application est bijective car $r_{\omega, \theta} \circ r_{\omega, -\theta}$
+$= r_{\omega, -\theta} \circ r_{\omega, \theta} = id_{\mathbb{C}}$.
 
 #### Similitudes directes
 On peut remarquer que toutes les applications précédentes sont de la forme
@@ -776,11 +776,11 @@ $= \frac{\alpha (d - c)}{\alpha (b -a)} = \frac{d - c}{b - a}$.
 > Soit $\begin{aligned} f: \mathbb{C} &\to \mathbb{C} \\ z &\mapsto f(z) = \alpha z + \beta .\end{aligned}$ avec
 > $\left\{\begin{matrix} \alpha \in \mathbb{C}^{\ast} \\ \beta \in \mathbb{C} \end{matrix}\right.$ :
 > - si $\alpha = 1$, f est la translation de valeur d'affixe $\beta$
-> - si $a \neq 1$, on a $\left\{\begin{matrix} \alpha = \lambda e^{i \Theta} \\ \lambda = |\alpha| \\ \Theta \equiv arg(x)[2\pi] \end{matrix}\right.$
+> - si $a \neq 1$, on a $\left\{\begin{matrix} \alpha = \lambda e^{i \theta} \\ \lambda = |\alpha| \\ \theta \equiv arg(x)[2\pi] \end{matrix}\right.$
 >   et alors f possède un point fixe, noté $\omega$, en appelé le centre de la
 >   similitude. De plus, $f = h \circ r = r \circ h$ est la composée commutative
 >   de l'homothétie h de centre $\omega$ et de rapport $\lambda$ et de la rotation
->   r de centre $\omega$ et d'angle $\Theta$.
+>   r de centre $\omega$ et d'angle $\theta$.
 
 Pour trouver les points fixes de f, on résout $f(z) = z$
 $\Leftrightarrow \alpha z  + \beta = z \Leftrightarrow (\alpha - 1) z = -\beta$
@@ -791,7 +791,7 @@ qui sera le contre de la similitude.
 Si $f(z) = \alpha z + \beta$, où $\alpha \neq 1$ et $\alpha \neq 0$,
 f est la similitude :
 - de centre $\omega = \frac{\beta}{1 - \alpha}$
-- d'angle $\Theta = arg(\alpha)$
+- d'angle $\theta = arg(\alpha)$
 - de rapport $\lambda = |\alpha|$
 
 Ainsi, toute similitude directe est bijective et sa réciproque est aussi une
