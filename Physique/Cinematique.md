@@ -145,7 +145,7 @@ $= \frac{d x}{dt} \overrightarrow{\rm e_x} +  x \frac{d \overrightarrow{\rm e_x}
 Puisque les vecteurs $\frac{d \overrightarrow{\rm v_x}}{dt}$, $\frac{d \overrightarrow{\rm v_y}}{dt}$, $\frac{d \overrightarrow{\rm v_z}}{dt}$ sont constants, leur dérivée est nulle.
 
 Ainsi, on obtient $\overrightarrow{\rm v} = \frac{d x}{dt} \overrightarrow{\rm u_x} + \frac{d y}{dt} \overrightarrow{\rm u_y} + \frac{d z}{dt} \overrightarrow{\rm u_z}$.
-On pose $\dot{x} = \frac{d x}{dt}$, $\dot{y} = \frac{d y}{dt}$ et $\dot{z} = \frac{d z}{dt}$, et ainsi l'équation paramétrique $\overrightarrow{\rm v} \left|\begin{matrix} \dot{x}(t) \\ \dot{y}(t) \end{matrix}\right.$.
+On pose $\dot{x} = \frac{d x}{dt}$, $\dot{y} = \frac{d y}{dt}$ et $\dot{z} = \frac{d z}{dt}$, et ainsi l'équation paramétrique $\overrightarrow{\rm v} \left|\begin{matrix} \dot{x}(t) \\ \dot{y}(t) \\ \dot{z}(t) \end{matrix}\right.$.
 
 ##### Exemple
 $\overrightarrow{\rm OM} \left|\begin{matrix} x(t) = R \cos(\omega t) \\ y(t) = \sin(\omega t) \end{matrix}\right.$ (avec $\omega$ une constante)
@@ -165,10 +165,10 @@ et $\frac{d}{d \theta} [\overrightarrow{\rm u_\theta}] = -\dot{\theta} \overrigh
 On obtient finalement $\overrightarrow{\rm v} = \frac{d r}{dt} \overrightarrow{\rm u_r} + r \frac{d \theta}{dt} \overrightarrow{\rm u_\theta} = \dot{r} \overrightarrow{\rm  u_r} + r \dot{\theta} \overrightarrow{\rm u_\theta}$.
 
 On peut ainsi poser les équations horaires
-$\overrightarrow{\rm v} \left|\begin{matrix} v_r(t) = \dot{r} \\ v_\theta(t) = r \dot{\theta} \end{matrix}\right. $
+$\overrightarrow{\rm v} \left|\begin{matrix} v_r(t) = \dot{r} \\ v_\theta(t) = r \dot{\theta} \end{matrix}\right.$
 
 ### Vecteur vitesse dans la base de Frenet
-En définissant une tangent et sa normale à la courbe $\overrightarrow{\rm v} = \frac{d s}{dt} \overrightarrow{\rm t}$.
+En définissant une tangente et sa normale à la courbe $\overrightarrow{\rm v} = \frac{d s}{dt} \overrightarrow{\rm t}$.
 
 ### Vecteur vitesse en coordonnées cylindriques
 $\overrightarrow{\rm v} \left|\begin{matrix} v_r = \dot{r} \\ v_\theta = r \dot{\theta} \\ v_z = \dot{z} \end{matrix}\right.$
