@@ -102,3 +102,13 @@ $\exists C_2 > 0, \forall n \in \mathbb{N}^{\ast}, g(n) \leq C_2 h(n)$. Soit
 $C = C_1 C_2 > 0, n  \in \mathbb{N}^{\ast}$, alors
 $f(n) \leq C_1 g(n) \leq C_1 (C_2 h(n)) \leq C h(n)$, donc
 $f(n) = O(h(n))$.
+
+## Complexité des opérations sur les structures de données séquentielles
+### Les tableaux
+- Créer/détruire : on ne précise pas de complexité car ces opérations ne sont
+  faites qu'une seule fois sur ces structures. En pratique, $O(n)$ ou souvent
+  $O(1)$.
+- Accéder/modifier une valeur d'un indice i : C est usuellement constant de
+  valeur $1$. Il suffit d'aller à l'emplacement d'adresse $t + taille \times i$
+- Longueur des tableaux : Coût constant si l'implémentation le permet. En C, il
+  fait donc retenir la taille du tableau.
