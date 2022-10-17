@@ -146,7 +146,7 @@ alors la relation suivante : $\sum\limits_{k} \varepsilon_k u_k = 0$.
 
 - Si $P(t) > 0$, le dipôle absorbe de l'énergie électrique. On dit que le dipôle
   a un caractère récepteur.
-- Si $P(t) > 0$, le dipôle fournit de l'énergie électrique. On dit que le
+- Si $P(t) < 0$, le dipôle fournit de l'énergie électrique. On dit que le
   dipôle a un caractère générateur.
 
 ## Dipôle ohmique

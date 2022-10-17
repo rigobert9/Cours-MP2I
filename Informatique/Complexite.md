@@ -27,8 +27,8 @@ Soient $f,g$ deux fonction $\mathbb{N}^{\ast} \to \mathbb{N}^{\ast}$ :
 - Si $\exists C_1, C_2 \in \mathbb{R}^{\ast}_{+} \mid \forall n \in \mathbb{N}^{\ast}$,
   $C_1 g(n) \leq f(n) \leq C_2 g(n)$, alors on note
   $f(n) = \Theta(g(n))$.
-- Si $\lim\limits_{n \to + \infty} \frac{f(n)}{g(n)}$, alors on note $f(n) = O(g(n))$.
-  On a ainsi $f(n) = o(g(n)) \Rightarrow f(n) = O(g(n))$ (voir preuve ci-dessous).
+- Si $\lim\limits_{n \to + \infty} \frac{f(n)}{g(n)} = 0$, alors on note $f(n) = O(g(n))$.
+  (voir preuve ci-dessous).
 - Si $\lim\limits_{n \to + \infty} \frac{f(n)}{g(n)} \leq 1$, alors
   on note $f(n) ~_{n \to +\infty} g(n)$. On a ainsi
   $f(n) ~_{n \to +\infty} g(n) \Rightarrow f(n) = \Theta(g(h))$
