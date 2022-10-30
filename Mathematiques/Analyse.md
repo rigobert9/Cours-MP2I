@@ -133,7 +133,7 @@ On obtient ainsi les limites :
 > $\arcsin : [-1, 1] \to [\frac{-\pi}{2}, \frac{\pi}{2}]$, une fonction bijective
 > continue et strictement croissante.
 
-De plus, $\arc\sin$ est dérivable, puisque $\sin' = \cos$, qui s'annule en
+De plus, $\arcsin$ est dérivable, puisque $\sin' = \cos$, qui s'annule en
 $\pm \frac{\pi}{2}$. Ainsi, $\sin'$ ne s'annule pas sur $]\frac{-\pi}{2}, \frac{\pi}{2}[$
 donc (par théorème de la dérivée de la réciproque), $\arcsin$ est dérivable sur
 $\sin(]\frac{-\pi}{2}, \frac{\pi}{2}[) = ]-1, 1[$.
@@ -145,18 +145,18 @@ $|\cos(\arcsin x)| = \sqrt{1 - x^2}$.
 Or, $\arcsin(x) \in [-\frac{\pi}{2}, \frac{\pi}{2}]$, donc $\cos(\arcsin) \geq 0$,
 donc $\forall x \in [-1,1], \cos(\arcsin(x)) = \sqrt{1 - x^2}$.
 
-> La dérivée de $\arcsin$ est $\forall x \in ]-1,1[, \arcsin'(\frac{1}{\sqrt{1 - x^2}})$.
+> La dérivée de $\arcsin$ est $\forall x \in ]-1,1[, \arcsin' = \frac{1}{\sqrt{1 - x^2}}$.
 
 > $\arcsin$ est impaire
 
 ##### Preuve
 $x \in [-1, 1], y \in [-\frac{\pi}{2}, \frac{\pi}{2}]$\
 $y = \arcsin(-x)$\
-$\Leftrightarrowf \sin(y) = -x$\
-$\Leftrightarrowf -\sin(y) = x$\
-$\Leftrightarrowf \sin(-y) = x$\
-$\Leftrightarrowf -y = \arcsin(x)$\
-$\Leftrightarrowf y = -\arcsin(x)$
+$\Leftrightarrow \sin(y) = -x$\
+$\Leftrightarrow -\sin(y) = x$\
+$\Leftrightarrow \sin(-y) = x$\
+$\Leftrightarrow -y = \arcsin(x)$\
+$\Leftrightarrow y = -\arcsin(x)$
 
 Ainsi, $\forall x \in [-1, 1], \arcsin(-x) = -\arcsin(x)$
 
@@ -202,7 +202,7 @@ $|\sin(\arccos x)| = \sqrt{1 - x^2}$.
 Or, $\arccos(x) \in [0, \pi]$, donc $\sin(\arccos) \geq 0$,
 donc $\forall x \in [-1,1], \sin(\arccos(x)) = \sqrt{1 - x^2}$.
 
-> La dérivée de $\arccos$ est $\forall x \in ]-1,1[, \arccos'(\frac{-1}{\sqrt{1 - x^2}})$.
+> La dérivée de $\arccos$ est $\forall x \in ]-1,1[, \arccos' = \frac{-1}{\sqrt{1 - x^2}}$.
 
 > $\forall x \in [-1, 1], \arccos(x) + \arcsin(x) = \frac{\pi}{2}$
 
@@ -244,18 +244,18 @@ théorème de la dérivée de la réciproque, $\arctan$ est dérivable sur $\tan
 $\forall x \in \mathbb{R}, \arctan'(x) = \frac{1}{\tan'(\arctan(x))}$
 $= \frac{1}{1 + \tan^2(\arctan)} = \frac{1}{1 + x^2}$.
 
-> La dérivée de $\arctan$ est $\forall x \in ]-1,1[, \arctan'(\frac{1}{\sqrt{1 - x^2}})$.
+> La dérivée de $\arctan$ est $\forall x \in ]-1,1[, \arctan' = \frac{1}{\sqrt{1 - x^2}}$.
 
 > $\arctan$ est impaire
 
 ##### Preuve
 $x \in \mathbb{R}, y \in [-\frac{\pi}{2}, \frac{\pi}{2}]$\
 $y = \arctan(-x)$\
-$\Leftrightarrowf \tan(y) = -x$\
-$\Leftrightarrowf -\tan(y) = x$\
-$\Leftrightarrowf \tan(-y) = x$\
-$\Leftrightarrowf -y = \arctan(x)$\
-$\Leftrightarrowf y = -\arctan(x)$
+$\Leftrightarrow \tan(y) = -x$\
+$\Leftrightarrow -\tan(y) = x$\
+$\Leftrightarrow \tan(-y) = x$\
+$\Leftrightarrow -y = \arctan(x)$\
+$\Leftrightarrow y = -\arctan(x)$
 
 Ainsi, $\forall x \in \mathbb{R}, \arctan(-x) = -\arctan(x)$
 
