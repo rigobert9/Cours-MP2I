@@ -278,3 +278,106 @@ $\lim\limits_{x \to 0} \frac{\arcsin(x)}{x} = \arcsin'(0) = \frac{1}{\sqrt{1 - 0
 $\lim\limits_{x \to 0} \frac{\arctan(x)}{x} = \arctan'(0) = \frac{1}{1 - 0^2} = 1$
 
 $\lim\limits_{x \to 0} \frac{\arccos(x)}{x} = \arccos'(0) = \frac{1}{\sqrt{1 - 0^2}} = 1$
+
+## Fonctions hyperboliques
+### Sinus et cosinus hyperboliques
+> On pose pour tout $x \in \mathbb{R}$, $\cosh(x) = \frac{e^{x} + e^{-x}}{2}$
+> et $\sinh(x) = \frac{e^{x} - e^{-x}}{2}$.
+
+> $\cosh$ et $\sinh$ sont dérivables sur $\mathbb{R}$, et $\cosh' = \sinh$
+> $\sinh' = \cosh$.
+
+$\cosh$ est paire et $\sinh$ est impaire, $\cosh$ est toujours positif.
+Ainsi, par tableau de variations, on a :
+
+x                | $-\infty$ | -          | 0   | -          | $+\infty$
+---              | ---       | ---        | --- | ---        | ---
+$\sinh' = \cosh$ | +         | +          | +   | +          | +
+$\sinh$          | $-\infty$ | croissante | 0   | croissante | $+\infty$
+
+x                | $-\infty$ | -            | 0   | -          | $+\infty$
+---              | ---       | ---          | --- | ---        | ---
+$\cosh' = \sinh$ | $-\infty$ | -            | 0   | +          | $+\infty$
+$\cosh$          | $+\infty$ | décroissante | 1   | croissante | $+\infty$
+
+Les courbes représentatives des deux fonctions ont toutes deux une asymptote en
+$+\infty$ de $x \mapsto \frac{1}{2}e^{x}$.
+
+De même, on a $\cosh: \mathbb{R}_{+} \to [1; +\infty[$ bijective, $\cosh: \mathbb{R}_{-} \to [1; +\infty[$
+bijective, et $\sinh: \mathbb{R} \to \mathbb{R}$ bijective.
+
+> $\lim\limits_{x \to 0} \frac{\sinh x}{x} = \sinh' 0 = \cosh 0 = 1$
+
+On a les relations de trigonométrie hyperbolique suivantes :
+- $\forall  \in \mathbb{R}, \cosh(x) + \sinh(x) = e^{x}$
+- $\forall  \in \mathbb{R}, \cosh(x) - \sinh(x) = e^{-x}$
+- $\forall  \in \mathbb{R}, \cosh^2(x) - \sinh^2(x) = 1$
+- $\forall  \in \mathbb{R}, (\cosh(x) - \sinh(x)) \times (\cosh(x) + \sinh(x)) = 1$
+
+Ces fonction sont accompagnées de nombreuses relations trigonométriques
+supplémentaires.
+- $\cosh(a + b) = \cosh(a)\cosh(b) + \sinh(a)\sinh(b)$
+- $\cos(x) = \cosh(ix)$
+- $\sin(x) = \frac{1}{i} \sinh(ix)$
+
+> La tangente hyperbolique est définie comme
+> $\tanh(x) = \frac{\sinh(x)}{\cosh(x)}$.
+
+Puisque $\forall x \in \mathbb{R}, \cosh(x) \geq 1$, $\tanh$ est définie sur $\mathbb{R}$.
+On a donc $\forall x \in \mathbb{R}, \tanh(x) = \frac{e^{x} - e^{-x}}{e^x - e^{-x}} = \frac{e^{2x} - 1}{e^{2x} + 1}$.
+$\tanh$ est impaire sur $\mathbb{R}$ par imparité de $\sinh$ et parité de $\cosh$.
+
+La fonction $\tanh$ peut être dérivée sur $\mathbb{R}$, telle que
+$\tanh' = (\frac{\sinh}{\cosh})' = \frac{\sinh'\cosh - \cosh'\sinh}{\cosh^2}$,
+soit $\tanh' = \frac{\cosh^2 - \sinh^2}{\cosh^2} = \frac{1}{\cosh^2} = 1 - \tanh^2$.
+
+Cette dérivée étant strictement positive, $\tanh$ est strictement croissante sur
+$\mathbb{R}$, en on obtient le tableau de variations suivant :
+
+x       | $-\infty$ | -          | 0   | -          | $+\infty$
+---     | ---       | ---        | --- | ---        | ---
+$\tanh$ | -1        | croissante | 0   | croissante | 1
+
+Enfin, on a $\lim\limits_{x \to -\infty} \tanh(x) = \lim\limits_{x \to -\infty} \frac{e^{2x} - 1}{e^{2x} + 1} = \frac{0-1}{0 + 1} = 1$
+et $\lim\limits_{x \to 0} \frac{\tanh x}{x} = \tanh'(0) = \frac{1}{\cosh'(0)} = 1$.
+
+La réciproque de $\tanh$ est notée $\text{argth}: ]-1;1[ \to \mathbb{R}$.
+Pour calculer cette réciproque, on résout $y = \tanh(x)$ avec $\left\{\begin{matrix} x \in \mathbb{R} \\ y \in ]-1;1[ \end{matrix}\right.$ :
+$y = \tanh(x)$\
+$\Leftrightarrow y = \frac{e^{2x} - 1}{e^{2x} + 1}$\
+$\Leftrightarrow (e^{2x} + 1)y = e^{2x} - 1$\
+$\Leftrightarrow e^{2x} (y-1) = -1 - y$\
+$\Leftrightarrow e^{2x} = \frac{1 + y}{1 - y}$\
+$\Leftrightarrow 2x = \ln(\frac{1 + y}{1 - y})$\
+$\Leftrightarrow x = \frac{1}{2} \ln(\frac{1 + y}{1 - y})$\
+$\Leftrightarrow x = \ln(\sqrt{\frac{1 + y}{1 - y}})$\
+
+De même, cette réciproque a pour dérivée sur $\tanh(\mathbb{R}) = ]-1;1[$,
+$\text{argth}'(x) = \frac{1}{\tanh'(\text{argth}(x))} = \frac{1}{1 - \tanh^2(\text{argth} x)} = \frac{1}{1 - x^2}$.
+On peut obtenir ce même résultat par l'expression montrée ci-dessus.
+
+## Fonctions de la variable réelle à valeurs complexes
+> Soit $I$ un intervalle de $\mathbb{R}$,
+> et $\begin{aligned} f: I &\to \mathbb{C} \\ x &\mapsto f(x) .\end{aligned}$,
+> on introduit :
+> - $\begin{aligned} \Re(f): I &\to \mathbb{R} \\ x &\mapsto \Re(f)(x) .\end{aligned}$
+> - $\begin{aligned} \Im(f): I &\to \mathbb{R} \\ x &\mapsto \Im(f)(x) .\end{aligned}$
+> - $\begin{aligned} \overline{f}: I &\to \mathbb{C} \\ x &\mapsto \overline{f(x)} .\end{aligned}$
+> - $\begin{aligned} |f|: \mathbb{R} &\to \mathbb{R}_{+} \\ x &\mapsto |f(x)| .\end{aligned}$
+
+Ainsi, $f = \Re(f) + i\Im(f)$, $f \times \overline{f} = |f|^2$,
+$\Re(f) = \frac{1}{2} (f + \overline{f})$ et
+$\Im(f) = \frac{1}{2} (f - \overline{f})$.
+
+> Soit $f: I \to \mathbb{C}$, on dira que $f$ est dérivable sur $I$ si
+> $\Re(f)$ et $\Im(f)$ sont dérivables sur $I$. Dans ce cas, on pose
+> $f' = (\Re(f))' + i(\Im(f))'$.
+
+Les propriétés graphiques et utilisant des inégalités n'ont plus de sens dans $\mathbb{C}$,
+mais les calculs (égalités) sont toujours valables.
+
+Soient $f$,$g$ des fonction $I \to \mathbb{C}$ dérivables, on a les propriétés :
+- de linéarité
+- de produit : $(fg)' = f'g + fg'$
+- d'inverse : $\frac{1}{g}'$, si $g$ ne s'annule pas sur $I$, est $\frac{-g'}{g^2}$
+- de quotient : si $g$ ne s'annule pas sur $I$, $(\frac{f}{g})' = \frac{f'g - fg'}{g^2}$
