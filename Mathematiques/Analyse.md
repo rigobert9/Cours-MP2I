@@ -381,3 +381,44 @@ Soient $f$,$g$ des fonction $I \to \mathbb{C}$ dérivables, on a les propriété
 - de produit : $(fg)' = f'g + fg'$
 - d'inverse : $\frac{1}{g}'$, si $g$ ne s'annule pas sur $I$, est $\frac{-g'}{g^2}$
 - de quotient : si $g$ ne s'annule pas sur $I$, $(\frac{f}{g})' = \frac{f'g - fg'}{g^2}$
+
+On aura des difficultés à composer ces fonctions, puisqu'on ne s'intéresse
+qu'aux fonction de la variable réelle.
+
+> Soir $\varphi: I \to \mathbb{C}$ dérivable en $I$, $\exp \circ \varphi: I \to \mathbb{C}$
+> est dérivable sur $I$ et $(\exp \circ \varphi)' = \varphi' \times (\exp \circ \varphi)$.
+
+Pour tout complexe $\alpha \in \mathbb{C}$, on a ainsi
+$\begin{aligned} f_\alpha: \mathbb{C} &\to \mathbb{C} \\ t &\mapsto f_\alpha(t) = e^{\alpha t} .\end{aligned}$
+qui est dérivable sur $\mathbb{R}$ et $f_\alpha'(t) = \alpha e^{\alpha t}$,
+et $\forall n \in \mathbb{N}$, $f_\alpha$ est $n$ fois dérivable et
+$\forall t \in \mathbb{R}, f_\alpha^{n}(t) = \alpha^t e^{\alpha t}$.
+
+##### Retour sur l'exemple
+Dériver $n$ fois $\begin{aligned} f: \mathbb{R} &\to \mathbb{R} \\ x &\mapsto f(x) = e^{x} \times \cos(x) .\end{aligned}$.
+On a $e^x \times \cos x = e^x \times \Re(e^{ix}) = \Re(e^{x} e^{ix}) = \Re(e^{(1 + i) x})$.
+On note la fonction $x \mapsto e^{(1 + i)x}$.
+
+Ainsi, $f^{(n)} = (\Re(g))^{(n)} = \Re(g)^{(n)}$, or avec $\alpha = 1 + i$, $g(x) = e^{\alpha x}$.
+Donc, $\forall n \in \mathbb{N}, \forall x \in \mathbb{R}, g^{(n)}(x) = \alpha^n e^{\alpha x}$
+$= (1 + i)^n e^{(1 + i)x}$.
+
+Or, $(1 + i)^n = (\sqrt{2} e^{i \frac{\pi}{4}})^n = (\sqrt{2})^n e^{i \frac{n\pi}{4}}$,
+donc $g^{(n)}(x) = \sqrt{2}^n e^{x} e^{i (x + \frac{n\pi}{4})}$.
+
+Ainsi, $f^{(n)} = \Re(g^{(n)})$ donne
+$\forall x \in \mathbb{R}, f^{(n)}(x) = \sqrt{2}^n e^{x} \cos(x + \frac{n\pi}{4})$.
+
+#### Preuve
+$\varphi = f + ig$ où $f: I \to \mathbb{R}$, $g: I \to \mathbb{R}$
+(avec $f = \Re(\varphi)$ et $g = \Im(\varphi)$).
+Alors $\varphi' = f' + ig'$. On veut dériver $e^{\varphi} = e^{f + ig}$
+$= e^{f}(\cos g + i \sin g)$. On a alors
+$\Re(e^{\varphi}) = e^{f} \cos g$ et
+$\Im(e^{\varphi}) = e^f \sin g$.
+
+Alors $\Re(e^{\varphi})' = f' e^{f} \cos g + e^f \times (-g' \sin g) = e^f (f' \cos g - g' \sin g)$,
+et $\Im(e^{\varphi})' = f' e^{f} \sin g + e^f \times (g' \cos g) = e^f (f' \sin g + g' \cos g)$,
+donnant $\Re(e^\varphi)' + i\Im(e^\varphi)' = e^f \times \[\cos g \times (f' + ig') + i \sin g \times (f' + ig')\]$
+$= e^f \times \varphi' \times (\cos g + i \sin g) = e^f \times \varphi' \times e^{ig}$
+$= \varphi' \times e^{f + ig}$.
