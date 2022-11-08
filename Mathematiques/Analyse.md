@@ -419,6 +419,6 @@ $\Im(e^{\varphi}) = e^f \sin g$.
 
 Alors $\Re(e^{\varphi})' = f' e^{f} \cos g + e^f \times (-g' \sin g) = e^f (f' \cos g - g' \sin g)$,
 et $\Im(e^{\varphi})' = f' e^{f} \sin g + e^f \times (g' \cos g) = e^f (f' \sin g + g' \cos g)$,
-donnant $\Re(e^\varphi)' + i\Im(e^\varphi)' = e^f \times \[\cos g \times (f' + ig') + i \sin g \times (f' + ig')\]$
+donnant $\Re(e^\varphi)' + i\Im(e^\varphi)' = e^f \times [\cos g \times (f' + ig') + i \sin g \times (f' + ig')]$
 $= e^f \times \varphi' \times (\cos g + i \sin g) = e^f \times \varphi' \times e^{ig}$
 $= \varphi' \times e^{f + ig}$.
