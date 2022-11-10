@@ -233,3 +233,34 @@ $\Leftrightarrow \ddot{z} + \omega_0^2 = \omega_0^2 z_\text{éq}$ où
 $\omega_0^2 = \frac{k}{m}$ et $z_\text{éq} = \frac{mg}{k} + \ell_0 > \ell_0$
 
 ## Tension d'un fil
+> La tension $\overrightarrow{\rm T}(M,t)$ d'un fil est la force exercée en $M$ à
+> l'instant $t$ par la partie située à gauche de $M$ sur la partie située à droite
+> de $M$.
+
+On supposera que la norme de $\overrightarrow{\rm T}$ de la tension d'un fil
+inextensible et sans masse est uniforme le long du fil.
+
+### Pendule simple
+> Un pendule simple est constitué d'une masse ponctuelle $m$, fixée à l'extrémité
+> d'un fil sans masse et inextensible.
+
+On distingue sur le pendule l'angle formé entre la normale au sol et le fil $\theta$,
+qui se retrouve aussi dans l'angle formé entre la force du poids et le vecteur
+unitaire au bout du fil $\overrightarrow{\rm u_r}$. Le vecteur unitaire qui y
+est normal dans le sens de l'angle $\theta$ est $\overrightarrow{\rm u_\theta}$.
+
+Le système est un {objet M} assimilé à un point matériel et de masse $m$,
+dans un référentiel terrestre supposé galiléen. Il est soumis à son poids $\overrightarrow{\rm P}$
+et à la tension du fil.
+D'après le principe fondamental de la dynamique,
+$\sum \overrightarrow{\rm F_\text{ext}} = m \overrightarrow{\rm a}$
+$\Leftrightarrow \overrightarrow{\rm P} + \overrightarrow{\rm T} = m \overrightarrow{\rm a}$.
+
+En projetant selon $\overrightarrow{\rm u_r}$ et $\overrightarrow{\rm u_\theta}$,
+$\overrightarrow{\rm a} = (\ddot{r} - r \dot{\theta}^2) \overrightarrow{\rm u_r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) \overrightarrow{\rm u_\theta}$.
+Or, $r = \ell$ est une constante, donc $\overrightarrow{\rm a} = -\ell \dot{\theta}^2 \overrightarrow{\rm u_r} + \ell \ddot{\theta} \overrightarrow{\rm u_\theta}$,
+donnant $\left\{\begin{matrix} -m\ell\dot{\theta}^2 = mg \cos\theta - T \\ m\ell\ddot{\theta} = -mg \sin  \theta \end{matrix}\right.$.\
+On simplifie pour obtenir $\ell\ddot{\theta} + g \sin \theta = 0$
+$\Leftrightarrow \ddot{\theta} + \frac{g}{\ell} \sin \theta = 0 \Leftrightarrow \ddot{\theta} + \omega_0^2 \sin \theta = 0$
+avec $\omega_0^2 = \frac{g}{\ell}$.
+Cette équation est du 2ème ordre, et non linéaire.
