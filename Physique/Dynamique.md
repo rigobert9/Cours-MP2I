@@ -264,3 +264,52 @@ On simplifie pour obtenir $\ell\ddot{\theta} + g \sin \theta = 0$
 $\Leftrightarrow \ddot{\theta} + \frac{g}{\ell} \sin \theta = 0 \Leftrightarrow \ddot{\theta} + \omega_0^2 \sin \theta = 0$
 avec $\omega_0^2 = \frac{g}{\ell}$.
 Cette équation est du 2ème ordre, et non linéaire.
+En y appliquant l'approximation des petits angles tel que $\sin \theta = \theta$,
+on retrouve de même la formule d'un oscillateur harmonique.
+
+> Les petites oscillations d'un pendule simple sont isochroniques (de même durée),
+> c'est-à-dire qu'elles ne dépendent pas de l'amplitude des oscillations.
+
+On a la formule $T = 2\pi \sqrt{\frac{\ell}{g}}$, avec $\ell$ la longueur du fil
+du pendule et $g$ l'accélération gravitationnelle.
+
+## Force de contact
+### Réaction du support et lois de Coulomb
+> La réaction du support $\overrightarrow{\rm R}$ est la force exercée par le
+> support sur la masse. Elle se décompose comme $\overrightarrow{\rm R} = \overrightarrow{\rm T} + \overrightarrow{\rm N}$ :
+> - $\overrightarrow{\rm N}$ est la réaction normale du support
+> - $\overrightarrow{\rm T}$ est la réaction tangentielle du support
+
+Lorsqu'on ignore les frottements contre le support, on prend $\overrightarrow{\rm T}$
+nul.
+
+Lorsque $\overrightarrow{\rm N}$ est nul, le solide quitte le support (condition
+de décollage).
+
+On peut appliquer à ces principes les lois de Coulomb (encore d'autres que
+celles en électrostatique).
+
+#### Première loi de Coulomb
+$\lVert \overrightarrow{\rm T} \rVert < \mu_S \lVert \overrightarrow{\rm N} \rVert$
+avec $\mu_S$ une constante expérimentale de frottement statique.
+
+#### Seconde loi de Coulomb
+$\lVert \overrightarrow{\rm T} \rVert = \mu_D \lVert \overrightarrow{\rm N} \rVert$
+avec $\mu_D$ une constante expérimentale de frottement dynamique
+(la plupart du temps, $\mu_D < \mu_S$)
+
+### Exercice typique : glissement sans frottement
+On prend un système {objet M} assimilé à un point M de masse $m$
+dans un plan $(Oxy)$ orienté d'angle $\alpha$ au sol.
+On se place dans un référentiel terrestre supposé galiléen.
+Le système subit son poids normal au sol, et la réaction du support normal à
+l'axe $x$ du plan.\
+D'après le principe fondamental de la dynamique, $\sum \overrightarrow{\rm F_\text{ext}} = m\overrightarrow{\rm a}$
+$\Leftrightarrow \overrightarrow{\rm P} + \overrightarrow{\rm N} = m \overrightarrow{\rm a}$.
+
+En projetant suivant les axes $(Ox)$ et $(Oy)$, on obtient
+$\left\{\begin{matrix} m \ddot{x} = m g \sin \alpha + 0 \\ \ddot{y} = -mg \cos \alpha + N \end{matrix}\right.$
+Le mouvement ayant lieu selon $(0x)$, on a $\ddot{y} = 0 \Leftrightarrow N = m g \cos \alpha$,
+et on déduit des précédents résultats que $\ddot{x} = g \sin \alpha$.\
+En primitivant deux fois par rapport au temps et avec les conditions initiales à
+$t = 0$, $x(0) = 0$ et $\ddot{x} = 0$, $x(t) = \frac{1}{2} g \sin \alpha t^2$.
