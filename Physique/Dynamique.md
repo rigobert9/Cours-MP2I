@@ -12,6 +12,8 @@
 > Il existe des référentiels, appelés galiléens, dans lesquels un point matériel
 > est soit au repos, soit en mouvement rectiligne uniforme.
 
+On peut reformuler ce principe sous la formule $\sum \overrightarrow{\rm F_\text{ext}} = \overrightarrow{\rm 0}$.
+
 On fera l'hypothèse de l'utilisation d'un référentiel terrestre qui est
 galiléen lorsque les mouvement observés sont courts devant la période de rotation de
 la Terre, de 24 heures.
@@ -91,3 +93,62 @@ On a $\overrightarrow{\rm g}$ la force dirigée vers le centre de la Terre et de
 valeur d'accélération d'environ $g_T = 9,81 m \cdot s^{-2}$.
 
 On a de plus une approximation de $G = 6.67 \times 10^{-11} m^3 kg^{-1} s^{-2}$.
+
+### Mouvement dans un champ de pesanteur uniforme
+> Un point matériel est dit en chute libre si la seule force extérieure qui
+> s'exerce sur lui est le poids.
+
+__Exemple à savoir refaire__ : Soit un système {objet M} assimilé à un point
+matériel et de masse $m$, dans un référentiel terrestre supposé galiléen, en
+mouvement dans le plan $(Oxy)$, avec une vitesse initiale $\overrightarrow{\rm v_0}$
+à un angle $\alpha$ formé par rapport à l'axe $x$.\
+Concrètement, on lance un ballon de rugby en cloche et on observe sa
+trajectoire.\
+Le système est soumis uniquement à son poids, on néglige le frottement de l'air
+et la poussée d'Archimède.\
+D'après le principe fondamental de la dynamique, avec $m$ une constante, on
+obtient $\sum \overrightarrow{\rm F_\text{ext}} = m \overrightarrow{\rm a} = m \overrightarrow{\rm g}$
+$\Leftrightarrow \overrightarrow{\rm a} = \overrightarrow{\rm g}$. (cette
+simplification n'est pas encore prouvé, mais aucune expérience n'a réussi à
+montrer l'inverse, et si les deux masses sont différentes, il faut reconstruire
+la théorie).\
+En projetant sur $(Ox)$ et $(Oy)$, on a $\left\{\begin{matrix} a_x = 0 \\ a_y = -g \end{matrix}\right.$.
+Par définition, $\overrightarrow{\rm a} = \frac{d \overrightarrow{\rm v}}{dt}$.
+En primitivant par rapport au temps, $\overrightarrow{\rm v} \left|\begin{matrix} v_x(t) = C_1 \\ v_y(t) = -gt + C_2 \end{matrix}\right.$
+avec $C_1$ et $C_2$ des constantes. En utilisant les conditions initiales à $t = 0$
+$\overrightarrow{\rm v_0} \left|\begin{matrix} v_{0y}(t) = v_0 \cos \alpha \\ v_{0x}(t) = v_0 \sin \alpha \end{matrix}\right.$,
+on obtient $\overrightarrow{\rm v} \left|\begin{matrix} v_x(t) = v_0 \cos \alpha \\ v_y(t) = -gt + v_0 \sin \alpha \end{matrix}\right.$.\
+Par définition, $\overrightarrow{\rm v} = \frac{d \overrightarrow{\rm OM}}{dt}$.
+En primitivant par rapport au temps, avec les conditions initiales $\overrightarrow{\rm OM_0} \left|\begin{matrix} x_0(t) = 0 \\ y_0(t) = 0 \end{matrix}\right.$,
+on obtient $\overrightarrow{\rm OM} \left|\begin{matrix} x(t) = v_0 \cos \alpha t \\ y(t) = \frac{-1}{2} gt^2 + v_0 \sin \alpha t \end{matrix}\right.$.\
+On en déduit l'équation de la trajectoire, puisque $t = \frac{x}{v_0 \cos \alpha}$, en substituant dans $y(t)$,
+$y(x) = \frac{-1}{2} g \frac{x^2}{v_0^2 \cos^2 \alpha} + v_0 \sin \alpha \frac{x}{v_0 \cos \alpha}$
+$\Leftrightarrow y(x) = \frac{-1}{2} g \frac{x^2}{v_0^2 \cos^2 \alpha} + x \tan \alpha$, qui est l'équation d'une parabole.
+
+On cherche donc la distance maximale (la portée) du système, c'est à dire le
+point $x$ en lequel $y(x_p) = 0$.
+$y(x_p) = 0$\
+$\Leftrightarrow \frac{-1}{2} g \frac{x_p^2}{v_0^2 \cos^2 \alpha} + x_p \tan \alpha = 0$\
+$\Leftrightarrow x_p (\frac{-1}{2} g \frac{x_p}{v_0^2 \cos^2 \alpha} + \tan \alpha) = 0$\
+Or, $x_p \neq 0$, donc
+$\frac{-1}{2} g \frac{x_p}{v_0^2 \cos^2 \alpha} + \tan \alpha = 0$\
+$\Leftrightarrow \frac{2 v_0^2 \cos^2 \alpha \tan \alpha}{g} = x_p$\
+$\Leftrightarrow \frac{2 v_0^2 \cos \alpha \sin \alpha}{g} = x_p$\
+$\Leftrightarrow \frac{2 v_0^2 \sin 2\alpha}{g} = x_p$\
+
+On cherche de même la flèche du système (sa hauteur maximale), et on cherche
+donc la racine de la dérivée de $y(x)$.
+$y(x) = \frac{-1}{2} g \frac{x^2}{v_0^2 \cos^2 \alpha} + x \tan \alpha$\
+$\Leftrightarrow y'(x) = -g \frac{x}{v_0^2 \cos^2 \alpha} + \tan \alpha$\
+Avec lequel on pose :
+$y'(x_F) = 0$
+$\Leftrightarrow y'(x_F) = -g \frac{x_F}{v_0^2 \cos^2 \alpha} + \tan \alpha = 0$\
+$\Leftrightarrow x_F = \frac{v_0^2 \cos^2 \alpha \tan \alpha}{g}$\
+$\Leftrightarrow x_F = \frac{v_0^2 \cos \alpha \sin \alpha}{g}$\
+$\Leftrightarrow x_F = \frac{v_0^2 \sin 2\alpha}{g} = \frac{x_p}{2}$\
+À l'aide de cette valeur, en appliquant la formule de $y(x)$, on obtient
+$y(x_F) = \frac{1}{2} \frac{v_0^2}{g} \sin^2 \alpha$.
+
+## Force électromagnétique
+### Force électrique
+Soient deux charges $q_1$ et $q_2$ ponctuelles et supposées immobiles
