@@ -28,7 +28,7 @@ Par hypothèse, les lois de la physique sont les mêmes dans tous les référent
 galiléens (Einstein, pour poser la relativité universelle).
 
 ### Seconde loi de Newton ou principe fondamental de la dynamique (PFD)
-> Soit un point matériel $N$ de masse $n$ dans un référentiel galiléen, alors la
+> Soit un point matériel $M$ de masse $m$ dans un référentiel galiléen, alors la
 > résultante des forces est telle que $\sum \overrightarrow{\rm F_\text{ext}} = \frac{d \overrightarrow{\rm p}}{dt}$,
 > où $\overrightarrow{\rm p} = m \overrightarrow{\rm v}$ est la quantité de
 > mouvement.
