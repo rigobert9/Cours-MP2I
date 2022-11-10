@@ -175,7 +175,7 @@ tard dans l'année à l'aide de la force de Lorentz $\overrightarrow{\rm F} = q\
 Soit un atome d'hydrogène (un proton et un électron), on obtient
 $\left\{\begin{matrix} F_g = G \frac{m_1 m_2}{r^2} \\ F_e = K \frac{q_e q_p}{r^2} = \frac{K e^2}{r^2} \end{matrix}\right.$.\
 On calcule $\frac{F_e}{F_g} = \frac{K e^2}{G m_e m_p}$, et on peut appliquer
-simplement $\frac{F_e}{F_g} = \frac{9.0 \times 10^9 \times 1.6 \times 10^{-19^2}{6.67 \times 10^{-11} \times 9.1 \times 10^{-31} \times 1.67 \times 10^{-27}} \approx 2.3 \times 10^{39} \gg 1$,
+simplement $\frac{F_e}{F_g} = \frac{9.0 \times 10^9 \times 1.6 \times 10^{(-19)^2}}{6.67 \times 10^{-11} \times 9.1 \times 10^{-31} \times 1.67 \times 10^{-27}} \approx 2.3 \times 10^{39} \gg 1$,
 donc $F_g \ll F_e$.
 
 ## Force de rappel d'un ressort
