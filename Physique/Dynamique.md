@@ -98,7 +98,8 @@ On a de plus une approximation de $G = 6.67 \times 10^{-11} m^3 kg^{-1} s^{-2}$.
 > Un point matériel est dit en chute libre si la seule force extérieure qui
 > s'exerce sur lui est le poids.
 
-__Exemple à savoir refaire__ : Soit un système {objet M} assimilé à un point
+#### Exemple à savoir refaire :
+Soit un système {objet M} assimilé à un point
 matériel et de masse $m$, dans un référentiel terrestre supposé galiléen, en
 mouvement dans le plan $(Oxy)$, avec une vitesse initiale $\overrightarrow{\rm v_0}$
 à un angle $\alpha$ formé par rapport à l'axe $x$.\
@@ -151,4 +152,84 @@ $y(x_F) = \frac{1}{2} \frac{v_0^2}{g} \sin^2 \alpha$.
 
 ## Force électromagnétique
 ### Force électrique
-Soient deux charges $q_1$ et $q_2$ ponctuelles et supposées immobiles
+Soient deux charges $q_1$ et $q_2$ ponctuelles et supposées immobiles, on pose
+$\overrightarrow{\rm F_{1 \to 2}} = K \frac{q_1 q_2}{r^2} \overrightarrow{\rm u}$
+où $r$ est la distance entre la charge $q_1$ et $q_2$ et
+$K = \frac{1}{4 \pi \varepsilon_0} \approx 9.0 \times 10^9$ (la constante
+électromagnétique, en $m \cdot F^{-1}$, et avec $\varepsilon_0$ la permitivité diélectrique).
+
+C'est une force statique : lorsque les charges bougent, il s'agit d'un champ
+magnétique.
+
+### Force magnétique
+Pour une charge $q$ en mouvement de vitesse $\overrightarrow{\rm v}$ plongée
+dans un champ magnétique dans le vide, on pose
+$\overrightarrow{\rm F} = q \overrightarrow{\rm v} \wedge \overrightarrow{\rm B}$.
+
+$\wedge$ dénote un produit vectoriel.
+
+Les forces magnétiques et électriques s'entre-influencent, et se résumeront plus
+tard dans l'année à l'aide de la force de Lorentz $\overrightarrow{\rm F} = q\overrightarrow{\rm E} + q\overrightarrow{\rm v} \wedge \overrightarrow{\rm B}$.
+
+#### Exemple
+Soit un atome d'hydrogène (un proton et un électron), on obtient
+$\left\{\begin{matrix} F_g = G \frac{m_1 m_2}{r^2} \\ F_e = K \frac{q_e q_p}{r^2} = \frac{K e^2}{r^2} \end{matrix}\right.$.\
+On calcule $\frac{F_e}{F_g} = \frac{K e^2}{G m_e m_p}$, et on peut appliquer
+simplement $\frac{F_e}{F_g} = \frac{9.0 \times 10^9 \times 1.6 \times 10^{-19^2}{6.67 \times 10^{-11} \times 9.1 \times 10^{-31} \times 1.67 \times 10^{-27}} \approx 2.3 \times 10^{39} \gg 1$,
+donc $F_g \ll F_e$.
+
+## Force de rappel d'un ressort
+On attache une masse assimilée à un point {M} à un ressort, et il est soumis à
+une force de rappel du ressort de forme $\overrightarrow{\rm F} = -k (\ell - \ell_0) \overrightarrow{\rm u}$,
+avec $\ell$ la longueur maximale du ressort en $m$ et $\ell_0$ la longueur à
+vide en $m$ du ressort. $k$ est une constante expérimentale, la raideur du
+ressort, en $N \cdot m^{-1}$. $\overrightarrow{\rm u}$ est le vecteur unitaire
+orienté du bout du ressort vers la masse.
+
+On note souvent $\Delta\ell = \ell - \ell_0$ l'élongation du ressort.
+
+### Ressort horizontal
+On a la masse posée, attachée à un ressort horizontal, qui est soumise au rappel
+du ressort, à son poids vers le bas appliquée à son centre de gravitation et à la réaction du sol
+appliquée au point de contact au sol.
+
+Le système est un {objet M} assimilé à un point matériel de masse $m$, dans un
+référentiel terrestre supposé galiléen. Le système est soumis aux poids
+$\overrightarrow{\rm P} = m\overrightarrow{\rm g}$, à la réaction du support
+$\overrightarrow{\rm N}$, et à la force élastique $\overrightarrow{\rm F} = -k\Delta\ell$.\
+D'après le principe fondamental de la dynamique,
+$\sum \overrightarrow{\rm F_\text{ext}} = m \overrightarrow{\rm a}$
+$\Leftrightarrow \overrightarrow{\rm P} + \overrightarrow{\rm N} + \overrightarrow{\rm F} = m \overrightarrow{\rm a}$.\
+En projetant suivant les axes $(Ox)$ et $(Oy)$, on obtient
+$\left\{\begin{matrix} m \ddot{x} = -k(x - \ell_0) \\ m \ddot{g} = N - mg \end{matrix}\right.$.
+
+Le mouvement a lieu suivant $(Ox)$ donc $\ddot{y} = 0$, et on déduit des
+équivalences posées précédemment que $N = mg$ et $m \ddot{x} = -k(x - \ell_0)$
+$\Leftrightarrow \ddot{x} + \frac{k}{m} x = \frac{k}{m} \ell_0$
+$\Leftrightarrow \ddot{x} + \omega_0^2 x = \omega_0^2 x_\text{éq}$
+où $\omega_0^2 = \frac{k}{m}$ et $x_\text{éq} = \ell_0$.
+
+### Oscillateur harmonique
+Soit une forme $\ddot{x} + \omega_0^2 x = 0$, on a la solution
+$x(t) = x_m \cos(\omega_0 t + \varphi)$ (avec $x_m$ l'amplitude, $\omega$ la pulsation, $\varphi$ le déphasage)
+ou encore $x(t) = A \cos(\omega_0 t) + B \sin(\omega_0 t)$ (avec $A$ et $B$ des
+constantes).
+
+### Resort vertical
+C'est le cas qu'on retrouve par exemple lors de l'utilisation du dynamomètre.
+La masse est accrochée à plafond par le ressort, subissant son poids par son
+centre de gravitation et le rappel par un point de contact (on confond ces deux
+points puisqu'on assimile la masse à un point).
+
+Le système est un {objet M} assimilé à un point matériel de masse $m$, dans un
+référentiel terrestre supposé galiléen. Il est soumis au poids $\overrightarrow{\rm P}$
+et à la force élastique $\overrightarrow{\rm F}$. D'après le principe
+fondamental de la dynamique,
+$\sum \overrightarrow{\rm F_\text{ext}} = m \overrightarrow{\rm a}$
+$\Leftrightarrow \overrightarrow{\rm P} + \overrightarrow{\rm F} = m \overrightarrow{\rm a}$.
+
+En projetant selon $(Oz)$, $mg - k(z - \ell_0) = m \ddot{z}$
+$\Leftrightarrow \ddot{z} + \omega_0^2 = \omega_0^2 z_\text{éq}$ où
+$\omega_0^2 = \frac{k}{m}$ et $z_\text{éq} = \frac{mg}{k} + \ell_0 > \ell_0$
+
+## Tension d'un fil
