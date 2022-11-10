@@ -66,7 +66,7 @@ Ainsi, $\forall x \neq a,b, \frac{1}{(x-a)(x-b)} = \frac{1}{a-b} [\frac{1}{x-a} 
 Une autre stratégie est de poser $A(x) = \frac{1}{(x-a)(x-b)} = \frac{\alpha}{x-a} + \frac{\beta}{x-b}$.
 On a donc $(x-a)A(x) = \frac{1}{x-b} = \alpha + (x-a) \frac{\beta}{x-b}$.
 On évalue en $a$ ($x \to a$), $\frac{1}{a-b} = \alpha$, et on obtient $\beta$ de
-et cette fonction se primitive donc en $x \mapsto \frac{1}{a-b}(\ln(|x-a|) - \ln(|x-b|))$.
+et cette fonction se primitive donc en $x \mapsto \frac{1}{a-b} (\ln(|x-a|) - \ln(|x-b|))$.
 
 ##### Méthode : détecter les composées
 Puisque $(f \circ u)' = u' \times f' \circ u$, on a la primitive de
@@ -75,7 +75,7 @@ toute fonction $u' \times (f \circ u)$ qui est $F \circ u$.
 ##### Méthode : Primitive de $x \mapsto \frac{1}{x^2 + px + q}$
 Avec $(p,q) \in \mathbb{R}^2$, on pose $\Delta = p^2 - 4q$.
 - Si $\Delta > 0$, on a deux racines réelles distinctes $a < b$, et on décompose en éléments simples :
-  $\frac{1}{x^2 + px + q = \frac{1}{(x-a)(x-b)} = \frac{1}{a-b} (\frac{1}{x-a} - \frac{1}{x-b})$.
+  $\frac{1}{x^2 + px + q} = \frac{1}{(x-a)(x-b)} = \frac{1}{a-b} (\frac{1}{x-a} - \frac{1}{x-b})$.
   Alors, sur les intervalles $]-\infty,a[$ ou $]a,b[$ ou $]b,+\infty[$, une
   primitive sera $x \mapsto \frac{1}{a-b} (\ln(|x-a|) - \ln(|x-b|)) = \frac{1}{a-b} \ln(\frac{|x-a|}{|x-b|})$
 - Si $\Delta = 0$, on note $r$ l'unique racine double, $r = \frac{-p}{2}$. On a
@@ -158,7 +158,7 @@ d'intégrales, ou pour trouver des primitives à certaines fonctions
 (la primitive qui s'annule en 0 de $\arctan$ est $\int\limits_{0}^{x} 1 \times \arctan$).
 
 ### Changement de variable
-> Soit $f \in \mathcal{C}(I,\mathbb{K})$ et $\varphi \in \mathcal^1(J,I)$,
+> Soit $f \in \mathcal{C}(I,\mathbb{K})$ et $\varphi \in \mathcal{C}^1(J,I)$,
 > soient $a,b \in J$, on a $\int\limits_{a}^{b} f(\varphi(t)) \varphi'(t) dt = \int\limits_{\varphi(a)}^{\varphi(b)} f(u) du$.
 
 ##### Preuve
@@ -173,3 +173,11 @@ enfin on calcule.
 __En pratique__, pour calculer $\int\limits_{a}^{b} f(t) dt$, on
 posera le changement $u = \varphi(t)$. Pour cela, il faut que $\varphi$ soit
 bijective, et de classe $\mathcal{C}^1$.
+
+#### Changements de variable courants
+Si la fonction $f$ est paire et continue sur $[-a,a]$,
+$\int\limits_{-a}^{a} f(t)dt = 2 \int\limits_{0}^{a} f(t) dt$.
+En effet, $\int\limits_{-a}^{0} f(t) dt$, en posant $u = -t$
+et donc $du = -dt$, nous donne $- \int\limits_{a}^{0} f(-u) du = \int\limits_{0}^{a} f(-u) du$.
+Puisque $f$ est paire, $\int\limits_{-a}^{0} f = \int\limits_{0}^{a} f(-u) du =
+\int\limits_{0}^{a} f$. Par Chasles, on retrouve le résultat attendu.
