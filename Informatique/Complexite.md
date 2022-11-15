@@ -170,7 +170,7 @@ $K(n_0 + i)$ dans le premier cas et $K$ sinon.
 On obtient ainsi $\frac{C_k(n)}{k} \leq \frac{1}{k} (\sum\limits_{i = 1}^{k} K + \sum\limits_{j = 0}^{r} K 2^j c_0)$
 $\leq K + \frac{1}{k} K c_0 2^{r + 1}$.
 Or, la taille finale de T est $n_0 + k$, donc $r$ est le plus petit entier tel
-que $2^r c_0 \geq n_0 + k$, soit $r = \left\lceil \log_2 \frac{(n_0 + k)}{c_0} \right\rceil $.
+que $2^r c_0 \geq n_0 + k$, soit $r = \left\lceil \log_2 \frac{(n_0 + k)}{c_0} \right\rceil$.
 
 $\frac{C_k(n)}{k} \leq K + \frac{K_{c_0}}{k} 2^{\log_2 \frac{n_0 + k}{c_0} + 2}$\
 $\leq K + \frac{4K_{c_0} (n_0 + k)}{k c_0}$\
