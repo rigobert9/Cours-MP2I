@@ -135,7 +135,7 @@ Or, $x_p \neq 0$, donc
 $\frac{-1}{2} g \frac{x_p}{v_0^2 \cos^2 \alpha} + \tan \alpha = 0$\
 $\Leftrightarrow \frac{2 v_0^2 \cos^2 \alpha \tan \alpha}{g} = x_p$\
 $\Leftrightarrow \frac{2 v_0^2 \cos \alpha \sin \alpha}{g} = x_p$\
-$\Leftrightarrow \frac{2 v_0^2 \sin 2\alpha}{g} = x_p$\
+$\Leftrightarrow \frac{2 v_0^2 \sin 2\alpha}{g} = x_p$
 
 On cherche de même la flèche du système (sa hauteur maximale), et on cherche
 donc la racine de la dérivée de $y(x)$.
