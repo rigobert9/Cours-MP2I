@@ -170,3 +170,79 @@ additive près).
 #### Cas général
 $(E) y' + ay = b$ avec $a,b \in \mathcal{I,\mathbb{K}}$,
 $S_E = \{x \mapsto (\lambda + \int\limits_{?}^{x} \frac{b(t)}{h(t)}) \times \exp(- \int\limits_{?}^{x} a(t) dt), \lambda \in \mathbb{R}\}$.
+
+#### Méthode 3 : Principe de superposition
+> Si $f_1$ est solution de $(E_1) : y' + a(x) y = b_1(x)$ et $f_2$ est solution
+> de $(E_2) : y' + a(x) y = b_2(x)$, alors pour tout $(\lambda,\mu) \in \mathbb{K}^2$,
+> la fonction $\lambda f_1 + \mu f_2$ est solution de
+> $y' + a(x)y = \lambda b_1(x) + \mu b_2(x)$.
+
+##### Preuve
+$(\lambda f_1 + \mu f_2)' + a(x)(\lambda f_1 + \mu f_2)$\
+$= \lambda f_1' + \mu f_2' + a(x)(\lambda f_1 + \mu f_2)$\
+$= \lambda (f_1' + a(x)f_1) + \mu (f_2' + a(x) f_2)$
+
+##### Exemple
+On cherche à résoudre $(E) : y' + y = e^{t} + 3t^2 + t^3 + 4$. On obtient les
+solutions homogènes de $(H) : y' + y = 0$ telles que $S_H = \{t \mapsto \lambda e^{-t}, \lambda \in \mathbb{R}\}$.
+
+On cherche maintenant une solution particulière, avec $(E_1) y'+y = e^{t}$ qui a
+pour solution évidente $f_1 : t \mapsto \frac{1}{2} e^{t}$, $(E_2) : y' + y = t^2$ qui
+a pour solution $f_2 : t \mapsto t^2 - 2t + 2$, $(E_3) : y' + y = 4$ avec pour
+solution $f_3 : t \mapsto 4$, et enfin $(E_4) : y' + y = t^3$ avec pour solution
+$f_4 : t \mapsto t^3 - 3t^2 + 6t - 6$; on obtient donc la solution particulière
+$f_1 + 3f_2 + f_3 + f_4$.
+
+#### Méthode 4 : Cas où $a$ est une fonction constante
+Soit $(E) : y' + ay = b(t)$ où $a \in \mathbb{R}^{\ast}$, on obtient les
+solutions homogènes de $(H) : y' + ay = 0$, $S_H = \{t \mapsto \lambda e^{-t}, \lambda \in \mathbb{R}\}$.
+
+La solution particulière dépend de la forme du second membre $b$ :
+- si $b$ est polynomial, on cherchera $f_p$ sous forme polynomiale
+- si $b$ est de la forme "polynôme $\times$ exponentielle" : $b : t \mapsto P(t) e^{\alpha t}$,
+  on cherche $f_p$ sous la forme $f_p(t) = Q(t) e^{\alpha t}$ où P et Q sont
+  polynomiaux
+- si b est périodique, tel que $b(t) = A \cos(\omega t + \varphi) = \Re(Ae^{i\varphi} e^{i \omega t})$,
+  on cherche $f_p$ sous la forme $B e^{i \omega t}$ (dans $\mathbb{C}$) ou encore
+  $\alpha \cos(\omega t) + \beta \sin(\omega t)$ (dans $\mathbb{R}$).
+
+On a d'ailleurs, si $f$ est solution de $y' + ay = e^{i\omega t}$ avec $a \in \mathbb{R}$,
+$\Re(f)$ une solution de $y' + ay = \cos(\omega t)$ et
+$\Im(f)$ une solution de $y' + ay = \sin(\omega t)$.
+
+### Problème de Cauchy
+> Soit $(x_0, y_0) \in I \times \mathbb{K}$, et $a,b \in \mathcal{C}(I,\mathbb{K})$,
+> le problème de Cauchy
+> $(C) \left\{\begin{matrix} y' + a(x) y = b(x) \\ y(x_0) = y_0 \end{matrix}\right.$
+> possède une unique solution.
+
+##### Preuve
+$S_E = \{f_p + h, h \in S_H\}$ et $S_H = \{\lambda \exp(-A), \lambda \in \mathbb{K}\}$.
+On pose $h_0 = \exp(-A)$ ne s'annulant pas sur $I$.
+Ainsi, $S_E = \{f_p + \lambda h_0, \lambda \in \mathbb{K}\}$.
+
+L'ajout de la condition $f(x_0) = y_0$ donne $f_p(x_0) + \lambda h_0(x_0) = y_0$,
+donc $\lambda = \frac{1}{h_0(x_0)} (y_0 - f_p(x_0))$ ($h_0$ ne s'annulant pas),
+nous donnant l'existence te l'unicité de la solution au problème de Cauchy
+$(C)$.
+
+### Équation non normalisée
+On revient au cas général d'une équation différentielle d'ordre 1, de la forme
+$\alpha(x) y'(x) + \beta(x) y(x) = \gamma(x)$.
+
+Si la fonction $\alpha$ s'annule en un point $a$, on prendra $\alpha$, $\beta$
+et $\gamma$ continues sur un intervalle $I$, et on résoudra l'équation
+normalisée sur $I \cap ]a,+\infty[$ et sur $I \cap ]-\infty,a[$.
+Pour pouvoir reconstruire des solutions sur $I$ tout entier, il faut que $f$
+soit dérivable (et donc continue) sur $I$ tout entier (donc en $a$) et soit
+solution sur les deux intersections.
+
+Cette propriété pose la question du recollement en $a$, qui est une question
+ouverte dans la généralité.
+
+##### Exemple
+Trouver (si elles existent) les solutions sur $\mathbb{R}$ de
+$(E) : (1 - x)y' - y = x$. On pose $(E') : y' - \frac{1}{1 - x}y = \frac{x}{1 -x}$,
+et on la résout sur $I = ]-\infty,a[$ ou sur $]a,+\infty[$.
+On a $S_H = \{x \mapsto \lambda \exp(- \ln(|x - 1|)), \lambda \in \mathbb{R}\}$
+$= \{x \mapsto \frac{\lambda}{x - 1}, \lambda \in \mathbb{R}\}$
