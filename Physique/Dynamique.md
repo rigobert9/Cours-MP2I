@@ -298,7 +298,7 @@ $\lVert \overrightarrow{\rm T} \rVert = \mu_D \lVert \overrightarrow{\rm N} \rVe
 avec $\mu_D$ une constante expérimentale de frottement dynamique
 (la plupart du temps, $\mu_D < \mu_S$)
 
-### Exercice typique : glissement sans frottement
+#### Exercice typique : glissement sans frottement
 On prend un système {objet M} assimilé à un point M de masse $m$
 dans un plan $(Oxy)$ orienté d'angle $\alpha$ au sol.
 On se place dans un référentiel terrestre supposé galiléen.
@@ -313,3 +313,91 @@ Le mouvement ayant lieu selon $(0x)$, on a $\ddot{y} = 0 \Leftrightarrow N = m g
 et on déduit des précédents résultats que $\ddot{x} = g \sin \alpha$.\
 En primitivant deux fois par rapport au temps et avec les conditions initiales à
 $t = 0$, $x(0) = 0$ et $\ddot{x} = 0$, $x(t) = \frac{1}{2} g \sin \alpha t^2$.
+
+#### Exercice typique : détermination expérimentale du coefficient de frottement statique
+On considère la même situation que l'exercice précédent, mais avec des
+frottements. On cherche une condition pour que la masse reste immobile.
+L'accélération est donc nulle.
+
+Dans le cas d'équilibre, la somme des forces est nulle : l'objet est soumis à
+son poids (orthogonal au sol), à la réaction du support (orthogonale au
+support), et au frottement $\overrightarrow{\rm T}$ (dans l'axe $x$, vers le
+haut de la pente). Ces trois forces se compensent lorsqu'on est dans le cas
+d'équilibre.
+
+On projette selon les axes $(Ox)$ et $(Oty)$, et on obtient donc :
+$\left\{\begin{matrix} ng \sin \alpha - T = 0 \\ -ng \cos \alpha + N = 0 \end{matrix}\right.$.
+D'après la première loi de Coulomb, $T < \mu_S N$, donc
+$mg \sin \alpha < \mu_S m g \cos \alpha \Leftrightarrow \sin \alpha < \mu_S \cos \alpha$
+$\Leftrightarrow \tan \alpha < \mu_S$.
+On pose alors $\alpha_\text{lim} = \arctan(\mu_S)$. Le système ne glisse pas
+tant que $\alpha$ set plus petit que $\alpha_\text{lim}$. La mesure de $\alpha_\text{lim}$
+permet ensuite de remonter à la valeur de $\mu_S$.
+
+À partir du moment ou l'objet bouge, le frottement est discontinué et passe au
+frottement dynamique (comme un doigt qui glisse en accrochant plusieurs fois,
+faisant une alternance).
+
+### Poussée d'Archimède
+On considère un objet homogène (qui a les même propriétés en tout point), de
+masse volumique $\rho$. On étudie d'abord le cas où l'objet est totalement
+immergé dans un fluide de masse volumique $\rho_f$. La poussée d'Archimède est
+une poussée vers le haut à la verticale sur le centre de poussée de l'objet (sur le centre de gravité de
+la partie immergée de l'objet) (on peut ainsi se retrouver avec des modèles
+d'oscillation, comme un glaçon qui remonte et redescend). Sa norme est
+alors de $\Pi = \rho_\text{fluide déplacé} V_\text{fluide déplacé}$.
+
+On pose le poids de l'objet $\overrightarrow{\rm P}$ une force exercée sur le
+centre de gravité de l'objet à la verticale vers le bas, de valeur
+$P = mg = \rho V_g$.
+
+Traditionnellement, on a alors $\overrightarrow{\rm \Pi} = -\rho_\text{fluide déplacé} V_\text{fluide déplacé} \overrightarrow{\rm g}$.
+Le fluide exerce une force $\overrightarrow{\rm \Pi}$ appelée poussée
+d'Archimède, opposée au poids, et égale en norme au poids du fluide déplacé.
+On a enfin $\frac{\lVert \overrightarrow{\rm \Pi} \rVert}{\lVert \overrightarrow{\rm P} \rVert}$
+$= \frac{\rho_f V_g}{\rho V_g} = \frac{\rho_f}{\rho}$.
+Si $\rho > \rho_f$, le poids l'emporte et l'objet coule, et si $\rho < \rho_f$,
+la poussée d'Archimède l'emporte et l'objet remonte.
+
+### Force de frottement fluide
+Lorsque le système est en mouvement, une force opposée à la vitesse apparaît
+(totalement expérimentale, le seul cas particulièrement connu est celui de la
+sphère). On pose $\overrightarrow{\rm v}$ le vecteur vitesse.
+
+Pour des faibles vitesses (dépend de paramètres compliqués et très
+expérimentaux), on a $\overrightarrow{\rm f} = - \alpha \overrightarrow{\rm v}$
+où $\alpha$ est une constante expérimentale positive.
+
+Pour des grandes vitesses, $\overrightarrow{\rm f} = - \beta v \overrightarrow{\rm v}$
+avec $\beta$ une constante expérimentale positive.
+
+#### Exercice typique : chute d'une bille d'acier dans l'huile de tournesol
+Sur une bille en mouvement, le système {bille} assimilé à un point
+et de masse $m = \rho v$, s'exercent son poids (vers le bas), la poussée
+d'Archimède, et la force de frottement fluide $\overrightarrow{\rm \Pi}$ dans le
+sens inverse de la vitesse.
+
+Dans le référentiel terrestre supposé Galiléen, on fait le bilan des forces :
+le système est soumis aux forces $\overrightarrow{\rm P} = m \overrightarrow{\rm g} = \rho V \overrightarrow{\rm g}$,
+$\overrightarrow{\rm \Pi} = -\rho_f V \overrightarrow{\rm g}$,
+$\overrightarrow{\rm f} = -\alpha \overrightarrow{\rm v}$.
+
+> Formule de Stokes : $\overrightarrow{\rm f} = -6 \pi \mu R \overrightarrow{\rm v}$, avec
+> $\mu$ la viscosité et $R$ le rayon de la sphère : on applique ainsi la formule
+> de la force de frottement fluide avec $\alpha = 6 \pi \mu R$.
+
+D'après la relation fondamentale de la dynamique, on a
+$\overrightarrow{\rm P} + \overrightarrow{\rm \Pi} + \overrightarrow{\rm f} = m \overrightarrow{\rm a}$.
+En projetant selon l'axe $(Oz)$, on obtient (en restant en vitesse pour se
+simplifier le calcul, sans quoi on aurait une équadiff du second ordre)
+$\rho V g - \rho_f V g - 6 \pi \mu R v = \rho V \frac{d v}{dt}$.
+Puisqu'on a le volume de la bille $V = \frac{4}{3} \pi R^3$,
+on a :\
+$\frac{d v}{dt} + \frac{6 \pi \mu R}{\frac{4}{3} \pi R^3 \rho} v$\
+$= \frac{\frac{4}{3} \pi R^3 (\rho - \rho_f) g}{\frac{4}{3} \pi R^3 \rho} v$ (une constante)\
+$\Leftrightarrow \frac{d v}{dt} + \frac{9}{2} \frac{\mu}{\rho R^2} v = \frac{\rho - \rho_f}{\rho} g$.
+On pose $\tau = \frac{2}{g} \frac{\rho R^2}{\mu}$ et
+$v_\text{lim} = \frac{2}{g} \frac{\rho - \rho_f}{\mu} g R^2$.
+
+On a donc l'équation différentielle $\frac{d v}{dt} + \frac{1}{\tau} v = \frac{v_\text{lim}}{\tau}$,
+qu'on résout en $v(t) = v_\text{lim} (1 - e^{\frac{-t}{\tau}})$.
