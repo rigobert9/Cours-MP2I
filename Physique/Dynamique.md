@@ -383,7 +383,7 @@ $\overrightarrow{\rm \Pi} = -\rho_f V \overrightarrow{\rm g}$,
 $\overrightarrow{\rm f} = -\alpha \overrightarrow{\rm v}$.
 
 > Formule de Stokes : $\overrightarrow{\rm f} = -6 \pi \mu R \overrightarrow{\rm v}$, avec
-> $\mu$ la viscosité et $R$ le rayon de la sphère : on applique ainsi la formule
+> $\mu$ la viscosité et $R$ le rayon de la boule : on applique ainsi la formule
 > de la force de frottement fluide avec $\alpha = 6 \pi \mu R$.
 
 D'après la relation fondamentale de la dynamique, on a
