@@ -245,4 +245,256 @@ Trouver (si elles existent) les solutions sur $\mathbb{R}$ de
 $(E) : (1 - x)y' - y = x$. On pose $(E') : y' - \frac{1}{1 - x}y = \frac{x}{1 -x}$,
 et on la résout sur $I = ]-\infty,a[$ ou sur $]a,+\infty[$.
 On a $S_H = \{x \mapsto \lambda \exp(- \ln(|x - 1|)), \lambda \in \mathbb{R}\}$
-$= \{x \mapsto \frac{\lambda}{x - 1}, \lambda \in \mathbb{R}\}$
+$= \{x \mapsto \frac{\lambda}{x - 1}, \lambda \in \mathbb{R}\}$.
+
+On trouve une solution particulière, qui sera nécessairement telle que
+$(1 - x)(\frac{\lambda(x)'}{x - 1} - \frac{\lambda(x)}{(x - 1)^2}) - \frac{\lambda(x)}{x - 1} = x$,
+et donc telle que $-\lambda(x)' = x$ pour tout $x \in I$. On choisit
+$\lambda : x \mapsto \frac{-x^2}{2}$ et on obtient donc $f_p : x \mapsto \frac{-x^2}{2(x - 1)}$.
+Ainsi, sur chaque intervalle $]-\infty,1[$ et $]1,+\infty[$, les solutions sur
+$I$ sont $\{x \mapsto \frac{\lambda - \frac{x^2}{2}}{x - 1}, \lambda \in \mathbb{R}\}$.
+
+Pour une solution $f$ de $(E)$ sur $\mathbb{R}$, alors
+$\forall x \in \mathbb{R}, (1 - x)f'(x) - f(x) = x$ et
+$f$ est dérivable sur $\mathbb{R}$. En particulier,
+$f$ est solution sur $]-\infty,1[$ et $]1,+\infty[$. Il existe donc
+$\lambda_1, \lambda_2 \in \mathbb{R}$ tels que
+$\left\{\begin{matrix} \frac{\lambda_1 - \frac{x^2}{2}}{x - 1} \,\text{si x < 1} \\ \frac{\lambda_2 - \frac{x^2}{2}}{x - 1} \,\text{si x > 1} \end{matrix}\right.$.
+
+On doit avoir $f$ continue et dérivable en 1. Or, si $\lambda_1 \neq \frac{1}{2}$, alors $\lim\limits_{x \to 1^{-}} \frac{\lambda_1 - \frac{x^2}{2}}{x - 1} = +\infty$.
+Pour avoir la continuité en 1, on a donc nécessairement $\lambda_1 = \frac{1}{2}$.
+De même à droite de 1, on a nécessairement $\lambda_2 = \frac{1}{2}$, nous
+donnant finalement $\forall x \neq 1, f(x) = \frac{\frac{1}{2}(1 - x^2)}{x - 1} = \frac{-1}{2} (1 + x)$.
+
+Par synthèse, on prend un $f: x \mapsto \frac{-1}{2} (x + 1)$. $f$ est dérivable
+sur $\mathbb{R}$, et vérifie $(E)$ sur $]-\infty,1[$ et
+$]1,+\infty[$, et aussi en 1 puisque
+$(1-1)f'(1) - f(1) = 0$.
+
+Ainsi, $(E)$ possède une unique solution sur $\mathbb{R}$
+$x \mapsto \frac{-1}{2} (x + 1)$.
+
+##### Exemple
+On cherche les solutions sur $\mathbb{R}$ de $(E): x y' - 2 y = 0$.
+On a déjà l'équation homogène, et on la réécrit sous la forme
+$(E'): y' - \frac{2}{x}y = 0$, sur les intervalles
+$\mathbb{R}^{\ast}_{+}$ et $\mathbb{R}^{\ast}_{-}$.
+Or, $\int \frac{-2}{x} dx = -2 \ln(|x|)$, soit
+$S_E = \{x \mapsto \lambda \exp(2 \ln |x|), \lambda \in \mathbb{R}\}$
+$= \{x \mapsto \lambda x^2, \lambda \in \mathbb{R}\}$.
+
+Pour trouver un recollement en 0, on cherche $f$ solution de (E) sur
+$\mathbb{R}$ (donc solution sur $\mathbb{R}^{\ast}_{+}$ et $\mathbb{R}^{\ast}_{-}$),
+soit une solution telle que
+$\exists \lambda,\mu \in \mathbb{R}, \forall x \in \mathbb{R}^{\ast}, f(x) = \left\{\begin{matrix} \lambda x^2 \,\text{si x > 0} \\ \mu x^2 \,\text{si x < 0} \end{matrix}\right.$.
+
+Par synthèse, pour chaque $(\lambda,\mu) \in \mathbb{R}^2$, en posant un
+$f$ tel que précédemment décrit, on a bien
+$\lim\limits_{x \to 0^{+}} f = \lim\limits_{x \to 0^{-}} f = 0 = f(x)$
+(continuité de $f$ en 0), et
+$\lim\limits_{x \to 0^{+}} \frac{f(x)}{x} = 0 = \lim\limits_{x \to 0^{-}} \frac{f(x)}{x}$,
+soit $f$ dérivable en $0$.
+
+Il existe donc une infinité de solutions de $(E)$ sur $\mathbb{R}$,
+avec deux paramètres.
+
+## Équations différentielles à coefficients constants
+### Définition
+> Une équation différentielle linéaire d'ordre 2 à coefficients constants est de
+> la forme $(E): y'' + ay' + by = c(x)$, avec $a, b \in \mathbb{K}$ et
+> $c \in \mathcal{C}(I,\mathbb{K})$ où $I$ est un intervalle de $\mathbb{R}$.
+
+Une solution de $(E)$ est alors une fonction $f: I \to \mathbb{K}$ telle que
+$f$ est deux fois dérivable sur $I$ et
+$\forall x \in I, f''(x) + a f'(x) + b f(x) = c(x)$.
+
+Pour trouver des solutions, on utilise l'équation homogène associée
+$(H): y'' + ay' + by = 0$ et l'équation caractéristique
+$(EC) : r^2 + ar + b = 0$.
+
+### Structure des solutions
+> En notant $S_H$ l'ensemble des solutions de l'équation homogène, qui contient
+> $\tilde{0}$ et est stable par combinaison linéaire (un espace vectoriel).
+
+On prouve ces propriétés de la même façon que pour l'ordre 1.
+
+> Soit $f_p$ une solution de $(E)$, alors l'ensemble des solutions de $(E)$ noté
+> $S_E = f_p + S_H = \{f_p + h, h \in H\}$ ($S_E$ est un espace affine).
+
+La preuve est la même que pour l'ordre 1.
+
+### Équation homogène
+Une idée est de chercher toutes les solutions exponentielles, en utilisant en
+fonction $\begin{aligned} \varphi: \mathbb{R} &\to \mathbb{C} \\ x &\mapsto \varphi(x) = e^{rx} .\end{aligned}$
+avec $r \in \mathbb{C}$. On cherche une condition nécessaire et suffisante pour
+$\varphi \in S_H$. Or, $\varphi'(x) = re^{rx}$ et $\varphi''(x) = r^2 e^{rx}$.
+
+On a alors $\varphi \in S_H$\
+$\Leftrightarrow \varphi'' + a \varphi' + b\varphi = 0$\
+$\Leftrightarrow \forall x \in \mathbb{R}, r^2 e^{rx} + ar e^{rx} + b e^{rx} = 0$\
+$\Leftrightarrow \forall x \in \mathbb{R}, [r^2 + ar + b] e^{rx} = 0$\
+$\Leftrightarrow r^2 + ar + b = 0 : (EC)$\
+À l'aide de cette équation caractéristique, on la résout à valeurs dans
+$\mathbb{C}$. On pose $\Delta = a^2 - 4b$, et on distingue deux cas :
+- Si $\Delta \neq 0$, on note $r_1,r_2 \in \mathbb{C}$, $r_1 \neq r_2$ les deux
+  racines distinctes de $(EC)$, et on obtient
+  $S_H = \{x \mapsto \lambda e^{r_1 x} + \mu e^{r_2 x}, (\lambda,\mu) \in \mathbb{C}^2\}$.
+- Si $\Delta = 0$, $(EC)$ a une unique racine double $r_0 = \frac{-a}{2}$
+  nous donnant
+  $S_H = \{x \mapsto (\lambda x + \mu) e^{r_0 x}, (\lambda,\mu) \in \mathbb{C}^2\}$.
+
+On a toujours $S_H = \{\lambda f_1 + \mu f_2, (\lambda,\mu) \in \mathbb{C}^2\}$
+$= \mathbb{C} f_1 + \mathbb{C} f_2$ (un plan vectoriel).
+
+##### Preuve
+Soit $r$ une racine de $(EC)$, $f \in S_H$ et $g: x \mapsto e^{-rx} f(x)$.
+Ainsi $\forall x \in \mathbb{R}, f(x) = e^{rx} g(x)$,
+$f'(x) = r e^{rx} g(x) + e^{rx} g'(x)$, et
+$f''(x) = r^2 e^{rx} g(x) + 2r e^{rx} g'(x) + e^{rx} g''(x)$.
+
+On a donc $f \in S_H$ si et seulement si $f'' + af' + bf = 0$,
+soit $\forall x \in \mathbb{R}$,
+$e^{rx} \times [g''(x) + (2r + a)g'(x) + (r^2 + ar + b)g(x)] = 0$,
+soit puisque $r$ est une racine de $(EC)$
+$\forall x \in \mathbb{R}, g''(x) + (2r + a)g'(x) = 0$.
+
+On distingue deux cas :
+- si $\Delta = 0$, $r = r_0 = \frac{-a}{2} \Leftrightarrow 2r + a = 0$,
+  donc $f \in S_H$ si et seulement si $g'' = 0$ ($g$ est affine).
+  Ainsi, $\exists (\lambda,\mu) \in \mathbb{K}^2, \forall x \in \mathbb{R}, g(x) = \lambda x + \mu$,
+  et donc $f(x) = e^{r_0 x}g(x) = e^{r_0}(\lambda x + \mu)$
+- si $\Delta \neq 0$, $f \in S_H \Leftrightarrow g'' + (2r + a) g' = 0$,
+  donc $g'$ est solution de l'équation $y' + (2r + a)y = 0$
+  (une équation différentielle du premier degré homogène à coefficients
+  constants). Ainsi, $\exists \lambda \in \mathbb{K}, \forall x \in \mathbb{R},$
+  $g'(x) = \lambda e^{-(2r + a)x}$, donc
+  $g(x) = \frac{\lambda}{-(2r + a)} e^{-(2r + a)x}$,
+  donnant finalement $f(x) = e^{rx} g(x) = C e^{-(r+a)x} + \mu e^{rx}$.
+  Puisque $r^2 + ar + b = 0$ ( $(EC)$ ), on note $r_1,r_2$ les racines de
+  $(EC)$, qui sont telles que $r_1 + r_2 = -a \Leftrightarrow r_2 = -a -r_1$
+  nous donnant $f: x \mapsto C_1 e^{r_1 x} + C_2 e^{r_2 x}$.
+
+#### Cas particuliers de l'équation homogène
+On revient au cas réel ($\mathbb{K} = \mathbb{R}$), et on cherche les solutions
+réelles de $(H)$ avec $(a,b) \in \mathbb{R}^2$.
+
+On pose $\Delta = a^2 - 4b$ :
+- Si $\Delta > 0$, on note $r_1,r_2$ les racines réelles distinctes, et on a
+  $S_H = \{x \mapsto x gl e^{r_1 x} + \mu e^{r_2 x}, (\lambda,\mu) \in \mathbb{R}^2\}$
+- Si $\Delta = 0$, on note $r_0 = \frac{-a}{2}$ l'unique racine double de
+  $(EC)$, et on a
+  $S_H = \{x \mapsto (\lambda x + \mu) e^{r_0 x}, (\lambda,\mu) \in \mathbb{R}^2\}$
+- Si $\Delta < 0$, $(EC)$ possède deux racines complexes conjuguées
+  $r_{1,2} = \alpha \pm i \beta, (\alpha,\beta) \in \mathbb{R}^2$,
+  et on obtient
+  $S_H = \{x \mapsto e^{\alpha x} [\lambda \cos(\beta x) + \mu \sin(\beta x)], (\lambda,\mu) \in \mathbb{R}^2\}$
+
+##### Preuve
+- Dans les cas où $\Delta \geq 0$, le résultat découle directement du résultat
+  dans $\mathbb{C}$
+- Dans le cas où $\Delta < 0$, on regarde les solutions complexes :
+  on a $\alpha \pm i \beta$ les racines de $(EC)$, donnant
+  $f : x \mapsto \lambda e^{\alpha + i \beta} + \mu e^{\alpha - i \beta}$, avec $\lambda,\mu \in \mathbb{C}$.
+  On dégage le cas de f à valeurs réelles ($\overline{f} = f$).
+  On pose $\exists \lambda,\mu \in \mathbb{C},\forall x \in \mathbb{R}, f(x) = \lambda e^{(\alpha + i \beta)x} + \mu e^{(\alpha - i \beta)x}$;
+  or $\overline{f(x)} = f(x)$ soit
+  $f(x) = \overline{\lambda} (\overline{e^{(\alpha + i \beta)x}}) + \overline{\mu} (\overline{e^{(\alpha - i \beta)x}})$
+  $= \overline{\lambda} e^{(\alpha - i \beta)x} + \overline{\mu} e^{(\alpha + i \beta)x}$,
+  nous donnant nécessairement $\lambda = \overline{\mu} \Leftrightarrow \overline{\lambda} = \mu$.
+  Finalement, on a $f(x) = \lambda e^{(\alpha + i\beta)x + (\overline{\lambda e^{(\alpha + i\beta)x}})}$
+  $= 2\Re(\lambda e^{(\alpha + i\beta)x})$ où $\lambda \in \mathbb{C}$.
+  Ainsi, on a bien $f$ de la forme $x \mapsto C_1 e^{\alpha x} \cos(\beta x) + C_2 e^{\alpha x} \sin(\beta x)$,
+  avec $C_1,C_2 \in \mathbb{R}$.
+
+##### Exemples
+__Oscillateur harmonique :__ $\ddot{\theta} + \omega_0^2 \theta = 0$, avec $\omega \in \mathbb{R}^{\ast}_{+}$.
+On a $(EC): r^2 = 0r + \omega_0^2 = 0 \Leftrightarrow r^2 = -\omega_0^2 = (i \omega)^2$.
+Deux racines complexes conjuguées de $(EC)$ sont alors $0 \pm i \omega$,
+et on trouve les solutions réelles
+$S_H = \{t \mapsto e^{0t} (A \cos(\omega t) + B \cos(\omega t)), (A,B) \in \mathbb{R}^2\}$
+$= \{t \mapsto A \cos(\omega t) + B \cos(\omega t), (A,B) \in \mathbb{R}^2\}$.
+
+__Pas de sens physique :__ Soit $\omega \in \mathbb{R}^{\ast}_{+}$,
+on pose $(E): y'' - \omega^2 y = 0$, et donc on a
+$(EC) : r^2 - \omega^2 = 0$, qui a pour racines réelles distinctes
+$r = \pm \omega$. Les solutions homogènes sont donc
+$S = \{x \mapsto \lambda e^{\omega x} + \mu e^{s\omega x}, (\lambda,\mu) \in \mathbb{R}^2\}$.
+Ainsi si $f \in S$, on peut l'écrire sous la forme
+$A \cosh(\omega x) + B \sinh(\omega x)$.
+
+__Dernier exemple :__ $(E) : y'' + 2y' + 2y = 0$. On pose
+$(EC) : r^2 + 2r + 2 = 0$, et donc $\Delta = -4 = (2i)^2 < 0$.
+Les racines sont donc $\frac{-2 \pm 2i}{2} = -1 \pm i$
+(on a $\alpha = -1, \beta = 1$).
+Les solutions réelles sont alors $\{x \mapsto e^{-x}(\lambda \cos x + \mu \sin x), (\lambda,\mu) \in \mathbb{R}^2\}$.
+
+__Cas général du circuit RLC :__ $\frac{d^2 y}{dt^2} + 2 \lambda \frac{d y}{dt} + \omega_0^2 y = 0$
+($\lambda,\omega > 0$).
+On pose $(EC) : r^2 + 2 \lambda r + \omega_0^2 = 0$, et donc $\Delta = 4(\lambda^2 - \omega_0^2)$.
+On distingue 3 cas :
+- $\lambda > \omega_0$ ($\Delta > 0$), on a les racines $-\lambda \pm \sqrt{\lambda^2 - \omega_0^2}$,
+  donc les solutions sont de la forme $t \mapsto  Ae^{r_1 t} + Be^{r_2 t}$.
+- $\lambda = \omega_0$ ($\Delta = 0$), l'unique racine est $r_0 = - \lambda$,
+  et la $t \mapsto (At + B) e^{-\lambda t}$ (régime critique).
+- $\lambda < \omega_0$ ($\Delta < 0$), les deux racines complexes conjuguées
+  sont $-\lambda \pm i \sqrt{\omega_0^2 - \lambda^2}$, donnant des solutions de
+  la forme $t \mapsto e^{-\lambda t} [A \cos(\sqrt{\omega^2 - \lambda^2} t) + B \sin(\sqrt{\omega_0^2 - \lambda^2} t)]$,
+  avec $(A,B) \in \mathbb{R}^2$.
+
+### Recherche d'une solution particulière de l'équation
+#### Tenter une solution évidente
+Par exemple, $y'' - y = \frac{1}{x^2} - \ln(x)$, on trouve pour solution
+$x \mapsto \ln(x)$. Cela nous permet de trouver
+$S_E = \{x \mapsto \ln(x) + (\lambda e^{x} + \mu e^{-x}), (\lambda,\mu) \in \mathbb{R}^2\}$
+sur $I = \mathbb{R}^{\ast}_{+}$.
+
+#### Second membre polynomial
+On pose $(E) : y'' + ay' + by = P(x)$ avec $P$ un polynôme.\
+On cherche $f_p$ sous la forme (avec $Q$ un polynôme de même degré que P):
+- si $a = b = 0$ : $f_p : x \mapsto x^2 \times Q(x)$
+- si $b = 0, a \neq 0$ : $f_p: x \mapsto x Q(x)$
+- si $b \neq 0$, $f_p: x \mapsto Q(x)$
+
+##### Exemple
+En posant $(E): y'' - 3y' + y = x^3 - 2x + 1$, on cherche une solution
+particulière : $f_p: ax^3 + bx^2 + cx + d$.
+On a $a = 1$ par identification, nous donnant
+$f_p'(x) = 3x^2 + 2bx + c$ et $f_p''(x) = 6x + 2b$.
+On injecte dans $(E)$, donnant
+$\forall x \in \mathbb{R}, x^3 + (x - 9)x^2 + (c - 6b + 6)x + (d - 3c + 2b) = x^3 - 2x + 1$
+$\Leftrightarrow \left\{\begin{matrix} b - 9 = 0 \\ c - 6b + 6 = -2 \\ d - 3c + 2b = 1\end{matrix}\right.$,
+nous donnant enfin en résolvant le système
+$f_p(x) = x^3 + 9x^2 + 46x + 121$.
+
+#### Second membre exponentiel
+$(E): y'' + ay' + by = e^{mx}$, avec $m \in \mathbb{C}$.\
+On cherche $f_p$ sous la forme :
+- si $m$ n'est pas racine de $(EC)$, on pose $f_p: x \mapsto Ae^{mx}$
+- si $m$ est racine simple de $(EC)$, on pose $f_p: x \mapsto Ax e^{mx}$
+- si $m$ est racine double, on pose $f_p: x \mapsto Ax^2 e^{mx}$
+
+- $f_p(x) = A e^{mx}$, soit $f_p'(x) = Am e^{mx}$ et $f_p''(x) = Am^2 e^{mx}$,
+  et on injecte dans $(E)$ : $[Am^2 + a Am + b A] e^{mx} = e^{mx}$
+  $\Leftrightarrow [m^2 + am + b] A = 1$, et puisque $m$ n'est pas racine de
+  $(EC)$, l'expression entre crochets ne s'annule pas, et $A = \frac{1}{m^2 + am + b}$
+- puisque $m$ est racine simple de $(EC)$, on a $m^2 + am + b = 0$ et $2m + a \neq 0$
+  (pas une racine double), et on a donc $f_p(x) = Ax e^{mx}$,
+  $f_p'(x) = Ax m e^{mx} + Ae^{mx}$ et $f_p''(x) = 2Am e^{mx} + Am^2 x e^{mx}$.\
+  On injecte dans $(E)$, et on obtient $A [(m^2 + am + b)x + (a + 2m)] e^{mx} = e^{mx}$,
+  donnant dans ces conditions $A [0x + (a + 2m)] = 1$ et donc
+  $A = \frac{1}{2b + a}$.
+- puisque m est racine double, on a $m^2 + am + b = 0$ et $2m + a = 0$,
+  et on a donc $f_p(x) = Ax^2 e^{mx}$, $f_p'(x) = A 2x e^{bx} + Am x^2 e^{mx}$
+  et $f_p''(x) = 2A e^{mx} = 4Axm e^{mx} + A m^2 x^2 e^{mx}$.
+  On injecte dans $(E)$, donnant
+  $e^{mx} = A e^{mx} [(m^2 + am + b) x^2 + 2(2m + a)x + 2]$
+  $\Leftrightarrow 1 = A [0 x^2 + 2 \times 0x + 2]$,
+  nous donnant finalement $A = \frac{1}{2}$.
+
+#### Second membre trigonométrique
+$(E): y'' + ay' + by = \cos(\omega x)$ ou $\sin(\omega x)$.\
+On passe en $\mathbb{C}$, et on se ramène au cas exponentiel en posant
+$\cos(\omega x) = \Re(e^{i\omega x})$ et $\sin(\omega x) = \Im(e^{i\omega x})$.
+
+#### Superposition des solutions
+Comme pour le premier ordre.
