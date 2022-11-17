@@ -244,7 +244,7 @@ théorème de la dérivée de la réciproque, $\arctan$ est dérivable sur $\tan
 $\forall x \in \mathbb{R}, \arctan'(x) = \frac{1}{\tan'(\arctan(x))}$
 $= \frac{1}{1 + \tan^2(\arctan)} = \frac{1}{1 + x^2}$.
 
-> La dérivée de $\arctan$ est $\forall x \in ]-1,1[, \arctan' = \frac{1}{\sqrt{1 - x^2}}$.
+> La dérivée de $\arctan$ est $\forall x \in ]-1,1[, \arctan' = \frac{1}{1 + x^2}$.
 
 > $\arctan$ est impaire
 

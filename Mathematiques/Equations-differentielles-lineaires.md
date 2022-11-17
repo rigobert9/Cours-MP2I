@@ -298,7 +298,7 @@ soit $f$ dérivable en $0$.
 Il existe donc une infinité de solutions de $(E)$ sur $\mathbb{R}$,
 avec deux paramètres.
 
-## Équations différentielles à coefficients constants
+## Équations différentielles du second ordre à coefficients constants
 ### Définition
 > Une équation différentielle linéaire d'ordre 2 à coefficients constants est de
 > la forme $(E): y'' + ay' + by = c(x)$, avec $a, b \in \mathbb{K}$ et
