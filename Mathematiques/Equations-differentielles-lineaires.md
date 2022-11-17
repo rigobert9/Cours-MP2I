@@ -498,3 +498,10 @@ $\cos(\omega x) = \Re(e^{i\omega x})$ et $\sin(\omega x) = \Im(e^{i\omega x})$.
 
 #### Superposition des solutions
 Comme pour le premier ordre.
+
+### Problèmes de Cauchy
+Pour un problème de Cauchy de la forme
+$(C): \left\{\begin{matrix} y'' + ay' + by = c(x) \\ y(x_0) = y_0 \\ y'(x_0) = y_1 \end{matrix}\right.$
+(une équation différentielle à coefficients constants du second degré, dans
+laquelle on connaît la position et la vitesse en un point),
+$(C)$ possède une unique solution.
