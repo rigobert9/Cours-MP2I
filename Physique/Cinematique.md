@@ -189,7 +189,7 @@ $\overrightarrow{\rm v} = \dot{r} \overrightarrow{\rm u_r} + r \dot{\theta} \ove
 $\overrightarrow{\rm a} = \ddot{r} \overrightarrow{\rm u_r} + \dot{r} \frac{d [\overrightarrow{\rm u_r}]}{dt} + \dot{r} \dot{\theta} \overrightarrow{\rm u_\theta} + \dot{r} \ddot{\theta} \overrightarrow{\rm u_\theta} + r \dot{\theta} \frac{d [\overrightarrow{\rm u_\theta}]}{dt}$\
 Or, $\frac{d [\overrightarrow{\rm u_r}]}{dt} = \dot{\theta} \overrightarrow{\rm u_\theta}$ et $\frac{d [u_\theta]}{dt} = - \dot{\theta} \overrightarrow{\rm u_r}$\
 $\overrightarrow{\rm a} = (\ddot{a} -  r \dot{\theta}^2) \overrightarrow{\rm u_r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) \overrightarrow{\rm u_\theta}$\
-$\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \ddot{\theta} \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} \end{matrix}\right.$
+$\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \dot{\theta}^2 \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} \end{matrix}\right.$
 
 ### Vecteur accélération dans la base de Frenet
 $\overrightarrow{\rm a} = \frac{d v}{dt} \overrightarrow{\rm t} + \frac{v^2}{R} \overrightarrow{\rm n}$
