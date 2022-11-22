@@ -195,7 +195,7 @@ $\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \ddot{\theta} \\
 $\overrightarrow{\rm a} = \frac{d v}{dt} \overrightarrow{\rm t} + \frac{v^2}{R} \overrightarrow{\rm n}$
 
 ### Vecteur accélération en coordonnées cylindriques
-$\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \ddot{\theta} \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} \\ a_z = \ddot{z} \end{matrix}\right.$
+$\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \dot{\theta}^2 \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} \\ a_z = \ddot{z} \end{matrix}\right.$
 
 ### Vecteur accélération en coordonnées sphériques
 $\overrightarrow{\rm a} \left|\begin{matrix} a_r = \ddot{r} - r \ddot{\theta} - r \sin^2 \theta \ddot{\varphi} \\ a_\theta = r \ddot{\theta} + 2 \dot{r} \dot{\theta} - r \sin \theta \cos \theta \dot{\varphi}^2 \\ a_\varphi = 2 r \cos \theta \dot{\theta} \dot{\varphi} + 2 \dot{r} \sin \theta \dot{\varphi} + r \sin \theta \ddot{\varphi} \end{matrix}\right.$
