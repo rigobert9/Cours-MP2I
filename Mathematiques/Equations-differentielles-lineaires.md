@@ -380,7 +380,7 @@ réelles de $(H)$ avec $(a,b) \in \mathbb{R}^2$.
 
 On pose $\Delta = a^2 - 4b$ :
 - Si $\Delta > 0$, on note $r_1,r_2$ les racines réelles distinctes, et on a
-  $S_H = \{x \mapsto x gl e^{r_1 x} + \mu e^{r_2 x}, (\lambda,\mu) \in \mathbb{R}^2\}$
+  $S_H = \{x \mapsto x \lambda e^{r_1 x} + \mu e^{r_2 x}, (\lambda,\mu) \in \mathbb{R}^2\}$
 - Si $\Delta = 0$, on note $r_0 = \frac{-a}{2}$ l'unique racine double de
   $(EC)$, et on a
   $S_H = \{x \mapsto (\lambda x + \mu) e^{r_0 x}, (\lambda,\mu) \in \mathbb{R}^2\}$
