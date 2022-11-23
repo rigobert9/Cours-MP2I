@@ -408,7 +408,7 @@ On pose $\Delta = a^2 - 4b$ :
 
 ##### Exemples
 __Oscillateur harmonique :__ $\ddot{\theta} + \omega_0^2 \theta = 0$, avec $\omega \in \mathbb{R}^{\ast}_{+}$.
-On a $(EC): r^2 = 0r + \omega_0^2 = 0 \Leftrightarrow r^2 = -\omega_0^2 = (i \omega)^2$.
+On a $(EC): r^2 + 0r + \omega_0^2 = 0 \Leftrightarrow r^2 = -\omega_0^2 = (i \omega)^2$.
 Deux racines complexes conjuguées de $(EC)$ sont alors $0 \pm i \omega$,
 et on trouve les solutions réelles
 $S_H = \{t \mapsto e^{0t} (A \cos(\omega t) + B \cos(\omega t)), (A,B) \in \mathbb{R}^2\}$
