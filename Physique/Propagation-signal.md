@@ -97,4 +97,36 @@ Par exemple, pour une onde en créneaux de période $T$ et d'amplitude $E_0$, on
 $s(t) = \frac{E_0}{2} + \sum\limits_{n = 1}^{+\infty} \frac{2E_0}{n\pi} \cos(n \omega t - \frac{\pi}{2})$
 $= \frac{E_0}{2} + \frac{2E_0}{\pi} \sin(\omega t) + \frac{2E_0}{3\pi} \sin(3\omega t)\ldots$
 
-On s'approche ainsi de plus en plus de la fonction.
+On s'approche ainsi de plus en plus de la fonction. Plus on ajoute
+d'harmoniques, plus la somme se rapproche de la fonction. On représente sous la
+forme d'un spectre en amplitude l'amplitude selon l'oscillation $\omega$. Ce
+traitement permet de montrer si un signal est périodique ou non, de trouver son
+amplitude et sa moyenne, et de faire des conversions entre analogique et digital
+et inversement (encodage du son par exemple).
+
+### Double périodicité des ondes progressives sinusoïdales
+$s(x,t) = S_n \cos(\omega (t - \frac{x}{c}) + \Phi) = S_n \cos(\omega t - kx + \Phi)$
+
+La pulsation spatiale est définie par $k = \frac{\omega}{c}$, en $m^{-1}$ or
+$rad \cdot m^{-1}$.
+
+#### Périodicité temporelle
+> À $x = x_0$ fixé, $s(x_0,t)$ et périodique de période $T = \frac{2\pi}{\omega}$
+> et sa fréquence $f$ est telle que
+> $f = \frac{1}{T} = \frac{\omega}{2T}$, soit $\omega = 2\pi f$.
+
+#### Périodicité spatiale
+> À $t = t_0$ fixé, $s(x,t_0)$ est périodique de période spatiale
+> $\lambda = k$ longueur d'onde et avec $k = \frac{2\pi}{\lambda}$.
+
+> La fréquence spatiale ou nombre d'onde correspond à $\sigma = \frac{k}{2\pi} = \frac{1}{\lambda}$.
+
+#### Bilan : à connaître par cœur
+Dimension | Période | Fréquence | Pulsation
+---|---|---|---
+Temporelle | $T$ | $f$ | $\omega = \frac{2\pi}{T} = 2Tf$
+Spatiale | $\lambda$ | $\sigma$ | $k = \frac{2\pi}{\lambda} = 2\pi \sigma$
+
+Relation entre les grandeurs :
+- $\lambda = c T$, respectivement en $m$, $m \cdot s^{-1}$ et $s$
+- $\omega = k c$, respectivement en $rad \cdot s^{-1}$, $rad \cdot m^{-1}$ et $m \cdot s^{-1}$
