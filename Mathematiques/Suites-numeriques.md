@@ -276,3 +276,76 @@ $|u_{n} - \ell| \leq \varepsilon \times \frac{|l|^2}{2}$.
 On pose $N = \text{max}(n_0,n_1,n_2)$, $\forall n \geq N$,
 $|\frac{1}{u_{n}} - \frac{1}{\ell}| \leq \frac{|\ell - u_{n}|}{|\ell|} \times \frac{1}{|u_{n}|}$
 $\leq \frac{|\ell - u_{n}|}{|\ell|} \times \frac{2}{|\ell|} \leq \varepsilon$
+
+> Soit $|u| \to +\infty$, alors $\frac{1}{u} \to 0$.
+
+__Preuve :__ Soit $\varepsilon > 0$, on pose $M = \frac{1}{\varepsilon}$, et on
+a bien $\exists n_0,\forall n \geq n_0,|u_{n}| \geq M > 0$,
+donc $\forall n \geq n_0, |\frac{1}{u_{n}}| \leq \frac{1}{M} = \varepsilon$.
+
+> - Si $u \to 0$ et qu'à partir d'un certain rang, $u_{n} > 0$ (on le note $u \to 0^{+}$),
+>   alors $\frac{1}{u} \to +\infty$.
+> - Si $u \to 0$ et qu'à partir d'un certain rang, $u_{n} < 0$ (on le note $u \to 0^{-}$),
+>   alors $\frac{1}{u} \to -\infty$.
+
+Cette preuve est ainsi non valide pour une suite qui ne reste pas du même côté
+de 0, comme $u_{n} = \frac{(-1)^n}{n}$.
+
+__Preuve :__ On suppose $u \to 0^{+}$, $\exists n_0, \forall n \geq n_0, u_{n} > 0$.
+Soit $M \in \mathbb{R}^{\ast}_{+}$, on pose $\varepsilon = \frac{1}{M}$.
+Comme $u \to 0$, $\exists n_1,\forall n \geq n_1,|u_{n}| \leq \varepsilon - \frac{1}{M}$.
+Ainsi, $\forall n \geq \text{max}(n_0,n_1), 0 < u_{n} \leq \frac{1}{M}$,
+donc $\frac{1}{u_{n}} \geq M$.
+
+### Théorèmes d'existence des limites
+#### Théorème d'encadrement (gendarmes)
+> Si $u$ et $w$ convergent vers la même limite $\ell \in \mathbb{R}$,
+> et si à partir d'un certain rang, $u_{n} \leq v_n \leq w_n$,
+> alors la suite $v$ converge vers $\ell$.
+
+Ce théorème donne l'existence et la valeur de la limite.
+
+__Preuve :__ $\exists n_0,\forall n \geq n_0, u_{n} \leq v_n \leq w_n$,
+donc $0 \leq v_n - u_{n} \leq w_n - u_n \Leftrightarrow |v_n - u_{n}| \leq |w_n - u_n|$,
+et puisque la suite $|w - u|$ converge vers $0$, par une propriété précédente,
+$v - u$ converge en 0.
+Par somme des suites convergentes, $v = (v - u) + u$ converge et
+$\lim\limits_{n \to + \infty} v = \lim\limits_{n \to + \infty} (v - u) + \lim\limits_{n \to + \infty} u$
+$= 0 + \ell = \ell$.
+
+> __Ajout : Inégalité triangulaire sur les intégrales :__ Soit $f \in \mathcal{C}([a,b],\mathbb{K})$
+> avec $a < b$, $|\int\limits_{a}^{b} f(t) dt| \leq \int\limits_{a}^{b} |f(t)| dt$.
+
+#### Théorème de comparaison (minoration/majoration)
+> Si à partir d'un certain rang, $u_{n} \leq v_n$ :
+> - si $u \to +\infty$, alors $v \to +\infty$
+> - si $v \to -\infty$, alors $u \to -\infty$
+
+__Preuve :__ Immédiate par définition de $u \to +\infty$
+
+Exemple : $\sum\limits_{k = 1}^{n} \frac{1}{\sqrt{k}}$, minoré par $\sum\limits_{k = 1}^{n} \frac{1}{n}$.
+
+#### Théorème de la limite monotone
+> Si $u \in \mathbb{R}^{\mathbb{N}}$ est monotone, alors $u$ possède une limite
+> dans $\overline{\mathbb{R}}$. Plus exactement :
+> - si $u$ est croissante et majorée, elle converge vers sa borne supérieure
+> - si $u$ est croissante et non majorée, elle diverge vers $+\infty$
+> - si $u$ est décroissante et minorée, elle converge vers sa borne inférieure
+> - si $u$ est décroissante et non minorée, elle diverge vers $-\infty$
+
+Si $u$ est croissante, $\lim\limits_{n \to + \infty} u = \text{sup}(u) \in \overline{\mathbb{R}}$,
+et si $u$ est décroissante, $\lim\limits_{n \to + \infty} u = \text{inf}(u) \in \overline{\mathbb{R}}$.
+
+__Preuves :__
+- On suppose $u$ croissante et majorée. L'ensemble $\{u_{n},n \in \mathbb{N}\}$ est majoré,
+  et sous-ensemble non vide de $\mathbb{R}$, donc il possède une borne supérieure dans $\mathbb{R}$.
+  Soit $\varepsilon > 0$, on a $\ell - \varepsilon < \ell = \text{sup}(u)$.
+  $\ell - \varepsilon$ n'est pas un majorant de $\{u_{n},n \in \mathbb{N}\}$, et
+  donc $\exists n_0, u_{n_0} > \ell - \varepsilon$.
+  Or, $u$ est croissante, donc $\forall n \geq n_0, u_{n} \geq u_{n_0} > \ell - \varepsilon$,
+  or $\ell = \text{sup}(u)$ donc $u_{n} \leq \ell$.
+  $\forall n \geq n_0,\ell - \varepsilon \leq u_{n} \leq \ell < \ell + \varepsilon$,
+  donc $|u_{n} - \ell| \leq \varepsilon$.
+- On suppose $u$ croissante et non majorée, soit $M \in \mathbb{R}$, puisque
+  $u$ est non majorée, $\exists n_0, u_{n_0} > M$, et puisque $u$ est croissante
+  $\forall n \geq n_0, u_{n} \geq u_{n_0} > M$.
