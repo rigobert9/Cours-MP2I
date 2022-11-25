@@ -18,7 +18,6 @@ Ondes élastiques dans un solide | Déformation du matériau                    
 Ondes acoustiques               | Variation de pression des couches d'air      | Air, liquide, solide
 Ondes électromagnétiques        | Champ électromagnétique                      | Vide ou milieu transparent
 Ondes gravitationnelles         | Oscillation de la courbure de l'espace-temps | Vide intersidéral
-
 > Une onde est dite transverse si elle est provoquée par une perturbation
 > perpendiculaire à sa direction de propagation.
 
@@ -43,12 +42,12 @@ Les ondes acoustiques ou les ronds dans l'eau sont des ondes mécaniques.
 > Une onde unidimensionnelle ne se propage que dans une seule direction spatiale
 > $x$.
 
-Ondes                                 | Valeur de célérité
----                                   | ---
-Ondes électromagnétiques dans le vide | $C = 3.0 \times 10^8 m \cdot s^{-1}$
-Son dans l'air                        | $C_\text{son} \approx 340 m \cdot s^{-1}$
-Son dans l'eau                        | $C_\text{son} \approx 1500 m \cdot s^{-1}$
-Son dans l'acier                      | $C_\text{acier} \approx 5000 m \cdot s^{-1}$
+| Ondes                                 | Valeur de célérité                           |
+|---------------------------------------|----------------------------------------------|
+| Ondes électromagnétiques dans le vide | $C = 3.0 \times 10^8 m \cdot s^{-1}$         |
+| Son dans l'air                        | $C_\text{son} \approx 340 m \cdot s^{-1}$    |
+| Son dans l'eau                        | $C_\text{son} \approx 1500 m \cdot s^{-1}$   |
+| Son dans l'acier                      | $C_\text{acier} \approx 5000 m \cdot s^{-1}$ |
 
 ### Description mathématique de la propagation
 Une onde progressive unidimensionnelle est décrite sous la forme d'une fonction
@@ -104,6 +103,20 @@ traitement permet de montrer si un signal est périodique ou non, de trouver son
 amplitude et sa moyenne, et de faire des conversions entre analogique et digital
 et inversement (encodage du son par exemple).
 
+![decomposition_en_serie_de_sinus_etape_1.png](./Propagation-signal-assets/decomposition_en_serie_de_sinus_etape_1.png)
+_Décomposition en série de sinus de l'onde créneau, première passe_
+
+![etape2.png](./Propagation-signal-assets/etape2.png)
+_Décomposition en série de sinus de l'onde créneau, deuxième passe_
+
+![etape3.png](./Propagation-signal-assets/etape3.png)
+_Décomposition en série de sinus de l'onde créneau, troisième passe_
+
+![etape10.png](./Propagation-signal-assets/etape10.png)
+_Décomposition en série de sinus de l'onde créneau, dixième passe_
+
+Pour observer la décomposition selon un nombre donné d'itérations, accédez au fichier Géogebra [decomposition.ggb](./Propagation-signal-assets/decomposition.ggb).
+
 ### Double périodicité des ondes progressives sinusoïdales
 $s(x,t) = S_n \cos(\omega (t - \frac{x}{c}) + \Phi) = S_n \cos(\omega t - kx + \Phi)$
 
@@ -130,3 +143,9 @@ Spatiale | $\lambda$ | $\sigma$ | $k = \frac{2\pi}{\lambda} = 2\pi \sigma$
 Relation entre les grandeurs :
 - $\lambda = c T$, respectivement en $m$, $m \cdot s^{-1}$ et $s$
 - $\omega = k c$, respectivement en $rad \cdot s^{-1}$, $rad \cdot m^{-1}$ et $m \cdot s^{-1}$
+
+## Ressources supplémentaires
+### Annulation de deux ondes
+Lorsque deux ondes opposées vont l'une vers l'autre, elles s'annulent (par exemple sur une corde) :
+[ondes_s_annulent.webm](./Propagation-signal-assets/ondes_s_annulent.webm)
+Vous pouvez animer cette vidéo dans le fichier [ondes_s_annulent.ggb](./Propagation-signal-assets/ondes_s_annulent.ggb).
