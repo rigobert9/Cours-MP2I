@@ -83,7 +83,7 @@ niveau que le fichier texte correspondant, qui porte le même nom que le fichier
 texte remplaçant `.md` par `-assets`.\
 Veuillez ensuite mettre des liens vers ces fichiers dans le document texte comme
 si vous étiez dans le dossier du document (donc des liens de la forme
-`./nomducours-assets/nom-de-l'asset.png`). Si votre fichier est une image,
+`./Nomducours-assets/nom-de-l'asset.png`). Si votre fichier est une image,
 utilisez la syntaxe d'image du MarkDown (`![Nom de l'image](chemin-vers-le-fichier)`),
 et pour tout autre fichier utilisez la syntaxe d'hyperlien
 (`[Nom du fichier](chemin-vers-le-fichier)`).
