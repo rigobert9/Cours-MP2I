@@ -23,7 +23,7 @@ Ces notes sont parfaitement lisibles à elles seules, mais sont bien plus
 lisibles à l'aide de divers outils. De plus, les notes sont disponibles
 directement sur ce dépôt, compilées à l'aide de la commande :
 ```bash
-pandoc -V geometry:margin=2cm --toc -s -f gfm+tex_math_dollars --mathjax fichier.md --output=fichier.pdf
+pandoc -V geometry:margin=2cm --toc -s -f gfm+tex_math_dollars --resource-path="./"`dirname fichier.md`--mathjax fichier.md --output=fichier.pdf
 ```
 
 ### Lecteurs
