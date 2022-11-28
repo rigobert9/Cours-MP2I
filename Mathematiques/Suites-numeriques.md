@@ -349,3 +349,141 @@ __Preuves :__
 - On suppose $u$ croissante et non majorée, soit $M \in \mathbb{R}$, puisque
   $u$ est non majorée, $\exists n_0, u_{n_0} > M$, et puisque $u$ est croissante
   $\forall n \geq n_0, u_{n} \geq u_{n_0} > M$.
+
+#### Suites adjacentes
+> Soient $u,v \in \mathbb{R}^{\mathbb{N}}$, on dira que u et v sont adjacentes si
+> - l'une est croissante
+> - l'autre est décroissante
+> - $(u-v)$ converge vers $0$
+
+> Si $u$ et $v$ sont deux suites adjacentes, alors ells convergent vers la même
+> limite.
+
+__Preuve :__ On suppose $u$ croissante et $v$ décroissante, alors $v - u = v + (-u)$
+est la somme de deux suites décroissantes donc la suite $(v - u)$ est
+décroissante. Or, $\lim (v-u) = 0$. Ainsi, $\forall n \in \mathbb{N}, v_n - u_{n} \geq 0$.
+On a donc $\forall n \in \mathbb{N}, u_{n} \leq v_n$, or $u$ est croissante,
+donc minorée par $u_0$, et v étant décroissante, elle est majorée par $v_0$.
+
+Ainsi, $u_0 \leq u_1 \leq u_2 \ldots  \leq u_{n} \leq v_n \leq \ldots \leq v_0$.
+En particulier, la suite $u$ est majorée par $v_0$ et la suite $v$ est minorée
+par $u_0$. Par limites monotones, $u$ et $v$ convergent. Comme $\lim (v - u) = 0$, alors
+$\lim v = \lim (v - u) + \lim u$, donc $\lim v = \lim u$.
+
+__Remarque :__ En notant $\ell$ la limite commune des deux suites adjacentes, on
+a alors $u_0 \leq u_{1} \leq \ldots \leq u_{n} \leq \ell \leq v_n \leq \ldots v_1 \leq v_0$.
+Ainsi, les valeurs des deux suites respectives sont des approches de la limite,
+l'une par défaut et l'autre par excès : $\forall n \in \mathbb{N},\ell \in [u_{n},v_n]$
+et $(v-u)$ converge vers $0$.
+
+##### Exemple
+$\forall n \in \mathbb{N}, \left\{\begin{matrix} u_{n} = \sum\limits_{k = 0}^{n} \frac{1}{k!} \\ v_n = u_{n} + \frac{1}{n!} \end{matrix}\right.$
+
+On cherche à montrer que $u$ et $v$ convergent vers la même limite :
+- $v_n - u_{n} = \frac{1}{n!}$ donc $\lim\limits_{n \to + \infty} (v_n - u_{n}) = 0$
+- $u_{n+1} - u_{n} = \frac{1}{(n+1)!} > 0$, donc $u$ est croissante.
+- $v_{n+1} - v_{n} = (u_{n+1} + \frac{1}{(n+1)!}) - (u_{n} + \frac{1}{n!})$\
+  $= (u_{n+1} - u_{n}) + \frac{1}{(n + 1)!} - \frac{1}{n!}$\
+  $= \frac{2}{(n+1)!} - \frac{1}{n!} \times \frac{n + 1}{n + 1}$\
+  $= \frac{2 - (n+1)}{(n + 1)!} = \frac{1 - n}{(n + 1)!}$
+
+$\forall n \geq 1, (v_{n+1} - v_{n}) \leq 0$. La suite $v$ est décroissante à
+partir d'un certain rang.
+Ainsi, $u$ et $v$ sont adjacentes, et convergent donc vers une limite commune.
+
+##### Irrationalité de $e$
+__Culture :__ $e = \exp(1) = \sum\limits_{k = 0}^{+\infty} \frac{1}{k!}$
+
+Ici, on a donc $\forall n \geq 2$, $u_{n} < e < v_{n}$. Ces valeurs approchées
+sont avec une erreur de l'ordre de $\frac{1}{n!}$.
+
+On cherche à prouver que $e \not\in \mathbb{Q}$. Par l'absurde, si $e = \frac{p}{q}$ avec
+$p,q \in \mathbb{N}^{\ast}$, et on regarde le rang $q$ : $u_q < e < v_q$,
+donc $\sum\limits_{k = 0}^{q} < e < \sum\limits_{k = 0}^{q} \frac{1}{k!} + \frac{1}{q!}$.
+En multipliant par $q!$, on obtient $\sum\limits_{k = q}^{n} \frac{q!}{k!} < q!
+e < \sum\limits_{k = 0}^{q} \frac{q!}{k!} + 1$.
+
+Or, $\sum\limits_{k = 0}^{q}  \in \mathbb{N}$ car $\frac{q!}{k!} \in \mathbb{N}$
+pour $0 < k \leq q$. On pose enfin $N < eq! < n + 1$
+$\Leftrightarrow n < \frac{p}{q} \times q! < n + 1$
+$\Leftrightarrow n < p \times (q-1)! < n + 1$, et tous ces trois expressions
+sont donc toutes entières, ce qui est absurde.
+
+#### Suites extraites
+> Soit $u \in \mathbb{R}^{\mathbb{N}}$, on dit que $v \in \mathbb{R}^{\mathbb{N}}$
+> est une suite extraite de $u$ s'il existe une application strictement croissante
+> extractrice $\varphi: \mathbb{N} \to \mathbb{N}$, telle que $\forall n \in \mathbb{N},v_n = u_{\varphi(n)}$.
+
+__Exemples classiques :__
+- $v = (u_{2n})_{n \in \mathbb{N}}$ est extraite de $u$ car
+  $\begin{aligned} \varphi: \mathbb{N} &\to \mathbb{N} \\ n &\mapsto 2n =  .\end{aligned}$
+  est bien strictement croissante ($v$ est la sous-suite d'indices pairs de $u$)
+- $w = (u_{2n + 1})_{n \in \mathbb{N}}$ est une suite extraite de $u$ avec
+  $\varphi: n \mapsto 2n + 1$ strictement croissante. $w$ est la sous-suite de
+  $u$ des termes d'indices impairs.
+- $u_{n+1}$ est extraite de $u$ avec $\varphi: n \mapsto n+1$.
+
+> Si $u$ converge vers $\ell \in \mathbb{R}$, alors toute suite extraite de u
+> converge vers $\ell$.
+
+__Application :__ si $\lim\limits_{n \to + \infty} u_{n} = \ell$,
+alors $\lim\limits_{n \to + \infty} (u_{2n + 1}) = \ell$,
+$\lim\limits_{n \to + \infty} (u_{n^2}) = \ell$,
+$\lim\limits_{n \to + \infty} (u_{n+1}) = \ell$.
+
+__Preuve :__ Soit $u \in \mathbb{R}^{\mathbb{N}}$ qui converge vers $\ell$
+et $v$ une suite extraite de $u$.
+Il existe $\varphi:\mathbb{N} \to \mathbb{N}$ extractrice (strictement croissante)
+telle que $\forall n \in \mathbb{N},v_{n} = u_{\varphi(n))}$.
+
+Soit $\varepsilon > 0, \exists n_0,\forall n \geq n_0, |u_{n} - \ell| \leq \varepsilon$
+(puisque $u \to \ell$), or $\varphi(n) \geq n$.
+Ainsi, pour tout entier $n \geq n_0$, on a bien $\varphi(n) \geq n \geq n_0$,
+donc pour cet indice $\varphi(n)$ : $|u_{\varphi(n)} - \ell| \leq \varepsilon$,
+c'est-à-dire $|v_{n} - \ell| \leq \varepsilon$, donc $v \to \ell$.
+
+__Application :__ Pour montrer qu'une suite diverge (sans limite), on peut en
+extraire deux sous-suites qui convergent vers des limites différentes.
+Par exemple, pour $((-1)^n)_{n \in \mathbb{N}}$, $u_{2n} \to 1$ et $u_{2n + 1} \to -1$, donc $u$ diverge.
+
+> Soit $u \in \mathbb{R}^{\mathbb{N}}$ et $\ell \in \mathbb{R}$.
+> Si $(u_{2n})$ et $(u_{2n + 1})$ convergent tous deux vers $\ell$, alors la suite
+> $u$ converge vers $\ell$.
+
+> Bolzano - Weierstrass : Toute suie réelle bornée admet (au moins) une sous-suite
+> convergente.
+
+__Preuve :__ Soit $u \in \mathbb{R}^{\mathbb{N}}$ bornée, $\exists n \in \mathbb{R}_{+} \mid n \in \mathbb{N}, |u_{n}| \leq M$.
+On construit des segments $[a_n,b_n]$ de la façon suivante :
+$\left\{\begin{matrix} a_0 = -M \\ b_0 = +M \end{matrix}\right.$.
+On pose $A_n = \{k \in \mathbb{N} \mid u_k \in [a_n,b_n]\}$.
+On pose de même $C_n = \frac{a_n + b_n}{2}$ le milieu de $[a_n,b_n]$,
+et $A^d_n = \{k \in \mathbb{N} \mid u_k \in [c_n,b_n]\}$,
+$A^g_n = \{k \in \mathbb{N} \mid u_k \in [a_n, c_n]\}$,
+$A_n = A_n^g \cup A_n^d$.
+
+On en conclut $a_{n+1}$ et $b_{n+1}$,
+$a_{n+1} = \left\{\begin{matrix} C_n \text{ si } A_n^d \text{ est infni} \\ a_n \text{ sinon} \end{matrix}\right.$ et
+$a_{n+1} = \left\{\begin{matrix} b_n \text{ si } A_n^d \text{ est infni} \\ C_n \text{ sinon} \end{matrix}\right.$.
+Ainsi, $A_{n+1}$ est infini.
+
+$a_n \leq C_n = \frac{a_n + b_n}{2} \leq b_n$. Ainsi, $\forall n \in \mathbb{N}, \left\{\begin{matrix} a_{n+1} \geq a_n \\ b_{n+1} \leq b_n \end{matrix}\right.$,
+donc $a$ est croissante et $b$ est décroissante. De plus,
+$b_{n+1} - a_{n+1} = \left\{\begin{matrix} C_n - a_n \\ \text{ou} \\ b_n - Cn \end{matrix}\right.$, donc
+$b_{n+1} - a_{n+1} = \frac{b_n - a_n}{2}$. $b-a$ est donc géométrique de raison
+$\frac{1}{2}$. $\forall n, b_n - a_n = \frac{1}{2^n} (b_0 - a_0)$, donc
+$\lim\limits_{n \to + \infty} (b_n - a_n) = 0$.
+
+On en conclut enfin que $a$ et $b$ sont deux suites adjacentes, donc elles
+convergent vers la même limite $\ell$. On construit une suite extraite de $u$
+qui converge vers ce $\ell$, avec $\varphi : \mathbb{N} \to \mathbb{N}$ :
+- On pose $\varphi(0) = 0$, $\varphi(0) \in A_0$ donc $a_0 \leq u_{\varphi(0)} \leq b_0$
+- Soit $n \in \mathbb{N} \mid \varphi(0) < \varphi(1) < \varphi(2) \ldots < \varphi(n)$ sont déjà construits
+
+On pose $\varphi(n + 1) = \text{min}(A_{n+1} \setminus [0,\varphi(n)]_{\mathbb{N}})$,
+et ainsi $\varphi(n + 1) > \varphi(n)$ et $a_{n+1} \leq u_{\varphi(n + 1)} \leq b_{n+1}$.
+
+Ainsi, $\varphi : \mathbb{N} \to \mathbb{N}$ est strictement croissante et
+$\forall n \in \mathbb{N}, a_n \leq u_{\varphi(n)} \leq b_n$, or
+$\lim a = \lim  b = \ell$, donc on conclut par théorème d'encadrement que
+$(u_{\varphi(n)})_{n \in \mathbb{N}}$ converge vers $\ell$.
