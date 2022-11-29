@@ -23,7 +23,7 @@ Ces notes sont parfaitement lisibles à elles seules, mais sont bien plus
 lisibles à l'aide de divers outils. De plus, les notes sont disponibles
 directement sur ce dépôt, compilées à l'aide de la commande :
 ```bash
-pandoc -V geometry:margin=2cm --toc -s -f gfm+tex_math_dollars --mathjax fichier.md --output=fichier.pdf
+pandoc -V geometry:margin=2cm --toc -s -f gfm+tex_math_dollars --resource-path="./"`dirname fichier.md`--mathjax fichier.md --output=fichier.pdf
 ```
 
 ### Lecteurs
@@ -83,7 +83,7 @@ niveau que le fichier texte correspondant, qui porte le même nom que le fichier
 texte remplaçant `.md` par `-assets`.\
 Veuillez ensuite mettre des liens vers ces fichiers dans le document texte comme
 si vous étiez dans le dossier du document (donc des liens de la forme
-`./nomducours-assets/nom-de-l'asset.png`). Si votre fichier est une image,
+`./Nom-du-cours-assets/nom-de-l'asset.png`). Si votre fichier est une image,
 utilisez la syntaxe d'image du MarkDown (`![Nom de l'image](chemin-vers-le-fichier)`),
 et pour tout autre fichier utilisez la syntaxe d'hyperlien
 (`[Nom du fichier](chemin-vers-le-fichier)`).
