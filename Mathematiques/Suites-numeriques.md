@@ -5,7 +5,7 @@
 > une application de $\mathbb{N}$ dans $\mathbb{R}$.
 
 > Soit $u \in \mathbb{R}^{\mathbb{N}}$, $u$ est une suite réelle
-> $\begin{aligned} u: \mathbb{N}^{\ast} &\to \mathbb{R} \\ n &\mapsto u_n .\end{aligned}$,
+> $\begin{aligned} u: \mathbb{N} &\to \mathbb{R} \\ n &\mapsto u_n .\end{aligned}$,
 > qu'on note plutôt $u = (u_0, u_1, u_2,\ldots) = (u_n)_{n \in \mathbb{N}}$,
 > la suite $(u_n)$.
 
@@ -463,8 +463,8 @@ $A^g_n = \{k \in \mathbb{N} \mid u_k \in [a_n, c_n]\}$,
 $A_n = A_n^g \cup A_n^d$.
 
 On en conclut $a_{n+1}$ et $b_{n+1}$,
-$a_{n+1} = \left\{\begin{matrix} C_n \text{ si } A_n^d \text{ est infni} \\ a_n \text{ sinon} \end{matrix}\right.$ et
-$a_{n+1} = \left\{\begin{matrix} b_n \text{ si } A_n^d \text{ est infni} \\ C_n \text{ sinon} \end{matrix}\right.$.
+$a_{n+1} = \left\{\begin{matrix} C_n \text{ si } A_n^d \text{ est infini} \\ a_n \text{ sinon} \end{matrix}\right.$ et
+$a_{n+1} = \left\{\begin{matrix} b_n \text{ si } A_n^d \text{ est infini} \\ C_n \text{ sinon} \end{matrix}\right.$.
 Ainsi, $A_{n+1}$ est infini.
 
 $a_n \leq C_n = \frac{a_n + b_n}{2} \leq b_n$. Ainsi, $\forall n \in \mathbb{N}, \left\{\begin{matrix} a_{n+1} \geq a_n \\ b_{n+1} \leq b_n \end{matrix}\right.$,
@@ -487,3 +487,95 @@ Ainsi, $\varphi : \mathbb{N} \to \mathbb{N}$ est strictement croissante et
 $\forall n \in \mathbb{N}, a_n \leq u_{\varphi(n)} \leq b_n$, or
 $\lim a = \lim  b = \ell$, donc on conclut par théorème d'encadrement que
 $(u_{\varphi(n)})_{n \in \mathbb{N}}$ converge vers $\ell$.
+
+### Caractérisations séquentielles
+#### Partie dense dans $\mathbb{R}$
+> Soit $A \subset \mathbb{R}$, $A$ est dense dans $\mathbb{R}$ si
+> $\forall x \in \mathbb{R},\forall \varepsilon > 0, \exists y \in A, |x - y| \leq \varepsilon$.
+
+> $A$ est dense dans $\mathbb{R}$ si et seulement si $AAx \in \mathbb{R}, \exists (a_n)_{n \in \mathbb{N}} \in A^{\mathbb{N}}, \lim\limits_{n \to + \infty} a_n = x$.
+
+__Preuve :__\
+$\Rightarrow$ On suppose $\forall x \in \mathbb{R}, \forall \varepsilon > 0, \exists a \in A, |x - a| \leq \varepsilon$.
+Soit $x \in \mathbb{R}$, pour tout $n \in \mathbb{N}$, on pose
+$\varepsilon_n = \frac{1}{n + 1} > 0$. Ainsi, il existe $a_n  \in A \mid |x - a_n| \leq \varepsilon_n$,
+donc on a $(a_n)_{n \in \mathbb{N}} \in A^{\mathbb{N}}$ telle que $\forall n \in \mathbb{N},|x - a_n| \leq \frac{1}{n+1}$,
+donc $\lim\limits_{n \to + \infty} a_n = x$.\
+$\Leftarrow$ On suppose $\forall x \in \mathbb{R}, \exists (a_n)_{n \in \mathbb{N}} \in A^{\mathbb{N}}$
+tel que $a_n \to_{n \to +\infty} x$. Soit $x \in \mathbb{R}$ et $\varepsilon > 0$,
+$a_n \to x \Rightarrow \exists n_0,\forall \geq n_0,|a_n - x| \leq \varepsilon$.
+Ainsi, $a_{n_0} \in A$ et $|a_{n_0} - x| \leq \varepsilon$.
+
+##### Exemple : densité de $\mathbb{Q}$ dans $\mathbb{R}$
+Puisque pour tout $x \in \mathbb{R}$, on peut poser $d_n = \frac{\left\lfloor x \times 10^n \right\rfloor}{10^n} \in \mathbb{Q}$
+et $\forall n \in \mathbb{N}$, $d_n \leq x < d_n + \frac{1}{10^n}$.
+Enfin, $\forall n \in \mathbb{N},|x - d_n| \leq \frac{1}{10^n}$,
+donc $d_n  \to_{n \to +\infty} x$.
+
+#### Caractérisation de la borne supérieure
+> Soit $A \subset \mathbb{R}$ non vide majoré, alors $A$ possède une borne supérieure
+> $\alpha = \text{sup}(A)$.
+
+> $\alpha$ est la borne supérieure si et seulement si $\left\{\begin{matrix} \forall \varepsilon > 0, \exists a \in A, \alpha - \varepsilon < a \\ \forall a \in A, a \leq \alpha \end{matrix}\right.$.
+
+> Soit $\alpha \in \mathbb{R}$ et $A \subset \mathbb{R}$ non vide majorée, $\alpha = \text{sup}(A)$
+> si et seulement si $\alpha$ est un majorant de $A$ et il existe une suite
+> $(a_n)_{n \in \mathbb{N}} \in A^{\mathbb{N}}$ qui converge $\alpha$.
+
+__Preuve :__\
+$\Rightarrow$ On suppose $\alpha$ majorant de $A$ et $\forall \varepsilon > 0, \exists a \in A, \alpha - \varepsilon < a$.
+Pour tout $n \in \mathbb{N}$, on prend $\varepsilon_n = \frac{1}{2^n} > 0$.
+Avec cet $\varepsilon_n > 0$, il existe $a_n \in A \mid \alpha - \varepsilon_n < a_n$.
+Ainsi, $(a_n)_{n \in \mathbb{N}} \in A^{\mathbb{N}}$ vérifie
+$\forall n \in \mathbb{N}, \alpha - a_n \leq \frac{1}{2^n}$. De plus,
+$\alpha$ est majorant de $A$, donc $\forall n \in \mathbb{N}, a_n \leq \alpha$.
+Finalement, $\forall n \in \mathbb{N}, 0 \leq \alpha - a_n \leq \frac{1}{2^n}$.
+Par encadrement, $\lim\limits_{n \to + \infty} a_n = \alpha$.\
+$\Leftarrow$ On suppose $\alpha$ majorant de $A$ et il existe $(a_n)_n \in A^{\mathbb{N}}$
+qui converge vers $\alpha$. Soit $\varepsilon > 0$,
+$\exists n_0 \in \mathbb{N}, \forall n \geq n_0, |a_n - \alpha| \leq \varepsilon$.
+$\forall n \geq n_0, \alpha - \frac{\varepsilon}{2} \leq a_n \leq \alpha + \frac{\varepsilon}{2}$.
+En particulier, $a_{n_0} \in A$ et $\alpha - \frac{\varepsilon}{2} \leq a_{n_0}$,
+$\alpha - \varepsilon < \frac{-\varepsilon}{2}$,
+donc $\alpha - \varepsilon < \alpha - \frac{\varepsilon}{2} \leq a_{n_0}$.
+
+## Suites à valeurs complexes
+> Soit $u \in \mathbb{C}^{\mathbb{N}}$. On définit :
+> - $\Re(u) = (\Re(u_{n}))_{n \in \mathbb{N}} \in \mathbb{C}^{\mathbb{N}}$
+> - $\Im(u) = (\Im(u_{n}))_{n \in \mathbb{N}} \in \mathbb{C}^{\mathbb{N}}$
+> - $|u| = (|u_n|)_{n \in \mathbb{N}} \in \mathbb{R}_{+}^{\mathbb{N}}$
+> - $\overline{u} = (\overline{u_{n}})_{n \in \mathbb{N}} \in \mathbb{C}^{\mathbb{N}}$
+
+Ainsi, $u = \Re(u) + i \Im(u)$, $\overline{u}^2 = u \overline{u} = \Re(u)^2 + \Im(u)^2$,
+$\Re(u) = \frac{1}{2} (u + \overline{u})$ et $\Im(u) = \frac{1}{2i} (u - \overline{u})$.
+
+Soit $u \in \mathbb{C}^{\mathbb{N}}$, $u$ est bornée si
+$\exists M, \forall n \in \mathbb{N}, |u_{n}| \leq M$.
+
+> Si $u,v \in \mathbb{C}^{\mathbb{N}}$ bornées et $\lambda \in \mathbb{C}$,
+> alors $u + v$, $u \times v$ et $\lambda u$ sont bornées.
+
+> Soit $u \in \mathbb{C}^{\mathbb{N}}$ et $\ell \in \mathbb{C}$,
+> $u$ converge vers $\ell$ si $\forall \varepsilon > 0, \exists n_0, \forall n \geq n_0, |u_{n} - \ell| \leq \varepsilon$.
+
+> Le théorème d'unicité de la limite a le même énoncé que pour les suites réelles
+
+> Si et seulement si $u$ converge vers $\ell$, $\Re(u)$ converge vers
+> $\Re(\ell)$ et $\Im(u)$ converge vers $\Im(\ell)$.
+
+__Preuve :__ $u - \ell = (\Re(u) + i \Im(u)) - (\Re(\ell) + i \Im(\ell))$\
+$\Leftrightarrow u - \ell = (\Re(u) - \Re(\ell)) + i(\Im(u) - \Im(\ell))$\
+$\Leftrightarrow |u - \ell| \leq |\Re(u) - \Re(\ell)| + |\Im(u) - \Im(\ell)|$\
+Cette inégalité prouve le sens $\Leftarrow$.
+On prouve $\Rightarrow$ avec $|\Re(z)| \leq |z|$ et $|\Im(z)| \leq |z|$.
+Ainsi, $|\Re(u) - \Re(\ell)| = |\Re(u - \ell)| \leq |u - \ell|$,
+et de même avec les parties imaginaires.
+
+> Si $u \to \ell$ et $v \to \ell'$ avec $\ell,\ell' \in \mathbb{C}$, alors
+> on obtient les mêmes propriétés que dans $\mathbb{R}^{\mathbb{N}}$.
+
+> $u$ diverge si $u$ ne converge pas
+
+> Toute suite convergente est bornée (même preuve que pour les réels)
+
+> (Admis) Toute suite de $\mathbb{C}^{\mathbb{N}}$ bornée admet une sous-suite convergente
