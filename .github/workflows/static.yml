@@ -21,7 +21,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -37,8 +36,7 @@ jobs:
       - name: Gets all modified files list
         id: fileslist
         uses: jitterbit/get-changed-files@v1
-        with:
-          format: ''
+        # By default, space-separated values
 
       - name: Run pandoc for every file
         run: |
