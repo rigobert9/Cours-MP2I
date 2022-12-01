@@ -21,40 +21,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Installing pandoc and texlive
-        run: |
-          sudo apt update
-          sudo apt install texlive-full pandoc
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Gets all modified files list
-        id: fileslist
-        uses: jitterbit/get-changed-files@v1
-        # By default, space-separated values
-
-      - name: Run pandoc for every file
-        run: |
-          for file in $(grep .md - <<< ${{ steps.files.outputs.all }}); do
-            out_name=".pages/"`basename -s .md $file`
-            mkdir -p `dirname $out_name`
-            if [ -d "${filename%.*}-assets" ]; then
-              ln -s "${filename%.*}-assets" ".pages/""${filename%.*}-assets"
-            fi
-            pandoc -V geometry:margin=2cm --toc -s -f gfm+tex_math_dollars --resource-path="./"`dirname $file` --mathjax $file --output=$out_name
-          done
-
       - name: Setup Pages
         uses: actions/configure-pages@v2
+     
+      - name: Installe les dépendances
+        run: sudo apt-get install -y pandoc texlive texlive-latex-base texlive-latex-extra
+      
+      - name: Compile
+        run: |
+          find * -type d -exec mkdir -p ../out/{} \;
+          find . -type f -name "*.md" -exec pandoc -V geometry:margin=2cm --toc -s -f markdown+tex_math_dollars --resource-path="./"`dirname fichier.md` --mathjax {} --output=../out/{}.pdf \;
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: './.pages'
+          # Upload entire repository
+          path: '../out'
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
