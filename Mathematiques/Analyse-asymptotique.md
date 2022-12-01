@@ -145,3 +145,15 @@ On a de même :
 - $\arctan u_{n} \sim u_{n}$
 - $\cos u_{n} - 1 \sim \frac{-1}{2} u_{n}^2$
 - $\cosh u_{n} - 1 \sim \frac{1}{2} u_{n}^2$
+
+### Développement limité
+On a (Développement limité d'ordre 1), $\lim\limits_{h \to 0} f(a + h) = f(a) + h f'(a) + o(h)$,
+on peut noter ainsi, lorsque $a = 0$ :
+- $\exp(h) \approx 1 + h$
+- $\sin(h) = h$
+- $\sqrt{1 + h} \approx 1 + \frac{1}{2} h$
+- $(1 + h)^{\alpha} \approx 1 + \alpha h$
+
+En physique, ce premier ordre suffira largement pour des simplifications ou des
+équations différentielles. En mathématiques, on pourra aller plus loin dans
+l'inspection du $o(h)$ en utilisant Taylor.
