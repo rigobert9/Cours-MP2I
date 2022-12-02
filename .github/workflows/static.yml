@@ -48,12 +48,12 @@ jobs:
       - name: Création du ZIP des cours en PDF
         uses: actions/upload-artifact@v3
         with:
-          path: ${{github.workspace}}/../out
+          path: $(dirname ${{github.workspace}})/out
           name: 'Cours imprimés en PDF'
       - name: Création du ZIP des cours en HTML
         uses: actions/upload-artifact@v3
         with:
-          path: ${{github.workspace}}/../out-html
+          path: $(dirname ${{github.workspace}})/out-html
           name: 'Cours en format HTML'
 
       - name: Téleversement des pages
