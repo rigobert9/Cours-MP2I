@@ -43,17 +43,17 @@ jobs:
       - name: Compilation des pages HTML du site
         run: |
           find * -type d -exec mkdir -p ../out-html/{} \;
-          find . -type f -name "*.md" -exec bash -c 'pandoc -V geometry:margin=2cm --toc -s -f markdown+tex_math_dollars --resource-path="./$(dirname {})" --mathjax "{}" --output="../out-html/$(basename -s .md {}).html"' \;
+          find . -type f -name "*.md" -exec bash -c 'pandoc -V geometry:margin=2cm --toc -s -f markdown+tex_math_dollars --resource-path="./$(dirname {})" --title=$(basename -s .md {}) --mathjax "{}" --output="../out-html/$(basename -s .md {}).html"' \;
 
       - name: Création du ZIP des cours en PDF
         uses: actions/upload-artifact@v3
         with:
-          path: '../out'
+          path: ${{github.workspace}}/out
           name: 'Cours imprimés en PDF'
       - name: Création du ZIP des cours en HTML
         uses: actions/upload-artifact@v3
         with:
-          path: '../out-html'
+          path: ${{github.workspace}}/out-html
           name: 'Cours en format HTML'
 
       - name: Téleversement des pages
