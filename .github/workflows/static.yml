@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: '../out-html'
-          name: 'Cours en format HTML"
+          name: 'Cours en format HTML'
 
       - name: Téleversement des pages
         uses: actions/upload-pages-artifact@v1
