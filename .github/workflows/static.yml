@@ -47,7 +47,7 @@ jobs:
       
       - name: Récupération de l'audessus
         id: overpath
-        run: echo "PATH=""dirname ${{github.workspace}}" >> $GITHUB_OUTPUT
+        run: echo "PATH="`dirname ${{github.workspace}}` >> $GITHUB_OUTPUT
       - name: Création du ZIP des cours en PDF
         uses: actions/upload-artifact@v3
         with:
