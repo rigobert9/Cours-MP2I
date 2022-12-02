@@ -44,16 +44,19 @@ jobs:
         run: |
           find * -type d -exec mkdir -p ../out-html/{} \;
           find . -type f -name "*.md" -exec bash -c 'pandoc -V geometry:margin=2cm --toc -s -f markdown+tex_math_dollars --resource-path="./$(dirname {})" --title=$(basename -s .md {}) --mathjax "{}" --output="../out-html/$(basename -s .md {}).html"' \;
-
+      
+      - name: Récupération de l'audessus
+        id: overpath
+        run: echo "PATH=""dirname ${{github.workspace}}" >> $GITHUB_OUTPUT
       - name: Création du ZIP des cours en PDF
         uses: actions/upload-artifact@v3
         with:
-          path: $(dirname ${{github.workspace}})/out
+          path: ${{steps.overpath.outputs.PATH}}/out
           name: 'Cours imprimés en PDF'
       - name: Création du ZIP des cours en HTML
         uses: actions/upload-artifact@v3
         with:
-          path: $(dirname ${{github.workspace}})/out-html
+          path: ${{steps.overpath.outputs.PATH}}/out-html
           name: 'Cours en format HTML'
 
       - name: Téleversement des pages
