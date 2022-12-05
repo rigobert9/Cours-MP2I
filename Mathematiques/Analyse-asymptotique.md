@@ -157,3 +157,59 @@ on peut noter ainsi, lorsque $a = 0$ :
 En physique, ce premier ordre suffira largement pour des simplifications ou des
 équations différentielles. En mathématiques, on pourra aller plus loin dans
 l'inspection du $o(h)$ en utilisant Taylor.
+
+## Comparaison de fonctions
+On adapte les notations $o$, $O$ et $\approx$ aux fonctions. Soit $I$ un
+intervalle de $\mathbb{R}$ d'intérieur non vide. On veut étudier le comportement
+local d'une fonction $f: I \to \mathbb{K}$ au voisinage d'un point de $I$ ou d'une extrémité de $I$.
+
+> Soit $a \in I$ ou $a$ une extrémité de $I$, et $f: I \to \mathbb{K}$ une
+> fonction. On dit que $f$ vérifie une propriété $P$ au voisinage de $a$ si :
+> - $a = +\infty$ : $\exists A \in \mathbb{R}, \forall x \in I \cap [A,+\infty[, P(x)$
+> - $a = -\infty$ : $\exists A \in \mathbb{R}, \forall x \in I \cap ]-\infty,A], P(x)$
+> - $a \in I$ fini : $\exists \eta > 0, \forall x \in I \cap [a - \eta, a + \eta], P(x)$
+
+Ces voisinages sont aux fonction ce que "à partir d'un certain rang" est aux
+suites.
+
+### Notations de Landau
+Soient $f,g$ définies sur $I \setminus \{a\}$ et qui ne s'annulent pas au
+voisinage de $a$ :
+- $f(x) =_a O(g(x))$ si $\frac{f}{g}$ est bornée au voisinage de $a$, soit
+  $\exists M  \in \mathbb{R}_{+}, \text{ dans un voisinage de a }, |f(x)| \leq M \times |g(x)|$
+- $f(x) =_a o(g(x))$ si $\lim\limits_{x \to a} \frac{f}{g} = 0$
+- $f(x) \underset{a}{\approx} o(g(x))$ si $\lim\limits_{x \to a} \frac{f}{g} = 1$
+
+> $f \underset{a}{\approx} g \Leftrightarrow g =_a g + o(g)$
+
+En effet, $f \underset{a}{\approx} g \Leftrightarrow \lim\limits_{a} \frac{f}{g} = 1 \Leftrightarrow \lim\limits_{a} (\frac{f}{g} - 1)$
+$\Leftrightarrow (f - g) =_a o(g)$.
+
+On a les mêmes théorèmes sur les opérations que pour les suites (on remplace simplement $n \to +\infty$
+par $x \to a$).
+
+*Il n'y a pas de somme d'équivalents, ni de compositions.*
+
+En revanche, on peut opérer un changement de variable : comme $\sin(x) \underset{x \to 0}{\approx} x$
+et $\frac{x^2}{\pi} \xrightarrow[x \to 0] 0$, donc $\sin(\frac{x^2}{\pi}) \underset{x \to 0}{\approx} \frac{x^2}{\pi}$.
+
+On liste aussi des équivalents usuels en $0$:
+- $(e^{x} - 1) \underset{x \to 0}{\approx} x$ (car on a $e^{x} \underset{x \to 0}{=} 1 + x + o(x)$)
+- $\ln(1 + x) \underset{x \to 0}{\approx} x$
+- $\ln(x) \underset{x \to 1}{\approx} (x - 1)$ (car $\ln(x) \underset{x \to 1}{=} (x - 1) + o(x - 1)$)
+- $\alpha \in \mathbb{R}, ((1 + x)^{\alpha} - 1) \underset{x \to 0}{\approx} \alpha x$
+  (car $(1 + x)^{\alpha} \underset{x \to 0}{=} 1 + \alpha x + o(x)$)
+  (de même, $\sqrt{1 + x} \underset{x \to 0}{=} 1 + \frac{1}{2} x + o(x)$)
+- $(1 - \cos(x)) \underset{x \to 0}{\approx} \frac{x^2}{2}$ (car $\cos(x) \underset{x \to 0}{=} 1 - \frac{x^2}{2} + o(x^2)$)
+- $(\cosh(x) - 1) \underset{x \to 0}{\approx} \frac{x^2}{2}$ (car $\cosh(x) = 1 + \frac{x^2}{2} + o(x^2)$)
+
+De plus, on a les approximations sur les fonction trigonométriques au voisinage de $0$ :
+- $\sin(x) \underset{x \to 0}{\approx} x$
+- $\sinh(x) \underset{x \to 0}{\approx} x$
+- $\tan(x) \underset{x \to 0}{\approx} x$
+- $\tanh(x) \underset{x \to 0}{\approx} x$
+- $\arcsin(x) \underset{x \to 0}{\approx} x$
+- $\arctan(x) \underset{x \to 0}{\approx} x$
+
+En pratique, on se ramène toujours à une quantité qui tend vers $0$, afin d'appliquer les équivalents
+usuels en $0$ et les approximations au voisinage de $0$.
