@@ -28,25 +28,41 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Téléchargement de la nouvelle version
         uses: actions/checkout@v3
-      - name: Setup Pages
+      - name: Mise en place des pages
         uses: actions/configure-pages@v2
      
-      - name: Installe les dépendances
+      - name: Installation des dépendances
         run: sudo apt-get install -y pandoc texlive texlive-latex-base texlive-latex-extra
       
-      - name: Compile
+      - name: Compilation des PDF
         run: |
           find * -type d -exec mkdir -p ../out/{} \;
-          find . -type f -name "*.md" -exec pandoc -V geometry:margin=2cm --toc -s -f markdown+tex_math_dollars --resource-path="./"`dirname fichier.md` --mathjax {} --output=../out/{}.pdf \;
+          find . -type f -name "*.md" -exec bash -c 'pandoc -V geometry:margin=2cm --toc -s -f markdown+tex_math_dollars --resource-path="./$(dirname {})" --mathjax "{}" --output="../out/$(basename -s .md {}).pdf"' \;
+      - name: Compilation des pages HTML du site
+        run: |
+          find * -type d -exec mkdir -p ../out-html/{} \;
+          find . -type f -name "*.md" -exec bash -c 'pandoc -V geometry:margin=2cm --toc -s -f markdown+tex_math_dollars --resource-path="./$(dirname {})" --title=$(basename -s .md {}) --mathjax "{}" --output="../out-html/$(basename -s .md {}).html"' \;
       
-      - name: Upload artifact
+      - name: Récupération de l'audessus
+        id: overpath
+        run: echo "PATH="`dirname ${{github.workspace}}` >> $GITHUB_OUTPUT
+      - name: Création du ZIP des cours en PDF
+        uses: actions/upload-artifact@v3
+        with:
+          path: ${{steps.overpath.outputs.PATH}}/out
+          name: 'Cours imprimés en PDF'
+      - name: Création du ZIP des cours en HTML
+        uses: actions/upload-artifact@v3
+        with:
+          path: ${{steps.overpath.outputs.PATH}}/out-html
+          name: 'Cours en format HTML'
+
+      - name: Téleversement des pages
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
-          path: '../out'
-          
-      - name: Deploy to GitHub Pages
+          path: '../out-html'
+      - name: Mise en ligne des pages
         id: deployment
         uses: actions/deploy-pages@v1
