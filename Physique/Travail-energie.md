@@ -214,3 +214,39 @@ $m \ddot{x} = -\frac{d E_p}{dt}$.
 
 Une position d'équilibre ou point d'équilibre, qu'on note $x_\text{eq}$ est un
 état du système tel que $\frac{d x_\text{eq}}{dt}$.
+
+> Ce point d'équilibre est dit stable si, lorsqu'on écarte légèrement le système
+> de ce point, il tend à s'en rapprocher. Dans le cas où il tend à s'en éloigner,
+> il est dit instable.
+
+On regarde l'évolution du système en fonction de $x_\text{eq}$, et on pose
+$\varepsilon(t) = x(t) - x_\text{éq}$. On a $m\ddot{x} = - \frac{d E_p}{dx}$,
+et donc $m \ddot{\varepsilon} = - \frac{d E_p}{dx}(x_\text{éq} + \varepsilon)$.
+On pose un développement limité
+$m\ddot{\varepsilon} \approx - \frac{d E_p}{dx}(x_\text{éq}) - \varepsilon \frac{d^2 E_p}{dx^2}(x_\text{éq}) + O(\varepsilon^2)$,
+donnant en un point d'équilibre
+$\ddot{\varepsilon} + \frac{1}{m} \frac{d^2 E_p}{dx^2}(x_\text{éq}) \varepsilon = 0$.
+
+Dans le cas où $\frac{d^2 E_p}{dx^2} > 0$, le système est un oscillateur
+harmonique, et dans le cas où $\frac{d^2 E_p}{dx^2} < 0$, le système est en
+équilibre instable.
+
+Un point d'équilibre $x_\text{éq}$ est stable si c'est un minimum local
+de $E_p(x_\text{éq})$, donnant $\frac{d E_p}{dx} = 0$ et $\frac{d^2 E_p}{dx^2} > 0$.
+
+Un point d'équilibre $x_\text{éq}$ est instable si c'est un maximum local de
+$E_p(x_\text{éq})$, donnant $\frac{d E_p}{dx} = 0$ et $\frac{d^2 E_p}{dx^2} < 0$.
+
+### Paysage énergétique
+$E_p(x) \approx E_p(x_\text{éq}) + \frac{d E_p}{dx}(x_\text{éq}) (x - x_\text{éq}) + \frac{1}{2} \frac{d^2 E_p}{dx^2}(x_\text{éq}) (x - x_\text{éq})^2 \ldots$\
+$\Leftrightarrow \frac{d}{dt} [\frac{1}{2} \dot{x}^2 + \frac{1}{2} \omega_0^2 (x - x_\text{éq})^2] = 0$\
+$\Leftrightarrow \frac{d}{dt} [\frac{1}{2} m \dot{x}^2 + \frac{1}{2} m \omega_0^2 (x - x_\text{éq})^2] = 0$\
+$\Leftrightarrow \frac{d}{dt} [E_m] = 0$, soit une énergie mécanique constante.
+
+On a le potentiel harmonique $\ddot{x} + \omega_0^2 x = \omega_0^2 x_\text{éq}$,
+qu'on multiplie par $\dot{x}$, donnant
+$\dot{x}\ddot{x} + \omega_0^2 \dot{x} (x - x_\text{éq}) = 0$.
+
+> Au voisinage d'une position d'équilibre stable, la position du système est un
+> oscillateur harmonique de la forme $\ddot{x} + \omega_0^2 x = \omega_0^2 x_\text{éq}$,
+> avec $\omega = \sqrt{\frac{1}{m} \frac{d^2 E_p}{dx^2}(x_\text{éq})}$.
