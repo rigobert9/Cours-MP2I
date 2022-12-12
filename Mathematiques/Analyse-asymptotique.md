@@ -474,8 +474,37 @@ __DL de $\ln(1 + x)$ en $0$ :__
 $f(x) = \ln(1  +x)$ et $f'(x) = \frac{1}{1 + x} \underset{x \to 0}{=} 1 - x + x^2 - x^3 \ldots + (-1)^n x^n + o(x^n)$,
 et on primitive, donnant $\ln(1 + x) = x - \frac{x^2}{2} + \frac{x^3}{3} \ldots + (-1)^n \frac{x^{n+1}}{n + 1} + o(x^{n+1})$.
 
+En pratique, bien qu'on ne puisse pas dériver un DL, soit $f \in \mathcal{C}^n$,
+alors $f' \in \mathcal{C}^{n-1}$. Par Taylor-Young, on sait que $f$ admet un $\text{DL}_{n}(0)$
+et que $f'$ admet un $\text{DL}_{n-1}(0)$. On utilise Taylor-Young pour faire
+apparaître les coefficients du DL de $f(x)$, et on obtient que la primitive de
+ce DL est égale au DL de $F(x)$ moins $F(0)$, et on obtient les coefficients par
+identification.
+
 #### Équations différentielles pour générer des DL
 Les équations différentielles permettent de calculer des DLs à une classe
 presque infinie, en obtenant le DL d'un terme puis en primitivant à répétition.
 Par exemple, on peut obtenir plusieurs rangs à chaque itération en travaillant
-sur $\tan' = 1 + \tan^2$
+sur $\tan' = 1 + \tan^2$.
+
+## Développement asymptotique
+Pour connaître le comportement de $f$ en $\pm \infty$, on peut chercher un développement
+de $f(x) = f(\frac{1}{(\frac{1}{x})})$, où $\frac{1}{x} \xrightarrow[\pm \infty] 0$.
+On utilise les DL usuels en 0 avec des $\frac{1}{x}$ afin d'obtenir le
+comportement asymptotique. On a donc $f(x) = g_0(x) + g_1(x) + \ldots + o(g_n(x))$
+où les fonctions $g_0, g_1, g_2 \ldots g_n$ sont négligeables :
+$\forall k, g_{k+1}(x) \underset{/pm \infty}{=} o(g_k(x))$.
+
+##### Exemple
+$f(x) = \sqrt{x + x^2}$ en $+\infty$. On effectue un développement asymptotique
+à 3 termes en $+\infty$. On factorise par $x$, car $f(x) \underset{+\infty}{\sim} \sqrt{x^2} \underset{+\infty}{\sim} x$.
+Ainsi, $f(x) = \sqrt{x^2 [1 + \frac{1}{x}]} = x \sqrt{1 + \frac{1}{x}}$ (pour $x > 0$).
+
+On prend donc le développement à 3 termes pour $\sqrt{1 + \frac{1}{x}}$,
+avec $\frac{1}{x} \xrightarrow[+\infty] 0$ et $\sqrt{1 + u} \underset{x \to 0}{=} 1 + \frac{1}{2} u - \frac{1}{8} u^2 + o(u^2)$.
+Finalement, $f(x) \underset{+\infty}{=} x \times [1 + \frac{1}{2x} - \frac{1}{8x^2} + o(\frac{1}{x^2})]$
+$= x + \frac{1}{2} - \frac{1}{8x} + o(\frac{1}{x})$.
+
+Ainsi, $[f(x) - (x + \frac{1}{2})] \underset{+\infty}{\sim} \frac{-1}{8x}$.
+Comme ce résultat est négatif, on conclut que $y = x + \frac{1}{2}$ est une
+asymptote en $+\infty$ à $\mathcal{C}_f$ et $f$ est en dessous.
