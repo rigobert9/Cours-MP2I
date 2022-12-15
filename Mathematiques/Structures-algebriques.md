@@ -306,3 +306,89 @@ $e_G$.\
 Pour $x,y \in H$, $\forall i \in I, x \in H_i \land y \in H_i$, or comme $H_i$
 est un groupe, $x \ast y^{-1} \in H$, et donc $x \ast y^{-1} \in H$.
 Par caractérisation des sous-groupes, $H$ est un sous-groupe de $H$.
+
+Dans $\mathbb{Z}$, les sous-groupes $A$ sont tels que $0 \in A$
+et $\forall x,y \in A, x - y \in A$. Ainsi, $\forall n \in \mathbb{N}$,
+$n\mathbb{Z}$ est un groupes, mais les impairs ne sont pas stables par
+l'addition. $\{0\}$ et $\mathbb{Z}$ sont des sous-groupes triviaux.
+
+> Les sous-groupes de $(\mathbb{Z}, +)$ sont exactement les $n\mathbb{Z}$, avec $n \in \mathbb{N}$
+
+__Preuve :__ Les propositions sont bien des sous-groupes de $\mathbb{Z}$, et il
+reste à prouver qu'ils sont les seuls. Soit $H$ un sous-groupe de $\mathbb{Z}$,
+qui contient $0$ (l'élément neutre). Si $H = \{0\}$, alors on a $n = 0$,
+et sinon, alors il existe $a \neq 0 \in \mathbb{Z}$ tel que $a \in H$.
+Puisque $a \in H$, $-a  \in H$. L'ensemble $H \cap \mathbb{N}^{\ast}$ est non
+vide (il contient $|a|$), donc il possède $n = \text{min}(H \cap \mathbb{N}^{\ast})$.\
+On montre donc que si $n \in H$, alors tous les itérés de $n$ appartiennent à H,
+donc $\forall k \in \mathbb{Z}, nk \in H$, soit $n\mathbb{Z} \subset H$.\
+Pour l'inclusion inverse, soit $h \in H$, la division euclidienne de $h$ par $n$
+donne $\exists qins\mathbb{Z}, r \in \mathbb{Z} \mid h = nq + r$ avec
+$0 \leq r < n$, or $r = h - nq$. Puisque $H$ est stable, $h \in H$ et
+$nq \in n\mathbb{Z} \subset H$, alors $r \in H$, donc $r \in H \cap \mathbb{N}$.
+Or, $n = \text{min}(H \cap \mathbb{N}^{\ast})$ et $r < n$, donc $r = 0$,
+donc $h = nq \in n\mathbb{Z}$, en donc $H \subset n\mathbb{Z}$.
+
+### Morphismes de groupes
+> Soit deux groupes $(G,\ast)$ et $(H,\otimes)$, on dit que $f: G \to H$ est un
+> morphisme de groupes si $\forall (x,y) \in G^2, f(x \ast y) = f(x) \otimes f(y)$.
+
+> Si $f: G \to H$ est un morphisme de groupes, alors
+> - $f(e_G) = e_H$
+> - $\forall x \in G, f(x^{-1}) = f(x)^{-1}$
+
+__Preuve :__
+- $f(e_G) = f(e_G \ast e_G) = f(e_G) \otimes f(e_G)$, or $f(e_G) \in H$, donc
+  admet un inverse $f(e_G)^{-1} \in H$, soit
+  $f(e_G)^{-1} \otimes f(e_G) = f(e_G)^{-1} \otimes f(e_G) \otimes f(e_G)$
+  $\Leftrightarrow e_H = e_H \otimes f(e_G) \Leftrightarrow e_H = f(e_G)$
+- Pour $x \in G, x^{-1} \in G, x \ast x^{-1} = e_G$. Ainsi, $f(x \ast x^{-1})$
+  $= f(e_G)$. On a donc $f(x) \otimes f(x^{-1}) = e_H$, or $f(x) \in H$,
+  donc $f(x)^{-1} \in H$, $f(x)^{-1} \otimes f(x) \otimes f(x^{-1}) = f(x)^{-1} \otimes e_H$,
+  donc $f(x)^{-1} = f(x^{-1})$
+
+L'exponentielle est un morphisme de $(\mathbb{R},+)$ (de neutre 0)
+dans $(\mathbb{R}_{+}^{\ast}, \times)$ (de neutre 1).
+
+> - Un isomorphisme est un morphisme bijectif
+> - Un endomorphisme est un morphisme de $G$ dans $G$
+> - Un automorphisme est un endomorphisme bijectif (endo- et isomorphisme)
+
+> La composée de deux morphismes de groupes est un morphisme de groupes
+
+__Preuve :__ Soit $f : (G, \ast) \to (H, \otimes)$ et $g : (H, \otimes) \to (K, \top)$
+des morphismes de groupes, alors $g \circ f : (G, \ast) \to (K, \top)$.
+Soient $x,y \in G, (g \circ f)(x \ast y) = g(f(x \ast y)) = g(f(x) \otimes f(y))$
+$= g(f(x)) \top g(f(y)) = g \circ f(x) \top g \circ f(y)$
+
+> La réciproque d'un isomorphisme est un isomorphisme
+
+__Preuve :__ Soit $f : (G,x) \to (H, \otimes)$ un morphisme bijectif,
+la réciproque $f^{-1} : H \to G$, on cherche à évaluer $f^{-1}(h_1 \otimes h_2)$.
+Soient $h_1, h_2 \in H$, $f^{-1}(h_1), f^{-1}(h_2) \in G$.
+On note $x = f^{-1}(h_1)$ et $y = f^{-1}(h_2)$, et on a donc
+$f(x \ast y) = f(x) \otimes f(y) = h_1 \otimes h_2$. $f$ est bijective,
+donc $x \ast y = f^{-1}(h_1 \otimes h_2)$.
+
+> L'image directe d'un sous-groupe par un morphisme est un sous-groupe
+
+> L'image réciproque d'un sous-groupe par un morphisme est un sous-groupe
+
+L'image d'un sous-groupe $G_1$ de $G$ par $f: (G, \ast) \to (H, \otimes)$, son
+image est $f(G_1) = \{f(x) \mid x \in G_1\}$.
+
+__Preuve :__ On montre que $f(G_1)$ est un sous-groupe de $H$ :
+- $e_g \in G_1$ car $G_1$ est un groupe, et donc $f(e_G) = e_H$,
+  donc $e_H \in f(G_1)$
+- Soient $a,b \in f(G_1)$, il existe $x,y \in G_1$ tels que
+  $\left\{\begin{matrix} a = f(x) \\ b = f(y) \end{matrix}\right.$,
+  alors $a \otimes b^{-1} = f(x) \otimes f(y)^{-1} = f(x) \otimes f(y^{-1})$
+  $= f(x \ast y^{-1})$. Or, $x,y \in G_1$ donc $x \ast y^{-1} \in G_1$,
+  donc $a \otimes b^{-1} = f(x \ast y^{-1}) \in f(G_1)$.
+  Donc $f(G_1)$ est un sous-groupe de H
+
+__Preuve :__ On cherche à montrer que $f^{-1}(H_1)$ est un sous-groupe de $G$.
+Comme dans la preuve précédente, $e_G \in f^{-1}(H_1)$. On prouve la stabilité
+des opérations.\
+Soient $x,y \in f^{-1}(H_1)$, on a $f(x \ast y^{-1}) = f(x) \otimes f(y)^{-1}$,
+ce qui par stabilité du sous-groupe est dans $H_1$, donc $x \ast y^{-1} \in f^{-1}(H_1)$.
