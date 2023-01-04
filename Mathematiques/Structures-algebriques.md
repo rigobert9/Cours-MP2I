@@ -392,3 +392,159 @@ Comme dans la preuve précédente, $e_G \in f^{-1}(H_1)$. On prouve la stabilit�
 des opérations.\
 Soient $x,y \in f^{-1}(H_1)$, on a $f(x \ast y^{-1}) = f(x) \otimes f(y)^{-1}$,
 ce qui par stabilité du sous-groupe est dans $H_1$, donc $x \ast y^{-1} \in f^{-1}(H_1)$.
+
+> L'image d'un groupe par un morphisme est un sous-groupe du groupe d'arrivée.
+
+L'image du groupe sera le groupe d'arrivée si et seulement si le morphisme est surjectif.
+
+> Soit $f:G \to H$ un morphisme, le noyau de $f$ est l'ensemble des éléments $x$ de $G$
+> tels que $f(x) = e_H$. C'est donc l'ensemble $\{x \in G \mid f(x) = e_H\} = \{x \in G \mid f(x) \in \{e_H\}\}$,
+> soit $x \in f^{-1}(\{e_H\})$.
+
+On note le noyau d'un morphisme $\text{Ker}(f)$. Puisque $\{e_H\}$ est un
+sous-groupe de $H$, $\text{Ker}(f)$ est un sous-groupe de $G$.
+
+> Le morphisme de groupe $f$ est injectif si et seulement si $\text{Ker}(f) = \{e_G\}$.
+
+__Preuve :__ $\Rightarrow$ Trivial\
+$\Leftarrow$ On suppose que $\text{Ker}(f) = \{e_G\}$, et on cherche à montrer
+l'injectivité de $f$. Soient $a,b \in G$, tels que $f(a) = f(b)$. Ainsi,
+$f(a) \otimes (f(b))^{-1} = e_H \Leftrightarrow f(a \ast b^{-1}) = e_H$,
+donc $a \ast b^{-1} \in \text{Ker}(f) = \{x \in G \mid g(x) = e_H\}$.
+Or, $\text{Ker}(f) = \{e_G\}$, donc $a \ast b^{-1} = e_G$, donc $a = b$.
+
+## Structure d'anneau
+### Définition
+> Soit $A$ un ensemble muni de deux lois de composition interne $+, \times$. On
+> dit que $(A,+,\times)$ est un anneau si :
+> - $(A,+)$ est un groupe abélien de neutre $0_A$
+> - $\times$ est associative, de neutre $1_A$
+> - $\times$ est distributive sur $+$
+
+> Si de plus $\times$ est commutative, on parle d'anneau commutatif.
+
+Dans un anneau, un élément $a \in A$ n'a pas forcément d'inverse pour $\times$,
+donc $a^{-1}$ n'a pas toujours de sens.
+
+Par exemple, les matrices carrées sont un anneau non commutatif aux élément
+parfois sans inverse par $\times$.
+
+### Calculs dans un anneau
+> $\forall (a,b,c) \in A^3$ :
+> - $a \times 0_A = 0_A \times a = 0_A$
+> - $(-a) \times b = a \times (-b) = -(a \times b)$
+> - $(-a) \times (-b) = a \times b$
+> - $a \times (b - c) = a \times b - a \times c$
+> - $(a - b) \times c = a \times c - b \times c$
+
+__Preuves :__
+- $(a \times 0_A) = a \times (0_A + 0_A) = (a \times 0_A) + (a \times 0_A)$. On
+  soustrait $(a \times 0_A)$, donnant $0_A = a \times 0_A$.
+- $(-a) \times b + (a \times b) = (-a + a) \times b = 0_A \times b = 0_A$
+
+Puisque $+$ et $\times$ sont associatives, on peut généraliser les notations
+$\sum$ et $\prod$ dans les anneaux.
+Soient $a_1, a_2,\ldots, a_n \in A$, où $(A,+,\times)$ est un anneau, on note
+$a_1 + a_2 + \ldots + a_n = \sum\limits_{i = 1}^{n} a_i$ et
+$a_1 \times a_2 \times \ldots \times a_n = \prod\limits_{i = 1}^{n} a_i$.
+
+On considère, par convention, que si la somme est vide, elle est égale à $0_A$,
+et que si un produit est vide, il est égal à $1_A$.
+
+Par la distributivité de $\times$ sur $+$, on a
+$b \times (\sum\limits_{i \in I} a_i) = \sum\limits_{i \in I} (b \times a_i)$
+et $(\sum\limits_{i \in I} a_i) \times b = \sum\limits_{i \in I} (a_i \times b)$.
+De même, $(\sum\limits_{i = 1}^{n} a_i) \times (\sum\limits_{i = 1}^{n} b_i)$
+$= \sum\limits_{i = 1}^{n} (a_i \times \sum\limits_{j = 1}^{m} b_j)$
+$= \sum\limits_{i = 1}^{n} \sum\limits_{j = 1}^{m} a_i \times b_j$
+$= \sum\limits_{\begin{matrix} 1 \leq i \leq n \\ 1 \leq j \leq m \end{matrix}} a_i \times b_j$.
+Des simplifications sont possible lorsqu'on a commutativité.
+
+> Soient $a,b \in A$ qui commutent, soit $ab = ba$, où $(A,+,\times)$ est un
+> anneau. Soit $n \in \mathbb{N}$ (sur les itérés par $\times$) :
+> - $(a \times b)^n = a^n \times b^n$
+> - $(a + b)^n = \sum\limits_{k = 0}^{n} \binom{n}{k} a^k b^{n - k}$
+> - $a^{n+1} - b^{n+1} = (a - b) \times \sum\limits_{k = 0}^{n} a^k b^{n - k}$
+
+En particulier, $a$ en $1_A$ commutent toujours, nous permettant d'appliquer ces
+formules avec cet élément neutre.
+
+On ne peut rien conclure en général de $a \times b = 0_A$ (par exemple, dans
+l'anneau $\mathbb{Z}/6\mathbb{Z},+,\times$ ou les matrices de dimension $2 \times 2$).
+
+> Un anneau $A$ est dit intègre si
+> $\forall (a,b) \in A^2, ab = 0_A \Rightarrow (a = 0_A \lor b = 0_A)$.
+
+Par exemple, $(\mathbb{R}[x],+,\times)$ (les polynômes à coefficients réels), $(\mathbb{Z},+,\times)$
+sont des anneaux commutatifs intègres, $(\mathbb{Z}/6\mathbb{Z},+,\times)$ est
+un anneau commutatif non intègre et $(\mathcal{M}_2(\mathbb{R}),+,\times)$
+(les matrices réelles $2 \times 2$) est un anneau non commutatif et non intègre.
+
+Ainsi, dans un anneau intègre, $ab = ac$\
+$\Leftrightarrow ab - ac = 0_A$\
+$\Leftrightarrow a \times (b - c) = 0_A$\
+Par intégrité, soit $a = 0_A$, soit $b - c = 0_A \Leftrightarrow b = c$.
+
+### Inversibles dans un anneau
+> Soit $(A,+,\times)$ un anneau, l'ensemble des éléments inversibles de l'anneau
+> $A$ forme un groupe multiplicatif (pour la loi $\times$), qu'on note $U(A)$
+> ou $A^{\ast}$, le groupe des inversibles de l'anneau.
+
+On peut le récapituler par $U(A) = \{a \in A \mid \exists b \in A, ab = ba = 1_A\}$.
+
+__Preuves :__ Puisque $1_A$ est inversible par lui-même, $1_A \in U(A)$,
+donc $U(A)$ contient le neutre pour $\times$. La loi $\times$ est associative,
+et est bien une loi loi de composition interne. En effet, si $a,b \in U(A)$,
+$a$ et $b$ sont inversibles, donc $ab$ est inversible et $(a \times b)^{-1}$
+$= b^{-1} \times a^{-1} \in A$, donc $ab \in U(A)$. $\times$ est donc une loi de composition interne
+dans $U(A)$. Le groupe est stable par passage à l'inverse car si $a \in U(A)$,
+$a$ est inversible et $(a^{-1})^{-1} = a$, donc $a^{-1}$ est inversible, donc
+$a^{-1} \in U(A)$.
+
+Dans l'anneau $(\mathbb{Z},+,\times)$, on a $U(\mathbb{Z}) = \{-1,1\}$,
+pour $(\mathbb{R},+,\times)$, $U(\mathbb{R}) = \mathbb{R}^{\ast}$.
+
+### Sous-anneau
+> Soit $(A,+,\times)$ un anneau, $B$ est un sous-anneau de $A$ si :
+> - $(B,+)$ est un sous-groupe de $A$
+> - $1_A \in B$
+> - $\forall (a,b) \in B^2, a \times b \in B$
+
+> Si $B$ est un sous-anneau, alors $B$ est un anneau.
+
+__Preuve :__ $(B,+)$ est un sous-groupe, et donc est un groupe,
+$1_A$ est le neutre pour $\times$, $\times$ est une loi de composition interne
+dans $B$, et $\times$ est associative et distributive sur $+$.
+
+On prend par exemple l'anneau $\mathbb{Z}[\sqrt{2}] = \{a + b\sqrt{2}, (a,b) \in \mathbb{Z}^2\}$,
+on on cherche à montrer que $\mathbb{Z}[\sqrt{2}]$ est un anneau pour
+$+,\times$.
+- $\mathbb{Z}[\sqrt{2}] \subset \mathbb{R}$ et $(\mathbb{R},+,\times)$ est un
+  anneau
+- $1 = 1 + 0 \sqrt{2} \in \mathbb{Z}[\sqrt{2}]$ (neutre pour $\times$)
+- Pour $x = a + b\sqrt{2}$ et $y = c + d\sqrt{2} \in \mathbb{Z}[\sqrt{2}]$
+  $x + y \in \mathbb{Z}[\sqrt{2}]$ et $x \times y \in \mathbb{Z}[\sqrt{2}]$
+- $x - y \in \mathbb{Z}[\sqrt{2}]$ (permet de prouver l'inversibilité)
+- $\mathbb{Z}[\sqrt{2}]$ est donc un sous-anneau de $\mathbb{R}$, et est donc un
+  anneau
+
+### Morphismes d'anneau
+> Soient $(A,+,\times)$ et $(B,\oplus,\otimes)$ deux anneaux, l'application
+> $f:A \to B$ est un morphisme d'anneaux si $\forall (x,y) \in A^2$,
+> $\left\{\begin{matrix} f(x+y) = f(x) \oplus f(y) \\ f(1_A) = 1_B \\ f(x \times y) = f(x) \otimes f(y) \end{matrix}\right.$
+
+## Structure de corps
+> Soit $K$ muni de deux loi de composition interne $+$ et $\times$,
+> $(K,+,\times)$ est un corps si :
+> - $(K,+,\times)$ est un anneau commutatif (donc $\times$ est aussi commutative)
+> - Tout élément non nul est inverse par $\times$
+
+Si $K$ est un corps, le groupe des inversibles de l'anneau $K$ est
+$K \setminus \{0\}$.
+
+Des exemples de corps sont $(\mathbb{R},+,\times)$, $(\mathbb{C},+,\times)$
+et $(\mathbb{Q},+,\times)$.
+
+> L'ensemble $L$ est un sous-corps du corps $(K,+,\times)$ si
+> - $L$ est un sous-anneau de $K$
+> - $\forall x \in L \setminus \{0\}, x^{-1} \in L$
