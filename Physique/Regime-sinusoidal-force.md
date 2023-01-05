@@ -143,6 +143,7 @@ Bobine          | $\underline{z}_L = j L \omega$
 
 ### En mécanique
 Équivalence                     | Système    | Impédence
+---                             | ---        | ---
 $\frac{1}{C} \Leftrightarrow k$ | Ressort    | $\underline{z}_\text{ressort} = \frac{k}{j \omega}$
 $L \Leftrightarrow m$           | Masse      | $\underline{z}_\text{masse} = j m \omega$
 $R \Leftrightarrow \lambda$     | Frottement | $\underline{z}_\text{frottement} = \lambda$
@@ -168,7 +169,7 @@ $\underline{i}_1 = \underline{y}_1 \underline{u}$ et
 $\underline{i}_2 = \underline{y}_2 \underline{u}$, soit
 $\underline{i} = (\underline{y}_1 + \underline{y}_2) \underline{u}$.
 
-> En dérivation, les impédences des dipôles s'ajoutent.
+> En dérivation, les admitances des dipôles s'ajoutent.
 
 #### Pont diviseur de tension
 Dans un pont diviseur de tension, les impédences des dipôles donnent les
@@ -176,7 +177,7 @@ formules $\underline{u}_1 = \frac{\underline{z}_1}{\underline{z}_1 + \underline{
 et $\underline{u}_2 = \frac{\underline{z}_2}{\underline{z}_1 + \underline{z}_2}$
 
 #### Pont diviseur de courant
-Dans un pont diviseur de courant, les impédences des dipôles donnent les
+Dans un pont diviseur de courant, les admitances des dipôles donnent les
 formules $\underline{i}_1 = \frac{\underline{y}_1}{\underline{y}_1 + \underline{y}_2} \underline{i}$
 et $\underline{i}_2 = \frac{\underline{y}_2}{\underline{y}_1 + \underline{y}_2} \underline{i}$.
 
@@ -284,3 +285,21 @@ avec un tracé d'autant plus droit que $Q$ est petit.
 - À la résonance, $x = 1$, $\Phi(x = 1) = 0$
 
 > Pour la résonance en intensité et en vitesse, les deux signaux sont en phase.
+
+$\Phi_\text{tenison} = \text{arg}(\frac{A_m}{1 - x^2 + j \frac{x}{Q}})$\
+$= - \text{arg}(1 - x^2 + j \frac{x}{Q})$\
+$= - \text{arg}([\frac{Q}{x} - jQx - 1] \frac{x}{jQ})$\
+$= - \text{arg}(j[1 + j Q (x - \frac{1}{x})])$\
+$= - \frac{\pi}{2} - \text{arg}(1 + jQ (x - \frac{1}{x}))$\
+$= -\frac{\pi}{2} + Q_\text{intensité}$
+
+La phase évolue selon la fréquence de $0$ à $-\pi$, de façon d'autant plus
+droite que $Q$ est petit.
+
+### Bilan sur les deux types de résonance
+Intensité/Vitesse                                  | Tension/Élongation
+---                                                | ---
+$i(t) / \dot{x}(t)$                                | $u_c(t) / x(t)$
+Résonance toujours présente, $\omega_r = \omega_0$ | Résonance uniquement si $Q > \frac{1}{\sqrt{2}}$, $\omega_r = \omega_0 \sqrt{1 - \frac{1}{2Q^2}}$
+Proportionnelle à $Q$                              | Proportionnelle à $Q$ si $Q$ est grand
+$a = Q$ : pic d'autant plus fin que $Q$ est grand  | Proportionnelle à $Q$ si $Q$ est grand
