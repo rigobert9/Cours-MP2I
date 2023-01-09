@@ -171,3 +171,146 @@ Dans ce cas, on a :
 - si $\log_a(b) < c, f(n) = \Theta(n^c)$
 - si $\log_a(b) > c, f(n) = \Theta(n^{\log_a(b)})$
 - si $\log_a(b) = c, f(n) = \Theta(n^c \log^n)$
+
+## Rencontre au milieu
+La "rencontre" au milieu consiste à prendre un problème que l'on résout par
+recherche exhaustive dans un certain ensemble, et couper le problème en deux ce
+qui fait que la taille de l'ensemble où on cherche diminue.
+
+Cependant, les sous-problèmes sont alors de nature différente, et on en peut pas
+utiliser cette méthode de façon récursive comme pour la méthode diviser pour
+régner.
+
+Si la taille de l'ensemble où on cherche est $O(n^k)$, où $n$ est la taille du
+problème, et $k$ un entier, alors la taille des deux ensembles correspondent aux
+sous-problèmes est $O(\frac{n^k}{2^k})$, soit $O(n^k)$.
+
+On n'a alors rien gagné sur l'ordre de grandeur de la complexité. La rencontre
+au milieu ne s'applique donc qu'à des problèmes où l'espace de recherche est
+plus que polynomial (typiquement, $\Theta(2^k)$).
+
+Les sous-problèmes sont d'une nature différente du problème initial :
+- Dans le problème initial, on cherche parmi les $x \in E$ celui qui vérifie une
+  propriété $P(x,E)$.
+- Dans les sous-problèmes, pour chaque $x_1 \in E_1, x_2 \in E_2$, on calcule
+  une valeur $f(x_1)$ ou $g(x_2)$.
+  On va dans un second temps retrouver $x$ à partir de $\{f(x_1)\}_{x_1 \in E_1}$
+  et $\{g(x_2)\}_{x_2 \in E_2}$.
+
+Si $E$ est de taille $\Theta(2^k)$, alors construire $\{f(x_1)\}_{x_1 \in E}$
+et $\{g(x_2)\}_{x_2 \in E}$ coûte $\Theta(2^{\frac{n}{2}})$ opérations (en
+supposant que $f$ et $g$ soient de complexité constante), et $\Theta(n^{\frac{n}{2}})$
+mémoire. La seconde partie ne peut pas être une recherche exhaustive sur
+$E_1 \times E$ car alors on retrouve un coût $\Theta(n^{\frac{n}{2} n^2})$
+soit $\Theta(2^k)$.
+Il fait utiliser la structure du problème pour trouver un algorithme plus
+efficace.
+
+La rencontre au milieu est une concession de beaucoup de mémoire pour un gain en
+vitesse d'exécution. En effet, l'algorithme naïf parcourt $E$ et cherche le bon
+$x$ ne nécessite en général qu'une mémoire logarithmique en la taille de $E$
+($\Theta(n)$ dans l'exemple précédent).
+
+### Recherche de la plus grand somme majorée
+
+```ocaml
+let puiss_2 n = 1 lsl n (* puissances de 2 *)
+
+let plus_grande_somme_majoree t m =
+  (* 
+    Renvoie les plus grande somme d'éléments de t qui est
+    inférieure ou égale à m.
+    Tous les éléments de t sont des entiers positifs.
+  *) 
+  let n = Array.length t in
+
+
+  (*
+     Rencontre au milieu : on liste les 2^(n/2) sommes de la partie gauche,
+     et les 2^((n+1)/2) sommes de la partie droite
+  *)
+  let sommes_g = Array.make (puiss_2 (n / 2)) 0 in
+  let sommes_d = Array.make (puiss_2 ((n + 1) / 2)) 0 in (* (n+1)/2 est la partie entière supérieure de n/2 *)
+  
+  let rec tableau_sommes sommes i deb fin ajout =
+    (* 
+      Met dans le tableau "sommes", à partir de l'indice i,
+      toutes les sommes constituées d'éléments de t
+      dont l'indice est entre deb et fin (fin exclus).
+      On ajoute "ajout" à chacune de ces sommes.
+      La fonction renvoie le premier indice non modifié de "sommes".
+    *)
+    if deb >= fin then (sommes.(i) <- ajout; i + 1)
+    (* il n'y a que la somme de l'ensemble vide, elle est nulle *)
+    else
+      let j = tableau_sommes sommes i (deb + 1) fin ajout in
+      tableau_sommes sommes j (deb + 1) fin (ajout + t.(deb))
+  in
+      
+  let _ = tableau_sommes sommes_g 0 0 (n / 2) 0 in
+  let _ = tableau_sommes sommes_d 0 (n / 2) n 0 in
+  
+
+  (* On trie l'un des tableaux de sommes *)
+  Array.sort compare sommes_g;
+
+
+  (*
+    On utilise une recherche dichotomique dans sommes_g,
+    pour chaque élément de sommes_d
+  *)
+  let rec recherche_xg x_d deb fin =
+    (* 
+      Trouve le plus grand x_g dans sommes_g 
+      (entre deb inclus et fin exclus) tel que x_d + x_g <= m
+      Renvoie la somme x_d + x_g. 
+    *)
+    assert (deb < fin); (* 0 vérifie toujours x_d + 0 <= m *)
+    if deb = fin - 1 then x_d + sommes_g.(deb)
+    else 
+      let mid = (deb + fin) / 2 in
+      if x_d + sommes_g.(mid) > m then recherche_xg x_d deb mid
+      else recherche_xg x_d mid fin
+  in
+
+
+  let rec recherche_xd deb =
+    (* 
+       Trouve le x_d dans sommes_d (pour des indices >= deb) 
+       qui participe à la plus grande somme.
+       Renvoie cette somme,
+       ou renvoie -1 si aucun élément dans cet ensemble n'est <= m.
+    *)
+    if deb >= puiss_2 ((n + 1) / 2) then -1
+    else
+      if sommes_d.(deb) > m then recherche_xd (deb + 1)
+      else max (recherche_xg sommes_d.(deb) 0 (puiss_2 (n / 2)))
+               (recherche_xd (deb + 1))
+  in
+
+
+  recherche_xd 0
+```
+
+#### Complexité
+##### Complexité de tableau_sommes
+Soit $m = \text{Fin_deb}$, soi toutes les opérations hors appels récursifs de
+coût au plus constant, $C(m) = 2C(m - 1) + \Theta(1)$
+(pour $m \geq 1$). $(C(n))$ est donc encadrée par deux suites
+arithmético-géométriques positives de raison $2$, donc
+$C(m) = \Theta(2^{m})$.
+
+Ainsi, on effectue aux lignes 34 et 35 des opérations de coût total
+$\Theta(2^{\frac{n}{2}})$.
+
+La ligne $38$ a pour complexité $\Theta(k \log k)$ où $k$ est la taille
+de $\text{sommet_g}$, $k = 2^{\left\lfloor \frac{n}{2} \right\rfloor}$,
+donc la complexité est $\Theta(2^{\frac{n}{2}} \frac{n}{2})$,
+soit $\Theta(n 2^{\frac{n}{2}})$.
+
+##### Complexité de `recherche_xg`
+Il s'agit d'une variante de la recherche dichotomique, de complexité
+$\Theta(\log m)$ avec $m = \text{Fin_deb}$.
+
+##### Complexité de `recherche_xd`
+Cette fonction utilise un appel à `recherche_xg`.
