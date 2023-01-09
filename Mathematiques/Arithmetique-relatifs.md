@@ -172,10 +172,135 @@ On cherche à montrer que $d = a \wedge b$ :
 - Par division euclidienne de $a$ par $d$,
   $\exists! (q,r), a = dq + r$ avec $\left\{\begin{matrix} 0 \leq r < q \\ r = a - dq \end{matrix}\right.$,
   donc $r = a - (au + bv)q$. Puisque $r \geq 0$ et $r \in a\mathbb{Z} + b\mathbb{Z}$,
-  $d = \text{min}(\mathbb{N}^{\ast}ii(a\mathbb{Z} + b\mathbb{Z}))$,
+  $d = \text{min}(\mathbb{N}^{\ast} \cap (a\mathbb{Z} + b\mathbb{Z}))$,
   $r < d$ et $r \in \mathbb{N} \cap (a\mathbb{Z} + b\mathbb{Z})$,
   donc $r = 0$, donc $d$ divise $a$.\
   On montre de même que $d$ divise $a \wedge b$.
 
 __Corollaire :__ $a\mathbb{Z} + b\mathbb{Z} = \{au + bv, (u,v) \in \mathbb{Z}^2\}$,
 donc $a\mathbb{Z} + b\mathbb{Z} = (a \wedge b)\mathbb{Z}$.
+
+On peut calculer un coefficient de Bézout à l'aide d'un Algorithme d'Euclide
+étendu. On calcule les divisions euclidiennes successives de $r_{k-1}$ par
+$r_k$. On peut alors remonter l'algorithme en fonction des deux entrées.
+
+### PGCD d'une famille d'entiers
+Comme $\wedge$ est associative, on peut l'étendre à une famille finie. Soit
+$(a_1, a_2,\ldots,a_r) \in \mathbb{Z}^r$. Le PGCD de cette famille est noté
+$(\bigwedge\limits_{i = 1}^{r} a_i)$. Il s'agit donc du plus grand élément pour
+$\bigcap\limits_{i \in  I}^{r} D(a_i)$.
+
+Ainsi, le PGCD de $(a_1,a_2,\ldots,a_r)$ est aussi le plus grand élément au
+sens de la divisibilité : $\bigcap\limits_{i = 1}^{r} D(a_i) = D(\bigwedge\limits_{i = 1}^{r} a_i)$.
+En notant $d = \bigwedge\limits_{i = 1}^{r} a_i$, on a
+$\forall n \in \mathbb{Z}, (n \mid d \Leftrightarrow \forall i \in [\![1,r]\!], n \mid a)$.
+On a utilisé $r$ fois le résultat $D(a) \cap D(b) = D(a \wedge b)$.
+
+Il existe une relation de Bézout :
+$\exists (u_1,u_2,\ldots,u_r) \in \mathbb{Z}^r \mid \sum\limits_{i = 1}^{r} a_i u_i = \bigwedge\limits_{i = 1}^{r} a_i$,
+c'est-à-dire $\sum\limits_{i = 1}^{r} a_i \mathbb{Z} = (\bigwedge\limits_{i = 1}^{r} a_i) \mathbb{Z}$.
+
+## Plus petit multiple commun
+> Soit $(a,b) \in \mathbb{Z}^2$, avec $(a,b) \neq (0,0)$, le PPCM de
+> $a$ et $b$, noté $a \vee b$, est le plus petit élément de l'ensemble
+> $\mathbb{N}^{\ast} \cap a\mathbb{Z} \cap b\mathbb{Z}$.
+
+Il existe toujours un PPCM, car $a\mathbb{Z}$ et $b\mathbb{Z}$ contiennent $0$,
+donc $a\mathbb{N} \cap b\mathbb{N}$ est non vide. De plus, le PPCM d'un nombre
+et $0$ est toujours $0$.
+
+Pour $(a,b) \in (\mathbb{Z} \setminus \{0\})^2, a\mathbb{Z} \cap b\mathbb{Z} = (a \vee b)\mathbb{Z}$,
+c'est-à-dire $\forall n \in \mathbb{Z}, (a \mid n \land b \mid n) \Leftrightarrow (a \vee b) \mid n$.
+
+__Preuve :__ \
+$\supset$ Soit $n \in (a \vee b)\mathbb{Z}$, alors $a \vee b \mid n$.
+Or, $\left\{\begin{matrix} a \mid a \vee b \\ b \mid a \vee b \end{matrix}\right.$, donc
+$(a \mid n \land b \mid n)$ par transitivité.\
+$\subset$ Soit $n \in a\mathbb{Z} \cap b\mathbb{Z}$, on a $a \mid n$
+et $b \mid n$. On va effectuer la division Euclidienne de $n$ par $a \vee b$ :
+$\exists! (q,r) \in \mathbb{Z}^2, n = q \times (a \vee b) + r$, avec
+$0 \leq r < a \vee b$.
+Donc $r = n - q \times (a \vee b)$, or $\left\{\begin{matrix} a \mid n \\ b \mid n \end{matrix}\right.$
+et $\left\{\begin{matrix} a \mid a \vee b \\ b \mid a \vee b \end{matrix}\right.$,
+donc $a \mid r$ et $b \mid r$ donc $r \in (a\mathbb{Z} \cap b\mathbb{Z} \cap \mathbb{N})$
+et $r < a \vee b$, or $a \vee b = \text{min}(a\mathbb{Z} \cap b\mathbb{Z} \cap \mathbb{N}^{\ast})$,
+donc $r = 0$.
+Ainsi, $n = q \times (a \vee b)$, donc $a \vee b \mid n$, donc $n \in (a \vee b)\mathbb{Z}$.
+
+On a les propriétés suivantes :
+- $a \vee b = b \vee a$
+- $a \vee a = |a|$
+- $a \mid b \Leftrightarrow a \vee b = |b| \Leftrightarrow a \wedge b = |a|$
+- associativité
+- factorisation : $(ka) \vee (kb) = |k| \times (a \vee b)$
+
+> $\forall (a,b) \in (\mathbb{Z} \setminus \{0\})^2, (a \wedge b) \times (a \vee b) = |ab|$
+
+Ainsi, les calculs efficaces du PGCD (l'algorithme d'Euclide) permettent de
+déduire le PPCM.
+
+## Entiers premiers entre eux
+> $a$ et $b$ sont premiers entre eux si $a \wedge b = 1$.
+
+Leurs diviseurs communs sont donc $\pm 1$.
+
+On se ramène souvent aux entiers premiers entre eux :
+Soient $(a,b) \in (\mathbb{Z} \setminus \{0\})^2$, on note $d = a \wedge b$.
+Alors $\exists a',b' \mid \left\{\begin{matrix} a = da' \\ b = db' \end{matrix}\right.$
+avec $a' \wedge b' = 1$.
+
+En effet, $d = a \wedge b = (da') \wedge (db') \Rightarrow d = d \times (a' \wedge b')$
+$\Rightarrow 1  = a' \wedge b'$.
+
+On peut généraliser à r entiers $a_1,a_2,\ldots,a_r \in \mathbb{Z} \setminus \{0\}$.
+On a deux notions possibles non équivalentes :
+- Deux à deux premiers entre eux : $a_1,a_2,\ldots,a_r$ sont premiers deux à
+  deux entre eux si $\forall i \forall j, i \neq j \Rightarrow a_i \wedge a_j = 1$
+- Premiers dans leur ensemble : $a_1,a_2,\ldots,a_r$ sont premiers entre eux
+  dans leur ensemble si $\bigwedge\limits_{i = 1}^{r} a_i = 1$.
+
+On a une implication de la première propriété à la seconde, mais pas l'inverse.
+
+### Théorème de Bézout et lemme de Gauss
+> Théorème de Bézout : Soit $(a,b) \in \mathbb{Z}^2$, on a équivalence entre :
+> - $a$ et $b$ sont premiers entre eux
+> - $\exists (u,v) \in \mathbb{Z}^2, au + bv = 1$
+
+Ainsi, en trouvant une relation de Bézout, on peut trouver que $a$ et $b$ sont
+premiers entre eux.
+
+__Preuve :__ $\Rightarrow$ Si $a \wedge b = 1$, alors il existe une relation de
+Bézout.\
+$\Leftarrow$ Si $au + bv = 1$, on prends un diviseur commun à $a$ et $b$.
+Ainsi, $d \mid a$ et $d \mid b$, donc $d \mid (au + bv)$ donc
+$d \mid 1$, donc $d = \pm 1$, donc $a \wedge b = 1$.
+
+> Lemme de Gauss : Soit $(a,b,c) \in \mathbb{Z}^3$, si $a \mid b \times c$
+> et $a \wedge b = 1$, alors $a \mid c$.
+
+__Preuve :__ $a \wedge b = 1$ donc $\exists (u,v) \in \mathbb{Z}^2$,
+$au + bv = 1$, alors $acu + bcv = c$. Si $a \mid bc$,
+alors $a \mid (bc \vee  + acu)$ donc $a \mid c$.
+
+On remarque que si $a \wedge b = 1$, alors $\exists (u,v) \in \mathbb{Z}^2$,
+$au + bv = 1$, soit modulo $a$ $bv \equiv 1[a]$
+donc $b$ est inversible pour $x$ dans l'anneau $\mathbb{Z} / a\mathbb{Z}$.
+Le calcul de $v$ se fait par l'algorithme d'Euclide étendu.
+
+On peut aussi se référer au fait que les inversibles de
+$(\mathbb{Z}/n\mathbb{Z}, +, \times)$ soient exactement
+$\{k \mid k \wedge n = 1\}$.
+
+On peut ainsi résoudre l'équation $ax + by = 1$ avec $x,y \in \mathbb{Z}$
+par l'algorithme d'Euclide étendu.
+
+Soit $(x,y) \in \mathbb{Z}^2$ une solution $ax + by = 1 = ax_0 + by_0$
+donc $ax - ax_0 = by_0 - by$ donc $a(x - x_0) = b(y_0 - y)$.
+Ainsi, $a$ divise $b \times (y_0 - y)$. Or, $a \wedge b = 1$.
+Par Gauss, $a \mid y_0 - y$, donc $\exists k \in \mathbb{Z}, y_0 - y = a_k$,
+donc $\exists k \in \mathbb{Z}, y_0 - y = a_k$, donc
+$a(x - x_0) = b \times ak$, donc $(a \neq 0)$, $x - x_0 = bk$.\
+Pour $k \in \mathbb{Z}$, on pose $\left\{\begin{matrix} x = x_0 + bk \\ y = y_0 - ak \end{matrix}\right.$,
+soit $ax + by = a(x_0) + b(y_0) + 0 = 1$\
+On en conclut que $\left\{\begin{matrix} ax + by = 1 \\ a \wedge b = 1 \end{matrix}\right.$
+a pour solution $\{(x_0 + bk, y_0 - ak), k \in \mathbb{Z}\}$.
