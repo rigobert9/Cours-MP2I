@@ -304,3 +304,160 @@ Pour $k \in \mathbb{Z}$, on pose $\left\{\begin{matrix} x = x_0 + bk \\ y = y_0 
 soit $ax + by = a(x_0) + b(y_0) + 0 = 1$\
 On en conclut que $\left\{\begin{matrix} ax + by = 1 \\ a \wedge b = 1 \end{matrix}\right.$
 a pour solution $\{(x_0 + bk, y_0 - ak), k \in \mathbb{Z}\}$.
+
+> Soient $(a,b,c) \in \mathbb{Z}^3$ :
+> - $a \wedge b = 1 \land a \wedge c = 1 \Leftrightarrow a \wedge bc = 1$
+> - $a \wedge b \Rightarrow (a \mid b \land a \mid c \Rightarrow ab \mid c)$
+
+__Preuves :__
+- $\Rightarrow$ On suppose $\left\{\begin{matrix} a \wedge b = 1 \\ a \wedge c = 1 \end{matrix}\right.$.
+  Par Bézout, $\exists (u,v), (u',v') \in \mathbb{Z}^2, \left\{\begin{matrix} au + bv = 1 \\ au' + cv' = 1 \end{matrix}\right.$.
+  On fait le produit, donnant $a \times [uau' + ucv' + bvu'] + bc \times  vv' = 1$,
+  donc $aU + bcV = 1$, donc par Bézout, $a \wedge (bc) = 1$.\
+  $\Leftarrow$ Si $a \wedge bc = 1$, en utilisant Bézout, $\exists (u,v) \in \mathbb{Z}^2 \mid au + bcv = 1$.
+  Par Bézout, $a \wedge b = 1$ et $a \wedge c = 1$.
+- On suppose que $a \wedge b = 1$, et $a \mid c$ et $b \mid c$. On cherche à montrer que
+  $ab \mid c$. $\exists k,k' \in \mathbb{Z} \mid c = ka = k'b$. Ainsi,
+  $b \mid ka$. Or $a \wedge b = 1$, donc par Gauss, $b \mid k$. Ainsi,
+  $\exists k'' \in \mathbb{Z} \mid k = bk''$, d'où $c = bk'' a$, soit $ba \mid c$.
+
+On peut le refaire avec des congruences : si $a \wedge b = 1$ et
+$\left\{\begin{matrix} c \equiv 0[a] \\ c \equiv 0[b] \end{matrix}\right.$,
+alors $c \equiv 0[ab]$.
+
+> $(a \wedge b) \times (a \vee b) = |a \times b|$
+
+__Preuve :__ Posons $d = a \wedge b$. Ansi,
+$\exists a',b' \in \mathbb{Z}, a = da', b = db'$ où $a' \wedge b' = 1$.
+Alors $a \vee b = (da') \vee (db') = d \times (a' \vee b')$,
+alors $d \times (a \vee b) = d^2 \times (a' \vee b')$. Il reste à montrer que
+$a' \vee b' = |a'b'|$ lorsque $a' \wedge b' = 1$. On note $m = a' \vee b'$.
+Or, $\left\{\begin{matrix} a' \mid a'b' \\ b' \mid a'b' \end{matrix}\right.$,
+donc $a' \vee b' \mid a'b'$. De plus, $\left\{\begin{matrix} a' \mid m \\ b' \mid m \end{matrix}\right.$
+et $a' \wedge b' = 1$, donc $a'b' \mid m$. Ainsi, $m = |a'b'|$.\
+On en conclut que $(a \wedge b) \times (a \vee b)$\
+$= d \times d \times (a' \vee b')$\
+$= d \times d \times |a'b'|$\
+$= |da'| \times |db'|$\
+$= |ab|$
+
+On peut ainsi généraliser cette relation en prenant $n,a_1,a_2,\ldots,a_r \in \mathbb{Z}$
+tels que $(\forall i \in [\![1,r]\!], n \wedge a_i = 1)$
+$\Leftrightarrow n_1 (a_1 a_2 \ldots a_r) = 1$.
+On a donc $r$ relations de Bézout possibles dans le premier terme, de la
+forme $u_i n + a_i v_i = 1$. Par produit $n \times U + a_i \ldots a_r V = 1$,
+d'où $n_1(a_1 \ldots a_r) = 1$.
+
+Si les $a_i$ sont deux à deux premiers entre eux et si $\forall i \in [\![1, n]\!]$,
+$a_i \mid n$ alors  $\prod\limits_{i = 1}^{r} (a_i) \mid n$.
+
+__Écriture d'un rationnel sous forme irréductible :__
+
+> Tout rationnel $r \in \mathbb{Q}$ s'écrit de manière unique sous la forme $\frac{p}{q}$
+> avec $\left\{\begin{matrix} p \in \mathbb{Z} \\ q \in \mathbb{N}^{\ast} \\ p \wedge q = 1 \end{matrix}\right.$.
+
+Soit $r = \frac{a}{b} \in \mathbb{Q}, \frac{a}{b} = \frac{-a}{-b}$, donc on
+peut imposer un dénominateur dans $\mathbb{N}^{\ast}$.
+
+__Preuve :__
+- Unicité : si $r = \frac{p_1}{q_1} = \frac{p_2}{q_2}$, alors $p_1 \times q_2 = p_2 \times q_1$,
+  avec $p_1 \wedge q_1 = 1 \land p_2 \wedge q_2 = 1$.
+  Ainsi, $\left\{\begin{matrix} q_1 \mid p_1 q_2 \\ p_1 \wedge q_1 = 1 \end{matrix}\right.$,
+  donc $q_1 \mid q_2$. De même, $q_2 \mid q_1$, soit $|q_1| = |q_2|$,
+  or $q_1,q_2 \in \mathbb{N}^{\ast} \Leftrightarrow q_1 = q_2$, donc $p_1 = p_2$.
+- Existence : on factorise par le PGCD, soit $d = a \wedge b$
+  alors $\left\{\begin{matrix} a = da' \\ b = db' \end{matrix}\right.$
+  avec $a' \wedge b' = 1$. Ainsi, $r = \frac{a}{b} = \frac{da'}{db'} = \frac{a'}{b'}$.
+
+## Nombres premiers
+### Définition
+> Soit $p \in \mathbb{N}$, $p$ est premier si il admet exactement $2$ diviseurs
+> positifs, soit $\text{card}(D(p) \cap \mathbb{N}) = 2$.
+
+Ainsi, $p$ est premier si $p \neq 1$ et $D(p) \cap \mathbb{N} = \{1, p\}$.
+On note $\mathbb{P} = \{2,3,5,7,11,13,17,\ldots\}$.
+
+> L'ensemble $\mathbb{P}$ est infini.
+
+__Preuve :__ Par l'absurde, on pose que $\mathbb{P}$ est fini avec $N$ éléments.
+Soit $A = \prod\limits_{i = 1}^{N} p_i + 1$, $\forall i \in [\![1,N]\!]$,
+$A \equiv 1[p_i]$, donc $\forall i, p_i \not\mid A$. Si $A \not\in \mathbb{P}$,
+il existe un diviseur premier de $A$, ce qui est faux, donc $A \in \mathbb{P}$,
+donc $A = p_{i_0}$, ce qui est absurde.
+
+> Soit $p \in \mathbb{P}$, en $a \in \mathbb{Z}$, si
+> $p \not\mid a$, alors $a \wedge p = 1$.
+
+__Preuve :__ Par contraposée, on pose $a \wedge p \neq 1$.
+On pose donc $d = a \wedge p$, et alors $d \in D(p) \cap \mathbb{N}$,
+donc $d \in \{1,p\}$ et $d \neq 1$ donc $d = p$, donc
+$p \mid a$.
+
+> Si $p$ premier divise le produit $ab$ alors $p \mid a \lor p \mid b$.
+
+On peut reformuler l'énoncé en congruences comme
+$ab \equiv 0[p] \Rightarrow (a \equiv 0[p] \lor b \equiv 0[p])$,
+soit l'intégrité dans l'anneau $\mathbb{Z}/p\mathbb{Z}$.
+
+__Preuve :__ Si $p \mid a$, la propriété est vérifiée, et sinon $p \wedge a = 1$,
+donc $p \mid ab$ permet de déduire par Gauss que $p \mid b$.
+
+> Tout entier $n \geq 2$ s'écrit comme produit de facteurs premiers.
+
+__Preuve :__ On cherche à prouver par récurrence forte la proposition.
+- $2$ est premier, et se décompose comme $2$.
+- Soit $n \geq 2$, tel que tout entier de $[\![2,n]\!]$ soit décomposable en
+  facteurs premiers, si $n + 1 \in \mathbb{P}$, il est décomposable comme
+  lui-même, et sinon $\exists d \neq 1 \mid d \neq n + 1$ tel
+  que $d \mid n + 1$ (car $n + 1$ n'est pas premier). On pose
+  $n + 1 = d \times a$, avec $2 \leq d \leq n$ et $a \mid n + 1$
+  avec $a \in \{1,n+1\}$ donc $2 \leq a \leq n$. Par hypothèse de récurrence, la
+  décomposition de $n + 1$ est le produit des décompositions de $a$ et $d$.
+
+> Si $n \in \mathbb{N}^{\ast}$ n'est pas un nombre premier, alors $n$ possède un
+> diviseur premier avec $p \leq \sqrt{n}$ (crible d'Eratosthène).
+
+En effet $n \not\in \mathbb{P}$, donc $n = a \times b$, avec $2 \leq a \leq b$,
+donc $a^2 \leq ab = n$, donc $a \leq \sqrt{n}$ et $a$ possède au moins
+un diviseur $p$ premier.
+
+> Soit $p \in \mathbb{P}$ et $n \in \mathbb{N}^{\ast}$, l'ensemble
+> $\{k \in \mathbb{N} \mid p^k \mid n\}$ possède un plus grand élément, qu'on note
+> $v_p(n)$, la valuation $p$-adique de $n$ (le nombre de fois où apparaît $p$
+> dans la factorisation de $n$).
+
+On peut remarquer que pour tout $n \in \mathbb{N}^{\ast}$ et $p \in \mathbb{P}$,
+$n = p^{v_p(n)} \times q$, où $q \wedge p = 1$
+(car $p \not\mid q$).
+
+> $\forall p \in \mathbb{P}, \forall (a,b) \in \mathbb{N}^{\ast}^2, v_p(ab)$
+> $= v_p(a) + v_p(b)$.
+
+__Preuve :__ $ab = p^{v_p(a)} \times q_1 \times p^{v_p(b)} \times q_2$,
+avec $\left\{\begin{matrix} q_1 \wedge p = 1 \\ q_2 \wedge p = 1 \end{matrix}\right.$,
+donc $ab = p^{v_p(a) + v_p(b)} \times q_1 q_2$ et $p_1(q_1 q_2) = 1$.
+Ainsi, $v_p(ab) = v_p(a) + v_p(b)$.
+
+> $\forall n \in \mathbb{N}^{\ast}, n = \prod\limits_{p \in \mathbb{P}} p^{v_p(n)}$,
+> où la suite $(v_p(n))_{p \in \mathbb{P}}$ est presque nulle
+> (ainsi, le produit est fini).
+
+L'écriture de la décomposition est donc unique à l'ordre des facteurs près.
+Le produit est fini car si $n \in \mathbb{P}$, il contient un seul terme, et
+sinon, le plus grand facteur premier $p \mid n$ vérifie $p \leq \sqrt{n}$.
+
+__Preuve de l'unicité :__ Si $n = p_1^{\alpha_1} p_2^{\alpha_2} \ldots p_r^{\alpha_r}$
+avec $\alpha_i \in \mathbb{N}^{\ast}$ et $p_1 < p_2 < \ldots < p_r$,
+et $n = q_1^{\beta_1} \ldots q_l^{\beta_l}$ avec $\beta_j \in \mathbb{N}^{\ast}$
+et $q_1 < \ldots < q_l$.\
+Soit $p_i$, $p_i \mid n$ car $\alpha_i \geq 1$, donc $p_i \mid \prod\limits_{j = 1}^{r} q_j^{\beta_j}$.\
+Si $q_i \neq p_i$, alors $q_j \wedge p_j = 1$. Si $p_i \not\in \{q_1,\ldots,q_l\}$.\
+Ainsi $\{p_1,\ldots,p_r\} \subset \{q_1,\ldots,q_l\}$. Par symétrie,
+on a l'inclusion inverse et donc l'égalité, donnant $l = r$,
+et $\forall i \in [\![1,r]\!], p_i = q_i$. Ainsi,
+$\forall i, v_{p_i}(n) = \alpha_i = v_{q_i}(n) = \beta_i$.
+
+On peut relier ceci avec la divisibilité, le PGCD et le PPCM. Soit $(a,b) \in \mathbb{N}^{\ast}^2$ :
+- $a \mid b \Leftrightarrow (\forall p \in \mathbb{P}, v_p(a) \leq v_p(b))$
+- $a \wedge b = \prod\limits_{p \in \mathbb{P}} p^{\text{min}(v_p(a), v_p(b))}$
+- $a \vee b = \prod\limits_{p \in \mathbb{P}} p^{\text{max}(v_p(a),v_p(b))}$
