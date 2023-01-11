@@ -461,3 +461,30 @@ On peut relier ceci avec la divisibilité, le PGCD et le PPCM. Soit $(a,b) \in \
 - $a \mid b \Leftrightarrow (\forall p \in \mathbb{P}, v_p(a) \leq v_p(b))$
 - $a \wedge b = \prod\limits_{p \in \mathbb{P}} p^{\text{min}(v_p(a), v_p(b))}$
 - $a \vee b = \prod\limits_{p \in \mathbb{P}} p^{\text{max}(v_p(a),v_p(b))}$
+
+## Petit théorème de Fermat
+> Pour $p \in \mathbb{P}$ et $a \in \mathbb{Z}$, $a^p \equiv a[p]$.
+> De plus, si $p \not\mid a$, alors $a^{p-1} \equiv 1[p]$.
+
+> Lemme : Pour $p \in \mathbb{P}$ et $k \in [\![1,p-1]\!]$, $p \mid \binom{p}{k}$.
+
+__Preuve :__ Formule du chef : $k \binom{p}{k} = p \binom{p-1}{k-1}$, donc $p$
+divise $k \times \binom{p}{k}$, or si $k \in [\![1,p-1]\!]$, alors $p \not\mid k$
+et $p \in \mathbb{P}$, donc $p \wedge k = 1$, donc par lemme de Gauss,
+$p$ divise $\binom{p}{k}$.
+
+> Lemme : Pour $p \in \mathbb{P}$ et $(a,b) \in \mathbb{Z}^2$,
+> $(a+b)^p \equiv a^p + b^p$.
+
+__Preuve :__ $(a+b)^p = \sum\limits_{k = 0}^{p} \binom{p}{k} a^k b^{p-k}$
+$= b^p + a^p + \sum\limits_{k = 0}^{p-1} \binom{p}{k} a^k b^{p-k}$.
+Or, pour $1 \leq k \leq p-1$, $\binom{p}{k} \equiv 0[p]$,
+donc on a $(a+b)^p = a^p + b^p + 0[p] = a^p + b^p [p]$.
+
+__Preuve du théorème de Fermat :__ On cherche à prouver que
+$a^{p} \equiv a[p]$ on le montre pour $a \in [\![0,p-1]\!]$ par récurrence sur
+$a$ :
+- $p \in \mathbb{P}$ donc $p \neq 0$ et $0^{p} \equiv 0[p]$
+- Soit $a \geq 0$ tel que l'hypothèse de récurrence est vérifiée et
+  $a < p-1$, $a^{p} \equiv a[p]$ et $(a+1)^p \equiv a^{p} + 1^p[p]$
+  $\equiv a + 1[p]$, donc on a vérifié l'hypothèse.
