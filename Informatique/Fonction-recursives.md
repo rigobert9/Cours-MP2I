@@ -54,16 +54,16 @@ long int exp_rapide(int a, unsigned b){
 }
 ```
 
-On montre par récurrence sur $b \geq 0$ que $\forall a \in \mathbb{Z}, \text{exp_rapide(a,b) = a^b}$
-- Initialisation : si $b = 0, \text{exp_rapide}(a,0) = 1 = a^0$
-- Hérédité : Soit $b \geq 1$. Supposons $\forall k  \in [0, b-1]\_{\mathbb{N}}$,
-  $\text{exp_rapide}(a,k) = a^k$. Par disjonction de cas :
-  - b est pair. Dans ce cas, $\text{exp_rapide}(a,b) = \text{exp_rapide}(a,\frac{b}{2})^2$.
-    Or par hypothèse de récurrence, $\text{exp_rapide}(a, \frac{b}{2}) = a^{(\frac{b}{2})}$.
-    Donc $\text{exp_rapide}(a, b) = a^b$.
-  - b est impair, alors $\text{exp_rapide}(a,b) = a \times \,\text{exp_rapide}(a, \frac{b-1}{2})^2$.
-    De même, on a alors $\text{exp_rapide}(a,\frac{b-1}{2})^2 = a^{b-1}$, et
-    donc $a \times \text{exp_rapide}(a,\frac{b-1}{2})^2 = a \times a^{b-1} = a^b$
+On montre par récurrence sur $b \geq 0$ que $\forall a \in \mathbb{Z}, \text{exprapide(a,b)} = a^b$
+- Initialisation : si $b = 0, \text{exprapide}(a,0) = 1 = a^0$
+- Hérédité : Soit $b \geq 1$. Supposons $\forall k  \in \[0, b-1\]\_{\mathbb{N}}$,
+  $\text{exprapide}(a,k) = a^k$. Par disjonction de cas :
+  - b est pair. Dans ce cas, $\text{exprapide}(a,b) = \text{exprapide}(a,\frac{b}{2})^2$.
+    Or par hypothèse de récurrence, $\text{exprapide}(a, \frac{b}{2}) = a^{(\frac{b}{2})}$.
+    Donc $\text{exprapide}(a, b) = a^b$.
+  - b est impair, alors $\text{exprapide}(a,b) = a \times \,\text{exprapide}(a, \frac{b-1}{2})^2$.
+    De même, on a alors $\text{explapide}(a,\frac{b-1}{2})^2 = a^{b-1}$, et
+    donc $a \times \text{exprapide}(a,\frac{b-1}{2})^2 = a \times a^{b-1} = a^b$
 
 ## Pile d'appels
 Chaque appel de fonction lors de l'exécution d'un programme crée dans la mémoire
