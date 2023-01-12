@@ -1,4 +1,6 @@
 # Polynômes
+## Structure
+### Définition
 > Soit $\mathbb{K}$ un corps, un polynôme à coefficients dans $\mathbb{K}$ est une
 > suite $(a_k)_{k \in \mathbb{N}} \in \mathbb{K}^{\mathbb{N}}$ presque nulle.
 
@@ -68,3 +70,104 @@ L'idée est de poser $P$ un polynôme avec pour coefficients $\binom{n}{i}$, qui
 est par application du binôme de Newton $(1 + X)^n$, et de même, $Q = (1 + X)^m$.
 Ainsi, $PQ = (1 + X)^{n+m}$, nous permettant de retrouver les coefficients du
 résultat.
+
+### Degré d'un polynôme
+Soit $P \in \mathbb{K}[X], \exists (a_k)_ki-n\mathbb{K}^{\mathbb{N}}$ une suite
+presque nulle, telle que $P = \sum\limits_{k \geq 0} a_k X^k$. La somme est
+finie par définition des suites presque nulles, donc $\sum\limits_{k = 0}^{n_0 - 1} a_k X^k$.
+
+> Si $P \in \mathbb{K}[X]$ n'est pas le polynôme nul, on définit son degré par
+> $\text{deg}(P) = \text{max}\{k \in \mathbb{N} \mid a_k \neq 0\}$.
+
+Ainsi, pout $P \in \mathbb{K}[X]$ et $P \neq 0$, en notant $d = \text{deg}(P)$,
+on a $P = a_0 + a_1 X + a_2 X^2 + \ldots + a_d X^d$ avec $a_d \neq 0$.
+
+Par convention, on posera $\text{deg}(0) = -\infty$.
+
+- $\forall P \in \mathbb{K}[X], \text{deg}(P) \in \mathbb{N} \cup \{-\infty\}$
+- Si $P = \sum\limits_{k = 0}^{n} a_k X^k$, alors $\text{deg(P)} \leq n$
+- On dit que $P$ est un polynôme unitaire si son coefficient dominant (le
+  coefficient d'ordre de son degré) vaut $1$.
+
+Pour $ \in \mathbb{N}$, on note $\mathbb{K}_n[X] = \{P \in \mathbb{K}[X] \mid \text{deg}(P) \leq n\}$
+l'ensemble de tous les polynômes de degré inférieur ou égal à $n$.
+De façon générale, pour tout $n \leq m$, $\mathbb{K}_n[X] \subset \mathbb{K}_m[X]$.
+
+INK
+
+$\mathbb{K}_0[X] = \{a_0 \mid a_0 \in \mathbb{K}\}$ correspond aux polynômes
+constants (non nuls), qu'on peut identifier avec $\mathbb{K}$.
+
+> - $\text{deg}(P + Q) \leq \text{max}(\text{deg}(P), \text{deg}(Q))$
+> - $\text{deg}(P \times Q) = \text{deg}(P) + \text{deg}(Q)$
+> - $\text{deg}(\lambda P) = \left\{\begin{matrix} \text{deg}(P) \text{ si } \lambda \neq 0 \\ -\infty \text{ si } \lambda = 0 \end{matrix}\right.$
+
+__Preuve :__ Pour $P \neq 0$ et $Q \neq 0$,
+si $P = \sum\limits_{k = 0}^{d} a_k X^k$ et $Q = \sum\limits_{k = 0}^{e} b_k X^k$,
+alors quitte à ajouter des coefficients nuls,
+$\left\{\begin{matrix} \forall k > d, a_k = 0 \\ \forall k > e, b_k = 0 \end{matrix}\right.$.
+Ainsi, on peut déduire les propriétés précédentes.
+
+- si $\text{deg}(P) \neq \text{deg}(Q)$ alors $\text{deg}(P+Q) = \text{max}(\text{deg}(P), \text{deg}(Q))$
+- si $\text{deg}(P) = \text{deg}(Q) = d$ et $a_d = -b_d$, alors $\text{deg}(P+Q) < d$
+
+> Soit $n \in \mathbb{N}$, $\mathbb{K}_n[X]$ est stable par combinaison linéaire.
+
+$(\mathbb{K}_n[X],+,\cdot)$ est donc un $\mathbb{K}$-espace vectoriel, ce qui
+permet d'obtenir des morphismes naturels très pratiques vers les structures
+d'algèbre linéaire.
+
+> L'anneau $(\mathbb{K}[X],+,\times)$ est intègre.
+
+__Preuve :__ Si $PQ = 0$, alors $\text{deg}(PQ) = \text{deg}(0) = -\infty$,
+alors $\text{deg}(P) + \text{deg}(Q) = -\infty$.
+
+> Si $P,Q \in \mathbb{K}[X] \mid P \times Q = 1$, alors $P$ et $Q$ sont des
+> polynômes constants et non nuls.
+
+Si $PQ = 1$, alors $\text{deg}(PQ) = \text{deg}(1)$, soit
+$\text{deg}(P) + \text{deg}(Q) = 0$, donc puisque
+$\text{deg}(P), \text{deg}(Q) \in \mathbb{N}$ et que leur somme est $0$,
+ils sont tous les deux de degré nul, et sont donc des polynômes constants non
+nuls.
+
+Les inversibles de l'anneau $\mathbb{K}[X]$ sont
+$\mathbb{K} \setminus \{0\} = \mathbb{K}_0[X] \setminus \{0\}$.
+
+##### Exercice
+Trouver tous les polynômes vérifiant $(X^2 - 1) \times P^2 = (X + 1) \times P$.
+
+Si $P$ convient, alors $(X - 1)(X + 1) \times P^2 = (X + 1) \times P$.
+Puisque $(X + 1)$ n'est pas le polynôme nul, donc $(X - 1)P^2 = P$.
+Si $P = 0$, $P$ convient, et si $P \neq 0$, $(X-1)P = 1$, alors
+$\text{deg}((X - 1)) + \text{deg}(P) = \text{deg}(1)$,
+soit $1 + \text{deg}(P) = 0 \Leftrightarrow \text{deg}(P) = -1$.
+La seule solution est donc $P = 0$.
+
+### Composition
+> Soit $P = \sum\limits_{k \geq 0} a_k X^k \in \mathbb{K}[X]$,
+> et $Q \in \mathbb{K}[X]$, la composée de $P$ par $Q$, notée $P \circ Q$,
+> est définie par $P \circ Q = \sum\limits_{k \geq 0} a_k Q^k$, ce qui est un
+> polynôme.
+
+Si $n = \text{deg}(P) \in \mathbb{N}$ (avec $P \neq 0$), alors 
+$P \circ Q = a_0 + a_1 Q + a_2 Q^2 + \ldots + a_n Q^n$, avec $a_n \neq 0$.
+
+Si $\text{deg}(Q) = d$, on a $\text{deg}(Q^n) = n \text{deg}(Q) = nd$,
+donc $\text{deg}(a_n Q^n) = nd$. On suppose que $d \in \mathbb{N}^{\ast}$ et
+$n \in \mathbb{N}^{\ast}$, $n-1 < n \Rightarrow d(n-1) < dn$,
+donc $\text{deg}(P \circ Q) = \text{deg}(a_n Q^n) = nd$.
+On a donc bien $\text{deg}(P \circ Q) = \text{deg}(P) \times \text{deg}(Q)$.\
+Dans le cas où $P$ est constant non nul, $P \circ Q$ sera constant non nul, donc
+la proposition tient aussi.\
+Dans le cas où $P$ est nul, alors tout dépend du degré de $Q$.
+
+> Si $P \neq 0$ et $\text{deg}(Q) \geq 1$, $\text{deg}(P \circ Q) = \text{deg}(P) \times \text{deg}(Q)$.
+> Sinon, $\text{deg}(P \circ Q) \leq 0$.
+
+> - $(P_1 + P_2) \circ Q = (P_1 \circ Q) + (P_2 \circ Q)$
+> - $(P_1 \times P_2) \circ Q = (P_1 \circ Q) \times (P_2 \circ Q)$
+
+Il s'agit des mêmes propriétés que pour les applications à valeur dan $\mathbb{K}$.
+
+$P \circ X = X \circ P = P$. On le note parfois $P(X) = P$.
