@@ -29,3 +29,12 @@ Un arbre $A$ de hauteur $H$ tel que toutes ses feuilles sont de profondeur $h$
 Un arbre dont toutes les feuilles sont de profondeur $h$ ou $h-1$ et dont les
 feuilles de profondeur $h - 1$ sont toutes à droite des nœuds internes de même
 profondeur sont dits complets.
+
+Soit $n$ un nœud, on appelle enfant gauche (droit) la racine de son sous-arbre
+gauche (droit) si ce sous-arbre n'est pas vide. On appelle parent de $n$ un
+nœud tel que $n$ est un enfant droit ou gauche de ce nœud. La racine est le seul
+nœud sans parent dans l'arbre $A$.
+
+## Implémentation
+En OCaML, on utilisera des unions disjointes entre l'arbre vide et un produit
+cartésien. En C, on utilisera des structures récursives.
