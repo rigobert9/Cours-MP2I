@@ -38,3 +38,50 @@ nœud sans parent dans l'arbre $A$.
 ## Implémentation
 En OCaML, on utilisera des unions disjointes entre l'arbre vide et un produit
 cartésien. En C, on utilisera des structures récursives.
+
+Si on sait que l'arbre qu'on manipule aura toujours le même nœud racine
+(l'étiquette peut néanmoins changer), qu'il en sera de même de ses sous-arbres
+tant qu'ils sont non vides, et qu'il sera toujours complet, alors on peut
+implémenter les arbres binaire sur des tableaux dynamiques :
+- `t[0]` contient le nombre de nœuds
+- `t[2^p]` à `t[2^{p+1} - 1]` contiennent les étiquettes des nœuds de profondeur
+  $p$ en partant de la gauche.
+
+On peut dans cette implémentation modifier les étiquettes et ajouter des nœuds
+tel que l'arbre reste complet. On ne peut pas faire un appel récursif sur un
+sous-arbre en gardant le même modèle, car calculer le tableau d'un sous-arbre
+prend un temps linéaire.
+
+## Données stockées
+- L'arbre contient des données entrées de façon désordonnée et les organise de
+  façon à respecter une propriété sur les étiquettes des sous-arbres par rapport à
+  la racine, récursivement. Ceci permet normalement un accès plus efficace aux
+  données ou bien de calculer une fonction des données. C'est le cas des arbres
+  binaires de recherche et des files de priorité avec des tas binaires. On
+  manipulera alors l'arbre avec des fonctions récursives qui ne sélectionnent
+  qu'un seul des sous-arbres.
+- L'arbre correspond à une partie d'un arbre ou' d'un graphe qu'on n'explicite
+  pas. Chaque nœud correspond donc à un certain object mathématique et son
+  étiquette se rapporte à cet objet. Les algorithmes effectués sur l'arbre sont
+  alors dépendants de l'objet mathématique effectué. C'est le cas des arbres
+  couvrants d'un graphe ou des arbres radix.
+- L'arbre représente une hiérarchie des données. Les algorithmes sur ces arbres
+  vont parcourir l'arbre en profondeur (en général de façon récursive avec 2
+  appels récursifs) afin d'exploiter cette hiérarchie. On a ainsi chaque appel
+  (hors celui initial sur la racine) qui est fait depuis l'appel sur le nœud
+  parent, auquel on peut faire référence.
+
+## Parcours d'arbres
+On appelle parcours un algorithme qui visite tous les nœuds d'un arbre.
+
+### Parcours en profondeur d'abord - DFS
+Un parcours en profondeur d'abord consiste à prendre à chaque nœud d'abord ses
+descendants, c'est à dire les nœuds les plus profond avant de regarder les
+autres pas encore visités.
+
+Par convention, on visitera alors le sous-arbre gauche avant le droit. On peut
+de plus traiter l'étiquette avant, au milieu des deux ou après, donnant un
+ordonnancement de résultat différent à chaque fois (voir l'exemple sur les BST).
+Le parcours infixe correspond à l'ordre des étiquettes de gauche à droite. On
+perd l'information qui permettrait de reconstruire l'arbre si on ne note pas les
+arbres vides.
