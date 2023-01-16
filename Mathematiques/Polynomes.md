@@ -15,7 +15,7 @@ On note $\mathbb{K}[X]$ l'ensemble des polynômes à coefficients dans $\mathbb{
 > Deux polynômes $A$ et $B$ son égaux si leur suites de coefficients sont égales,
 > soit $\forall k \in \mathbb{N}, a_k = b_k$ (identification des coefficients).
 
-Un polynôme si et seulement si tous ses coefficients sont nuls.
+Un polynôme est nul si et seulement si tous ses coefficients sont nuls.
 
 > On définit sur les polynômes les opérations $+$ (somme), $\times$
 > (produit interne) et $\cdot$ (produit externe) :
@@ -25,7 +25,7 @@ Un polynôme si et seulement si tous ses coefficients sont nuls.
 
 $A \times B$ est bien une suite presque nulle.
 
-> $(\mathbb{K}[X], +, \times)$ est un anneau commutatif interne.
+> $(\mathbb{K}[X], +, \times)$ est un anneau commutatif intègre.
 
 __Preuve :__
 - Groupe abélien : Sous groupe de $\mathbb{K}^{\mathbb{N}}, +$, avec $0$ le
@@ -89,11 +89,9 @@ Par convention, on posera $\text{deg}(0) = -\infty$.
 - On dit que $P$ est un polynôme unitaire si son coefficient dominant (le
   coefficient d'ordre de son degré) vaut $1$.
 
-Pour $ \in \mathbb{N}$, on note $\mathbb{K}_n[X] = \{P \in \mathbb{K}[X] \mid \text{deg}(P) \leq n\}$
+Pour $n \in \mathbb{N}$, on note $\mathbb{K}_n[X] = \{P \in \mathbb{K}[X] \mid \text{deg}(P) \leq n\}$
 l'ensemble de tous les polynômes de degré inférieur ou égal à $n$.
 De façon générale, pour tout $n \leq m$, $\mathbb{K}_n[X] \subset \mathbb{K}_m[X]$.
-
-INK
 
 $\mathbb{K}_0[X] = \{a_0 \mid a_0 \in \mathbb{K}\}$ correspond aux polynômes
 constants (non nuls), qu'on peut identifier avec $\mathbb{K}$.
@@ -171,3 +169,90 @@ Dans le cas où $P$ est nul, alors tout dépend du degré de $Q$.
 Il s'agit des mêmes propriétés que pour les applications à valeur dan $\mathbb{K}$.
 
 $P \circ X = X \circ P = P$. On le note parfois $P(X) = P$.
+
+## Divisibilité et division Euclidienne
+### Multiples et diviseurs
+> Soient $A,B \in \mathbb{K}[X]$, on dit que $B \mid A$ dans
+> $\mathbb{K}[X]$ si $\exists C \in \mathbb{K}[X] \mid A = BC$.
+
+On adapte ainsi les notations $B \mid A$ ($B$ divise $A$, $A$ est un multiple de
+$B$), $\mathcal{D}(A)$ l'ensemble des diviseurs de $A$, et $B \cdot \mathbb{K}[X]$
+les multiples de $B$.
+
+La relation $\mid$ dans $\mathbb{K}[X]$ est réflexive et transitive, mais pas
+antisymétrique. Par exemple, $(X^2 + 1) \mid (3X^2 + 1)$ et
+$(3X^2 + 3) \mid (X^2 + 1)$.
+
+> Soient $A,B \in \mathbb{K}[X]$, $(A \mid B \land B \mid A)$
+> $\Leftrightarrow \exists \lambda \in \mathbb{K}^{\ast}, A = \lambda B$.
+> On dit que $A$ et $B$ sont associés.
+
+__Preuve :__ $\exists D_1, D_2 \in \mathbb{K}[X]$,
+$\left\{\begin{matrix} B = AD_1 \\ A = BD_2 \end{matrix}\right.$,
+donc $A = A D_1 D_2$.
+- Si $A = 0$, alors $B = 0$
+- Sinon, par intégrité, $1 = D_1 D_2$, donc $D_1$ et $D_2$ sont deux polynômes
+  inversibles, donc ils sont constants et non nuls.
+
+On prouve ainsi $\Rightarrow$, et on a réciproquement que si $\lambda \in \mathbb{K}^{\ast}$,
+$A = \lambda B$ donc $B = \frac{1}{\lambda} A \in \mathbb{K}$,
+donc $B \mid A$ et $A \mid B$.
+
+On remarque qu'en se restreignant aux polynômes unitaires de $\mathbb{K}[X]$,
+la divisibilité est alors antisymétrique.
+
+- Tout $P \in \mathbb{K}[X]$ divise $0$
+- Les multiples de $0$ sont $0$
+- Soit $P = A \times B$ avec $A,B$ non nuls dans $\mathbb{K}[X]$,
+  $\text{deg}(P) = \text{deg}(A) + \text{deg}(B)$ avec $\text{deg}(A)$
+  et $\text{deg}(B)$ dans $\mathbb{N}$. Pour tout diviseur
+  $A$ non nul de $P$, $\text{deg}(A) \leq \text{deg}(P)$
+
+### Division euclidienne dans $\mathbb{K}[X]$
+> Soient $A, B \in \mathbb{K}[X]$ et $B \neq 0$,
+> il existe un unique couple $(Q,R) \in \mathbb{K}[X]^2$
+> tel que $\left\{\begin{matrix} A = BQ + R \\ \text{deg}(R) < \text{deg}(B) \end{matrix}\right.$
+
+##### Preuve d'unicité
+Soient $(Q_1,R_1)$ et $(Q_2,R_2)$ tels que
+$A = BQ_1 + R_1 = B Q_2 + R_2$ et
+$\left\{\begin{matrix} \text{deg}(R_1) < \text{deg}(B) \\ \text{deg}(R_2) < \text{deg}(B) \end{matrix}\right.$.
+Ainsi, $B(Q_1 - Q_2) = R_2 - R_1$, et donc $\text{deg}(B) + \text{deg}(Q_1 - Q_2) = \text{deg}(R2 - R_1)$.
+
+...
+
+Ainsi, $Q_1 - Q_2 = 0$, et on en déduit que $R_2 - R_1 = 0$, donc qu'il y a
+unicité.
+
+
+##### Preuve d'existence
+On fixe $B \neq 0$, et on écrit $\left\{\begin{matrix} B = \sum\limits_{k = 0}^{m} b_k X^k \\ \text{deg}(B) = m \land b_m \neq 0 \end{matrix}\right.$.
+On procède par récurrence sur le degré de $A$, avec pour hypothèse de récurrence
+que pour tout polynôme $A \in \mathbb{K}_{n-1}[X]$, il existe $(Q,R) \in \mathbb{K}[X]$
+permettant de poser une division euclidienne.
+
+$\forall k \in [\![1, m]\!]$, l'hypothèse est vérifiée. En effet, si $A \in \mathbb{K}_{n-1}[X]$,
+avec $k \leq m$, alors $\text{deg}(A) \leq k-1 < m$, donc l'écriture
+$A = B \times 0 + A$ convient car $\text{deg}(A) < \text{deg}(B) = m$.
+On a ainsi initialisé l'hypothèse.
+
+Soit $n \geq m$ tel que l'hypothèse est vérifiée. On montre l'hypothèse au rang
+suivant. $A \in \mathbb{K}_n[X]$, donc on peut écrire $A = a_n X^{n} + A_1$
+où $\text{deg}(A_1) < n$. Or, $B = b_m X^m + B_1$, avec $\text{deg}(B_1) < m$.
+Alors, $\frac{a_n}{b_n} X^{n - m \geq 0} \times B = a_n X^n + \frac{a_n}{b_n} X^{n- m} B_1$.
+Le degré de ce dernier terme est inférieur à $n$. Donc $A - \frac{a_n}{b_n} X^{n-m} B$
+$= A_1 - \frac{a_n}{b_m} X^{n-m} B_1 = A_2$, avec $\text{deg}(A_2) < n$.
+Or, par hypothèse de récurrence sur $A_2$, $\exists (Q_1,R_1)$
+tel que $\left\{\begin{matrix} A_2 = BQ_1 + R_1 \\ \text{deg}(R_1) < m \end{matrix}\right.$.
+Finalement, $A - \frac{a_m}{b_m} X^{n-m} B = BQ_1 + R_1$
+....
+
+On en déduit ainsi un algorithme de division euclidienne.
+
+#### Racines d'un polynôme
+On peut remarquer que $B \mid A$ est équivalent au fait que le reste de la
+division euclidienne de $A$ par $B$ soit nul.
+
+> $P(a) = 0 \Leftrightarrow \exists Q \in \mathbb{K}[X], P = (X-a) \times Q$
+
+On dit que $a$ est racine de $P$.
