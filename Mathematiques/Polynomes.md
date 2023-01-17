@@ -256,3 +256,85 @@ division euclidienne de $A$ par $B$ soit nul.
 > $P(a) = 0 \Leftrightarrow \exists Q \in \mathbb{K}[X], P = (X-a) \times Q$
 
 On dit que $a$ est racine de $P$.
+
+## Fonctions polynômes et racines
+### Fonction polynomiales
+> Soit $f: \mathbb{K} \to \mathbb{K}$, $f$ est une fonction polynomiale si il
+> existe un polynôme $P = \sum\limits_{k = 0}^{n} a_k X^k \in \mathbb{K}[X]$ tel
+> que $\forall x \in \mathbb{K}, f(x) = \sum\limits_{k = 0}^{n} a_k x^k$.
+
+On notera $\tilde{P}$ l'application polynomiale associée à $P$. On
+donc $P \in \mathbb{K}[X]$ et $\tilde{P} \in \mathcal{F}(\mathbb{K},\mathbb{K})$.
+
+Si $P,Q \in \mathbb{K}[X]$ et $\lambda \in \mathbb{K}$ :
+- $\tilde{P + Q} = \tilde{P} + \tilde{Q}$
+- $\tilde{P \times Q} = \tilde{P} \times \tilde{Q}$
+- $\tilde{\lambda P} = \lambda \tilde{P}$
+- $\tilde{P \circ Q} = \tilde{P} \circ \tilde{Q}$
+
+...
+
+### Racine
+> Soit $P \in \mathbb{K}[X]$ et $\alpha \in \mathbb{K}$, on dit que $\alpha$ est
+> une racine de $P$ si $\tilde{P}(x) = 0$.
+
+> Théorème de factorisation : $\alpha$ est une racine de $P$ si et seulement si
+> $(X - \alpha)$ divise $P$.
+
+__Preuve :__ Division euclidienne de $P$ par $(X - \alpha)$.
+
+Par récurrence, on peut ainsi montrer la propriété suivante
+
+> Si $\alpha_1,\alpha_2,\ldots,\alpha_n$ sont des racines deux à deux distincties
+> du polynôme $P$, alors $\prod\limits_{i = 1}^{n} (X - \alpha_i)$ divise
+> $P$.
+
+__Preuve :__ On procède par récurrence sur $n \in \mathbb{N}^{\ast}$ :
+- Si $n = 1$, alors on applique le théorème de factorisation
+- Si $n \geq 1$, avec la proposition vraie au rang $n$, on prend les racines
+  jusqu'au rang $n + 1$. On sait que le polynôme est divisible par le produit
+  des racines jusqu'à $n$, donc on a le quotient de cette division un polynôme
+  $Q$. Or, puisque $\tilde{P}(\alpha_{n+1}) = 0$, $\tilde{Q}(\alpha_{n+1}) = 0$
+  par intégrité, donc $\alpha_{n+1}$ est racine de $Q$ et on applique le
+  théorème de factorisation.
+
+> Soit $P \in \mathbb{K}[X]$ de degré $n \in \mathbb{N}$, alors $P$ possède au
+> plus $n$ racine distinctes.
+
+__Preuve :__ Si $\alpha_1,\alpha_2,\ldots,\alpha_n$ des racines distinctes de $P$,
+le produit des $(X - \alpha_i)$ divise $P$, donc $r \leq n$.
+
+__Corollaire :__ Si $\text{deg}(P) = n \in \mathbb{N}$, et si
+$\alpha_1,\ldots,\alpha_n$ sont $n$ racines distinctes de $P$, alors
+$P = \lambda \times \prod\limits_{i = 1}^{n} (X - \alpha_i)$, avec $\lambda$ le
+coefficient dominant de $P$.
+
+__Corollaire :__ Soit $P \in \mathbb{K}_n[X]$, si $P$ possède $(n+1)$ racines
+distinctes, $P = 0$.
+
+__Preuve :__ Si $\text{deg}(P) \in \mathbb{N}$, alors le nombre de racines est
+majoré par $\text{deg}(P)$. Ici, il faut $\text{deg}(P) \not\in \mathbb{N}$,
+c'est à dire $P = 0$.
+
+### Multiplicité
+> Soit $P \in \mathbb{K}[X]$ et $\alpha \in \mathbb{K}$, avec $P \neq 0$,
+> on appelle multiplicité de $\alpha$ dans $P$ l'entier
+> $m = \text{max}\{k \in \mathbb{N} \mid (X - \alpha)^k \mid P\}$.
+
+L'ensemble est non vide car il contient $0$, puisque $(X - \alpha)^0 = 1 \mid P$.
+L'ensemble est majoré par $\text{deg}(P)$.
+
+Ainsi, $\left\{\begin{matrix} (X - \alpha)^m \mid P \\ (X - \alpha)^{m + 1} \not\mid P \end{matrix}\right.$.
+Si $m$ est la multiplicité de $\alpha$ dans $P$, alors
+$P = Q \times (X - \alpha)^m \mid Q(\alpha) \neq 0$.
+
+- $\alpha$ n'est pas racine de $P$ si et seulement si $m = 0$ ($(X - \omega)^1 \not\mid P$)
+- $\alpha$ est racine de $P$ si et seulement si $m \geq 1$
+- $\alpha$ est racine simple si $m = 1$
+- $\alpha$ est racine double si $m = 2$
+
+Si $P \in \mathbb{K}[X]$ non nul de degré $n \in \mathbb{N}$. On note
+$\alpha_1,\alpha_2,\ldots,\alpha_r \in \mathbb{K}$ les $r$ racines distinctes de
+$P$ de multiplicités respectives $m_1,m_2,\ldots,m_r \in \mathbb{N}^{\ast}$.
+$\prod\limits_{i = 1}^{r} (X - \alpha_i)^{n_{i}}$ divise $P$,
+et donc $\sum\limits_{i = 1}^{r} m_i \leq \text{deg}(P)$.
