@@ -338,3 +338,123 @@ $\alpha_1,\alpha_2,\ldots,\alpha_r \in \mathbb{K}$ les $r$ racines distinctes de
 $P$ de multiplicités respectives $m_1,m_2,\ldots,m_r \in \mathbb{N}^{\ast}$.
 $\prod\limits_{i = 1}^{r} (X - \alpha_i)^{n_{i}}$ divise $P$,
 et donc $\sum\limits_{i = 1}^{r} m_i \leq \text{deg}(P)$.
+
+## Dérivation
+### Dérivation formelle
+> Soit $P = \sum\limits_{k = 0}^{n} a_k X^k \in \mathbb{K}[X]$, on définit le
+> polynôme dérivé $P'$ par $P' = \sum\limits_{k = 1}^{n} k a_k X^{k-1}$
+> $= \sum\limits_{k = 0}^{n-1} (k+1) a_{k+1} X^k$.
+
+On peut ainsi voir qu'en pratique, $(\tilde{P})' = \tilde{P'}$.
+
+On peut résumer par pour $k \in \mathbb{N}$, $(X^k)' = \left\{\begin{matrix} k X^{k+1}\text{ si } k \geq 1 \\ 0 \text{ si } k = 0 \end{matrix}\right.$.
+
+> $P \in \mathbb{K}_0[X] \Leftrightarrow P' = 0$
+
+En effet, la dérivée d'un polynôme constant est nulle. Ni $P' = 0$, tous les
+coefficients sont nuls.
+
+### Dérivées successives
+> Soit $P \in \mathbb{K}[X]$, on note $P^{(k)}$ la dérivée $k$-ième de $P$,
+> définie récursivement comme
+> $\left\{\begin{matrix} P^{(0)} = P \\ \forall k \in \mathbb{N}, P^{(k+1)} = (P^{(k)})' \end{matrix}\right.$.
+
+> Pour $n \in \mathbb{N}$ et $k \in \mathbb{N}$, $(X^k)^{(n)} = \left\{\begin{matrix} k (k-1) (k - n + 1)\text{ pour } n \leq k \\ 0 \text{ sinon} \end{matrix}\right.$.
+
+$(X^k)^{k} = k \times (k-1) \times \ldots = k!$, une constante, donc pour tout
+$n > k$, $(X^k)^{(n)} = 0$.
+
+On peut remarquer que $\forall 0 \leq n \leq k, (X^k)^{(n)} = \frac{k!}{(k - n)!} X^{k-n}$
+$= \frac{n!}{n!} \frac{k!}{(k-n)!} X^{k - n} = n! \binom{k}{n} X^{k-n}$.
+
+On peut observer aussi la linéarité de la dérivation, donnant
+$P^{(n)} = (\sum\limits_{k \geq 0} a_k X^k)^{(n)} = \sum\limits_{k \geq 0} a_k (X^k)^{(n)}$.
+On peut aussi déduire $P^{(n)} = a_n \times n! \sum\limits_{k > n} a_k n! \binom{k}{n} X^{k-n}$,
+donc $P^{(n)}(0) = a_n \times n! + 0$.
+
+Ainsi $\forall ninn, a_n = \frac{P^{(n)}(0)}{n!}$, donc pour tout polynôme
+$P \in \mathbb{K}[X]$, $P = \sum\limits_{k \geq 0} \frac{P^{(k)}(0)}{k!} X^{k}$.
+
+Ce résultat correspond à la formule de Taylor-Young en $0$.
+
+> On peut effectuer sur les dérivations les opérations suivantes, pour
+> $P,Q \in \mathbb{K}[X]$ et $\lambda \in \mathbb{K}$ :
+> - $(P + Q)' =  P' + Q'$
+> - $(\lambda P)' = \lambda P'$
+> - $(P \times Q)' = P' Q + P Q'$
+> - $\forall n \in \mathbb{N}^{\ast}, (Q^n)' = n Q' Q^{n-1}$
+> - $(P \circ Q)' = Q' \times (P' \circ Q)$
+
+__Preuve :__
+- Produit : $\left\{\begin{matrix} P = \sum\limits_{k \geq 0} a_k X^k \\ Q = \sum\limits_{k \geq 0} b_k X^k \end{matrix}\right.$,
+  alors $PQ = \sum\limits_{k \geq 0} (\sum\limits_{i + j = k} a_i b_j) X^k$,
+  donc $(PQ)' = \sum\limits_{k \geq 1} (\sum\limits_{i + j = k} a_i b_j) k X^{k-1}$\
+  $= \sum\limits_{k \geq 1} (\sum\limits_{i + j = k} a_i b_j (i+j) X^{i + j - 1})$\
+  $= \sum\limits_{k \geq 1} (\sum\limits_{i + j = k} a_i i X^{i-1} b_j X^j + a_i X^i j b_j X^{j-1})$\
+  $= \sum\limits_{k \geq 1} (\sum\limits_{i + j = k} a_i i X^{i-1} b_j X^j) + \sum\limits_{k \geq 1} (\sum\limits_{i + j = k} a_i X^i j b_j X^{j-1})$\
+  $= (\sum a_k k X^{k-1}) \times (\sum b_k X^{k}) + (\sum a_k X^k) \times (k b_j X^{k-1})$\
+  $=P'Q + PQ'$
+
+> Si $P \in \mathbb{K}[X]$, $\text{deg}(P') = \left\{\begin{matrix} -\infty \text{ si } P \text{ est constant} \\ \text{deg}(P) - 1 \text{ sinon} \end{matrix}\right.$.
+
+Si $d = \text{deg}(P) \in \mathbb{N}^{\ast}$ et $a_d \neq 0$ est le coefficient
+dominant de $P$, alors $d a_d$ est le coefficient dominant de $P'$.
+
+On a les dérivées successives $(P + Q)^{(n)} = P^{(n)} + Q^{(n)}$,
+$(\lambda P)^{(n)} = \lambda P^{(n)}$.
+
+Pour les dérivées successives de $(P \times Q)$, on peut observer par récurrence
+une expansion dans le même style que la puissance d'une addition, avec le binôme
+de Newton.
+
+> Formule de Leibniz : $\forall n \in \mathbb{N}, \forall P,Q \in \mathbb{K}[X]$,
+> $(P \times Q)^{(n)} = \sum\limits_{k = 0}^{n} \binom{n}{k} P^{(k)} \times Q^{(n-k)}$
+
+__Preuve :__ On pose par récurrence sur $n$.
+- si $n = 0$, $(PQ)^{(0)} = PQ$ et $\binom{0}{0} P^{(0)} \times Q^{(0)} = 1 \times P \times Q$
+- si $n = 1$, $(PQ)' = P' Q + P Q'$
+- si $n \geq 1$ avec la formule vraie au rang $n$, $(PQ)^{(n+1)}$\
+  $= [\sum\limits_{k = 0}^{n} \binom{n}{k} P^{(k)} Q^{(n-k)}]'$\
+  $= \sum\limits_{k = 0}^{n} \binom{n}{k} \times [P^{(k)} Q^{(n-k)}]'$\
+  $= \sum\limits_{k = 0}^{n} \binom{n}{k} P^{(k+1)} Q^{(n-k)} + \sum\limits_{k = 0}^{n} \binom{n}{k} P^{(k)} Q^{(n + 1 - k)}$\
+  $= \sum\limits_{k = 0}^{n} \binom{n}{k-1} P^{(k)} Q^{(n-k+1)} + \sum\limits_{k = 0}^{n} \binom{n}{k} P^{(k)} Q^{(n + 1 - k)}$\
+  $= P^{(n+1)} Q^{(0)} + \sum\limits_{k = 1}^{n} \binom{n+1}{k} P^{(k)} Q^{(n+1-k)} + P^{(0)} Q^{n + 1 - k}$\
+  $= \sum\limits_{k = 0}^{n+1} \binom{n+1}{k} P^{(k)} Q^{(n-k + 1)}$
+
+> Formule de Taylor sur les polynômes : Pour tout $P \in \mathbb{K}[X]$ et $a \in \mathbb{K}$,
+> $P = \sum\limits_{k \geq 0} \frac{P^{(k)}(a)}{k!} (X - a)^k$.
+
+La somme est finie car $\forall k > \text{deg}(P), P^{(k)} = 0$. Ainsi, les
+indices $k$ de la somme varient de $0$ à $\text{deg}(P)$.
+
+__Preuve :__ On pose $Q(X) = P(X + a)$, donnant $Q' = 1 \times P'(X + a)$.
+Par récurrence, on obtient $Q^{(k)}(0) = P^{(k)}(a)$.
+On applique la formule de Taylor en $0$, et on peut conclure.
+
+### Multiplicité et dérivation
+> Soit $P \in \mathbb{K}[X]$ non nul et $\alpha \in \mathbb{K}, m \in \mathbb{N}^{\ast}$.
+> Si $\alpha$ est racine de $P$ avec multiplicité $m$, alors
+> $\alpha$ est racine de $P'$ avec multiplicité $m-1$.
+
+__Preuve :__ Si $\alpha$ est racine de $P$ avec multiplicité $m$,
+alors $\exists Q \in \mathbb{K}[X] \mid \left\{\begin{matrix} P = (X - \alpha)^m \times Q \\ Q(\alpha) \neq 0 \end{matrix}\right.$.
+Ainsi, $P' = m (X - \alpha)^{m-1} \times Q + (X - \alpha)^m \times Q'$
+$= (X - \alpha)^{m-1} [m Q + (X - \alpha Q')]$.
+
+> Soit $P \in \mathbb{K}[X]$ non nul, $\alpha \in \mathbb{K}, m \in \mathbb{N}^{\ast}$,
+> on a l'équivalence des assertions 
+> - $\alpha$ est racine de $P$ avec multiplicité $m$
+> - $\left\{\begin{matrix} P(\alpha) = P'(\alpha) = \ldots = P^{(m-1)}(\alpha) = 0 \\ P^{m}(\alpha) \neq 0 \end{matrix}\right.$
+
+__Preuve :__
+- $\Rightarrow$ On prouve par récurrence finie que $\alpha$ est racine de $P^{(k)}$
+  avec multiplicité $m-k$ sur $k \in [\![0,m]\!]$. Pour $k = 0$, la propriété
+  est vraie, et soit $k \geq 0$ et $k < m$, avec la propriété vérifiée, on
+  trouve une multiplicité de $m - k - 1$ par le lemme.
+- $\Leftarrow$ On applique la formule de Taylor pour $P$ en $\alpha$, donnant
+  $P = \sum\limits_{k \geq 0} \frac{P^{(k)}(\alpha)}{k!} (X - \alpha)^k$. Par
+  hypothèse, tous les termes d'indices $k \in [\![0, m-1]\!]$ sont nuls,
+  donc $P = \sum\limits_{k \geq m} \frac{P^{(k)}(\alpha)}{k!} (X - \alpha)^k$
+  $= \frac{P^{(n)}(\alpha)}{m!} (X - \alpha)^m + (X - \alpha)^m \times (\sum\limits_{k \geq m+1} \frac{P^{(k)}(\alpha)}{k!} (X - \alpha)^{k-m})$.
+  $P = (X - \alpha)^m \times Q(\alpha)$, avec $Q(\alpha) = \frac{P^{(m)}(\alpha)}{m!} + \sum\limits_{k \geq m + 1} \frac{P^{(k)}(\alpha)}{k!} (X - \alpha)^{k - m}$
+  $= \frac{P^{(m)}(\alpha)}{m!}$.
