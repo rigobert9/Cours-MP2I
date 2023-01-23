@@ -458,3 +458,74 @@ __Preuve :__
   $= \frac{P^{(n)}(\alpha)}{m!} (X - \alpha)^m + (X - \alpha)^m \times (\sum\limits_{k \geq m+1} \frac{P^{(k)}(\alpha)}{k!} (X - \alpha)^{k-m})$.
   $P = (X - \alpha)^m \times Q(\alpha)$, avec $Q(\alpha) = \frac{P^{(m)}(\alpha)}{m!} + \sum\limits_{k \geq m + 1} \frac{P^{(k)}(\alpha)}{k!} (X - \alpha)^{k - m}$
   $= \frac{P^{(m)}(\alpha)}{m!}$.
+
+## Arithmétique des polynômes
+Voir polycopié.
+
+## Factorisation dans $\mathbb{R}[X]$ et $\mathbb{C}[X]$
+### Factorisation dans $\mathbb{C}[X]$
+> Théorème d'Alembert-Gauss / Théorème fondamental de l'algèbre : Tout polynôme
+> non constant de $\mathbb{C}[X]$ possède une racine dans $\mathbb{C}$.
+
+On dit donc que le corps $\mathbb{C}$ est algébriquement clos.
+
+__Corollaire :__ Les polynômes de $\mathbb{C}[X]$ irréductibles sont les
+polynômes de degré $1$.
+
+__Corollaire :__ Tout polynôme non constant de $\mathbb{C}[X]$ est scindé : il
+s'écrit comme un produit de polynômes de degré $1$.
+En effet, $\forall P \in \mathbb{C}[X]$, avec $\text{deg}(P) = n  \in \mathbb{N}^{\ast}$,
+$\exists (x_1,x_2,\ldots,x_n) \in \mathbb{C}^n$, $\exists \lambda \in \mathbb{C}$,
+$P = \lambda \times \prod\limits_{i = 1}^{n} (X - x_i)$.
+En regroupant les racines identique, $P = \lambda \times \prod\limits_{i = 1}^{r} (X - \alpha_i)^{m_i}$.
+
+Dans $\mathbb{C}[X]$, tout polynôme non constant a autant de racines (comptées
+avec leur multiplicité) que son degré.
+
+Ainsi, si $A \mid B$, toutes les racines dans $\mathbb{C}$ de $A$ sont racines
+de $B$ avec une multiplicité égale ou supérieure.
+
+### Factorisation dans $\mathbb{R}[X]$
+- Si $p \in \mathbb{R}[X]$ et $\text{deg}(P) = 1$, alors $P$ est irréductible
+  dans $\mathbb{R}[X]$
+- Si $P = aX^2 + bX + c$ avec $(a,b,c) \in \mathbb{R}^3$ où
+  $\left\{\begin{matrix} a \neq 0 \\ \Delta = b^2 - 4a c < 0 \end{matrix}\right.$,
+  alors $P$ est irréductible dans $\mathbb{R}[X]$.
+
+Soit $P \in \mathbb{R}[X]$ et $\alpha \in \mathbb{C}$ :
+- $\alpha$ est racine de $P$ si et seulement si $\overline{\alpha}$ est racine
+  de $P$
+- $\alpha$ et $\overline{\alpha}$ ont la même multiplicité dans $P$
+
+__Preuve :__
+- Soit $P = \sum\limits_{k = 0}^{n} a_k X^k$, avec $(a_k)_k \in \mathbb{R}^{n+1}$,
+  si $P(\alpha) = 0$, alors $\sum\limits_{k \geq 0} a_k \alpha^{k} = 0$,
+  et donc $\sum\limits_{k \geq 0} a_k \alpha^k = 0$,
+  alors $\sum\limits_{k \geq 0}  \overline{a_j} \overline{\alpha^k} = 0$,
+  alors $\sum\limits_{k \geq 0} a_k (\overline{\alpha})^k = 0$,
+  alors $P(\overline{\alpha}) = 0$.\
+  Ainsi, si $\alpha$ est racine de $P$, $\overline{\alpha}$ est racine de $P$,
+  et si $\overline{\alpha}$ est racine de $P$, $\overline{\overline{\alpha}}$
+  est racine de $P$, d'où l'équivalence.
+- Si $\alpha$ est de multiplicité $m$ dans $P$, $P = (X - \alpha)^m \times Q$
+  avec $Q \in \mathbb{C}[X] \mid Q(\alpha) \neq 0$. Dans ce cas,
+  on pose $\overline{P} = \overline{(X - \alpha)^m \times Q} = (X - \overline{\alpha})^m \times \overline{Q}$.
+  Or, $P \in \mathbb{R}[X]$, donc $\overline{P} = P$ donc $P = (X - \overline{\alpha})^m \times \overline{Q}$.
+
+> $\forall \alpha \in \mathbb{C}, (X - \alpha)(X - \overline{\alpha}) = X^2 - 2 \Re(\alpha) X + |\alpha|^2 \in \mathbb{R}[X]$
+
+Les irréductibles de $\mathbb{R}[X]$ sont :
+- Les polynômes de $\mathbb{R}$ de degré $1$
+- Les polynômes de degré $2$ de déterminant négatif
+
+En effet, si un polynôme est de degré supérieur à $3$, en le considérant comme
+élément de $\mathbb{C}[X]$, il existe une racine $\alpha \in \mathbb{C}$. Si
+celle-ci est réelle, on peut réduire le polynôme par une racine, et sinon on
+travaille avec les racines complexes conjuguées, qui permettent de composer un
+polynômes réel du second degré.
+
+Si $P \in \mathbb{R}[X]$ et $\text{deg}(P) \equiv 1[2]$ impair, alors $P$
+possède au moins une racine réelle.
+
+> Soit $P \in \mathbb{R}[X]$ non constant,
+> $P = \lambda \times \prod\limits_{i = 1}^{r} (X - \alpha_i)^{m_i} \times \prod\limits_{j = 1}^{l} (X^2 + b_j X + c_j)^{m_j}$.
