@@ -529,3 +529,90 @@ possède au moins une racine réelle.
 
 > Soit $P \in \mathbb{R}[X]$ non constant,
 > $P = \lambda \times \prod\limits_{i = 1}^{r} (X - \alpha_i)^{m_i} \times \prod\limits_{j = 1}^{l} (X^2 + b_j X + c_j)^{m_j}$.
+
+## Interpolation de Lagrange
+__Motivation :__ Soit un nuage de points dans un plan indexé par $\mathbb{R} \times \mathbb{R}$,
+on cherche une fonction polynomiale qui passe par tous ces points.
+
+1. On cherche pour chaque $i \in [\![0,n]\!]$ un polynôme $L_i \in \mathbb{K}_n[X]$
+  tel que $(L_i(a_0), L_i(a_1),\ldots,L_i(a_n)) = \left\{\begin{matrix} 1\text{ pour a_i } \\ 0\text{ sinon}\end{matrix}\right.$.
+  Si $L_i$ existe, alors $\forall j \in [\![0,n]\!] \setminus \{i\}, L_i(a_j) = 0$, donnant
+  $n$ racines distinctes, les $a_j$ avec $j \neq i$. Ainsi,
+  $A = \prod\limits_{0 \leq j \leq n \mid j \neq i} (X - a_j)$ divise $L_i$.
+  $A$ est un polynôme de degré $n$, or on impose $L_i \in \mathbb{K}_n[X]$,
+  donc il existe $\lambda \in \mathbb{K} \mid L_i = \lambda \times A$.
+  De plus, on doit avoir $L_i(a_i) = 1$, c'est-à-dire
+  $\lambda \times \prod\limits_{0 \leq j \leq n \mid j \neq i} (a_i - a_j) = 1$
+  (les termes du produit sont non nuls car les $a_j$ sont distincts deux à
+  deux). Ainsi, $L_i = \prod\limits_{0 \leq j \leq n \mid j \neq i} (a_i - a_j) \times A$,
+  ce qui donne l'unicité de $L_i$.
+  Par synthèse, on pose pour tout $i \in [\![0,n]\!]$
+  $L_i = \prod\limits_{0 \leq j \leq n, j \neq i} \frac{X - a_j}{a_i - a_j}$.
+  On vérifie facilement ces propriétés, et ils existent bien.
+  Pour tout $k \in [\![0,n]\!], L_i(a_k) = S_{k,i}$.
+
+On note par le symbole de Kronecker ces suites,
+$S_{i,k} = \left\{\begin{matrix} 1\text{ si }i = k \\ 0\text{ sinon}\end{matrix}\right.$.
+
+2. Soit un nuage de points de même taille $(b_0,\ldots,b_n)$, on cherche à montrer qu'il
+  existe un unique polynôme $P \in \mathbb{K}_n[X]$ tel que
+  $P(a_i) = b_i$.\
+  On veut le polynôme de $\mathbb{K}_n[X]$ qui passe par $(a_i, b_j)$,
+  $0 \leq i \leq n$, on devine $P = \sum\limits_{i = 0}^{n} b_i L_i$.
+  Ainsi, $\text{deg}(P) \leq \text{max}(\text{deg}(b_i L_i), 0 \leq i \leq n) \leq n$,
+  donc $P \in \mathbb{K}_n[X]$. De plus,
+  $\forall j \in [\![0,n]\!], P(a_j) = \sum\limits_{i = 0}^{n} b_i L_i(a_j)$
+  $= \sum\limits_{i = 0}^{n} b_i S_{i,j} = 0 + b_j S_{jj} = b_j$,
+  donc $P$ convient.\
+  On montre l'unicité : si $P$ et $Q$ conviennent, alors
+  $(P - Q)(a_i) = 0$, ce qui donne $n + 1$ racine pour
+  $P - Q$, donc $P - Q \in \mathbb{K}_n[X]$ est le polynôme nul,
+  donc $P = Q$.
+
+3. Si deux polynômes de $\mathbb{K}_n[X]$ coïncident en $(n+1)$ points,
+  alors ils sont égaux. Soit $P \in \mathbb{K}_n[X]$, on pose
+  $Q = \sum\limits_{i = 0}^{n} P(a_i) L_i$. On a
+  $\text{deg}(Q) \leq n$, car $\forall i, \text{deg}(L_i) = n$.
+  Pour $j \in [\![0,n]\!], Q(a_j) = \sum\limits_{i = 0}^{n} P(a_i) L_i(a_j) = P(a_j) S_{j,j} + 0 = P(a_j)$.
+
+On peut remarquer que $\forall P \in \mathbb{K}_n[X]$, $P = \sum\limits_{i = 0}^{n} P(a_i) L_i$
+$= \sum\limits_{k = 0}^{n} C_k X^k$.
+
+4. $B = \sum\limits_{i = 0}^{n} L_i$, on a $B \in \mathbb{K}_n[X]$ et
+  $\forall j \in [\![0,n]\!], B(a_j) = \sum\limits_{i = 0}^{n} \frac{L_i(a_j)}{S_{i,j}} = 1$.
+  Ainsi, $B$ et $1$ coïncident en $n+1$ points donc $B = 1$.
+
+5. ...
+  Si $Q$ est solution, alors $\forall i \in [\![0,n]\!], Q(a_i) = b_i = P(a_i)$,
+  donc $Q - P$ possède $(a_i)_{0 \leq i \leq n}$ pour racines. Alors,
+  $\prod\limits_{i = 0}^{n} (X - a_i)$ divise $Q - P$.
+  $\exists R \in \mathbb{K}[X], Q - P = (\prod\limits_{i = 0}^{n} (X - a_i)) \times R$,
+  et donc $Q = P + R \times \prod\limits_{i = 0}^{n} (X - a_i)$,
+  et ils conviennent tous.
+  Par synthèse, les solutions sont telles que
+  $\sum\limits_{i = 0}^{n} b_i L_i + \prod\limits_{i = 0}^{n} (X - a_i) \times R$,
+  avec $R \in \mathbb{K}[X]$. Ainsi, le deuxième membre de la somme est de degré
+  supérieur ou égal à $n+1$.
+
+## Relations entre les coefficients et les racines
+Soit $P = a X^2 + b X + c$, avec $a \neq 0$, avec $P$ scindé dans $\mathbb{C}$,
+et on a $P = a \times (X - x_1) (X - x_2)$. En développant,
+on a $P = a (X^2 - (x_1 + x_2) X + x_1 x_2)$.
+Par égalité des coefficients, on a $x_1 + x_2 = \frac{-b}{a}$
+et $x_1 \times x_2 = \frac{c}{a}$.
+
+On peut effectuer le même raisonnement sur les polynômes de degré $3$,
+nous donnant $x_1 \times x_2 \times x_3 = \frac{-a_0}{a_3}$,
+$x_1 + x_2 + x_3 = \frac{-a_2}{a_3}$.
+
+> Soit $P = \sum\limits_{k = 0}^{n} a_k X^k$ de degré $n$, tel que $P$ est
+> scindé, $P = a_n \times \prod\limits_{i = 1}^{n} (X - x_i)$.
+
+> On note alors $\sigma_1 = \sum\limits_{i = 1}^{n} x_i = \frac{- a_{n-1}}{a_n}$
+> (la somme des racines) et $\sigma_n = \prod\limits_{i = 1}^{n} x_i = (-1)^n \frac{a_0}{a_n}$
+> (le produit des racines).
+
+Pour $k \in [\![1,n]\!], \sigma_k = \sum\limits_{i_1,\ldots,i_k \mid i_1 < i_2 < \ldots < i_k} x_{i_1} x_{i_2} \ldots x_{i_k}$
+$= (-1)^k \frac{a_{n-k}}{a_n}$.
+
+Les $\sigma_k$ sont des fonctions symétrique élémentaires des racines.
