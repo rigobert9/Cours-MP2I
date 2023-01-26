@@ -240,3 +240,32 @@ $\overrightarrow{\rm B = B_0 \overrightarrow{\rm u_z}}$ avec $B_0 > 0$
 et $\overrightarrow{\rm v} = v_x \overrightarrow{\rm u_x} + v_y \overrightarrow{\rm u_y} + v_z \overrightarrow{\rm u_z}$,
 d'après le principe fondamental de la dynamique selon $\overrightarrow{\rm u_z}$,
 $m \frac{d v_z}{dt} = q (\overrightarrow{\rm v} \wedge \overrightarrow{\rm B}) \cdot \overrightarrow{\rm u_z} = 0$.
+
+#### Vitesse initiale colinéaire au champ
+$\overrightarrow{\rm v_0} = v_0 \overrightarrow{\rm u_z}$.
+Or, $\lVert \overrightarrow{\rm v} \rVert^2$ est une constante, de valeur
+$v_x^2 + v_y^2 + v_z^2$ et $v_z$ est une constante.
+Ainsi, $v_z(t) = v 0$ et $v_x(t) = v_y(t) = 0$.
+
+#### Vitesse initiale orthogonale au champ
+$\overrightarrow{\rm v_0} = v_0 \overrightarrow{\rm u_x}$ avec $v_0 > 0$.
+$v_z(t) = v_z(t = 0) = 0$; le mouvement est dans le plan $(Oxy)$.
+D'après le principe fondamental de la dynamique,
+$\frac{d \overrightarrow{\rm v}}{dt} = \frac{q B_0}{m} (v_x \overrightarrow{\rm u_x} + v_y \overrightarrow{\rm u_y}) \wedge \overrightarrow{\rm u_z}$
+$= \frac{q B_0}{m} (- v_x \overrightarrow{\rm u_y} + v_y \overrightarrow{\rm u_x})$
+$\Leftrightarrow \left\{\begin{matrix} \dot{v_x} = \omega_c v_y \\ \dot{v_y} = - \omega_c v_x \end{matrix}\right.$,
+avec $\omega_c = \frac{|q| B_0}{m} > 0$.
+
+En dérivant, on peut obtenir
+$\left\{\begin{matrix} \ddot{v_x} + \omega_c^2 v_x = 0 \\ \ddot{v_y} + \omega_c^2 v_y = 0 \end{matrix}\right.$.
+On obtient la condition aux limites $v_x(t = 0) = v_0$ et $v_y(t = 0) = 0$,
+donnant le résultat final
+$\left\{\begin{matrix} v_x(t) = v_0 \cos(\omega_c t) \\ v_y(t) = - v_0 \sin(\omega_c t) \end{matrix}\right.$.
+On remarque aussi l'identité $v_x^2 + v_y^2 = v_0^2$.
+
+En posant plutôt sous forme complexe, avec $\underline{u}(t) = v_x(t) + j v_y(t)$,
+alors on a $\dot{\underline{u}} = \dot{v_x} + j \dot{v_y} = \omega_c v_y - j \omega_c v_x$
+$= - j \omega_c$
+....
+
+

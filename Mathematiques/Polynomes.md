@@ -535,7 +535,7 @@ __Motivation :__ Soit un nuage de points dans un plan indexé par $\mathbb{R} \t
 on cherche une fonction polynomiale qui passe par tous ces points.
 
 1. On cherche pour chaque $i \in [\![0,n]\!]$ un polynôme $L_i \in \mathbb{K}_n[X]$
-  tel que $(L_i(a_0), L_i(a_1),\ldots,L_i(a_n)) = \left\{\begin{matrix} 1\text{ pour a_i } \\ 0\text{ sinon}\end{matrix}\right.$.
+  tel que $(L_i(a_0), L_i(a_1),\ldots,L_i(a_n)) = \left\{\begin{matrix} 1 \text{ pour } a_i \\ 0 \text{ sinon} \end{matrix}\right.$.
   Si $L_i$ existe, alors $\forall j \in [\![0,n]\!] \setminus \{i\}, L_i(a_j) = 0$, donnant
   $n$ racines distinctes, les $a_j$ avec $j \neq i$. Ainsi,
   $A = \prod\limits_{0 \leq j \leq n \mid j \neq i} (X - a_j)$ divise $L_i$.
