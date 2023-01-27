@@ -94,3 +94,77 @@ définie. On se place sur $\mathbb{N}^2$ muni de l'ordre lexicographique.
   donc c'est un entier et $(m-1, A(m,n-1)) \in \mathbb{N}^2$,
   or $m-1 < m$, donc $(m-1, A(m,n-1)) < (m,n)$. Ainsi, $A(m-1, A(m,n-1))$
   est bien définie et $A(m,n)$ l'est donc aussi.
+
+## Applications aux structures de données connues
+### Listes chaînées
+Soient $\ell, \ell'$ deux listes possédant le même type de valeurs,
+on peut définir un ordre structurel sur les listes tel que
+$\ell \preceq \ell'$ si $\ell'$ est une liste composée de $n$ maillons en tête
+suivis de $\ell$.
+Cette relation est une relation bien fondée sur les listes chaînées.
+
+### Piles et files
+Les piles et les files ne sont pas des structures inductives (voir définition
+plus loin), et ne possèdent pas d'ordre structurel. Cependant, on peut voir les
+piles et les files comme un couple de listes, permettant d'utiliser l'ordre
+structurel sur les listes dans un ordre lexicographique, donnant un ordre bien
+fondé.
+
+### Arbres binaires
+On peut de même définir un ordre structurel sur les arbres, formé sur les
+sous-arbres : pour deux arbres $A_1, A_2$, on a $A_1 \preceq A_2$ si $A_1$
+fait partie des sous-arbres de $A_2$.
+Cet ordre structurel est un ordre bien fondé.
+
+### Structures inductives
+Soit $S$ un ensemble appelé signature d'éléments appelées constructeurs, munis
+chacun d'un entier naturel appelé arité. Un constructeur d'arité $0$ est appelé
+constante ou constructeur constant. On supposera que $S$ contient au moins un
+constructeur constant et un constructeur non constant.
+
+> Un constructeur d'arité $k$ s'applique à k termes de la structure de signature
+> $S$ pour construire un nouveau terme.
+
+> On définit pour chaque entier $h \geq -1$ l'ensemble suivant :
+> $E_{-1} = \{C \in S \mid C \text{ est d'arité 0}\}$, et
+> $\forall k \in \mathbb{N}, E_k = E_{k-1} \cup (\bigcup\limits_{k \in \mathbb{N}^{\ast}} (\bigcup\limits_{C \in S, \,\text{d'arité k}} C(E_{k-1}^{k})))$.
+
+On définit $E = \bigcup\limits_{k \in \mathbb{N}} E_k$ la structure inductive de
+signature $S$. Si $t \in E$, le plus petit $k \in \mathbb{N} \cup \{-1\} \mid t \in E_k$
+est appelé la hauteur de $t$. Les éléments de $E$ sont appelés termes.
+
+Pour les arbres binaires, le constructeur d'arité $0$ est alors l'arbre vide, et
+un nœud est un constructeur d'arité $2$, qu'il possède une étiquette ou non.
+Pour les listes chaînées, la liste vide constitue un constructeur d'arité $0$
+et un nœud est d'arité $1$.
+
+> Si il existe $f: X \to S$ injective avec $X$ l'ensemble des valeurs d'un certain
+> type, on peut dire que $f$ est un constructeur typé correspondant à l'ensemble
+> des $f(x)$.
+
+Par exemple, les arbres binaires étiquettés par un type $T$ ont la signature :
+- `Vide` est un constructeur constant
+- `Noeud` est un constructeur typé d'arité $2$
+
+> Soit $E$ une structure inductive de signature $S$, $t \in E$ qui n'est pas un
+> constructeur constant, alors il existe $C \in S, t_1, \ldots, t_k \in E$
+> tels que $t = C(t_1;\ldots;t_k)$, avec $k > 0$. $t_1,\ldots,t_k$ sont appelés
+> les sous-termes immédiats de $t$. On écrit $t_i \prec_i t$.
+
+> On définit $\preceq$ comme la clôture réflexive transitive de $\prec_i$,
+> c'est-à-dire $\forall u,v \in E$, $u \preceq v \Leftrightarrow \exists n \in \mathbb{N}, \exists (t_k)_{0 < k \leq n} \in E$,
+> $u = t_0 \prec t_1 \prec \ldots \prec t_n = v$.
+
+__Lemme :__ Soient $u,v \in E$ et $h_u, h_v$ leurs hauteurs, alors
+si $u \prec v$, $h_u \prec h_v$.
+
+__Preuve :__ $u \preceq v$, donc $\exists un \in \mathbb{N}, \exists (t_k)_{0 < k \leq n} \in E$,
+$u = t_0 \prec \ldots \prec t_n = v$, mais $u \neq v$ donc $n \neq 0$.
+On montre par récurrence sur $k \geq 1$ que la hauteur de $t_k$
+est supérieur à $h_u$ :
+- Initialisation : $u$ est un sous-terme immédiat de $t_1$, donc si $h$ est la
+  hauteur de $t_1$, il existe $x_1,\ldots,x_n \in E_{k-1}$ et
+  $C \in S$ d'arité $n$ tels que $t_1 = C(x_1,\ldots,x_n)$ et $u$ est l'un des
+  $x_i$, donc $u \in E_{-1}$, donc $h_u \leq h - 1 < h$.
+- Hérédité : Soit $k \geq 2$, $k \leq n$, on suppose que la hauteur de $t_{k-1}$
+  est supérieure à $h_u$. Alors comme tout $t_{k_1}$ est un sous-terme immédi
