@@ -207,11 +207,13 @@ La fonction est donc $2M$-lipschitzienne sur cet intervalle.
 > $g: J \to \mathbb{R}$ est $k'$-lipschitzienne sur $I$,
 et $\lambda \in \mathbb{R}$, alors $f + g$ est
 $(k + k')$-lipschitzienne sur $I$ et $\lambda f$ est
-$(\lambda k)$-lipschitzienne sur $I$.
+$(|\lambda| k)$-lipschitzienne sur $I$.
 
-....
-
-__Preuve :__
+__Preuve :__ $\forall (x,y) \in I^2, |f(x) - f(y)| \leq k |x - y|,$
+$|g(x) - g(y)| \leq k' |x - y|$. Ainsi,
+$|(g + f)(x) - (g + f)(y)| = |g(x) - g(y) + f(x) - f(y)|$
+$\leq |g(x) - g(y)| + |f(x) - f(y)| \leq (k + k') |x - y|$.
+De plus, $|\lambda f(x) - \lambda f(y)| = |\lambda| |f(x) - f(f)|$.
 
 > Si $f: I \to \mathbb{R}$ est $k$-lipschitzienne sur $I$ et
 > $g: J \to \mathbb{R}$ est $k'$-lipschitzienne sur $J$,
