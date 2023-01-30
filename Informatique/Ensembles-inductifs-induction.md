@@ -110,6 +110,10 @@ piles et les files comme un couple de listes, permettant d'utiliser l'ordre
 structurel sur les listes dans un ordre lexicographique, donnant un ordre bien
 fondé.
 
+On ne peut pas les considérer comme des structures inductives, car il n'y a pas
+une unique façon de construire une pile ou file (on peut ajouter des `pop`). Si on
+raisonne uniquement sur `push`, on raisonne sur des listes chaînées classiques.
+
 ### Arbres binaires
 On peut de même définir un ordre structurel sur les arbres, formé sur les
 sous-arbres : pour deux arbres $A_1, A_2$, on a $A_1 \preceq A_2$ si $A_1$
@@ -167,4 +171,51 @@ est supérieur à $h_u$ :
   $C \in S$ d'arité $n$ tels que $t_1 = C(x_1,\ldots,x_n)$ et $u$ est l'un des
   $x_i$, donc $u \in E_{-1}$, donc $h_u \leq h - 1 < h$.
 - Hérédité : Soit $k \geq 2$, $k \leq n$, on suppose que la hauteur de $t_{k-1}$
-  est supérieure à $h_u$. Alors comme tout $t_{k_1}$ est un sous-terme immédi
+  est supérieure à $h_u$. Alors comme tout $t_{k_1}$ est un sous-terme immédiat
+  de $t_k$ par le même raisonnement que pour l'initialisation, la hauteur de
+  $t_{k-1}$ est inférieure à celle de $t_k$, donc la hauteur de $t_k$ est
+  supérieur à $h_u$
+
+> La relation $\preceq$ qu'on a définie est une relation d'ordre sur $E$ et est
+> bien fondée. On l'appelle l'ordre structurel sur $E$.
+
+__Preuve :__
+- Réflexivité : Soit $u \in E$, si on pose $t_0 = u$, on a bien $u = t_0 = u$,
+  donc en prenant $n = 0$, on a $u \preceq u$.
+- Transitivité : Soient $u,v,w \in E \mid u \preceq v \land v \preceq w$,
+  $\exists n,n' \in \mathbb{N}, (t_0,\ldots,t_n) \in E^{n + 1},$
+  $(t_0,\ldots,t_n) \in E^{n+1}$, on a donc bien par succession $u \preceq v \preceq w$
+  donnant $u \preceq w$
+- Antisymétrie : Soient $u,v \in E$ tels que $u \preceq v$ et $v \preceq u$,
+  on raisonne par l'absurde en supposant que $u \neq v$.
+  Alors $u \prec v$ et donc d'après le lemme, $h_u \prec h_v$, et inversement,
+  engendrant une contradiction, nous donnant $u = v$.
+- Bien fondé : On raisonne par l'absurde en supposant qu'il existe $(t_n)_{n \in \mathbb{N}}$
+  une suite strictement décroissante de $E$, alors soit $h_n$ la hauteur de $t_n$
+  pour tout $n \in \mathbb{N}$, $\forall n \in \mathbb{N}, h_{n + 1} < h_n$
+  car $t_{n+1} \prec t_n$. Ainsi, $(h_n)_{n \in \mathbb{N}}$ est strictement
+  décroissante dans $\mathbb{N} \cup \{-1\}$, ce qui est absurde. On en conclut
+  que $E$ est inductif.
+
+> __Corollaire :__ Soit $E$ une structure inductive et $P$ une propriété sur ses
+> éléments, si $\forall t \in E, (\forall n \in E, u \prec t \Rightarrow P(u)) \Rightarrow P(t)$,
+> alors $\forall t \in E, P(t)$.
+
+__Preuve :__ Soit $t \in E$, on suppose $\forall u \in E, u \prec_i t \Rightarrow P(u)$,
+donc on a $P(t)$, donc l'hypothèse du principe d'induction est bien respectée,
+donc $\forall t \in E, P(t)$.
+
+Le corollaire est vrai pour tout ensemble inductif. Le fait que dans une
+structure inductive, tout terme qui n'est pas un constructeur constant a un ou
+plusieurs sous-termes immédiats rend le corollaire utile : pour chaque terme non
+minimal, on dispose toujours d'une hypothèse d'induction non triviale.
+
+##### Exemple
+On cherche à prouver par induction la correction des ajouts sur les arbres
+radix. On pose, pour tout arbre $A$, $P(A) : \forall n \in \mathbb{N}, \text{ ajoute } A \, n \text{ renvoie l'arbre } A \cup \{n\}$,
+en identifiant les arbres à l'ensemble des entiers qu'il représente.
+- Initialisation : Si $A$ est vide, alors ajouter un élément à l'arbre renvoie
+  le singleton de cet élément.
+- Soit $A$ non vide, on pose $A = \text{Noeud}(A_g, b, A_d)$, et on suppose
+  $P(A_g)$ et $P(A_d)$. Dans le cas où $n = 1$, l'inclusion fonctionne bien,
+  et selon la parité de $n$ sinon, on peut agir sur l'hypothèse de récurrence.
