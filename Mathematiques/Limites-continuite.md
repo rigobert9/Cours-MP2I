@@ -164,3 +164,123 @@ On choisit $\eta = \frac{\varepsilon}{K}$.
 $\forall x \in I, |f(x) - f(a)| \leq K |x - a|$, et si $|x - a| \leq \frac{\varepsilon}{K}$,
 alors $|f(x) - f(a)| \leq K |x - a| \leq K \times \frac{\varepsilon}{K} = \varepsilon$.
 On obtient donc bien la caractérisation de la continuité de $f$ sur $I$.
+
+> On dit que $f$ est $k$-lipschitzienne sur $I$ si
+> $\forall (x,y) \in I^2, |f(x) - f(y)| \leq k \times |x - y|$.
+
+> Toute fonction $k$-lipschitzienne sur $I$ est lipschitzienne sur $I$.
+
+La fonction valeur absolue est $1$-lipschitzienne sur $\mathbb{R}$,
+$\sin$ est $1$-lipschitzienne sur $\mathbb{R}$.
+
+__Preuve :__ $\sin x - \sin y = 2 \cos(\frac{x + y}{2}) \sin(\frac{x - y}{2})$.
+De plus, $|\sin(t)| \leq |t|$, donc $|\sin(x) - \sin(y)| \leq 2 |\cos(\frac{x + y}{2})| \times |\sin(\frac{x - y}{2})|$
+$\leq 1 \times |x - y|$.
+
+La fonction racine carrée sur $\mathbb{R}_{+}$ n'est pas lipschitzienne,
+car par l'absurde s'il existe $k > 0$ tel que
+$\forall (x,y) \in \mathbb{R}_{+}, |\sqrt{x} - \sqrt{y}| \leq k |x - y|$,
+alors your $y = 0$, $\forall x \in \mathbb{R}_{+}, \sqrt{x} \leq k x$,
+donc $\forall x > 0, \frac{1}{\sqrt{x}} \leq k$, or
+$\lim\limits_{x \to 0^{+}} +\infty$. En revanche, pour tout
+$a > 0$, la racine carrée est lipschitzienne sur
+$[a, +\infty[$, car $\forall (x,y) \in [a, +\infty[^2$,
+$\sqrt{x} - \sqrt{y} = \frac{x - y}{\sqrt{x} + \sqrt{y}}$,
+or $\sqrt{x} + \sqrt{y} \geq 2 \sqrt{a} > 0$, donc
+$\frac{1}{\sqrt{x} + \sqrt{y}} \leq \frac{1}{2 \sqrt{a}}$,
+donc $\forall (x,y) \in [a,+\infty[^2, |\sqrt{x} - \sqrt{y}| \leq \frac{1}{2 \sqrt{a}} \times |x - y|$.
+Ainsi, la racine carrée est $\frac{1}{2 \sqrt{a}}$-lipschitzienne
+sur $[a,+\infty[$, pour $a > 0$.
+
+La fonction carrée n'est pas lipschitzienne sur $\mathbb{R}$. On le prouve par
+l'absurde : on prend un $k > 0$ qui fonctionne. Pour $y = 0$,
+$\forall x \in \mathbb{R}_{+}^{\ast},x^2 \leq k x \Leftrightarrow x \leq k$,
+et $\mathbb{R}_{+}^{\ast}$ n'est par majoré.
+En revanche, $x \mapsto x^2$ est lipschitzienne sur tout segment
+$[-M,M]$ avec $M \in \mathbb{R}_{+}^{\ast}$. En effet,
+$x^2 - y^2 = (x - y)(x + y)$, or $|x + y| \leq |x| + |y| \leq 2M$,
+pour $(x,y) \in [-M,M]^2$. Finalement,
+$\forall (x,y) \in [-M,M]^2, |x^2 - y^2| \leq 2M |x - y|$.
+La fonction est donc $2M$-lipschitzienne sur cet intervalle.
+
+> Si $f: I \to \mathbb{R}$ est $k$-lipschitzienne sur $I$ et
+> $g: J \to \mathbb{R}$ est $k'$-lipschitzienne sur $I$,
+et $\lambda \in \mathbb{R}$, alors $f + g$ est
+$(k + k')$-lipschitzienne sur $I$ et $\lambda f$ est
+$(\lambda k)$-lipschitzienne sur $I$.
+
+....
+
+__Preuve :__
+
+> Si $f: I \to \mathbb{R}$ est $k$-lipschitzienne sur $I$ et
+> $g: J \to \mathbb{R}$ est $k'$-lipschitzienne sur $J$,
+> et $f(I) \subset J$, alors $g \circ f$ est
+> $kk'$-lipschitzienne sur $I$.
+
+__Preuve :__ $\forall (x,y) \in I^2, |g \circ f(x) - g \circ (y)|$
+$= |g(f(x)) - g(f(y))| \leq k' |f(x) - f(y)| \leq k'k |x - y|$.
+
+### Théorème des valeur intermédiaires
+> Soit $I$ un intervalle et $f: I \to \mathbb{R}$ continue sur $I$,
+> soient $a,b \in I$ avec $a < b$, tels que $f(a) \times f(b) < 0$,
+> alors $\exists c \in [a,b] \mid f(c) = 0$.
+
+__Preuve :__ On prouve cette propriété constructivement, par dichotomie.
+On pose deux suites $(a_n)_n$ et $(b_n)_n$, avec $a_0 = a$ et $b_0 = b$.
+Soit $n \in \mathbb{N}$ tel que $a_n$ et $b_n$ sont construits,
+avec $f(a_n) f(b_n) \leq 0$. On pose $C_n = \frac{a_n + b_n}{2}$.
+Si $f(a_n) \times f(c_n) \leq 0$, on pose
+$\left\{\begin{matrix} a_{n+1} = a_n \\ b_{n+1} = c_n \end{matrix}\right.$,
+et sinon $\left\{\begin{matrix} a_{n+1} = c_n \\ b_{n+1} = b_n \end{matrix}\right.$.
+Ainsi, $\forall in \in \mathbb{N}, f(a_n) \times f(b_n) \leq 0$. De plus,
+$(a_n)_n$ est croissante, $(b_n)_n$ est décroissante,
+et $b_{n+1} - a_{n+1} = \frac{b_n - a_n}{2}$, géométrique de raison $\frac{1}{2}$,
+$\forall n, b_n - a_n = \frac{b - a}{2^{n}}$, et tend donc vers $0$.
+Ainsi, $(a_n)_n$ et $(b_n)_n$ sont des suite adjacentes, et convergent donc vers
+une même limite, notée $c$. De plus $\forall n, a_n \in [a,b]$, donc
+$c \in [a,b]$. Or, $f$ est continue sur cet intervalle, donc en $c$,
+et donc $a_n \xrightarrown[n \to \infty]{} c$ et donc
+$f(a_n) \xrightarrow[+\infty]{} f(c)$, et pareil pour $b_n$.
+Or, $\forall n \in \mathbb{N}, f(a_n) f(b_n) \leq 0$. À la limite,
+$f(c)^2 \leq 0$, donc $f(c) = 0$.
+
+> __Corollaire :__ Si $f$ est continue sur $I$ à valeurs dans $\mathbb{R}$
+> et si $a,b \in I$ avec $f(a) \leq f(b)$, alors tout $y \in [f(a), f(b)]$
+> possède un antécédent par $f$ dans $[a,b]$.
+
+__Preuve :__ Soit $y \in [f(a), f(b)]$, on pose $g(x) = f(x) - y$.
+
+> __Corollaire :__ Si $f$ est continue sur $I$ et ne s'annule par sur $I$, alors
+> $f$ est de signe constant.
+
+Cette propriété se prouve par la contraposée du théorème des valeurs
+intermédiaires.
+
+> __Corollaire topologique :__ L'image par une fonction continue d'un intervalle
+> est un intervalle.
+
+__Preuve :__ Soit $f: I \to \mathbb{R}$ continue, on veut montrer que son image
+$f(I)$ est un intervalle.
+On va montrer que si $\alpha < \beta$ avec $\alpha, \beta \in f(I)$,
+alors $[\alpha,\beta] \subset f(I)$
+(caractérisation des intervalles de $\mathbb{R}$ par les parties convexes).
+Si $\alpha,\beta \in f(I)$, alors il existe $a,b \in I$,
+$\left\{\begin{matrix} \alpha = f(a) \\ \beta = f(b) \end{matrix}\right.$.
+Par théorème des valeurs intermédiaires, tout point de
+$[f(a),f(b)]$ possède un antécédent dans $[a,b]$ par $f$,
+donc $[f(a),f(b)] \subset f([a,b]) \subset f(I)$.
+
+##### Exercice : TVI généralisé
+Soit $f$ continue sur un intervalle $I$ d'extrémités $a$ et $b$,
+si $f$ admet des limites (dans $\overline{\mathbb{R}}$) en $a$ et en
+$b$, alors tout point strictement compris entre ses limites admet
+un antécédent par $f$ dans $I$.
+Grâce aux définitions des limites, on fixe par exemple
+$\ell_1 < \ell_2$ et $y \in ]\ell_1, \ell_2[$. Comme
+$f  \xrightarrow[a]{} \ell_1 < y$, $\exists u \mid f(u) < y \land u \in I$.
+De même, $\lim\limits_{b} f = \ell_2 > y$,
+$\exists v \in I \mid f(v) > y$.
+Ainsi, $y \in [f(a), f(b)]$ et $f$ étant continue sur $I$, elle l'est
+sur $[u,v]$, donc $y$ admet un antécédent par $f$ dans $[u,v]$,
+donc dans $I$.
