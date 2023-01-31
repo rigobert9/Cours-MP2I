@@ -58,7 +58,7 @@ faible potentiel.
 Ainsi, on a $df = \left(\begin{matrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \\ \frac{\partial f}{\partial z} \end{matrix}\right)$
 $\cdot \left(\begin{matrix} dx \\ dy \\ dz \end{matrix}\right)$.
 
-> On note le gradian de $f$ $\overrightarrow{\rm \text{grad}} f = \left(\begin{matrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \\ \frac{\partial f}{\partial z} \end{matrix}\)$,
+> On note le gradian de $f$ $\overrightarrow{\rm \text{grad}} f = \left(\begin{matrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \\ \frac{\partial f}{\partial z} \end{matrix}\right)$,
 > donnant $df = \overrightarrow{\rm \text{grad}} f \cdot d \overrightarrow{\rm OM}$.
 
 On a $d V = - \overrightarrow{\rm E} \cdot d \overrightarrow{\rm OM}$, et $\overrightarrow{\rm E} = - \overrightarrow{\rm \text{grad}} V$.
@@ -148,7 +148,7 @@ charge $q_e = -e = - 1,6 \times 10^{-19} C$.
 Dans le champ magnétique terrestre, on a
 $\lVert \overrightarrow{\rm F_\text{électrique}} \rVert = e \lVert \overrightarrow{\rm E} \rVert$,
 et on a $\lVert \overrightarrow{\rm P_e} \rVert \ll \lVert \overrightarrow{\rm F_\text{électrique}} \rVert$
-si $\lVert \overrightarrow{\rm E} \rVert \gg \frac{\lVert \overrightarrow{\rm P_e} \rVert}{e} \approx 10^{-10 V \cdot m^{-1}$.
+si $\lVert \overrightarrow{\rm E} \rVert \gg \frac{\lVert \overrightarrow{\rm P_e} \rVert}{e} \approx 10^{-10 V \cdot m^{-1}}$.
 De plus, $\lVert \overrightarrow{\rm F_\text{magnétique}} \rVert = e \lVert \overrightarrow{\rm v} \rVert \lVert \overrightarrow{\rm B} \rVert$,
 donc $\lVert \overrightarrow{\rm P} \rVert \ll \lVert \overrightarrow{\rm F_\text{magnétique}} \rVert$ si
 $\lVert \overrightarrow{\rm v} \rVert \gg \frac{\lVert \overrightarrow{\rm P_e} \rVert}{e \lVert \overrightarrow{\rm B} \rVert} \approx 10^{-10} m \cdot s^{-1}$
@@ -268,4 +268,60 @@ alors on a $\dot{\underline{u}} = \dot{v_x} + j \dot{v_y} = \omega_c v_y - j \om
 $= - j \omega_c$
 ....
 
+En prenant la partie réelle et imaginaire de $\underline{u}(t)$, on trouve
+$\left\{\begin{matrix} v_x(t) = v_c \cos(\omega_c t) \\ v_y(t) = - v_0 \sin(\omega_c t) \end{matrix}\right.$.
+Puisqu'à $t = 0$, $x(0) = 0$ et $y(0) = 0$, on pose finalement
+$x(t) = \frac{v_0}{\omega_c}$
+....
 
+> Dans le cadre d'une vitesse initiale orthogonale au champ magnétique, le
+> mouvement est circulaire uniforme de rayon $R = \frac{v_0}{\omega_c} = \frac{m v_0}{|q| B}$.
+
+> Le temps de parcours du cercle pour la particule est de
+> $T = \frac{2 \pi}{\omega_c} = \frac{2 \pi m}{|q| B_0}$.
+
+Pour retrouver l'expression de $R$, on pose
+$|q| \cdot \lVert \overrightarrow{\rm v} \rVert \cdot \lVert \overrightarrow{\rm B} \rVert = m \lVert \overrightarrow{\rm a} \rVert$.
+Pour un mouvement circulaire et uniforme,
+$\lVert \overrightarrow{\rm a} \rVert = \frac{v_0^2}{R}$,
+donc $R = \frac{m v_0}{|q| B} = \frac{v_0}{\omega_c}$.
+
+#### Cos quelconque
+$\overrightarrow{\rm v_0} = v_0 \cos \alpha \overrightarrow{\rm u_x} + v_0 \sin \alpha \overrightarrow{\rm u_z}$,
+et on peut décomposer le mouvement en mouvement uniforme selon
+$\overrightarrow{\rm u_z}$ à la vitesse $v_0 \sin \alpha \overrightarrow{\rm u_z}$
+et en mouvement circulaire dans un plan perpendiculaire à $\overrightarrow{\rm u_z}$
+de rayon $R = \frac{v_0 \cos \alpha}{\omega_c}$.
+
+## Cas d'applications complexes
+### Le spectromètre de masse
+Le spectromètre de masse est un dispositif permettant de mesurer la masse d'une
+particule. Il est composé d'une chambre d'ionisation chargée de produire des
+particules chargées de faible vitesse initiale, d'un accélérateur à particules,
+d'un déflecteur qui dévie les particules, et enfin d'un écran permettant de
+détecter les impacts des particules.
+
+On se place dans le cas d'une première particule de masse $m_1$ et
+de charge $-z_1 e$, et d'une seconde particule de masse $m_2$
+et de charge $- z_2 e$. Les $z$ correspondent à la charge.
+
+#### Étude de l'accélérateur
+L'accélérateur présente un champ électrique
+$\overrightarrow{\rm E} = - E_0 \overrightarrow{\rm u_x}$,
+avec une différence de potentiel entre l'entrée de potentiel $v_1$
+et la sortie de plus grand potentiel $v_2$, $u = v_2 - v_1$.
+À l'entrée de l'accélérateur, $v = 0$. D'après le théorème de l'énergie
+mécanique, $0 - z_i e v_1 = \frac{1}{2} m_i v_i^2 - z_i e v_2$
+$\Leftrightarrow v_i = \sqrt{\frac{2 z_i e u}{m_i}}$.
+
+#### Étude du déflecteur
+$\overrightarrow{\rm B} = - B_0 \overrightarrow{\rm u_z}$, avec $B_0 > 0$.
+$R_i = \frac{m_i v_i}{z_i e B_0}$. Or, $v_i = \sqrt{\frac{2 z_i e u}{m_i}}$,
+donc $R_i = \sqrt{\frac{m_i}{z_i}} \sqrt{\frac{2 u}{e B_0^2}}$.
+
+L'appareil permet donc de discriminer entre les particules selon le rapport
+entre leur masse et leur charge.
+
+### Cyclotron
+Un cyclotron est formé de deux demi-capsules munis d'un champ électrique,
+menant la particule à tourner et à de plus en plus accélérer.
