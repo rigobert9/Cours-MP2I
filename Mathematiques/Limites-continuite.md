@@ -242,7 +242,7 @@ $\forall n, b_n - a_n = \frac{b - a}{2^{n}}$, et tend donc vers $0$.
 Ainsi, $(a_n)_n$ et $(b_n)_n$ sont des suite adjacentes, et convergent donc vers
 une même limite, notée $c$. De plus $\forall n, a_n \in [a,b]$, donc
 $c \in [a,b]$. Or, $f$ est continue sur cet intervalle, donc en $c$,
-et donc $a_n \xrightarrown[n \to \infty]{} c$ et donc
+et donc $a_n \xrightarrow[n \to \infty]{} c$ et donc
 $f(a_n) \xrightarrow[+\infty]{} f(c)$, et pareil pour $b_n$.
 Or, $\forall n \in \mathbb{N}, f(a_n) f(b_n) \leq 0$. À la limite,
 $f(c)^2 \leq 0$, donc $f(c) = 0$.
@@ -286,3 +286,77 @@ $\exists v \in I \mid f(v) > y$.
 Ainsi, $y \in [f(a), f(b)]$ et $f$ étant continue sur $I$, elle l'est
 sur $[u,v]$, donc $y$ admet un antécédent par $f$ dans $[u,v]$,
 donc dans $I$.
+
+### Théorème des bornes atteintes (compacité)
+> Soit $f$ continue sur le segment $[a,b]$, où $a,b \in \mathbb{R}$
+> avec $a < b$, alors $f$ est bornée et atteint ses bornes :
+> $\exists (c,d) \in [a,b]^2, \forall x \in [a,b], f(c) \leq f(x) \leq f(d)$.
+
+Si $f$ est continue sur un segment $[a,b]$, alors elle admet un minimum et un
+maximum, qui sont atteints.
+
+> __Corollaire topologique :__ L'image d'un segment par nue fonction continue est
+> un segment.
+
+__Preuve :__ Soit $f$ continue sur le segment $[a,b]$, on pose $M = \text{sup}\restriction_{[a,b]} f$
+avec $M \in \mathbb{R} \cup \{+\infty\}$. Par caractérisation séquentielle de la
+borne supérieure, il existe une suite $(y_n)_n$ à valeurs dans $f([a,b])$ qui
+tend vers $M$, or $y_n \in f([a,b])$, donc $\exists x_n \in [a,b], y_n = f(x_n)$
+et $y_n = f(x_n) \xrightarrow[n \to +\infty]{} M$.
+La suite $(x_n)_n$ est bornée.\
+Par Bolzano-Weierstrass, $(x_n)_n$ possède une sous-suite convergente. On note
+$(x_{\varphi(n)})_n$ cette suite extraite et on note $d$ sa limite. Comme
+$\forall n, a \leq x_{\varphi(n)} \leq b$, alors par passage à la limite
+$a \leq d \leq b$. De plus, $f$ est continue sur $[a,b]$, donc en $d$,
+$\lim\limits_{n \to + \infty} f(x_{\varphi(n)}) = f(d)$.
+Or, la suite $(f(x_{\varphi(n)}))_n$ est extraite de $(f(x_n))_n$, qui a pour
+limite $M$, donc $\lim\limits_{n \to + \infty} f(x_{\varphi(n)}) = M$.
+Par unicité de la limite, $M = f(d)$ avec $d \in [a,b]$.
+Ainsi, $M = \text{sup}\restriction_{[a,b]} f = f(d) = \text{max}\restriction_{[a,b]} f$
+
+### Théorème de bijection continue
+> Soit $f: I \to \mathbb{R}$ continue sur l'intervalle $I$ et strictement
+> monotone, alors :
+> - $f$ est une bijection de $I$ dans $f(I)$
+> - $f(I)$ est un intervalle de même nature que $I$ sont les extrémités sont
+>   obtenues grâce aux limites de $f$ aux extrémités de $I$.
+> - La réciproque $f^{-1}: f(I) \to I$ est une fonction bijective continue de même
+>   monotonie que $f$.
+
+### Lien entre injectivité et stricte monotonie
+> Soit $f$ continue sur un intervalle $I$, on a équivalence entre :
+> - $f$ est injective sur $I$
+> - $f$ est strictement monotone sur $I$
+
+__Preuve :__
+$\Leftarrow$ $\forall (a,b) \in I^2, a \neq b \Rightarrow f(a) \neq f(b)$ par stricte monotonie\
+$\Rightarrow$ Soit $f$ continue sur $I$ et injective sur $I$, et
+$a,b \in I \mid a < b$. On suppose $f(a) < f(b)$. On montre que
+$f$ est strictement croissante. On prend $x < y$ deux points de $I$,
+et on pose pour tout $t \in [0,1]$, $\varphi(t) = f((1-t)b + ty)$
+$= f((1 - t)a + t x)$. On a $\varphi(0) > 0$, et on a
+$\varphi(1) = f(y) - f(x)$. Or, $\varphi$ est continue sur $[0,1]$,
+car $f$ est continue sur $I$. Si $\varphi$ s'annule,
+$\exists t_0 \in [0,1], \varphi(t_0) = 0$,
+soit $\varphi((1 - t_0)b + t_0 y) = \varphi((1 - t_0)b + t_0 x)$,
+ce qui contredit l'injectivité. $\varphi$ est donc continue et ne s'annule par sur $[0,1]$,
+donc par TVI, $\varphi$ est de signe constant. Comme $\varphi(0) > 0$,
+$\varphi(1) > 0$, et donc $f(x) < f(y)$.
+On en conclut que $\forall (x,y) \in I^2, x < y \Rightarrow f(x) < f(y)$,
+$f$ est croissante sur $I$.
+
+## Extension aux fonction continues à valeurs complexes
+> Soit $f: I \to \mathbb{C}$ où $I$ est un intervalle de $\mathbb{R}$.
+> On dit que $f$ est continue en $a \in I$,
+> si $\lim\limits_{x \to a} f(x) = f(a)$, soit
+> $\forall \varepsilon > 0, \exists \nu > 0, \forall x \in I, |x - a| \leq \nu \Rightarrow |f(x) - f(y)| \leq \varepsilon$.
+
+> $f$ est continue sur $I$ si et seulement si $\Re(f)$ et $\Im(f)$ sont continues sur $I$.
+
+__Preuve :__ $\Re(f) = \frac{1}{2} (f + \overline{f})$ et $\Im(f) = \frac{1}{2i} (f - \overline{f})$,
+et $f = \Re(f) + i \Im(f)$
+
+> Si $f$ est continue sur le segment $[a,b]$, alors $f$ est bornée (avec $f$ à valeurs dans $\mathbb{C}$).
+
+__Preuve :__ Le module est fonction continue. Par composition, $|f|$ est continue sur $[a,b]$
+à valeur dans $\mathbb{R}$, donc $|f|$ est bornée.
