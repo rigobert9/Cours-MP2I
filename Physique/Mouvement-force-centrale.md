@@ -218,3 +218,38 @@ la Terre. On a donc $\omega$ et $T$ des constantes.
 
 > Le jour sidéral correspond à la durée mise par la Terre pour faire un tour sur
 > elle-même. Il dure 23 h 56.
+
+#### Nature de la trajectoire
+$r = \frac{p}{1 \pm e \cos \theta}$ (l'équation d'un conique).
+Le mouvement d'un satellite géostationnaire est circulaire uniforme.
+
+### Vitesses cosmiques
+#### Première vitesse cosmique
+> La première vitesse cosmique $v_c$ est la vitesse minimale à fournir à un objet
+> sur Terre pour pouvoir le placer en orbite autour de la Terre.
+
+C'est la vitesse selon la norme, donc en s'éloignant du centre de la Terre. Elle
+permet de se placer pile en orbite.
+
+On peut calculer cette vitesse $E_m = \frac{1}{2} m v_c^2 - \frac{G M_\text{Terre} m}{R_\text{Terre}} = - \frac{G M_\text{Terre} m}{2 R_\text{Terre}}$,
+donc $v_c = \sqrt{\frac{G M_\text{Terre}}{R_\text{Terre}}} \approx 8 km \cdot \s^{-1}$.
+Cette vitesse est valable pour tout satellite.
+
+#### Vitesse de libération
+> La seconde vitesse cosmique, ou vitesse de libération, $v_\text{lib}$ est la
+> vitesse minimale à fournir à un objet situé sur Terre pour pouvoir l'éloigner
+> définitivement de la Terre (c'est-à-dire pour l'envoyer à l'infini, pour qu'il
+> échappe à l'attraction terrestre).
+
+On calcule cette vitesse avec $E_m = \frac{1}{2} m v_\text{lib}^2 - \frac{G M_\text{Terre} m}{R_\text{Terre}} = 0$
+(la trajectoire étant parabolique, l'énergie mécanique est nulle), donnant
+$v_\text{lib} = \sqrt{\frac{2 G M_\text{Terre}}{R_\text{Terre}}} = \sqrt{2} v_c$.
+
+#### Application : atmosphère des planètes
+La vitesse de libération peut amener les gaz qui compose une atmosphère à
+s'échapper de l'attraction de la planète. D'après la théorie cinétique des gaz,
+$v_\text{molécule} \approx \sqrt{\frac{k_B T}{m}}$ (avec $T$ une température, $k_B$ la constante
+de Boltzmann).
+
+La planète possède une atmosphère si les particules de gaz ne peuvent pas
+s'échapper dans l'espace. Il faut donc que $v_\text{lib} \gg \sqrt{\frac{k_B T}{m}}$.
