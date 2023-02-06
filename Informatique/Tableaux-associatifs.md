@@ -74,3 +74,30 @@ sur les clés courantes (par exemple, $b \geq 26$ pour les lettres minuscules).
 
 On choisit de plus $b$ impair pour éviter que lorsqu'on prend le reste module
 $2^{64}$.
+
+## Serialisation
+Pour faire une table de hachage avec d'autres types que les chaînes de
+caractères, on peut décider de représenter les objets comme des chaînes de
+caractères. On peut naïvement choisir une représentation "humaine", ou sous
+forme de code, ou encore sous la forme de JSON.
+
+On peut cependant améliorer la chaîne de caractère, en choisissant un format
+plus "machine". Pour un arbre, on pourrait par exemple utiliser le parcours
+préfixe, qui est injectif des arbres binaires dans le chaînes de caractères.
+
+On peut encore mieux faire en jouant sur la représentation des entiers. Par
+exemple, sur 256 caractères, on peut en utiliser 200 pour écrire les entiers en
+base 100 en utilisant des jeux de caractères différents pour le parcours infixe
+et les caractère restants pour éviter les parenthèses.
+
+On appelle fonction de serialisation une fonction injective d'un type vers les
+chaînes de caractères. La chaîne sérialisée comporte un préfixe qui décrit le
+type.
+
+En OCaML, `Marshall.to_string` permet de sérialiser, et on peut obtenir la
+donnée à partir de `Marshall.of_string`.
+
+On ne peut pas vraiment le faire pour une fonction, on ne peut qu'indiquer
+l'endroit dans le programme, avec l'environnement local, où se trouve cette
+fonction. Une fonction ne peut donc être sérialisée que si elle doit être
+réutilisée par le même programme.
