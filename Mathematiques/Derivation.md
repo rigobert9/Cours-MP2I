@@ -99,3 +99,122 @@ est dérivable, donc $f'$ est dérivable, et on itère le raisonnement.
 Ainsi, si $f$ est une bijection $\mathcal{C}^n$ sur $I$,
 et $f'$ ne s'annule pas sur $I,$ alors $f^{-1}$ est une bijection $\mathcal{C}^n$
 sur $J$.
+
+## Théorème de Rolle et accroissements finis
+### Extremum local
+> Soit $f: i \to \mathbb{R}$ et $a \in I$, $f$ admet un maximum local sur si
+> $\exists \nu > 0 \mid f\restriction_{I \cap [a - \nu; a + \nu]}$
+> possède un maximum en $a$.
+
+On réécrit cette propriété comme $\exists \nu > 0, \forall x \in I, |x - a| \leq \nu \Rightarrow f(x) \leq f(a)$.
+
+On définit de même les minimums locaux. Les maximums et minimums locaux
+constituent ensemble des extremums locaux.
+
+> Soit $f: I \to \mathbb{R}$ et $a \in I$ un point intérieur de $I$,
+> si $f$ est dérivable en $a$ et si $f$ admet un extremum local en $a$, alors
+> $f'(a) = 0$.
+
+__Preuve :__ On suppose que $f$ admette un maximum local en $a$.
+$\exists \nu > 0, \forall x \in [a - \nu; a + \nu] \cap I, f(x) \leq f(a)$.
+Comme $a$ est un point intérieur de $I$, $\exists \nu' < \nu, [a - \nu'; a + \nu'] \subset I$.
+Ainsi, $\forall x \in [a - \nu', a + \nu'], f(x) \leq f(a)$.
+Or, $f$ est dérivable en $a$, donc $\lim\limits_{x \to a^{+}} \frac{f(x) - f(a)}{x - a} = f'(a)$,
+or $\left\{\begin{matrix} f(x) - f(a) \leq 0 \\ x - a > 0 \end{matrix}\right.$,
+donc $\forall x \in ]a, a + \nu']$, $\frac{f(x) - f(a)}{x - a} \leq 0$,
+à la lime quand $x \to a^{+}, f'(a) \leq 0$.
+De même à gauche, $\forall x \in [a - \nu', a[$, $f'(a) \geq 0$, donc $f'(a) = 0$,
+et $a \in I$ est un point intérieur de $I$.
+
+### Théorème/Lemme de Rolle
+> Soit $f$ continue sur $[a,b]$ à valeurs dans $\mathbb{R}$ et dérivable sur
+> $]a,b[$. Si $f(a) = f(b)$, alors $\exists c \in ]a,b[, f'(c) = 0$.
+
+__Preuve :__ $f$ continue sur le segment $[a,b]$, donc par compacité, $f$ admet
+des extrema atteints : $\exists c,d \in [a,b], \forall x \in [a,b], f(c) \leq f(x) \leq f(d)$.
+- Soit $c$ et $d$ sont aux extrémités de $[a,b]$, alors $f(c) = f(a) = f(b) = f(d)$,
+  donc $f$ est constante sur $[a,b]$, donc $f'$ est nulle sur $]a,b[$, donc
+  toute valeur $c \in ]a,b[$ convient.
+- Soit $c$ et $d$ ne sont pas des extrémités de $[a,b]$, donc il existe un
+  extremum en un point intérieur de $]a,b[$ là où $f$ est dérivable, donc $f'$
+  s'annule en ce point intérieur dans $]a,b[$ (par le théorème précédent).
+
+##### Exercice
+Soit $f$ une fonction $n$ fois dérivable sur un intervalle $I$, telle que $f$
+s'annule en $n + 1$ points distincts. On cherche à montrer que $f^{(n)}$
+s'annule.
+
+On sélectionne l'hypothèse de récurrence $H_k$ que $f^{(k)}$ s'annule $n + 1 - k$ fois.
+On procède par récurrence sur $k \in [\![0,n]\!]$, et $H_0$ est vraie.
+Pour $H_k$ vraie, on prend les $x_i$ les points d'annulation de $f^{(k)}$. Pour
+tout $i \in [\![0, n - k - 1]\!]$, on applique le théorème de Rolle à
+$f^{(k)}$ (dérivable une fois car $k < n$) sur le segment $[x_i, x_{i + 1}]$,
+car $f^{(k)}(x_i) = f^{(k)}(x_{i + 1}) = 0$. On a donc bien $H_{k + 1}$
+vérifiée.
+
+### Théorème des accroissements finis
+> Soit $f$ continue sur $[a,b]$ à valeur dans $\mathbb{R}$ et dérivable sur
+> $]a,b[$, il existe $c \in ]a,b[ \mid f'(c) = \frac{f(b) - f(a)}{b - a}$.
+
+__Preuve :__ On pose $g: x \mapsto f(x) - (x - a) \frac{f(b) - f(a)}{b - a}$.
+Ainsi, $g(a) = f(a)$ et $g(b) = f(a)$, donc par lemme de Rolle, puisque $g$ est
+continue sur $[a,b]$, donc sur $]a,b[$, $\exists c \in ]a,b[, g'(c) = 0$.
+Or, $g'(x) = f'(x) - \frac{f(b) - f(a)}{b - a}$, d'où
+$f'(c) = \frac{f(b) - f(a)}{b - a}$.
+
+### Inégalité des accroissements finis
+> Soit $f: I \to \mathbb{R}$ dérivable telle que $\exists m,M \in \mathbb{R}, \forall x \in I, m \leq f'(x) \leq M$,
+> alors pour tout $a,b \in I$ avec $a < b$, on a $m (b - a) \leq f(b) - f(a) \leq M (b - a)$.
+
+__Preuve :__ Par le théorème des accroissements finis sur $[a,b]$,
+$\exists c \in ]a,b[, f'(c) = \frac{f(b) - f(a)}{b - a}$,
+or $m \leq f'(c) \leq M$, d'où le résultat.
+
+__Corollaire :__ Si $f$ est dérivable sur $I$ et si $f'$ est bornée sur $I$,
+alors $f$ est lipschitzienne sur $I$. En détail, $\exists K > 0$,
+$\forall x \in I, |f'(x)| \leq K$.
+
+On a alors $\forall (a,b) \in I^2, |f(b) - f(a)| \leq K \times |b - a|$,
+et $f$ est $K$-lipschitzienne.
+
+Avec $K_0 = \text{sup}_I |f'|$, sous réserve d'avoir $f'$ bornée sur $I$,
+on a $\forall x \in I, |f'(x)| \leq K_0$, donc $f$ est $K_0$-lipschitzienne.
+On note alors $\text{sup}_I |f'| = \| f' \\restriction_{\infty}$.
+
+## Conséquences du T.A.F.
+### Fonctions dérivables monotones
+> Soit $f: I \to \mathbb{R}$ dérivable :
+> 1. $f$ est croissante sur $I$ si et seulement si $f'$ est positive sur I
+> 2. $f$ est décroissante sur $I$ si et seulement si $f'$ est négative sur I
+
+__Preuve :__ Dans le second cas, on applique juste le premier cas à $-f$.\
+$\Rightarrow$ Soi t $a \in I$, $\forall x \in ]a;a + \nu] \cap I, \left\{\begin{matrix} f(a) \leq f(x) \\ a \leq x \end{matrix}\right.$,
+donc $\frac{f(x) - f(a)}{x - a} \geq 0$, donc pour $x \to a^{+}$, $f'(a) \geq 0$.\
+$\Leftarrow$ Soient $a,b \in I$ avec $a < b$. $f$ est continue sur $[a;b]$,
+dérivable sur $]a,b[$, donc avec le TAF
+$\exists c \in ]a,b[, \frac{f(b) - f(a)}{b - a} = f'(c)$,
+or $f'(c) \geq 0$ et $b - a \geq 0$, donc $f(a) \leq f(b)$,
+donc $f$ est croissante sur $I$.
+
+__Corollaire :__ Si $f' > 0$ alors $f$ est strictement croissante,
+et si $f' < 0$ alors $f$ est strictement décroissante.
+
+__Preuve :__ On applique la preuve précédente avec $f'(c) > 0$ ou $< 0$.
+
+> Soit $f: I \to \mathbb{R}$ dérivable, si $f' \geq 0$ sur $I$, et $f'$
+> s'annule un nombre fini de fois sur $I$, alors $f$ est strictement croissante.
+
+__Preuve :__ On applique le résultat précédent sur chaque intervalle $J$ où $f' > 0$.
+
+### Étude d'une suite récurrente
+Soit $\forall n \in \mathbb{N}, \left\{\begin{matrix} u_0 = 0 \\ u_{n+1} = \exp(\frac{-1}{2} u_n^2) \end{matrix}\right.$.
+On étudie $(u_n)_n$, avec la fonction $\begin{aligned} f: \mathbb{R} &\to \mathbb{R} \\ x &\mapsto f(x) = \exp(\frac{-x^2}{2}) .\end{aligned}$,
+donnant bien $\forall n \in \mathbb{N}, u_{n+1} = f(u_n)$. Ainsi, si $(u_n)_n$
+converge vers $\ell$, et comme $f$ est continue, on aurait $f(\ell) = \ell$.
+On peut montrer par le TVI et la stricte monotonie de $f$ que
+$e^{\frac{-x^2}{2}} = x$ admet une unique solution $\ell \in ]0,1[$. De plus,
+$f(\mathbb{R}) \subset ]0,1]$, donc $\forall n \in \mathbb{N}, u_n \in ]0,1]$,
+donc $(u_n)$ est bornée.
+
+$\forall x \in \mathbb{R}, f'(x) = -x e^{\frac{-x^2}{2}}$, on veut borner
+$|f'|$ sur $[0,1]$, et montrer que $f$ est $k$-lipschitzienne avec $k < 1$.
