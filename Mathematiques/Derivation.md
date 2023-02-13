@@ -218,3 +218,15 @@ donc $(u_n)$ est bornée.
 
 $\forall x \in \mathbb{R}, f'(x) = -x e^{\frac{-x^2}{2}}$, on veut borner
 $|f'|$ sur $[0,1]$, et montrer que $f$ est $k$-lipschitzienne avec $k < 1$.
+$\forall x \in [0,1], e^{\frac{-x^2}{2}} \leq 1$, donc $|f'(x)| \leq |x| \leq 1$.
+On a $f([0;1]) \subset [e^{\frac{-1}{2}};1]$ et $f([e^{\frac{-1}{2}};1]) \subset [e^{\frac{-1}{2}};1]$.
+Donc $\forall n \geq 2, u_n \in [e^{\frac{-1}{2}}]$.
+
+Ainsi, $k = e^{\frac{-1}{2} e^{-1}}$ tel que $\forall x \in [e^{\frac{-1}{2}};1], |f'(x)| \leq k$.
+Par inégalité des accroissements finis, $f$ est $k$-lipschitzienne sur $[e^{\frac{-1}{2}};1]$.
+Avec $n \geq 2, u_{n} \in [e^{\frac{-1}{2}};1]$, on l'applique avec $u_{n}$ et
+$\ell$, donnant $\forall n \geq 2, |f(u_{n}) - f(\ell)| \leq k |u_{n} - \ell|$
+$\Leftrightarrow \forall n \geq 2, |u_{n + 1} - \ell| \leq k |u_{n} - \ell|$.
+Par récurrence, on peut alors montrer que $\forall n \geq 2, |u_{n} - \ell| \leq k^{n-2} |u_2 - \ell|$,
+donc que comme $k^{n-2} \xrightarrow[n \to \infty]{} 0$, $(u_{n})_n$ converge
+vers $\ell$.
