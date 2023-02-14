@@ -230,3 +230,85 @@ $\Leftrightarrow \forall n \geq 2, |u_{n + 1} - \ell| \leq k |u_{n} - \ell|$.
 Par récurrence, on peut alors montrer que $\forall n \geq 2, |u_{n} - \ell| \leq k^{n-2} |u_2 - \ell|$,
 donc que comme $k^{n-2} \xrightarrow[n \to \infty]{} 0$, $(u_{n})_n$ converge
 vers $\ell$.
+
+### Théorème de la limite de la dérivée
+> Soit $f: I \to \mathbb{R}$, avec $a \in I$. On suppose $f$ continue sur $I$ et
+> $f$ dérivable sur $I \setminus \{a\}$. Si $\lim\limits_{x \to a} f'(x) = \ell$
+> avec $\ell \in \overline{\mathbb{R}}$, alors :
+> 1. si $\ell \in \mathbb{R}$, alors $f$ est dérivable en $a$ et $f'(a) = \ell$
+> 1. si $\ell = \pm \infty$, alors $f$ n'est pas dérivable en $a$ (tangente
+>    verticale en $a$)
+
+Si $\ell$ est finie, on a $\lim\limits_{x \to a} f'(x) = \ell = f'(a)$, donc $f'$ est continue en $a$,
+soit $f \in \mathcal{C}^1$ en $a$.
+
+__Preuve :__ On a $f'(x) \xrightarrow[x \to a]{} \ell \in \overline{\mathbb{R}}$, et donc
+pour $x \in I \setminus \{a\}$ :
+- si $x > a$, $f$ est continue sur $[a,x]$ et est dérivable sur $]a,x[$. Ainsi,
+  le théorème des accroissement finis donne $\exists c_x \in ]a,x[, f'(c_x) = \frac{f(x) - f(a)}{x - a}$.
+  Si $x \to a^{+}$, comme $a < c_x < x$, alors $\lim\limits_{x \to a^{+}} c_x = a$.
+  Par composition, $\lim\limits_{x \to a^{+}} f'(c_x) = \ell$, donc le taux d'accroissement
+  est de limite finie.
+- si $x < a$, on procède de même.
+
+> Théorème de prolongement $\mathcal{C}^1$ : Soit $f: I \setminus \{a\} \to \mathbb{R}$
+> avec $a \in I$, on suppose $f$ de classe $\mathcal{C}^1$ sur
+> $I \setminus \{a\}$. Si $f(x) \xrightarrow[x \to a]{} \ell_0 \in \mathbb{R}$
+> et si $f'(x) \xrightarrow[x \to a]{} \ell_1 \in \mathbb{R}$, alors $f$ se
+> prolonge par continuité sur $I$ en posant $f(a) = \ell_0$, et ce prolongement
+> est $\mathcal{C}^1$ sur $I$ avec $f'(a) = \ell_1$.
+
+__Preuve :__ $\begin{aligned} \tilde{f}: I &\to \mathbb{R} \\ x &\mapsto \tilde{f}(x) = \left\{\begin{matrix} f(x) \text{ si } x \neq a \\ \ell_0 \text{ si } x = a \end{matrix}\right. .\end{aligned}$.
+$\tilde{f}$ est alors continue sur $I$, et donc $\tilde{f}$ vérifie les
+conditions du théorème précédent, et est donc dérivable en $a$ et $\tilde{f}''(a) = \ell_1$.
+Ainsi, $\tilde{f}$ est $\mathcal{C}^1$ en $a$, donc $\mathcal{C}^1$ sur $I$.
+
+> Théorème de prolongement $\mathcal{C}^n$ : Soit $f: I \setminus \{a\} \to \mathbb{R}$
+> avec $a \in I$, on suppose $f$ de classe $\mathcal{C}^n$ sur
+> $I \setminus \{a\}$.
+> Si pour chaque $i \in [\![0,n]\!]$, $f^{(i)}$ admet une limite finie $\ell_i$ en
+> $a$, alors en prolongeant $f$ par continuité en posant $f(a) = \ell_0$,
+> on obtient une fonction $f$ de classe $\mathcal{C}^n$ sur $I$, avec
+> $\forall i, f^{(i)}(a) = \ell_i$.
+
+__Preuve :__ On procède par récurrence sur $n$. En $n = 0$, on utilise le
+théorème de prolongement par continuité. Pour tout $n$ avec la propriété vraie,
+soit $f \in \mathcal{C}^{n+1}$ sur $I \setminus \{a\}$ tel que
+$\forall i \in [\![0,n+1]\!], f^{(i)} \xrightarrow[a]{} \ell_i \in \mathbb{R}$.
+On prolonge $f$ par continuité en posant $f(a) = \ell_0$. Le rang $n$ prouve que
+$f$ est $\mathcal{C}^n$ sur $I$ et $\forall i \in [\![0,n]\!], f^{(i)}(a) = \ell_i$.
+Or, $f^{(n)}$ est continue sur $I$, et est donc $\mathcal{C}^1$ sur $I \setminus \{a\}$,
+et $(f^{(n)})' = f^{(n+1)} \xrightarrow[a]{} \ell_{n+1}$. On peut appliquer le
+théorème de prolongement $\mathcal{C}^1$ sur $f^{(n)}$. Ainsi,
+$f$ devient $\mathcal{C}^{n+1}$ sur $I$ et $f^{(n+1)}(a) = \ell_{n+1}$.
+
+On rappelle que si $f$ est $\mathcal{C}^n$ en $a$, alors $f$ admet un $\text{DL}_{n}(a)$, local en $a$.
+On a ainsi les formules de Taylor-Young et de Taylor avec reste intégral :
+$\forall x \in I, f(x) = \sum\limits_{k = 0}^{n} \frac{f^{(k)}(a)}{k!} (x - a)^k + \int\limits_{a}^{x} \frac{(x-t)^n}{n!} f^{(n+1)}(t) dt$.
+On peut aussi exprimer l'inégalité de Taylor-Lagrange.
+
+> Taylor-Lagrange : Soit $f \in \mathcal{C}^{n + 1}(I, \mathbb{K})$, avec $f^{(n+1)}$ bornée sur $I$.
+> Soit $a \in I$ et $x \in I$,
+> $|f(x) - \sum\limits_{k = 0}^{n} \frac{f^{(k)}(a)}{k!} (x - a)^k| \leq \frac{|x - a|^{n+1}}{(n+1)!} \text{sup}\restriction_{I} |f^{(n+1)}|$.
+
+Avec $a,x \in I$ avec $a < x$, on reprend le reste intégral.
+$f^{(n+1)}$ est continue sur le segment $[a,x]$ donc
+$|f^{(n+1)}|$ atteint son maximum sur $[a,x]$, qu'on note $M_{n+1}$.
+$\forall t \in [0,x]$, $|f^{(n+1)}(t)| \leq M_{n+1}$. Ainsi, $x - t > 0$
+par croissance de l'intégrale sur les termes positifs, donnant
+$|\int\limits_{a}^{x} \frac{(x-t)^n}{n!} f^{(n+1)}(t) dt| \leq \int\limits_{a}^{x} \frac{(x - t)^n}{n!} M_{n+1} dt$
+par inégalité triangulaire. Ce second membre est égal à
+$[\frac{- (x - t)^{n+1}}{(n+1)!}]_a^x M_{n+1} = \frac{(x - a)^{n+1}}{(n+1)!} M_{n+1}$, la majoration du reste intégral.
+
+##### Exemples
+Soit $x \in \mathbb{R}$ fixé et $a = 0$, $\exp$ est $\mathcal{C}^{\infty}$ sur
+$\mathbb{R}$. L'inégalité de Taylor-Lagrange donne :
+$\forall n \in \mathbb{N}, |e^{x} - \sum\limits_{k = 0}^{n} \frac{e^{k}(0)}{k!} x^k| \leq \frac{|x|^{n+1}}{(n+1)!} \text{sup}\restriction_{[0,x]} |e^{n+1}|$.\
+$\forall x \leq 0, e^{x} \leq 1$ et $\forall x > 0, \forall t \in [0,x], e^{t} \leq e^{x}$.
+Avec $x \in \mathbb{R}$ fixé, $\text{sup}\restriction_{[0,x]} \exp \leq \text{max}(1,e^{x})$.
+Finalement, à $x$ fixé, $\forall n \in \mathbb{N}, |e^{x} - \sum\limits_{k = 0}^{n} \frac{x^k}{k!}| \leq \frac{|x|^{n+1}}{(n+1)!} \text{max}(1,e^{x})$.\
+Or,  $x^{n+1} \underset{n \to +\infty}{=} o((n+1)!)$,
+$\lim\limits_{n \to + \infty} \frac{|x|^{n+1}}{(n+1)!} \text{max}(1, e^{x}) = 0$, donc
+par théorème d'encadrement,
+$\lim\limits_{n \to + \infty} (\sum\limits_{k = 0}^{n} \frac{x^k}{k!}) = e^{x}$
+pour $x \in \mathbb{R}$.
