@@ -312,3 +312,17 @@ $\lim\limits_{n \to + \infty} \frac{|x|^{n+1}}{(n+1)!} \text{max}(1, e^{x}) = 0$
 par théorème d'encadrement,
 $\lim\limits_{n \to + \infty} (\sum\limits_{k = 0}^{n} \frac{x^k}{k!}) = e^{x}$
 pour $x \in \mathbb{R}$.
+
+#### Extension aux fonctions à valeurs complexes
+On peut facilement étendre les opérations, la dérivabilité en $a \in \mathbb{R}$, et les notions de
+classes de fonction. En revanche, certains théorèmes ne sont plus valables :
+on ne peut plus obtenir de minimum, maximum, ou étendre les fonctions; on ne
+peut donc avoir ni le lemme de Rolle, ni le théorème des accroissements finis.
+
+On peut prendre comme contre-exemple de Rolle dans $\mathbb{C}^{\mathbb{R}}$ la
+fonction $t \mapsto e^{it}$ : $f$ est dérivable sur $\mathbb{R}$,
+$f(0) = f(2 \pi) = 1$ or $\forall t, f'(t) = i e^{it}$, ne s'annule pas.
+
+En revanche, l'inégalité de Taylor-Lagrange est valable (car la formule de
+Taylor au reste intégral est valable). De plus, on peut applique le théorème de
+compacité à la norme d'une fonction.
