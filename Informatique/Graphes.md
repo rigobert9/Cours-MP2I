@@ -82,3 +82,91 @@ $s_1 \to^{\ast} s_2$ et inversement, donc le sous-graphe induit par $S'$ est
 fortement connexe.\
 Ainsi, tout $u \in S$ appartient à une unique composante fortement connexe, et
 donc ces composantes fortement connexes forment une partition de $S$.
+
+> Soit $G = (S,A)$ un graphe orienté, $\sum\limits_{x \in S} d_{+}(x) = \sum\limits_{x \in S} d_{-}(x) = |A|$.
+
+__Preuve :__ $\sum\limits_{x \in S} d_{+}(x) = \sum\limits_{x \in S} |\{(u,v) \in A \mid u = x\}|$
+$= |\{(u,v) \in A \mid u = x\}| = |A|$.
+
+## Graphes non orientés
+> Un graphe non orienté est la donnée d'un ensemble de sommets $S$ et d'un
+> ensemble d'arrêtes $E \subset \{e \in \mathcal{P}(S) \mid \text{Card}(e) = 2\}$.
+
+> Un chemin de $x$ à $y$ est un tuple $(u_i)_{[\![0,n]\!]} \in S^{n+1}$ tel que
+> $\forall i \in [\![0,n-1]\!], \{u_i, u_{i+1}\} \in E$, et $x = u_0$, $y = u_n$.
+> On notera encore $x \to^{\ast} y$. De même $u \to v$ ou $v \to u$ signifient
+> tous deux $\{u;v\} \in E$. Un chemin simple est un chemin où chaque arête
+> apparaît au plus une fois.
+
+Comme pour les graphes orientés, chaque sommet a un chemin de longueur $0$ vers
+lui-même : $x = u_0 = x$.
+En revanche, il n'existe aucune arête reliant un sommet à lui-même,
+donc aucun chemin de $x$ à $x$ de longueur $1$.
+
+> Un cycle est un chemin simple de longueur non nulle dont les deux extrémités sont le même sommet.
+
+Il n'existe pas dans un graphe non orienté de cycle de longueur 1, ni de
+longueur 2 (car il n'est alors pas simple). La longueur minimale d'un cycle dans
+un graphe orienté est donc de 3.
+
+> Soit $x \in S$, on définit son degré $d(x) = \text{Card}(\{e \in E \mid x \in e\})$.
+
+> $\sum\limits_{x \in S} d(x) = 2 \text{Card}(E)$
+
+__Preuve :__ Pour $S$ fini, on le munit d'un ordre total, donnant
+$\sum\limits_{x \in S} d(x) = \sum\limits_{x \in S} \text{Card}(\{e \in E \mid x \in e\})$
+$= \sum\limits_{x \in S} \text{Card}(\{e \in E \mid e = \{x;y\} \text{ avec } y < x\})$
+$+ \text{Card}(\{e \in E \mid e = \{x;y\} \text{ avec } y > a\})$.
+Or, si $x \neq x'$, alors $\{e \in E \mid e = \{x;y\} \text{ avec } y < x\}$
+et $\{e \in E \mid e = \{x';y\} \text{ avec } y < x'\}$ sont disjoints.\
+Ainsi, la somme des cardinaux est le cardinal de l'union,
+c'est à dire $\text{Card}(E) + \text{Card}(E)$.
+
+> Soit $G = (S,E)$ un graphe non orienté, on définit son graphe orienté
+> sous-jacent $G = (S,A)$ par $A = \{(x;y) \in S^2 \mid \{x;y\} \in E\}$.
+
+On en déduit une preuve beaucoup plus simple de la propriété précédente :
+$\forall x \in S, d_G(x) = d_{G^{+}}(x) = d_{G^{-}}(x)$, donc la somme
+est le cardinal de $A$ qui est deux fois plus grand que celui de $E$.
+
+Si $G$ a au moins une arête, celle-ci correspond dans son graphe orienté
+sous-jacent à deux arcs qui forment un cycle de longueur 2. Ainsi, même si
+$G$ n'a pas de cycle, son graphe orienté sous-jacent en aura.
+
+> $G = (S,E)$ est connexe si $\forall x,y \in S, x \to^{\ast} y$.
+
+> $G$ est connexe si et seulement si son graphe orienté sous-jacent est fortement
+> convexe.
+
+Soit $G = (S,E)$, une composante connexe de $G$ est une partie $C$ de $S$ telle
+que le sous-graphe de $G$ induit par $C$ est connexe, et $C$ est maximale pour
+l'inclusion.
+
+> Les composantes connexes de $G$ forment une partition de $S$.
+
+> Un graphe non orienté acyclique est appelé forêt. Un graphe non orienté
+> acyclique connexe est appelé arbre.
+
+Rien à voir avec les arbres enracinés.
+
+## Structure de données
+Ici, tous les graphes sont finis. Les graphes non orientés vont être représentés
+par leur graphe orienté sous-jacent. On notera $n = \text{Card}(S)$ et $m = \text{Card}(A)$.
+
+On souhaite avoir les opérations élémentaires suivantes :
+- Créer un graphe sans arêtes de sommets $S$ en $\Theta(n)$
+- Supprimer un graphe on $O(n + m)$
+- Ajouter un arc en $\Theta(1)$
+- Supprimer un arc en $\Theta(1)$
+- Vérifier si un arc existe en $\Theta(1)$
+- Connaître $\text{Card}(S)$ en $\Theta(1)$
+- Obtenir l'ensemble des successeurs de $x \in S$ en $\Theta(d_{+}(x))$
+- Obtenir l'ensemble $A$ en $\Theta(n + m)$
+
+En pratique, les deux implémentations les plus utilisées ne respectent pas
+toutes ces complexités idéales. On choisira donc selon nos besoins.
+
+### Matrice d'adjacence
+$G$ est représenté par $M$ un tableau de $m$ tableaux de $n$, qui sont vrais si
+il y a un arc et faux sinon.
+Un graphe non orienté est donc représenté par une matrice symétrique.
