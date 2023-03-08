@@ -172,3 +172,124 @@ avec $I \neq \emptyset$ (car $E$ est dedans).
 $\bigcap\limits_{i \in  I} E_i$ est alors un SEV de $E$ qui contient $X$ car
 $\forall i \in I, X \subset E_i$. C'est le plus petit car c'est l'intersection de
 tous (on peut en faire la preuve par l'absurde).
+
+## Applications linéaires
+Les applications linéaires correspondent aux homomorphismes d'EV, ou aux
+morphismes dans la catégorie des EV.
+
+> Soit $E, F, H$ des $\mathbb{K}$-EV, une application $f: E \to F$ est dite
+> $\mathbb{K}$-linéaire si
+> $\forall (x,y) \in E^2, \forall (\lambda,\mu) \in \mathbb{K}^2, f(\lambda x + \mu y) = \lambda f(x) + \mu f(y)$.
+
+On note $\mathcal{L}_{\mathbb{K}}(E, F)$ l'ensemble de toutes les applications
+linéaires de $E$ dans $F$.
+
+La trace et la transposition sur les matrices sont des applications linéaires.
+La conjugaison de complexes est une application $\mathbb{R}$-linéaire.
+
+Puisque les applications linéaires sont des morphismes de groupe, le vecteur
+neutre est conservé par l'application ($f(0_E) = 0_F$).
+
+> Toute application linéaire transforme une combinaison linéaire en une
+> combinaison linéaire des images.
+
+### Applications linéaires particulières
+Comme pour tout morphisme, on peut les caractériser avec des préfixes
+supplémentaires :
+- un endomorphisme est un morphisme d'un EV sur lui-même (on note alors $\mathcal{L}(E)$)
+- un isomorphisme est un morphisme bijectif
+- un automorphisme est la fusion des deux d'au-dessus (on note alors $\text{GL}(E)$)
+- une forme linéaire est un morphisme vers le corps des scalaires de l'EV, et
+  l'ensemble de ces formes linéaires est l'espace dual; l'espace double dual
+  d'un EV est naturellement isomorphe à l'EV lui-même, en formant une fonction
+  d'application d'un élément à une fonction pour chaque élément de l'EV (parfois
+  noté $E^{\ast}$)
+
+### Noyau et image
+> Soit $f \in \mathcal{L}(E,F)$ et $E_1$ un SEV de $E$, $F_1$ un SEV de $F$.
+> L'image directe $f(E_1)$ est un SEV de $F$ et l'image réciproque
+> $f^{-1}(F_1)$ est un SEV de $E$.$$
+
+__Preuve :__ Pour l'image directe, $E_1 \subset E \Rightarrow f(E_1) \subset f(E) \subset F$,
+$f(0_E) = 0_F$ et $0_E \in E_1$, et pour tous $x = f(a) \in f(E_1)$
+et $y = f(b) \in f(E_1)$, leur combinaison linéaire est bien dans $f(E_1)$.
+Pour l'image réciproque, $0_F \in F_1 \Rightarrow 0_E \in f^{-1}(F_1)$,
+et pour tous $x,y \in f^{-1}(F_1)$, la combinaison linéaire est dans $f^{-1}(F_1)$.
+
+> Soit $f \in \mathcal{L}(E,F)$, l'image de $f$ est le SEV de $F$ défini par $\text{Im}(f) = f(E)$,
+> et le noyau de $f$ est les SEV de $E$ défini par $\text{Ker}(f) = f^{-1}(\{0_E\})$.
+
+> Soit $f \in \mathcal{L}(E,F)$, $f$ est surjective si et seulement si $\text{Im}(f) = F$,
+> et $f$ est injective si et seulement si $\text{Ker}(f) = \{0_E\}$.
+
+__Preuve :__ La première assertion correspond à la définition de la
+surjectivité.\
+Pour la seconde proposition :\
+$\Rightarrow$ Si $f$ est injective, on a déjà $f(0_E) = 0_F$ puisque $f$ est
+linéaire. Soit $x \in \text{Ker}(f)$, $f(x) = 0_F = f(0_E)$. Par injectivité, on
+a $x = 0_E$.\
+$\Leftarrow$ Si $\text{Ker}(f) = \{0_E\}$, et $x,y \in E \mid f(x) = f(y)$,
+on a $f(x) - f(y) = 0_F \Leftrightarrow f(x - y) = 0_F$,
+soit $x - y \in \text{Ker}(f) \Rightarrow x - y = 0_E$, donc
+$x = y$.
+
+Calculer le noyau revient à résoudre $f(x) = 0_E$, et calculer l'image
+revient à pour tout $y \in F$ chercher à résoudre $f(x) = y$.
+Pour calculer l'image, le plus efficace est alors d'utiliser les familles
+génératrices.
+
+> Soit $f \in \mathcal{L}(E,F)$ et soit $\mathcal{F} = (e_i)_{[\![0,n]\!]}$
+> une famille génératrice de $E$, alors $\text{Im}(f) = \text{Vect}(f(e_i))_{[\![0,n]\!]}$.
+
+__Preuve :__ On prouve que le calcul des images de la famille génératrice permet
+par linéarité de reconstituer les images de tout $E$.
+
+### Structure de $\mathcal{L}(E,F)$
+> $\mathcal{L}(E,F)$ est un SEV de $\mathcal{F}(E,F)$
+
+__Preuve :__ $\begin{aligned} \tilde{0}: E &\to F \\ x &\mapsto 0_F .\end{aligned}$
+est dans $\mathcal{L}(E,F)$, et soient $f,g \in \mathcal{L}(E,F)$
+et $\lambda,\mu \in \mathbb{K}$, on veut montrer $\lambda f + \mu g \in \mathcal{L}(E,F)$.
+On pose $h = \lambda f + \mu g$, et soit $x,y \in E$, $\alpha, \beta \in \mathbb{K}$,
+$h(\alpha x + \beta y) = (\lambda f + \mu g)(\alpha x + \beta y)$\
+$= \alpha h(x) + \beta h(y)$, donc $h \in \mathcal{L}(E,F)$.
+
+> Soient $f \in \mathcal{L}(E,F)$ et $g \in \mathcal{L}(F,G)$,
+> alors $g \circ f \in \mathcal{L}(E,G)$.
+
+__Preuve :__ Si $x,y \in E$ et $\lambda,\mu \in \mathbb{K}$, $(g \circ f)(\lambda x + \mu y) = \lambda g(f(x)) + \mu g(f(y))$.
+
+Si $f \in \mathcal{L}(E)$, on peut définir le $n$-ième itéré par la composition
+de l'endomorphisme $f$.
+
+> Bilinéarité de la composition : Soit $\lambda,\mu \in \mathbb{K}$, en
+> $f, g, h$ linéaires :
+> - $h \circ (\lambda f + \mu g) = \lambda (h \circ f) + \mu (h \circ g)$ (vrai
+>   par linéarité de $h$)
+> - $(\lambda f + \mu g) \circ h = \lambda (f \circ h) + \mu (g \circ h)$ (vrai
+>   pour toute application)
+
+Soit $h \in \mathcal{L}(F,G)$, $\begin{aligned} G_h: \mathcal{L}(E,F) &\to \mathcal{L}(E,G) \\ f &\mapsto h \circ f .\end{aligned}$
+est linéaire, et soit $h \in \mathcal{L}(E,F)$, $\begin{aligned} D_h: \mathcal{L}(F,G) &\to \mathcal{L}(E,G) \\ f &\mapsto f \circ h .\end{aligned}$
+est linéaire.
+
+> La réciproque d'un isomorphisme est un isomorphisme, et
+> si $f \in \mathcal{L}(E,F)$ est bijective, $f^{-1} \in \mathcal{L}(F,E)$.
+
+__Preuve :__ Si $f$ est bijective de $E$ dans $F$, sa réciproque $f^{-1}$ est
+bijective de $F$ dans $E$. Soient $a,b \in F$ et $\lambda,\mu \in \mathbb{K}$,
+on pose $x = f^{-1}(a)$ et $y = f^{-1}(b) \in E$. Or, $f(\lambda x + \mu y) = \lambda f(x) + \mu f(y) = \lambda a + \mu b$,
+donc en composante par $f^{-1}$, on obtient $\lambda x + \mu y = f^{-1}(\lambda a + \mu b)$,
+donc $f^{-1}$ est linéaire.
+
+### Structures
+> Les endomorphismes de $E$ forment un anneau $(\mathcal{L}(E),+,\circ)$
+> et un $\mathbb{K}$-EV $(\mathcal{L}(E),+,\cdot)$, donc une
+> $\mathbb{K}$-algèbre.
+
+$(\mathcal{L}(E),+)$ est un groupe abélien de neutre $\tilde{0}$,
+et forme un anneau avec $\circ$ distributive sur $+$,
+de neutre $\text{id}_E$.
+
+> Le groupe des inversible pour $\circ$ de l'anneau $(\mathcal{L}(E),+,\circ)$
+> est $\text{GL}(E)$, le groupe pour $\circ$ des automorphismes.
