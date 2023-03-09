@@ -293,3 +293,75 @@ de neutre $\text{id}_E$.
 
 > Le groupe des inversible pour $\circ$ de l'anneau $(\mathcal{L}(E),+,\circ)$
 > est $\text{GL}(E)$, le groupe pour $\circ$ des automorphismes.
+
+## Somme d'espaces vectoriels
+> Soient $F$ et $G$ deux SEV d'un $\mathbb{K}$-EV $E$,
+> on définit l'ensemble $F + G$ par $F + G = \{a + b \mid a \in F \land b \in G\}$.
+
+> $F + G$ est le plus petit SEV de $E$ qui contient $F$ et $G$ : $\text{Vect}(F \cup G) = F + G$
+
+__Preuve :__
+- $F + G$ est bien un SEV de $E$
+- $F \subset F + G$ et $G \subset F + G$, et $F + G$ est le plus petit EV à les
+  contenir, car $\text{Vect}(F \cup G) \subset F + G$, et soit $H$ un SEV
+  de $E$ qui contient $F$ et $G$, $H$ doit alors respecter la caractérisation de
+  $F + G$, donc $F + G \subset H$.
+
+La somme d'EV est commutative, associative, a pour élément neutre $\{0_E\}$,
+formant ainsi un monoïde commutatif, et a un élément absorbant, $E$. Elle est
+aussi idempotente, soit $F + F = F$.
+
+### Somme directe
+> On dit que $F$ et $G$ sont deux EV en somme directe, notée $F \oplus G$,
+> si la décomposition de tout vecteur de $F + G$ est unique :
+> $\forall x \in F + G, \exists! (a,b) \in F \times G, x = a + b$.
+
+Si $F + G$ est en somme directe $F \oplus G$, alors l'application
+$\begin{aligned} \varphi: F \times G &\to F + G \\ (a,b) &\mapsto a + b .\end{aligned}$
+est un isomorphisme entre $F \times G$ et $F \oplus G$.
+
+> $F$ et $G$ sont en somme direct si et seulement si $F \cap G = \{0_E\}$
+
+__Preuve :__ $\Leftarrow$ Si $F \cap G = \{0_E\}$, soient
+$x = a + b$ et $y = a' + b'$, $a,a' \in F$ et $b,b' \in G$,
+alors $a - a' = b' - b$, donc $a - a', b - b' \in F \cap G = \{0_E\}$,
+donc $a = a'$ et $b = b'$, nous donnant l'unicité.\
+$\Rightarrow$ Si $F$ et $G$ sont en somme directe, soit $x \in F \cap G$,
+$x = x + 0_E \in F + G = 0_E + x \in F  +G$,
+or l'écriture est supposée unique selon $F + G$, donc $x = 0_E$.
+
+Cette preuve revient à prouver $\text{Ker}(\varphi) = \{(0,0)\} \Leftrightarrow F \cap G = \{0_E\}$
+et que $\text{Im}(\varphi) = F + G$ (injectivité et surjectivité de $\varphi$).
+
+### Sous-espace supplémentaire
+> Soient $F,G$ deux SEV de $E$, $F$ et $G$ sont dits supplémentaires dans $E$ si
+> $E = F \oplus G$\
+> $\Leftrightarrow E = F + G \land F \cap G = \{0_E\}$\
+> $\forall x \in E, \exists! (a,b) \in F \times G, x = a + b$.
+
+### Hyperplan
+> Soit $H$ un SEV de $E$, $H$ est un hyperplan de $E$ si $H$ possède une droite
+> supplémentaire dans $E$ : $\exists u \in E, u \neq 0_E, H \oplus \text{Vect}(u) = E$.
+
+Si $E = \mathbb{R}^3$, les hyperplans de $E$ sont des plans, si $E =
+\mathbb{R}^2$, les hyperplans sont des droites, les hyperplans de $\mathbb{R}^4$
+sont les espaces ... On peut avoir un hyperplan de tout EV, sauf s'il est de
+dimension nulle.
+
+> Soit $E$ un $\mathbb{K}$-EV, et $H$ un hyperplan de $E$, pour tout $u_0 \not\in H$,
+> $H \oplus \text{Vect}(u_0) = E$.
+
+__Preuve :__
+$H$ et $\text{Vect}(u_0)$ sont en somme directe, car
+$H \cap \text{Vect}(u_0) = \{0_E\}$ (qu'on peut prouver par l'absurde
+avec $x \in H = \lambda \in \mathbb{K} u_0$). On montre que
+$E = H + \text{Vect}(u_0)$. On sait que $H$ est un hyperplan de $E$,
+donc il possède une droite supplémentaire, avec $u \not\in H$ tel
+que $\text{Vect}(u) \oplus H = E$,
+et comme $u_0 \in E = \text{Vect}(u) \oplus H$,
+$\left\{\begin{matrix} \exists \lambda \neq 0 \\ \exists h \in H \end{matrix}\right.$,
+$u_0 = \lambda u + h$, donnant $u = \frac{1}{\lambda} u_0 - \frac{1}{\lambda}
+h$.\
+Soit $x \in E$, on a $E = \text{Vect}(u) \oplus H$, donc
+$\exists \mu \in \mathbb{K}, h  \in H, x = \mu u + h'$, donc
+$x = \frac{\mu}{\lambda} u_0 + h' - \frac{\mu}{\lambda} h$.
