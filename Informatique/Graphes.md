@@ -170,3 +170,63 @@ toutes ces complexités idéales. On choisira donc selon nos besoins.
 $G$ est représenté par $M$ un tableau de $m$ tableaux de $n$, qui sont vrais si
 il y a un arc et faux sinon.
 Un graphe non orienté est donc représenté par une matrice symétrique.
+
+### Liste d'adjacence
+$G$ est représenté par un tableau de $m$ listes, de longueur $n$ maximum, qui
+contiennent des pointeurs ou des identifiants vers les successeurs du noeud à
+l'indice de la liste. La liste ne doit pas de contenir de doublon dans un graphe
+simple, et n'a pas besoin d'être triée dans un certain ordre.
+
+## Parcours de graphe
+Ces parcours sont différents d'un parcours d'arbre, car la structure set moins
+linéaire :
+- on peut à priori visiter un sommet par plusieurs chemins depuis le sommet
+  source
+- on doit maintenir la mémoire des sommets déjà visités, sans quoi on les
+  visiterait deux fois
+- l'ordre entre les successeurs n'est en général pas pertinent
+
+### Parcours en profondeur (Depth First Search)
+Pour un graphe $G$, un sommet $s \in S$, ainsi qu'un tableau $V$ de booléens
+initialisés à faux, on traverse l'arbre en profondeur à partir de $s$
+en suivant l'algorithme :\
+Si `V[s]` est faux, on le met à vrai, et on répète pour tous ses successeurs.
+Dans tous les cas, on renvoie $V$ mis à jour.
+
+Ce parcours visite uniquement les sommets accessibles depuis $s$.
+
+__Preuve :__ On prouve que l'algorithme se termine. Chaque appel récursif est
+dans une boucle qui est parcourue au plus $n$ fois. De plus, avant de rentrer
+pour la première fois dans cette boucle, on a passé `v[s]` de faux à vrai,
+opération qu'on ne réalise qu'une seule fois. Donc à chaque $s \in S$ correspond
+au plus $n$ appels récursifs.\
+Soit $G \in S$ :
+- si $t$ est visité par l'algorithme, on considère la pile d'exécution quand il
+  est visité. Comme chaque appel de DFS est soit l'appel initial, soit un appel
+  récursif depuis un prédécesseur, en suivant la pile du fond au sommet on a un
+  chemin de $s$ à $t$.
+- réciproquement, on suppose $s \to^{\ast} t$. On montre par récurrence sur $n \geq 0$
+  que tout sommet pour lequel il existe un chemin de longueur $n$ depuis $s$ est
+  visité. En effet, $s$ est bien le seul sommet pour lequel il y ait un chemin de
+  longueur $0$ vers lui-même, et si $n \geq 1$, on a bien le chemin qui est
+  composé.
+
+__Corollaire :__ Soit $G = (S,E)$ un graphe non orienté avec $S \neq \emptyset$,
+$s \in S$, alors le parcours en profondeur de $G$ depuis $S$ visite la
+composante connexe de $G$ qui contient $S$.
+
+__Preuve :__ Soit $C$ cette composante connexe,
+$t \in C \Leftrightarrow s \to^{\ast} t \land t \to^{\ast} s$\
+$\Leftrightarrow s \to^{\ast} t$ (car $G$ est non orienté)\
+$\Leftrightarrow t$ est visité par le DFS depuis $s$.
+
+> L'arborescence d'un parcours en profondeur de $G$ à partir d'un sommet $s$ est
+> l'arbre enraciné dont la racine est $s$ et pour lequel chaque nœud a pour
+> enfants ses successeurs visités pour la première fois.
+
+> Soit $G = (S,E)$ non-orienté et connexe, un arbre couvrant de $G$ est un arbre (au
+> sens des graphes) dont les sommets sont $S$ et les arêtes un sous-ensemble de $E$
+> (de cardinal $\text{Card}(S) - 1$).
+
+> Un parcours en profondeur sur un graphe connexe non orienté donne un arbre
+> couvrant du graphe en retirant l'orientation de l'arborescence.
