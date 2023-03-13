@@ -230,3 +230,45 @@ $\Leftrightarrow t$ est visité par le DFS depuis $s$.
 
 > Un parcours en profondeur sur un graphe connexe non orienté donne un arbre
 > couvrant du graphe en retirant l'orientation de l'arborescence.
+
+### Parcours en largeur
+On commence par une fiel qui ne contient que le sommet source, et tant qu'il
+reste des sommets à traiter (donc que la file n'est pas vide), on en défile un :
+s'il n'est pas visité, on continue avec la suite, sinon on le marque comme
+visité et on ajoute ses successeurs au bout de la file.
+
+> Soit $G = (S,A)$ un graphe orienté, et $s \in S$, alors $\forall t \in S$
+> tel que $s \to^{\ast} t$, le parcours en largeur de $G$ depuis $s$ indique la
+> distance de $s$ à $t$.
+
+__Preuve :__ On montre d'abord que la BFS termine. Chaque ajout à la file $f$,
+outre l'ajout initial, est fait par la ligne 48 après avoir fait passer une case
+de distances de $-1$ à une valeur positive. La ligne 48 ajoute au plus $n$
+sommets dans la file, donc il y a au plus $n^2 + 1$ ajouts dans la file et la
+boucle termine après au plus $n^2 + 1$ itérations.\
+On montre maintenant par récurrence sur $n \geq 0$ que $\forall E \in S$,
+tel que $s \to^{\ast} t$ et $\text{dist}(s,t) = n$, BFS affecte la distance $n$
+à $t$. On initialise sur $s$ qui est le seul sommet à une distance $0$ de $s$,
+et pour $n \geq 0$, avec la propriété vraie pour $n - 1$, la propriété est vraie
+(plus éloigné de $1$ de $s$). En effet, par hypothèse de récurrence, le sommet a
+été ajouté à la file, et comme l'algorithme se termine, il sera bien défilé, en
+lui affectant la bonne distance.
+
+On peut d'ailleurs remarquer que BFS calcule aussi la distance dans un graphe
+non-orienté.
+
+### Accessibilité d'un sommet
+> Soit $G = (S,A)$ un graphe orienté, et $s,t \in S$, on dit que $t$ est
+> accessible depuis $s$ si $s \to^{\ast} t$. On définit ainsi l'ensemble des
+> sommets accessibles depuis $s$.
+
+> Si $G$ est non-orienté (ou le graphe orienté sous-jacent d'un graph
+> non-orienté), l'ensemble des sommets accessibles depuis $s$ est la composante
+> connexe de $G$ qui contient $s$.
+
+> Les sommets visités par un parcours de $G$ (DFS ou BFS) depuis $s$ sont
+> exactement les sommets accessibles depuis $s$.
+
+__Preuve :__ Pour la BFS, voir la preuve précédente, et pour DFS, la preuve est
+la même que pour prouver que la composante connexe de $s$ est l'ensemble des
+sommets visités pour $G$ non orienté.
