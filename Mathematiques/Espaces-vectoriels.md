@@ -365,3 +365,52 @@ h$.\
 Soit $x \in E$, on a $E = \text{Vect}(u) \oplus H$, donc
 $\exists \mu \in \mathbb{K}, h  \in H, x = \mu u + h'$, donc
 $x = \frac{\mu}{\lambda} u_0 + h' - \frac{\mu}{\lambda} h$.
+
+> Soit $E = F \oplus G$, on appelle projection vectorielle sur $F$
+> parallèlement à $G$ l'unique endomorphisme $p \in \mathcal{L}(E)$
+> tel que $P\restriction_{F} = \text{id}_F$ et $P\restriction_{G} = \tilde{0_E}$.
+
+Ainsi, $\forall x \in F, p(x) = x$ et $\forall x \in G, p(x) = 0_E$.
+
+__Preuve :__ On cherche à montrer que $p$ existe et que $p$ est unique. Si $p \in \mathcal{L}(E)$
+et respecte les conditions, alors pour tout $x \in E$, comme $E = F \oplus G$,
+$\exists! (a,b) \in F \times G, x = a + b$. Or, $p$ est linéaire et donc $p(x) = p(a) + p(b)$
+$= a + O_E$. On vérifie que cette application unique convient pour tout
+$x = a + b \in F \oplus G$. Comme $p(x) = a$, $p : E \to F \subset E$.
+On a $\forall a \in F, p(a) = a$, donc la condition sur $F$ bien respectée,
+et pour tout $b \in G$, $p(b) = p(0_E + b) = 0_E$ donc la condition sur $G$ est
+bien respectée. On vérifie enfin que $p$ est linéaire, et en séparant les
+composantes de tout $x,y \in E$ et par linéarité de l'identité, c'est bien le
+cas. On a donc l'existence et l'unicité de la projection sur $F$ parallèlement à
+$G$.
+
+> Soit $p$ la projection vectorielle sur $F$ parallèlement à $G$ (avec $E = F \oplus G$),
+> alors $\left\{\begin{matrix} p \circ p = p \\ \text{Ker}(p) = G \\ \text{Im}(p) = F = \text{Ker}(p - \text{id}_E) \end{matrix}\right.$
+
+__Preuve :__ Si $x = a + b \in F \oplus G$, alors $p(x) = a = a + 0_E$, donc
+$p(p(x)) = p(a) = a = p(x)$. $\forall b \in G, p(b) = 0_E$, donc
+$G \subset \text{Ker}(p)$, et pour tout $x \in \text{Ker}(p)$, comme pour
+$x = a + b \in F \oplus G$, $p(x) = a$, donc comme $p(x) = 0_E$,
+$a = 0_E$, donc $x \in G$, donnant ainsi $\text{Ker}(p) \subset G$.
+De même, $\forall x \in E, p(x) \in F$, et comme si $x \in F$,
+$p(x) = x$, $\text{Im}(p) \subset F \land F \subset \text{Im}(p)$.
+Enfin, $\text{Ker}(p - \text{id}) = \{x \in E \mid (p - \text{id})(x) = 0_E\}$
+$= \{x \in E \mid p(x) = x\} = \text{Im}(p)$.
+
+$p \circ p = p$ donne $A(X) = X^2 - X = X (X - 1)$ pour polynôme annulateur de
+$p$. Les racines de ce polynôme sont $0$ et $1$, et on a bien
+$E = F \oplus G = \text{Im}(p) \oplus \text{Ker}(p) = \text{Ker}(p - 1 \text{id}) \oplus \text{Ker}(p - 0 \text{id})$.
+
+> Tout $p \in \mathcal{L}(E)$ vérifiant $p^2 = p \circ p = p$ est appelé
+> projecteur.
+
+> Soit $p$ un projecteur de $E$, alors $E = \text{Ker}(p) \oplus \text{Ker}(p - \text{id}) = \text{Ker}(p) \oplus \text{Im}(p)$,
+> et $p$ est la projection vectorielle sur $\text{Im}(p)$ parallèlement à $\text{Ker}(p)$.
+
+__Preuve :__ On vérifie $\text{Ker}(p - \text{id}) = \text{Im}(p)$.
+Si $ \in \text{Ker}(p - \text{id})$, alors $p(x) = x$,
+donc $x \in \text{Im}(p)$. Si $x \in \text{Im}(p)$,
+alors $\exists a \in E, x = p(a)$, alors $p(x) = p(p(a)) = p(a) = x$,
+donc $p(x) = x$, donc $x \in \text{Ker}(p - \text{id})$.
+Les valeurs restreintes de $P$ et la supplémentarité des deux noyaux sont
+triviales.
