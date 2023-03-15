@@ -1,4 +1,4 @@
-# Algèbre linéaire
+# Espaces vectoriels
 ## Espaces vectoriels
 ### Définitions
 Soit $E$ un ensemble muni d'une loi de composition interne $+$ et et d'une
@@ -408,9 +408,135 @@ $E = F \oplus G = \text{Im}(p) \oplus \text{Ker}(p) = \text{Ker}(p - 1 \text{id}
 > et $p$ est la projection vectorielle sur $\text{Im}(p)$ parallèlement à $\text{Ker}(p)$.
 
 __Preuve :__ On vérifie $\text{Ker}(p - \text{id}) = \text{Im}(p)$.
-Si $ \in \text{Ker}(p - \text{id})$, alors $p(x) = x$,
+Si $x \in \text{Ker}(p - \text{id})$, alors $p(x) = x$,
 donc $x \in \text{Im}(p)$. Si $x \in \text{Im}(p)$,
 alors $\exists a \in E, x = p(a)$, alors $p(x) = p(p(a)) = p(a) = x$,
 donc $p(x) = x$, donc $x \in \text{Ker}(p - \text{id})$.
 Les valeurs restreintes de $P$ et la supplémentarité des deux noyaux sont
 triviales.
+
+### Symétrie
+> On appelle symétrie vectorielle par rapport à $F$ parallèlement à $G$ l'unique
+> endomorphisme $s \in \mathcal{L}(E)$ tel que $\left\{\begin{matrix} s\restriction_{F} = \text{id}_F \\ s\restriction_{G} = - \text{id}_G \end{matrix}\right.$.
+
+__Preuve :__ Si $s$ existe, alors comme pour tout $x \in E = F \oplus G$,
+il existe une unique décomposition en $a \in F$ et $b \in G$. Par linéarité,
+$s(x) = s(a) + s(b)$, donnant $s(x) = a - b$.\
+Pour la synthèse, on pose la fonction $\begin{aligned} s: E &\to E \\ x &\mapsto a - b .\end{aligned}$, et on
+vérifie sans difficulté sa linéarité, et les conditions de la symétrie.
+
+> Soit $s$ la symétrie par rapport à $F$ parallèlement à $G$ :
+> - $s \circ s = \text{id}_E$ ($s$ est une involution)
+> - $\text{Ker}(s - \text{id}_E) = F$
+> - $\text{Ker}(s + \text{id}_E) = G$
+
+__Preuve :__ Soit $x \in E = a + b \in F \oplus G$, $s(s(x)) = s(a-b) = s(a) - s(b) = a -(-b) = x$.
+
+Soit $s$ la symétrie par rapport à $F$ parallèlement à $G$, et $p$ la projection
+sur $F$ parallèlement à $G$, $s(x) + x = 2 p(x)$, donc $s + \text{id}_E = 2 p$.
+Or, par le cours $\text{Ker}(p) = G$ et $\text{Im}(p) = F = \text{Ker}(p - \text{id})$,
+donnant $G = \text{Ker}(\frac{1}{2}(s + \text{id}))$.
+Si $f \in \mathcal{L}(E)$ et $\lambda \in \mathbb{K} \setminus \{0\}$,
+$\text{Ker}(\lambda f) = \text{Ker}(f)$, donc $G = \text{Ker}(s + \text{id})$.
+De même, $\text{Ker}(p - \text{id}) = F = \text{Ker}(s - \text{id})$.
+
+On remarque très simplement que $F$ correspond à l'ensemble des vecteurs
+invariants par $s$ et $p$ (la symétrie et projection par rapport à lui).
+
+Puisque $s$ est une involution, $s$ est un automorphisme qui est son propre
+inverse.
+
+Ces transformations avec la multiplication par $\frac{1}{2}$ ne sont possibles
+que si $1 + 1 \neq 0$, et donc sont impossibles dans les corps de
+caractéristique $2$, mais marchent bien pour les autres (avec $2 = 1 + 1$).
+
+> Soit $s \in \mathcal{L}(E)$ telle que $s$ est une involution, alors $s$ est la
+> symétrie par rapport à $\text{Ker}(s - \text{id})$ parallèlement à $\text{Ker}(s + \text{id})$.
+> De plus, on a $E = \text{Ker}(s - \text{id}) \oplus \text{Ker}(s + \text{id})$.
+
+__Preuve :__ On pose $p = \frac{1}{1 + 1} (s + \text{id}_E)$. De plus, $p^2 = (\frac{1}{2})^2 (s + \text{id})^2$,
+et on peut appliquer le binôme de Newton car $\text{id}$ commute avec toute
+fonction : $p^2 = (\frac{1}{2})^2 (s^2 + 2 s \text{id} + \text{id}^2)$
+$= (\frac{1}{2})^2 (2 \text{id} + 2 s) = \frac{1}{2} (s + \text{id})$,
+donc $p^2 = p$, donc $p$ est un projecteur. On sait donc que $\text{Ker}(p) \oplus \text{Ker}(p - \text{id}) = E$.
+Or $\text{Ker}(p) = \text{Ker}(s + \text{id})$ et $\text{Ker}(p - \text{id}) = \text{Ker}(s - \text{id})$.
+Ces ensembles sont donc bien supplémentaires dans $E$.
+De plus, on a $s\restriction_{\text{Ker}(s - \text{id})} = \text{id}\restriction_{\text{Ker}(s - \text{id})}$
+et $s\restriction_{\text{Ker}(s + \text{id})} = - \text{id}\restriction_{\text{Ker}(s + \text{id})}$.
+
+On nomme $\text{Ker}(s - \text{id})$ et $\text{Ker}(s + \text{id})$ les espaces
+caractéristiques de la symétrie (ils permettent de décrire la symétrie de
+manière unique et totale).
+
+> Caractérisation d'une application linéaire par ses restrictions à deux espaces supplémentaires :
+> Soit $E = F \oplus G$ un $\mathbb{K}$-EV, on se donne $H$ un $\mathbb{K}$-EV et $f_1 \in \mathcal{L}(F,H)$
+> et $f_2 \in \mathcal{G,H}$, il existe une unique application linéaire
+> $f \in \mathcal{L}(E,H)$ telle que $f\restriction_{F} = f_1$ et $f\restriction_{G} = f_2$.
+
+__Preuve :__ Si $f$ existe, alors pour tout $x \in E = a + b \in F \oplus G$, donc par linéarité de $f$,
+$f(x) = f(a) + f(b) = f_1(a) + f_2(b)$.\
+On pose $\begin{aligned} f: E &\to H \\ x &\mapsto f_1(a) + f_2(b) .\end{aligned}$. On cherche à montrer que
+$f$ est linéaire et que ses restrictions sont bien $f_1$ et $f_2$. On peut montrer ce dernier fait facilement en décomposant
+les éléments de $F$ ou de $G$ avec le $0$ dans l'espace supplémentaire. Enfin, puisque
+tout $x$ de $E$ se décompose de façon unique comme $a + b \in F \oplus G$ et
+puisque $f_1$ et $f_2$ sont linéaires, l'application est bien linéaire.
+
+## Hyperplan et formes linéaires
+Tout comme on définit un plan (un hyperplan en deux dimensions) par une équation
+homogène sur trois variables, on peut voir que l'hyperplan correspond au $\text{Ker}$
+d'une forme linéaire sur cet espace vectoriel.
+
+> Toute forme linéaire non nulle est surjective : Soit $f \in \mathcal{L}(E,\mathbb{K})$ et
+> $f \neq \tilde{0}$, alors $\text{Im}(f) = \mathbb{K}$.
+
+__Preuve :__ $f \neq \tilde{0}$ donc $\exists u \in E$ tel que $f(u) \neq 0$.
+Puisque les résultats de $f$ sont dans le corps $\mathbb{K}$,
+$f(u)$ est inversible, et donc $f(\frac{1}{f(u)} u) = \frac{1}{f(u)} f(u) = 1$,
+donc $1 \in \text{Im}(f)$, donc $\text{Vect}(1) \subset \text{Im}(f)$,
+soit $\mathbb{K} \subset \text{Im}(f)$,
+donc $f$ est surjective.
+
+> Soit $H$ un SEV de $E$, $H$ est un hyperplan de $E$ si et seulement si
+> $H$ est le noyau d'une forme linéaire.
+
+__Preuve :__ $\Rightarrow$ On sait qu'il existe $\left\{\begin{matrix} u_0 \in E \\ u_0 \neq 0_E \end{matrix}\right.$
+tel que $H \oplus \text{Vect}(u_0) = E$. On construit une application linéaire
+$f$ en la définissant sur ces deux SEV supplémentaires de $E$. On impose
+$f\restriction_{H} = \tilde{0} \in \mathcal{L}(H,\mathbb{K})$, et $f(u_0) = 1$.
+$\forall \lambda \in \mathbb{K}, f(\lambda u_0) = \lambda$, donc
+$f(\text{Vect}(u_0)) = \mathbb{K}$, Les restrictions sont donc bien définies et
+linéaires, donc $f$ existe bien et est linéaire de $E$ dans $\mathbb{K}$,
+et $f$ est une forme linéaire non nulle. De plus, on a $H \subset \text{Ker}(f)$.
+Soit $x \in \text{Ker}(f)$, $\exists! (h,\lambda) \in H \times \mathbb{K}$ tels
+que $x = h + \lambda u_0$, alors $f(x) = \lambda$, or $x \in \text{Ker}(f)$,
+donc $x = h$.\
+$\Leftarrow$ Soit $f \in \mathcal{L}(E,\mathbb{K})$ non nulle, on pose
+$H = \text{Ker}(f)$. On cherche à montrer qu'il existe une droite supplémentaire
+pour $H$. $f \neq \tilde{0}$, donc il existe $u_0 \in E$, tel que $f(u_0) \neq 0$
+($u_0 \not\in \text{Ker}(f)$). On montre que $\text{Ker}(f) \oplus \text{Vect}(u_0) = E$.
+Soit $x \in \text{Ker}(f) \cap \text{Vect}(u_0)$, $\lambda \in \mathbb{K} \mid x = \lambda u_0$,
+$f(x) = 0$ et $f(x) = f(\lambda u_0) = \lambda f(u_0)$, donc $\lambda = 0$
+par intégrité des éléments de $\mathbb{K}^{\ast}$, donc $x = 0_E$. Ainsi,
+$\text{Ker}(f) \cap \text{Vect}(u_0) = \{0_E\}$, donc la somme est directe.
+On prouve enfin que $E=  \text{Ker}(f) + \text{Vect}(u_0)$, et pour tout
+$x = a + \lambda u_0 \in \text{Ker}(f) + \text{Vect}(u_0)$, $f(x) = \lambda f(u_0)$,
+donc $\lambda = \frac{1}{f(u_0)} f(x)$. Ainsi, $a = x - \lambda u_0$
+$= x - \frac{f(x)}{f(u_0)} u_0$. On vérifie son appartenance au noyau :
+$f(x - \frac{f(x)}{f(u_0)} u_0) = f(x) - \frac{f(x)}{f(u_0)} f(u_0) = 0$.
+
+> Soit $\varphi, \psi \in \mathcal{L}(E,\mathbb{K})$ non nulles,
+> $\text{Ker}(\varphi) = \text{Ker}(\psi)$ si et seulement si
+> $\varphi$ et $\psi$ sont proportionnelles :
+> $\exists \lambda \in \mathbb{K} \setminus \{0\} \mid \varphi = \lambda \psi$.
+
+Leurs noyaux décrivent ainsi un même hyperplan.
+
+__Preuve :__ $\Leftarrow$ Si $\varphi = \lambda \psi$ et
+$\lambda \neq 0$, alors $\text{Ker}(\varphi) = \text{Ker}(\lambda \psi) = \text{Ker}(\psi)$.\
+$\Rightarrow$ Soit $H = \text{Ker}(\varphi) = \text{Ker}(\psi)$,
+$H$ est un hyperplan. On fixe $a \in E \mid a \neq H \land H \oplus \text{Vect}(a) = E$,
+Ainsi, $\varphi(a) \neq 0$ et $\psi(a) \neq 0$, et on pose
+$\lambda = \frac{\varphi(a)}{\psi(a)} \in \mathbb{K} \setminus \{0\}$.
+Il reste à montrer l'égalité entre $\varphi$ et $\lambda \psi$,
+or cette égalité est valide sur $H$, et par linéarité sur $a$,
+$\lambda$ doit bien exister.
