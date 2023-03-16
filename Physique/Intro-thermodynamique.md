@@ -322,7 +322,7 @@ L'acronyme PCII n'est pas officiel et ne doit pas être utilisé dans une copie.
 > Les lois de Joule sont respectées dans les PCII.
 
 Puisque le volume est constant, on définit la capacité thermique
-$C = \frac{d U}{dt} = \frac{d H}{dt}$
+$C = \frac{d U}{dT} = \frac{d H}{dT}$
 
 ### Phases condensées non compressibles et non dilatables
 Le volume $V(T,P)$ est ainsi dépendant de la température et de la pression.
