@@ -28,7 +28,7 @@ La thermodynamique dispose beaucoup de son propre jargon.
 ### Taille des systèmes
 > On distingue les tailles des différents systèmes étudiés :
 > - Un système macroscopique contient une grande quantité de matière, de l'ordre
->   de la mole (un nombre d'Avogadro d'atomes, $6.022 \times 10^{23} \text{mol}^{-1}$).
+>   de la mole (un nombre d'Avogadro d'atomes, $\mathcal{N}_a = 6.022 \times 10^{23} \text{mol}^{-1}$).
 >   Ce nombre d'atomes explique la difficulté à réaliser une simulation complète.
 > - Un système microscopique contient des entités individuelles comme des atomes,
 >   des ions, ou des molécules.
@@ -198,3 +198,141 @@ Le modèle microscopique utilisé a pour hypothèses :
 - On considère que les variables intensives sont les mêmes à l'échelle du gaz
   (Homogénéité). Cela se traduit statistiquement par des variables identiques en
   moyenne en tout point.
+- On considère que la distribution des vitesses est la même dans tout le système
+  (Isotropie). Statistiquement, la distribution présente en général un pic de
+  vitesse selon une distribution bien particulière.
+
+### Vitesse quadratique moyenne
+> On note la vitesse quadratique moyenne $u = \sqrt{<v^2>} = \sqrt{\frac{1}{n} \sum\limits_{n = 1}^{N} v_i^2}$.
+
+Plus on l'applique à un grand nombre de particules, plus celle-ci tend vers la
+moyenne des vitesses.
+
+> Température cinétique : $\frac{1}{2} m u^2 = \frac{3}{2} k_B T$, avec
+> $k_B$ la constante de Boltzmann et $T$ la température.
+
+> La constante de Boltzmann, la plupart du temps donnée, est $1.38 \times 10^{-23} J \cdot kg^{-1}$.
+
+### Énergie interne et enthalpie
+On travaille ici avec des quantités de matière constantes (système fermé).
+
+#### Gaz parfait monoatomique
+Les gaz parfaits monoatomiques sont souvent les gaz rares, comme le Néon, le
+Xénon, l'Hélium (le plus répandu). Ceux-ci représentent 1% de notre atmosphère.
+
+> Constante des gaz parfaits : $R = \mathcal{N}_a k_B \approx 8,314 J \cdot \text{mol}^{-1} K^{-1}$.
+
+Celle-ci permet de calculer l'énergie interne du gaz. On a en effet :
+$U = \frac{1}{2} \sum\limits_{i = 1}^{N} m v_i^2 = \frac{N}{2} \times \frac{m}{N} \sum\limits_{i = 1}^{N} v_i^2$
+$= N \frac{1}{2} m u^2 = \frac{3}{2} N k_B T$, or $n = \frac{N}{\mathcal{N}_a}$,
+donc $U = \frac{3}{2} n R T$ pour tout gaz parfait monoatomique.
+
+> Pour un gaz parfait monoatomique : $U = \frac{3}{2} n R T$
+
+Ainsi, son énergie molaire ne dépend que de sa température : il respecte la
+première loi de Joule.
+
+Comme $H = U + PV$, et $PV = n R T$ et $U = \frac{3}{2} nR T$,
+donc $H = \frac{5}{2} n R T$ pour un gaz monoatomique.
+
+> Pour un gaz parfait monoatomique : $H = \frac{5}{2} n R T$
+
+Son enthalpie molaire ne dépend donc que de sa température : il respecte la
+deuxième loi de Joule.
+
+> 1ère loi de Joule : l'énergie interne d'un gaz parfait monoatomique ne dépend que de sa
+> température.
+
+> 2ème loi de Joule : l'enthalpie d'un gaz parfait monoatomique ne dépend que de sa
+> température.
+
+Ainsi, on peut calculer facilement les capacités calorifiques de ces gaz :
+- à volume constant, $C_V = \frac{d U}{dT} = \frac{3}{2} n R$
+- à pression constante, $C_p = \frac{d H}{dT} = \frac{5}{2} n R$
+
+#### Gaz parfait diatomique
+Pour un gaz parfait diatomique, il y a des degrés de liberté en plus dans la
+molécule, la rotation et la vibration entre ses atomes.
+
+> Pour un gaz parfait diatomique :
+> - $U = \frac{5}{2} N k_B T = \frac{5}{2} n R T$
+> - $H = \frac{7}{2} n R T$
+> - $C_V = \frac{5}{2} n R$
+> - $C_p = \frac{7}{2} n R$
+
+> Les deux lois de Joules sont valables pour tout gaz parfait diatomique.
+
+#### Gaz quelconque
+> Quelque soit l'atomicité, un gaz parfait vérifie les lois de Joules dans notre
+> modèle.
+
+On a alors toujours $C_p = \frac{d H}{dt} = \frac{d U}{dt} + \frac{d PV}{dt} = C_V + nR$.
+On en dérive une relation entre $C_p$, $C_V$, et $nR$.
+
+> Relation de Mayer : $C_p - C_V = nR$.
+
+> Coefficient adiabatique : $\gamma = \frac{C_p}{C_V}$.
+
+> En combinant ces deux relations, car on connaît souvent $\gamma$,
+> on obtient :
+> - $C_V = \frac{nR}{\gamma - 1}$
+> - $C_p = \frac{\gamma nR}{\gamma - 1}$
+
+### Limite du modèle des gaz parfaits et gaz réels
+En perdant en volume, la pression exercée sur un gaz augment, paramètre qu'on
+ignorait joyeusement dans le précédent modèle.
+
+#### Équation d'état
+On préfèrera ce modèle dans le cas d'une pression plus élevée.
+
+> Relation de Van der Walls : $(P + a \frac{n^2}{V^2})(V - nb) = nRT$.
+
+Le paramètre $a$ est lié aux interactions entre molécules du gaz (attractives
+ou répulsives). Le paramètre $b$ (parfois appelé covolume) est lié au volume
+occupé par les molécules. Ces deux paramètres sont déterminés par des modèles
+ou expérimentalement.
+
+> L'énergie interne $U$ dans le modèle des gaz réels est $U = U_\text{gaz parfait} - a \frac{n^2}{V}$.
+
+Cette énergie des gaz parfait est en général donné.
+
+Ainsi, l'énergie des gaz dépend de paramètres de volume et de $a$ en plus.
+
+> Les gaz réels ne respectent pas les lois de Joule.
+
+## Description des phases condensées
+Les phases condensées désignent les liquides et les solides, qui sont assez
+semblables en thermodynamique par rapport aux gaz.
+
+### Phases condensées incompressibles et indilatables
+#### Propriétés
+> Une phase condensée dite incompressible et indilatable si elle vérifie les
+> propriétés :
+> - incompressible : le volume est indépendant de la pression
+> - indilatable : le volume est indépendant de la température
+
+Ainsi, on pourrait considérer qu'un métal ou que l'eau est dilatable, bien que
+l'eau soit difficilement compressible.
+
+> Une phase condensée incompressible et indilatable (PCII) a un volume constant.
+
+L'acronyme PCII n'est pas officiel et ne doit pas être utilisé dans une copie.
+
+#### Énergie interne et enthalpie
+> Les lois de Joule sont respectées dans les PCII.
+
+Puisque le volume est constant, on définit la capacité thermique
+$C = \frac{d U}{dt} = \frac{d H}{dt}$
+
+### Phases condensées non compressibles et non dilatables
+Le volume $V(T,P)$ est ainsi dépendant de la température et de la pression.
+On a ainsi $d V = (\frac{\partial V}{\partial T})_p dT + (\frac{\partial V}{\partial P})_T dP$.
+
+>
+
+> - Coefficient de dilatation isobare (à même pression) : $\alpha = \frac{1}{V} (\frac{\partial V}{\partial T})_P$, en $K^{-1}$.
+> - Coefficient de compressibilité isotherme (à même température) : $\chi_T = - \frac{1}{V} (\frac{\partial V}{\partial P})_T$, en $Pa^{-1}$
+
+Ces coefficients sont des grandeurs intensives.
+
+Ainsi, on peut réécrire $d V = V (\alpha d T - \chi_T) dP$.
