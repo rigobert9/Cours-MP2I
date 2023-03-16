@@ -324,7 +324,7 @@ L'acronyme PCII n'est pas officiel et ne doit pas être utilisé dans une copie.
 Puisque le volume est constant, on définit la capacité thermique
 $C = \frac{d U}{dT} = \frac{d H}{dT}$
 
-### Phases condensées non compressibles et non dilatables
+### Phases condensées peu compressibles et peu dilatables
 Le volume $V(T,P)$ est ainsi dépendant de la température et de la pression.
 On a ainsi $d V = (\frac{\partial V}{\partial T})_p dT + (\frac{\partial V}{\partial P})_T dP$.
 
