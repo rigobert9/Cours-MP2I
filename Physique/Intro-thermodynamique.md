@@ -167,7 +167,7 @@ Elle est homogène à une énergie et est donc mesurée en Joules.
 On dérive uniquement selon la température on conservant le volume constant.
 
 > Dans un système thermoélastique fermé, la capacité thermique à pression constante
-> est $C_P = \frac{\partial H}{\partial V}_P$.
+> est $C_P = \frac{\partial H}{\partial T}_P$.
 
 > Les capacités thermiques à pression ou à volume constants sont des grandeur
 > intensives.
