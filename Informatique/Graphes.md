@@ -272,3 +272,76 @@ non-orienté.
 __Preuve :__ Pour la BFS, voir la preuve précédente, et pour DFS, la preuve est
 la même que pour prouver que la composante connexe de $s$ est l'ensemble des
 sommets visités pour $G$ non orienté.
+
+> Soit $G = (S,A)$ et $s \in S$, alors $\to^{\ast}$ est un préordre (réflexif et
+> transitif, mais pas nécessairement antisymétrique) sur $S$.
+> De plus, $s$ est le minimum des sommets accessibles depuis $s$ pour ce préordre
+> (pour tout $t$ accessible depuis $s$, $s \to^{\ast} t$).
+
+> $G$ est acyclique si et seulement si $\to^{\ast}$ est un ordre sur $S$ et $G$
+> n'admet pas de boucles.
+
+__Preuve :__
+- Si $G$ est acyclique, on a déjà montré que $\to^{\ast}$ est un ordre.
+- Sinon, soit un cycle de $G$ de longueur $n > 1$. Si les deux premiers éléments
+  du chemin sont égaux, alors $G$ admet une boucle, et sinon, $s_0 \to^{\ast} s_1$
+  $s_1 \to^{\ast} s_n = s_0$, montrant que la relation n'est pas antisymétrique.
+
+Dans l'algorithme de recherche he cycle dans un graphe orienté, on peut prouver
+les invariants suivants (au début de l'appel en $s$) :
+- Pour tout $t$ tel que $t$ est en cours de visite, $t \to^{\ast} s$
+- Pour tout $u$, $u$ sera visité (pas forcément pour la première fois)
+  par un appel récursif si et seulement si il y a un chemin depuis $s$.
+
+En effet, tout sommet $t$ en cours de visite a son appel encore sur la pile et
+donc il existe un chemin de $t$ à $s$ en suivant la pile. On sait que DFS depuis
+$s$ explore les sommets accessibles depuis $s$. Ainsi, si on termine les appels
+récursifs depuis $s$, on a que pour tout $u$ accessible, il n'y a pas de cycle.\
+En effet, sinon soit $C$ un cycle dont au moins un sommet est accessible depuis
+$s$, et $u$ le premier sommet de $C$ visité.
+Quand $u$ est visité, alors il est marqué en cours  de visite, et les points
+accessibles depuis $u$ sont visités, donc on tombe sur un prédécesseur de $u$
+via $c$ (dont aucun des sommets n'était fini de visiter). On lève donc
+l'exception, donc $u$ est visité par un appel récursif depuis $s$, et donc cet
+appel ne termine pas sans exception.
+
+Réciproquement, si le sous-graphe induit par les sommets accessibles depuis $s$
+est acyclique, on montre très aisément par induction sur l'ordre opposé de
+$\to^{\ast}$ que l'appel en $s$ termine sans erreur.
+
+Ainsi, si on termine la dernière boucle sans erreur, alors on a une liste de
+sommets tels que pour tout sommet, les sommets de la liste sont accessibles, et
+tous les sous-graphes induits par les sommets accessibles par les sommets de la
+liste sont acycliques. Si $c$ est un cycle de $G$, alors il existe un sommet de
+la liste qui est accessible depuis lui-même, donnant une contradiction.
+Enfin, on en conclut que $G$ est acyclique.
+
+## Tri topologique
+Soit $G = (S,A)$ un DAG, on appelle tri topologique de $G$ une liste ordonnée
+des éléments de $S$ telle que $\forall u,v \in S$, si $u \to^{\ast} v$, alors
+$u$ est avant $v$ dans cette liste.
+
+Il permet ainsi, dans un graphe de dépendance entre plusieurs actions, de
+trouver un ordre de réalisation de ces actions possible.
+
+__Preuve :__ On prouve que l'algorithme de tri topologique d'un graphe DAG depuis un
+sommet renvoie un tri topologique du sous-graphe induit par les sommets
+accessibles depuis le sommet $s$.\
+L'algorithme effectue une DFS et met les sommets dans un liste en ordre préfixe.
+Soit $u,v \in S$, $u \to v$. Il suffit de montrer que le premier appel à la
+fonction auxiliaire, qui visite $u$, appelle récursivement sur ses successeurs,
+et ajoute $u$ au début de l'ordre, se termine bien après le premier appel sur
+$v$.\
+Si c'est le premier appel de la fonction auxiliaire, il est au-dessus de la pile
+et se finit en premier. Sinon, le 1er appel est déjà terminé, ou bien l'appel
+est toujours sur la pile.\
+Dans tous les cas, $v$ a été ajouté en tête de l'ordre avant que $u$ ne le
+soit, donc $u$ précèdera bien $v$.
+
+__Corollaire :__ Si on considère $s_0 \not\in S$, et $G' = (S \cup \{s_0\}, A \cup \{(s_0,s)\}, s \in S)$,
+alors $G'$ est un DAG, tous ses sommets sont accessibles depuis $s_0$, et un tri
+topologique de $G'$ est $s_0$ suivi d'un tri topologique de $G$.
+
+__Remarque :__ Le tri topologique par DFS de $G'$ a une complexité
+$\Theta(m + n)$, car c'est le nombre d'arcs de $G'$ (modèle de listes
+d'adjacences). Dans le modèle des listes ...
