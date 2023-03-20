@@ -82,4 +82,59 @@ donc $f$ est convexe.
 
 __Preuve :__ $1 \Rightarrow 2$ Soient $x < y$, pour tout $t \in ]x,y[$, les
 pentes croissantes donnent immédiatement $f'(x) \leq \frac{f(y) - f(x)}{y - x} \leq f'(y)$,
-donc $f'$ est croissante.
+donc $f'$ est croissante.\
+$2 \Rightarrow 3$ Soit $a \in I$, on pose
+$\begin{aligned} \varphi: I &\to \mathbb{R}^{\ast} \\ t &\mapsto f(t) - (f(a) + (t - a) f'(a)) .\end{aligned}$.
+Par somme, $\varphi$ est dérivable sur $I$ et $\varphi'(t) = f'(t) - f'(a)$, or
+$f'$ est croissante par hypothèse, donc $\varphi$ possède un minimum sur $I$,
+atteint en $a$ et $\varphi(a) = 0$, donc $\varphi \geq 0$ sur $I$.\
+$3 \Rightarrow 1$ On veut montrer que $f$ est convexe sur $I$. Soient $x,y \in I$
+et $\lambda \in [0,1]$, on pose $a = (1 - \lambda) x + \lambda y$. Par
+hypothèse, la courbe de $f$ est au-dessus de sa tangente en $a$,
+donc pour tout $t \in I$, $f(t) \geq f(a) \geq f(a) + (t - a) f'(a)$,
+en particulier pour $t = x$ et $t = y$, donnant
+$f(x) \geq f(a) + (x - a) f'(a)$ et $f(y) \geq f(a) (y - a) f'(a)$,
+donc $(1 - \lambda) f(x) + \lambda f(y) \geq f(a) + (1 - \lambda) (x - a) f'(a) + \lambda (y - a) f'(a)$.
+Ainsi, $(1 - \lambda) f(x) + \lambda f(y) \geq f(a) + f'(a)$,
+et comme $(1 - \lambda) x + \lambda y = a$,
+on a finalement $f((1 - \lambda) x + \lambda y) \leq (1 - \lambda) f(x) + \lambda f(y)$,
+donc $f$ est convexe sur $I$.
+
+> Pour $f$ concave sur $I$, $-f$ est convexe sur $I$.
+
+> Caractérisation des fonctions convexes deux fois dérivables :
+> Soit $f : I \to \mathbb{R}$ deux fois dérivable,
+> $f$ est convexe si et seulement si $f''$ est positive.
+
+__Preuve :__ Comme $f'$ est dérivable sur $I$, $f'$ est croissante
+si et seulement si $f''$ est positive.
+
+> Soit $f : I \to \mathbb{R}$ et $a \in I$, $a$ est un point d'inflexion si la
+> fonction $f$ change de convexité/concavité au voisinage de ce point $a$.
+
+Pour une fonction $f$ deux fois dérivable, on caractérise ce point d'inflexion
+par un double dérivée nulle et un changement de signe au voisinage du point.
+
+> Inégalité de Jensen : soit $f : I \to \mathbb{R}$ convexe,
+> $(x_i)_{[\![1,n]\!]} \in I^n$, et $(\lambda_i)_{[\![1,n]\!]} \in [0,1]^n$
+> avec $\sum\limits_{i = 1}^{n} \lambda_i = 1$,
+> $f(\sum\limits_{i = 1}^{n} \lambda_i x_i) \leq \sum\limits_{i = 1}^{n} \lambda_i f(x_i)$.
+
+__Preuve :__ On prouve par récurrence sur $n$ le théorème.
+Pour $n = 1$, $x \in I, \lambda_1 = 1$, donc $f(1x) \leq 1 f(x)$.
+Pour $n = 2$, on développe le théorème en l'expression de la convexité.
+Pour tout $n \geq 2$ tel que l'hypothèse soit vraie, soit $(x_i)_{[\![1,n+1]\!]} \in I^{n+1}$,
+et $(\lambda_i)_{[\![1,n+1]\!]} \in [0,1]^{n+1}$,
+avec $\sum\limits_{i = 1}^{n + 1} \lambda_i = 1$, donc $\sum\limits_{i = 1}^{n} \lambda_i + \lambda_{n+1} = 1$.
+Si la somme est nulle, alors $\lambda_{n+1} = 1$, donc l'inégalité est vraie (on
+se ramène au premier cas).
+Si $\sum\limits_{i = 1}^{n} \lambda_i \neq 0$, on pose $s = \sum\limits_{i = 1}^{n} \lambda_i$,
+et $s + \lambda_{n+1} = 1$.\
+$f(\sum\limits_{i = 1}^{n + 1} \lambda_i x_i) = f(\sum\limits_{i = 1}^{n} \lambda_i x_i + \lambda_{n+1} x_{n+1})$\
+$= f(s \times \sum\limits_{i = 1}^{n} \frac{\lambda_i}{s} x_i + \lambda_{n+1} x_{n+1})$\
+$\leq s f(s \times \sum\limits_{i = 1}^{n} \frac{\lambda_i}{s} x_i) + \lambda_{n+1} x_{n+1}$\
+$\lambda_i' = \frac{\lambda_i}{s}$, on a bien $\sum\limits_{i = 1}^{n} \lambda_i'$
+$= \frac{\sum\limits_{i = 1}^{n} \lambda_i}{s} = 1$. On peut alors appliquer par
+hypothèse de récurrence $f(\sum\limits_{i = 1}^{n} \lambda_i' x_i) \leq \sum\limits_{i = 1}^{n} \lambda_i' f(x_i)$,
+donnant finalement $f(\sum\limits_{i = 1}^{n+1} \lambda_i x_i) \leq s \times \sum\limits_{i = 1}^{n} \frac{\lambda_i}{s} f(x_i) + \lambda_{n + 1} f(x_{n+1})$
+$\leq \sum\limits_{i = 1}^{n + 1} \lambda_i f(x_i)$.
