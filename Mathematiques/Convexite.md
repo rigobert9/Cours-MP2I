@@ -138,3 +138,22 @@ $= \frac{\sum\limits_{i = 1}^{n} \lambda_i}{s} = 1$. On peut alors appliquer par
 hypothèse de récurrence $f(\sum\limits_{i = 1}^{n} \lambda_i' x_i) \leq \sum\limits_{i = 1}^{n} \lambda_i' f(x_i)$,
 donnant finalement $f(\sum\limits_{i = 1}^{n+1} \lambda_i x_i) \leq s \times \sum\limits_{i = 1}^{n} \frac{\lambda_i}{s} f(x_i) + \lambda_{n + 1} f(x_{n+1})$
 $\leq \sum\limits_{i = 1}^{n + 1} \lambda_i f(x_i)$.
+
+##### Exercice : comparaison de moyennes
+On cherche à prouver que pour tout $n \in \mathbb{N}^{\ast}$
+et $(x_i)_{[\![1;n]\!]} \in (\mathbb{R}_{+}^{\ast})^n$,
+$\frac{n}{\sum\limits_{i = 1}^{n} \frac{1}{x_i}} \leq \sqrt[n]{\prod\limits_{i = 1}^{n} x_i} \leq \frac{1}{n} \sum\limits_{i = 1}^{n} x_i$
+(moyenne harmonique, moyenne géométrique et moyenne arithmétique).
+
+Pour la seconde inégalité, on voit que
+$\frac{1}{n} \sum\limits_{i = 1}^{n} x_i = \sum\limits_{i = 1}^{n} \frac{1}{n} x_i$
+(candidat qui marche pour Jensen). Or, $\ln(\sqrt[n]{\prod\limits_{i = 1}^{n} x_i})$
+$= \frac{1}{n} \sum\limits_{i = 1}^{n} \ln(x_i)$, or $\ln$ est concave,
+donnant par Jensen $\ln(\sum\limits_{i = 1}^{n} \frac{1}{n} x_i) \geq \sum\limits_{i = 1}^{n} \frac{1}{n} \ln(x_i)$,
+ce qui nous donne l'inégalité par composition par l'exponentielle.
+
+Pour la première, on veut prouver $\frac{1}{n} \sum\limits_{i = 1}^{n} \frac{1}{x_i} \geq (\prod\limits_{i = 1}^{n} x_i)^{\frac{-1}{n}}$\
+$\Leftrightarrow \ln(\sum\limits_{i = 1}^{n} \frac{1}{x_i} \times \frac{1}{n}) \geq \frac{-1}{n} \sum\limits_{i = 1}^{n} \ln(x_i)$\
+$\Leftrightarrow \ln(\sum\limits_{i = 1}^{n} \frac{1}{n x_i}) \geq \sum\limits_{i = 1}^{n} \frac{1}{n} \ln(\frac{1}{x_i})$\
+Ce qui donne une inégalité de Jensen avec $\ln$ concave, pour $\lambda_i = \frac{1}{n}$
+et $x_i' = \frac{1}{x_i}$.
