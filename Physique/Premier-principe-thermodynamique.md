@@ -285,4 +285,23 @@ On prend pour système $500 g$ d'aluminium à $T_\text{al} = 5°C$, dans
 $m_\text{eau} = 200 g$ d'eau à $T_\text{eau} = 20°C$. À l'équilibre,
 $T_F = 15°C$. On a $c_\text{eau} = 4,2 kJ \cdot K^{-1} \cdot kg^{-1}$.
 On a $\Delta H = 0$, et par extensivité,
-$\Delta H_\text{eau} + H_\text{al} = 0$.
+$\Delta H_\text{eau} + \Delta H_\text{al} = 0$.
+Ainsi, comme on a $\left\{\begin{matrix} \Delta H_\text{eau} = m_\text{eau} C_\text{eau} (T_F - T_\text{eau}) \\ \Delta H_\text{al} = m_\text{al} C_\text{al} (T_F - T_\text{al}) \end{matrix}\right.$,
+on obtient $m_\text{eau} C_\text{eau} (T_F - T_\text{eau}) + m_\text{Al} C_\text{Al} (T_F - T_\text{Al}) = 0$
+$\Leftrightarrow C_\text{al} = C_\text{eau} \frac{m_\text{eau}}{m_\text{Al}} \frac{T_\text{eau} - T_\ell}{T_F - T_\text{al}}$.
+
+Ainsi, $C_\text{al} \approx 840 J \cdot K^{-1} \cdot kg^{-1}$, ce qui est une
+valeur inférieure à celle attendue de $900 J \cdot K^{-1} \cdot kg^{-1}$. Il
+faut prendre en compte la capacité thermique du calorimètre.
+
+$m_\text{eau} C_\text{eau} (T_F - T_\text{eau}) + m_\text{Al} C_\text{Al} (T_F - T_\text{Al})$
+$+ C_\text{calo} (T_F - T_\text{eau}) = 0$
+
+La masse en eau de calorimètre est définie $\mu = \frac{C_\text{calo}}{C_\text{eau}}$.
+
+$C_\text{Al} = C_\text{eau} \frac{m_\text{eau} + \mu}{m_\text{Al}} \frac{T_\text{eau} - T_F}{T_F - T_\text{Al}}$.
+
+#### Second exemple : fonte d'un glaçon
+On suppose qu'à l'état final tout est liquide, et donc
+$\Delta H = m_1 C_\text{eau} (T_F - T_1) + m_2 C_g (T_0 - T_2) + m_2 L_\text{fusion} + m_2 C_\text{eau} (T_F - T_0)$,
+ce qui nous permet de calculer $T_F$.
