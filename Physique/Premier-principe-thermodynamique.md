@@ -117,7 +117,7 @@ si le cycle est parcouru dans le sens horaire le cycle est moteur ($W < 0$),
 sinon le cycle est récepteur ($W > 0$).
 
 #### Transformation isotherme d'un gaz
-Pour un gaz parfait, $PV = n R Ti# \Leftrightarrow P = \frac{n R T}{V}$,
+Pour un gaz parfait, $PV = n R T \Leftrightarrow P = \frac{n R T}{V}$,
 donnant $W = - \int\limits_{\text{État initial}}^{\text{État final}} n R T \frac{d V}{V}$.
 Puisque la température est constante, on a finalement la formule :
 
@@ -129,3 +129,160 @@ une agitation, et on ne pourra donc pas déterminer leur travail.
 
 On pose $Q$ la chaleur (la dissipation d'énergie, qu'on ne peut pas vraiment
 mesurer).
+
+- La conduction est un transfert thermique de proche en proche dans un milieu matériel.
+- La convexion est un transfert thermique de proche en proche avec un déplacement
+  de matière au sein d'un fluide (par exemple l'air ou l'eau chaud qui remonte
+  vers le haut).
+- Le rayonnement est un transfert thermique à distance qui se fait à l'aide de
+  la propagation d'un rayonnement électromagnétique (peut se produire dans le
+  vide).
+
+### Premier principe de la thermodynamique
+Cet énoncé est important et doit être connu par cœur.
+
+> Dans un système fermé, il existe une fonction d'état extensive appelée énergie
+> interne $\Phi$ telle que sa variation au cours d'une transformation est égale à
+> la somme du travail et de la chaleur échangée avec le milieu extérieur.
+
+On pose ainsi $\Delta U = W + Q$, ou sous forme différentielle $d U = \delta W + \delta Q$.
+
+## Exemples et applications
+### Transformation isochore
+$\delta W = - P_\text{ext} dt$ et $V$ est constant, donc
+$W = 0$. D'après le premier principe de la thermodynamique,
+$d U = \delta W  + \delta Q \Rightarrow d U = 0 + \delta Q$,
+soit $d U = (\frac{\partial U}{\partial T})_V d T + (\frac{\partial U}{\partial V})_T d V$
+$\Leftrightarrow d U = (\frac{\partial U}{\partial T})_V d T + 0$,
+donc $d U = C_V dT$.
+
+> Pour une transformation isochore, $\delta Q = C_V dT$,
+> et si $C_V$ est constant comme c'est souvent le cas,
+> $Q = C_V \Delta T$.
+
+### Détente de Joule-Gay-Lussac
+Soit deux fioles de même volume, l'une avec un
+gaz à la pression $P_1$ et température $T_1$, l'autre vide,
+reliées par un robinet, qui commence fermé. Après avoir ouvert le robinet,
+l'état final correspond à des températures et pressions égales entre les deux fioles.
+On considère que l'exemple est calorifugé et n'échange donc pas de température
+avec l'extérieur.
+
+On prend pour système le {gaz à l'intérieur des 2 réservoirs}. Ce système est
+isolé et n'échange donc pas de chaleur ou de matière. Les parois sont aussi
+indéformables, rendant le système isobare, donc $\Delta U = 0$, c'est à dire
+qu'elle est identique entre l'état initial et l'état final.
+
+> La détente de Joule-Gay-Lussac est une détente qui concerne l'énergie interne.
+
+> Un gaz dont la température ne varie pas au cours d'une détente de Joule-Gay-Lussac
+> vérifie la première loi de Joule.
+
+### Transformation adiabatique quasistatique et loi de Laplace
+Soit un système {n moles de gaz parfait}. On a $\gamma$ le coefficient adiabatique
+(aussi appelé coefficient de Laplace). D'après le premier principe de la
+thermodynamique, $d U = \delta W + \delta Q$. Puisque la transformation est
+adiabatique, $\delta Q = 0$. La transformation étant quasistatique, on est
+toujours à l'équilibre mécanique, nous permettant de calculer le travail
+$\delta W = - P_\text{ext} d V$. Puisque c'est un gaz parfait, $PV = n RT$,
+donc $\delta W = - P d V = - \frac{nRT}{V} dV$. D'après la loi de Joule,
+$d U = C_V dT = \frac{n R}{\gamma - 1} d T$, donc
+$\frac{n R}{\gamma - 1} dT = - n RT \frac{d V}{V}$
+$\Leftrightarrow \frac{d T}{T} + (\gamma - 1) \frac{d V}{V} = 0$,
+donc $\ln(T) + \ln(V^{\gamma - 1})$ est une constante,
+donc $\ln(T V ^{\gamma - 1})$ est constant,
+et on $T V^{\gamma - 1} = C_1$ est une constante.
+
+En utilisant $PV = n R T$, on a $T^{\gamma} P^{1 - \gamma} = C_2$
+et $P V^{\gamma} = C_3$ des constantes.
+
+> Pour un gaz parfait qui subit une transformation quasistatique et adiabatique,
+> les trois produits $PV^{\gamma}$, $TV^{\gamma - 1}$ et $T^{\gamma} P^{1 - \gamma}$
+> sont des constantes.
+
+### Thermostat
+#### Définition
+> Un thermostat est un système dont la température reste constante quelque soit
+> les échanges thermiques qu'il réalise.
+
+Soit un $\Sigma_1$ le système d'une masse d'eau liquide, de capacité thermique $C_1$, et de température $T_1$.
+$\Sigma_2$ est un solide PCII, de capacité thermique $C_2$ et de température $T_2$.
+
+À l'équilibre thermique, on a une température finale $T_F$. On considère que le
+système {$\Sigma_1$ et $\Sigma_2$} est isolé. D'après le premier principe de la
+thermodynamique, $\Delta U = 0$. Par extensivité, $\Delta U_1 + \Delta U_2 = 0$,
+et comme $\Delta U_1 = C_1 (T_F - T_1)$ et $\Delta U_2 = C_2 (T_F - T_2)$,
+on a $C_1 (T_F - T_1) + C_2 (T_F - T_2) = 0$
+$\Leftrightarrow T_F - T_1 = \frac{C_2}{C_1} (T_2 - T_F)$.
+Ainsi, on a $T_F \approx T_1$ si $C_2 \ll C_1$.
+
+> Un système agit comme un thermostat si sa capacité thermique est grande devant
+> le système avec lequel il est en contact thermique.
+
+#### Loi de Newton
+> Loi de Newton (expérimentale) : $P = - h S (T - T_\text{ext})$
+> avec $P$ la puissance thermique en $W$, $h$ le coefficient de transfert
+> thermique déterminé expérimentalement en $W \cdot m^{-2} \cdot K^{-1}$, $S$ la surface d'échange, et $T$ la
+> température du système.
+
+On se place dans le système d'une tasse de café.
+D'après le premier principe de la thermodynamique, $d U = \delta W + \delta Q$.
+Puisque le volume est constant, $\delta W = 0$, donc $dU = \delta Q$,
+or $d U  = C dT$ et $\delta Q = P dt$,
+donc $C dT = - hS (T - T_\text{atm}) dt$,
+donc $\frac{d T(t)}{dt} + \frac{h S}{C} T(t) = \frac{h S}{C} T_\text{atm}$.
+On pose $\tau = \frac{C}{h S}$. Pour $t$ qui tend vers $+\infty$, $T(t) = T_\text{atm}$,
+et $T(t = 0) = T_0$ (la température de départ).
+Ainsi, $T(t) = A e^{\frac{-t}{\tau}} + T_\text{atm}$,
+donnant finalement par application des conditions initiales
+$T(t) = (T_0 - T_\text{atm}) e^{\frac{-t}{\tau}} + T_\text{atm}$.
+
+## Bilans d'enthalpie
+### Transformation monobare
+Puisque l'enthalpie est $H = U + PV$,
+$\Delta H = \Delta U + \Delta (PV)$. Si la transformation est monobare,
+$W = -P_\text{ext} \Delta V$. Dans un système à l'équilibre mécanique
+à l'état initial et final, $P_\text{État initial} = P_\text{État final} = P_\text{ext}$,
+donc $\Delta H = Q - P_\text{ext} \Delta V + P_\text{ext} \Delta V = Q$.
+
+Pour une transformation monobare avec équilibre mécanique aux états initiaux et
+finaux, $\Delta H = Q$.
+
+### Application aux transitions de phase
+Les transitions de phase correspondent aux changements d'état entre les états
+liquides, solides, et gazeux.
+
+> Soient deux phases $\alpha$ et $\beta$ d'un même corps pur, l'enthalpie massique
+> de la transformation $\alpha \to \beta$ à la température $T$,
+> $L_{\alpha \to \beta}(T) = h_\beta(T) - h_\alpha(T)$,
+> ou $h_i$ est l'enthalpie massique du corps pur dans la phase $i$.
+
+On a toujours $L_{\alpha \to \beta} = - L_{\beta \to \alpha}$.
+
+Par exemple, on a pour l'eau à $0°C$, $L_{\text{solide} \to \text{liquide}} = 3,3 \times 10^2 kJ \cdot kg^{-1}$.
+
+> Les transitions de phase sont très énergétiques (au moins de l'ordre du $kJ$).
+
+### Calorimétrie
+#### Principe
+> La calorimétrie est l'art de mesurer les transferts thermiques entre deux
+> systèmes.
+
+> Une enceinte calorifugée est une enceinte isolée de manière à limiter les
+> échanges thermiques avec l'extérieur.
+
+On étudie un agitateur et un thermomètre dans le vide, à l'intérieur d'un
+revêtement métallique.
+
+> La transformation subie par un système placé dans un calorimètre est monobare,
+> en équilibre mécanique aux états initiaux et finaux, et
+> adiabatique.
+
+Ainsi, on a $\Delta H = 0$.
+
+#### Premier exemple
+On prend pour système $500 g$ d'aluminium à $T_\text{al} = 5°C$, dans
+$m_\text{eau} = 200 g$ d'eau à $T_\text{eau} = 20°C$. À l'équilibre,
+$T_F = 15°C$. On a $c_\text{eau} = 4,2 kJ \cdot K^{-1} \cdot kg^{-1}$.
+On a $\Delta H = 0$, et par extensivité,
+$\Delta H_\text{eau} + H_\text{al} = 0$.
