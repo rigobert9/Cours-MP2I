@@ -133,3 +133,27 @@ $\sum\limits_{j = 1}^{n-i+1} x_j v_j \geq v_{n-i}$, ce qui est contradictoire.\
 On a ainsi prouvé l'hérédité, donc en particulier toutes les quantités de pièces
 de la solution gloutonne sont égales à celles de la solution optimale : les deux
 solutions sont identiques.
+
+__Lemme :__ Pour des systèmes canoniques, $\forall i \in [\![1;n]\!]$,
+si $(x_i)_{[\![1;n]\!]}$ est un rendu optimal pour une somme $s$ et que
+$x_i = x_{i + 1} =\ldots = x_n = 0$, alors $s = \sum\limits_{j = 1}^{i - 1} x_j v_j < v_i$.
+
+__Preuve :__ On effectue la preuve pour la système d'euros. Soit $(x_i)_{[\![1;14]\!]}$
+une solution optimale pour un $x$ quelconque : 
+- Si $x_3 \geq 2$ (au moins $2$
+  pièces de 5 centimes), alors $(x_1;x_2;x_3 - 2; x_4 + 1;\ldots)$ est une
+  meilleure solution. Ainsi, $x_3 \leq 1$ puisque la solution est optimale.
+  Le raisonnement est le même pour les pièces de 50 centimes, de 5 euros, de 50
+  euros...
+- Si $x_1 + x_2 \geq 3$ (on a au moins 3 pièces de 1 ou 2 centimes), alors on a
+  une meilleure solution possible en redéplaçant les pièces dans tous les cas
+  qui donne $x_1 + x_2 \leq 2$. Le même raisonnement s'applique pour les pièces
+  et billets de 10 et 20 centimes, 1 et 2 euros, et 10 et 20 euros.
+- Pour les mêmes raisons, on ne peut pas avoir plus d'un billet de 100 euros.
+
+Par conséquent, pour $i = 14$, si la solution est optimale et ne contient pas de
+billet de 200 euros, alors $s = \sum\limits_{j = 1}^{13} x_j v_j \leq 19 999 < 20 000 = v_{14}$.
+
+Pour les dollars, on peut faire de même en remarquant qu'on ne peut pas avoir
+plus d'une fois 5 cents et 50 cents, et plus de 3 fois 10 et 20, plus de 4 fois
+des quarters, plus de 5 pièces et billets de 1.
