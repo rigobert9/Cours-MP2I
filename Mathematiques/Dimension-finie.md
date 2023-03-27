@@ -69,7 +69,7 @@ selon cette base est unique.
 Si on prend chacun des éléments de la base, on peut aussi l'interpréter comme
 $\forall x \in E,\exists! (\lambda_i)_{i \in I} \in \mathbb{K}^{\mathbb{N}}$
 presque nulle telle que $x = \sum\limits_{i \in I} \lambda_i e_i$,
-ou encore $\bigoplus_\limits_{i \in I} \text{Vect}(e_i) = E$.
+ou encore $\bigoplus\limits_{i \in I} \text{Vect}(e_i) = E$.
 
 ### Liens avec les sommes d'espaces vectoriels
 > Soit $F,G$ des SEV de $E$, si $\mathcal{F}$ est génératrice de
@@ -137,7 +137,7 @@ Ainsi, il existe une partie $I_0$ telle que
 $J \subset I_0 \subset [\![1;n]\!]$ avec
 $|I_0| = r$ et $\mathcal{L}' = (e_i)_{i \in I_0}$ est libre.
 On cherche à montrer que $\mathcal{L}'$ est génératrice de $E$,
-or si $i \in [\![1;n]\!]$, pour $ \in I_0$, $e_i \in \mathcal{L}'$,
+or si $i \in [\![1;n]\!]$, pour $i \in I_0$, $e_i \in \mathcal{L}'$,
 et pour $i \not\in I_0$, il est absurde que $e_i \not\in \text{Vect}(\mathcal{L}')$,
 car sinon $\mathcal{L}' \cup e_i$ serait une famille libre, contredisant la
 maximalité de $\mathcal{L}'$.\
@@ -216,3 +216,67 @@ incomplète, on peut en faire une base de taille $n$, qui est elle-même.
 Si $\mathcal{F}$ est génératrice, par théorème de la base extraite, on en
 extrait une base, qui est de taille $n$ et qui est donc $\mathcal{F}$.
 
+### Sous-espaces vectoriels et dimension
+#### Produit d'espaces vectoriels
+> Soient $E,F$ deux $\mathbb{K}$-EV de dimension finie, alors
+> $E \times F$ est un $\mathbb{K}$-EV ed dimension finie et
+> $\text{dim}(E \times F) = \text{dim}(E) + \text{dim}(F)$.
+
+__Preuve :__ Soient $\left\{\begin{matrix} n = \text{dim}(E) \\ p = \text{dim}(F) \end{matrix}\right.$,
+on prend $(e_i)_{[\![1;n]\!]}$ une base de $e$ et $(f_i)_{[\![1;p]\!]}$ une base
+de $F$. On pose $B = \{(e_i,0_F)_{1 \leq i \leq n}\}$
+$\cup \{(0_E,f_j)_{1 \leq j \leq p}\}$.
+$B$ contient $n + p$ vecteurs de $E \times F$. On prouve ensuite que $B$ est
+génératrice de $E \times F$ et est libre, donc est une base de $E \times F$.
+
+On peut généraliser ce produit au produit de nombreux espaces vectoriels, et la
+dimension du produit sera alors la somme des dimensions des espaces vectoriels
+donnés. De même, les $n$-uplets d'un espace vectoriel $E$ sont de dimension
+$p \times \text{dim}(E)$.
+
+#### Sous-espace vectoriel de dimension finie
+> Soit $E$ de dimension finie, tout SEV $F$ de $E$ est un SEV de dimension finie
+> et $\text{dim}(F) \leq \text{dim}(E)$.
+
+__Preuve :__ Si $F = \{0_E\}$, alors $F$ est de dimension finie et $\text{dim}(F) = 0$,
+sinon $\exists e_1 \in F \mid e_1 \neq 0_E$, et donc $\text{Vect}(e_1) \subset F$
+et $(e_1)$ est une famille libre. Si $(e_1)$ est génératrice de $F$, alors c'est
+un base de $F$ et $\text{dim}(F) = 1$, sinon, on ajoute des vecteurs jusqu'à
+avoir une base de $F$, or toute famille libre de $E$ (donc de $F$) est plus
+petite que la base, donc $\text{dim}(F) \leq \text{dim}(E)$.
+
+> Soient $F,G$ deux SEV de $E$ avec $p = \text{dim}(F)$ et $q = \text{dim}(G)$
+> de dimension finie, si $F \subset G$ et $p = q$, alors $F = G$.
+
+__Preuve :__ On prend $(e_i)_{[\![1;p]\!]}$ une base de $F$,
+or $F \subset G$, donc $\text{Vect}(e_i) \subset G$, et $(e_i)$
+y est libre, donc y est une base, donc y est génératrice dans $F$
+comme dans $G$.
+
+#### Somme d'espaces vectoriels
+> Formule de Grassman : Soient $F$ et $G$ deux SEV de dimension finie d'un
+> $\mathbb{K}$-EV $E$, alors $\text{dim}(F + G) = \text{dim}(F) + \text{dim}(G) - \text{dim}(F \cap G)$.
+
+__Preuve :__ $F \cap G$ est un SEV de $F$ et de $G$. Soit $r = \text{dim}(F \cap G)$,
+$p = \text{dim}(F)$ et $q = \text{dim}(G)$. Par inclusion, $r \leq p$ et
+$r \leq q$. On prend $(e_i)_{[\![1;r]\!]}$ une base de $F \cap G$, par base
+incomplète, on construit une base de $F$ complétée par $(u_i)_{[\![r+1;p]\!]}$
+et une base de $G$ complétée par $(v_i)_{[\![r+1;q]\!]}$.
+On pose la base de l'union de ces deux bases, qui est une famille génératrice de
+$F + G$. On montre que cette famille est libre. Si tel est le cas, on aura bien
+$\text{dim}(F + G) = r + (p - r) + (q - r) = p + q - r$.
+
+Ainsi, $\text{dim}(F + G) \leq \text{dim}(F) + \text{dim}(G)$,
+avec le cas d'égalité quand $F \oplus G$ ou $F \cap G = \{0_E\}$.
+
+#### Caractérisation des supplémentaires
+> Soit $E$ un $\mathbb{K}$-EV de dimension finie et $F,G$ deux SEV de $E$,
+> $E = F \oplus G$ si et seulement si $E = F + G$ et $\text{dim}(E) = \text{dim}(F) + \text{dim}(G)$
+> si et seulement si $F \cap G = \{0_E\}$ et $\text{dim}(E) = \text{dim}(F) + \text{dim}(G)$.
+
+On peut souvent utiliser cette troisième proposition pour prouver la
+supplémentarité de $F$ et $G$.
+
+__Preuve :__ Directe du premier cas au deux autres.
+On peut prouver à partir de la seconde proposition la première avec la formule
+de Grassman.
