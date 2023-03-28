@@ -280,3 +280,69 @@ supplémentarité de $F$ et $G$.
 __Preuve :__ Directe du premier cas au deux autres.
 On peut prouver à partir de la seconde proposition la première avec la formule
 de Grassman.
+
+> Existence de supplémentaire : Soit $E$ un $\mathbb{K}$-EV de dimension finie et $F$ un
+> SEV de $E$, alors $F$ possède au moins un supplémentaire dans $E$.
+
+__Preuve :__ On prend une base de $F$, qui est une famille libre dans $E$. Par
+théorème de la base incomplète, on peut le compléter par la plus petite famille qui en fait
+une base de $E$. La famille qui complète, qui est libre, est génératrice
+d'un espace $G$, dans lequel elle est une base (car elle y est libre aussi).
+Ainsi, la somme des deux espaces est bien $E$, et $F \cap G = \{0_E\}$.
+
+Ainsi, on a toujours un espace supplémentaire de dimension $\text{dim}(E) - \text{dim}(F)$.
+
+> Caractérisation d'un hyperplan en dimension finie : Soit $E$ un $\mathbb{K}$-EV
+> de dimension finie $n = \text{dim}(E) \in \mathbb{N}^{\ast}$ et $H$ un SEV
+> de $E$, $H$ est un hyperplan de $E$ si et seulement si
+> $\text{dim}(H) = n - 1$.
+
+__Preuve :__ $\Rightarrow$ Si $H$ est un hyperplan de $E$, il existe une droite
+$D$ supplémentaire, nous donnant la bonne dimension par la formule de Grassman
+pour une somme directe.\
+$\Leftarrow$ On utilise le théorème précédent pour obtenir un espace
+supplémentaire à $H$, puis on obtient par Grassman que ce supplémentaire est de
+dimension $1$.
+
+### Notion de rang
+> Soit $\mathcal{F} = (e_i)_{[\![1;p]\!]}$ une famille de vecteurs de $E$,
+> le rang de la famille $\mathcal{F}$ est défini par
+> $\text{rg} = \text{dim}(\text{Vect}(\mathcal{F}))$.
+
+> Le rang d'une famille de $p$ vecteurs est majoré par $p$, et il y a égalité si
+> la famille est libre.
+
+> Soit une famille de vecteurs de $E$ un EV de dimension finie, le rang de cette
+> famille est majoré par la dimension de $E$, et il y a égalité si la famille
+> génère $E$.
+
+Ainsi, une famille de $p$ vecteurs est une base de $E$ si le rang de la famille
+est égal à $p$ et à la dimension de $E$.
+
+Le rang d'une famille est invariant par :
+- Le retrait ou l'ajout du vecteur nul dans la famille
+- L'échange de place de deux vecteurs dans la famille
+- La multiplication par un scalaire non nul
+- Ajout d'une combinaison linéaire de vecteurs de la famille à un autre
+
+## Application linéaire en dimension finie
+### Rang d'une application linéaire
+> Soit $f \in \mathcal{L}(E,F)$, on dit que $f$ est de rang fini si $\text{Im}(f)$
+> est de dimension finie. Le rang de $f$ est alors défini comme la dimension de
+> $\text{Im}(f)$.
+
+> Si $E$ est de dimension finie avec $(e_i)_{[\![1;p]\!]}$ une base de $E$,
+> alors $\text{Im}(f) = \text{Vect}(f(e_i)_i)$, donc le rang de $f$ est le rang
+> de $(f(e_i))_i$.
+
+###  Isomorphismes d'EV
+> Soit $E$ un $\mathbb{K}$-EV de dimension finie et $F$ un $\mathbb{K}$-EV,
+> $F$ est isomorphe à $E$ si et seulement si $\left\{\begin{matrix} F \text{ est de dimension finie} \\ \text{dim}(E) = \text{dim}(F) \end{matrix}\right.$.
+
+__Preuve :__ $\Rightarrow$ Si il existe $f \in \mathcal{L}(E,F)$ un isomorphisme entre $E$ et $F$.
+On prend $n = \text{dim}(E)$ et $(e_i)_{[\![1;n]\!]}$ une base de $E$.
+Comme $f$ est un isomorphisme, $(f(e_i))_i$ est une base de $F$,
+donc $F$ est de dimension finie et $\text{dim}(F) = n$.\
+$\Leftarrow$ Si $\text{dim}(E) = \text{dim}(F) = n$, en fixant une base pour
+chaque EV, il ne peut exister qu'une unique application linéaire de $E$ vers vers
+$F$ déterminée comme $f(e_i) = f_i$. Elle est bien définie et est bien un isomorphisme.
