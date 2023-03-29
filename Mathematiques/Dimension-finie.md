@@ -346,3 +346,143 @@ donc $F$ est de dimension finie et $\text{dim}(F) = n$.\
 $\Leftarrow$ Si $\text{dim}(E) = \text{dim}(F) = n$, en fixant une base pour
 chaque EV, il ne peut exister qu'une unique application linéaire de $E$ vers vers
 $F$ déterminée comme $f(e_i) = f_i$. Elle est bien définie et est bien un isomorphisme.
+
+### Théorème du rang
+> Soit $E$ un $\mathbb{K}$-EV de dimension finie et soit $f \in \mathcal{L}(E,F)$ et
+> $G$ un supplémentaire de $\text{Ker}(f)$ dans $E$, $f\restriction_{G}$
+> induit un isomorphisme entre $G$ et $\text{Im}(f)$.
+
+> Soit $f \in \mathcal{L}(E,F)$, $\text{dim}(E) = \text{rg}(f) + \text{dim}(\text{Ker}(f))$.
+
+__Preuve :__ On admet d'abord le premier théorème pour prouver le second.
+$E = G \oplus \text{Ker}(f)$, donc $\text{dim}(E) = \text{dim}(G) + \text{dim}(\text{Ker}(f))$.
+Or par le premier théorème, $\text{dim}(G) = \text{dim}(\text{Im}(f)) = \text{rg}(f)$.\
+On prouve ensuite le premier théorème. Comme $E$ est de dimension finie, $\text{Ker}(f)$
+possède bien un supplémentaire en $E$. Il existe $G$ SEV de $E$ tel que $E = G \oplus \text{Ker}(f)$.
+On pose $\tilde{f} = f\restriction_{G}$, et on prouve qu'il s'agit d'un
+isomorphisme. Puisque $G \cap \text{Ker}(f) = \{0_E\}$, $\text{Ker}(\tilde{f}) = \{0_E\}$,
+donc $\tilde{f}$ est injective.\
+Soit $y \in \text{Im}(f), \exists x \in E, y = f(x)$. Or, $\exists a \in \text{Ker}(f)$
+et $\exists b \in G$ tel que $x = a + b$. Ainsi, $y = f(x) = f(a) + f(b)$
+$= 0_E + f(b)$ dans la limitation. Ainsi, $y = f(b)$ avec $b \in G$.
+Ainsi, $\text{Im}(f) \subset \text{Im}(\tilde{f})$, donnant nécessairement
+$\text{Im}(f) = \text{Im}(\tilde{f})$ donc $\tilde{f}$ est surjective.
+$\tilde{f}$ est donc bijective et est donc un isomorphisme.
+
+### Injectivité et surjectivité en dimension finie
+> Soit $f \in \mathcal{L}(E,F)$ avec $E$ de dimension finie,
+> $f$ est injective si et seulement si $\text{Ker}(f) = \{0_E\}$
+> si et seulement si $\text{rg}(f) = \text{dim}(E)$.
+
+> Soit $f \in \mathcal{L}(E,F)$ avec $F$ de dimension finie,
+> $f$ est surjective si et seulement si $\text{Im}(f) = F$
+> si et seulement si $\text{rg}(f) = \text{dim}(F)$.
+
+Il suffit de prouver une unique inclusion dans les deux cas puisque
+$\{0_E\} \subset \text{Ker}(f)$ et $\text{Im}(f) \subset F$ dans tous les cas.
+
+> Soit $f \in \mathcal{L}(E,F)$ avec $\text{dim}(E) = \text{dim}(F)$,
+> $f$ est bijective si et seulement si $f$ est injective
+> si et seulement si $f$ est surjective.
+
+__Preuve :__ $f$ injective\
+$\Leftrightarrow \text{Ker}(f) = \{0_E\}$\
+$\Leftrightarrow \text{rg}(f) = \text{dim}(E)$\
+$\Leftrightarrow \text{rg}(f) = \text{dim}(F)$\
+$\Leftrightarrow \text{Im}(f) = F$\
+$\Leftrightarrow$  $f$ est surjective.
+
+Comme la condition est toujours satisfaite pour un endomorphisme, on peut
+toujours appliquer ce théorème aux endomorphismes.
+
+> Soit $E,F,G$ de dimension finie, $f \in \mathcal{L}(E,F)$ et $g \in \mathcal{L}(F,G)$,
+> on a :
+> - $\text{rg}(g \circ f) \leq \text{min}(\text{rg}(f), \text{rg}(g))$
+> - Si $f$ est surjective, $\text{rg}(g \circ f) = \text{rg}(g)$
+> - Si $g$ est injective, $\text{rg}(g \circ f) = \text{rg}(f)$
+
+__Preuve :__
+- $\text{rg}(g \circ f) = \text{dim}(\text{Im}(g \circ f))$, or $\text{Im}(g \circ f) \subset \text{Im}(g)$,
+  donc $\text{rg}(g \circ f) \leq \text{rg}(g)$. De plus, on a, soit
+  $g \circ f: E \to G$, en se restreignant à $\tilde{g}: \text{Im}(f) \to G$.
+  Ainsi, $\text{rg}(\tilde{g}) \leq \text{dim}(\text{Im}(f))$,
+  donc $\text{rg}(\tilde{g}) \leq \text{rg}(f)$.
+  Comme $\text{Im}(\tilde{g}) = \text{Im}(g \circ f)$,
+  $\text{rg}(\tilde{g}) = \text{rg}(g \circ f)$, donc $\text{rg}(g \circ f) \leq \text{rg}(f)$.
+- Si $f$ est surjective, $\text{Im}(f) = F$, donc $\text{Im}(g \circ f) = \text{Im}(g)$,
+  donc $\text{rg}(g \circ f) = \text{rg}(f)$.
+- Si $g$ est injective, alors sa restriction $\tilde{g}$ est injective, CQFD.
+
+Finalement, si $f \in \mathcal{L}(E,F)$ avec $E,F$ de dimension finie :
+- Si $f$ est injective, $\text{rg}(f) = \text{dim}(E) \leq \text{dim}(F)$
+- Si $f$ est surjective, $\text{rg}(f) = \text{dim}(F) \leq \text{dim}(E)$
+
+### Dimension de $\mathcal{L}(E,F)$
+> Si $E$ et $F$ sont de dimension finie, alors $\mathcal{L}(E,F)$
+> est de dimension finie et $\text{dim}(\mathcal{L}(E,F))$
+> $= \text{dim}(E) \times \text{dim}(F)$.
+
+__Preuve :__ On fixe $p = \text{dim}(E)$ et
+$B_E = (e_i)_{[\![1;p]\!]}$ une base de $E$.
+On pose $\begin{aligned} \varphi: \mathcal{L}(E,F) &\to F^p \\ f &\mapsto (f(e_i))_i .\end{aligned}$.
+On cherche à montrer que $\varphi$ est une isomorphisme :
+- $\varphi$ est linéaire
+- $\varphi$ est bijective car on peut toujours former une fonction unique dans
+  $\mathcal{L}(E,F)$ qui corresponde à la fonction finale (on peut donc inverser
+  la fonction).
+
+### Hyperplans et formes linéaires en dimension finie
+$E$ est de dimension finie $n$, $\mathcal{L}(E,\mathbb{K})$ l'ensemble des
+formes linéaires est de dimension $n$.
+
+> Soit $B = (e_i)_i$ une base de $E$, on définit pour $i \in [\![1;n]\!]$
+> $e_i^{\ast}$ la forme linéaire "$i$-ème coordonnée" définie par le projecteur
+> sur $\text{Vect}(e_i)$, tel que $\forall j \in [\![1;n]\!], e_i^{\ast}(e_j) = \delta_{i,j}$.
+
+> La famille des formes linéaires coordonnées $(e_i^{\ast})_{[\![1;n]\!]}$ est une
+> base de l'espace $\mathcal{L}(E,\mathbb{K})$.
+
+__Preuve :__ On sait que $\text{dim}(\mathcal{L}(E,\mathbb{K})) = n$, et on a $n$
+vecteurs dans la famille des formes linéaires coordonnées. On prouve simplement
+la liberté de cette famille pour montrer que c'est une base. On procède alors
+en évaluant en chacune des bases de $E$ les formes linéaires coordonnées,
+permettant de montrer qu'on ne peut obtenir la forme nulle qu'en faisant la
+somme de toutes ces fonctions avec des coefficients nuls.
+
+Ainsi, dans $\mathbb{K}^n$, les formes linéaires sont exactement des
+combinaisons linéaires des éléments du tuple, ou la multiplication d'une matrice
+ligne avec une matrice colonne.
+
+Soit $H$ un hyperplan de $\mathbb{K}^n$, c'est le noyau d'une forme linéaire non
+nulle (la formule qui définit le noyau correspond à une somme linéaire nulle,
+l'équation d'un hyperplan).
+
+> Soit $E$ de dimension finie $n$ et $H_1,\ldots,H_p$ des hyperplans de $E$,
+> $\text{dim}(\bigcap\limits_{i = 1}^P H_i) \geq n - p$.
+
+__Preuve :__ Soit $(\varphi_i)_{[\![1;p]\!]}$ des formes linéaire non nulles
+telles que $H_i = \text{Ker}(\varphi_i)$, on pose
+$\begin{aligned} \Psi: E &\to \mathbb{K}^p \\ x &\mapsto (\varphi_i(x))_i .\end{aligned}$.
+Comme chaque $\varphi_i$ est linéaire, $\Psi$ est linéaire. Par théorème du
+rang,
+$n = \text{dim}(E) = \text{rg}(\Psi) + \text{dim}(\text{Ker}(\Psi))$,
+or $\text{rg}(\Psi) \leq \text{dim}(\mathbb{K}^p) = p$,
+donc $\text{dim}(\text{Ker}(\Psi)) \geq n - p)$, or
+$\text{Ker}(\Psi) = \bigcap\limits_{i = 1}^p \text{Ker}(\varphi_i) = \bigcap\limits_{i = 1}^p H_i$.
+
+> Soit $E$ de dimension finie $n$ et $F$ un SEV de $E$ de dimension finie $n - p$,
+> $F$ est l'intersection de $p$ hyperplans de $E$.
+
+__Preuve :__ On pose $B_F = (e_i)_{[\![p + 1;n]\!]}$ une base de $F$, on la
+complète par un base de $E$ pour donner $B_E$, puis on en forme une base
+canonique de $\mathcal{L}(E,\mathbb{K})$ par les formes coordonnées.\
+Soit $x \in E$, dans $B_E$, $\exists! (\lambda_i)_i \in \mathbb{K}^n$
+$ \mid x = \sum\limits_{i = 1}^{n} \lambda_i e_i$.
+Ainsi, $x \in F$ si et seulement si
+$\forall i, \lambda_i = 0$, or $e_i^{\ast}(x) = \sum\limits_{j = 1}^{n} \lambda_j e_i^{\ast}(e_j)$
+$= \lambda_i$ (car $e_i^{\ast}(e_j) = \delta_{i,j}$).
+Ainsi, $x \in F$ si et seulement si $\forall i \in [\![1;p]\!]$,
+$e_i^{\ast}(x) = 0$, donc $\forall i, x \in \text{Ker}(e_i^{\ast})$,
+donc $x \in \bigcap\limits_{i = 1}^p \text{Ker}(e_i^{\ast})$,
+donc $F = \bigcap\limits_{i = 1}^p \text{Ker}(e_i^{\ast})$
+(et est donc une intersection d'hyperplans).
