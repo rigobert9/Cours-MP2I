@@ -156,3 +156,63 @@ soit $d S = \frac{1}{T} d U + \frac{P}{T} dV$.
 > La température thermodynamique est définie comme $\frac{1}{T} = (\frac{\partial S}{\partial U})_V$.
 
 > La pression thermodynamique est définie comme $\frac{P}{T} = (\frac{\partial S}{\partial V})_U$.
+
+#### Transformation isentropique
+Soit un gaz parfait qui subit une transformation isentropique (adiabatique et
+réversible), son entropie est constante.
+Ainsi, on a $0 = \Delta S = \frac{nR}{\gamma - 1} \ln(\frac{P_2}{P_1}) + \frac{\gamma n R}{\gamma - 1} \ln(\frac{V_{2}}{V_1})$
+$= \frac{nR}{\gamma - 1} \ln(\frac{P_2 V_2^{\gamma}}{P_1 V_1^{\gamma}})$.
+
+> Loi de Laplace : $PV^{\alpha}$ est une constante.
+
+### Détente de Joule-Gay-Lussac et interprétation statistique de l'entropie
+#### Bilan d'entropie
+Pour la détente de Joule-Gay-Lussac, $\Delta U = 0$. La détente étant
+adiabatique, $\delta Q = 0$ donc $S_e = 0$ et donc $S_c = \Delta S$.
+Pour un gaz parfait, on a donc $S_c = \frac{nR}{\gamma - 1} \ln(\frac{T_2}{T_1}) + n R \ln(\frac{V_2}{V_1})$.
+$\Delta U = 0$, donc $T_2 = T_1$ et $V_2 = 2 V_1$,
+donnant $S_c = n R \ln(P) > 0$.
+
+> La détente de Joule-Gay-Lussac est une transformation irréversible.
+
+#### Interprétation statistique de l'entropie
+Deux urnes avec $N$ particules identiques libres de se déplacer l'une dans
+l'autre.
+
+> On appelle micro-état une configuration particulière caractérisée par la donnée
+> de la position de chaque molécule.
+
+Si on met des particules dans deux compartiments, il existe ainsi $2^{N}$
+possibilités de positionnement pour ces particules.
+
+> On appelle macro-état une configuration macroscopique qui peut être réalisée par
+> plusieurs micro-états différents (on ne fait plus attention à quelle particule
+> est où).
+
+> Pour un macro-état $E$, on note $\Omega_E$ le nombre de micro-états pouvant le
+> réaliser : c'est le nombre de complexion.
+
+> Un système fluctuant entre différent micro-états vérifie que chaque état est
+> équiprobable au cours des fluctuations du système.
+
+> L'entropie statistique de Boltzmann $S$ est définie comme
+> $S = k_B \ln(\Omega_E)$.
+
+#### Retour à Joule-Gay-Lussac
+À l'état initial, toutes les particules sont dans le compartiment de gauche,
+donc $\Omega_\text{État initial} = 1$ et $S_\text{État initial} = 0$. À l'état
+final, il a autant de particules à gauche et à droite, donc
+$\Omega_\text{État final} = \binom{N}{\frac{N}{2}} = \frac{N!}{((\frac{N}{2})!)^2}$.
+Avec la formule de Stirling, on obtient $\ln(n!) = n \ln(n) - n + \frac{\ln(n)}{2} + O(1)$,
+donnant une entropie de $N \ln(2) + O(\ln(N))$.
+En passant à la limite, on a $S_\text{État final} = k_B N \ln(2) = n \mathcal{N}_A k_B \ln(2) = n R \ln(2)$.
+
+## Entropie et changement d'état
+> $\Delta S_{\alpha \to \beta}(T) = s_{\beta} - s_{\alpha}$, où
+> $s_i$ est l'entropie massique du corps pur dans la phase $i$.
+
+> $s_\text{solide} < s_\text{liquide} < s_\text{gaz}$
+
+Les différences pour la fusion et la vaporisation sont donc supérieures à $0$.
+
+> $s_{\alpha \to \beta}(T) = \frac{L_{\alpha \to \beta}(T)}{T}$
