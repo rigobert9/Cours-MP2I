@@ -90,3 +90,52 @@ $T_f(v)$ est donc uniquement définie pour tout $w \in \mathbb{B}^{\text{Var}(f)
 > note $f \equiv f'$ si $\forall v \in \mathbb{B}^{V}, [f]_v = [f']_v$.
 
 > $\equiv$ est une relation d'équivalence sur $\mathcal{F}$.
+
+$f \in \mathcal{F}$ est une tautologie si et seulement si $f \equiv \top$.
+$f \in \mathcal{F}$ si et seulement si $f \equiv \bot$.
+
+> Soient $f,f' \in \mathcal{F}$, si $\text{Var}(f) = \text{Var}(f')$
+> alors $T_f = T_{f'} \Leftrightarrow f = f'$.
+
+On a les axiomes suivants :
+- Les lois de Morgan
+- $X \to Y \equiv \neg X \lor Y$
+- $X \to Y \equiv \neg Y \to \neg X$
+- $(X \land Y) \to Z \equiv X \to (Y \to Z)$ (Curryfication)
+- $X \Leftrightarrow Y \equiv (X \to Y) \land (Y \to X)$
+- Tiers exclus
+- Non-contradiction
+- Double négation
+- Associativité et commutativité de $\land$ et $\lor$
+- Distributivité de $\land$ et $\lor$ l'un sur l'autre
+- $\top$ est neutre pour $\land$ et absorbant pour $\lor$
+- $\bot$ est neutre pour $\lor$ et absorbant pour $\land$
+
+> Soient $f,g \in \mathcal{F}, X \in V$, on appelle substitution de $X$ par $g$
+> dans $f$ la formule ou toutes les occurrences de $X$ sont remplacées par $g$
+> (on peut définir ce remplacement rigoureusement par récurrence).
+
+> Soient $f,g_1,g_2 \in \mathcal{F},X \in V$, si $g_1 \equiv g_2$, $f^{\{x \Leftarrow g_1\}} \equiv f^{\{x \Leftarrow g_2\}}$.
+
+> Soient $f_1,f_2,g \in \mathcal{F},X \in V$. Si $f_1 \equiv f_2$, alors $f_1^{x \Leftarrow g} \equiv f_2^{x \Leftarrow g}$.
+
+__Preuve :__ Se réalise par induction structurelle sur $f$.
+
+> On dit que $g$ est une conséquence sémantique du $f$ si $\forall v \in \mathbb{B}^{V}$ telle que $[f]_v = \top$
+> $[g]_v = \top$. On note $f \models g$, soit que tout modèle de $f$ est un modèle
+> de $g$.
+
+Cette définition peut aussi se généraliser à un ensemble, ce qui signifie que $g$ est vrai quand
+tout l'ensemble est vrai.
+
+> Soient $(f_i)_{[\![1;n]\!]}, g, h \in \mathcal{F}, X \in V$,
+> si $\{f_i\} \models g$ alors $\{f_i^{\{X \Leftarrow h\}}\} \models g^{\{X \Leftarrow h\}}$.
+
+### Formes normales
+> On appelle littéral une formule de la forme $X$ ou $\neg X$, pour $X \in V$.
+
+> On appelle forme normale négative (NNF) une formule qui contient que des
+> $\land$, $\lor$, et des littéraux (et parenthèses).
+
+On peut donc avoir un arbre binaire avec des noeuds étiquettés par $\land$
+et $\lor$, et dont les feuilles sont des littéraux.
