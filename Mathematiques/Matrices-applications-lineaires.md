@@ -48,3 +48,59 @@ __Preuve :__
   donc $\forall j \in [\![1;p]\!]$, $u(e_j) = \sum\limits_{i = 1}^{n} a_{ij} f_i$. En appliquant ceci
   à un vecteur $x \in E$, on a $y = u(x) \Leftrightarrow \forall i \in [\![1;n]\!], y_i = \sum\limits_{j = 1}^{p} a_{ij} x_j = L_i$,
   avec $L_i$ la ligne $i$ de la matrice $A$.
+
+### Isomorphisme entre $\mathcal{L}(E,F)$ et $\mathcal{M}_{n,p}(\mathbb{K})$
+Les dimensions correspondent bien, car $\text{dim}(\mathcal{L}(E,F)) = \text{dim}(E) \times \text{dim}(F)$.
+
+> Il existe un isomorphisme $\varphi$ de $\mathcal{L}(E,F)$ à $\mathcal{M}_{n,p}(\mathbb{K})$
+> (avec $\text{dim}(E) = n$ et $\text{dim}(F) = p$), qui correspond à la matrice
+> du morphisme.
+
+On vérifie facilement par les propriétés précédentes qu'il s'agit d'une
+bijection linéaire.
+
+> Soit $A \in \mathcal{M}_{n,p}(\mathbb{K})$, on définit $\begin{aligned} u: \mathbb{K}^p &\to \mathbb{K}^n \\ X &\mapsto AX .\end{aligned}$
+> en identifiant $\mathbb{K}^p$ avec $\mathcal{M}_{p,1}(\mathbb{K})$ et
+> $\mathbb{K}^n$ avec $\mathcal{M}_{n,1}(\mathbb{K})$, qui est l'application
+> linéaire canoniquement associée.
+
+### Composition et produit matriciel
+> $\text{Mat}_{\mathcal{B}_E,\mathcal{B}_F}(v \circ u) = \text{Mat}_{\mathcal{B}_G,\mathcal{B}_G}(v) \times \text{Mat}_{\mathcal{B}_E,\mathcal{B}_F}(u)$
+
+__Preuve :__ Soit $A = \text{Mat}_{\mathcal{B}_E, \mathcal{B}_F}(u)$ et $B = \text{Mat}_{\mathcal{B}_F,\mathcal{B}_G}(v)$.
+Soit $x \in E$ et $y \in G$, $y = v \circ u(x)$
+$\Leftrightarrow y = v(u(x))$
+$\Leftrightarrow \left\{\begin{matrix} y = v(z) \\ z = u(x) \end{matrix}\right. \Leftrightarrow Y = BZ, Z = AX \Leftrightarrow Y = (BA) X$.
+
+Ainsi, dans les endomorphismes, $\varphi$ est un isomorphisme de
+$\mathbb{K}$-algèbre.
+De plus, soit $A \in \mathcal{M}_n(\mathbb{K})$ et $u \in \mathcal{L}(\mathbb{K}^n)$ l'endomorphisme canoniquement associé à $A$ :
+- $A^2 = A \Leftrightarrow u^2 = u \Leftrightarrow$ $u$ est un projecteur de $\mathbb{K}^n$
+- $A^2 = I_n \Leftrightarrow u^2 = \text{id}_{\mathbb{K}^n} \Leftrightarrow$ $u$ est une symétrie de $\mathbb{K}^n$
+- Une matrice nilpotente correspond à un endomorphisme nilpotent
+
+### Inversibilité et bijectivité
+> Soit $u \in \mathcal{L}(E,F)$ avec $\text{dim}(E) = \text{dim}(F)$. On prend $\mathcal{B}_E$ et
+> $\mathcal{B}_F$ des bases de $E$ et $F$, $u$ est isomorphisme si et seulement si
+> $\text{Mat}_{\mathcal{B}_E,\mathcal{B}_F}(u)$ est inversible, et dans ce cas,
+> l'inverse de la matrice est associé à l'inverse de la fonction.
+
+__Preuve :__ $\Rightarrow$ Si $u$ est isomorphisme, alors $u^{-1} \in \mathcal{L}(F,E)$,
+et $u \circ u^{-1}$, donc la matrice associée à $u$ est bien inversible par
+celle associée à $u^{-1}$ par conservation des inverses par isomorphisme d'algèbres.\
+$\Leftarrow$ Idem.
+
+> __Corollaire :__ Soit $u \in \mathcal{L}(E)$ avec $n = \text{dim}(E)$,
+> $u \in \text{GL}(E) \Leftrightarrow \text{Mat}_{\mathcal{B}}(u) \in \text{GL}_n(\mathbb{K})$.
+
+Ainsi, $\varphi$ est bien un morphisme de groupes entre ces deux groupes
+linéaires (cela ne nous apporte rien mais nice).
+
+> Soit $A \in \mathcal{M}_n(\mathbb{K})$, $\text{Ker}(A) = \{X \in \mathcal{M}_{n,1} \mid AX = 0\}$
+> et $A$ est inversible si et seulement si $\text{Ker}(A) = \{0\}$
+> si et seulement si $A$ est intègre.
+
+__Preuve :__ On prend $u$ l'endomorphisme associé canoniquement à $A$,
+et son noyau correspond bien à la caractérisation. De plus, si ce noyau est
+réduit à la matrice nulle (donc au vecteur nul), $u$ est un endomorphisme
+injectif et donc bijectif.
