@@ -67,3 +67,49 @@ $= \frac{-1}{1 + \frac{Q_c}{Q_f}} \leq \frac{T_f}{T_c - T_f}$. Ainsi, $e \leq e_
 L'efficacité est ici $e = \frac{-Q_c}{W} = \frac{Q_c}{Q_c + Q_f} \leq \frac{T_c}{T_c - T_f}$.
 
 > Efficacité de Carnot pour les pompes à chaleur : $e_\text{max} = \frac{T_c}{T_c - T_f}$.
+
+### Diagramme de Raveau
+On représente sur un diagramme $Q_c$ en fonction de $Q_f$. Voir diagramme qui
+sépare :
+- la zone interdite par le second principe ($\frac{Q_c}{T_c} + \frac{Q_f}{T_f} \leq 0$)
+- les moteurs
+- les pompes à chaleur et réfrigérateurs
+- les machines consommant de
+  la chaleur de la source chaude et la délivrant à la source froide (même
+  action, en moins efficace, que rien du tout)
+- les machines consommant du travail en
+  cédant de la chaleur aux deux sources (inutile)
+
+### Cycle de Carnot
+Le cycle de Carnot est un cycle idéal permettant d'obtenir le rendement maximal.
+Il est composé des transformations :
+- AB : Compression isotherme réversible au contact de la source froide ($PV$
+  constant)
+- BC : Compression adiabatique réversible jusqu'à $T_c$ ($PV^{\gamma}$ constant)
+- CD : Détente isotherme au contact de la source chaude
+- DA : Détente adiabatique réversible jusqu'à $T_f$
+
+## Exemple de machines ditheremes
+### Moteur à explosion
+#### Principe
+Créé par Eugène Beau de Roches, le moteur à explosion ou à quatre temps suit
+un cycle principal et un cycle de renouvellement. Il admet (AB) des gaz et du
+carburant, qu'il compresse (BC), avant d'allumer la bougie, créant une rapide
+décompression du moteur (CE), puis laisse s'échapper le gaz après réaction (EA)
+avant de recommencer.
+
+#### Modélisation
+On suit le cycle avec les étapes :
+- $AB$ isobare de $V_\text{min}$ à $V_\text{max}$
+- $BC$ adiabatique réversible
+- $CD$ isochore
+- $DE$ adiabatique réversible
+- $BA$ isobare de $V_\text{max}$ à $V_\text{min}$
+
+D'après le premier principe de la thermodynamique, sur un cycle,
+$W + Q_f + Q_c = 0$. Le contact avec la source chaude (bougie) se fait au cours
+de l'étape $CD$ :  $Q_c = Q_{CD}$. Le contact avec la source froide (atmosphère)
+se fait au cours de l'étape $EB$ : $Q_f = Q_{EB}$.
+
+Le rendement du moteur est $\eta = \frac{-W}{Q_c}$,
+or $- W = Q_c + Q_f$, donc $\eta = 1 + \frac{Q_{ED}}{Q_{CD}}$.
