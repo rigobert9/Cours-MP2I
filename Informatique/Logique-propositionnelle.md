@@ -139,3 +139,35 @@ tout l'ensemble est vrai.
 
 On peut donc avoir un arbre binaire avec des noeuds étiquettés par $\land$
 et $\lor$, et dont les feuilles sont des littéraux.
+
+On peut prouver l'existence de cette forme par induction, et qu'elle est bien
+équivalente à la formule.
+
+En pratique, cela revient à remplacer les $\Rightarrow$ et $\Leftrightarrow$ par
+substitution, lois de Morgan et double négations.
+
+> On appelle forme normale conjonctive (CNF), une formule de la forme
+> $\bigwedge\limits_{i = 1}^{n} \bigvee\limits_{j = 1}^{m} \ell_{i,j}$
+> avec $\ell_{i,j}$ des littéraux.
+> On appelle forme normale disjonctive (DNF), une formule de la forme
+> $\bigvee\limits_{i = 1}^{n} \bigwedge\limits_{j = 1}^{m} \ell_{i,j}$
+> avec $\ell_{i,j}$ des littéraux.
+
+Soit $f \in \mathcal{F}$, on pose $\{X_i\}_{[\![1;n]\!]} = \text{Var}(f)$, et on
+assimile $\mathbb{B}^{\text{Var}(f)}$ à $\mathbb{B}^n$. On pose
+$\begin{aligned} \ell: V \times \mathbb{B} &\to \mathcal{F} \\ (X;b) &\mapsto \left\{\begin{matrix} X \text{ si } b = V \\ X \text{ si } b = F \end{matrix}\right. .\end{aligned}$.
+Alors $\varphi(f) = \bigvee\limits_{(b_i)_{[\![1;n]\!]} \in T_f^{-1}(\{V\})} \bigwedge\limits_{i = 1}^{n} \ell(X_i;b_i)$
+est une DNF équivalente à $f$.
+
+__Preuve :__ Pour construire $\varphi(f)$, on a pris chaque restriction à
+$\text{Var}(f)$ d'un modèle $v$ de $f$, et construit une clause conjonctive
+dont l'unique modèle restreint à $\text{Var}(f)$ est $v\restriction_{\text{Var}(f)} = (b_i)_{[\![1;n]\!]}$.
+Or $v$ est un modèle de $\varphi(f)$ si et seulement si c'est un modèle d'une
+des clauses de $\varphi(f)$, donc $v$ est un modèle de $\varphi(f)$ si et seulement si c'est un modèle de $f$.
+
+On peut de même construire une CNF équivalente à $f$.
+
+__Preuve :__ On suppose sans perte de généralité que $f$ est une NNF.
+On montre alors par récurrence sur la hauteur et la profondeur minimale de $f$
+qu'on peut bien convertir $f$ en une CNF, qui est équivalente à $f$, et est de
+même hauteur.
