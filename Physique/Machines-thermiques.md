@@ -104,6 +104,7 @@ On suit le cycle avec les étapes :
 - $BC$ adiabatique réversible
 - $CD$ isochore
 - $DE$ adiabatique réversible
+- $EB$ isochore
 - $BA$ isobare de $V_\text{max}$ à $V_\text{min}$
 
 D'après le premier principe de la thermodynamique, sur un cycle,
@@ -112,4 +113,75 @@ de l'étape $CD$ :  $Q_c = Q_{CD}$. Le contact avec la source froide (atmosphèr
 se fait au cours de l'étape $EB$ : $Q_f = Q_{EB}$.
 
 Le rendement du moteur est $\eta = \frac{-W}{Q_c}$,
-or $- W = Q_c + Q_f$, donc $\eta = 1 + \frac{Q_{ED}}{Q_{CD}}$.
+or $- W = Q_c + Q_f$, donc $\eta = 1 + \frac{Q_{EB}}{Q_{CD}}$.
+Puisque les phases $EB$ et $CD$ sont des transformations isochores,
+$Q_{EB} = \Delta U_{EB} = C_V (T_B - T_E)$ et $Q_{CD} = C_V (T_D - T_C)$,
+donnant $\eta = 1 + \frac{T_B - T_E}{T_D - T_C}$.
+
+Puisque les transformations $BC$ et $DE$ sont adiabatiques réversibles, on
+utilise la loi de Laplace $TV^{\gamma - 1} = \text{const}$, donnant
+$\left\{\begin{matrix} T_B V_\text{max}^{\gamma - 1} = T_C V_\text{min}^{\gamma - 1} \\ T_D V_\text{min}^{\gamma - 1} = T_E V_\text{max}^{\gamma - 1} \end{matrix}\right.$
+$\Leftrightarrow \left\{\begin{matrix} T_B = (\frac{V_\text{min}}{V_\text{max}})^{\gamma - 1} T_D \end{matrix}\right.$.
+On remplace dans le rendement, donnant $\eta = \frac{(\frac{V_\text{min}}{V_\text{max}})^{\gamma - 1} (T_C - T_D)}{T_D - T_C} = 1 - (\frac{V_\text{min}}{V_\text{max}})^{\gamma - 1}$.
+On pose souvent $a = \frac{V_\text{max}}{V_\text{min}}$, tel que $\eta = 1 - a^{\gamma - 1}$.
+
+### Réfrigérateur
+#### Préliminaires : premier principe à un fluide en écoulement
+Dans un réfrigérateur, un fluide va d'une source de chaleur à l'autre en
+s'écoulant. On va considérer qu'il y a $\Sigma(t)$ fluide dans la machine à un
+instant $t$, qu'il y a une masse de fluide $S_1$ à l'entrée du système à
+l'instant $t$ et une même masse $S_2$ à la sortie à l'instant $t + \Delta t$.
+
+On a tout le fluide tel que $S(t) = S_1 + \Sigma(t)$ et $S(t + \Delta t) = S_2 + \Sigma(t + \Delta t)$.
+On va de plus faire l'hypothèse que $\Sigma$ est en régime stationnaire (ses
+propriétés ne dépendent pas du temps).
+Ainsi, $V(t) = V_1 + V_\Sigma$ et $V(t + \Delta t) = V_2 + V_\Sigma$,
+et les masses totales sont les mêmes aux deux instants.
+On calcule la variation d'énergie mécanique de $S$ entre $t$ et $\Delta t$,
+$\Delta E_m = E_m(t + \Delta t) - E_m(t) = E_m(S_2) + E_m(\Sigma) - E_m(S_1) - E_m(\Sigma)$
+$= E_m(S_2) - E_m(S_1)$. D'après le premier principe de la thermodynamique,
+$\Delta E_m = Q + W$.
+Comme $W = W_1 \text{ (travail des force en amont) } + W_2 \text{ (Travail des
+forces de pression en aval) } + W_u \text{ (Tous les autres travaux : travail
+utile)}$.
+
+On a ainsi $W_1 = P_1 x_1 S_1 = P_1 V_1$ et $W_2 = - P_2 V_2$,
+donc $P_1 V_1 - P_2 V_2 + W_u = \sum W_{\{1;2;u\}}$.
+On a donc $\Delta E_m = P_1 V_1 - P_2 V_2 + W_u + Q$,
+or $E_m = E_m^{\text{macro}} + U$,
+donc $\Delta E_m^{\text{macro}} + \Delta U = \Delta E_m$
+$\Leftrightarrow W_u + Q = [E_m^{\text{macro}} + H](S_2) - [E_m^{\text{macro}} + H](S_1)$.
+
+On pose souvent des grandeurs massiques pour $W_u$ ($w_u$),
+$Q$ ($q$), $E_m^{\text{macro}}$ ($e_m^{\text{macro}}$) et
+$h = \frac{H}{m}$, nous donnant toujours
+$\Delta (e_m^{\text{macro}} + h) = w_u + q$.
+
+On a plusieurs cas particuliers :
+- Avec la différence d'altitude, $\Delta z = z_2 - z_1$, $\Delta
+  e_m^{\text{macro}} = \Delta_c e^{\text{macro}} \pm g \Delta z$.
+- Machine calorifugée : $q = 0$, donnant une détente de Joule-Thompson.
+  Pour un fluide en écoulement de $P_1$ à $P_2 < P_1$, si $\Delta e_m^{\text{macro}} = 0$,
+  les parois sont calorifugées, et la machine ne fournit pas de travail ($w_u = 0$),
+  alors la transformation est isenthalpique, $\Delta h = 0$.
+
+#### Principe
+Dans un réfrigérateur, la source chaude est l'atmosphère et la source froide
+l'intérieur du réfrigérateur. Le fluide réfrigérant qui circule dans le
+réfrigérateur prélève de l'énergie à l'intérieur du réfrigérateur pour maintenir
+la température du réfrigérateur à $T_f$
+
+#### Diagramme P-h (Mollier) et calcul de rendement
+En appliquant le premier principe, on a donc $\Delta h = w_u + q = w_u + q_c + q_f$.
+On peut voir sur le diagramme de Mollier (voir polycopié ou sur internet).
+
+- La transformation de la ligne de droite, de bas en haut, est un compression
+  adiabatique, donc $q_{FA} = 0 \Rightarrow \delta h_{FA} = h(A) - h(F)$.
+- Le refroidissement $AB$ dans le coin haut-droit, de droite à gauche,
+  et la liquéfaction $BB'$ sur la ligne du haut de droite à gauche, ainsi que le refroidissement $B'C$
+  qui finit cette ligne, sont adiabatiques, donc $\Delta h_{AC} = h(C) - h(A) = q_{AC} = q_c$.
+- La détente $CD$ du coin haut-gauche de haut en bas et la vaporisation
+  partielle $DE$ de la ligne de gauche de haut en bas sont telles que
+  $w_{u,CE} = 0$ et $q_{CE} = 0$, donnant $\delta h_{CE} = h(E) - h(C) = 0$
+- La vaporisation $EE'$ et réchauffement $E'F$ de la ligne du bas de gauche à
+  droite est telle que $w_{u,EF} = 0$, et donc $\Delta h_{EF} = h(F) - h(E) = q_{EF} = q_f$
