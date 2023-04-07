@@ -207,3 +207,34 @@ Par le théorème du rang, $u$ est un isomorphisme, donc on peut construire l'im
 par un isomorphisme, qui est une base de $\text{Im}(u)$. On construit donc une base de $F$
 avec la base de $\text{Im}(u)$ qu'on complète, et ainsi on obtient bien une matrice pour cette base de $u$
 qui est $J_r$.
+
+### Matrices semblables
+> Deux matrices (carrées) $A$ et $B$ sont semblables s'il existe
+> $P \in \text{GL}_n(\mathbb{K})$ telle que $B = P^{-1} A P$.
+
+Les puissances successives sont ainsi faciles à appliquer.
+
+> La ressemblance de matrice est une relation d'équivalence de $\mathcal{M}_n(\mathbb{K})$.
+
+Si $A$ et $B$ sont semblables, alors leur rang et leur trace sont égales entre
+elles (car le rang n'est pas modifié par la multiplication par une application
+bijective/matrice inversible, et la trace est commutative donc $P$ et $P^{-1}$
+s'annulent lors du calcul).
+
+> $A$ et $B$ sont semblables si et seulement si elles représentent le même
+> endomorphisme dans des bases différentes.
+
+En pratique, pour montrer que $A$ et $B$ sont semblables, on montre qu'il s'agit
+toutes deux de matrices associées à une même application $f$ dans une base
+différente. On va donc en général poser $f$ l'application canoniquement associée
+à $A$, puis on applique la formule de changement de base.
+
+> Soit $f \in \mathcal{L}(E)$, avec $E$ de dimension finie,
+> la trace de $f$ est la trace des matrices associée à $f$ dans une base de $E$.
+
+Comme la trace est la même pour toutes ces matrices, elle est bien définie.
+On a aussi les mêmes résultats sur la trace par la bijection entre les matrices
+et les applications linéaires : $\text{tr}(u \circ v) = \text{tr}(v \circ u)$.
+
+Les projecteurs de rang $p$ sont semblable aux matrices diagonales de $1$ de $1$ à $p$
+et sont ainsi de trace $p$.
