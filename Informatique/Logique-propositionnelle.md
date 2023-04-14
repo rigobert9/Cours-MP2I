@@ -167,7 +167,10 @@ des clauses de $\varphi(f)$, donc $v$ est un modèle de $\varphi(f)$ si et seule
 
 On peut de même construire une CNF équivalente à $f$.
 
-__Preuve :__ On suppose sans perte de généralité que $f$ est une NNF.
-On montre alors par récurrence sur la hauteur et la profondeur minimale de $f$
-qu'on peut bien convertir $f$ en une CNF, qui est équivalente à $f$, et est de
-même hauteur.
+__Preuve :__ Soit $f \in \mathcal{F}$, $\varphi(\neg f)$ est une DNF équivalente
+à $\neg f$, donc $\neg \varphi(\neg f)$ est équivalente par double négation à
+$f$, et par les lois de Morgan, est une CNF.
+
+Pour $f \in \mathcal{F}$ donnée, il se peut qu'il n'existe aucune CNF ou DNF
+équivalente dont la taille soit majorée par une fonction sous-exponentielle de
+la taille de $f$.
