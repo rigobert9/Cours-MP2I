@@ -247,3 +247,84 @@ sens. Un des imposteurs est $\sum\limits_{n \geq 1} \frac{(-1)^{n-1}}{n}$,
 qui converge mais pas absolument.\
 On prouve que celle-ci converge en remplaçant $\frac{1}{n}$ par
 $\int\limits_{0}^{1} t^{n-1} dt$.
+
+## Séries géométriques dérivées
+> Soit $z \in \mathbb{C}$, les séries $\sum\limits_{n \geq 0} z^n$,
+> $\sum\limits_{n \geq 0} n z^{n-1}$ et $\sum\limits_{n \geq 0} n (n - 1) z^{n-2}$
+> convergente absolument si et seulement si $|z| < 1$,
+> et dans ce cas, elles convergente respectivement vers
+> $\frac{1}{1 - z}$, $\frac{1}{(1 - z)^2}$
+> et $\frac{2}{(1 - z)^3}$.
+
+## Séries alternées
+> CSA, critère des séries alternées : Soit $(a_n)_n$ une suite réelle décroissante
+> et de limite nulle, la série alternée $\sum\limits_{n \geq 0} (-1)^n a_N$
+> converge. De plus, le reste de la série est du signe de son premier terme et il
+> est borné par son premier terme : si $R_n = \sum\limits_{k = n+1}^{+\infty} (-1)^k a_k$,
+> alors $|R_n| \leq a_{n+1}$.
+
+__Application :__ Formule de Stirling : $n! \underset{n \to \infty}{\sim} \sqrt{2 \pi n} (\frac{n}{e})^n$\
+On cherche à montrer qu'il existe $K > 0$ tel que $n! \underset{n \to \infty}{\sim} K \sqrt{n} n^{n} e^{-n}$.
+On regarde $u_{n} = \ln(\frac{n!}{\sqrt{n} n^n e^{-n}})$. Celle-ci converge par
+la convergence de sa série télescopique. On a l'asymptotique de $u_{n+1} - u_{n}$
+$= \ln(\frac{(n+1)!}{\sqrt{n+1} (n+1)^{n+1} e^{-(n+1)}} \times \frac{\sqrt{n} n^n e^{-n}}{n!})$\
+$= \ln(\frac{\sqrt{n} n^n e^1}{\sqrt{n+1} (n+1)^n})$\
+$= \ln(\frac{n^{n + \frac{1}{2}}}{(n+1)^{n + \frac{1}{2}}} e)$\
+$= 1 - (n + \frac{1}{2}) \ln(1 + \frac{1}{n})$\
+$= 1 - (n + \frac{1}{2}) [\frac{1}{n} - \frac{1}{2n^2} + O(\frac{1}{n^3})]$\
+$= 1 - 1 + \frac{1}{2n} - \frac{1}{2n} + O(\frac{1}{n^2})$,
+donc $u_{n+1} - u_{n} \underset{+\infty}{=} O(\frac{1}{n^2})$ donc la série
+$\sum (u_{n+1} - u_{n})$ converge absolument et donc la suite $u$ converge.\
+On note $\ell = \lim\limits_{n \to + \infty} u_{n}$. Par continuité de
+l'exponentielle, $e^{\ell} = \lim\limits_{n \to + \infty} e^{u_{n}} = \lim\limits_{n \to + \infty} (\frac{n!}{\sqrt{n} n^n e^{-n}})$,
+donc $n! \underset{\infty}{\sim} e^{\ell} \sqrt{n} n^n e^{-n}$.
+
+On cherche maintenant à déterminer cette constante. On pose $I_n = \int\limits_{0}^{\frac{\pi}{2}} (\sin t)^n dt$,
+et alors $I_0 = \frac{\pi}{2}$. $I_{2n+2} = (\sin t) \times (\sin t)^{2n + 1} dt$
+$= \,\text{(IPP)}\, [- \cos(t) (\sin(t))^{2n+1}]_0^{\frac{\pi}{2}} - \int\limits_{0}^{\frac{\pi}{2}} (- \cos t) (2n + 1) (\cos t) (\sin t)^{2n} dt$
+$= 0 + (2n + 1) (I_{2n} - I_{2n + 1})$, et
+donc $(2n + 2) I_{2n + 2} = (2n + 1) I_{2n}$.
+Ainsi, $(2n + 2) I_{2n + 2} \times I_{2n + 1} = (2n + 1) I_{2n + 1} I_{2n}$,
+donc la suite $((n+1) I_{n+1} I_n)_n$ est constante égale à
+$I_1 I_0 = \frac{\pi}{2}$.\
+On vérifie que $(I_n)_n$ est décroissante. $\forall t \in [0;\frac{\pi}{2}]$,
+$(\sin t)^{n} \geq (\sin t)^{n+1} > 0$. En intégrant, on obtient
+$I_n \geq I_{n+1} > 0$, donnant $I_{n-1} \geq I_n \geq I_{n+1}$
+$\Rightarrow I_n I_{n-1} \geq I_n^2 \geq I_n I_{n+1}$
+$\Rightarrow \frac{\pi}{2n} \geq I_n^2 \geq \frac{\pi}{2 (n+1)}$,
+donc $I_n^2 \underset{+\infty}{\sim} \frac{\pi}{2n}$,
+donc $I_{n} \underset{\infty}{\sim} \sqrt{\frac{\pi}{2n}}$,
+donc $I_{2n} \underset{+\infty}{\sim} \frac{\sqrt{\pi}}{2 \sqrt{n}}$,
+or $I_{2n} = \frac{2n - 1}{2n} I_{2n - 2} = \frac{2n - 1}{2n} \times \frac{2n - 3}{2n - 2} I_{2n - 4}$
+$= \,\text{(En itérant)}\, \frac{\frac{(2n)!}{2^n n!}}{2^n n!} \frac{\pi}{2}$
+$= \binom{2n}{n} \frac{\pi}{2 \times 4^n} \underset{+\infty}{\sim} \frac{\sqrt{\pi}}{2 \sqrt{n}}$.
+
+Or, $n! \underset{+\infty}{\sim} K \sqrt{n} n^n e^{-n}$ donc
+$(2n)! \underset{+\infty}{\sim} K \sqrt{2n} (2n)^{2n} e^{-2n}$,
+et on a $(n!)^2 \underset{+\infty}{\sim} K^2 n n^{2n} e^{-2n}$
+et $(2n)! \underset{+\infty}{\sim} K \sqrt{2n} 2^{2n} n^{2n} e^{-2n}$.
+Finalement, $I_{2n} = \frac{(2n)!}{(n!)^2} \frac{\pi}{4^n \times 2} \underset{+\infty}{\sim} \frac{\sqrt{2} \pi}{K \sqrt{n} 2} \underset{+\infty}{\sim} \frac{\pi}{K \sqrt{2n}}$.
+Or $I_{2n} \underset{+\infty}{\sim} \frac{\sqrt{\pi}}{2 \sqrt{n}}$ donc $K = \sqrt{2 \pi}$.
+
+## Autres critères
+> Critère de D'alembert : Soit $u \in \mathbb{K}^{\mathbb{N}}$ telle que $u$ ne
+> s'annule pas à partir d'un certain rang, et telle que $\lim\limits_{n \to + \infty} |\frac{u_{n+1}}{u_{n}}| = \ell \in \mathbb{R}_{+} \cup \{+\infty\}$.
+> - Si $\ell < 1$, alors la série converge absolument
+> - Si $\ell > 1$ la série diverge grossièrement
+> - Si $\ell = 1$, on ne peut pas conclure
+
+__Preuve :__
+- Si $\ell < 1$, soit $k = \frac{\ell + 1}{2}$, $\ell < k < 1$, et par
+  définition de la limite, $\exists n_0, \forall n \geq n_0, |\frac{u_{n+1}}{u_{n}}| \leq k$.
+  En prenant $\varepsilon = \frac{1 - \ell}{2} > 0$. $\forall n \geq n_0$,
+  $|u_{n+1}| \leq k |u\bigcap\limits_{i \in  I} |$, donc par récurrence
+  $\forall n \geq n_0, |u_{n}n| \leq k^{n - n_0} |u_{n_0}|$.
+  $|u_{n}| = O(k^n)$ avec $k < 1$. Or $\sum k^n$ est géométriquement
+  convergente, donc par comparaison de sommes à termes positifs, la somme
+  absolue converge, donc la série converge absolument.
+- Si $\ell > 1$, à partir d'un certain rang, $|\frac{u_{n+1}}{u_{n}}| > 1$,
+  donc la suite de la valeur absolue de $u_{n}$ est croissante à partir d'un certain rang
+  donc la limite n'est pas nulle, donc $u_{n}$ ne tend pas vers $0$, donc la
+  série diverge grossièrement.
+- Pour $\ell = 1$ on a les exemples de $u_{n} = n$ qui diverge et $u_{n} = \frac{1}{n^2}$ qui converge,
+  donc on ne peut pas conclure.
