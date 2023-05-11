@@ -9,7 +9,7 @@ La carte météo présente un champ scalaire, et le champ gravitationnel constit
 un champ vectoriel (de formule $\overrightarrow{\rm F_{m_0 \to m}} = - G \frac{m_0 m}{\lVert \overrightarrow{\rm OM} \rVert^3} \overrightarrow{\rm OM} = m \overrightarrow{\rm g}$,
 où $g$ est le champ exercé par $m_0$).
 
-### Champ magnétique $\overrightarrow{\rm B}$
+### Champ magnétique
 Le champ magnétique est un champ vectoriel généré soit par un aimant permanents
 soit par un courant électrique, et se mesure en $T$ (Tesla).
 
