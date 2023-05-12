@@ -174,3 +174,34 @@ $f$, et par les lois de Morgan, est une CNF.
 Pour $f \in \mathcal{F}$ donnée, il se peut qu'il n'existe aucune CNF ou DNF
 équivalente dont la taille soit majorée par une fonction sous-exponentielle de
 la taille de $f$.
+
+## Problème SAT
+Le problème SAT consiste à déterminer si une formule $f \in m\mathcal{F}$ est
+satisfiable, soit $\text{SAT}(f) \Leftrightarrow f \not\equiv \bot$.
+
+L'algorithme naïf (algorithme de Quine) teste les possibilités de la table de
+vérité, et s'arrête quand il trouve un modèle. Il est de complexité
+$\Theta(m 2^n)$, avec $n$ le nombre de variable et $m$ la profondeur de la
+formule.
+
+Si $f$ est une DNF, on vérifie qu'au moins une clause est satisfiable. Cela peut
+se faire en temps $O((l + n) k)$ avec un tableau de taille $n$, ou encore en
+temps $O(l \log(l) k)$ en place (avec des formules de taille au plus $l$).
+
+> Soit $f \in \mathcal{F}$ et $X \in \text{Var}(f)$, alors $\text{SAT}(f)$
+> si et seulement si $\text{SAT}(\mathfrak{d\{x \Leftarrow \top\}})$
+> ou $\text{SAT}(\mathfrak{d\{x \Leftarrow \bot\}})$.
+
+CNF-SAT est le problème SAT restreint sur les formes normales conjonctives. Soit
+$k \in \mathbb{N}$ avec $k \geq 2$, $k-\text{SAT}$ est le problème CNF-SAT
+restreint aux formules ayant au plus $k$ littéraux.
+
+## Logique du premier ordre
+On se donne un domaine $(X,S_f,S_p)$ formé de $3$ ensemble disjoints et de
+l'ensemble des connecteurs logique. $X$ est l'ensemble des symboles de variable,
+$S_f$ l'ensemble des symboles de fonction (avec parfois un exposant pour
+distinguer par arité, $S_f^0$ représentant les termes constants), et $S_p$
+est l'ensemble des symboles de prédicats.
+
+$X$ et $S_f$ définissent une structure inductive, les termes, sur lesquels
+portent les prédicats.
