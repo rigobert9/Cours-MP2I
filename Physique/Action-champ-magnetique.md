@@ -134,4 +134,28 @@ le couple de Laplace $\overrightarrow{\rm \Gamma_L} = \overrightarrow{\rm \mathc
 et l'énergie potentielle $E_p = - \overrightarrow{\rm \mathcal{M}} \cdot \overrightarrow{\rm B}$.
 
 ## Moteur synchrone
+Ces moteurs sont souvent utilisés dans l'industrie, notamment pour les machines
+d'arrimage, et dans les véhicules électriques comme les TGV.
+
 ### Réalisation d'un champ magnétique
+On a un stator composé de deux bobines à 90 degrés qui forment des champs
+magnétiques $\overrightarrow{\rm B_1} = B_0 \cos(\omega t) \overrightarrow{\rm e_x}$
+et $\overrightarrow{\rm B_1} = B_0 \sin(\omega t) \overrightarrow{\rm e_y}$,
+donnant un champ total $\overrightarrow{\rm B} = B_0 [\cos(\omega t) \overrightarrow{\rm e_x} + \sin(\omega t) \overrightarrow{\rm e_y}]$.
+Dans la plupart des moteurs synchrones sont des moteurs triphasés décalés
+spatialement de $\frac{2 \pi}{3}$.
+
+Le rotor, lui, est un aimant fixe associé à un moment magnétique $\overrightarrow{\rm \mathcal{M}}$,
+dans un champ tournant $\overrightarrow{\rm B_0}$ autour de l'axe $(Oz)$.
+
+### Calcul du couple de Laplace
+$\overrightarrow{\rm \Gamma_L} = \overrightarrow{\rm \mathcal{M}} \wedge \overrightarrow{\rm B} = \Gamma_L \overrightarrow{\rm e_z}$
+
+Ce couple tend à aligner le moment magnétique avec le champ $\overrightarrow{\rm
+B}$. Ainsi, en régime permanent, le moment va suivre le champ magnétique avec la
+même vitesse angulaire $\omega$ mais en étant déphasé d'un angle $\varphi$.
+
+> Un moteur synchrone est un moteur pour lequel le rotor tourne à la même fréquence
+> que le champ magnétique.
+
+On obtient donc $\overrightarrow{\rm \Gamma_L} = \mathcal{M}_0 B_0 \sin(\varphi) \overrightarrow{\rm e_z}$
