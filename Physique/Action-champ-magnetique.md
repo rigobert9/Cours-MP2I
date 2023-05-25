@@ -159,3 +159,38 @@ même vitesse angulaire $\omega$ mais en étant déphasé d'un angle $\varphi$.
 > que le champ magnétique.
 
 On obtient donc $\overrightarrow{\rm \Gamma_L} = \mathcal{M}_0 B_0 \sin(\varphi) \overrightarrow{\rm e_z}$
+
+### Loi de Faraday
+Soit un conducteur placé dans un champ magnétique $\overrightarrow{B}$, on note $\Phi$ le flux de
+$\overrightarrow{B}$ à travers une surface $S$.
+
+> La force électromagnétique induite vaut $e = - \frac{d \Phi}{d t}$, avec $\Phi$ le flux.
+
+En pratique, le champ induit sera souvent négligeable dans le champ total dans les calculs,
+donnat $\Phi \sim \iint \overrightarrow{B_{\text{ext}}} \cdot d \overrightarrow{S}$.
+
+### Exercices d'application
+On prend l'exemple d'un aimant suspendu à un ressort au-dessus d'une spire.
+La spire agit comme un aimant en créant un moment magnétique $\overrightarrow{M}$.
+Le champ créé par l'aimant est donc de $\overrightarrow{B_\text{ext}} = \frac{\mu_0 M}{2 \pi r^3} (2 \cos(\theta) \overrightarrow{e_r} + \sin(\theta) \overrightarrow{e_\theta})$,
+mais puisque le ressort est bien loin de la spire que son rayon ($z \gg R$), et que le ressort
+forme donc un très petit angle avec le bord de la spire ($\theta \approx 1 \text{rad}$),
+nous donnant $\overrightarrow{B_\text{ext}} \approx \frac{- \mu_0 M}{2 \pi z^3} \overrightarrow{e_z} = - B_\text{ext} \overrightarrow{e_z}$.
+
+On calcule le flux de \overrightarrow{B}$ à travers la surface,
+donnant $\Phi = \iint \overrightarrow{B_\text{ext}} \cdot d \overrightarrow{S} = \overrightarrow{B_\text{ext}} \cdot \overrightarrow{S} = \frac{- \mu_0 M R^2}{2 z^3} \overrightarrow{e_z}$.
+
+On obtient ainsi la force électromagnétique $e = - \frac{3 \mu_0 M R^2}{2 z^4} \dot{z}$. On obtient l'intensité par loi d'Ohm,
+$i = \frac{e}{r_S} = - \frac{3 \mu_0 M R^2}{2 z^4 r_S} \dot{z}$, avec $r_S$ la résistance de la spire.
+
+On obtient ensuite le champ induit par la spire, qui est
+de $\overrightarrow{B_\text{ind}} = \frac{\mu_0 i}{2 \pi R (1 + \frac{z^2}{R^2})^{\frac{3}{2}}} \overrightarrow{e_z}$
+$\approx \frac{\mu_0 i R^2}{2 z^3} \overrightarrow{e_z}$, et appliquant l'expression de $i$,
+on obtient la valeur finale $- \frac{3 \mu_0^2 M R^4}{4 r_S z^7} \dot{z} \overrightarrow{e_z} = B_\text{ind} \overrightarrow{e_z}.
+
+Le champ magnétique total est ainsi $\overrightarrow{B} = (- B_\text{ext} + B_\text{ind}) \overrightarrow{e_z}$,
+et on a l'énergie potentielle $E_p = - \overrightarrow{M} \cdot \overrightarrow{B_\text{ind}} = - \frac{3 \mu_0^2 M^2 R^4}{4 r_S z^7} \dot{z}$.
+La force magnétique étant une force conservative, on a
+$\overrightarrow{F} = - \overrightarrow{\text{grad}} E_p = - \frac{\part E_p}{\part z} \overrightarrow{e_z}$
+$= - \frac{21 \mu_0^2 M^2 R^4}{4 r_S z^8} \dot{z} \overrightarrow{e_z}$. Cette force est ainsi proportionnelle
+à $- \overrightarrow{v}$, donnant une force de freinage qui est utilisée dans les freins à induction.
