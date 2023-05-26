@@ -145,7 +145,22 @@ noirs sur tout chemin de la racine à un sous-arbre vide, alors $n \geq 2^{b(A)}
 et $h \leq 2 b(A)$. Ainsi, soit $A$ un arbre rouge-noir, de hauteur $h$ avec $n$
 nœuds, on a $h \leq 2 \log(n + 1)$.
 
-__Preuve :__ TODO
+__Preuve :__ On montre par récurrence sur $k \geq 0$ que pour tout $A$ un arbre
+rouge-noir tel que $b(A) = k$, on a $n \geq 2^k - 1$ et $h \leq 2k$.
+L'initialisation est triviale. On procède ensuite par récurrence forte,
+et alors pour $A$ tel que $b(A) = k$.
+- Si $A$ a une racine noire, avec la hauteur noire de ses deux enfants qui est
+  égale, on a par hypothèse de récurrence $n(A_g), n(A_d) \geq 2^{k - 1} - 1$,
+  donc $n(A) \geq 2 \times (2^{k - 1} - 1) + 1$. De même, $h(A) =
+  \text{max}(A_g, A_d) + 1 \leq 2k - 2 + 1 < 2 k$.
+- Si $A$ a une racine rouge, on fait les mêmes opérations et conclusions.
+
+> Les arbres rouge-noir sont des ABR équilibrés, et la recherche, l'insertion, et
+> la suppression dans un ABR à $n$ éléments est de coût $\Theta(\log n)$ dans le
+> pire cas.
+
+De plus, si les arbres sont mutables, le nombre d'écritures pour toute opération
+est constante en complexité amortie.
 
 ### Insertion dans un arbre rouge-noir
 On insère comme dans un ABR, puis on colorie en rouge le nœud inséré. Le
@@ -155,6 +170,9 @@ inchangé).
 
 Si la propriété est bien respectée, il n'y a rien à faire. Sinon, on a la
 procédure de réparation générale, qu'on opère jusqu'à réparation :
+
+À RÉÉCRIRE
+
 Soit, avec $x$ et $y$ des nœuds rouges, l'arbre (avec $y$ fils gauche sans
 perte de généralité, on pourrait le mettre à droite) $(x,(y,A_2,A_3),A_1)$.
 - Si ce sous-arbre est $A$ tout entier, on colorie $x$ en noir
@@ -164,3 +182,36 @@ perte de généralité, on pourrait le mettre à droite) $(x,(y,A_2,A_3),A_1)$.
   procédure sur l'arbre au-dessus
 - Dans le dernier cas où $y$ est le fils de $x$ de l'autre côté que $x$ est fils
   de $w$, on fait une rotation à droite pour se ramener au cas précédent
+
+## Les tas (heaps) et files de priorité
+Une file de priorité sur $(E,F)$ avec $E$ totalement ordonné et $F$ un ensemble
+est un structure de données abstraites qui représente un multiensemble
+d'éléments de $E \times F$.
+
+On dispose des opérations de base suivantes :
+- créer un file de priorité
+- déterminer si une FP est non vide
+- ajouter un couple $(k,v)$ à une FP
+- retirer et renvoyer un des couples $(k,v)$ de la FP qui minimise $k$
+
+On peut aussi parler de la "max-heap", la version dans laquelle l'opération
+élémentaire est d'obtenir l'élément maximisant $k$.
+
+On peut faire ce travail avec les arbres binaires de recherche (en allant
+chercher au plus à droite ou à gauche). La complexité des opérations est alors
+de $\Theta(\log n)$ en utilisant des ABR équilibrés.
+
+En pratique, on peut utiliser une autre structure qui donnera des opérations
+légèrement plus rapides (mais toujours de même complexité). Ces structures
+permettent néanmoins de créer un tas en temps $\Theta(n)$ plutôt que $\Theta(n \log n)$.
+
+> Soit $A$ un arbre (binaire dans notre cas) étiquetté par $E$ totalement ordonné,
+> on dit que A est un tas si tout nœud a une étiquette inférieure (respectivement
+> supérieure dans une max-heap) à celle de ses enfants.
+
+> Un tas binaire est un arbre binaire complet qui est un tas.
+
+Pour insérer dans un tas binaire, on insère au seul endroit possible pour
+conserver la complétude du tas, puis on fait remonter l'élément tant que des
+éléments plus petits sont au-dessus de lui par échange. Cet algorithme dit de
+tamisage (sift-up) est de complexité $\Theta(h) = \Theta(\log n)$.
