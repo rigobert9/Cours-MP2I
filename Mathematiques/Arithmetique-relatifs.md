@@ -430,7 +430,7 @@ On peut remarquer que pour tout $n \in \mathbb{N}^{\ast}$ et $p \in \mathbb{P}$,
 $n = p^{v_p(n)} \times q$, où $q \wedge p = 1$
 (car $p \not\mid q$).
 
-> $\forall p \in \mathbb{P}, \forall (a,b) \in \mathbb{N}^{\ast}^2, v_p(ab)$
+> $\forall p \in \mathbb{P}, \forall (a,b) \in \mathbb{N}^{\ast^2}, v_p(ab)$
 > $= v_p(a) + v_p(b)$.
 
 __Preuve :__ $ab = p^{v_p(a)} \times q_1 \times p^{v_p(b)} \times q_2$,
@@ -457,7 +457,7 @@ on a l'inclusion inverse et donc l'égalité, donnant $l = r$,
 et $\forall i \in [\![1,r]\!], p_i = q_i$. Ainsi,
 $\forall i, v_{p_i}(n) = \alpha_i = v_{q_i}(n) = \beta_i$.
 
-On peut relier ceci avec la divisibilité, le PGCD et le PPCM. Soit $(a,b) \in \mathbb{N}^{\ast}^2$ :
+On peut relier ceci avec la divisibilité, le PGCD et le PPCM. Soit $(a,b) \in \mathbb{N}^{\ast^2}$ :
 - $a \mid b \Leftrightarrow (\forall p \in \mathbb{P}, v_p(a) \leq v_p(b))$
 - $a \wedge b = \prod\limits_{p \in \mathbb{P}} p^{\text{min}(v_p(a), v_p(b))}$
 - $a \vee b = \prod\limits_{p \in \mathbb{P}} p^{\text{max}(v_p(a),v_p(b))}$
