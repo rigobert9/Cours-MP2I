@@ -90,7 +90,7 @@ $W = \int\limits_{\text{État initial}}^{\text{État final}} \delta W = - \int\l
 > est $\delta W = - P_\text{ext} d V$.
 
 Si la transformation est entre un état final et initial, on a donc
-$W = - \int\limits_{\text{État inital}}^{\text{État final}} P_\text{ext dV}$.
+$W = - \int\limits_{\text{État inital}}^{\text{État final}} P_\text{ext} dV$.
 
 Si $W$ est positif, on dit que le système reçoit de l'énergie de la part de
 l'extérieur (on appuie sur le piston). Si $W$ est négatif, le système fournit de
@@ -149,7 +149,7 @@ On pose ainsi $\Delta U = W + Q$, ou sous forme différentielle $d U = \delta W 
 
 ## Exemples et applications
 ### Transformation isochore
-$\delta W = - P_\text{ext} dt$ et $V$ est constant, donc
+$\delta W = - P_\text{ext} dV$ et $V$ est constant, donc
 $W = 0$. D'après le premier principe de la thermodynamique,
 $d U = \delta W  + \delta Q \Rightarrow d U = 0 + \delta Q$,
 soit $d U = (\frac{\partial U}{\partial T})_V d T + (\frac{\partial U}{\partial V})_T d V$
@@ -228,9 +228,9 @@ Ainsi, on a $T_F \approx T_1$ si $C_2 \ll C_1$.
 On se place dans le système d'une tasse de café.
 D'après le premier principe de la thermodynamique, $d U = \delta W + \delta Q$.
 Puisque le volume est constant, $\delta W = 0$, donc $dU = \delta Q$,
-or $d U  = C dT$ et $\delta Q = P dt$,
-donc $C dT = - hS (T - T_\text{atm}) dt$,
-donc $\frac{d T(t)}{dt} + \frac{h S}{C} T(t) = \frac{h S}{C} T_\text{atm}$.
+or $d U  = C dT$ et $\delta Q = P dV$,
+donc $C dT = - hS (T - T_\text{atm}) dV$,
+donc $\frac{d T(t)}{dV} + \frac{h S}{C} T(t) = \frac{h S}{C} T_\text{atm}$.
 On pose $\tau = \frac{C}{h S}$. Pour $t$ qui tend vers $+\infty$, $T(t) = T_\text{atm}$,
 et $T(t = 0) = T_0$ (la température de départ).
 Ainsi, $T(t) = A e^{\frac{-t}{\tau}} + T_\text{atm}$,
