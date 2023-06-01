@@ -91,3 +91,19 @@ $\frac{b - a}{n} < \nu$ (ce qui est toujours possible puisque $\frac{b - a}{n} \
 On fixe $n$, et on construit la subdivision régulière de $[a,b]$ avec un pas $\frac{b - a}{n}$,
 avec $a_k = a + k \frac{b - a}{n}$. On pose $\varphi: x \mapsto \left\{\begin{matrix} f(a_{i - 1}) \text{ si } x \in [a_{i - 1}; a_i] \\ f(b) \text{ si } x = b \end{matrix}\right.$,
 et on obtient bien le respect des contraintes souhaitées.
+
+## Construction de l'intégrale
+### Intégrale des fonctions en escalier
+L'intégrale des fonctions en escalier correspond à l'aire des rectangles qui la
+composent (donc leur hauteur fois leur largeur). On note alors pour $f$ une
+fonction en escalier $\int\limits_{[a;b]} f = \sum\limits_{i = 1}^{n} h_i (a_i - a_{i - 1})$.
+On ne s'occupe pas des valeurs sur les bords des rectangles, seulement de leur
+hauteurs.
+
+On obtient des propriétés classiques de l'intégrale : inégalité triangulaire
+(qui revient à celle sur les sommes finies), positivité, et croissance, ainsi
+que linéarité. On obtient aussi la relation de Chasles.
+
+On peut remarquer que si $f$ est en escalier, positive et d'intégrale nulle,
+alors elle est nulle sauf en un nombre fini de points (on coupe sur des points
+qui constituent seuls leur propre membre de la subdivision choisie).
