@@ -84,4 +84,40 @@ Comme précédemment, on obtient $m \frac{d v_x}{dt} = -i L B + F$,
 et on a $\Phi = \iint \overrightarrow{\rm B} \cdot d \overrightarrow{\rm S} = - BS = - B L x$,
 donc $e = - \frac{d \varphi}{dt} = BL v_x$, et on a $i = \frac{e}{r} = \frac{BL}{r} v_x$.
 
-À nouveau, on forme une équation différentielle sur $v_x$.
+À nouveau, on forme une équation différentielle sur $v_x$ :
+$\frac{d v_x}{dt} + \frac{v_x}{\tau} = \frac{F}{m}$, avec $\tau = \frac{mr}{B^2 L^2}$.
+Avec la condition initiale $v_x(t = 0) = 0$, on obtient $v_x(t) = \tau \frac{F}{m} (1 - e^{\frac{-t}{\tau}})$.
+En utilisant cette définition, on réécrit $i(t) = \frac{F}{BL} (1 - e^{\frac{-t}{\tau}})$.
+
+Ainsi, la force de Laplace est $\overrightarrow{\rm F_L} = -i l B \overrightarrow{\rm e_x}$,
+soit $\overrightarrow{\rm F_L} = \frac{- B^2 L^2}{r} v_x \overrightarrow{\rm e_x}$,
+donnant une force de Laplace proportionnelle à $- \overrightarrow{\rm v}$, qui
+correspond à une force de frottement (voir expérience de l'aimant tombant dans
+un tube en cuivre). On a de plus $P_\text{force électromotrice} =  - P_L$,
+puisque $P_L = - i B L v_x = - e i = - r i^2 = P_\text{force électromotrice} = - P_J$,
+donc $P_m = \frac{d E_c}{dt} + P_\text{force électromotrice}$.
+
+## Un exemple d'application : le haut-parleur
+On prend un circuit composé d'un générateur de tension, avec un
+courant $i$ et d'un ressort attaché à un bord du circuit. Il est plongé dans un
+champ magnétique $\overrightarrow{\rm B}$ orienté vers le haut ($\overrightarrow{\rm e_z}$).
+On étudie dans le référentiel terrestre supposé galiléen le système de la tige
+au bout du ressort et de la membrane.
+
+On fait le bilan des forces sur le système :
+- Le poids $\overrightarrow{\rm P}$
+- La réaction normale $\overrightarrow{\rm R}$
+- Les forces de frottement $\overrightarrow{\rm f} = - \alpha \overrightarrow{\rm v}$
+- La force de Laplace $\overrightarrow{\rm F_L}  = - i L B \overrightarrow{\rm e_x}$
+- La force de rappel du ressort $\overrightarrow{\rm F_r} = -k x \overrightarrow{\rm e_x}$ (avec $x = \ell - \ell_0$)
+
+Le PFD nous donne ainsi, projeté sur $\overrightarrow{\rm e_x}$, $m \frac{d v_x}{dt} = - i L B -  k x - \alpha v_x$,
+ce qui nous donne en notation complexe $m \frac{d v_x}{dt} = j m \omega \underline{v_x} = - \underline{i} L B - k \frac{\underline{v_x}}{j \omega} - \alpha \underline{v_x}$
+$\Leftrightarrow \underline{v_x} = \frac{- L B}{j m \omega + \frac{k}{j \omega} + \alpha} \underline{i}$.
+Or, $e = B L v_x$, donc $\underline{e} = \frac{L^2 B^2}{j m \omega + \frac{k}{j \omega} + \alpha} (- \underline{i})$,
+donnant $\underline{e} = - \underline{z_{HP}} \underline{i}$ (une impédance).
+L'admittance y correspondant, $\underline{Y_{HP}}$, est de valeur
+$\frac{\alpha}{L^2 B^2} + \frac{m}{L^2 B^2} j \omega + \frac{k}{L^2 B^2} \frac{1}{j \omega}$.
+Soit $\underline{Y_{HP}} = \frac{1}{R_{HP}} + \frac{1}{R_{HP}} + \frac{1}{\frac{1}{j C_{HP} \omega}} + \frac{1}{j L_{HP} \omega}$,
+on retrouve l'impédance d'un circuit RLC en parallèle, qui est un circuit
+passe-bande.
