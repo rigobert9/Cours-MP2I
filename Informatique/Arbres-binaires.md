@@ -215,3 +215,30 @@ Pour insérer dans un tas binaire, on insère au seul endroit possible pour
 conserver la complétude du tas, puis on fait remonter l'élément tant que des
 éléments plus petits sont au-dessus de lui par échange. Cet algorithme dit de
 tamisage (sift-up) est de complexité $\Theta(h) = \Theta(\log n)$.
+
+Pour supprimer un élément, on remplace l'élément par le dernier élément du tas,
+qu'on fait ensuite redescendre.
+
+On peut facilement prouver la correction de ces algorithmes, et l'insertion de
+$n$ éléments ou la suppression du nœud minimal d'un tas ("pop") se font en temps
+$O(\log n)$ et en espace $O(1)$.
+
+Pour construire un tas de $n$ éléments connus, on peut procéder naïvement par
+$n$ insertions, donnant une complexité de l'ordre de $\sum\limits_{k = 1}^{n} \log(k) = \log((n - 1) !)$
+$\sim n \log(n)$ (Stirling).\
+Pour obtenir une meilleure complexité, on peut construire un tas binaire de $n$
+éléments avec $-\infty$ dans chaque nœud ($O(n)$), puis on remplace les éléments
+par nos éléments, qu'on fait ensuite sift down. Pour $m = 2^{\left\lfloor \log(n) \right\rfloor + 1} - 1 \leq 2n$
+éléments (un arbre parfait de même hauteur),
+remplir la couche de profondeur $h$ coûte au plus $K \frac{n}{2}$ car cette
+couche contient $\frac{m + 1}{2}$ éléments. Pour celles en-dessous,
+les remplir coûte au plus $\frac{m K k}{2^{k + 1}}$ pour la couche de hauteur $h - k$.
+Le coût total est donc majoré par au plus $K \sum\limits_{k = 0}^{\left\lfloor \log(n) \right\rfloor} \frac{k m}{2^k}$
+$\leq 2 K n \times \sum\limits_{k \geq 0} \frac{k + 1}{2^k}$.
+La série converge, donc le coût de l'opération est bien $O(n)$.
+
+### Tri par tas
+Étant donné un tableau de taille $n$, on sait mettre ses éléments dans un tas
+binaire. En stockant les éléments en commençant par la fin du tableau, on peut
+créer un tas en place. Il suffit alors de réorganiser en un tas maximal, puis
+de mettre les éléments retirés à la fin du tableau à chaque étape.
