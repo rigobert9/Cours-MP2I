@@ -107,3 +107,105 @@ que linéarité. On obtient aussi la relation de Chasles.
 On peut remarquer que si $f$ est en escalier, positive et d'intégrale nulle,
 alors elle est nulle sauf en un nombre fini de points (on coupe sur des points
 qui constituent seuls leur propre membre de la subdivision choisie).
+
+### Intégrale d'une fonction continue sur $[a,b]$
+On encadre la fonction par une fonction en escalier toujours au-dessus de la
+fonction, et par une fonction toujours en dessous, et on fait arbitrairement
+(par $\varepsilon$) décroître la différence entre les deux fonctions.
+
+> Soit $f \in \mathcal{CM}([a,b],\mathbb{R})$, on note $A = \{\varphi \in \mathcal{E}([a,b],\mathbb{R}) \mid \varphi \leq f\}$
+> et $B = \{\psi \in \mathcal{E}([a,b],\mathbb{R}) \mid f \leq \psi\}$, et alors
+> les réels suivants existent et sont égaux :
+> $\alpha = \text{sup} \{\int\limits_{[a,b]} \varphi \mid \varphi \in A\}$
+> et $\beta = \text{inf} \{\int\limits_{[a,b]} \psi \mid \psi \in B\}$.
+> Cette valeur commune est appelée intégrale de $f$ sur $[a,b]$.
+
+__Preuve :__ Comme $f$ est continue par morceaux, elle est bornée,
+et on peut la majorer par des fonctions en escalier la minorant et la majorant.
+L'ensemble $A$ est majoré aussi et $B$ est minoré, tout en étant toujours
+l'un plus petit que l'autre. Ainsi, $A$ et $B$ possèdent respectivement une
+borne supérieure et inférieure.\
+Puisqu'on peut minorer $\beta$ par l'intégrale de n'importe quelle fonction en
+escalier inférieure à la fonction, on a bien $\alpha \leq \beta$.
+On fixe $\varepsilon > 0$. Par approximation uniforme, $\exists \varphi \in A, \exists \psi \in B \mid \varphi \leq f \leq \psi \land |\psi - \varphi| \leq \varepsilon$,
+donnant $\int\limits_{[a,b]} \psi \leq \int\limits_{[a,b]} \varphi + \varepsilon$,
+soit $\beta \leq \alpha + \varepsilon (b-a)$, permettant de conclue que
+$\beta \leq \alpha$. On peut ainsi conclure que $\alpha = \beta$.
+
+Il suffit de passer à la limite dans les propriétés de $\int\limits_{[a,b]}$ des
+fonctions en escalier pour obtenir ces mêmes propriétés sur les fonction
+continues par morceaux.
+
+### Extension à $\mathbb{C}$
+On sépare la fonction en valeurs complexes et réelles et on utilise la
+linéarité. On ne peut pas conserver les propriétés de positivité et autres,
+mais on conserve bien la relation de Chasles et la linéarité.
+
+On obtient aussi toujours une inégalité triangulaire
+$|\int\limits_{[a,b]} f| \leq \int\limits_{[a,b]} |f|$
+pour $f \in \mathcal{CM}([a,b], \mathbb{C})$.
+
+### Intégrale de deux bornes
+> Soit $I$ un intervalle quelconque, on dit que $f$ est
+> $\mathcal{CM}$ sur $I$ si $f$ est $\mathcal{CM}$ sur chaque segment
+> $[a,b] \subset I$.
+
+On peut ainsi dire que des fonctions sont continue par morceaux sur
+$\mathbb{R}$.
+
+> Soit $f \in \mathcal{CM}(I,\mathbb{K})$, et $(a,b) \in I^2$.
+> $I$ étant un intervalle, on a bien le segment reliant
+> $a$ à $b$ inclus dans $I$. On définit
+> $\int\limits_{a}^{b} f(t) dt = \left\{\begin{matrix} \int\limits_{[a,b]} f \text{ si } a \leq b \\ - \int\limits_{[b,a]} f \text{ si } a \geq b \end{matrix}\right.$
+
+On peut aussi en définir que l'intégrale est nulle en un point unique.
+
+## Somme de Riemann
+Pour approcher l'intégrale d'une fonction, on propose un procédé plus pratique
+d'approche par une subdivision régulière
+$(a_k = a + k \frac{b - a}{n})_{k \in [\![0;n]\!]}$.
+
+On approche donc par la somme de Riemann à gauche
+$S_n^{-}(f) = \frac{b - a}{n} \sum\limits_{k = 0}^{n - 1} f(a_k)$
+et la somme de Riemann à droite $S_n^{+}(f) = \frac{b - a}{n} \sum\limits_{k = 1}^{n} f(a_k)$.
+On ne maîtrise plus si on est au-dessus ou en-dessous de la fonction, et on ne
+peut pas connaître l'erreur de notre fonction.
+
+> Si $f$ est continue sur $[a,b]$, alors les suites des sommes de Riemann à gauche
+> et à droite convergent vers $\int\limits_{a}^{b} f(t) dt$. De plus, si $f$ est
+> $\mathcal{C}^{1}([a,b], \mathbb{R})$, on a $\forall n \in \mathbb{N}^{\ast},
+> |\int\limits_{a}^{b} f(t) dt - S_n^{+ / -}(f)| \leq \frac{(b - a)^2}{2n} \| f' \|_\infty$.
+
+Ici, $\| f' \|_\infty$ est la borne supérieure et donc par compacité le maximum
+de $|f'|$.
+
+__Preuve :__ On commence par prouver la deuxième affirmation.
+Par relation de Chasles, $\int\limits_{a}^{b} f(t) dt = \sum\limits_{k = 1}^{n} \int\limits_{a_{k-1}}^{a_k} f(t) dt$.
+De plus, $S_n^{-}(f) = \frac{b - a}{n} \sum\limits_{k = 0}^{n} f(a_{k-1}) = \sum\limits_{k = 1}^{n} \int\limits_{a_{k-1}}^{a_k} f(a_{k-1}) dt$.
+Ainsi, $\int\limits_{a}^{b} f(t) dt - S_n^{-}(f) = \sum\limits_{k = 1}^{n} \int\limits_{a_{k-1}}^{a_k} (f(t) - f(a_{k-1})) dt$.
+On estime l'erreur $f(t) - f(a_{k-1})$ pour $t \in [a_{k-1};a_k]$.\
+On fait entrer la supposition de $f \in \mathcal{C}^{1}([a,b])$, donnant par
+compacité que la dérivée y est majorée par $M = \| f' \|_\infty$
+($f'$ étant $\mathcal{C}^{0}$ sur $[a,b]$). Par théorème des accroissements
+finis,
+$\forall (x,y) \in [a,b]^2, |f(x) - f(y)| \leq M |x - y|$.
+Ainsi, $\forall t \in [a_{k-1}, a_k]$, $|f(t) - f(a_{k-1})| \leq M \times |t - a_{k-1}|$.
+De plus, par une inégalité triangulaire, on a
+$|\int\limits_{a_{k-1}}^{a_k} (f(t) - f(a_{k-1})) dt| \leq \int\limits_{a_{k-1}}^{a_k} |f(t) - f(a_{k-1})| dt$,
+le tout majoré par croissance par $\int\limits_{a_{k-1}}^{a_k} M \times |t - a_{k-1}| dt$.
+Or $\int\limits_{a_{k-1}}^{a_k} M \times (t - a_{k-1}) dt = [M \frac{(t - a_{k-1})^2}{2}]_{a_{k-1}}^{a_k}$
+$= M \frac{(a_k - a_{k-1})^2}{2} = \frac{M}{2} (\frac{b - a}{n})^2$.\
+Finalement, pour $n \in \mathbb{N}^{\ast}$,
+$|\int\limits_{a}^{b} f(t) dt - S_n(f)| \leq \sum\limits_{k = 1}^{n} \frac{M}{2} (\frac{b - a}{n})^2$
+$\leq n \times \frac{M}{2} \frac{(b - a)^2}{n^2} \leq \frac{M (b - a)^2}{2n} = O(\frac{1}{n})$.\
+
+Pour les fonctions seulement continues mais pas dérivables ($\mathcal{C}^{0}$),
+on a toujours $|\int\limits_{a}^{b} f(t) dt - S_n^{-}(f)| \leq \sum\limits_{k = 1}^{n} \int\limits_{a_{k-1}}^{a_k} |f(t) - f(a_{k-1})| dt$.
+$f$ étant continue sur le segment $[a,b]$, elle est donc uniformément continue
+sur $[a,b]$, donc $\forall \varepsilon > 0, \exists \nu > 0, \forall (x,y) \in [a,b]^2, |x - y| \leq \nu \Rightarrow |f(x) - f(y)| \leq \varepsilon$.
+On fixe $\varepsilon > 0$, et on pend $n$ suffisamment grand tel que $\frac{b - a}{n} \leq \nu$.
+Ainsi, $\forall k, \forall t \in [a_{k-1},a_k], |t - a_{k-1}| \leq \frac{b - a}{n} \leq \nu$,
+donc $|f(t) - f(a_{k-1})| \leq \varepsilon$.\
+Ainsi, $\forall \varepsilon > 0, \exists n_0, \forall n > n_0, |\int\limits_{a}^{b} f - S_n^{-}(f)| \leq \sum\limits_{k = 1}^{n} \int\limits_{a_{k-1}}^{a_k} \varepsilon dt$
+$\leq \int\limits_{a}^{b} \varepsilon dt \leq \varepsilon (b - a)$, donc la
+suite $(S_n^{-}(f))_n$ converge vers $\int\limits_{a}^{b} f$.
