@@ -118,3 +118,30 @@ Soit $(v_k)_k$ ce chemin, alors sa longueur est $\text{dist}(v_n) + d(v_n,u)$,
 ce qui se vérifie par hypothèse de récurrence. Il s'agissait aussi bien de son
 poids dans la file de priorité, et on peut donc conclure que récupérer les
 sommets depuis la file de priorité donne bien les chemins les plus courts.
+
+### Complexité
+On s'assure que chaque sommet est visité au plus une fois, et que chaque arc
+n'est suivi qu'une seule fois (et donc que les opérations associées ne sont
+faites qu'une seule fois, soit quelque chose de linéaire en la taille de ces
+opérations).\
+Pour cela, on montre que dans le pire des cas, on retire autant d'éléments de la
+file de priorité qu'on y a ajouté, soit $m + 1$. On fait l'hypothèse qu'on peut
+obtenir avec un coût constant les listes de successeurs. Dans le pire cas, la
+complexité est alors de $O(m \log m)$.
+
+On peut améliorer cette complexité :
+- On peut ajouter une opération pour diminuer la priorité d'un sommet dans la
+  file de priorité, et la taille de la file est ainsi toujours majorée par $n$,
+  avec au plus $n$ insertions et extractions. Avec cette implémentation, la
+  modification est au minimum de complexité $\Theta(\log n)$, nous donnant une
+  complexité $\Theta(m \log n)$.
+- On peut utiliser des meilleures structures, comme les tas de Fibonacci ou les
+  tas à paire, pour lesquels l'opération est respectivement de complexité $\Theta(1)$ (amorti)
+  et $\Theta(\log n)$. Ainsi, la complexité dans le pire cas est de $\Theta(m + n \log m)$.
+- La complexité moyenne est plus basse : en considérant les graphes aléatoires
+  où les poids de toutes les arêtes entrantes pour chaque sommet sont mélangés
+  uniformément au hasard de façon indépendante. Ici, la complexité moyenne sera
+  alors $\Theta(m + n \log(\frac{m}{n}) \log(n))$.
+- On peut ajouter de façon plus pratique une heuristique pour accélérer la
+  recherche, de façon à favoriser certain chemin à l'essai, comme par exemple
+  les plus proches à vol d'oiseau de l'arrivée.
