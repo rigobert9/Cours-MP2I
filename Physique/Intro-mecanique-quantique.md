@@ -138,6 +138,49 @@ On obtient finalement une énergie associée à chaque orbite dont les possibili
 sont discrètes, de la forme $E_n = - \frac{m e^{4}}{8 \varepsilon_0^2 h^2 n^2} = \frac{- E_0}{n^2}$.
 Ce modèle a bien permis de retrouver les raies spectrales obtenues lors des
 expériences faites pour l'atome d'hydrogène. En réalité, le modèle est plus
-compliqué, voire échoue, pour d'autres atomes.
+compliqué, voire échoue, pour d'autres atomes, et pour les ions
+multiélectroniques.
+
+De plus, si les électrons étaient en rotation, les atomes devraient émettre de
+la lumière jusqu'à ce que l'électron tombe finalement dans le noyau.
 
 Le modèle, malgré son intérêt historique, a été largement supplanté.
+
+## L'équation de Schrödinger
+### Énoncé de l'équation
+L'onde associée à une particule quantique libre se propageant selon la direction
+$\overrightarrow{\rm u_x}$, on pose la fonction quantique
+$\underline{\Psi} = \Psi_0 e^{i (kx - \omega t)}$, avec $\omega = 2 \pi \nu$,
+$k = \frac{2 \pi}{\lambda}$ et $h \nu$, donnant
+$\underline{\Psi} = \Psi_{0} e^{i (\frac{p x}{\hbar} - \frac{E t}{\hbar})}$.
+
+On a l'équation de Schrödinger qui est $- \frac{\hbar^2}{2m} \Delta \underline{\Psi} + V \underline{\Psi} = i \hbar \frac{\partial \underline{\Psi}}{\partial t}$,
+avec $V$ le potentiel d'interaction associée aux forces conservatives
+s'appliquant sur l'objet quantique, et
+$\Delta$ est l'opérateur différentiel Laplacien
+$\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}$.
+Sur une unique dimension, on peut simplifier à $\frac{- \hbar^2}{2 m} \frac{d^2 \underline{\Psi}}{dx^2} + V \underline{\Psi} = i \hbar \frac{\partial \underline{\Psi}}{\partial t}$.
+
+### Quantification de l'énergie d'une particule libre confinée à une dimension
+On prend une particule qui ne peut se déplacer que dans un sens. On a
+alors $V = 0$ sur cette dimension, et $V = +\infty$ au-delà.
+On sépare les variables d'espace et de temps $\underline{\Psi}(x,t) = \varphi(x) e^{- i \omega t}$.
+En remplaçant dans l'équation de Schrödinger,
+donnant $\hbar \omega \varphi(x) = - \frac{\hbar^2}{2m} \frac{d^2 \varphi(x)}{dx^2} + V \varphi(x)$,
+et en appliquant $E = \hbar \omega$,
+$E \varphi(x) = - \frac{\hbar^2}{2m} \frac{d^2 \varphi(x)}{dx^2} + V \varphi(x)$.
+Entre $0$ et $L$, $V = 0$, donnant l'équation différentielle
+$\frac{d^2 \varphi(x)}{dx^2} + k^2 \varphi(x) = 0$,
+avec $k = \frac{\sqrt{2 m E}}{\hbar}$,
+donnant les solutions $\varphi(x) = A \cos(k x) + B \sin(k x)$,
+et les conditions aux limites donnent
+$\varphi(x) = B \sin(\frac{n \pi x}{L})$.
+
+Pour terminer l'équation, on utilise la condition de normalisation,
+qui pose ici $B^2 \int\limits_{0}^{L} \sin^2(\frac{n \pi x}{L}) dx = 1$,
+soit $1 = B^2 \int\limits_{0}^{L} \frac{1 - \cos(\frac{2 n \pi x}{L})}{2} dx$
+$= \frac{B^2}{2} L - \frac{L B^2}{2 n \pi L} [\sin(\frac{2n \pi x}{L})]_0^L$
+$= \frac{B^2}{2} L - \frac{L B^2}{2 n \pi L} [\sin(\frac{2n \pi x}{L})]_0^L$
+$= \frac{B^2 L}{2}$, donnant finalement
+$\varphi(x) = I \sqrt{\frac{2}{L}} \sin(\frac{n \pi x}{L})$.
+L'équation de Schrödinger donne ainsi $E_n = \frac{h^2}{8 m L^2} n^2$.
