@@ -65,3 +65,43 @@ On crée un dictionnaire de toutes les lettres, et on enregistre ensuite toutes
 les suites de lettres pour la première lettre avec le premier entier disponible.
 On encode alors ces suites par leur valeur, puis on recommence en ayant remplacé
 dans le texte.
+
+TODO
+
+## Algorithmes de recherche dans un texte
+On se donne dans les algorithmes de cette partie un texte $t$ de longueur $n$,
+avec un motif $u$ de longueur $m$. On souhaite obtenir tous les indices dans
+$[\![0;n - m]\!]$ où on peut retrouver le motif.
+
+On est limité par une complexité de $m \times (n - m)$ comme on peut l'avoir
+avec la recherche naïve qui passe sur chaque $i$ et compare jusqu'à échec de la
+reconnaissance. Néanmoins, on peut trouver des algorithmes bien plus efficaces
+dans des cas plus réalistes (bien qu'ils aient la même borne dans leurs cas
+limite).
+
+### Algorithme de Boyer-Moore (simplifié, au programme)
+Étant donné un indice $i$, pour $j$ de $m - 1$ à $0$, on compare $u_j$ à $t_{i + j}$.
+Si on arrive au bout, $i$ est un des indices qu'on cherche et on continue à $i + 1$;
+sinon, soit $j$ le plus grand entier de $[\![0;m - 1]\!]$ tel que $u_j \neq t_{i+j}$
+et $i'$ le plus petit entier de $[\![i+1;i+j]\!]$ tel que $u_{j - (i' - i)} = t_{i' + j - (i' - i)}$
+$= t_{i+j}$. Si aucun tel $i'$ n'existe, alors on pose $i' = i + 1$. Dans tous
+les cas, on recommence à chercher avec $i'$ à partir de $j = n - 1$.
+
+L'algorithme est peu efficace et lance souvent des recherches qui semblent ne
+jamais pouvoir aboutir. Dans le meilleur cas, la complexité de la recherche
+est de $O(\frac{n}{m})$, sachant qu'un précalcul de $O(n^2)$ est nécessaire pour
+faire le tableau des décalages selon les lettres.
+
+### Algorithme de Rabin-Karp
+On reprend $h$ la fonction de hachage utilisée dans les chapitres précédents. Il
+suffit de vérifier pour chaque indice si le haché obtenu sur chaque sous-chaîne
+est égal au haché de $u$. Cette stratégie est aussi inefficace que l'algorithme
+naïf.
+
+On va donc prendre avantage du calcul de la fonction de hachage qui est telle
+que $h(a_0,a_1,\ldots,a_{m-1}) = \sum\limits_{j = 0}^{m - 1} b^{m - 1 - j} a_j [p]$,
+avec $p$ un nombre premier tel que $p^2 \leq m$. On a alors le haché suivant $h(a_1,\ldots,a_m)$ qui
+sera égal à $b h(a_0,\ldots,a_{m-1}) + a_m - b^n a_0 [p]$ par stabilité des
+multiplications et additions modulo $p$. Ainsi, on peut calculer en temps
+constant un haché à partir du précédent, donnant un coût total de $\Theta(n)$
+(pour une comparaison de haché constante).
